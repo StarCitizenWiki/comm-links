@@ -1,0 +1,1913 @@
+
+  <head>
+    
+            <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1130.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+      <meta name="viewport" content="width=device-width">
+      <meta name="description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans.">
+      <meta property="og:site_name" content="
+Writer's Guide: Part Two - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+">
+      <meta property="og:image" content="https://robertsspaceindustries.com/media/viqhhayioaj1er/channel_item_full/WriterGuideFI2_Crop.jpg">
+      <meta property="og:description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans.">
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://robertsspaceindustries.com/comm-link/SCW/12956-IMPORT">
+      <meta property="og:locale" content="us_EN">
+
+            
+
+            <link href="/rsi/static/css/cross-brand-less.css?v=3.2.9.0" media="all" rel="stylesheet">
+      <link href="/cache/en/rsi-platformbar-css.css?v=3.2.9.0" media="all" rel="stylesheet">
+            <script type="text/javascript" src="/cache/en/rsi-js.js?v=3.2.9.0"></script>
+      
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KHNFZPT');</script>
+<!-- End Google Tag Manager -->
+
+
+      <script>
+        $(document).ready(function() {
+          window.Common = new RSI.Common({});
+          window.Main = new RSI.Main({
+            'is_mobile': 0,
+            'probation_cookie' : '',
+            'require_captcha': 0
+          });
+          window.Mark = new Turbulent.Mark({ 'name' : 'Rsi-XSRF', 'token' : '', 'ttl' : 1800 });
+
+          window.WscOverlay = new RSI.WscOverlay({});
+
+          var destinations = [];
+
+window.Main.destinations = destinations;          
+  window.PageStore = new RSI.Store({
+    'store_prefix' : '/pledge',
+    'customizerConfig' : {"endpoint":"https:\/\/robertsspaceindustries.com\/","verify":true,"customizer":{"path":"\/customizer","view":"","api":"\/api","methods":{"start":"\/start","game":"\/configuration\/:id\/game","details":"\/configuration\/:id\/details","report":"\/configuration\/:id\/report","export-port-label":"\/admin\/export\/port\/label"}},"ga_tracking_code":"UA-39586040-5"}
+  });
+
+          
+          
+  var productsTracking = [];
+  var eCommerceData = {
+    'trackingAction': "",
+    'currency': "",
+    'trackingStep': "",
+    'trackingProducts': productsTracking
+  };
+  window.eCommerceTracking = new RSI.Store.eCommerceTracking(
+    eCommerceData
+  );
+
+        });
+
+        $(window).load(function() {
+          
+        });
+
+      </script>
+
+
+      <script>
+        window.recaptcha_is_loaded = false;
+        window.on_recaptcha_load_callback = function() {
+          window.recaptcha_is_loaded = true;
+        };
+      </script>
+
+      <script src="https://www.google.com/recaptcha/api.js?onload=on_recaptcha_load_callback&amp;render=explicit" async defer></script>
+
+      <script type="text/javascript">
+
+        
+
+                                </script>
+
+
+      <title>
+Writer's Guide: Part Two - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+</title>
+
+      
+
+<style type="text/css">
+  /* CSS from ATOM */
+  
+</style>
+
+<script type="text/javascript">
+  /* JS from ATOM */
+  
+</script>
+
+
+
+
+    
+
+  <style>
+    
+      background:url(/rsi/static/images/noisebg.gif) repeat center top #000b11;
+    
+  </style>
+
+    <link href="//fonts.googleapis.com/css?family=Electrolize%7COrbitron:400,500,700%7CShare+Tech+Mono" rel="stylesheet" type="text/css">
+
+    <link href="/cache/en/rsi-css.css?v=3.2.9.0" media="all" rel="stylesheet">
+  
+
+  </head>
+  <body id="" class="">
+
+    
+      <div class="l-notification-bar l-notification-bar--rsi js-notification-bar" id="notification-bar-root">
+  <c-notification-bar v-bind:latestagreementsslugs='["qwa3l7w316dgt","5uyoqclrxgfgf"]' v-bind:loggedin="1" v-bind:onhomepage="0"></c-notification-bar>
+  <div class="l-notification-bar__boxes js-notification-bar-boxes">
+      </div>
+
+</div>
+    
+
+    <div id="bodyWrapper">
+      <header class="c-header-wrapper c-header-wrapper--rsi js-header-wrapper is-connected" id="cross-brand-header">
+  <div id="platform-bar"></div>
+
+  <div class="c-right-sidebar c-right-sidebar--search" id="search-sidebar">
+  <div class="js-toggle-search__backdrop hidden"></div>
+  <a href="#" class="c-right-sidebar__back js-toggle-search">Back
+    <span></span>
+    <span></span>
+  </a>
+  <form class="c-right-sidebar__form">
+    <h1 class="c-right-sidebar__form-title">Search</h1>
+
+    <input class="c-right-sidebar__form-input" type="text" id="header-search-input" placeholder="Search for articles">
+
+    <input class="c-right-sidebar__form-submit c-right-sidebar__form-submit--search" type="submit" value="Go">
+  </form>
+</div>
+      
+<div class="c-right-sidebar c-right-sidebar--account" id="account-sidebar">
+  <div class="js-toggle-account__backdrop hidden"></div>
+  <a href="#" class="c-right-sidebar__back js-toggle-account">Back
+    <span></span>
+    <span></span>
+  </a>
+
+  <div class="c-account-sidebar__profile">
+    <div class="c-account-sidebar__profile-metas">
+
+      <a class="c-account-sidebar__profile-metas-avatar" href="https://robertsspaceindustries.com/citizens/star-citizen-wiki" style="background-image:url('/media/6zg0fizwcelhpr/avatar/Wiki_logo_stern_abgen0wumg.png');"></a>
+
+      <span class="c-account-sidebar__profile-metas-badge c-account-sidebar__profile-metas-badge--icon" data-tip="">
+        <img src="https://robertsspaceindustries.com/media/ls27iyxog62nnr/heap_note/Subscriber.png" alt="Subscriber" title="Subscriber">
+      </span>
+
+      <a href="/orgs/WIKI" class="c-account-sidebar__profile-metas-badge c-account-sidebar__profile-metas-badge--org" data-tip="star-citizen.wiki">
+        <img src="/media/h68aa8sq3cv44r/heap_note/WIKI-Thumbnail.png" alt="star-citizen.wiki" title="star-citizen.wiki">
+      </a>
+
+    </div>
+
+    <div class="c-account-sidebar__profile-info">
+
+      <a href="https://robertsspaceindustries.com/citizens/star-citizen-wiki" class="c-account-sidebar__profile-info-displayname">Star Citizen Wiki</a>
+
+      <span class="c-account-sidebar__profile-info-handle">star-citizen-wiki</span>
+
+      <a href="" class="c-account-sidebar__profile-info-signout js-sign-out">Sign Out</a>
+
+      <div class="c-account-sidebar__profile-info-credits">
+        <span class="c-account-sidebar__profile-info-credits-label">STORE</span>
+        <span class="c-account-sidebar__profile-info-credits-amount c-account-sidebar__profile-info-credits-amount--pledge">$0.00 USD</span>
+
+        <span class="c-account-sidebar__profile-info-credits-label">UEC</span>
+        <span class="c-account-sidebar__profile-info-credits-amount c-account-sidebar__profile-info-credits-amount--uec">¤6,500 UEC</span>
+
+        <span class="c-account-sidebar__profile-info-credits-label">REC</span>
+        <span class="c-account-sidebar__profile-info-credits-amount c-account-sidebar__profile-info-credits-amount--rec">¤260,000 REC</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="c-account-sidebar__links">
+    <a href="/account/settings" class="c-account-sidebar__links-link">Settings</a>
+    <a href="/account/pledges" class="c-account-sidebar__links-link">My Hangar</a>
+              <a href="/subscribers/vault" class="c-account-sidebar__links-link">Subscribers</a>
+          </div>
+
+  <div class="c-account-sidebar-tabs">
+    <div class="c-account-sidebar-tabs__list">
+      <a class="c-account-sidebar-tabs__tab">Contacts</a>
+    </div>
+
+    <div class="c-account-sidebar-tabs__content c-account-sidebar-tabs__content--contacts">
+      <div class="c-account-sidebar-contacts" id="sidebar-contacts-list">
+        <form class="c-right-sidebar__form c-account-sidebar-contacts__search js-contacts-search">
+
+          <input type="text" class="c-right-sidebar__form-input c-account-sidebar-contacts__search-input js-contacts-search-input" placeholder="Search">
+          <a class="c-account-sidebar-contacts__search-submit js-submit-contacts-search">
+            <span></span>
+            <span></span>
+          </a>
+
+          <div class="l-oneline l-oneline--fill">
+            <div class="l-checkbox">
+              <input class="c-right-sidebar__form-checkbox js-only-contacts" id="sidebar-only-contacts" name="only-contacts" type="checkbox">
+              <label class="c-right-sidebar__form-label c-right-sidebar__form-checkbox-label" for="sidebar-only-contacts">
+                Only in your contact list
+              </label>
+            </div>
+
+            <div class="c-account-sidebar-contacts__search-amount js-search-amount">-</div>
+          </div>
+        </form>
+
+        <div class="c-account-sidebar-contacts__results">
+          <div class="c-account-sidebar-contacts__results-title-wrapper">
+            <span class="c-account-sidebar-contacts__results-title c-account-sidebar-contacts__results-title--contacts">My Contacts</span>
+            <span class="c-account-sidebar-contacts__results-title c-account-sidebar-contacts__results-title--results">Results</span>
+                      </div>
+
+          <div class="c-account-sidebar-contacts__results-list js-contacts-list" data-public-profile-url="https://robertsspaceindustries.com/citizens/">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/template" id="contact-item-tpl">
+  <div class="c-account-sidebar-contacts__results-list-item js-contact <% if(following) { %>is-following<% } %>">
+
+    <a class="c-account-sidebar-contacts__results-list-item-avatar " href="https://robertsspaceindustries.com/citizens/<%= nickname %>" title="" style="background-image:url('<%= avatar %>');">
+    
+
+    <div class="c-account-sidebar-contacts__results-list-item-info">
+      <a class="c-account-sidebar-contacts__results-list-item-displayname" href="https://robertsspaceindustries.com/citizens/<%= nickname %>" title=""><%= displayname %>
+
+      <span class="c-account-sidebar-contacts__results-list-item-handle js-nickname"><%= nickname %>
+
+      <div class="c-account-sidebar-contacts__results-list-item-actions">
+        <a class="c-account-sidebar-contacts__results-list-item-action c-account-sidebar-contacts__results-list-item-action--dossier" href="https://robertsspaceindustries.com/citizens/<%= nickname %>" title="">
+          <span class="js-svg-inliner h-svg c-account__icon c-account__icon--smaller c-account__icon-star-citizen">
+          Citizen Dossier
+        
+        <a class="c-account-sidebar-contacts__results-list-item-action c-account-sidebar-contacts__results-list-item-action--follow js-contact-follow js-follow" title="">
+          <span class="js-svg-inliner h-svg c-account__icon c-account__icon--smaller c-account__icon-profile">
+          Follow
+        
+        <a class="c-account-sidebar-contacts__results-list-item-action c-account-sidebar-contacts__results-list-item-action--unfollow js-contact-follow js-unfollow" title="">
+          <span class="js-svg-inliner h-svg c-account__icon c-account__icon--smaller c-account__icon-trash">
+          Unfollow
+        
+      </script></header></div>
+    
+
+
+    <div class="error js-error"></div>
+
+  
+
+
+<script>
+  $(document).ready(function() {
+    this.accountSidebar = new RSI.AccountSidebar({
+    });
+  });
+</script>  
+  <div class="c-header-wrapper__backdrop js-toggle-games"></div>
+
+
+<div id="platform-backdrop"></div>
+
+<script type="text/javascript">
+  RSI.Platformbar = {
+    theme: "rsi",
+    loggedState: "logged-in",
+    tabs: [
+      {
+        type: 'brands',
+        name: "Games",
+        subItems: [
+          {
+            name: "sc",
+            href: "/star-citizen",
+            description: "Join the Universe"
+          },
+          {
+            name: "s42",
+            href: "/squadron42",
+            description: "Start the adventure"
+          },
+          {
+            name: "rsi",
+            href: "/",
+            description: "Follow the Development"
+          }
+        ]
+      },
+      {
+        type: 'apps',
+        name: "Apps",
+        subItems: [
+          [
+            {
+              name: "Spectrum",
+              href: "/spectrum/community/SC",
+              description: "Your&nbsp;communication platform"
+            },
+            {
+              name: "Launcher",
+              href: "/download",
+              description: "Download Star&nbsp;Citizen",
+                          }
+          ],
+          [
+            {
+              name: "Roadmap",
+              href: "/roadmap",
+              description: "Keep track of the&nbsp;development"
+            },
+            {
+              name: "Telemetry",
+              href: "/telemetry",
+              description: "Keep&nbsp;track&nbsp;of&nbsp;the player&rsquo;s&nbsp;performance"
+            },
+            {
+              name: "Issue Council",
+              href: "/community/issue-council",
+              description: "Help&nbsp;us&nbsp;make the game better",
+                          }
+          ],
+          [
+            {
+              name: "Starmap",
+              href: "/starmap",
+              description: "Your map to&nbsp;the&nbsp;universe"
+            }
+          ]
+        ]
+      },
+              {
+          type: 'citizencon',
+          name: "Citizencon 2949",
+          href: "/citizencon"
+        }
+          ],
+    navigation: {
+      store: {
+        name: "Pledge Store",
+        href: "/pledge",
+        isHidden: false      },
+      support: {
+        name: "Support",
+        href: "//support.robertsspaceindustries.com"
+      },
+      account: {
+        name: "Account",
+        href: "/account/settings"
+      }
+    }
+  };
+
+  $(document).ready(function() {
+    window.header = new RSI.Header({});
+  });
+</script>
+
+
+      
+  
+<header class="c-brand-menu c-brand-menu----rsi" id="brand-menu">
+  <span class="c-brand-menu__section">
+    
+      Roberts Space Industries
+    
+  </span>
+  <div class="c-brand-menu__backdrop"></div>
+  <nav class="c-brand-menu__container">
+    <div class="c-brand-menu__logo">
+      <a href="/"><span class="h-svg h-svg__logo-rsi--fullcolor js-svg-inliner"></span> </a>
+    </div>
+    <div class="c-brand-menu__items-container">
+      <ul class="c-brand-menu__items">
+                <li class="c-brand-menu__item  ">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/comm-link">
+            <span class="c-brand-menu__item-text">Comm-Link</span>
+                                  </a>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/community">
+            <span class="c-brand-menu__item-text">Community</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Community</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/spectrum" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Spectrum
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/orgs" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Organizations
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/leaderboards/top" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Leaderboards
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community_events" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Event
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Hub
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/fankit" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Fankit
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/development">
+            <span class="c-brand-menu__item-text">Development</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Development</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/roadmap" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Roadmap
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/devtracker" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Dev Tracker
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/telemetry" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Telemetry
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/issue-council" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Issue Council
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/patch-notes" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Patch Notes
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/ship-matrix" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Ship Matrix
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/funding-goals" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Funding
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+              </ul>
+    </div>
+
+    <div class="c-brand-menu__cta">
+      
+          <a href="/star-citizen/fly-now" class="c-brand-cta-btn js-google-analytics-event-tracker" data-event-category="FlyNow" data-event-label="navMenuClick">
+            <div></div>
+              <span class="c-brand-cta-btn__text">
+                <strong>Fly now</strong>Alpha 3.7
+              </span>
+            <div></div>
+          </a>
+      
+    </div>
+  </nav>
+</header>
+
+
+
+      
+
+  
+  <div class="page-wrapper">
+    
+  <div id="post-background"></div>
+
+
+    <div id="contentbody" class="" style="">
+      
+
+<div id="post">
+  <div class="title-section">
+    
+      <div class="wrapper title-bar-container">
+        <div class="glow left"></div>
+        <div class="title-bar">
+          <div class="title with-subtitle">
+            <h1>Spectrum Dispatch</h1>
+            <h2>Lore</h2>
+          </div>
+          <div class="details">
+            <div>
+              <h3>ID:</h3>
+              <p>12956</p>
+              <div class="cboth"></div>
+            </div>
+            <div>
+              <h3>Comments:</h3>
+              <p class="comment-count">123</p>
+              <div class="cboth"></div>
+            </div>
+            <div>
+              <h3>Date:</h3>
+              <p>April 11th 2013</p>
+              <div class="cboth"></div>
+            </div>
+            <div></div>
+          </div>
+          <div class="cboth"></div>
+        </div>
+        <div class="glow right"></div>
+      </div>
+    
+  <div class="title-container">
+    <div class="title no-subtitle">Writer's Guide: Part Two</div>
+      </div>
+
+  </div>
+
+  
+  <div class="lightbar toplightbar">
+    <div class="lightbarlights"></div>
+    <div class="footershadow"></div>
+  </div>
+
+
+  <div class="wrapper"><div class="hr"></div><div class="content-block4"><div class="content"><div class="top"></div><h1>Writer's Guide: Part Two</h1><div class="cboth"></div></div><div class="bottom"></div></div><div class="content-block2"><div class="content clearfix"><img src="/media/viqhhayioaj1er/post_section_header/WriterGuideFI2_Crop.jpg"><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div><div class="content-block1 rsi-markup">
+<div class=" segment"><div class="content"><p><strong>Hello again, welcome back to another installment of the Star Citizen’s Writer’s Guide. We’re all really excited about the great response to last week’s issue and this feature in general.</strong> <strong>One change to this week’s installment — I know I said that we would discussing local governments and Citizenship, but as I was writing out the issue, the Citizenship section kept expanding and expanding. </strong></p>
+
+<p><strong>Ultimately, I decided to hold off on the local government stuff until next week so that we wouldn’t have to trim either one.</strong> <strong>For new readers, please check out our <a href="https://robertsspaceindustries.com/comm-link/spectrum-dispatch/12946-Writers-Guide-Part-One">caveats</a> for this series. Here’s a summary: this information is meant to be used for coming up with your fan fiction. Each of these installments is not complete or intractable information about their respective topics. We’re still designing the universe, fleshing out details, and saving information for bigger releases.</strong><br>
+</p><h3><strong><span class="caps">ERRATA</span></strong></h3><br>
+In the inaugural installment of Errata, this is where we will address questions, offer further clarity, or present additional facts on topics covered in the previous week’s installment. Last week, we started looking at the human experience, specifically the <span class="caps">UEE</span> and its structure.
+
+<p><span class="caps">TIMELINE</span></p>
+
+<p><span class="initial">A</span>s requested, we created a graphic of the timeline presenting the facts depicted in the Time Capsules. It will be posted at the end of the issue.</p>
+
+<p><span class="caps">MILITARY</span> <span class="caps">RANKS</span></p>
+
+<p>For simplicity’s sake, we modeled the military ranking system after the modern U.S. Navy:</p>
+
+<p><strong>Navy Officers (<span class="caps">UEEN</span>)</strong></p>
+
+<p>2nd Lieutenant<br>
+Lieutenant<br>
+Lt. Commander<br>
+Commander<br>
+Captain<br>
+Rear Admiral<br>
+Vice Admiral<br>
+Admiral</p>
+
+<p>Notes about these ranks: Pilots are 2nd Lieutenant or above. 2nd Lieutenant through Captain are the most common ranks among fighter pilots. Carriers are under the command of an Admiral. Each Squadron consists of a carrier, its various wings, and support crew. Some carriers have Ground Assault Specialists onboard.</p>
+
+<p>As for the Army and Marines, we have not addressed rank structure since we’re focused on the single-player experience at the moment and characters will be enlisted in the Navy. If you want to create a character for your fiction in the Army or Marine, I would recommend sticking with the current rank structure.</p>
+
+<p><span class="caps">UEE</span> <span class="caps">SENATE</span>/POLITICAL <span class="caps">STRUCTURE</span> There are a couple of updates regarding the political structure. There was a strong reaction against the use of the word Commoner; we agreed and brainstormed an alternative. Here’s an amended chart: </p>
+
+<a class="image  js-open-in-slideshow" data-id="rhifbhr9fli9kr" data-full_res="/media/rhifbhr9fli9kr/source/UEE_PoliticalStructure3.jpg" data-low_res="/media/rhifbhr9fli9kr/slideshow_pager/UEE_PoliticalStructure3.jpg" data-source_url="/media/rhifbhr9fli9kr/source/UEE_PoliticalStructure3.jpg" rel="post"><img src="/media/rhifbhr9fli9kr/post/UEE_PoliticalStructure3.jpg" alt=""></a>
+
+<p><span class="caps">HEADS</span> OF <span class="caps">STATE</span> &amp; <span class="caps">THEIR</span> <span class="caps">RESPONSIBILITIES</span></p>
+
+<p>We haven’t really fleshed out the day-to-day responsibilities of the political figures but here’s a broad reference guide I keep in mind when coming up with things for them:</p>
+
+<p><strong>Imperator:</strong> Originally the dictator; after the Messer Era, the <span class="caps">UEE</span> restructured the Imperator to more resemble a President (democratically elected, term limits, not insane, etc.). To quote Ivar Messer, “every ship needs a captain.” The position is there to provide a final decision. Bills and legislation start in the Senate, move up to the High-Secretary, then go to the Imperator for approval or veto.</p>
+
+<p><strong>High-Secretary:</strong>  This is the chief executive of anything structural that takes place inside the <span class="caps">UEE</span> borders — communications, transportation, sewage, power, agriculture, bills/legislation, etc. Any and all issues regarding the infrastructure of the <span class="caps">UEE</span> are debated and refined by Congress, then eventually funneled to the High-Secretary before they are passed up to the Imperator.</p>
+
+<p><strong>High-Advocate:</strong> Basically the Attorney General. This office handles enforcement of laws, but also coordinate efforts to make sure that <span class="caps">UEE</span> local governments are complying with the latest amendments to galaxy-wide imperial <span class="caps">UEE</span> laws.</p>
+
+<p><strong>Senators:</strong> Elected by the Citizens of their respective planets and work primarily out of the Congress on Earth (though they will return to put in time with their constituency, particularly when it’s nearing election time). Senators do not directly create any local legislation or appoint local officials, but their endorsement and influence are undeniably powerful.</p>
+
+<p><span class="caps">POLITICAL</span> <span class="caps">PARTIES</span></p>
+
+<p>Due to the massive size of the <span class="caps">UEE</span>, there are dozens, even hundreds of political parties but there are three that dominate the political landscape.</p>
+
+<p><strong>Universal</strong> - Institution-focused ideology. Government and systems will guide the people. Seen by some as a blue-blood, wealth-based ideology.</p>
+
+<p><strong>Centralist</strong> - Traditional even somewhat libertarian-styled political ideology. It’s about sustaining and maintaining the status quo, and excelling through the values of humanity. Embrace the past, be proud of where you came from, etc. Needless to say, they support keeping Earth as the capital.</p>
+
+<p><strong>Transitionalists (Transits)</strong> - Relatively recent “People’s Party” formed around promoting a progressive human agenda. Most of their rhetoric is aimed towards “the future.” They obviously support Terra as the center of the <span class="caps">UEE</span>.</p>
+
+<p><span class="caps">MILITARY</span> <span class="caps">HIGH</span>-<span class="caps">COMMAND</span></p>
+
+<p>When Messer consolidated his power and transformed from the Prime Citizen to the Imperator, he also bonded the powers of the High-General to the position of Imperator (in an effort to prevent any other faction of the government from legally wielding the military against him). Therefore, the <span class="caps">UEE</span> High Command was created, a committee of representatives from the branches of the military to facilitate the orders of the Imperator.</p>
+
+<p>Think of it like the Joint Chiefs, a consolidation of high-ranking military officials who organize and brief the Imperator about military matters.<br>
+</p><h3><strong><span class="caps">CIVILIAN</span> <span class="caps">VERSUS</span> <span class="caps">CITIZEN</span></strong></h3><br>
+The general public are known as civilians (or Civs used with varying levels of derision). They are the salt of the earth, the workers and the masses. Everyone’s born a civilian, only the civically minded become Citizens. Civilians are still registered residents under the <span class="caps">UEE</span>. At the age of seventeen Standard Earth Years, they start paying taxes, can own property, and vote in local elections and legislation if they’re registered to a system. Citizens are chosen members of society.  This is a status that has to be earned. In short, you must show an active commitment to furthering the interests of the <span class="caps">UEE</span>, which can be done through distinguished military service, community service, or application (that’s the least successful by far). It’s not easy to become a Citizen. It’s not meant to be; the powerful hate sharing their power.
+
+<p>As far as the perks for being a Citizen, here’s our working list at the moment:<br>
+</p><ul><li>Allowed to own a Multi-System Corp</li><br>
+<li>Pursue political office (on a local or <span class="caps">UEE</span> level)</li><br>
+<li>Vote for <span class="caps">UEE</span> issues (Senators, Referendums, etc.) &amp; Local Elections/Legislation</li><br>
+<li>Work for the <span class="caps">UEE</span> government (like the Advocacy)</li><br>
+<li>Easier to obtain <span class="caps">UEE</span> trade licenses to sell/buy from Xi’An or Banu</li><br>
+<li>Local Law Enforcement might let you skate on smaller crimes (unofficial perk)</li><br>
+<li>They pay a slightly lower tax rate</li><br>
+</ul>
+
+<p>Convicted criminals are never allowed to become Citizens and a long history of behavior deemed counter to the purposes and dictates of the <span class="caps">UEE</span> can cause your Citizenship to be revoked.</p>
+
+<p><span class="caps">LIFE</span> <span class="caps">WITHOUT</span> <span class="caps">CITIZENSHIP</span></p>
+
+<p>To many, it may sound like Citizenship is the only way to have a good life in the <span class="caps">UEE</span>. Ultimately, it depends on your priorities. There are things that absolutely require Citizenship to achieve (see above list). But if you want to live on the edge, make your living slugging cargo or exploring the depths of space on the fringe, there isn’t much that Citizenship can offer you.</p>
+
+<p><span class="caps">FOR</span> <span class="caps">WRITING</span> </p>
+
+<p>This is a big topic, one that is in constant discussion as to how it will be implemented into gameplay. This entry is barely going to scratch the surface about the possibilities that you can explore with Citizens. As I said in the last post, we’re trying to build a universe of greys, not black-and-whites. Of moral complexity, not absolutes. But here are the broad strokes to set the boundaries of where you can go for your own stories.</p>
+
+<p>There isn’t a class war going on … yet. While it’s true that Civilians are the lowest class in the <span class="caps">UEE</span>, this is not the Middle Ages. Civilians are not slaves or a subjugated populace. They are not treated like scum or spit on by the powerful. Do some Civilians feel like they’re toiling away while the Citizens live in the lap of luxury? Sure. Conversely, do some Citizens resent Civilians? Sure, there can be fat-cat Citizens who despise the dirty plebes outside their door, but others use their positions and resources to look out for them.</p>
+
+<p>So what is the general sentiment about the Citizens/Civilians dynamic? If you can boil the sentiments of a populace into a single emotional feeling: it’s a system that seems to be working for the most part. For a majority of people, this is just always the way it’s been and it’s not likely to change anytime soon. From the govenrment’s perspective, there are trillions of people in the <span class="caps">UEE</span>. Think how difficult it is to have an election with the 120 million or so voting citizens in the U.S. alone. So they needed some way to whittle down the enfranchised populace.<br>
+</p><h3><strong><span class="caps">QUESTIONS</span></strong></h3><br>
+From Samden &amp; Gundersum:
+
+<p>Q:  You mentioned the Advocacy as a cold war <span class="caps">KGB</span>/CIA mirror, are they still the arm of the <span class="caps">UEE</span> which conducts covert affairs and espionage?</p>
+
+<p>A:  I think the Advocacy handles counterespionage while the military handles intelligence/espionage missions.</p>
+
+<p>From corocoro:</p>
+
+<p>Q:  You didn’t mention any form of a judiciary power – has technology made court cases obsolete or are they just too irrelevant to the game/lore? From the Kid Crimson story it sounded like the Advocacy is confirming guilt and then acting based on their findings without oversight (both jury and executioner), but how are low-profile cases and those that are “skirting” the law handled?</p>
+
+<p>A: The Advocacy is responsible for the courts as well. There is still due process (which was probably forgotten during the Messer Era). Advocacy Agents are legally allowed to shoot/blow-up criminals in the field if they are acting in self-defense or if innocent lives are at risk. The existence of ‘kill-orders’ has long been unofficially acknowledged within the <span class="caps">UEE</span> infrastructure. Though never confirmed, the rumor is that they are only placed on the most dangerous and vicious fugitives.</p>
+
+<p>It’s been mentioned in some of the comments: the Advocacy is like the <span class="caps">FBI</span>. They don’t handle small-fry cases; they come in for egregious inter-system fugitives and murderers. Anything else is handled by local law enforcement and bounty hunters.<br>
+</p><h3><strong><span class="caps">NEXT</span> <span class="caps">WEEK</span></strong></h3><br>
+<h3><strong>We’ll get around to discussing how local governments work and if there’s space, will start covering how the media and communication systems affect the flow of information.</strong></h3><br>
+<h3><strong>As always, feel free to leave questions about this week’s post or about next week’s topics in the comments below.</strong></h3><br>
+<h3>Without further ado, here’s the timeline (created by Zane):</h3>
+
+
+
+
+<p><a></a><br>
+<strong>2075:</strong> Roberts Space Industries introduces Quantum Core Engine Technology. Capable of travelling at 1/100th the speed of light, this new engine allows humanity to travel to the corners of our solar system with relative ease. <br>
+<a></a><br>
+<strong>2113:</strong> Terraforming technology patented.<br>
+<a></a><br>
+<strong>2120:</strong> First attempt to terraform Mars begins.<br>
+<a></a><br>
+<strong>2125:</strong> The Mars Tragedy. Early attempt at terraforming the planet suffers catastrophic failure. Over 5000 souls killed when the atmo collapses.<br>
+<a></a><br>
+<strong>2140:</strong> First commercially available starship.<br>
+<a></a><br>
+<strong>2157:</strong> Mars successfully terraformed. Memorial built to honor those killed in the Mars Tragedy.<br>
+<a></a><br>
+<strong>2214:</strong> New version of the <span class="caps">RSI</span> engine released, allowing travel up to 1/10th the speed of light. More ships exploring our solar system.<br>
+<a></a><br>
+<strong>2232:</strong> Artemis Launched. First attempt to have a manned spacecraft fly (slow-burn) to the nearest star system. Captain, crew and thousands of volunteer colonists are placed in stasis for the flight. Ultimately the ship disappears.<br>
+<a></a><br>
+<strong>2262:</strong> A series of ships inexplicably disappear in the same area of space. Drawing comparisons to the Bermuda Triangle, the government declares the Neso Triangle a no-fly zone. There is much more myth and conjecture about why this happens than there are hard facts.<br>
+<a></a><br>
+<strong>2271:</strong> After almost ten years of study, Nick Croshaw goes to investigate the Bermuda Triangle-esque Space Anomaly and discovers the first jump point, becoming the first human to travel to another system and the godfather of the modern Navjumpers.<br>
+<a></a><br>
+<strong>2380:</strong> Croshaw System has been terraformed. The search for new jump points signifies the beginning of Humanity’s expansion to the stars. The Earth’s social and political differences are set aside. We are united in our desire to strike out into the stars. The United Nations of Earth (<span class="caps">UNE</span>) is born.<br>
+<a></a><br>
+<strong>2438:</strong> First Contact. It is considerably less cinematic or romantic than many had dreamed of. An explorer encounters a Banu in Davien. He is just as surprised as we are. The Banu are also just beginning to expand into the universe. General Neal Socolovich and delegates negotiate the first intergalactic peace and trade treaty.<br>
+<a></a><br>
+<strong>2460:</strong> Through expansion and terraforming, there are vast amounts of land and territory for humanity to move to. Earth is overcrowded, so more and more people are leaving to stake their claim out in the universe.<br>
+<a></a><br>
+<strong>2516:</strong> Terra settlement established. Found at a confluence of jump points, it’s a perfect nexus.<br>
+<a></a><br>
+<strong>2523:</strong> 70% of humans live off-world. They feel that they deserve equal representation in <span class="caps">UNE</span> proceedings. The government changes form once again, becoming the United Planets of Earth (<span class="caps">UPE</span>). The new government will be run by a tribunal; a High-Secretary (responsible for maintaining the infrastructure), High-General (responsible for expansion and protection), and a High-Advocate (responsible for maintaining the law).<br>
+<a></a><br>
+<strong>2530:</strong> Discovery of the Xi’An Empire. We stumble into their territory without knowing and are about to start terraforming. High-General Volder receives criticism for being too aggressive, while there is muscle flexing and threats from both sides. A cold war of sorts begins, with occasional casualties, but not full-on open conflict.<br>
+<a></a><br>
+<strong>2541:</strong> The <span class="caps">UPE</span> first establish contact with the Tevarin. While not as technologically advanced as us, they were just beginning to strike out into the universe. A proud, martial society, the Tevarin wanted what we had and struck first. The First Tevarin War begins. Colonel Ivar Messer, a brilliant and ruthless strategist, distinguishes himself in the Battle of Idris IV. He quickly becomes the pride of the military and the face of the War.<br>
+<a></a><br>
+<strong>2546:</strong> Messer, now promoted to commander, brings the captured Tevarin leader to the <span class="caps">UPE</span> floor. He rides the popularity of his victory to become High-General. Claiming the Tribunal is an outdated system and cultivating a fear of the Xi’An, Messer proposes the creation of a new single office with the title of Prime Citizen. Upon election as the first (and last) Prime Citizen, it isn’t long before he restructures the government into the new United Empire of Earth (<span class="caps">UEE</span>) and annoints himself Imperator, ushering on in an age of unprecedented expansion and colonization.<br>
+<a></a><br>
+<strong>2603-2610:</strong> The Second Tevarin War. Repopulated after hiding on the Fringe, the Tevarin have spent the last fifty years building their forces for the sole purpose of retaking their homeworld Kaleeth (renamed/resettled by the <span class="caps">UEE</span> as Elysium IV. While theirs is a cause that some humans could support, the <span class="caps">UEE</span> isn’t about to give up territory. Realizing that they can’t win, the Tevarin decide to make a final desperate push to scuttle their ships on Elysium IV. If they can’t live there, they will die there.<br>
+<a></a><br>
+<strong>2638:</strong> Senator Assan Kieren of Terra publicly decries the pro-military agenda of the <span class="caps">UEE</span> and its unconditional support of the military-industrial complex. He calls for another vote of sovereignty for Terra and its adjacent systems. Imperator Messer <span class="caps">III</span> wields the <span class="caps">UEE</span>’s brutally efficient propaganda machine to discredit and destroy Kieren, who disappears soon after. There are rumors that he is murdered, but nothing can be proven.<br>
+<a></a><br>
+<strong>2681:</strong> The Vanduul, a nomadic leeward race in the west, starts raiding our new settlements in the Tevarin systems and disappearing. They seemingly have no homeworld; each Vanduul clan is a roaming fleet, making them exceedingly hard to catch.<br>
+<a></a><br>
+<strong>2715-2788:</strong> The military regime reaches a plateau. While the human populace has been somewhat beaten into submission, there’s a current of subversion in the culture. People are starting to see the cracks in the system. Activist groups launch attacks against the political/propaganda machine. The military is stretched thin, bracing for war with Xi’An, chasing down Vanduul raiders, and trying to maintain security on the human systems. The Imperator’s power is waning.<br>
+<a></a><br>
+<strong>2789:</strong> In a daring act of defiance, peace is independently brokered with the young Xi’An Emperor Kr.ē by Senator Terrence Akari of Terra, who refuses to fight open war on his doorstep. Terra blasts Earth for being imperialistic and short-sighted. Xi’An looks at the situation as a potential way to create a divide in the Human Empire.<br>
+<a></a><br>
+<strong>2792:</strong> The Massacre of Garron II. A terraforming Corp begins to terraform an inhabited planet. The inhabitants weren’t star-travellers, just a developing race, which get wiped out from the atmo-processors. The corp vehemently denies that the aliens were capable of conscious thought. Activist vid-footage of the aliens’ rational behavior is leaked to the Spectrum. It is also revealed that the terraforming Corp is closely tied to the Benevolent Imperator’s family. That’s the final straw; the people rise up and overthrow of the government. Erin Toi of Earth becomes the new Imperator and promises an age of enlightenment and social consciousness.<br>
+<a></a><br>
+<strong>2795:</strong> The Fair Chance Act is ratified, decreeing that is a capital crime to attempt to terraform planets with developing creatures. These planets are to be left alone to give the species a chance to advance/evolve.<br>
+<a></a><br>
+<strong>2800:</strong> <span class="caps">UEE</span> builds the Ark, a repository of information and culture located in space for all the races in the universe. It is seen by some as an attempt at reparation.<br>
+<a></a><br>
+<strong>2872:</strong> In response to criticism that humanity is only interested in greed and blood, the <span class="caps">UEE</span> embarks on its greatest achievement: a SynthWorld, converting a lifeless rock into a life-sustaining planet. Construction begins in Chronos system. It is viewed as the current era’s legacy. A massive undertaking, it will take decades, maybe centuries to complete.<br>
+<a></a><br>
+<strong>2920:</strong> The SynthWorld project is moving slowly and it’s draining the Empire economically. This is the point where our reach starts exceeding our grasp. The disparity between the rich and the poor is reaching an all-time divide, and the poor are reacting with greater and greater frustration. The Vanduul attacks are growing in frequency and the <span class="caps">UEE</span> doesn’t seem to be doing a thing about it.<br>
+<a></a><br>
+<strong>2942:</strong> Today…</p></div><div class="cboth"></div></div>
+<div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+
+  <div class="wrapper">
+    
+    <div class="end-transmission-container">
+      <div class="glow left"></div>
+      <div class="title-bar">
+        <h1>End Transmission</h1>
+      </div>
+      <div class="glow right"></div>
+    </div>
+  </div>
+  
+
+  
+    <div class="two-line-separator"></div>
+  <div class="channel-banner">
+  <div class="header-container">
+                  <div>
+      <div class="header">
+        <div class="wrapper">
+                      <div class="image" style="background-image:url('/media/viqhhayioaj1er/post_section_header/WriterGuideFI2_Crop.jpg');"></div>
+                    <div class="texts">
+            <div class="title">
+              <div class="presented-by">Part of</div>
+              <div class="cboth"></div>
+              <h1>Writer's Guide</h1>
+              <a class="holobtn " href="/comm-link?series=writers-guide">
+  <span class="holobtn-top abs-overlay trans-02s">More in this series </span>
+  <span class="holobtn-bottom abs-overlay trans-02s"></span>
+</a>
+              <div class="cboth"></div>
+            </div>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content-carousel">
+    <div class="carousel-mask">
+      <div class="left-shadow shadow"></div>
+      <a href="" class="prev js-prev"><div class="hover trans-03s trans-opacity"></div></a>
+      <div class="centerer">
+        <div class="carousel">
+                      <a href="/comm-link/spectrum-dispatch/12946-Writers-Guide-Part-One" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/viqhhayioaj1er/home_transmissions_item_expanded/WriterGuideFI2_Crop.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Writer's Guide: Part One</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-04-04 11:21:38</span></div>
+    <div class="section">spectrum-dispatch</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/spectrum-dispatch/12956-Writers-Guide-Part-Two" class="series-carousel-item content-block3 trans-05s  on">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/viqhhayioaj1er/home_transmissions_item_expanded/WriterGuideFI2_Crop.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Writer's Guide: Part Two</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-04-11 10:34:00</span></div>
+    <div class="section">spectrum-dispatch</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/spectrum-dispatch/12964-Writers-Guide-Part-Three" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/viqhhayioaj1er/home_transmissions_item_expanded/WriterGuideFI2_Crop.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Writer's Guide: Part Three</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-04-18 10:00:31</span></div>
+    <div class="section">spectrum-dispatch</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/spectrum-dispatch/12972-Writers-Guide-Part-Four" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/viqhhayioaj1er/home_transmissions_item_expanded/WriterGuideFI2_Crop.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Writer's Guide: Part Four</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-04-25 11:00:13</span></div>
+    <div class="section">spectrum-dispatch</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/spectrum-dispatch/12980-Writers-Guide-Part-Five" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/viqhhayioaj1er/home_transmissions_item_expanded/WriterGuideFI2_Crop.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Writer's Guide: Part Five</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-05-02 11:00:37</span></div>
+    <div class="section">spectrum-dispatch</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/spectrum-dispatch/12988-Writers-Guide-Part-Six" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/viqhhayioaj1er/home_transmissions_item_expanded/WriterGuideFI2_Crop.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Writer's Guide: Part Six</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-05-09 11:00:07</span></div>
+    <div class="section">spectrum-dispatch</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/spectrum-dispatch/12996-Writers-Guide-Part-Seven" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/viqhhayioaj1er/home_transmissions_item_expanded/WriterGuideFI2_Crop.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Writer's Guide: Part Seven</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-05-16 11:00:48</span></div>
+    <div class="section">spectrum-dispatch</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/spectrum-dispatch/13004-Writers-Guide-Part-Eight" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/viqhhayioaj1er/home_transmissions_item_expanded/WriterGuideFI2_Crop.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Writer's Guide: Part Eight</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-05-23 11:00:17</span></div>
+    <div class="section">spectrum-dispatch</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/spectrum-dispatch/13011-Writers-Guide-Part-Nine" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/viqhhayioaj1er/home_transmissions_item_expanded/WriterGuideFI2_Crop.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Writer's Guide: Part Nine</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-05-30 11:00:09</span></div>
+    <div class="section">spectrum-dispatch</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/spectrum-dispatch/13024-Writers-Guide-Part-Ten" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/viqhhayioaj1er/home_transmissions_item_expanded/WriterGuideFI2_Crop.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Writer's Guide: Part Ten</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-06-06 11:00:14</span></div>
+    <div class="section">spectrum-dispatch</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/spectrum-dispatch/13054-Writers-Guide-Part-Eleven" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/viqhhayioaj1er/home_transmissions_item_expanded/WriterGuideFI2_Crop.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Writer's Guide: Part Eleven</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-06-13 11:00:52</span></div>
+    <div class="section">spectrum-dispatch</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/spectrum-dispatch/13065-Writers-Guide-Part-Twelve" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/viqhhayioaj1er/home_transmissions_item_expanded/WriterGuideFI2_Crop.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Writer's Guide: Part Twelve</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-06-20 11:00:26</span></div>
+    <div class="section">spectrum-dispatch</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/spectrum-dispatch/13123-Writers-Guide-Part-Thirteen" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/viqhhayioaj1er/home_transmissions_item_expanded/WriterGuideFI2_Crop.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Writer's Guide: Part Thirteen</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-07-04 21:00:00</span></div>
+    <div class="section">spectrum-dispatch</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                  </div>
+      </div>
+      <a href="" class="next js-next"><div class="hover trans-03s trans-opacity"></div></a>
+      <div class="right-shadow shadow"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $(".channel-banner .content-carousel").each(function(index, element) {
+      $(element).data("carousel", new RSI.FullCarousel({
+        holder:$(element).find(".carousel"),
+        prevButton:$(element).find(".js-prev"),
+        nextButton:$(element).find(".js-next"),
+        circular:true,
+        displayItems:3 // healthy amount so that we never see empty
+      }));
+    });
+  });
+</script>
+    
+
+  <div class="two-line-separator"></div>
+  
+    
+<div class="wrapper force-one-column" id="comments">
+  <div class="holder">
+    <div class="title-bar">
+      <div class="count">
+        <div class="label">Comments</div>
+        <div class="value">0123.<span class="js-comment-decimal">0</span></div>
+        <div class="cboth"></div>
+      </div>
+      <div class="title">
+        <h1>Feedback</h1>
+      </div>
+      <div class="cboth"></div>
+    </div>
+
+    <div class="main-buttons-holder-container">
+      <div class="main-buttons-holder">
+        <a href="/comm-link/spectrum-dispatch/12956-Writers-Guide-Part-Two" class="add-comment js-add-comment trans-02s ">Add New Comment</a>
+        <div class="settings js-settings">
+          <h1>Settings</h1>
+          <label>View mode:</label>
+          <a href="#" class="js-comments-view to-one-column js-to-one-column trans-01s on">One column</a>
+          <a href="#" class="js-comments-view to-two-columns js-to-two-columns trans-01s ">Two columns</a>
+          <label>Sort by:</label>
+          <a href="#" class="js-comments-sort to-oldest js-to-oldest trans-01s on">Oldest first</a>
+          <a href="#" class="js-comments-sort to-newest js-to-newest trans-01s ">Newest first</a>
+          <a href="#" class="js-comments-sort to-appreciated js-to-appreciated trans-01s ">Most appreciated first</a>
+
+                    <label class="checkbox show-appreciation js-show-appreciation on">
+            <input type="checkbox">
+            <span>Enable appreciation</span>
+          </label>
+                  </div>
+        <a href="" class="view-settings js-view-settings"><div class="hover trans-02s"></div></a>
+        <div class="triangle"></div>
+      </div>
+    </div>
+
+          <form class="reaction-form js-comment-form comment-submission">
+        <input type="hidden" class="js-form-data js-id id" name="id" value="12956">
+  <textarea class="js-form-data body js-body js-focus-me" name="body"></textarea>
+  <div class="cboth"></div>
+  <a class="shadow-button trans-02s trans-color submit js-submit">
+  <span class="label js-label trans-02s">Submit</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+    <div class="success-message js-success-message">Your comment has been posted successfully.</div>
+  <div class="error-message js-error-message"></div>
+  <div class="cboth"></div>
+</form>    
+    <div class="comment-listing"></div>
+
+    <div class="comment-loader traj-loader">
+      <div class="fast-blink"></div>
+      <span>Loading Additional Feedback</span>
+    </div>
+
+    <div class="cboth"></div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    window.comments = new RSI.Comments({
+      atom_url:"/comm-link/spectrum-dispatch/12956-Writers-Guide-Part-Two",
+      comment_listing_el:$(".comment-listing"),
+      comment_submission_form_el:$(".comment-submission"),
+      api_object:RSI.Api.Comments,
+      lazyLoading: true,
+      comment_count: 123,
+      subject_id:12956,
+      append:false,
+      texts: {
+        "edit": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        },
+        "reply": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        }
+      },
+      "insertion_conf": {
+        "mode":"html"
+      },
+      "api_function_names": {
+        "delete":"erase",
+        "load":"listing",
+        "sort":"listing"
+      }
+    });
+  });
+</script>
+  
+</div>
+
+    </div>
+
+    
+  </div>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.11/moment-timezone-with-data.min.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+      $.cookie('moment_timezone', moment.tz.guess(), { expires: 31, path: '/' });
+  });
+</script>
+
+
+
+
+               <script id="tpl_number_counter_digits" type="text/x-jsmart-tmpl">{if !$seperator}{$seperator=','}{/if}
+{if !$first_max}{$first_max=9}{/if}
+{for $digit = 0 to $length-1}
+  <div class="mask">
+    <div class="carousel">
+      {if $digit == 0}
+        {$max = $first_max}
+      {else}
+        {$max = 9}
+      {/if}
+      {for $i=0 to $max}
+        <div class="item {if $val_arr[$digit] == $i}on{/if}" rel="{$i}">{$i}
+      {/for}
+    
+  
+  {if ($length - $digit) % 3 == 1 && $digit != $length-1}
+  <div class="seperator">{$seperator}
+  {/if}
+{/for}</script>
+<script id="base_modal" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  <div class="top-border">
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+  
+</script>
+<script id="base_modal_flat" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  
+  
+</script>
+<script id="tpl_modals_slideshow" type="text/x-jsmart-tmpl"><img class="top-border" src="/rsi/static/images/modal_top.png">
+<a href="" class="close js-close">
+<div class="mask">
+  <a class="js-prev prev control">
+  <a class="js-next next control">
+  <div class="slideshow-carousel carousel" rel="{$index}">
+    {foreach from=$images item="image"}
+      <div class="{if $index == $image@index}on{/if}">
+      {if $image.is_video}
+        <div class="video-holder">
+          <div id="slideshow_video_{$image@index}" data-source="{$image->source_url}">
+            <video width="100%" height="100%" preload="auto" {if $video}src="{$image->source_url}"{/if} controls>
+          
+        
+      {else}
+        <div class="media js-media-slideshow-{$image@iteration}">
+        {if $image.low_res}
+          <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source data-srcset="{$image.full_res}" media="(min-width: 300px)" />
+            <!--[if IE 9]><![endif]-->
+            <img data-srcset="{$image.low_res}" alt="{$image.title}" />
+          
+        {else}
+          <img data-src="{$image.source_url}" />
+        {/if}
+        
+      {/if}
+        <div class="text">
+          {if !$image.is_video}
+          <a href="{$image.source_url}" class="download">
+          {/if}
+          <div class="copyright">&copy; 2012-{$year}<br />Cloud Imperium Games Corporation &<br />Roberts Space Industries Corp.
+          <div class="page-number">{$image@iteration} / {count($images)}
+          <div class="caption v-center">{if $image.title && $image.title != "undefined"}{$image.title}{/if}
+          <div class="cboth">
+        
+      
+    {/foreach}
+  
+
+<img class="bottom-border" src="/rsi/static/images/modal_bottom.png"></script>
+<script id="tpl_contact_us" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    
+<div id="contact" class="inner-content on">
+  <h2><span class="icon">CONTACT
+  <div class="padder">
+    <div class="separator">
+    <form name="" action="" method="POST">
+  <div class="error-message js-error-message">
+  <div class="success-message js-success-message">
+    <fieldset>
+    <label for="contact_subject">Subject
+    <input type="text" name="subject" value="" class="trans-02s trans-color trans-box-shadow" id="contact_subject" />
+    <label>Contacting us for:
+    <ul class="category-info">
+            <li id="tech_support_info">Questions about download, installation, networking, or in-game client problems
+            <li id="subscription_info">Questions about monthly and yearly subscription plans
+            <li id="account_billing_info">Issues related to your account, such as incorrect information or ability to access account, or Billing with regards to payments and payment methods
+            <li id="melt_request_info">To reclaim a pledge over $1,000 for store credit (please note - this is a permanent action)
+            <li id="merchandise_info">Questions about physical and/or shipped merchandise
+            <li id="hacked_info">Issues related to compromised account or missing pledge.
+            <li id="account_recovery_info">For issues with account authentication, lost passwords and related queries
+            <li id="probation_info">Issues related to forums probation or ban
+            <li id="refund_request_info">Refund requests and related inquiries
+            <li id="customer_support_info">For general questions and queries regarding Star Citizen
+          
+  
+  <fieldset>
+    <label for="contact_text">Fescription
+    <textarea name="text" class="trans-02s trans-color trans-box-shadow" id="contact_text">
+  
+  <div class="contact-submit-wrapper">
+    <div class="line">
+    <button class="submit js-submit"><strong>submit your message
+  
+
+    <div class="separator">
+  
+
+
+    
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  
+</script>
+<script id="tpl_concierge" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+<img src="/rsi/static/images/modal_yellow_line.png" />
+
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    
+
+<div id="contact" class="inner-content on">
+  <h2><span class="icon">CONCIERGE
+  <div class="padder">
+    <div class="separator">
+    <form name="" action="" method="POST" class="concierge-form">
+      <p class="head">We recommend that you check out the <a href="/faq">FAQs and other resources below if you are in need of information regarding RSI or Star Citizen. If your topic isn&rsquo;t covered, feel free to contact us!<br/><br/> - Gameplay : <a href="https://forums.robertsspaceindustries.com/categories/ask-a-developer">Ask A Dev<br/> - Suggestions: <a href="https://forums.robertsspaceindustries.com/categories/game-ideas">Game Ideas<br/> - Bug Reports (including PTU): <a href="https://forums.robertsspaceindustries.com/categories/test-pilot-headquarters">Test Pilot Headquarters<br/>
+      <div class="error-message js-error-message">
+      <div class="success-message js-success-message">
+
+      <fieldset class="concierge-form__field concierge-form__field--issue">
+        <label for="concierge_issue">Please choose your issue below
+        <select required id="concierge_issue" name="issue" class="trans-02s trans-color trans-box-shadow">
+          <option value="-">
+            -
+          
+                  
+      
+
+      <fieldset class="concierge-form__field concierge-form__field--problem concierge-form__field--secondary hidden">
+        <label for="concierge_problem">
+        <select required id="concierge_problem" name="problem" class="trans-02s trans-color trans-box-shadow">
+        
+      
+
+      <div class="issue-subfields">
+
+      <fieldset class="concierge-form__field concierge-form__field--secondary concierge-form__field--optional hidden">
+        <label for="concierge_attachment">Attachments <span>- Optional
+        <div class="concierge-form__attachment">
+            Add file here
+          <input class="concierge-upload-images-container" type="file" id="concierge_attachment" name="attachment" accept="image/*" multiple/>
+        
+      
+
+      <fieldset class="concierge-form__field concierge-form__field--secondary concierge-form__field--optional hidden">
+        <span class="h-text h-text--size-13 h-text--univia h-text--brown"><strong>Uploaded files 
+        <div class="concierge-form__file-preview">
+      
+
+      <fieldset class="concierge-form__field concierge-form__field--submit concierge-form__field--secondary last hidden">
+        <span class="submit-arrow">
+        <input type="submit" value="Send" class="trans-02s trans-color trans-background" />
+      
+
+    
+    <div class="separator">
+  
+
+
+
+    
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    
+<img src="/rsi/static/images/modal_yellow_line.png" />
+
+  
+</script>
+<script id="tpl_error" type="text/x-jsmart-tmpl"><div class="modal-error js-modal-error">
+  <p class="modal-text js-modal-text">
+  <a class="close js-close trans-03s .trans-opacity" href="">
+</script>
+<script id="tpl_success" type="text/x-jsmart-tmpl"><div class="modal-success js-modal-success">
+  <p class="modal-text js-modal-text">
+  <a class="close js-close trans-03s .trans-opacity" href="">
+</script>
+<script id="tpl_progress" type="text/x-jsmart-tmpl"><div class="modal-progress js-modal-progress">
+  <div class="traj-loader">
+    <div class="fast-blink">
+    <span class="modal-text js-modal-text">
+  
+</script>
+<script id="tpl_outbound" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    
+<div id="outbound" class="inner-content on">
+  <h2><span class="icon">OUTBOUND LINK
+  <div class="padder">
+    <div class="separator">
+    <form name="" action="" method="POST">
+      <div class="error-message js-error-message"> <span class=important>WARNING<br/><br/> This link will bring you outside of the RSI site and into the depths of the internet. Continue?<br/><br/><span class="url"> 
+      <div class="success-message js-success-message"><span class=important>STAND BY<br/><br/> Initiating hyperlink.<br/><br/>
+
+      <fieldset class="clearfix last">
+        <span class="submit-wrapper">
+          <span class="submit-hover trans-02s trans-opacity">
+          <input type="submit" value="WARP" class="trans-02s trans-color trans-background" />
+        
+      
+    
+    <div class="separator">
+  
+
+
+    
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  
+</script>
+
+<script id="tpl_l-notification-bar" type="text/x-jsmart-tmpl"><div class="l-notification-bar js-notification-bar">
+
+  <div class="l-notification-bar__watermark js-svg-inliner h-svg__logo-star-citizen">
+
+  <div class="l-notification-bar__boxes">
+    {if !$viewedCookieNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='cookie'
+          title='COOKIES:'
+          message="Our website uses Google Analytics to analyze our traffic. <br/>To learn how you can control Google's use of your data and how you can opt out <a href='https://www.google.com/policies/privacy/partners/'>click here."
+          linkText='See Details'
+          buttonText='Got it!'}
+      
+    {/if}
+
+    {if !$viewedPrivacyNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='privacy'
+          title='PRIVACY POLICY:'
+          message='We adjusted the PP to reflect the decision of the European Court of Justice regarding Safe Harbor, the fact that RSI has moved and added some services providers.'
+          linkText='View Privacy Policy'
+          buttonText='Got it!'}
+      
+    {/if}
+  
+
+
+</script>
+<script id="tpl_c-notification" type="text/x-jsmart-tmpl"><div class="c-notification js-bottom-notif-msg-{$type}">
+    <div class="c-notification__title">{$title}
+    <div class="c-notification__message">
+      {$message}
+    
+
+    {if $linkText}
+        <div class="c-notification__wrapper-link">
+            <a class="c-notification__link js-bottom-notif-link-{$type}">
+            {$linkText}
+            
+        
+    {/if}
+
+    <a class="c-notification__button js-bottom-notif-btn-{$type}">
+
+      <span class="c-notification__button-text">
+       {$buttonText}
+      
+
+      {if $type neq 'announcement'}
+        <div class="c-iconed__icon c-iconed__icon--checkmark">
+      {/if}
+    
+
+</script>
+
+<script id="tpl_confirm" type="text/x-jsmart-tmpl"><div class="modal-confirm js-modal-confirm clearfix">
+  <p class="modal-text js-modal-text">
+  <a class="bt-close js-close trans-03s trans-opacity" href="">
+  <a class="bt-confirm js-confirm trans-03s trans-opacity" href="">
+	<div class="buttons">
+		<a class="shadow-button trans-02s trans-color js-close bt-close rm"     >
+  <span class="label js-label trans-02s">Cancel
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s">
+  <span class="left-section">
+  <span class="right-section">
+
+		<a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">Confirm
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s">
+  <span class="left-section">
+  <span class="right-section">
+
+	
+
+</script>
+<script id="tpl_alert" type="text/x-jsmart-tmpl"><div class="modal-alert js-modal-alert clearfix">
+  <p class="modal-text js-modal-text">
+  <div class="buttons">
+    <a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">OK
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s">
+  <span class="left-section">
+  <span class="right-section">
+
+  
+</script>
+<script id="tpl_video" type="text/x-jsmart-tmpl">{extends file="base_modal"}
+{block name='modal_content'}
+<div id="ship-commercial" class="inner-content">
+  
+  <div class="hr">
+  <div class="content-block4">
+   
+    <div class="bottom">
+  
+  {if $distant_source=="vimeo"}
+  <iframe id="commercial" src="//player.vimeo.com/video/{$video_id}?wmode=transparent" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+  {else}
+  <iframe id="commercial" frameborder="0" allowfullscreen="1" title="YouTube video player" width="100%" height="100%" src="https://www.youtube.com/embed/{$video_id}?autoplay=1">
+  {/if}
+
+{/block}
+</script>
+      
+  <script id="tpl_comment_report" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    
+<div id="comment-report" class="inner-content on">
+  <h2><span class="icon">Report this comment
+  <div class="padder">
+    <div class="separator">
+    <form name="" action="" method="POST">
+<input type="hidden" name="comment_id" value="">
+  <div class="error-message js-error-message">
+  <div class="success-message js-success-message">
+    <fieldset>
+    <label>Report Type
+    
+
+
+  
+    <a class="js-selectlist selectlist " rel="" href="">
+    <div class="arrow">
+    <span>Please select the type best matching your report
+              <ul class="body">
+              
+                                                              <li class="js-option option " rel="obscenity" >
+                                                                        Obscene Content
+                                                    
+                                                                <li class="js-option option " rel="abuse" >
+                                                                        Abusive Conduct
+                                                    
+                                                                <li class="js-option option " rel="other" >
+                                                                        Other
+                                                    
+                                          
+            
+        <input type="hidden" name="category" class="js-category js-form-data" id="category"/>
+  
+    
+  <fieldset>
+    <label for="report_text">Details
+    <span class="corner-wrapper">
+      <textarea name="text" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_text" maxlength="2500">
+      <span class="corner corner-top-left">
+      <span class="corner corner-top-right">
+      <span class="corner corner-bottom-left">
+      <span class="corner corner-bottom-right">
+    
+  
+  <fieldset class="clearfix last">
+    <span class="submit-wrapper">
+      <span class="submit-hover trans-02s trans-opacity">
+      <input type="submit" value="Submit" class="trans-02s trans-color trans-background" />
+    
+  
+
+    <div class="separator">
+  
+
+
+    
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  
+</script>
+
+
+      <footer class="c-platform-footer c-platform-footer--rsi">
+  <div class="l-platform-footer-container">
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--sc">
+        <li class="c-platform-footer-brand__item">
+
+          <span class="c-brand c-brand--sc js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--sc">
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Join the<br>Universe
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--sc">
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen" class="c-platform-footer-link">About the Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/howto/1" class="c-platform-footer-link">How to Play</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/universe" class="c-platform-footer-link">The Universe</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/media" class="c-platform-footer-link">Media</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/fly-now" class="c-platform-footer-link js-google-analytics-event-tracker" data-event-category="FlyNow" data-event-label="footerClick">
+                Fly Now
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__sc">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">
+              Social Links
+            </span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/RobertsSpaceIndustries/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/RobertsSpaceInd">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/robertsspaceind">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.youtube.com/channel/UCTeLqJq1mXUX5WWoNXLmOIA">
+                <span class="c-iconed__icon c-iconed__icon--youtube"></span>
+                Youtube
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.twitch.tv/starcitizen">
+                <span class="c-iconed__icon c-iconed__icon--twitch"></span>
+                Twitch
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--s42">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--s42 js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--s42">
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Start the<br>Adventure
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--s42">
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42" class="c-platform-footer-link">The Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#enlist" class="c-platform-footer-link">Enlist Today</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#roadmap" class="c-platform-footer-link">Status</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/pledge/Packages/Squadron-42-Standalone-Pledge" class="c-platform-footer-link">Pledge</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__s42">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">Social Links</span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/Squad42/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/squadron_42">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/squadron42">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column is-active">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--rsi">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--rsi js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--rsi">
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi--fullcolor"></span>
+            </span>
+            <span class="c-brand__label">
+              Follow the Development
+            </span>
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--rsi">
+            <li class="c-platform-footer-list__item">
+              <a href="/" class="c-platform-footer-link">Home</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/comm-link" class="c-platform-footer-link">Transmissions</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/community" class="c-platform-footer-link">Community</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/roadmap" class="c-platform-footer-link">Development</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--platform">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Platform
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--platform">
+                          <li class="c-platform-footer-list__item">
+                <a href="/pledge" class="c-platform-footer-link ">Pledge Store</a>
+              </li>
+            
+            <li class="c-platform-footer-list__item">
+              <a href="/download" class="c-platform-footer-link ">Download</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/spectrum/community/SC" class="c-platform-footer-link">Spectrum</a>
+            </li>
+
+                          <li class="c-platform-footer-list__item">
+                <a href="/citizencon" class="c-platform-footer-link">Citizencon</a>
+              </li>
+                      </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--utility">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Utilities
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--utility">
+            <li class="c-platform-footer-list__item">
+              <a href="//support.robertsspaceindustries.com" class="c-platform-footer-link">Help</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/press" class="c-platform-footer-link">Press</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="https://cloudimperiumgames.com/join-us" class="c-platform-footer-link">Careers</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/tos" class="c-platform-footer-link">Terms of Services</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/privacy" class="c-platform-footer-link">Privacy Policy</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/eula" class="c-platform-footer-link">EULA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/dmca" class="c-platform-footer-link">DMCA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/acknowledgements" class="c-platform-footer-link">Acknowledgements</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  
+</footer>
+
+<div class="c-platform-copyright c-platform-copyright--rsi">
+  <div class="l-platform-copyright-container">
+    <a href="https://cloudimperiumgames.com" class="c-platform-copyright__logo h-svg__logo-cig js-svg-inliner"></a>
+    <p class="c-platform-copyright__body">© 2012-2019 Cloud Imperium Rights LLC and Cloud Imperium Rights Ltd</p>
+  </div>
+</div>
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHNFZPT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<script type="text/javascript">
+  window.RSI.Footer = new RSI.Footer();
+</script>
+
+    
+
+    <script type="text/javascript" src="/cache/en/rsi-platformbar-js.js?v=3.2.9.0"></script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"58013cabd7","applicationID":"375102748","transactionName":"Y1JaYktUWxZUV0QKV1oYe0NKQVoIGmZjKmtdQ111VltBF1pYXAZKDg1ZQlZYcwxbUA==","queueTime":0,"applicationTime":70,"atts":"TxVNFANOSEkXVRJZQ0lK","errorBeacon":"bam.nr-data.net","agent":""}</script></body>

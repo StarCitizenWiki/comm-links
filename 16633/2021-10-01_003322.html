@@ -1,0 +1,1943 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    
+      <!-- Anti-flicker snippet (recommended)  -->
+      <style>.async-hide { opacity: 0 !important} </style>
+      <script type="text/javascript">(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+      h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+      (a[n]=a[n]||[]).hide=h;if (d) a[n].push({'userId' : d});setTimeout(function(){i();h.end=null},c);h.timeout=c;
+      })(window,document.documentElement,'async-hide','dataLayer',1500,
+      {'GTM-KHNFZPT':true},undefined,'');</script>
+
+            <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"58013cabd7",applicationID:"375102748"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+      <meta name="viewport" content="width=device-width">
+      <meta name="description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans.">
+      <meta property="og:site_name" content="
+The Knowledge of Good and Evil: Part Two - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+" />
+      <meta property="og:image" content="https://robertsspaceindustries.com/media/z13iwjfrggl2xr/channel_item_full/GoodAndEvil_pt2.jpg" />
+      <meta property="og:description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans." />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://robertsspaceindustries.com/comm-link/SCW/16633-IMPORT" />
+      <meta property="og:locale" content="us_EN" />
+
+            
+
+            
+      <link href="/rsi/static/css/cross-brand-less.css?v=6.45.0" media="all" rel="stylesheet">
+      <link href='/rsi/static/packages/platformbar/rsi.platformbar.build.8e4cb.css' media="all" rel="stylesheet">
+      <link href='/rsi/static/packages/enlist/rsi.enlist.build.eebd2.css' media="all" rel="stylesheet"/>
+      
+            <script type="text/javascript" src="/cache/en/rsi-external-js.js?v=6.45.0"></script>
+      <script type="text/javascript" src="/cache/en/rsi-templates-js.js?v=6.45.0"></script>
+
+            
+      <link rel="stylesheet" href="https://use.typekit.net/dhw3beb.css">
+      
+
+              <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="a687ee30-df65-45a0-9d22-90de6c1bb964" type="text/javascript"></script>
+      
+      
+    <!-- Google Tag Manager -->
+        <script type="text/plain" data-cookieconsent="statistics">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHNFZPT');</script>
+    <!-- End Google Tag Manager -->
+
+
+      <title>
+The Knowledge of Good and Evil: Part Two - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+</title>
+
+            <script type="text/javascript" src='/rsi/static/packages/core/rsi.core.build.804b0.js'></script>
+      <script type="text/javascript" src='/rsi/static/packages/account/rsi.account.build.7a888.js'></script>
+      <script type="text/javascript" src='/rsi/static/packages/store/rsi.store.build.cd9a7.js'></script>
+
+      <script>
+        $(document).ready(function() {
+          window.Common = new RSI.Common({});
+          window.Main = new RSI.Main({
+            'is_mobile': 0,
+            'probation_cookie' : '',
+            'require_captcha': 0
+          });
+          window.Mark = new Turbulent.Mark({ 'name' : 'Rsi-XSRF', 'token' : '', 'ttl' : 1800 });
+
+          window.WscOverlay = new RSI.WscOverlay({});
+
+          var destinations = [];
+
+window.Main.destinations = destinations;          
+  window.PageStore = new RSI.Store({
+    'store_prefix' : '/pledge',
+    'bootstrapConfig': {"injection":{"attachmentClass":"RSIStoreApp","files":{"js":["bootstrap.js"],"css":["index.css"]}},"platform":{"api":"\/api"},"store":{"path":"\/pledge-store","manifest":"manifest.json"},"customizer":{"api":"\/pledge-store\/api\/customizer","ga_tracking_code":"UA-39586040-5"}}
+  });
+
+          
+          
+  var productsTracking = [];
+  var eCommerceData = {
+    'trackingAction': "",
+    'currency': "",
+    'trackingStep': "",
+    'trackingProducts': productsTracking
+  };
+  window.eCommerceTracking = new RSI.Store.eCommerceTracking(
+    eCommerceData
+  );
+
+        });
+
+        $(window).load(function() {
+          
+        });
+
+      </script>
+
+      
+      <script>
+        window.recaptcha_is_loaded = false;
+        window.on_recaptcha_load_callback = function() {
+          window.recaptcha_is_loaded = true;
+        };
+      </script>
+
+      <script src="https://www.google.com/recaptcha/api.js?onload=on_recaptcha_load_callback&render=6LerBOgUAAAAAKPg6vsAFPTN66Woz-jBClxdQU-o" async defer></script>
+      
+
+      <script type="text/javascript">
+
+        
+
+                                </script>
+
+      
+
+<style type="text/css">
+  /* CSS from ATOM */
+  hr {
+border-top: 2px solid #13d0ff;
+width: 300px;
+margin-left: 25%;
+}
+.rsi-markup .segment .content h5 { line-height:28px;max-width:774px;width:75%;min-width:300px}
+
+.parallax {
+height: 850px;
+background-position: 50% 50%;
+background-repeat: no-repeat;
+background-attachment: fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+
+.parallax-block { }
+.parallax-block .rsi-markup .segment .content { margin-left:0; margin-right:0 }
+.parallax-block hr { background-color:#09daff; border-top:0px;}
+.parallax-block .corner, .parallax-block  .top-line-thin, .parallax-block .top-line { display:none }
+.parallax-block .content-block1 { border:0}
+
+.parallax-segment { height:280px}
+
+.parallax-1 {
+background-image: url("/media/z13iwjfrggl2xr/source/GoodAndEvil_pt2.jpg");
+}
+
+.mb-full img { width: 100%;
+ }
+ span.initial{font-size:inherit!important; 
+margin-right:0!important;}
+
+</style>
+
+<script type="text/javascript">
+  /* JS from ATOM */
+  
+</script>
+
+
+
+
+    
+
+  <style>
+    
+      background:url(/rsi/static/images/noisebg.gif) repeat center top #000b11;
+    
+  </style>
+
+    <link href="//fonts.googleapis.com/css?family=Electrolize|Orbitron:400,500,700|Quantico|Share+Tech+Mono&display=swap" rel="stylesheet" type="text/css">
+
+    <link href="/cache/en/rsi-css.css?v=6.45.0" media="all" rel="stylesheet">
+
+
+  </head>
+  <body id="" class="" >
+
+    
+      <div class="l-notification-bar l-notification-bar--rsi js-notification-bar" id="notification-bar-root">
+  <c-notification-bar v-bind:latestagreementsslugs=[] v-bind:loggedin="0" v-bind:onhomepage="0"></c-notification-bar>
+  <div class="l-notification-container l-notification-bar__boxes js-notification-bar-boxes">
+    <div class="l-notification__wrapper">
+      
+      <c-unsupported-browser v-cloak>
+        <div class="l-notification-bar__box js-notification-bar-box">
+          <div class="c-notification  c-notification--browser-support js-bottom-notif-msg-browser-support">
+  <div class="c-notification__inner">
+
+    <div class="c-notification__content">
+      <div class="c-notification__title">
+        IE11 is no longer supported
+      </div>
+      <div class="c-notification__message">
+        We do not support Internet Explorer 11 and below. Please use a different web browser.
+      </div>
+    </div>
+
+    <div class="c-notification__actions">
+      
+      
+          </div>
+
+  </div>
+</div>
+        </div>
+      </c-unsupported-browser>
+    </div>
+  </div>
+
+</div>
+    
+
+    <div id="bodyWrapper">
+      <header class='c-header-wrapper c-header-wrapper--rsi js-header-wrapper '  id='cross-brand-header'>
+  <div id="platform-bar" class="c-header__platform-bar"></div>
+
+      <div class='c-right-sidebar c-right-sidebar--signin' id="account-sidebar">
+      <div class="js-toggle-account__backdrop invisible"></div>
+
+      <a href="#" class='c-right-sidebar__back js-toggle-account'>Back
+        <span></span>
+        <span></span>
+      </a>
+
+      <div id="enlist-root" data-theme="rsi" data-enlisting="" data-ptu=""></div>
+      <script type="text/javascript" src='/rsi/static/packages/enlist/rsi.enlist.build.eebd2.js'></script>
+    </div>
+  
+  <div class="c-header-wrapper__backdrop js-toggle-games"></div>
+</header>
+
+<div id="platform-backdrop"></div>
+
+<script type='text/javascript'>
+  RSI.Platformbar = {
+    theme: "rsi",
+    loggedState: "logged-out",
+    tabs: [
+      {
+        type: 'brands',
+        name: "Games",
+        subItems: [
+          {
+            name: "sc",
+            href: "/star-citizen",
+            description: "Join the Universe"
+          },
+          {
+            name: "s42",
+            href: "/squadron42",
+            description: "Start the adventure"
+          },
+          {
+            name: "rsi",
+            href: "/",
+            description: "Follow the Development"
+          }
+        ]
+      },
+      {
+        type: 'apps',
+        name: "Apps",
+        subItems: [
+          [
+            {
+              name: "Spectrum",
+              href: "/spectrum/community/SC",
+              description: "Your communication platform"
+            },
+            {
+              name: "Launcher",
+              href: "/download",
+              description: "Download Star Citizen",
+                          }
+          ],
+          [
+            {
+              name: "Roadmap",
+              href: "/roadmap",
+              description: "Keep track of the development"
+            },
+            {
+              name: "Telemetry",
+              href: "/telemetry",
+              description: "Keep track of the player’s performance"
+            },
+            {
+              name: "Issue Council",
+                          href: "https://issue-council.robertsspaceindustries.com",
+                          description: "Help us make the game better",
+                          }
+          ],
+          [
+            {
+              name: "Starmap",
+              href: "/starmap",
+              description: "Your map to the universe"
+            },
+            {
+              name: "Galactapedia",
+              href: "/galactapedia",
+              description: "Your guide to the universe"
+            }
+          ]
+        ]
+      },
+          ],
+    navigation: {
+      store: {
+        name: "Pledge Store",
+        href: "/pledge",
+        isHidden: false      },
+      hub: {
+        name: "Learn How to Play",
+        href: "/playstarcitizen",
+        show: false      },
+      support: {
+        name: "Support",
+        href: "//support.robertsspaceindustries.com"
+      },
+      account: {
+        name: "Account",
+        href: "/account/settings",
+        isHidden: false      }
+    }
+  };
+
+  $(document).ready(function() {
+    window.header = new RSI.Header({});
+  });
+</script>
+
+
+      
+  
+<header class='c-brand-menu c-brand-menu----rsi' id='brand-menu'>
+  <span class="c-brand-menu__section">
+    
+      Roberts Space Industries <sup>&#174;</sup>
+    
+  </span>
+  <div class="c-brand-menu__backdrop"></div>
+  <nav class="c-brand-menu__container">
+    <div class="c-brand-menu__logo">
+      <a href="/"><span class="h-svg h-svg__logo-rsi--fullcolor-large js-svg-inliner"></span> </a>
+    </div>
+    <div class="c-brand-menu__items-container">
+      <ul class="c-brand-menu__items">
+                <li class="c-brand-menu__item  ">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/comm-link">
+            <span class="c-brand-menu__item-text">Comm-Link</span>
+                                  </a>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/community">
+            <span class="c-brand-menu__item-text">Community</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Community</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/spectrum" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Spectrum
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/orgs" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Organizations
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/leaderboards/top" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Leaderboards
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community_events" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Event
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Hub
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/fankit" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Fankit
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/development">
+            <span class="c-brand-menu__item-text">Development</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Development</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/roadmap" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Roadmap
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/devtracker" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Dev Tracker
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/telemetry" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Telemetry
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="https://issue-council.robertsspaceindustries.com" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Issue Council
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/patch-notes" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Patch Notes
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/ship-matrix" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Ship Matrix
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/funding-goals" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Funding
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+              </ul>
+    </div>
+
+    <div class="c-brand-menu__cta">
+      
+        <a href="/star-citizen/play-now" class="c-brand-cta-btn js-google-analytics-event-tracker"
+          data-event-category="FlyNow" data-event-label="navMenuClick">
+          <div></div>
+            <span class="c-brand-cta-btn__text">
+              <strong>Play now</strong>
+            </span>
+          <div></div>
+        </a>
+      
+    </div>
+  </nav>
+</header>
+
+
+
+      
+
+  
+  <div class="page-wrapper">
+    
+  <div id="post-background" ></div>
+
+
+    <div id="contentbody" class="" style="">
+      
+
+<div id="post">
+  <div class="title-section">
+    
+      <div class="wrapper title-bar-container">
+        <div class="glow left"></div>
+        <div class="title-bar">
+          <div class="title with-subtitle">
+            <h1>Serialized Fiction</h1>
+            <h2>Short Stories</h2>
+          </div>
+          <div class="details">
+            <div>
+              <h3>ID:</h3>
+              <p>16633</p>
+              <div class="cboth"></div>
+            </div>
+            <div>
+              <h3>Comments:</h3>
+              <p class="comment-count">26</p>
+              <div class="cboth"></div>
+            </div>
+            <div>
+              <h3>Date:</h3>
+              <p>June 27th 2018</p>
+              <div class="cboth"></div>
+            </div>
+            <div></div>
+          </div>
+          <div class="cboth"></div>
+        </div>
+        <div class="glow right"></div>
+      </div>
+    
+  <div class="title-container">
+    <div class="title no-subtitle">The Knowledge of Good and Evil: Part Two</div>
+      </div>
+
+  </div>
+
+  
+  <div class="lightbar toplightbar">
+    <div class="lightbarlights"></div>
+    <div class="footershadow"></div>
+  </div>
+
+
+  <div class="parallax-block">
+
+<div class="mb-full parallax parallax-1"></div>
+
+<div class="wrapper"><div class="content-block1 rsi-markup">
+<div  class=' segment' ><div class="content"><h5>Writer’s Note: <em>The Knowledge of Good and Evil: Part Two</em> was published originally in Jump Point 2.10. You can read Part One <a href="https://robertsspaceindustries.com/comm-link/serialized-fiction/16584-The-Knowledge-Of-Good-And-Evil-Part-One" title="here">here</a>.  </h5>
+
+<p><em>“I know right. Debt ‘s debt.” Eve’ rat know that.</em></p>
+
+<p><em>She stop cold. “You think that you are incurring a debt by staying here?”</em></p>
+
+<p><em>“Ain’ I? Wha’ I’m suppose think? An I see one an’ ‘m null gon’ jus’ be here an’ . . . null tha’ . . . I won’ be your slave!” Start lookin for way out tha hall ta secure.</em></p>
+
+<p><em>I stop cause Mom Super raise her hand. Slow like. Like she do ta quiet tha meal hall ‘fore meal. Hadn’ expected her ta be calm like tha’.</em></p>
+
+<p><em>“If I gave a way to repay your debt, would you stay?”</em></p>
+
+<p><span class="initial">M</span>om Super got wha’ she talk. Work got, ‘nough ta pay debt. Off some, an’ diff from Bazaar, lock tha’. Bes’ deal ‘m got ta stay with tha Sisters. Rules some, bu’ null like Blues or Bazaar Bosses got. ‘bout now ‘m start figure tha Sisters weren’ part tha Gov. If they’s Gov them give H-kit, like tha Gov.</p>
+
+<p>Problem that. Big got problem when rat got no Hygiene. H-kit got thing like razor. Razor ta shave my head with. Razor I need an don’ have. Head gone ta fuzz a’ready. Tha’ mean ‘lot on streets. Mean rat got i’ in ‘em to go ‘gainst rhyme an’ honor. Mean might give up on tryin’. Creepers and slavers watch ta pounce on fuzz heads.</p>
+
+<p>Walk out tha room an’ rage some ta Mom Super ta get razor. Mom Super ‘most yelled back. ‘fore ran off back ta my room.</p>
+
+<p>‘magined her comin’ through tha door an chokin’ me. I seen creeper do tha’ once.</p>
+
+<p>Mom Super got ask me straight later, “What would you do with a razor young one? Why do you need it so?”</p>
+
+<p>Sisters an’ Mom Super don’ have null clue. I’m hoarse from yelling an wound tight. A’most missed tha ask.</p>
+
+<p>“Wha’ ’m do?! Shave my damn head! Wha’ tha hell else Craz Oldie? Wha’ else i’ good for do with? You know how tha creepers like ‘em?”</p>
+
+<p>“Your hair is a danger to you?” Mom Super ask.</p>
+
+<p>“Hair too long an’ you be gone. Don’ sleep flat for creeps ta get at. Eat food paste or you waste. Know tha rhymes live long times. Stick ta’gether in bad weather. Hoardin’ creds will get you dead.”</p>
+
+<p>Mom Super look ‘round at tha other three Sisters in tha door ta my room. One them reach in bag an’ pull out one sealed H-kit like tha kind I got from tha dispenser once month. Mom Super take i’ an’ hold i’ out ta me.</p>
+
+<p>Snatch i’ null lookin’ at her an’ I head ta corner tha room an’ reflec on tha wall. Big reflec but I don’ need much an sit on floor. Back ta tha door but can see ‘em in the reflec. Them watchin’ as shave tha head fuzz quick like rats got do. Sisters standin’ in tha door outbound one-an-one til only Mom Super left.</p>
+
+<p>“It’s a sad thing to see.” Mom Super say soft. “Red hair is very rare.”</p>
+
+<p>Finish las’ pull move a’fore her sayin’ sunk in.</p>
+
+<p>Turn an’ look at her. “Is?”</p>
+
+<p>“Yes. Very.”</p>
+
+<p>I don’ know, but tha’ look Mom Super got shake me cold for days.</p>
+
+<p>*	*	*</p>
+
+<p>Interestin’ now tha’ some Sisters would come an’ ask me if could fix some for ‘em. Each nex’ got harder thin’ ta fix. Sometime it some basic an’ big. Sometime it some complex an’ small. Air mover ta some bedrooms stopped. Solenoid switch on machine gone bad. Malfunct ligh’ in tha hallway. Sometimes, mobiGlas like tha kind spacer use. Other time some buggy engine. Eve’ time it got be some’ I neve’ seen or neve’ fix b‘fore. I think ta ‘self tha’ Sisters didn’ know tha’. ‘m learn them tech an’ gear while ‘m work.</p>
+
+<p>Still ain’ got lock on angle Sister play ta. Got think ‘bout Bosses or creepers or slavers workin’ on some rat like. ‘magination come up with like wha’ ‘m hear on street ‘round Bazaar. Ain’ EZ ta stay smart ‘nough ta null trus’ thin’ tha’ sound like street gossip. Eve comin’ from me.</p>
+
+<p>Got parts an’ gear ta fix for days when Mom Super show up a’ my shop.</p>
+
+<p>“Follow me.” She say. Turnin’ she lead me down tha hall an’ back ta main floor and started headin’ ta big door ‘m null got through yet. “Your choice to remain here is a bold one, and you have proven good on your word and not tried to leave again. I believe we should make a gesture of good faith in return.”</p>
+
+<p>Reached tha door. Aft’ she look ove’ her shoulder a’ me she press hand ta tha door release. Pressure seal door slide back an out. Sisters coat norm block view ‘fore I got glint. This time Mom Super step back an’ ‘most push me in.</p>
+
+<p>Light ‘m step into blind me some.</p>
+
+<p>Null tha’ bright jus’ more ligh’ than tha hallway. ‘m look a tha floor. Dark metal like tha hall but cleaner. Null dus’. None jus’ cleaner eve’ thin’ clean. New? ‘bout when ‘m think tha’ my eyes a’just ta light an’ ‘m look up.</p>
+
+<p>‘m couldn’ breath.</p>
+
+<p>Three high a stack rows tall. Leas’ ten meters. Rows wide an’ so long can’ see ’tha end from tha door. Them got books like ‘m in pics. Neve’ see real ‘fore. Oldie info that. <span class="caps">VID</span> term, an’ storage media a more types than ‘m know. Figures how some Sisters spend days in here.</p>
+
+<p>Jump some when Mom Super say some an’ break tha quiet.</p>
+
+<p>“You can come in here at any time you’d like, young one. This Library is our most holy place, but the freedom to access knowledge is equally sacred to us. We have been remiss to keep this from you. We have all sorts of information here. What is kept in the Holy Vault is only for members of the Order under seal of the confessional, but all else is yours to explore. The door will now open for you and the Sisters are always willing to help if you need anything.”</p>
+
+<p>“Won’ do much good ta me lady. Can’ read none.”</p>
+
+<p>How come eve’ time Mom Super smile ta me like that an’ I say some she got cry?</p>
+
+<p>She daz like got hit hard, “That’s . . . I had assumed . . . with your skills, I mean. We will have to . . . um . . . How foolish of me.”</p>
+
+<p>Mom Super stared me like. Like ‘m ghos’ or some. She drop her head an’ say some ‘m null hear. When she look ta me ‘gain got look like she ragin’ ‘hind her eyes. Lady move from tha door an’ point ta hallway. She lead though ‘m couldn’ tell where we goin’.</p>
+
+<p>Thought I know tha whole Hall by now bu’ Mom Super stop fron’ door I neve’ been ta. She open i’ an’ make like ‘m suppose ta go in. Small. Got desk an’ <span class="caps">VID</span> screen on tha wall. Maybe half size my room.</p>
+
+<p>Mom Super walk ta screen an’ press button ‘n tha side. Flash an’ then i’ come on. Aft’ few boot screens, comp vid Human walk from tha side like ‘em come in ta room like real person do. Got see move top tha screen. Cam doin’ sweep tha place. Done lock on us.</p>
+
+<p>“I’ve brought you a new student.” Mom Super say. ‘most hide her anger.</p>
+
+<p>“Wha’ Lady got ta be rage ‘bout?” ‘m think. “Tha’ her didn’ know ‘m null read?”</p>
+
+<p>Vid screen Lady star’ gabbin’, “A student. One to be taught. Very good. Where shall I begin?&#8221;</p>
+
+<p>“The beginning.” Mom Super say.</p>
+
+<p>“Well and good. And you are the pupil?”</p>
+
+<p>Cam move jus’ ‘nough ta know lock on jus’ me now.</p>
+
+<p>‘m look ta Mom Super an’ she jus’ lookin back ta me. Wet eyes some. Figure tha’ ‘m got ta answer.</p>
+
+<p>‘m mos’ cold ta bone. School dead danger ta street rat. Gov Schools free bu’ you spend any ticks there an’ wouldn’ make ‘nough. Some rats starve cause ‘em null make deals.</p>
+
+<p>Know ‘nough ta got numbers. Know ‘nough ta speak straight an’ crook. Know ‘nough ta fix gear. School learned? Like Up folk? Like my cot?</p>
+
+<p>“Sure.” All ‘m think ta say.</p>
+
+<p>Screen prog stat gab ‘gain, “Please sit student, we are about to begin.”</p>
+
+<p>“The program will teach you if you choose to learn from it. It can go as fast or slow as you need. You may consider this part of your work for us as well.”</p>
+
+<p>Tha’ las’ from Mom Super an’ she outbound.</p>
+
+<p>Wha’ got Mom Super raged? An’ ‘m got ta listen ta comp prog? Hell. Teach prog got ta work righ’ then. Null got time ta think ‘bout danger a learnin’ too much. ‘m got new work from tha lady. I neve’ work like this in my life.</p>
+
+<p>*	*	*</p>
+
+<p>Found new kind of hunger in tha’ room. Sit in tha’ classroom for long stretches. Only leave ta eat or relieve myself. I spend hours more a day there than had ta.</p>
+
+<p>I realize I been starved for information when I’m given more than I can handle but not as much as I want. I’m addict ta it and the drug is free. Learning is no debt. Maybe that why the bosses on the street don’t want rats ta get it. Teach program pushes me hard. It keep lessons comin’ as fast as I complete ‘em.</p>
+
+<p>“High Impact Learning” what teach prog call it. Cumulative points, none percentages. Almost neve’ have to hear lectures. Everything a conversation.</p>
+
+<p>English, Grammar, Ancient Earth History, Math, Biology, Psychology, Sex Ed, Mechanics, Social Studies, Interstellar Commerce, and Physical Activities all covered. Standard Ed for <span class="caps">UEE</span>. Even know what the <span class="caps">UEE</span> is now.</p>
+
+<p>80 to 90 hours a week I work on my school. Would spend more if I didn’t need to eat an’ sleep so much. An’ Sisters still wan’ me ta fix gear. Got hard time ‘tween fix gear like ‘m good at an’ wan’ ta learn book work. Book work start ta win that. I write essays, I listen ta books, I track my health for PE. I even start going back into the library to read books for school.</p>
+
+<p>So much time passes without my realizing.</p>
+
+<p>Got back to the room one night and see myself in the mirror. I stare into it for almost an hour. I been missing the inches I’m growing up and hair I’m growing out. Shit.</p>
+
+<p>It makes the girl looking back at me in the mirror even look like a girl. She looks like me, except with hair and tits. At first I’m scared to notice.</p>
+
+<p>Tits are still small enough they’ll be easy to hide, but I have hair. Does hair mean what the street says it means? Hell, if I can keep street learning from mixing with book learning now. The impulse to shave it off in haste and fear grips me hard. I almost do it. Almost.</p>
+
+<p>Instead, I dare myself to leave it. That seems to work. I dig through my hygiene kit for the comb I never use. I watch fixated as I pull the comb through my hair and feel the tug against my scalp. I’ve been moving it out of my eyes for how long? Crap. I null know. Been dealing with it but always absentmindedly. Never looking in the mirror. I look in the H-kit again and see the razor. Still in its wrapping. Back in the mirror I catch someone that looks like I’m supposed to but different. She has red hair. Touching it is like touching danger itself. It’s part of me. Maybe it’s a warning to the world that I’m more dangerous now.</p>
+
+<p>I fall asleep to the feeling of hair on my neck. It’s warm. They never tell you about that part on the street. They don’t tell you a lot.</p>
+
+<p>Education Levels pass by. I start out at level 3. Don’t even count the months. Day comes, night comes. Frustration and anger. Success and wonder. Don’t care much about how long it takes, the information is what matters. By the time I get to level 10 work, I’m doing the good stuff like tech.</p>
+
+<p>Days do get long though. The Sisters spend most of their time in the Library. If too many of them are in the Library at one time the halls start to feel dead. That pulls me there. The library is the only place in the Hall that feels alive sometimes. Once I started to read some, I started going there and found that books can be alive all on their own. Sometimes the books even have people in them. Some alive. Some dead. Some real, others not. I get to watch those characters live, play, fight and win. The second time I close a book hiding tears, Mom Super catches me.</p>
+
+<p>“You should take a break from the tragedies for a while I think, young one. You might try these for a spell,” she said leading me to a bookcase I hadn’t randomly selected for raiding yet. “They are not as intense but may be to your interests.”</p>
+
+<p>She may be strange sometimes, but she can read me easy enough.</p>
+
+<p>I look on the shelf she’s led me to and only see some old storage drives. They look ancient. “I don’t want to break them.”</p>
+
+<p>“You won’t, dear, they are quite sturdy.”</p>
+
+<p>With Mom Super’s blessing I take one down and over to the nearest terminal. Takes me a second to figure out the connectors and boot sequence for the thing. Old, like most things around here. I get it working and open the primary file. On it are technical manuals for <span class="caps">COMM</span> Tech and <span class="caps">COMP</span> Tech for a ship I’ve never heard of. Even ship drive schematics from only a hundred years ago. Tear down instructions, maintenance schedules, even revisioning logs from one version of a thing to the next explaining what changed and why.</p>
+
+<p>Everything a spacer might want to know about her ship.</p>
+
+<p>I’m still a gear rat, just with more skills now. It’s not tech to take apart, but I’ve been creating universes in my head for the books I read. I know I can do the same for this tech. That and all the tech jobs for the Sisters. I know how to fix a dead <span class="caps">VID</span> terminal from a hundred years ago, and I know how to imagine an’ make things real.</p>
+
+<p>So I study. As I do, more technical data, notes wit helpful hints for using the terminal, even meals all start showing up at my new hermitage at the terminal in the Library. It’s infuriating. Who? What do I owe them? It’s touching. It’s dangerous not to know who I owe what, but I accept it all the same because I have a plan now. Anything that helps is worth taking. When I get out of here, I wont be just a gear rat. I’ll be a pilot.</p>
+
+<p>On my own <span class="caps">SHIP</span>.</p>
+
+<p>*	*	*</p>
+
+<p>One day word comes that one of “our ships” has just entered the system and is returning. It takes me a second to remember that this isn’t a plot from a novel.</p>
+
+<p>“We have ships?” I ask the Sister. “And that word is plural. The Sisters have more than one ship?”</p>
+
+<p>I don’t get an answer, but she tells me that everyone is assembling in the entry hall. Normally, it’s a common side hallway. I’ve never seen anyone enter or leave as long as I’ve been here. It barely registers that the door is there as I join the Sisters in waiting.</p>
+
+<p>Standing among so many people all in one place starts making me uncomfortable. I realize that I’m more used to being alone now. We all stand with the foremost in a semicircle facing the door. I make my way to the front to be near Mom Super. The Sisters close around us making sure not to give me a straight path out the only exit to the place. The door opens inwardly like it did that night years ago. Years. I shiver thinking about it.</p>
+
+<p>A lone figure is standing outlined by dust and setting sunlight in the shadow being cast by something tall outside. A full face helmet covers her head and the rest of her is covered by a space suit. A sleek, black, beautiful, and expensive suit. I immediately try to take inventory of the suit and its status lights. It’s the gear rat in me still looking for something to fix and charge her for. Or maybe I just want one like it.</p>
+
+<p>As my eyes try desperately to make out the suit better, I realize she’s carrying two metal cases. Each about one meter long and half a meter tall. They aren’t very thick, but they are obviously very important by the size of the locks on them.</p>
+
+<p>She steps forward to meet Mom Super and puts down the cases beside herself as they come to a stop in front of one another. The door closes behind the newcomer and, once shut, she removes the helmet.</p>
+
+<p>Long dark hair fall past the shoulders of a young looking woman with tired, teary eyes. As the normal dusk light settles in the hallway, she speaks.</p>
+
+<p>“Mother Superior! I have returned in honor to my Oath, in honor to our order, and freely of my own choice. I bring the knowledge collected on my pilgrimage. Twice copied for us and again two more for our sisters of the other Hall. I return to my sisters the ship given me, the money given me plus a great sum more, and I return myself in hopes of peace and understanding among my sisters.”</p>
+
+<p>The last words echo off the high walls and fall silent. Mom Super just steps forward and hugs the woman. Others attend to the cases. One case heads toward the meal hall. The other, handed to a Sister who heads to the library. As it opens to allow her and the second case in, I see her turn and head toward the Holy Vault, but the door closes before I can see how she gets in.</p>
+
+<p>Other Sisters in the hall start talking about the new woman and calling her the Returned.</p>
+
+<p>The Returned and Mom Super walk toward the meal hall together. It’s too early for dinner, but everyone is following them, so I do too. I catch more conversation about “the sacrament” as we fill the benches. The short table with five stools that normally sits empty next to the Mom Super now has the Returned at it with the case in front of her. She stands and bows slightly, first to Mom Super and then to the room of Sisters.</p>
+
+<p>I think, “Since when do the Sisters bow?”</p>
+
+<p>They’re a religious order, sure, but they aren’t like the Xeno Cults or Tech Worshipers. I always thought they used the religious angle so they’d be left alone.</p>
+
+<p>The Returned unlocks the case with some sort of code, a key, and then a voice print. She opens it and reveals 20 blocks that look like data drives.</p>
+
+<p>Mom Super Calls out, “The Holy Sacrament of New Knowledge.”</p>
+
+<p>The Sisters all reply as one, “Thanks be to God.”</p>
+
+<p>Each Sister produces a mobiGlas from their pocket and puts it on. I’ve seen some of these models before, worked on them. I haven’t seen so much tech gear in one place in years. It’s like watching flowers bloom as each one winks on.</p>
+
+<p>Someone touches me. I jump.</p>
+
+<p>I’m just on edge is all. This is a lot to take in. A Sister I don’t recognize had done it. Her newly revealed mobiGlas is running a boot sequence as she points to the front of the room. Mom Super, calling me over.</p>
+
+<p>I approach Mom Super, and she begins to smile. Never a good sign. Things go craz when Lady does that. She reaches out a hand to me, “Take it young friend. We would not keep this moment from you.”</p>
+
+<p>“What?”</p>
+
+<p>She laughs a little.</p>
+
+<p>“We’re going to share access to the information the Returned has brought us,” she says. “You may search for whatever you like, however you like. We ask only that you share what you find interesting. Just follow the lead of the Sisters. It has been some time since we had a guest present for the sacrament, but it is allowed.”</p>
+
+<p>A weight falls into my outstretched hand. I know what I dream it to be, but what it can’t be.</p>
+
+<p>“This is yours, young one. A testament to your hard studies that have made even the Sisters envious of your diligence.”</p>
+
+<p>A slim black and blue case rests in my hands. Careful inspection shows no maker’s mark or logos. I open it like the treasure chest I know it is.</p>
+
+<p>A mobiGlas. Top of the line model with a blue crystal scrawl along the side. The world starts to go fuzzy.</p>
+
+<p>None. That danger. No! ‘m null cry! If I cry ‘m weak an’ tha ‘thers will . . . I look around through my tears. I see smiling Sisters with whom I have always been safe. Will always be safe. I still can’t let myself. I choke back the tears and look Mom Super in the face. Unable to meet her eyes fully.</p>
+
+<p>“Uh, thanks,” is all I get out past the tightness of my throat. I turn and bolt to my seat; desperately not wanting to be the center of attention anymore.</p>
+
+<p>The same Sister who nudged me earlier whispers that they will wait till I’m ready.</p>
+
+<p>Sheer panic.</p>
+
+<p>I fumble with the mobiGlas and finally get it turned on. In a moment a blinking cursor presents itself on the screen. Ready.</p>
+
+<p>I look at Mom Super, out of breath. She nods.</p>
+
+<p>Suddenly, I feel cold in the vastness of the information I have access to. So much; more than I could learn in a hundred lifetimes.</p>
+
+<p>It takes hours listening to this or that thing a Sister finds or just pushing through one set of data or another. The hardwood benches normally don’t bother me, but four hours of economic reports, social news and statistics is a bit long to just sit around with my legs falling asleep. Mom Super got up then and dismissed us. Before I duck out to my room with my new prize, she calls me over.</p>
+
+<p>Mom Super sets her face hard. Formal. I get a knot in my stomach just recognizing the look of it. “The advent of the Returned brings with it an authority second only to my own. Upon this authority, a proposal of change may be brought to the Sisters.”</p>
+
+<p>Seems like Sister business. I stay out of that stuff. Old habit not to get tangled, that.</p>
+
+<p>“It may not seem so in your situation, dear, but freedom is paramount to us. Free will and the right to choose are more important than choosing the right or moral thing.” she explained. “The information we gather empowers the choices we make. We even share our knowledge or collect private information at times. We choose what we share and what we do very carefully.”</p>
+
+<p>“Even my speaking at your trial was a choice, young one.”</p>
+
+<p>My heart skips a beat at that. We’ve never discussed that day or why I’m here. It’s an unspoken understanding. She doesn’t give answers to the questions I pretend I don’t have. Her eyes are holding back a sadness covered by a smile.</p>
+
+<p>“I made my choice to interfere and bring you here. It upset many of the Sisters, but your being here has convinced the others of an ugly truth many of them do not want to learn.”</p>
+
+<p>I try to look casual as one of my legs threatens to fall asleep again. “What’s that?” I ask, fearing the problem I know now I cause. Tha problem tha’ I am.</p>
+
+<p>“That we have failed the people of this and other planets. That we are called to teach as well as learn. That our Order must teach the children of the streets, advocating for them as they themselves cannot. We must use what we learn and are told to help empower our fellow Humans.”</p>
+
+<p>“Them can’ be taught Mom Super! What I mean is— that street rats teach each other that knowing too much is bad and will get you killed. They’re so scared, everyone believes the rhymes. Hell, there are even rhymes about not questioning the rhymes. And . . .”</p>
+
+<p>She puts up her hand to stop me.</p>
+
+<p>“Which is the sort of thing this Order does not know or understand fully, but you do.”</p>
+
+<p>She takes a deep breath.</p>
+
+<p>“I never intended to make you the focus of this effort of mine to reform the Order, but you have such unique gifts . . .”</p>
+
+<p>Old Lady stops and stares at me. Her sadness is gone and something more like power burns in her eyes now.</p>
+
+<p>“Will you help us create schools for these children?”</p>
+
+<p>Rage, anger, joy, fear, panic, scheming, dread, hope and shock run through me as I consider what Mom Super just dropped in my lap.</p>
+
+<p>“The choice is sacred. We, I, will think nothing different of you no matter your answer.”</p>
+
+<p>Minutes pass and my mind races. Eventually two thoughts rise to the top of the internal chaos: Mom Super needs my help and if the rats learn the power of information, the street won’t own them anymore. They will have power like I never did. Maybe even like I have now.</p>
+
+<p>An anger and a determination like I’ve never known rises in me and my skin bristles. I can pay my debt to the street, my debt to the Sisters, and the debt of every rat from Bazaar to Backtrack.</p>
+
+<p>‘Unique gifts’ is what she called them. Yeah, those I’ve got. A sly grin spreads across my face.</p>
+
+<p>I look Mom Super in the eye and recognize what’s in her eyes now because I feel it too.</p>
+
+<p>“When do we start?”</p>
+
+<p>*	*	*</p>
+
+<p>I once thought getting to leave again would be a big deal to me, but it’s not. I never felt trapped at the convent. Well, not after I learned to read, anyway. The world makes more sense now, but it isn’t any different after reading about it.</p>
+
+<p>Maybe that’s what happened to the Sisters. They started living in the Library too much, and Mom Super is trying to get them back into the real world.</p>
+
+<p>We work out when and where the first ‘Street School’ day will be. Two Sisters and I gather in the entry hall to take the rail to Bazaar Street. I wear one of the Habit coats to try my best to blend in with the Sisters. The area around the convent isn’t luxury, but it’s not slums either. I see a Blue on the rail and flinch as he gives up his seat for one of the Sisters, like we’re important or something. Strange feelings creep on me the rest of the rail ride. By the time we get there I want off the rail car so much I almost miss how the Bazaar has changed.</p>
+
+<p>The Sisters look to me and I take the hint: I’m supposed to lead them. I start for Work Row. Rats gather in Work Row when they are on hard times or young and looking to become Gear Rats. It’s just a bigger than normal alley, but it serves well enough. Lots of exits for it too. The way rats like it. The way looks different now that I’m taller, but I get us there without any wrong turns.</p>
+
+<p>Seven or eight kids are sitting on ledges and crates. I turn to the Sisters and nod. They nod back, and we move to an area near the middle of the groups where one wall is mostly empty. One Sister pulls out a small projector and places it on the ground. The other moves next to her and connects her mobiGlas. Some of the rats move closer, curious about the tech. They scatter back as I move next to the projection on the wall and pull back my hood.</p>
+
+<p>“We would like to teach you all whatever you want to know,” I say and try to look at as many of them as possible.</p>
+
+<p>One of the older ones speaks up. “Ja Lady? An’ wha’ make think you gots some us rats wan’? An’ wha’ i’ cos’ us? Fancy Up tech you got ain’ free. Lock tha’. I Checked.”</p>
+
+<p>A joke and challenge. What will it cost? How do I say it won’t cost them anything? Free translates to gullible. Why didn’t I think about this before now? I have to answer fast or they might all spook and leave.</p>
+
+<p>“Because . . . ‘cause rat like you ain’ got wha’ we got teach. Know tha’ lock ‘cause ‘m was rat an’ Sisters taught me more than any rhyme. Null cos’. None debt. All i’ takes is time.” It’s hard to try and force what used to come so naturally to me and what I say is a poor combination of the slang and proper speech, but it might work.</p>
+
+<p>The children look around to each other. I think I caught them more off-guard by how I said it then what I said.</p>
+
+<p>“Tha’ craz. You some oldie rat?” A young one says next.</p>
+
+<p>They’re talking! Don’t blow this.</p>
+
+<p>“Oldie rat? Sure. Craz? None that. What you wan’ a know small-y?”</p>
+
+<p>The young one that spoke goes and comes back with someone else, another child that looked sickly. The sickly one showed a lump on his skin.</p>
+
+<p>“Wha’ tha’ oldie?”</p>
+
+<p>It looked like a cyst or rash maybe, but it could be something worse. Shit. “Tha’ bad some. Gots go ta medics, but null do ‘t here. Bazaar Medics got ta pay off bosses. Ride rail three stop and go ta tha medic down the street ta left. Same like got here. Treat you free like medics here are s’pposed. Somethin’ obvious like this them got ta take in and go on it. Lock truth, that.”</p>
+
+<p>I try to give the sick one my rail pass. The other one shoves it away.</p>
+
+<p>“We got creds ‘nough ta ride rails. Sure them gots ta go on it if we shows up, eve’ we rats?”</p>
+
+<p>“Yes. Them gots ta work it. Lock sure.”</p>
+
+<p>The eyes of the whole group judge me and my words for what feels like eternity. Finally the two depart, and the rest of our class stare at them as they go.</p>
+
+<p>The old one pipes up again,”Wha’ else you got ta learn us rats Sister?”</p>
+
+<p>Acceptance? At least for now. I paid our entry fee by helping those two. They’ll let us try. I choke back a memory as I wonder if I would have ever let the Sisters teach me if I’d still been on the street. We got some brave ones.</p>
+
+<p>“Wha’ you want ta know?” I say through a smile.</p>
+
+<p>*	*	*</p>
+
+<p>Now, I leave the convent with a group of Sisters every week. Some street children, we don’t call them rats, have even made it a part of their routine to show up to school. Not every time of course; being too predictable can get you killed on the street. Some never come back again. Each time that happens, I have nightmares until I see one that has been missing for weeks return again. Never show my relief for fear of scaring them off by singling them out. Street children don’t use names, and even being recognizable is dangerous. Blending into the group protects everyone. I had to stop some Sisters who were developing nicknames and assigning numbers to the kids to track lessons. It would ruin everything if the kids knew they were being tracked with a name or number.</p>
+
+<p>“Is that why you don’t have a name?” One of them asks me.</p>
+
+<p>Direct dmg, that.</p>
+
+<p>I try to recover but my shock was already apparent. I’ve never thought about that before.</p>
+
+<p>“I don’t know,” is the best I can come up with. Then I change the topic back to school things.</p>
+
+<p>To call it school is a bit of a stretch. The Sisters and I meet in a wide alley with some street children. We tried to start with basic language skills, but these kids are too practical for that. The teaching program I used is too rigid for them. The Children want information they can apply right away. So we just teach them what they want to learn or what we think might interest them: their legal rights if they get arrested. The going price for a part on the legitimate market. How to get a free rail pass or medic check. The way to count change and write numbers. The sort of thing a street child can use right now or use to get ahead. It seems to be working. They seem to like it more and are bringing others with them if they come.</p>
+
+<p>The rhymes are the biggest obstacle to our efforts. When I was on the street I couldn’t go a day without one of them saving my life or helping me get by. All the street kids are going through the same sort of life that I had. Now an ‘Oldie Rat’ like me is asking them to forget what some of the rhymes say or even go against them? Sometimes, I hate myself, thinking it might get them hurt or killed.</p>
+
+<p>Mom Super was right about needing my unique gifts too. Street slang is thick and almost incomprehensible to most of the Sisters. Sometimes I’m translating both directions. I’ve started teaching it to the more adventurous Sisters, but it’s slow and frustrating.</p>
+
+<p>I don’t know how it happened, but one evening while working with a new child, teaching him about staying clean, I look up and all the other Sisters have left. We all tend to come as a group and leave as the day goes on. I’m one of the last most days, but I’ve never been alone. I didn’ know why bu’ that got me scared some.</p>
+
+<p>When the lesson was finally done, I put the hood up on my coat and begin walking to the rail station. I’ve got this uneasy feeling, and I start to walk more quickly. I hear a sudden burst of noise to my left and turn my head to look at it, but the hood blocks my view. The verge of panic comes, and I move even faster. The train is there but as I approach the doors close and it pulls away. The next won’t be for 20 minutes.</p>
+
+<p>I gasp for breath as I lean against the ticket kiosk.</p>
+
+<p>What the hell? What am I afraid of? Walking around alone? My mind is just clear enough now to be angry at myself. At least one Street child must have seen my panic and will ask about it next week. Maybe it will even scare some away for a while. Am I really this stupid?</p>
+
+<p>That thought carries me through the next few minutes. The sun is setting, but I try to relax as I wait.</p>
+
+<p>Then someone walks up to me.</p>
+
+<p>“Oh, you ‘lone, Sister? Ain’ i’ late?” the man says.</p>
+
+<p>Strangers don’t just walk up to you in Bazaar Street.</p>
+
+<p>“Or ‘hapse you ain’ Sister. Null tha’. is i’ rat. Yeah. Gear rat. Street rat eve’.” The man had taken another few steps towards me and stopped again when I backed away.</p>
+
+<p>What did he say? All the panic of minutes ago shoots back into my mind and stiffens my spine. I don’ eve’ got a slag.</p>
+
+<p>I turn to look at the man for the first time. He’s rough and poor looking, but better dressed than I’d expected. He is shaved but unremarkable. I see the shadow of a face I remember well.</p>
+
+<p>Boss Dirk.</p>
+
+<p>“Ya remember me? Got. I remember you, Rat. I remember that you owe me.”</p>
+
+<h3>TO BE <span class="caps">CONTINUED</span>&#8230;</h3></div><div class="cboth"></div></div>
+<div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+</div>
+
+<script>
+(function( $ ){
+  var $window = $(window);
+  var windowHeight = $window.height();
+
+  $window.resize(function () {
+    windowHeight = $window.height();
+  });
+
+  $.fn.parallax = function(xpos, speedFactor, outerHeight) {
+    var $this = $(this);
+    var getHeight;
+    var firstTop;
+    var paddingTop = 0;
+    
+    //get the starting position of each element to have parallax applied to it    
+    $this.each(function(){
+        firstTop = $this.offset().top;
+    });
+
+    if (outerHeight) {
+      getHeight = function(jqo) {
+        return jqo.outerHeight(true);
+      };
+    } else {
+      getHeight = function(jqo) {
+        return jqo.height();
+      };
+    }
+      
+    // setup defaults if arguments aren't specified
+    if (arguments.length < 1 || xpos === null) xpos = "50%";
+    if (arguments.length < 2 || speedFactor === null) speedFactor = 0.1;
+    if (arguments.length < 3 || outerHeight === null) outerHeight = true;
+    
+    // function to be called whenever the window is scrolled or resized
+    function update(){
+      var pos = $window.scrollTop();        
+
+      $this.each(function(){
+        var $element = $(this);
+        var top = $element.offset().top;
+        var height = getHeight($element);
+
+        // Check if totally above or totally below viewport
+        if (top + height < pos || top > pos + windowHeight) {
+          return;
+        }
+
+        $this.css('backgroundPosition', xpos + " " + Math.round((firstTop - pos) * speedFactor) + "px");
+      });
+    }   
+
+    $window.bind('scroll', update).resize(update);
+    update();
+  };
+
+  $('.parallax-1').parallax("50%", 0.1, true);
+$('.parallax-2').parallax("50%", 0.1, true);
+$('.parallax-3').parallax("50%", 0.1, true);
+$('.parallax-4').parallax("50%", 0.1, true);
+$('.parallax-5').parallax("50%", 0.1, true);
+$('.parallax-6').parallax("50%", 0.1, true);
+$('.parallax-7').parallax("50%", 0.1, true);
+})(jQuery);
+</script>
+
+
+
+
+  <div class="wrapper">
+    
+    <div class="end-transmission-container">
+      <div class="glow left"></div>
+      <div class="title-bar">
+        <h1>End Transmission</h1>
+      </div>
+      <div class="glow right"></div>
+    </div>
+  </div>
+  
+
+  
+    <div class="two-line-separator"></div>
+  <div class="channel-banner">
+  <div class="header-container">
+                  <div>
+      <div class="header">
+        <div class="wrapper">
+                      <div class="image" style="background-image:url('/media/5bb3nxmqlaz7rr/post_section_header/GoodAndEvil_pt1.jpg');"></div>
+                    <div class="texts">
+            <div class="title">
+              <div class="presented-by">Part of</div>
+              <div class="cboth"></div>
+              <h1>The Knowledge of Good and Evil</h1>
+              <a  class="holobtn " href="/comm-link?series=Good-and-Evil"  >
+  <span class="holobtn-top abs-overlay trans-02s">More in this series </span>
+  <span class="holobtn-bottom abs-overlay trans-02s"></span>
+</a>
+              <div class="cboth"></div>
+            </div>
+            <p><p>Knowledge sets you free.</p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content-carousel">
+    <div class="carousel-mask">
+      <div class="left-shadow shadow"></div>
+      <a href="" class="prev js-prev"><div class="hover trans-03s trans-opacity"></div></a>
+      <div class="centerer">
+        <div class="carousel">
+                      <a href="/comm-link/serialized-fiction/16584-The-Knowledge-Of-Good-And-Evil-Part-One" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/5bb3nxmqlaz7rr/home_transmissions_item_expanded/GoodAndEvil_pt1.jpg');"></div>
+    <div class="title trans-opacity trans-03s">The Knowledge of Good and Evil: Part One</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">4 years ago</span></div>
+    <div class="section">serialized-fiction</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/serialized-fiction/16633-The-Knowledge-Of-Good-And-Evil-Part-Two" class="series-carousel-item content-block3 trans-05s  on">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/z13iwjfrggl2xr/home_transmissions_item_expanded/GoodAndEvil_pt2.jpg');"></div>
+    <div class="title trans-opacity trans-03s">The Knowledge of Good and Evil: Part Two</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">4 years ago</span></div>
+    <div class="section">serialized-fiction</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/serialized-fiction/16680-The-Knowledge-Of-Good-And-Evil-Part-Three" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/dm5wcxn0dqr6cr/home_transmissions_item_expanded/GoodAndEvil_pt3.jpg');"></div>
+    <div class="title trans-opacity trans-03s">The Knowledge of Good and Evil: Part Three</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">4 years ago</span></div>
+    <div class="section">serialized-fiction</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/serialized-fiction/16727-The-Knowledge-Of-Good-And-Evil-Part-Four" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/k9ipggp9rdec7r/home_transmissions_item_expanded/GoodAndEvil_pt4.jpg');"></div>
+    <div class="title trans-opacity trans-03s">The Knowledge of Good and Evil: Part Four</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">3 years ago</span></div>
+    <div class="section">serialized-fiction</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                  </div>
+      </div>
+      <a href="" class="next js-next"><div class="hover trans-03s trans-opacity"></div></a>
+      <div class="right-shadow shadow"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $(".channel-banner .content-carousel").each(function(index, element) {
+      $(element).data("carousel", new RSI.FullCarousel({
+        holder:$(element).find(".carousel"),
+        prevButton:$(element).find(".js-prev"),
+        nextButton:$(element).find(".js-next"),
+        circular:true,
+        displayItems:3 // healthy amount so that we never see empty
+      }));
+    });
+  });
+</script>
+    
+
+  <div class="two-line-separator"></div>
+  
+    
+<div class="wrapper force-one-column" id="comments">
+  <div class="holder">
+    <div class="title-bar">
+      <div class="count">
+        <div class="label">Comments</div>
+        <div class="value">026.<span class="js-comment-decimal">0</span></div>
+        <div class="cboth"></div>
+      </div>
+      <div class="title">
+        <h1>Feedback</h1>
+      </div>
+      <div class="cboth"></div>
+    </div>
+
+    <div class="main-buttons-holder-container">
+      <div class="main-buttons-holder">
+        <a href="/connect?jumpto=/comm-link/serialized-fiction/16633-The-Knowledge-Of-Good-And-Evil-Part-Two" class="add-comment js-add-comment trans-02s js-modal-login">Add New Comment</a>
+        <div class="settings js-settings">
+          <h1>Settings</h1>
+          <label>View mode:</label>
+          <a href="#" class="js-comments-view to-one-column js-to-one-column trans-01s on">One column</a>
+          <a href="#" class="js-comments-view to-two-columns js-to-two-columns trans-01s ">Two columns</a>
+          <label>Sort by:</label>
+          <a href="#" class="js-comments-sort to-oldest js-to-oldest trans-01s on">Oldest first</a>
+          <a href="#" class="js-comments-sort to-newest js-to-newest trans-01s ">Newest first</a>
+          <a href="#" class="js-comments-sort to-appreciated js-to-appreciated trans-01s ">Most appreciated first</a>
+
+                  </div>
+        <a href="" class="view-settings js-view-settings"><div class="hover trans-02s"></div></a>
+        <div class="triangle"></div>
+      </div>
+    </div>
+
+    
+    <div class="comment-listing"></div>
+
+    <div class="comment-loader traj-loader">
+      <div class="fast-blink"></div>
+      <span>Loading Additional Feedback</span>
+    </div>
+
+    <div class="cboth"></div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    window.comments = new RSI.Comments({
+      atom_url:"/comm-link/serialized-fiction/16633-The-Knowledge-Of-Good-And-Evil-Part-Two",
+      comment_listing_el:$(".comment-listing"),
+      comment_submission_form_el:$(".comment-submission"),
+      api_object:RSI.Api.Comments,
+      lazyLoading: true,
+      comment_count: 26,
+      subject_id:16633,
+      append:false,
+      texts: {
+        "edit": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        },
+        "reply": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        }
+      },
+      "insertion_conf": {
+        "mode":"html"
+      },
+      "api_function_names": {
+        "delete":"erase",
+        "load":"listing",
+        "sort":"listing"
+      }
+    });
+  });
+</script>
+  
+</div>
+
+    </div>
+
+    
+  </div>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.11/moment-timezone-with-data.min.js"></script>
+
+<script type="text/plain" data-cookieconsent="statistics">
+  $.cookie('moment_timezone', moment.tz.guess(), { expires: 31, path: '/' });
+</script>
+
+
+
+
+               <script id="tpl_number_counter_digits" type="text/x-jsmart-tmpl">{if !$seperator}{$seperator=','}{/if}
+{if !$first_max}{$first_max=9}{/if}
+{for $digit = 0 to $length-1}
+  <div class="mask">
+    <div class="carousel">
+      {if $digit == 0}
+        {$max = $first_max}
+      {else}
+        {$max = 9}
+      {/if}
+      {for $i=0 to $max}
+        <div class="item {if $val_arr[$digit] == $i}on{/if}" rel="{$i}">{$i}</div>
+      {/for}
+    </div>
+  </div>
+  {if ($length - $digit) % 3 == 1 && $digit != $length-1}
+  <div class="seperator">{$seperator}</div>
+  {/if}
+{/for}</script>
+<script id="base_modal" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  <div class="top-border">
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+  </div>
+</div></script>
+<script id="base_modal_flat" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  </div>
+  
+</div></script>
+<script id="tpl_modals_slideshow" type="text/x-jsmart-tmpl"><img class="top-border" src="/rsi/static/images/modal_top.png">
+<a href="" class="close js-close"></a>
+<div class="mask">
+  <a class="js-prev prev control"></a>
+  <a class="js-next next control"></a>
+  <div class="slideshow-carousel carousel" rel="{$index}">
+    {foreach from=$images item="image"}
+      <div class="{if $index == $image@index}on{/if}">
+      {if $image.is_video}
+        <div class="video-holder">
+          <div id="slideshow_video_{$image@index}" data-source="{$image->source_url}">
+            <video width="100%" height="100%" preload="auto" {if $video}src="{$image->source_url}"{/if} controls></video>
+          </div>
+        </div>
+      {else}
+        <div class="media js-media-slideshow-{$image@iteration}">
+        {if $image.low_res}
+          <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source data-srcset="{$image.full_res}" media="(min-width: 300px)" />
+            <!--[if IE 9]></video><![endif]-->
+            <img data-srcset="{$image.low_res}" alt="{$image.title}" />
+          </picture>
+        {else}
+          <img data-src="{$image.source_url}" />
+        {/if}
+        </div>
+      {/if}
+        <div class="text">
+          {if !$image.is_video}
+          <a href="{$image.source_url}" class="download"></a>
+          {/if}
+          <div class="copyright">© 2012-{$year}<br />Cloud Imperium Games Corporation &<br />Roberts Space Industries Corp.</div>
+          <div class="page-number">{$image@iteration} / {count($images)}</div>
+          <div class="caption v-center">{if $image.title && $image.title != "undefined"}{$image.title}{/if}</div>
+          <div class="cboth"></div>
+        </div>
+      </div>
+    {/foreach}
+  </div>
+</div>
+<img class="bottom-border" src="/rsi/static/images/modal_bottom.png"></script>
+<script id="tpl_contact_us" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="contact" class="inner-content on">
+  <h2><span class="icon"></span>CONTACT</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+  <div class="error-message js-error-message"></div>
+  <div class="success-message js-success-message"></div>
+    <fieldset class="last">
+    <label for="contact_email">Email Address</label>
+    <input type="text" name="email" value="" class="trans-02s trans-color trans-box-shadow" id="contact_email" />
+  </fieldset>
+    <fieldset>
+    <label for="contact_subject">Subject</label>
+    <input type="text" name="subject" value="" class="trans-02s trans-color trans-box-shadow" id="contact_subject" />
+    <label>Contacting us for:</label>
+    <ul class="category-info">
+            <li id="tech_support_info">Questions about download, installation, networking, or in-game client problems</li>
+            <li id="subscription_info">Questions about monthly and yearly subscription plans</li>
+            <li id="account_billing_info">Issues related to your account, such as incorrect information or ability to access account, or Billing with regards to payments and payment methods</li>
+            <li id="melt_request_info">To reclaim a pledge over $1,000 for store credit (please note - this is a permanent action)</li>
+            <li id="merchandise_info">Questions about physical and/or shipped merchandise</li>
+            <li id="hacked_info">Issues related to compromised account or missing pledge.</li>
+            <li id="account_recovery_info">For issues with account authentication, lost passwords and related queries</li>
+            <li id="probation_info">Issues related to forums probation or ban</li>
+            <li id="refund_request_info">Refund requests and related inquiries</li>
+            <li id="customer_support_info">For general questions and queries regarding Star Citizen</li>
+          </ul>
+  </fieldset>
+  <fieldset>
+    <label for="contact_text">Fescription</label>
+    <textarea name="text" class="trans-02s trans-color trans-box-shadow" id="contact_text"></textarea>
+  </fieldset>
+  <div class="contact-submit-wrapper">
+    <div class="line"></div>
+    <button class="submit js-submit"><strong>submit your message</strong></button>
+  </div>
+</form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+<script id="tpl_error" type="text/x-jsmart-tmpl"><div class="modal-error js-modal-error">
+  <p class="modal-text js-modal-text"></p>
+  <a class="close js-close trans-03s .trans-opacity" href=""></a>
+</div></script>
+<script id="tpl_success" type="text/x-jsmart-tmpl"><div class="modal-success js-modal-success">
+  <p class="modal-text js-modal-text"></p>
+  <a class="close js-close trans-03s .trans-opacity" href=""></a>
+</div></script>
+<script id="tpl_progress" type="text/x-jsmart-tmpl"><div class="modal-progress js-modal-progress">
+  <div class="traj-loader">
+    <div class="fast-blink"></div>
+    <span class="modal-text js-modal-text"></span>
+  </div>
+</div></script>
+<script id="tpl_outbound" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="outbound" class="inner-content on">
+  <h2><span class="icon"></span>OUTBOUND LINK</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+      <div class="error-message js-error-message"> <span class=important>WARNING</span><br/><br/> This link will bring you outside of the RSI site and into the depths of the internet. Continue?<br/><br/><span class="url"></span> </div>
+      <div class="success-message js-success-message"><span class=important>STAND BY</span><br/><br/> Initiating hyperlink.<br/><br/></div>
+
+      <fieldset class="clearfix last">
+        <span class="submit-wrapper">
+          <span class="submit-hover trans-02s trans-opacity"></span>
+          <input type="submit" value="WARP" class="trans-02s trans-color trans-background" />
+        </span>
+      </fieldset>
+    </form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+
+<script id="tpl_l-notification-bar" type="text/x-jsmart-tmpl"><div class="l-notification-bar js-notification-bar">
+
+  <div class="l-notification-bar__watermark js-svg-inliner h-svg__logo-star-citizen"></div>
+
+  <div class="l-notification-bar__boxes">
+    {if !$viewedCookieNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='cookie'
+          title='COOKIES:'
+          message="Our website uses Google Analytics to analyze our traffic. <br/>To learn how you can control Google's use of your data and how you can opt out <a href='https://www.google.com/policies/privacy/partners/'>click here</a>."
+          linkText='See Details'
+          buttonText='Got it!'}
+      </div>
+    {/if}
+
+    {if !$viewedPrivacyNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='privacy'
+          title='PRIVACY POLICY:'
+          message='We adjusted the PP to reflect the decision of the European Court of Justice regarding Safe Harbor, the fact that RSI has moved and added some services providers.'
+          linkText='View Privacy Policy'
+          buttonText='Got it!'}
+      </div>
+    {/if}
+  </div>
+
+</div>
+</script>
+<script id="tpl_c-notification" type="text/x-jsmart-tmpl"><div class="c-notification js-bottom-notif-msg-{$type}">
+    <div class="c-notification__title">{$title}</div>
+    <div class="c-notification__message">
+      {$message}
+    </div>
+
+    {if $linkText}
+        <div class="c-notification__wrapper-link">
+            <a class="c-notification__link js-bottom-notif-link-{$type}">
+            {$linkText}
+            </a>
+        </div>
+    {/if}
+
+    <a class="c-notification__button js-bottom-notif-btn-{$type}">
+
+      <span class="c-notification__button-text">
+       {$buttonText}
+      </span>
+
+      {if $type neq 'announcement'}
+        <div class="c-iconed__icon c-iconed__icon--checkmark"></div>
+      {/if}
+    </a>
+</div>
+</script>
+
+<script id="tpl_confirm" type="text/x-jsmart-tmpl"><div class="modal-confirm js-modal-confirm clearfix">
+  <p class="modal-text js-modal-text"></p>
+  <a class="bt-close js-close trans-03s trans-opacity" href=""></a>
+  <a class="bt-confirm js-confirm trans-03s trans-opacity" href=""></a>
+	<div class="buttons">
+		<a class="shadow-button trans-02s trans-color js-close bt-close rm"     >
+  <span class="label js-label trans-02s">Cancel</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+		<a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">Confirm</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+	</div>
+</div>
+</script>
+<script id="tpl_alert" type="text/x-jsmart-tmpl"><div class="modal-alert js-modal-alert clearfix">
+  <p class="modal-text js-modal-text"></p>
+  <div class="buttons">
+    <a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">OK</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+  </div>
+</div></script>
+<script id="tpl_video" type="text/x-jsmart-tmpl">{extends file="base_modal"}
+{block name='modal_content'}
+<div id="ship-commercial" class="inner-content">
+  
+  <div class="hr"></div>
+  <div class="content-block4">
+   
+    <div class="bottom"></div>
+  </div>
+  {if $distant_source=="vimeo"}
+  <iframe id="commercial" src="//player.vimeo.com/video/{$video_id}?wmode=transparent" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+  {else}
+  <iframe id="commercial" frameborder="0" allowfullscreen="1" title="YouTube video player" width="100%" height="100%" src="https://www.youtube.com/embed/{$video_id}?autoplay=1"></iframe>
+  {/if}
+</div>
+{/block}
+</script>
+      
+  <script id="tpl_comment_report" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="comment-report" class="inner-content on">
+  <h2><span class="icon"></span>Report this comment</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+<input type="hidden" name="comment_id" value="">
+  <div class="error-message js-error-message"></div>
+  <div class="success-message js-success-message"></div>
+    <fieldset class="last">
+    <label for="report_email">Email Address</label>
+    <span class="corner-wrapper">
+      <input type="text" name="email" value="" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_email" />
+      <span class="corner corner-top-left"></span>
+      <span class="corner corner-top-right"></span>
+      <span class="corner corner-bottom-left"></span>
+      <span class="corner corner-bottom-right"></span>
+    </span>
+  </fieldset>
+    <fieldset>
+    <label>Report Type</label>
+    
+
+
+  
+    <a class="js-selectlist selectlist " rel="" href="">
+    <div class="arrow"></div>
+    <span>Please select the type best matching your report</span>
+              <ul class="body">
+              
+                                                              <li class="js-option option " rel="obscenity" >
+                                                                        Obscene Content
+                                                    </li>
+                                                                <li class="js-option option " rel="abuse" >
+                                                                        Abusive Conduct
+                                                    </li>
+                                                                <li class="js-option option " rel="other" >
+                                                                        Other
+                                                    </li>
+                                          
+            </ul>
+        <input type="hidden" name="category" class="js-category js-form-data" id="category"/>
+  </a>
+    </fieldset>
+  <fieldset>
+    <label for="report_text">Details</label>
+    <span class="corner-wrapper">
+      <textarea name="text" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_text" maxlength="2500"></textarea>
+      <span class="corner corner-top-left"></span>
+      <span class="corner corner-top-right"></span>
+      <span class="corner corner-bottom-left"></span>
+      <span class="corner corner-bottom-right"></span>
+    </span>
+  </fieldset>
+  <fieldset class="clearfix last">
+    <span class="submit-wrapper">
+      <span class="submit-hover trans-02s trans-opacity"></span>
+      <input type="submit" value="Submit" class="trans-02s trans-color trans-background" />
+    </span>
+  </fieldset>
+</form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+
+
+      
+        <footer class="c-platform-footer c-platform-footer--rsi">
+  <div class="l-platform-footer-container">
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--sc">
+        <li class="c-platform-footer-brand__item">
+
+          <span class="c-brand c-brand--sc js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--sc">
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Join the<br>Universe
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--sc">
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen" class="c-platform-footer-link">About the Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/howto/1" class="c-platform-footer-link">How to Play</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/universe" class="c-platform-footer-link">The Universe</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/media" class="c-platform-footer-link">Media</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/play-now"
+                class="c-platform-footer-link js-google-analytics-event-tracker"
+                data-event-category="FlyNow" data-event-label="footerClick">
+                Play Now
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__sc">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">
+              Social Links
+            </span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/RobertsSpaceIndustries/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/RobertsSpaceInd">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/robertsspaceind">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href=" https://www.youtube.com/channel/UCTeLqJq1mXUX5WWoNXLmOIA">
+                <span class="c-iconed__icon c-iconed__icon--youtube"></span>
+                Youtube
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.twitch.tv/starcitizen">
+                <span class="c-iconed__icon c-iconed__icon--twitch"></span>
+                Twitch
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--s42">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--s42 js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--s42">
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Start the<br>Adventure
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--s42">
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42" class="c-platform-footer-link">The Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#enlist" class="c-platform-footer-link">Enlist Today</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#roadmap" class="c-platform-footer-link">Status</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/pledge/Packages/Squadron-42-Standalone-Pledge" class="c-platform-footer-link">Pledge</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__s42">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">Social Links</span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/Squad42/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/squadron_42">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/squadron42">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column is-active">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--rsi">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--rsi js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--rsi">
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi--fullcolor"></span>
+            </span>
+            <span class="c-brand__label">
+              Follow the Development
+            </span>
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--rsi">
+            <li class="c-platform-footer-list__item">
+              <a href="/" class="c-platform-footer-link">Home</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/comm-link" class="c-platform-footer-link">Transmissions</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/community" class="c-platform-footer-link">Community</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/roadmap" class="c-platform-footer-link">Development</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--platform">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Platform
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--platform">
+                          <li class="c-platform-footer-list__item">
+                <a href="/pledge" class="c-platform-footer-link ">Pledge Store</a>
+              </li>
+            
+            <li class="c-platform-footer-list__item">
+              <a href="/download" class="c-platform-footer-link ">Download</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/spectrum/community/SC" class="c-platform-footer-link">Spectrum</a>
+            </li>
+
+                      </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--utility">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Utilities
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--utility">
+            <li class="c-platform-footer-list__item">
+              <a href="//support.robertsspaceindustries.com" class="c-platform-footer-link">Help</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/press" class="c-platform-footer-link">Press</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="https://cloudimperiumgames.com/join-us" class="c-platform-footer-link">Careers</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/tos" class="c-platform-footer-link">Terms of Services</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/privacy" class="c-platform-footer-link">Privacy Policy</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/eula" class="c-platform-footer-link">EULA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/dmca" class="c-platform-footer-link">DMCA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/legal" class="c-platform-footer-link">Legal</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/acknowledgements" class="c-platform-footer-link">Acknowledgements</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/responsible-disclosure" target="_blank" class="c-platform-footer-link">Responsible disclosure</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  
+</footer>
+
+<div class="c-platform-copyright c-platform-copyright--rsi">
+  <div class="l-platform-copyright-container">
+    <a href="https://cloudimperiumgames.com" class="c-platform-copyright__logo h-svg__logo-cig js-svg-inliner"></a>
+    <p class="c-platform-copyright__body">© 2012-2021 Cloud Imperium Rights LLC and Cloud Imperium Rights Ltd.</p>
+  </div>
+</div>
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHNFZPT"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<script type="text/javascript">
+  window.RSI.Footer = new RSI.Footer();
+</script>
+      
+    </div>
+
+    
+      <script type="text/javascript" src='/rsi/static/packages/platformbar/rsi.platformbar.build.8e4cb.js'></script>
+    
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"58013cabd7","applicationID":"375102748","transactionName":"Y1JaYktUWxZUV0QKV1oYe0NKQVoIGmZjKmtdQ111VltBF1pYXAZKDg1ZQlZYcwxbUA==","queueTime":0,"applicationTime":85,"atts":"TxVNFANOSEkXVRJZQ0lK","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>

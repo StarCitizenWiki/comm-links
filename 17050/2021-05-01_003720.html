@@ -1,0 +1,2002 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    
+        <!-- Anti-flicker snippet (recommended)  -->
+        <style>.async-hide { opacity: 0 !important} </style>
+        <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+        h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+        (a[n]=a[n]||[]).hide=h;if (d) a[n].push({'userId' : d});setTimeout(function(){i();h.end=null},c);h.timeout=c;
+        })(window,document.documentElement,'async-hide','dataLayer',1500,
+        {'GTM-KHNFZPT':true},undefined,'');</script>
+            <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"58013cabd7",applicationID:"375102748"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(7),c=e(8),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(9);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e){return!(!e||!e.protocol||"file:"===e.protocol)}t.exports=r},{}],4:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(6),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],5:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],6:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],7:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],8:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],9:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?u(e,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){e&&a&&e(n,r,i);for(var c=t(i),f=v(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[h[n]];return p&&p.push([b,n,r,c]),c}}function o(e,t){y[e]=v(e).concat(t)}function m(e,t){var n=y[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return y[e]||[]}function g(e){return p[e]=p[e]||i(n)}function w(e,t){s(e,function(e,n){t=t||"feature",h[n]=t,t in d||(d[t]=[])})}var y={},h={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:w,abort:c,aborted:!1};return b}function o(e){return u(e,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=e("gos"),s=e(7),d={},p={},l=t.exports=i();t.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=x.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+x.offset],null,"api"),c("timing",["load",n]);var r=l.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+x.offset],null,"api")}var a=e(2),c=e("handle"),f=e(7),u=e("ee"),s=e(5),d=e(3),p=window,l=p.document,m="addEventListener",v="attachEvent",g=p.XMLHttpRequest,w=g&&g.prototype;if(d(p.location)){NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:g,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1208.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:b,userAgent:s};e(1),e(4),l[m]?(l[m]("DOMContentLoaded",o,!1),p[m]("load",r,!1)):(l[v]("onreadystatechange",i),p[v]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0}},{}],"wrap-function":[function(e,t,n){function r(e,t){function n(t,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],e)}c(n+"start",[o,a,f],s,u);try{return p=t.apply(a,o)}catch(m){throw c(n+"err",[o,a,m],s,u),m}finally{c(n+"end",[o,a,p],s,u)}}return a(t)?t:(n||(n=""),nrWrapper[p]=t,o(t,nrWrapper,e),nrWrapper)}function r(e,t,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<t.length;u++)f=t[u],c=e[f],a(c)||(e[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!m||t){var c=m;m=!0;try{e.emit(n,r,o,t,a)}catch(f){i([f,n,r,o],e)}m=c}}return e||(e=s),n.inPlace=r,n.flag=p,n}function i(e,t){t||(t=s);try{t.emit("internal-error",e)}catch(n){}}function o(e,t,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(e);return r.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(o){i([o],n)}for(var a in e)l.call(e,a)&&(t[a]=e[a]);return t}function a(e){return!(e&&e instanceof Function&&e.apply&&!e[p])}function c(e,t){var n=t(e);return n[p]=e,o(e,n,s),n}function f(e,t,n){var r=e[t];e[t]=c(r,n)}function u(){for(var e=arguments.length,t=new Array(e),n=0;n<e;++n)t[n]=arguments[n];return t}var s=e("ee"),d=e(8),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;t.exports=r,t.exports.wrapFunction=c,t.exports.wrapInPlace=f,t.exports.argsToArray=u},{}]},{},["loader"]);</script>
+      <meta name="viewport" content="width=device-width">
+      <meta name="description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans.">
+      <meta property="og:site_name" content="
+Brothers In Arms: Part Four - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+" />
+      <meta property="og:image" content="https://robertsspaceindustries.com/media/pmjjh69ezaiygr/channel_item_full/BrothersInArms_pt1_cropped.jpg" />
+      <meta property="og:description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans." />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://robertsspaceindustries.com/comm-link/SCW/17050-IMPORT" />
+      <meta property="og:locale" content="us_EN" />
+
+            
+
+            <link href="/rsi/static/css/cross-brand-less.css?v=6.0.1" media="all" rel="stylesheet">
+      <link href='/rsi/static/packages/platformbar/rsi.platformbar.build.05b39.css' media="all" rel="stylesheet">
+      <link href='/rsi/static/packages/enlist/rsi.enlist.build.0ff8b.css' media="all" rel="stylesheet"/>
+            <script type="text/javascript" src="/cache/en/rsi-external-js.js?v=6.0.1"></script>
+      <script type="text/javascript" src="/cache/en/rsi-templates-js.js?v=6.0.1"></script>
+
+            <link rel="stylesheet" href="https://use.typekit.net/dhw3beb.css">
+
+              <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="a687ee30-df65-45a0-9d22-90de6c1bb964" type="text/javascript"></script>
+      
+      
+    <!-- Google Tag Manager -->
+    <script data-cookieconsent="ignore">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHNFZPT');</script>
+    <!-- End Google Tag Manager -->
+
+
+      <title>
+Brothers In Arms: Part Four - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+</title>
+
+            <script type="text/javascript" src='/rsi/static/packages/core/rsi.core.build.804b0.js'></script>
+      <script type="text/javascript" src='/rsi/static/packages/account/rsi.account.build.609b5.js'></script>
+      <script type="text/javascript" src='/rsi/static/packages/store/rsi.store.build.cd9a7.js'></script>
+
+      <script>
+        $(document).ready(function() {
+          window.Common = new RSI.Common({});
+          window.Main = new RSI.Main({
+            'is_mobile': 0,
+            'probation_cookie' : '',
+            'require_captcha': 0
+          });
+          window.Mark = new Turbulent.Mark({ 'name' : 'Rsi-XSRF', 'token' : '', 'ttl' : 1800 });
+
+          window.WscOverlay = new RSI.WscOverlay({});
+
+          var destinations = [];
+
+window.Main.destinations = destinations;          
+  window.PageStore = new RSI.Store({
+    'store_prefix' : '/pledge',
+    'bootstrapConfig': {"injection":{"attachmentClass":"RSIStoreApp","files":{"js":["bootstrap.js"],"css":["index.css"]}},"platform":{"api":"\/api"},"store":{"path":"\/pledge-store","manifest":"manifest.json"},"customizer":{"api":"\/pledge-store\/api\/customizer","ga_tracking_code":"UA-39586040-5"}}
+  });
+
+          
+          
+  var productsTracking = [];
+  var eCommerceData = {
+    'trackingAction': "",
+    'currency': "",
+    'trackingStep': "",
+    'trackingProducts': productsTracking
+  };
+  window.eCommerceTracking = new RSI.Store.eCommerceTracking(
+    eCommerceData
+  );
+
+        });
+
+        $(window).load(function() {
+          
+        });
+
+      </script>
+
+
+      <script>
+        window.recaptcha_is_loaded = false;
+        window.on_recaptcha_load_callback = function() {
+          window.recaptcha_is_loaded = true;
+        };
+      </script>
+
+      <script src="https://www.google.com/recaptcha/api.js?onload=on_recaptcha_load_callback&render=6LerBOgUAAAAAKPg6vsAFPTN66Woz-jBClxdQU-o" async defer></script>
+
+      <script type="text/javascript">
+
+        
+
+                                </script>
+
+      
+
+<style type="text/css">
+  /* CSS from ATOM */
+  hr {
+border-top: 2px solid #13d0ff;
+width: 300px;
+margin-left: 25%;
+}
+.rsi-markup .segment .content h5 { line-height:28px;max-width:774px;width:75%;min-width:300px}
+
+.parallax {
+height: 850px;
+background-position: 50% 50%;
+background-repeat: no-repeat;
+background-attachment: fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+
+.parallax-block { }
+.parallax-block .rsi-markup .segment .content { margin-left:0; margin-right:0 }
+.parallax-block hr { background-color:#09daff; border-top:0px;}
+.parallax-block .corner, .parallax-block  .top-line-thin, .parallax-block .top-line { display:none }
+.parallax-block .content-block1 { border:0}
+
+.parallax-segment { height:280px}
+
+.parallax-1 {
+background-image: url("/media/loe2e3a9a9i34r/source/Brothers-In-Arms-Part-4.jpg");
+}
+
+.mb-full img { width: 100%;
+ }
+ span.initial{font-size:inherit!important; 
+margin-right:0!important;}
+
+</style>
+
+<script type="text/javascript">
+  /* JS from ATOM */
+  
+</script>
+
+
+
+
+    
+
+  <style>
+    
+      background:url(/rsi/static/images/noisebg.gif) repeat center top #000b11;
+    
+  </style>
+
+    <link href="//fonts.googleapis.com/css?family=Electrolize|Orbitron:400,500,700|Quantico|Share+Tech+Mono&display=swap" rel="stylesheet" type="text/css">
+
+    <link href="/cache/en/rsi-css.css?v=6.0.1" media="all" rel="stylesheet">
+
+
+  </head>
+  <body id="" class="" >
+
+    
+      <div class="l-notification-bar l-notification-bar--rsi js-notification-bar" id="notification-bar-root">
+  <c-notification-bar v-bind:latestagreementsslugs=[] v-bind:loggedin="0" v-bind:onhomepage="0"></c-notification-bar>
+  <div class="l-notification-container l-notification-bar__boxes js-notification-bar-boxes">
+    <div class="l-notification__wrapper">
+      
+      <c-unsupported-browser v-cloak>
+        <div class="l-notification-bar__box js-notification-bar-box">
+          <div class="c-notification  c-notification--browser-support js-bottom-notif-msg-browser-support">
+  <div class="c-notification__inner">
+
+    <div class="c-notification__content">
+      <div class="c-notification__title">
+        IE11 is no longer supported
+      </div>
+      <div class="c-notification__message">
+        We do not support Internet Explorer 11 and below. Please use a different web browser.
+      </div>
+    </div>
+
+    <div class="c-notification__actions">
+      
+      
+          </div>
+
+  </div>
+</div>
+        </div>
+      </c-unsupported-browser>
+    </div>
+  </div>
+
+</div>
+    
+
+    <div id="bodyWrapper">
+      <header class='c-header-wrapper c-header-wrapper--rsi js-header-wrapper '  id='cross-brand-header'>
+  <div id="platform-bar" class="c-header__platform-bar"></div>
+
+      <div class='c-right-sidebar c-right-sidebar--signin' id="account-sidebar">
+      <div class="js-toggle-account__backdrop invisible"></div>
+
+      <a href="#" class='c-right-sidebar__back js-toggle-account'>Back
+        <span></span>
+        <span></span>
+      </a>
+
+      <div id="enlist-root" data-theme="rsi" data-enlisting="" data-ptu=""></div>
+      <script type="text/javascript" src='/rsi/static/packages/enlist/rsi.enlist.build.0ff8b.js'></script>
+    </div>
+  
+  <div class="c-header-wrapper__backdrop js-toggle-games"></div>
+</header>
+
+<div id="platform-backdrop"></div>
+
+<script type='text/javascript'>
+  RSI.Platformbar = {
+    theme: "rsi",
+    loggedState: "logged-out",
+    tabs: [
+      {
+        type: 'brands',
+        name: "Games",
+        subItems: [
+          {
+            name: "sc",
+            href: "/star-citizen",
+            description: "Join the Universe"
+          },
+          {
+            name: "s42",
+            href: "/squadron42",
+            description: "Start the adventure"
+          },
+          {
+            name: "rsi",
+            href: "/",
+            description: "Follow the Development"
+          }
+        ]
+      },
+      {
+        type: 'apps',
+        name: "Apps",
+        subItems: [
+          [
+            {
+              name: "Spectrum",
+              href: "/spectrum/community/SC",
+              description: "Your communication platform"
+            },
+            {
+              name: "Launcher",
+              href: "/download",
+              description: "Download Star Citizen",
+                          }
+          ],
+          [
+            {
+              name: "Roadmap",
+              href: "/roadmap",
+              description: "Keep track of the development"
+            },
+            {
+              name: "Telemetry",
+              href: "/telemetry",
+              description: "Keep track of the player’s performance"
+            },
+            {
+              name: "Issue Council",
+                          href: "https://issue-council.robertsspaceindustries.com",
+                          description: "Help us make the game better",
+                          }
+          ],
+          [
+            {
+              name: "Starmap",
+              href: "/starmap",
+              description: "Your map to the universe"
+            },
+            {
+              name: "Galactapedia",
+              href: "/galactapedia",
+              description: "Your guide to the universe"
+            }
+          ]
+        ]
+      },
+          ],
+    navigation: {
+      store: {
+        name: "Pledge Store",
+        href: "/pledge",
+        isHidden: false      },
+      hub: {
+        name: "Learn How to Play",
+        href: "/playstarcitizen",
+        show: false      },
+      support: {
+        name: "Support",
+        href: "//support.robertsspaceindustries.com"
+      },
+      account: {
+        name: "Account",
+        href: "/account/settings",
+        isHidden: false      }
+    }
+  };
+
+  $(document).ready(function() {
+    window.header = new RSI.Header({});
+  });
+</script>
+
+
+      
+  
+<header class='c-brand-menu c-brand-menu----rsi' id='brand-menu'>
+  <span class="c-brand-menu__section">
+    
+      Roberts Space Industries
+    
+  </span>
+  <div class="c-brand-menu__backdrop"></div>
+  <nav class="c-brand-menu__container">
+    <div class="c-brand-menu__logo">
+      <a href="/"><span class="h-svg h-svg__logo-rsi--fullcolor js-svg-inliner"></span> </a>
+    </div>
+    <div class="c-brand-menu__items-container">
+      <ul class="c-brand-menu__items">
+                <li class="c-brand-menu__item  ">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/comm-link">
+            <span class="c-brand-menu__item-text">Comm-Link</span>
+                                  </a>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/community">
+            <span class="c-brand-menu__item-text">Community</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Community</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/spectrum" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Spectrum
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/orgs" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Organizations
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/leaderboards/top" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Leaderboards
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community_events" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Event
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Hub
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/fankit" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Fankit
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/development">
+            <span class="c-brand-menu__item-text">Development</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Development</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/roadmap" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Roadmap
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/devtracker" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Dev Tracker
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/telemetry" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Telemetry
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="https://issue-council.robertsspaceindustries.com" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Issue Council
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/patch-notes" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Patch Notes
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/ship-matrix" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Ship Matrix
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/funding-goals" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Funding
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+              </ul>
+    </div>
+
+    <div class="c-brand-menu__cta">
+      
+        <a href="/star-citizen/play-now" class="c-brand-cta-btn js-google-analytics-event-tracker"
+          data-event-category="FlyNow" data-event-label="navMenuClick">
+          <div></div>
+            <span class="c-brand-cta-btn__text">
+              <strong>Play now</strong>
+            </span>
+          <div></div>
+        </a>
+      
+    </div>
+  </nav>
+</header>
+
+
+
+      
+
+  
+  <div class="page-wrapper">
+    
+  <div id="post-background" ></div>
+
+
+    <div id="contentbody" class="" style="">
+      
+
+<div id="post">
+  <div class="title-section">
+    
+      <div class="wrapper title-bar-container">
+        <div class="glow left"></div>
+        <div class="title-bar">
+          <div class="title with-subtitle">
+            <h1>Serialized Fiction</h1>
+            <h2>Short Stories</h2>
+          </div>
+          <div class="details">
+            <div>
+              <h3>ID:</h3>
+              <p>17050</p>
+              <div class="cboth"></div>
+            </div>
+            <div>
+              <h3>Comments:</h3>
+              <p class="comment-count">16</p>
+              <div class="cboth"></div>
+            </div>
+            <div>
+              <h3>Date:</h3>
+              <p>April 24th 2019</p>
+              <div class="cboth"></div>
+            </div>
+            <div></div>
+          </div>
+          <div class="cboth"></div>
+        </div>
+        <div class="glow right"></div>
+      </div>
+    
+  <div class="title-container">
+    <div class="title ">Brothers In Arms: Part Four</div>
+    <div class="subtitle">By: Andy Rogers</div>  </div>
+
+  </div>
+
+  
+  <div class="lightbar toplightbar">
+    <div class="lightbarlights"></div>
+    <div class="footershadow"></div>
+  </div>
+
+
+  <div class="parallax-block">
+
+<div class="mb-full parallax parallax-1"></div>
+
+<div class="wrapper"><div class="content-block1 rsi-markup">
+<div  class=' segment' ><div class="content"><h5>Writer’s Note: <em>Brothers In Arms: Part Four</em> was published originally in Jump Point 3.8. Read Part One <a href="https://robertsspaceindustries.com/comm-link/serialized-fiction/16942-Brothers-In-Arms-Part-One" title="Brothers In Arms: Part One">here</a>, Part Two <a href="https://robertsspaceindustries.com/comm-link/serialized-fiction/16986-Brothers-In-Arms-Part-Two" title="Brothers In Arms: Part Two">here</a>, and Part Three <a href="https://robertsspaceindustries.com/comm-link/serialized-fiction/17017-Brothers-In-Arms-Part-Three" title="Brothers In Arms: Part Three">here</a>.</h5>
+
+<p><span class="initial">A</span> recorded hymn played as they sent Arun “Boomer” Ains­ley into whatever great adventure awaits in the everafter. Gavin set the service in the Rhedd Alert hangar, and the recording sounded terrible. The last somber note rebounded off the room’s hard surfaces and harsh angles.</p>
+
+<p>He wished they could have had a live band. He would have paid for an orchestra, if one were to be had on the orbit­al station. Even a bugle would have been a better tribute for the man who had brought Dell into his life. For the man who taught him and Walt so much about living a free life.</p>
+
+<p>Dell’s arm felt small around his waist and Gavin pulled her in close to him, unsure if that was the right thing to do. He turned to kiss her hair and saw Walt’s lean form looming beside them. Walt’s face was fixed in a grim mask.</p>
+
+<p>Gavin knew his brother well enough to know that Walt was berating himself inside. He didn’t deal well with guilt or re­sponsibility, and Gavin suspected that was a big part of why Walt always ran.</p>
+
+<p>The gathering started to break up. Pilots and the hangar crew busied themselves with tasks around Rhedd Alert’s battered fleet of fighters. Dell didn’t move, so he stayed there with her. Walt rested a hand on his shoulder.</p>
+
+<p>“Gavin. Oh gods, Dell. I can’t tell you how sorry I am.”</p>
+
+<p>Jazza leaned in and spoke in a low tone, almost a whisper. “Landing gear up in ten, boss. Your rig is on the buggy.” She motioned with her chin to where his ship waited.</p>
+
+<p>Dell turned into him and squeezed. “Be careful.”</p>
+
+<p>“I will, babe.”</p>
+
+<p>“You come home to me, Gavin Rhedd. I’ll kill you myself if you make me run this outfit on my own.”</p>
+
+<p>He pressed his lips to the top of her head. Held them there.</p>
+
+<p>“Wait. What?” Walt’s jaw was slack, his eyes wide. “Tell me you aren’t going back out there.”</p>
+
+<p>Jazza bumped Walt with her shoulder, not so much walking past him as through him. “Damn right we are, Quitter.”</p>
+
+<p>“You know what? Screw you, Jazz. All right? You used to quit this outfit, like . . . twice a month.”</p>
+
+<p>“Not like you. Not like some chicken sh—”</p>
+
+<p>“Jazz,” Gavin said, “go make sure the team is ready to roll, would ya?” With a nod to Gavin and a parting glare at Walt, she moved away into the hangar.</p>
+
+<p>“Let it be, Walt. We really do need to go. After last time, we can’t risk being late for the pickup.”</p>
+
+<p>“Screw late!” Walt’s eyes were wide and red-rimmed around the edges. “Why the happy hells are you going at all?”</p>
+
+<p>“Walt —”</p>
+
+<p>“Don’t ‘Walt’ me, Gavin. There is a pack of psychopaths out there trying to kill you!”</p>
+
+<p>“Walt, would you shut up and listen for two seconds? We don’t have a choice, okay? We’ve got everything riding on this job. We’re months behind on this place and extended up to our necks on credit for fuel, parts, and ammo.”</p>
+
+<p>“They can damn well bill me!”</p>
+
+<p>“No,” Gavin said, “they can’t. Your shares reverted back to the company when you quit. But I’m legit now. You think we lived life on the run before? Just you watch if I try to run from this.”</p>
+
+<p>Walt turned to Dell for assistance, “Dell, come on. You gotta make him listen to reason.”</p>
+
+<p>“Boomer’s shares transferred to me when he died,” Dell said. “We’re in this together.”</p>
+
+<p>“Okay, boss,” Jazza called. The three of them looked to where she stood with a line of determined crew. “It’s time.”</p></div><div class="cboth"></div></div>
+<div  class=' segment' ><div class="content"><p>Walt watched the big bay doors close as the last of Gavin’s team left the hangar. His fighter and the few remaining ships looked small and awkwardly out of place in the big room. Standing alone next to Dell gave him a great appreci­ation for that awkwardness.</p>
+
+<p>“I’m so sorry, Dell. If I’d been there —”</p>
+
+<p>“Don’t,” she stopped him with a word, and then contin­ued with a shake of her blue-tipped hair. “Don’t do that to yourself. I’ve been over the tactical logs. He got beat one-on-one, and then they OK’d him. There was nothing you could have done.”</p>
+
+<p>“I still feel rotten,” he said. “Like, maybe if I hadn’t left . . . I don’t know.”</p>
+
+<p>“Gavin blames himself, too. That’s just the way you two are built. But believe me, there was never a soul alive able to keep my dad out of the cockpit. He was flying long before you Rhedd boys tumbled into our lives.”</p>
+
+<p>That gave him a smile. A genuine smile. It seemed to bright­en Dell’s mood, so he did his best to hang onto it.</p>
+
+<p>“Come on,” she said. “It’s been a long couple of weeks. Join me for some coffee?”</p>
+
+<p>He did, and for a time they spoke softly at the tall tables in the hangar’s kitchenette. Dell caught him up on life aboard Vista Landing since he had left. She was clearly exhausted and not simply from a sleepless night and her father’s funeral. Her shoulders sagged, and dark circles under her eyes were the product of weeks of labor and worry. The constant apprehension of the Hornets’ vi­cious attacks had apparently exhausted more than just the pilots. It seemed odd that the attacks felt strangely personal.</p>
+
+<p>“You know what I can’t figure out?” he mused aloud. Dell looked at him, tired eyes politely expectant. “What the hell are these guys after?”</p>
+
+<p>She nodded, “Yeah. There’s been a lot of speculating on that question.”</p>
+
+<p>“And?”</p>
+
+<p>“Hard to say, isn’t it? Could be political wackos opposed to the research in Haven. Or maybe it’s one of the old gangs that don’t like us going legit. Could be it’s a group of Tevarin lashing out against <span class="caps">UEE</span> targets. Who knows?”</p>
+
+<p>“Naw. If they were Tevarin, we could tell by how they fly.”</p>
+
+<p>“Then you tell me, if you’re so smart. I mean, you were out there. You fought them.”</p>
+
+<p>Walt shrugged and took a sip of cooling coffee. Something she said nagged at him. “Hey, you said you had navsat tac­tical logs from the fight, right?”</p>
+
+<p>“Yeah.” What remained of her energy seemed to drain away with that one word. Walt cursed himself for the insensitive ass that he was. He’d just asked her about re­corded replays of her father’s murder.</p>
+
+<p>“Dell. Ah, hell . . . I’m sorry. I shouldn’t have asked.”</p>
+
+<p>“It’s okay,” she said. “I’ve been over and over them already. Really, I don’t mind.” </p>
+
+<p>They moved to a console and the lights dimmed automat­ically when she pulled up the hangar projection. She se­lected a ship, and oriented the view so that the hologram of Boomer’s Avenger filled the display. No, Walt reminded himself, it wasn’t Boomer’s ship any more. Dell was his heir and — along with his debt — Boomer’s assets now belonged to her. </p>
+
+<p>Dell bypassed the default display of the structural hard­points and dove into the ship’s systems. Something caught his eye and he stopped her. “Wait, back up.” She did, and Walt stopped the rotating display to look along the under­carriage of the ship. He let out a low whistle. </p>
+
+<p>“That, Walter Rhedd, is a Tarantula GT-870 Mk3.”</p>
+
+<p>“I know what it is. But where did you get it?”</p>
+
+<p>“Remember those pirates that gave us so much trouble in Oberon? I pulled it before we sold the salvage.”</p>
+
+<p>He certainly did remember, and the bastards had kicked the crap out of two of their ships with their Tarantulas. “How’d you get it mounted on an Avenger?”</p>
+
+<p>“Hammer therapy,” she said. He gave her a confused look, and she held up one arm, curling it to make a muscle. “I beat the hell out of it until it did what I wanted.”</p>
+
+<p>“Damn, girl.”</p>
+
+<p>“Did you want to see the flight recorder?”</p>
+
+<p>They watched the navsat replays together in silence. It looked like one hell of a fight. Chaotic. Frantic. The Rhedd Alert fighters were hard pressed.</p>
+
+<p>Jazza had moments of tactical brilliance. As much as she rubbed him the wrong way, Walt had to admit that she made her Cutlass dance steps for which it wasn’t de­signed. Gavin orchestrated a coherent strategy and had committed extra fighters to drive off the attack. Some­thing was wrong, though. Something about the fight didn’t make sense.</p>
+
+<p>Walt had Dell replay the scene so he could focus on the marauders. It didn’t look like much of a fight at all from that perspective. It looked more like a game and only one team understood how all the pieces moved. The Hornets flew to disrupt, to confuse. They knew Gavin would send a force forward to protect the transport. He’d done it every time they had met.</p>
+
+<p>“See that?” he said. “They break apart there and get called immediately back into formation. They never leave a flank exposed. Our guys never get a real opening.” He pointed out one of the attacking Hornets. “That one calls the shots.”</p>
+
+<p>“That’s the one that OK’d Boomer.”</p>
+
+<p>Reds and greens from the navsat display sparkled in Dell’s eyes. Her voice was emotionless and flat. Walt didn’t want to see her like that, so he focused again on the display.</p>
+
+<p>The marauder he’d identified as the leader broke from the melee. Gavin gave chase, but from too far behind. Boomer intercepted, was disabled, and his <span class="caps">PRB</span> flashed red on the display. The Hornet took a pass at the transport before turning to rejoin its squad. Then it decelerated, pausing before the overkill on Boomer.</p>
+
+<p>“Why take only one pass at the transport? They’ve hit us, what? Six times? Seven? And once they finally get a shot at the target, they bug out?”</p>
+
+<p>“You said, ‘us’,” Dell teased. “You back to stay?”</p>
+
+<p>Walt huffed a small laugh. “We’ll see.”</p>
+
+<p>“We’ve been lucky,” Dell offered in answer to his question. “So far, we’ve chased them off.”</p>
+
+<p>“You really believe that? They had this fight won if they wanted it. And how do they keep finding us? It’s like they’ve taken up permanent residence in our damned flight path.”</p>
+
+<p>That was it. He had it. The revelation must have shown on his face.</p>
+
+<p>“What?” Dell asked. “What is it?”</p>
+
+<p>“Back it up to the strafe on the Aquila.”</p>
+
+<p>Dell did, and they watched it again. He felt like an ass for making her watch the murder of her father over again, but he had to be sure of what he saw.</p>
+
+<p>And there it was. Strafe. Turn. Pause. A decision to com­mit. An escalating act of brutality. And then they were gone.</p>
+
+<p>“She’s not after the transport at all. We were her target this whole time.”</p>
+
+<p>“Wait,” Dell said, “what she? Her who?”</p>
+
+<p>“Please tell me your ex hasn’t drunk himself out of a job with the Navy.”</p>
+
+<p>“Barry? Of course not, why?”</p>
+
+<p>“Because I just figured out who killed your father.” </p></div><div class="cboth"></div></div>
+<div  class=' segment' ><div class="content"><p>Morgan Brock called the meeting to a close and dismissed her admin team. Riebeld caught her eye and lifted one hand off the table — a request for her to stay while the others shuffled out of the conference room.</p>
+
+<p>Riebeld kept her waiting until they were alone, and then stood to close the door.</p>
+
+<p>“I take it,” Brock said, “that our Tyrol problem persists despite the escalation?”</p>
+
+<p>“I got word during the meeting” — he took a seat beside her at the table, voice pitched low — “that they should be making the jump to Nexus soon.”</p>
+
+<p>“Our discreet pilots? Are they deployed or here at the sta­tion?”</p>
+
+<p>His answer was slow in coming, his nod reluctant. “They are here.”</p>
+
+<p>Brock checked the time. Did some mental math. “Disguise the ships. We will leave at 1700 and meet them in Nexus just inside the gate from Min.”</p>
+
+<p>“Morgan,” Riebeld’s eyes roamed the room, “these guys aren’t taking the hint. I don’t know what losses we have to hand them before they back down, but . . . I don’t know. Part of doing business is losing bids, am I right?” She didn’t disagree and he continued. “Maybe . . . Maybe we ought to write this one off?”</p>
+
+<p>“A comfortable position to hold in your seat, Riebeld. Your commission is based on the contract value. I barely turned a profit on that job for years. I did it willingly, with the expected reward of windfall profits when traffic to Haven surges.”</p>
+
+<p>“I get that,” he said. “I really do. But at some point we have to call it a loss and focus on the next thing, right?”</p>
+
+<p>“Then suppose that we let the Tyrol job go, and Greely and Navy SysCom see what they want to see from bou­tique contractors. I can already imagine anti-establishment politicians pushing for more outsourced work. Hell, they will probably promise contracts to buy votes in their home systems.”</p>
+
+<p>She watched him squirm. It wasn’t like him to wrestle with his conscience. Frankly, she was disappointed to learn that he’d found one.</p>
+
+<p>“If Rhedd Alert won’t withdraw willingly,” she said, “then they will have to fail the hard way. Prep the ships, Rie­beld. We have done very well together, you and I. You should know that I won’t back away from what is mine.” He seemed to appreciate her sincerity, but Brock wanted to hear the cocksure salesman say it. “Are we clear?”</p>
+
+<p>“Yes, ma’am,” Riebeld swallowed and stood. “Perfectly clear.”</p></div><div class="cboth"></div></div>
+<div  class=' segment' ><div class="content"><p>“Any luck?” Walt pulled up Barry’s record in his mobiGlas and hit connect.</p>
+
+<p>Dell sat at the hangar console trying to reach Gavin and the team. Her brow furrowed in a grimace and she shook her head.</p>
+
+<p>“Damn. Okay, keep trying.”</p>
+
+<p>Barry connected. The accountant wore his uniform. He was on duty, wherever he was, and his projected face looked genuinely mournful. “Hey,” he said, “long time no see, man. Listen, I can’t tell you how sad I am about Boomer.”</p>
+
+<p>“Thanks.” Barry had known Dell and Boomer for most his life. He’d probably been torn between attending the service and allowing the family to grieve in privacy. Regardless, commiseration would have to wait. “We need your help, Barry. Please tell me that you have access to the propos­als for the Tyrol contract.”</p>
+
+<p>“Of course I do. And who’s we? Are you back with Dell and Gavin?”</p>
+
+<p>“I am,” he felt Dell’s eyes on him when he said it. “Anyway, we need a favor. I need to know the ship models and con­figurations proposed by the incumbent.”</p>
+
+<p>“Morgan Brock’s outfit, sure. No can do on the ship data, though. That information is all confidential. Only the price proposals are available for public review, and those only during the protest period.”</p>
+
+<p>“Come on, Barry. We’re not talking trade secrets here. I could figure this out with a fly-by of their hangar in Kilian. I just don’t have time for that. I need to know what ships those guys fly.”</p>
+
+<p>Barry breathed out a heavy sigh, “Hold on. But I can’t send you the proposals, okay? You guys are already on thin ice with this contract as is.”</p>
+
+<p>“Tell me about it. And thanks, I owe you huge for this.”</p>
+
+<p>Walt waited, throat dry. He scratched at a chipped edge on his worn mobiGlas with a fingernail.</p>
+
+<p>“All right,” Barry read from something off-screen, “it looks like they’re flying a variety of Hornets. Specifically, F7As. I can send you a list of the proposed hardpoints, and I hap­pen to know that Brock herself flies a Super Hornet.”</p>
+
+<p>The mobiGlas shook on Walt’s wrist. His face felt hot, and he forced his jaw to relax. “Barry, if you have any pull with the Navy, get some ships to Tyrol. It’s been Brock this whole time. She’s been setting us up to fail. And she’s the bitch that OK’d Boomer.”</p></div><div class="cboth"></div></div>
+<div  class=' segment' ><div class="content"><p>“I’m going, Walt. That’s final.”</p>
+
+<p>Walt rubbed at his eyes with the flat part of his fingers. How did Gavin ever win an argument with her? Forbidding her involvement was a lost cause. Maybe he could reason with her. “Listen. When’s the last time you were even in a cockpit?”</p>
+
+<p>“I know this ship. I was practically born in these things.”</p>
+
+<p>“Dell —”</p>
+
+<p>She threw his helmet at him. He caught it awkwardly, and she had shed her coveralls and was wriggling into her flight suit before he could finish his thought. She stared at him with hard eyes and said, “Suit up if you don’t want to get left behind.”</p>
+
+<p>Dell was as implacable as gravity. Fine. It was her funeral, and he realized there was no way his brother had ever won an argument with her. </p>
+
+<p>They finished prepping in silence. Walt pulled the chocks on her Avenger when she climbed up into the cockpit. He gave the hulking muzzle of the Tarantula an appreciative pat. “You have ammo for this bad boy?”</p>
+
+<p>“I have a little.”</p>
+
+<p>“Good,” he smiled. “Let’s hope Brock isn’t ready to handle reinforcements.”</p>
+
+<p>Walt mulled that thought over. It was true that Gavin had split their team in each fight, but Rhedd Alert had never sent in reserves. Each engagement had been a fair and straightforward fight. Brock wasn’t likely to know anything about their resources, however limited, beyond the escort team. That could work to their advantage.</p>
+
+<p>In fact, “Hey, Dell. Hop out for a tick, will you?”</p>
+
+<p>“Like hell I will.” The look she shot down at him was pure challenge. “I said I’m going and that’s that.”</p>
+
+<p>“Oh, no. I’ve already lost that fight. But you and your cannon here got me thinking about those pirates in Oberon. Tell me, did we ever find a buyer for that old Idris hull?”</p>
+
+<p>“No. It’s buoyed in storage outside the station, why?”</p>
+
+<p>Dell looked at him skeptically and he grinned. “We’re going to introduce these military-types to <br />
+some ol’ smugglers’ tricks.”</p></div><div class="cboth"></div></div>
+<div  class=' segment' ><div class="content"><p>Gavin held the team at the edge of the jump gate between Min and Nexus. “All right gang, listen up. You know the drill and what might be waiting for us on the other side. Jazza, I want you and Rahul up on point for this jump. I’ll bring <em>Cassiopeia</em> over after you and the rest of the team are in. Anyone not ready to jump?”</p>
+
+<p>His team was silent as they arranged themselves into position with professional precision. The pilot aboard <em>Cassiopeia</em> sounded the ready and Gavin sent Jazza through. The others were hard on her heels, and Gavin felt the always-peculiar drop through the mouth of the jump gate.</p>
+
+<p>Light and sound stretched, dragging him across the inter­space. Another drop, a moment’s disorientation, and then Nexus resolved around him.</p>
+
+<p>Without warning, Mei’s fighter flashed past his forward screen. Incandescent laser fire slashed along the ghost grey and fire-alarm red ship, crippling Mei’s shields and shearing away sections of armored hull. Mei fired back at a trio of maddeningly familiar Hornets in a tight triangular formation.</p>
+
+<p>Jazza barked orders. “Mei. Rahul. Flank Gavin and get <em>Cassiopeia</em> out of here. Gavin, you copy that? You have the package.”</p>
+
+<p>He shook his head, willing the post-jump disorientation away. He didn’t remember bringing up his shields, but they flashed on his <span class="caps">HUD</span> and his weapon systems were armed.</p>
+
+<p>“Copy that.” Gavin switched to the transport channel, “<em>Cassiopeia</em>. Let’s get you folks out of here.”</p>
+
+<p>The crew onboard the <span class="caps">UEE</span> transport didn’t need any more encouragement. Gavin accelerated to keep pace with the larger ship as two Rhedd Alert fighters dropped into posi­tion above and below him. Together, they raced toward the jump gate to Tyrol.</p>
+
+<p>The Hornets wheeled and dropped toward them from one side. Gavin’s <span class="caps">HUD</span> lit up with alerts as Jazza sent a pair of rockets dangerously close over his head to blast into one of the attacking ships. Her ship screamed by overhead, but the Hornets stayed in pursuit of the fleeing transport.</p>
+
+<p>Alarms sounded. They needed more firepower on the Hornets to give <em>Cassiopeia</em> time to get clear. He yelled a course heading, and <em>Cassiopeia</em> dove with Mei and Rahul on either flank.</p>
+
+<p>Gavin pulled up, turned and fired to pull the attention of the attackers. He spun, taking the brunt of their return fire on his stronger starboard shields.</p>
+
+<p>The impact shook the Cutlass violently, and his shield integ­rity bar sagged into the red. Gavin turned, took another wild shot with his lasers, and accelerated away from <em>Cassiopeia</em> with the Hornets in close pursuit.</p></div><div class="cboth"></div></div>
+<div  class=' segment' ><div class="content"><p>Navsat data for the jump into Nexus crept onto the edge of Walt’s <span class="caps">HUD</span>. Several seconds and thousands of kilometers later, the first of the embattled starships winked onto the display. His brother and the Rhedd Alert team were hard-pressed.</p>
+
+<p>Walt watched Brock and her crew circle and strike, corralling the Rhedd Alert ships. Gavin tried to lead the attackers away, but Brock wouldn’t bite. By keeping the fight centered on the <span class="caps">UEE</span> transport, she essentially held the transport hostage.</p>
+
+<p>Time to even the odds.</p>
+
+<p>Jazza tore into one of the Hornets. Walt saw the enemy fighter’s superior shields absorb the impact. He marked that Hornet as his target, preparing to strike before its defenses recharged.</p>
+
+<p>He killed his primary drive and spun end to end, slash­ing backward through the melee like a blazing comet. His targeting system locked onto the enemy Hornet, and his heavy Broadsword blasted bullets into it.</p>
+
+<p>Mei’s battered fighter dove through the streaming wreck­age, but the Super Hornet, presumably Brock, waited for her on the other side. A blast from her neutron cannon tore through the Rhedd Alert ship. Mei ejected safely, but their team was down a ship.</p>
+
+<p>“Gods,” Gavin’s voice was frantic. “Get the hell out of here, Walt. Form up with the transport and get them away from the fight.”</p>
+
+<p>Walt ignored him. He came around for another pass and triggered his mic to an open-area channel. “The game’s up, Brock.”</p>
+
+<p>His words cut across the thrust and wheel of close com­bat, and for a moment the fighters on all sides flew in quiet patterns above the fleeing <em>Cassiopeia</em>.</p>
+
+<p>“You know,” Walt said, “if you wanted us to believe you were after the transport, you should have saved your big guns for <em>Cassiopeia</em> instead of overkilling our friend.”</p>
+
+<p>“I suppose I should be disappointed that you have found me out,” Brock’s voice was a pinched sneer, and every bit as cold and hard as Gavin had described. “On the other hand, I’m glad you’ve shared this with me. I might have been content disabling the majority of your so-called fleet. Now, it seems that I will have to be more thorough.”</p>
+
+<p>She fired, he dodged, and the fight was on again in earnest. Walt switched his comms to Rhedd Alert’s squad channel. “Brock was never after <em>Cassiopeia</em>, Gav. She’s been after us.”</p>
+
+<p>“Maybe I’m a little distracted by all the missiles and the neutron cannon, but I’m failing to see how that is at all relevant right now.”</p>
+
+<p>“We’re no match for the tech in her ships. If she goes after the transport, they’re toast.” He rolled into position next to Gavin. Together, they nosed down to strafe at a Hornet from above.</p>
+
+<p>“Great,” Gavin said, “then why did you tip her off?”</p>
+
+<p>Walt suppressed a wicked grin. “Because,” he said, “she can’t afford to let any of us get away, either.”</p>
+
+<p>“If you have any brilliant ideas, spit ’em out. I’m all ears.”</p>
+
+<p>“Run with me.” For all Walt knew, Brock could hear every word they were saying. She would tear them apart if they stayed. He had to get Gavin to follow him. “Run with me, Gavin.”</p>
+
+<p>“Damn it, Walt! If you came to help, then help. I’ve got a pilot down, and I’m not leaving her here to get OK’d like Boom­er.”</p>
+
+<p>“This ain’t about doing the easy thing, Gav. Someone I truly admire once told me that this game is all about trust. So ask yourself . . . do you trust me?”</p>
+
+<p>Gavin growled his name then, dragging out the word in a bitter, internal struggle. The weight of it made Walt’s throat constrict. Despite all of their arguments, Boomer’s death and his own desertion when things got hard — in spite of all of that — his brother still wanted to trust him.</p>
+
+<p>“Trust me, Gavin.”</p>
+
+<p>Brock and her wingman swept low, diving to corral <em>Cassiopeia</em> and its escorts. Jazza redirected them with a blazing torrent of laser fire and got rocked by the neutron cannon in return. The shields around her battered Cutlass flashed, dimmed and then failed.</p>
+
+<p>Walt gritted his teeth. It was now or never.</p>
+
+<p>“Jazz,” Gavin’s voice sounded hard and sharp, “rally with <em>Cassiopeia</em> and make a break for it.”</p>
+
+<p>Walt pumped his fist and accelerated back the way he’d come in.</p>
+
+<p>“Walt,” Gavin sounded angry enough to eat nails, but he followed, “I’m on your six. Let’s go, people! Move like you’ve got a purpose.”</p>
+
+<p>Walt pulled up a set of coordinate presets and streaked away with Gavin close behind him. The two remaining Hor­nets split, with Brock falling in behind Gavin to give pursuit. Even together he and Gavin didn’t have much chance of getting past her superior shields. Instead, he set a straight course for the waypoint marked at the edge of his display. When incoming fire from Brock drove them off course, he corrected to put them directly back in line with the mark. </p>
+
+<p>Brock was gaining. Gavin’s icon flashed on his display. She was close enough to hit reliably with her repeaters. As they approached the preset coordinates, Walt spotted a rippling distortion of winking starlight. Correcting his course slightly, he headed straight for it. Gavin and Brock were hard behind him.</p>
+
+<p>“Come on,” Walt whispered, “stay close.”</p>
+
+<p>On the squad display, he saw Gavin’s shield integrity dropped yet again. Brock was scoring more frequent hits.</p>
+
+<p>“A little farther.”</p>
+
+<p>Walt focused on the rippling of starlight ahead, a dark patch of space that swallowed Nexus’ star. He made a slight course correction and Gavin matched it. Together, they continued their breakneck flight from Brock’s deadly onslaught.</p>
+
+<p>The small patch of dark space grew as the three ships streaked forward. Walt opened the squad channel on his mic and shouted, “Now!”</p>
+
+<p>On his <span class="caps">HUD</span>, a new ship flared onto the display. It appeared to materialize nearly on top of them as Dell’s Avenger dropped from her hiding place inside the blackened hull of the derelict Idris.</p>
+
+<p>Walt punched his thrusters. The lift pressed him into his seat as he pushed up and over their trap. He heard Dell shouting over the squad channel, and he turned, straining to see behind him. Bright flashes from Brock’s muzzles accompanied a horrible pounding thunder. Dell had left her mic open and it sounded like the massive gun was threat­ening to tear her ship apart.</p></div><div class="cboth"></div></div>
+<div  class=' segment' ><div class="content"><p>“Heads up, Gav!”</p>
+
+<p>Dell’s voice hit Gavin like a physical blow.</p>
+
+<p>He saw his brother climb and suddenly disappear behind an empty, starless expanse. Then Boomer’s Avenger materi­alized from within that blackness, and Gavin knew that his wife was inside the cockpit. She was with him, out in the black where veteran pilots outgunned them.</p>
+
+<p>His body reacted where his mind could not. He shoved down, hard. Thrusters strained as he instinctively tried to avoid colliding with her. A brilliant pulse like flashes of light­ning accompanied a jarring thunder of sound.</p>
+
+<p>Gavin forced his battered ship to turn. The Cutlass shud­dered from the stress, and Gavin was pressed into the side of the cockpit as the nose of his ship came around.</p>
+
+<p>He saw the first heavy round strike Brock. The combined force of the shell and her momentum shredded her for­ward shields. Then round after round tore through the nose of Brock’s ship until the air ignited inside.</p>
+
+<p>“Dell” — the flaming Hornet tumbled toward his wife like an enormous hatchet — “look out!”</p>
+
+<p>Brock ejected.</p>
+
+<p>Dell thrust to one side, but the Hornet chopped into the hull where she had hidden. The explosion sent ships and debris spinning apart in all directions.</p>
+
+<p>“Dell!”</p>
+
+<p>He swept around to intercept her spinning ship. Walt beat him there. Thrusters firing in tightly controlled move­ments, Walt caught her Avenger, slowed it and stopped the spin.</p>
+
+<p>Gavin rolled to put himself cockpit to cockpit with his wife. </p>
+
+<p>“Dell?”</p>
+
+<p>She sat in stillness at the controls, her head down and turned to one side.</p>
+
+<p>“Come on, baby. Talk to me.”</p>
+
+<p>She moved.</p>
+
+<p>With the slow deliberateness of depressurized space, she rolled her head on her shoulders. When she looked up, their eyes met. Dell gave him a slow smile and a thumbs-up. He swallowed hard, and with one hand pressed to his heart, he shut his eyes silently in thanks.</p>
+
+<p>Gavin spun his Cutlass and thrust over to where Brock floated nearby, his weapons systems still hot. He paused then, looming above her as she had hesitated over Boomer.</p>
+
+<p>Her comms were still active. “What now, Rhedd?”</p>
+
+<p>He remembered her from the meeting with Greely. Tall, lean, and crisp. She seemed small now, drifting not more than a meter away from the battle-scarred nose of his Cutlass.</p>
+
+<p>“Gavin?” Dell’s voice sounded small after the ruckus of the fight. </p>
+
+<p>Walt eased into view alongside him. His voice was low and calm, “Easy, buddy. We weren’t raised to OK pilots.”</p>
+
+<p>“She’s not worth it,” Dell said.</p>
+
+<p>Brock snarled, “Do it already.”</p>
+
+<p>He had studied Brock’s reports for months. She had more ships and more pilots than he could ever imagine employing. What drove her to harass them and kill one of his crew for this job?</p>
+
+<p>“I just want to know why,” he asked. “You’ve got other contracts. You’ve probably made more money than any of us will see in our lives. Why come after us?”</p>
+
+<p>He held Brock’s eye, the lights from the Cutlass reflecting from her visor.</p>
+
+<p>“Why?” she repeated. “Look around you, Rhedd. There’s no law in these systems. All that matters here is courage to take what you want, and a willingness to sacrifice to keep it.”</p>
+
+<p>“You want to talk sacrifice?” he said. “That pilot you killed was family.”</p>
+
+<p>“You put him in harm’s way,” she said, “not me. What little order exists in these systems is what I brought with me. I carved my success from nothing. You independents are thieves. You’re like rodents, nibbling at the edges of others’ success.”</p>
+
+<p>“I was a thief,” he said, “and a smuggler. But we’re building our own success, and next time you and I meet with the Navy,” Gavin fired his thrusters just enough to punch Brock with the nose of his ship, “it’ll be in a court­room.”</p>
+
+<p>She spun and tumbled as she flew, growing smaller and smaller until the <span class="caps">PRB</span> on his <span class="caps">HUD</span> was all he could see.</p></div><div class="cboth"></div></div>
+<div  class=' segment' ><div class="content"><p>A pair of Retaliators with naval designations were moored outside the Rhedd Alert hangar when Gavin and the crew finally limped back to Vista Landing.</p>
+
+<p>Crew aboard <em>Cassiopeia</em> had insisted on helping with medical care and recovery after the fight. The team scheduled for pick-up at Haven was similarly adamant that Rhedd Alert take care of their own before continuing. Technically, no one had checked with Navy SysCom.</p>
+
+<p>Did the Navy fire contractors face to face? For all he knew, they did.</p>
+
+<p>Gavin saw to the staging of their damaged ships while the others hurried the wounded deeper into Vista Landing. When he’d finished, he exchanged a quick nod with Barry Lidst who stood at ease behind Major Greely.</p>
+
+<p>“Major,” Gavin held out his hand, “I assume someone would have told me already if I was fired.”</p>
+
+<p>His hand disappeared in the major’s massive paw. “I sup­pose they would have, at that.”</p>
+
+<p>“Then to what do we owe the honor?” Dell and Walt joined them, and Gavin made introductions.</p>
+
+<p>“‘I’ first, then ‘we,’ ” Greely repeated, “I like that, Rhedd. I appreciate a man who accepts consequence personally but insists on sharing accolades with his team. Tell me, son. How’d you get Brock?”</p>
+
+<p>Gavin nudged his wife. With a roguish grin, Dell pulled her arm from around Gavin’s waist and stepped over to pat the Tarantula on her battered Avenger. </p>
+
+<p>“Nice shooting, miss.”</p>
+
+<p>Dell shrugged, “Walt pulled my tags, nav beacon and flight recorder before we left. I was sitting dark inside a decoy when the boys flew her right down the barrel.”</p>
+
+<p>Barry leaned toward Greely and in a completely audible whisper said, “It might be best if we ignore the illegal parts of that.”</p>
+
+<p>Greely waved him off. “This is what the ’verse needs. Men and women with the courage to slap their name up on the side of a hangar. A chance for responsible civilians to create good, honest jobs with real pay for locals. That an ex-military contractor tried to muck that up . . .”</p>
+
+<p>Gavin and the team got a good, close look at what angry looked like on a Navy officer. It was the kind of scowl that left an impression.</p>
+
+<p>“Anyway,” Greely composed himself, “not a soul in the ’verse would blame you for writing us off as a bit of bad business. I’m here to ask that you stick with it.”</p>
+
+<p>Gavin was reluctant to bring their financial situation up in front of their one paying client, but they were tapped out. Rhedd Alert didn’t have the cred to buy ammo, much less repair their downed fighters. “Actually, sir. I think we may need to find something a little more lucrative than getting shot up by disgruntled incumbents.”</p>
+
+<p>“About that,” Greely rested his hand on Gavin’s shoulder. He led him to look out one of the large hangar windows at the Retaliators buoyed outside. “My accountant tells me there may be some room to renegotiate certain parts of the Tyrol contract. But that job won’t be enough to keep your team busy now that Brock’s out of the way.”</p>
+
+<p>Gavin laughed. “On that point, I most certainly hope you are right.”</p>
+
+<p>“Well . . . I’ve got more work for an outfit like yours. I hope you’ll accept, because you folks have surely earned it. Tell me, Rhedd, are you familiar with the Oberon system?”</p>
+
+<p>Behind them, Walt dropped his helmet.</p>
+
+<h3>The End</h3></div><div class="cboth"></div></div>
+<div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+</div>
+
+<script>
+(function( $ ){
+  var $window = $(window);
+  var windowHeight = $window.height();
+
+  $window.resize(function () {
+    windowHeight = $window.height();
+  });
+
+  $.fn.parallax = function(xpos, speedFactor, outerHeight) {
+    var $this = $(this);
+    var getHeight;
+    var firstTop;
+    var paddingTop = 0;
+    
+    //get the starting position of each element to have parallax applied to it    
+    $this.each(function(){
+        firstTop = $this.offset().top;
+    });
+
+    if (outerHeight) {
+      getHeight = function(jqo) {
+        return jqo.outerHeight(true);
+      };
+    } else {
+      getHeight = function(jqo) {
+        return jqo.height();
+      };
+    }
+      
+    // setup defaults if arguments aren't specified
+    if (arguments.length < 1 || xpos === null) xpos = "50%";
+    if (arguments.length < 2 || speedFactor === null) speedFactor = 0.1;
+    if (arguments.length < 3 || outerHeight === null) outerHeight = true;
+    
+    // function to be called whenever the window is scrolled or resized
+    function update(){
+      var pos = $window.scrollTop();        
+
+      $this.each(function(){
+        var $element = $(this);
+        var top = $element.offset().top;
+        var height = getHeight($element);
+
+        // Check if totally above or totally below viewport
+        if (top + height < pos || top > pos + windowHeight) {
+          return;
+        }
+
+        $this.css('backgroundPosition', xpos + " " + Math.round((firstTop - pos) * speedFactor) + "px");
+      });
+    }   
+
+    $window.bind('scroll', update).resize(update);
+    update();
+  };
+
+  $('.parallax-1').parallax("50%", 0.1, true);
+$('.parallax-2').parallax("50%", 0.1, true);
+$('.parallax-3').parallax("50%", 0.1, true);
+$('.parallax-4').parallax("50%", 0.1, true);
+$('.parallax-5').parallax("50%", 0.1, true);
+$('.parallax-6').parallax("50%", 0.1, true);
+$('.parallax-7').parallax("50%", 0.1, true);
+})(jQuery);
+</script>
+
+
+  <div class="wrapper">
+    
+    <div class="end-transmission-container">
+      <div class="glow left"></div>
+      <div class="title-bar">
+        <h1>End Transmission</h1>
+      </div>
+      <div class="glow right"></div>
+    </div>
+  </div>
+  
+
+  
+    <div class="two-line-separator"></div>
+  <div class="channel-banner">
+  <div class="header-container">
+                  <div>
+      <div class="header">
+        <div class="wrapper">
+                      <div class="image" style="background-image:url('/media/pmjjh69ezaiygr/post_section_header/BrothersInArms_pt1_cropped.jpg');"></div>
+                    <div class="texts">
+            <div class="title">
+              <div class="presented-by">Part of</div>
+              <div class="cboth"></div>
+              <h1>Brothers In Arms</h1>
+              <a  class="holobtn " href="/comm-link?series=Brothers-In-Arms"  >
+  <span class="holobtn-top abs-overlay trans-02s">More in this series </span>
+  <span class="holobtn-bottom abs-overlay trans-02s"></span>
+</a>
+              <div class="cboth"></div>
+            </div>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content-carousel">
+    <div class="carousel-mask">
+      <div class="left-shadow shadow"></div>
+      <a href="" class="prev js-prev"><div class="hover trans-03s trans-opacity"></div></a>
+      <div class="centerer">
+        <div class="carousel">
+                      <a href="/comm-link/serialized-fiction/16942-Brothers-In-Arms-Part-One" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/pmjjh69ezaiygr/home_transmissions_item_expanded/BrothersInArms_pt1_cropped.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Brothers In Arms: Part One</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">3 years ago</span></div>
+    <div class="section">serialized-fiction</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/serialized-fiction/16986-Brothers-In-Arms-Part-Two" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/pmjjh69ezaiygr/home_transmissions_item_expanded/BrothersInArms_pt1_cropped.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Brothers In Arms: Part Two</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2 years ago</span></div>
+    <div class="section">serialized-fiction</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/serialized-fiction/17017-Brothers-In-Arms-Part-Three" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/pmjjh69ezaiygr/home_transmissions_item_expanded/BrothersInArms_pt1_cropped.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Brothers In Arms: Part Three</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2 years ago</span></div>
+    <div class="section">serialized-fiction</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/serialized-fiction/17050-Brothers-In-Arms-Part-Four" class="series-carousel-item content-block3 trans-05s  on">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/pmjjh69ezaiygr/home_transmissions_item_expanded/BrothersInArms_pt1_cropped.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Brothers In Arms: Part Four</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2 years ago</span></div>
+    <div class="section">serialized-fiction</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                  </div>
+      </div>
+      <a href="" class="next js-next"><div class="hover trans-03s trans-opacity"></div></a>
+      <div class="right-shadow shadow"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $(".channel-banner .content-carousel").each(function(index, element) {
+      $(element).data("carousel", new RSI.FullCarousel({
+        holder:$(element).find(".carousel"),
+        prevButton:$(element).find(".js-prev"),
+        nextButton:$(element).find(".js-next"),
+        circular:true,
+        displayItems:3 // healthy amount so that we never see empty
+      }));
+    });
+  });
+</script>
+    
+
+  <div class="two-line-separator"></div>
+  
+    
+<div class="wrapper force-one-column" id="comments">
+  <div class="holder">
+    <div class="title-bar">
+      <div class="count">
+        <div class="label">Comments</div>
+        <div class="value">016.<span class="js-comment-decimal">0</span></div>
+        <div class="cboth"></div>
+      </div>
+      <div class="title">
+        <h1>Feedback</h1>
+      </div>
+      <div class="cboth"></div>
+    </div>
+
+    <div class="main-buttons-holder-container">
+      <div class="main-buttons-holder">
+        <a href="/connect?jumpto=/comm-link/serialized-fiction/17050-Brothers-In-Arms-Part-Four" class="add-comment js-add-comment trans-02s js-modal-login">Add New Comment</a>
+        <div class="settings js-settings">
+          <h1>Settings</h1>
+          <label>View mode:</label>
+          <a href="#" class="js-comments-view to-one-column js-to-one-column trans-01s on">One column</a>
+          <a href="#" class="js-comments-view to-two-columns js-to-two-columns trans-01s ">Two columns</a>
+          <label>Sort by:</label>
+          <a href="#" class="js-comments-sort to-oldest js-to-oldest trans-01s on">Oldest first</a>
+          <a href="#" class="js-comments-sort to-newest js-to-newest trans-01s ">Newest first</a>
+          <a href="#" class="js-comments-sort to-appreciated js-to-appreciated trans-01s ">Most appreciated first</a>
+
+                  </div>
+        <a href="" class="view-settings js-view-settings"><div class="hover trans-02s"></div></a>
+        <div class="triangle"></div>
+      </div>
+    </div>
+
+    
+    <div class="comment-listing"></div>
+
+    <div class="comment-loader traj-loader">
+      <div class="fast-blink"></div>
+      <span>Loading Additional Feedback</span>
+    </div>
+
+    <div class="cboth"></div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    window.comments = new RSI.Comments({
+      atom_url:"/comm-link/serialized-fiction/17050-Brothers-In-Arms-Part-Four",
+      comment_listing_el:$(".comment-listing"),
+      comment_submission_form_el:$(".comment-submission"),
+      api_object:RSI.Api.Comments,
+      lazyLoading: true,
+      comment_count: 16,
+      subject_id:17050,
+      append:false,
+      texts: {
+        "edit": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        },
+        "reply": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        }
+      },
+      "insertion_conf": {
+        "mode":"html"
+      },
+      "api_function_names": {
+        "delete":"erase",
+        "load":"listing",
+        "sort":"listing"
+      }
+    });
+  });
+</script>
+  
+</div>
+
+    </div>
+
+    
+  </div>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.11/moment-timezone-with-data.min.js"></script>
+
+<script type="text/plain" data-cookieconsent="statistics">
+  $.cookie('moment_timezone', moment.tz.guess(), { expires: 31, path: '/' });
+</script>
+
+
+
+
+               <script id="tpl_number_counter_digits" type="text/x-jsmart-tmpl">{if !$seperator}{$seperator=','}{/if}
+{if !$first_max}{$first_max=9}{/if}
+{for $digit = 0 to $length-1}
+  <div class="mask">
+    <div class="carousel">
+      {if $digit == 0}
+        {$max = $first_max}
+      {else}
+        {$max = 9}
+      {/if}
+      {for $i=0 to $max}
+        <div class="item {if $val_arr[$digit] == $i}on{/if}" rel="{$i}">{$i}</div>
+      {/for}
+    </div>
+  </div>
+  {if ($length - $digit) % 3 == 1 && $digit != $length-1}
+  <div class="seperator">{$seperator}</div>
+  {/if}
+{/for}</script>
+<script id="base_modal" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  <div class="top-border">
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+  </div>
+</div></script>
+<script id="base_modal_flat" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  </div>
+  
+</div></script>
+<script id="tpl_modals_slideshow" type="text/x-jsmart-tmpl"><img class="top-border" src="/rsi/static/images/modal_top.png">
+<a href="" class="close js-close"></a>
+<div class="mask">
+  <a class="js-prev prev control"></a>
+  <a class="js-next next control"></a>
+  <div class="slideshow-carousel carousel" rel="{$index}">
+    {foreach from=$images item="image"}
+      <div class="{if $index == $image@index}on{/if}">
+      {if $image.is_video}
+        <div class="video-holder">
+          <div id="slideshow_video_{$image@index}" data-source="{$image->source_url}">
+            <video width="100%" height="100%" preload="auto" {if $video}src="{$image->source_url}"{/if} controls></video>
+          </div>
+        </div>
+      {else}
+        <div class="media js-media-slideshow-{$image@iteration}">
+        {if $image.low_res}
+          <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source data-srcset="{$image.full_res}" media="(min-width: 300px)" />
+            <!--[if IE 9]></video><![endif]-->
+            <img data-srcset="{$image.low_res}" alt="{$image.title}" />
+          </picture>
+        {else}
+          <img data-src="{$image.source_url}" />
+        {/if}
+        </div>
+      {/if}
+        <div class="text">
+          {if !$image.is_video}
+          <a href="{$image.source_url}" class="download"></a>
+          {/if}
+          <div class="copyright">© 2012-{$year}<br />Cloud Imperium Games Corporation &<br />Roberts Space Industries Corp.</div>
+          <div class="page-number">{$image@iteration} / {count($images)}</div>
+          <div class="caption v-center">{if $image.title && $image.title != "undefined"}{$image.title}{/if}</div>
+          <div class="cboth"></div>
+        </div>
+      </div>
+    {/foreach}
+  </div>
+</div>
+<img class="bottom-border" src="/rsi/static/images/modal_bottom.png"></script>
+<script id="tpl_contact_us" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="contact" class="inner-content on">
+  <h2><span class="icon"></span>CONTACT</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+  <div class="error-message js-error-message"></div>
+  <div class="success-message js-success-message"></div>
+    <fieldset class="last">
+    <label for="contact_email">Email Address</label>
+    <input type="text" name="email" value="" class="trans-02s trans-color trans-box-shadow" id="contact_email" />
+  </fieldset>
+    <fieldset>
+    <label for="contact_subject">Subject</label>
+    <input type="text" name="subject" value="" class="trans-02s trans-color trans-box-shadow" id="contact_subject" />
+    <label>Contacting us for:</label>
+    <ul class="category-info">
+            <li id="tech_support_info">Questions about download, installation, networking, or in-game client problems</li>
+            <li id="subscription_info">Questions about monthly and yearly subscription plans</li>
+            <li id="account_billing_info">Issues related to your account, such as incorrect information or ability to access account, or Billing with regards to payments and payment methods</li>
+            <li id="melt_request_info">To reclaim a pledge over $1,000 for store credit (please note - this is a permanent action)</li>
+            <li id="merchandise_info">Questions about physical and/or shipped merchandise</li>
+            <li id="hacked_info">Issues related to compromised account or missing pledge.</li>
+            <li id="account_recovery_info">For issues with account authentication, lost passwords and related queries</li>
+            <li id="probation_info">Issues related to forums probation or ban</li>
+            <li id="refund_request_info">Refund requests and related inquiries</li>
+            <li id="customer_support_info">For general questions and queries regarding Star Citizen</li>
+          </ul>
+  </fieldset>
+  <fieldset>
+    <label for="contact_text">Fescription</label>
+    <textarea name="text" class="trans-02s trans-color trans-box-shadow" id="contact_text"></textarea>
+  </fieldset>
+  <div class="contact-submit-wrapper">
+    <div class="line"></div>
+    <button class="submit js-submit"><strong>submit your message</strong></button>
+  </div>
+</form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+<script id="tpl_error" type="text/x-jsmart-tmpl"><div class="modal-error js-modal-error">
+  <p class="modal-text js-modal-text"></p>
+  <a class="close js-close trans-03s .trans-opacity" href=""></a>
+</div></script>
+<script id="tpl_success" type="text/x-jsmart-tmpl"><div class="modal-success js-modal-success">
+  <p class="modal-text js-modal-text"></p>
+  <a class="close js-close trans-03s .trans-opacity" href=""></a>
+</div></script>
+<script id="tpl_progress" type="text/x-jsmart-tmpl"><div class="modal-progress js-modal-progress">
+  <div class="traj-loader">
+    <div class="fast-blink"></div>
+    <span class="modal-text js-modal-text"></span>
+  </div>
+</div></script>
+<script id="tpl_outbound" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="outbound" class="inner-content on">
+  <h2><span class="icon"></span>OUTBOUND LINK</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+      <div class="error-message js-error-message"> <span class=important>WARNING</span><br/><br/> This link will bring you outside of the RSI site and into the depths of the internet. Continue?<br/><br/><span class="url"></span> </div>
+      <div class="success-message js-success-message"><span class=important>STAND BY</span><br/><br/> Initiating hyperlink.<br/><br/></div>
+
+      <fieldset class="clearfix last">
+        <span class="submit-wrapper">
+          <span class="submit-hover trans-02s trans-opacity"></span>
+          <input type="submit" value="WARP" class="trans-02s trans-color trans-background" />
+        </span>
+      </fieldset>
+    </form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+
+<script id="tpl_l-notification-bar" type="text/x-jsmart-tmpl"><div class="l-notification-bar js-notification-bar">
+
+  <div class="l-notification-bar__watermark js-svg-inliner h-svg__logo-star-citizen"></div>
+
+  <div class="l-notification-bar__boxes">
+    {if !$viewedCookieNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='cookie'
+          title='COOKIES:'
+          message="Our website uses Google Analytics to analyze our traffic. <br/>To learn how you can control Google's use of your data and how you can opt out <a href='https://www.google.com/policies/privacy/partners/'>click here</a>."
+          linkText='See Details'
+          buttonText='Got it!'}
+      </div>
+    {/if}
+
+    {if !$viewedPrivacyNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='privacy'
+          title='PRIVACY POLICY:'
+          message='We adjusted the PP to reflect the decision of the European Court of Justice regarding Safe Harbor, the fact that RSI has moved and added some services providers.'
+          linkText='View Privacy Policy'
+          buttonText='Got it!'}
+      </div>
+    {/if}
+  </div>
+
+</div>
+</script>
+<script id="tpl_c-notification" type="text/x-jsmart-tmpl"><div class="c-notification js-bottom-notif-msg-{$type}">
+    <div class="c-notification__title">{$title}</div>
+    <div class="c-notification__message">
+      {$message}
+    </div>
+
+    {if $linkText}
+        <div class="c-notification__wrapper-link">
+            <a class="c-notification__link js-bottom-notif-link-{$type}">
+            {$linkText}
+            </a>
+        </div>
+    {/if}
+
+    <a class="c-notification__button js-bottom-notif-btn-{$type}">
+
+      <span class="c-notification__button-text">
+       {$buttonText}
+      </span>
+
+      {if $type neq 'announcement'}
+        <div class="c-iconed__icon c-iconed__icon--checkmark"></div>
+      {/if}
+    </a>
+</div>
+</script>
+
+<script id="tpl_confirm" type="text/x-jsmart-tmpl"><div class="modal-confirm js-modal-confirm clearfix">
+  <p class="modal-text js-modal-text"></p>
+  <a class="bt-close js-close trans-03s trans-opacity" href=""></a>
+  <a class="bt-confirm js-confirm trans-03s trans-opacity" href=""></a>
+	<div class="buttons">
+		<a class="shadow-button trans-02s trans-color js-close bt-close rm"     >
+  <span class="label js-label trans-02s">Cancel</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+		<a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">Confirm</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+	</div>
+</div>
+</script>
+<script id="tpl_alert" type="text/x-jsmart-tmpl"><div class="modal-alert js-modal-alert clearfix">
+  <p class="modal-text js-modal-text"></p>
+  <div class="buttons">
+    <a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">OK</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+  </div>
+</div></script>
+<script id="tpl_video" type="text/x-jsmart-tmpl">{extends file="base_modal"}
+{block name='modal_content'}
+<div id="ship-commercial" class="inner-content">
+  
+  <div class="hr"></div>
+  <div class="content-block4">
+   
+    <div class="bottom"></div>
+  </div>
+  {if $distant_source=="vimeo"}
+  <iframe id="commercial" src="//player.vimeo.com/video/{$video_id}?wmode=transparent" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+  {else}
+  <iframe id="commercial" frameborder="0" allowfullscreen="1" title="YouTube video player" width="100%" height="100%" src="https://www.youtube.com/embed/{$video_id}?autoplay=1"></iframe>
+  {/if}
+</div>
+{/block}
+</script>
+      
+  <script id="tpl_comment_report" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="comment-report" class="inner-content on">
+  <h2><span class="icon"></span>Report this comment</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+<input type="hidden" name="comment_id" value="">
+  <div class="error-message js-error-message"></div>
+  <div class="success-message js-success-message"></div>
+    <fieldset class="last">
+    <label for="report_email">Email Address</label>
+    <span class="corner-wrapper">
+      <input type="text" name="email" value="" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_email" />
+      <span class="corner corner-top-left"></span>
+      <span class="corner corner-top-right"></span>
+      <span class="corner corner-bottom-left"></span>
+      <span class="corner corner-bottom-right"></span>
+    </span>
+  </fieldset>
+    <fieldset>
+    <label>Report Type</label>
+    
+
+
+  
+    <a class="js-selectlist selectlist " rel="" href="">
+    <div class="arrow"></div>
+    <span>Please select the type best matching your report</span>
+              <ul class="body">
+              
+                                                              <li class="js-option option " rel="obscenity" >
+                                                                        Obscene Content
+                                                    </li>
+                                                                <li class="js-option option " rel="abuse" >
+                                                                        Abusive Conduct
+                                                    </li>
+                                                                <li class="js-option option " rel="other" >
+                                                                        Other
+                                                    </li>
+                                          
+            </ul>
+        <input type="hidden" name="category" class="js-category js-form-data" id="category"/>
+  </a>
+    </fieldset>
+  <fieldset>
+    <label for="report_text">Details</label>
+    <span class="corner-wrapper">
+      <textarea name="text" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_text" maxlength="2500"></textarea>
+      <span class="corner corner-top-left"></span>
+      <span class="corner corner-top-right"></span>
+      <span class="corner corner-bottom-left"></span>
+      <span class="corner corner-bottom-right"></span>
+    </span>
+  </fieldset>
+  <fieldset class="clearfix last">
+    <span class="submit-wrapper">
+      <span class="submit-hover trans-02s trans-opacity"></span>
+      <input type="submit" value="Submit" class="trans-02s trans-color trans-background" />
+    </span>
+  </fieldset>
+</form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+
+
+      
+        <footer class="c-platform-footer c-platform-footer--rsi">
+  <div class="l-platform-footer-container">
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--sc">
+        <li class="c-platform-footer-brand__item">
+
+          <span class="c-brand c-brand--sc js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--sc">
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Join the<br>Universe
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--sc">
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen" class="c-platform-footer-link">About the Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/howto/1" class="c-platform-footer-link">How to Play</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/universe" class="c-platform-footer-link">The Universe</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/media" class="c-platform-footer-link">Media</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/play-now"
+                class="c-platform-footer-link js-google-analytics-event-tracker"
+                data-event-category="FlyNow" data-event-label="footerClick">
+                Play Now
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__sc">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">
+              Social Links
+            </span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/RobertsSpaceIndustries/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/RobertsSpaceInd">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/robertsspaceind">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href=" https://www.youtube.com/channel/UCTeLqJq1mXUX5WWoNXLmOIA">
+                <span class="c-iconed__icon c-iconed__icon--youtube"></span>
+                Youtube
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.twitch.tv/starcitizen">
+                <span class="c-iconed__icon c-iconed__icon--twitch"></span>
+                Twitch
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--s42">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--s42 js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--s42">
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Start the<br>Adventure
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--s42">
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42" class="c-platform-footer-link">The Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#enlist" class="c-platform-footer-link">Enlist Today</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#roadmap" class="c-platform-footer-link">Status</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/pledge/Packages/Squadron-42-Standalone-Pledge" class="c-platform-footer-link">Pledge</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__s42">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">Social Links</span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/Squad42/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/squadron_42">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/squadron42">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column is-active">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--rsi">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--rsi js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--rsi">
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi--fullcolor"></span>
+            </span>
+            <span class="c-brand__label">
+              Follow the Development
+            </span>
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--rsi">
+            <li class="c-platform-footer-list__item">
+              <a href="/" class="c-platform-footer-link">Home</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/comm-link" class="c-platform-footer-link">Transmissions</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/community" class="c-platform-footer-link">Community</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/roadmap" class="c-platform-footer-link">Development</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--platform">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Platform
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--platform">
+                          <li class="c-platform-footer-list__item">
+                <a href="/pledge" class="c-platform-footer-link ">Pledge Store</a>
+              </li>
+            
+            <li class="c-platform-footer-list__item">
+              <a href="/download" class="c-platform-footer-link ">Download</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/spectrum/community/SC" class="c-platform-footer-link">Spectrum</a>
+            </li>
+
+                      </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--utility">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Utilities
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--utility">
+            <li class="c-platform-footer-list__item">
+              <a href="//support.robertsspaceindustries.com" class="c-platform-footer-link">Help</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/press" class="c-platform-footer-link">Press</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="https://cloudimperiumgames.com/join-us" class="c-platform-footer-link">Careers</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/tos" class="c-platform-footer-link">Terms of Services</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/privacy" class="c-platform-footer-link">Privacy Policy</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/eula" class="c-platform-footer-link">EULA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/dmca" class="c-platform-footer-link">DMCA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/legal" class="c-platform-footer-link">Legal</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/acknowledgements" class="c-platform-footer-link">Acknowledgements</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/responsible-disclosure" target="_blank" class="c-platform-footer-link">Responsible disclosure</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  
+</footer>
+
+<div class="c-platform-copyright c-platform-copyright--rsi">
+  <div class="l-platform-copyright-container">
+    <a href="https://cloudimperiumgames.com" class="c-platform-copyright__logo h-svg__logo-cig js-svg-inliner"></a>
+    <p class="c-platform-copyright__body">© 2012-2021 Cloud Imperium Rights LLC and Cloud Imperium Rights Ltd.</p>
+  </div>
+</div>
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHNFZPT"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<script type="text/javascript">
+  window.RSI.Footer = new RSI.Footer();
+</script>
+      
+    </div>
+
+    
+      <script type="text/javascript" src='/rsi/static/packages/platformbar/rsi.platformbar.build.05b39.js'></script>
+    
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"58013cabd7","applicationID":"375102748","transactionName":"Y1JaYktUWxZUV0QKV1oYe0NKQVoIGmZjKmtdQ111VltBF1pYXAZKDg1ZQlZYcwxbUA==","queueTime":0,"applicationTime":80,"atts":"TxVNFANOSEkXVRJZQ0lK","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>

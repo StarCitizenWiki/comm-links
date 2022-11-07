@@ -1,0 +1,1866 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    
+        <!-- Anti-flicker snippet (recommended)  -->
+        <style>.async-hide { opacity: 0 !important} </style>
+        <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+        h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+        (a[n]=a[n]||[]).hide=h;if (d) a[n].push({'userId' : d});setTimeout(function(){i();h.end=null},c);h.timeout=c;
+        })(window,document.documentElement,'async-hide','dataLayer',1500,
+        {'GTM-KHNFZPT':true},undefined,'');</script>
+            <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"58013cabd7",applicationID:"375102748"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(7),c=e(8),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(9);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e){return!(!e||!e.protocol||"file:"===e.protocol)}t.exports=r},{}],4:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(6),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],5:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],6:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],7:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],8:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],9:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?u(e,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){e&&a&&e(n,r,i);for(var c=t(i),f=v(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[h[n]];return p&&p.push([b,n,r,c]),c}}function o(e,t){y[e]=v(e).concat(t)}function m(e,t){var n=y[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return y[e]||[]}function g(e){return p[e]=p[e]||i(n)}function w(e,t){s(e,function(e,n){t=t||"feature",h[n]=t,t in d||(d[t]=[])})}var y={},h={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:w,abort:c,aborted:!1};return b}function o(e){return u(e,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=e("gos"),s=e(7),d={},p={},l=t.exports=i();t.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=x.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+x.offset],null,"api"),c("timing",["load",n]);var r=l.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+x.offset],null,"api")}var a=e(2),c=e("handle"),f=e(7),u=e("ee"),s=e(5),d=e(3),p=window,l=p.document,m="addEventListener",v="attachEvent",g=p.XMLHttpRequest,w=g&&g.prototype;if(d(p.location)){NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:g,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1208.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:b,userAgent:s};e(1),e(4),l[m]?(l[m]("DOMContentLoaded",o,!1),p[m]("load",r,!1)):(l[v]("onreadystatechange",i),p[v]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0}},{}],"wrap-function":[function(e,t,n){function r(e,t){function n(t,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],e)}c(n+"start",[o,a,f],s,u);try{return p=t.apply(a,o)}catch(m){throw c(n+"err",[o,a,m],s,u),m}finally{c(n+"end",[o,a,p],s,u)}}return a(t)?t:(n||(n=""),nrWrapper[p]=t,o(t,nrWrapper,e),nrWrapper)}function r(e,t,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<t.length;u++)f=t[u],c=e[f],a(c)||(e[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!m||t){var c=m;m=!0;try{e.emit(n,r,o,t,a)}catch(f){i([f,n,r,o],e)}m=c}}return e||(e=s),n.inPlace=r,n.flag=p,n}function i(e,t){t||(t=s);try{t.emit("internal-error",e)}catch(n){}}function o(e,t,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(e);return r.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(o){i([o],n)}for(var a in e)l.call(e,a)&&(t[a]=e[a]);return t}function a(e){return!(e&&e instanceof Function&&e.apply&&!e[p])}function c(e,t){var n=t(e);return n[p]=e,o(e,n,s),n}function f(e,t,n){var r=e[t];e[t]=c(r,n)}function u(){for(var e=arguments.length,t=new Array(e),n=0;n<e;++n)t[n]=arguments[n];return t}var s=e("ee"),d=e(8),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;t.exports=r,t.exports.wrapFunction=c,t.exports.wrapInPlace=f,t.exports.argsToArray=u},{}]},{},["loader"]);</script>
+      <meta name="viewport" content="width=device-width">
+      <meta name="description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans.">
+      <meta property="og:site_name" content="
+Sid & Cyrus (Part Two) - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+" />
+      <meta property="og:image" content="https://robertsspaceindustries.com/media/wyz6odpinzx25r/channel_item_full/Sid-Cyrus-Title.jpg" />
+      <meta property="og:description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans." />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://robertsspaceindustries.com/comm-link/SCW/17977-IMPORT" />
+      <meta property="og:locale" content="us_EN" />
+
+            
+
+            <link href="/rsi/static/css/cross-brand-less.css?v=6.0.1" media="all" rel="stylesheet">
+      <link href='/rsi/static/packages/platformbar/rsi.platformbar.build.05b39.css' media="all" rel="stylesheet">
+      <link href='/rsi/static/packages/enlist/rsi.enlist.build.0ff8b.css' media="all" rel="stylesheet"/>
+            <script type="text/javascript" src="/cache/en/rsi-external-js.js?v=6.0.1"></script>
+      <script type="text/javascript" src="/cache/en/rsi-templates-js.js?v=6.0.1"></script>
+
+            <link rel="stylesheet" href="https://use.typekit.net/dhw3beb.css">
+
+              <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="a687ee30-df65-45a0-9d22-90de6c1bb964" type="text/javascript"></script>
+      
+      
+    <!-- Google Tag Manager -->
+    <script data-cookieconsent="ignore">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHNFZPT');</script>
+    <!-- End Google Tag Manager -->
+
+
+      <title>
+Sid & Cyrus (Part Two) - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+</title>
+
+            <script type="text/javascript" src='/rsi/static/packages/core/rsi.core.build.804b0.js'></script>
+      <script type="text/javascript" src='/rsi/static/packages/account/rsi.account.build.609b5.js'></script>
+      <script type="text/javascript" src='/rsi/static/packages/store/rsi.store.build.cd9a7.js'></script>
+
+      <script>
+        $(document).ready(function() {
+          window.Common = new RSI.Common({});
+          window.Main = new RSI.Main({
+            'is_mobile': 0,
+            'probation_cookie' : '',
+            'require_captcha': 0
+          });
+          window.Mark = new Turbulent.Mark({ 'name' : 'Rsi-XSRF', 'token' : '', 'ttl' : 1800 });
+
+          window.WscOverlay = new RSI.WscOverlay({});
+
+          var destinations = [];
+
+window.Main.destinations = destinations;          
+  window.PageStore = new RSI.Store({
+    'store_prefix' : '/pledge',
+    'bootstrapConfig': {"injection":{"attachmentClass":"RSIStoreApp","files":{"js":["bootstrap.js"],"css":["index.css"]}},"platform":{"api":"\/api"},"store":{"path":"\/pledge-store","manifest":"manifest.json"},"customizer":{"api":"\/pledge-store\/api\/customizer","ga_tracking_code":"UA-39586040-5"}}
+  });
+
+          
+          
+  var productsTracking = [];
+  var eCommerceData = {
+    'trackingAction': "",
+    'currency': "",
+    'trackingStep': "",
+    'trackingProducts': productsTracking
+  };
+  window.eCommerceTracking = new RSI.Store.eCommerceTracking(
+    eCommerceData
+  );
+
+        });
+
+        $(window).load(function() {
+          
+        });
+
+      </script>
+
+
+      <script>
+        window.recaptcha_is_loaded = false;
+        window.on_recaptcha_load_callback = function() {
+          window.recaptcha_is_loaded = true;
+        };
+      </script>
+
+      <script src="https://www.google.com/recaptcha/api.js?onload=on_recaptcha_load_callback&render=6LerBOgUAAAAAKPg6vsAFPTN66Woz-jBClxdQU-o" async defer></script>
+
+      <script type="text/javascript">
+
+        
+
+                                </script>
+
+      
+
+<style type="text/css">
+  /* CSS from ATOM */
+  hr {
+border-top: 2px solid #13d0ff;
+width: 300px;
+margin-left: 25%;
+}
+.rsi-markup .segment .content h5 { line-height:28px;max-width:774px;width:75%;min-width:300px}
+
+.parallax {
+height: 850px;
+background-position: 50% 50%;
+background-repeat: no-repeat;
+background-attachment: fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+
+.parallax-block { }
+.parallax-block .rsi-markup .segment .content { margin-left:0; margin-right:0 }
+.parallax-block hr { background-color:#09daff; border-top:0px;}
+.parallax-block .corner, .parallax-block  .top-line-thin, .parallax-block .top-line { display:none }
+.parallax-block .content-block1 { border:0}
+
+.parallax-segment { height:280px}
+
+.parallax-1 {
+background-image: url("/media/wyz6odpinzx25r/source/Sid-Cyrus-Title.jpg");
+}
+
+.mb-full img { width: 100%;
+ }
+ span.initial{font-size:inherit!important; 
+margin-right:0!important;}
+.italic  {  font-style:  italic;  }
+</style>
+
+<script type="text/javascript">
+  /* JS from ATOM */
+  
+</script>
+
+
+
+
+    
+
+  <style>
+    
+      background:url(/rsi/static/images/noisebg.gif) repeat center top #000b11;
+    
+  </style>
+
+    <link href="//fonts.googleapis.com/css?family=Electrolize|Orbitron:400,500,700|Quantico|Share+Tech+Mono&display=swap" rel="stylesheet" type="text/css">
+
+    <link href="/cache/en/rsi-css.css?v=6.0.1" media="all" rel="stylesheet">
+
+
+  </head>
+  <body id="" class="" >
+
+    
+      <div class="l-notification-bar l-notification-bar--rsi js-notification-bar" id="notification-bar-root">
+  <c-notification-bar v-bind:latestagreementsslugs=[] v-bind:loggedin="0" v-bind:onhomepage="0"></c-notification-bar>
+  <div class="l-notification-container l-notification-bar__boxes js-notification-bar-boxes">
+    <div class="l-notification__wrapper">
+      
+      <c-unsupported-browser v-cloak>
+        <div class="l-notification-bar__box js-notification-bar-box">
+          <div class="c-notification  c-notification--browser-support js-bottom-notif-msg-browser-support">
+  <div class="c-notification__inner">
+
+    <div class="c-notification__content">
+      <div class="c-notification__title">
+        IE11 is no longer supported
+      </div>
+      <div class="c-notification__message">
+        We do not support Internet Explorer 11 and below. Please use a different web browser.
+      </div>
+    </div>
+
+    <div class="c-notification__actions">
+      
+      
+          </div>
+
+  </div>
+</div>
+        </div>
+      </c-unsupported-browser>
+    </div>
+  </div>
+
+</div>
+    
+
+    <div id="bodyWrapper">
+      <header class='c-header-wrapper c-header-wrapper--rsi js-header-wrapper '  id='cross-brand-header'>
+  <div id="platform-bar" class="c-header__platform-bar"></div>
+
+      <div class='c-right-sidebar c-right-sidebar--signin' id="account-sidebar">
+      <div class="js-toggle-account__backdrop invisible"></div>
+
+      <a href="#" class='c-right-sidebar__back js-toggle-account'>Back
+        <span></span>
+        <span></span>
+      </a>
+
+      <div id="enlist-root" data-theme="rsi" data-enlisting="" data-ptu=""></div>
+      <script type="text/javascript" src='/rsi/static/packages/enlist/rsi.enlist.build.0ff8b.js'></script>
+    </div>
+  
+  <div class="c-header-wrapper__backdrop js-toggle-games"></div>
+</header>
+
+<div id="platform-backdrop"></div>
+
+<script type='text/javascript'>
+  RSI.Platformbar = {
+    theme: "rsi",
+    loggedState: "logged-out",
+    tabs: [
+      {
+        type: 'brands',
+        name: "Games",
+        subItems: [
+          {
+            name: "sc",
+            href: "/star-citizen",
+            description: "Join the Universe"
+          },
+          {
+            name: "s42",
+            href: "/squadron42",
+            description: "Start the adventure"
+          },
+          {
+            name: "rsi",
+            href: "/",
+            description: "Follow the Development"
+          }
+        ]
+      },
+      {
+        type: 'apps',
+        name: "Apps",
+        subItems: [
+          [
+            {
+              name: "Spectrum",
+              href: "/spectrum/community/SC",
+              description: "Your communication platform"
+            },
+            {
+              name: "Launcher",
+              href: "/download",
+              description: "Download Star Citizen",
+                          }
+          ],
+          [
+            {
+              name: "Roadmap",
+              href: "/roadmap",
+              description: "Keep track of the development"
+            },
+            {
+              name: "Telemetry",
+              href: "/telemetry",
+              description: "Keep track of the player’s performance"
+            },
+            {
+              name: "Issue Council",
+                          href: "https://issue-council.robertsspaceindustries.com",
+                          description: "Help us make the game better",
+                          }
+          ],
+          [
+            {
+              name: "Starmap",
+              href: "/starmap",
+              description: "Your map to the universe"
+            },
+            {
+              name: "Galactapedia",
+              href: "/galactapedia",
+              description: "Your guide to the universe"
+            }
+          ]
+        ]
+      },
+          ],
+    navigation: {
+      store: {
+        name: "Pledge Store",
+        href: "/pledge",
+        isHidden: false      },
+      hub: {
+        name: "Learn How to Play",
+        href: "/playstarcitizen",
+        show: false      },
+      support: {
+        name: "Support",
+        href: "//support.robertsspaceindustries.com"
+      },
+      account: {
+        name: "Account",
+        href: "/account/settings",
+        isHidden: false      }
+    }
+  };
+
+  $(document).ready(function() {
+    window.header = new RSI.Header({});
+  });
+</script>
+
+
+      
+  
+<header class='c-brand-menu c-brand-menu----rsi' id='brand-menu'>
+  <span class="c-brand-menu__section">
+    
+      Roberts Space Industries
+    
+  </span>
+  <div class="c-brand-menu__backdrop"></div>
+  <nav class="c-brand-menu__container">
+    <div class="c-brand-menu__logo">
+      <a href="/"><span class="h-svg h-svg__logo-rsi--fullcolor js-svg-inliner"></span> </a>
+    </div>
+    <div class="c-brand-menu__items-container">
+      <ul class="c-brand-menu__items">
+                <li class="c-brand-menu__item  ">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/comm-link">
+            <span class="c-brand-menu__item-text">Comm-Link</span>
+                                  </a>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/community">
+            <span class="c-brand-menu__item-text">Community</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Community</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/spectrum" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Spectrum
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/orgs" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Organizations
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/leaderboards/top" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Leaderboards
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community_events" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Event
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Hub
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/fankit" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Fankit
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/development">
+            <span class="c-brand-menu__item-text">Development</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Development</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/roadmap" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Roadmap
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/devtracker" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Dev Tracker
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/telemetry" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Telemetry
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="https://issue-council.robertsspaceindustries.com" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Issue Council
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/patch-notes" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Patch Notes
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/ship-matrix" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Ship Matrix
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/funding-goals" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Funding
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+              </ul>
+    </div>
+
+    <div class="c-brand-menu__cta">
+      
+        <a href="/star-citizen/play-now" class="c-brand-cta-btn js-google-analytics-event-tracker"
+          data-event-category="FlyNow" data-event-label="navMenuClick">
+          <div></div>
+            <span class="c-brand-cta-btn__text">
+              <strong>Play now</strong>
+            </span>
+          <div></div>
+        </a>
+      
+    </div>
+  </nav>
+</header>
+
+
+
+      
+
+  
+  <div class="page-wrapper">
+    
+  <div id="post-background" ></div>
+
+
+    <div id="contentbody" class="" style="">
+      
+
+<div id="post">
+  <div class="title-section">
+    
+      <div class="wrapper title-bar-container">
+        <div class="glow left"></div>
+        <div class="title-bar">
+          <div class="title with-subtitle">
+            <h1>Serialized Fiction</h1>
+            <h2>Short Stories</h2>
+          </div>
+          <div class="details">
+            <div>
+              <h3>ID:</h3>
+              <p>17977</p>
+              <div class="cboth"></div>
+            </div>
+            <div>
+              <h3>Comments:</h3>
+              <p class="comment-count">13</p>
+              <div class="cboth"></div>
+            </div>
+            <div>
+              <h3>Date:</h3>
+              <p>February 10th 2021</p>
+              <div class="cboth"></div>
+            </div>
+            <div></div>
+          </div>
+          <div class="cboth"></div>
+        </div>
+        <div class="glow right"></div>
+      </div>
+    
+  <div class="title-container">
+    <div class="title ">Sid & Cyrus (Part Two)</div>
+    <div class="subtitle">By: Adam Wieser</div>  </div>
+
+  </div>
+
+  
+  <div class="lightbar toplightbar">
+    <div class="lightbarlights"></div>
+    <div class="footershadow"></div>
+  </div>
+
+
+  <div class="parallax-block">
+
+<div class="mb-full parallax parallax-1"></div>
+
+<div class="wrapper"><div class="content-block1 rsi-markup">
+<div  class=' segment' ><div class="content"><h5>Writer’s Note: <span class="italic">Sid &amp; Cyrus: Part Two</span> was published originally in Jump Point 5.6. Read <span class="italic"><a href="https://robertsspaceindustries.com/comm-link/serialized-fiction/17945-Sid-Cyrus-Part-One" title="Sid &amp; Cyrus: Part One">Sid &amp; Cyrus: Part One</a></span> here. </h5>
+
+<p><span class="initial">A</span> Vucari cavalcade cut across the Platean Plain. Master Kraujas stood in the back of a heavily plated vehicle, specifically converted to accommodate his massive Titan armor. The vehicle also featured a rotating platform, so he could adjust which way he faced — an essential feature considering the tachyon cannon attached to the Titan suit’s left arm. </p>
+
+<p>The vehicle barreled over a bump and only Master Kraujas’ magnetic boots kept him from being bucked out of the back. He slammed a metallic hand on the cab just above the driver, who immediately slowed. Vucari mechanics joked that this cab panel was the only piece of armor on the whole vehicle that ever needed to be replaced. Protected by his elite Vucari cavalry and that tachyon cannon, not many enemies could get close enough to Master Kraujas’ vehicle to even chip its paint. </p>
+
+<p>Master Kraujas turned his attention to the horizon where he could see black, acrid smoke rising from the site of the ambushed convoy. The closer he got to it, the more the anger swelled inside him. How dare they so brazening attack such a large convoy traveling through his territory? The Cadejo were no longer an annoyance, they were a menace that must be eliminated. </p>
+
+<p>It had all started a few months ago. Vucari scouts found the wreckage of a small civilian convoy on the edge of their territory. A few weeks later, another convoy was hit. Then another. At each scene, body armor ripped off the people in the convoy was found in a pile, but never any bodies. That’s when the rumors started. </p>
+
+<p>Stories about the Cadejos swiftly moved through his ranks. How was it they always won? How did they always vanish without a trace? They weren’t simply slavers, the stories said. Whispers started that maybe the Cadejos’ leader, Tomyris, took people to fuel some strange, ancient rituals that gave the crew dark powers. </p>
+
+<p>Master Kraujas knew better than to believe such tripe, but some of his troops still did. Then he started to see fear in his men’s eyes when another attack pointed to the Cadejos. That’s when Master Kraujas knew they had to be crushed. He could not have his crew fearing anyone; fearful warriors fail. </p>
+
+<p>Vucari spies were dispatched across Lago to dig up information on the Cadejo, but nothing was found. No one seemed to know who they were or where they holed up. The only thing known about the Cadejos was that they were stepping up attacks on civilian convoys crossing Vucari territory. </p>
+
+<p>Now, sitting before Master Kraujas was the largest convoy struck by the Cadejos yet. It was attacked right on the main road between Reis and Behistun, too, a clear challenge to his authority that made him look weak to his troops and other outlaw leaders. </p>
+
+<p>Once at the ambush site, Master Kraujas walked among the still smoldering wreckage, trying to understand how this attack could have happened on such a wide-open region of the plain. There were no good spots to hide an attacking force that could dominate and destroy a convoy of this size. No damage to the ground indicating the use of mines. It didn’t make sense. </p>
+
+<p>Master Kraujas stomped around the scene, examining every detail. He estimated that the Cadejo had made off with a hefty haul considering the size of the convoy. How they had even known about it? </p>
+
+<p>According to Dalton, the next major shipment to Behistun was supposed to leave Reis in two days. How had that date been changed without him knowing but the Cadejo finding out? Now he not only appeared incompetent but out of the loop. </p>
+
+<p>He approached the back of the only intact truck. Inside sat a large pile of personal armor, the Cadejo Crew’s calling card. </p>
+
+<p>A wave of rage overcame Master Kraujas. His hands grabbed one of the truck’s rear door panels, and in one terrifying motion, he ripped it off the hinges and tossed it behind him. The door knocked two Vucari off their feet. One lay motionless. The other writhed in pain until Master Kraujas brought his foot down upon his head. “Where’s Dalton?” demanded Master Kraujas. </p>
+
+<p>When no response came the Vucari glanced among themselves. All eyes looked for the man assigned to oversee this part of their territory. </p>
+
+<p>“Sir . . .” </p>
+
+<p>Master Kraujas turned to an outlaw pointing at the body he just stomped. An intricate Vucari emblem was etched into the chest piece. Dalton had hand-carved it himself. </p>
+
+<p>Master Kraujas glanced at the lanky figure who pointed out Dalton’s body. </p>
+
+<p>“What’s your name?” </p>
+
+<p>“Colby . . . sir.” </p>
+
+<p>“Since you’re so observant, tell me what the hell happened here.” </p>
+
+<p>Colby stalled, unsure of how to answer. Then he remembered something he saw when first surveying the site. </p>
+
+<p>“They forgot to cover their tracks. They’re clear as day, heading north.” </p>
+
+<p>Master Kraujas smiled, “Show me.” </p></div><div class="cboth"></div></div>
+<div  class=' segment' ><div class="content"><p>Sid and Cyrus had followed the trail from the ambush site. They stopped when the trail entered a small valley, which had a wide entrance, then narrowed. Not wanting to rush into the unknown, Sid and Cyrus found a hiding spot off the trail and examined detailed maps of the area. </p>
+
+<p>The valley led to an old outpost sitting on the edge of a deep open-pit mine. That outpost had to be where the trail ended, and most likely where their daughter was being held hostage. </p>
+
+<p>With its back up against the mine, the rocky valley creating a perfect bottleneck; with ground turrets flanking each side, the outpost would be impossible to approach discreetly from this direction. The only choice the two had was to look for an alternative route. </p>
+
+<p>Then Cyrus noticed there was an old hauling road going down into the mine. It started near the outpost, dipped into the mine and wound its way back up on the far side near a series of spoil banks, which were rows of all the unneeded dirt ripped from the ground. If they could access the hauling road by the spoil banks, then they could travel into the mine and perhaps sneak up on the outpost from behind. </p>
+
+<p>Once close enough, they could assess exactly what they were up against and determine how to breach the building. Plus, there was always the chance that their daughter was being held hostage somewhere in the mine. Maybe Sid and Cyrus could free Immanuelle without even having to deal with Tomyris and the rest of the Cadejos. </p>
+
+<p>Sid and Cyrus redirected course to the far side of the mine. They found a path that took them above the valley. They stopped briefly to survey the outpost and its two ground turrets from above. They didn’t linger, worried that the Cadejos might be watching. </p>
+
+<p>Abandoned centuries ago after it was played out, the mine pit had since become a dumping ground for debris and anything else that wasn’t supposed to be found again. The stench of rotting trash and industrial waste was apparent even from their spot above the valley. The foul fumes kept even the most dedicated scrappers away and made it a perfect place for a secretive outlaw pack to call home. </p>
+
+<p>Sid piloted the Dragonfly carefully around the edge of the valley towards the far side of the mine. Cyrus glanced down at the spoil banks from above. Cutting through the middle of the rows was the hauling road. Things looked clear until he noticed someone moving. They walked by one of the spoil banks and pulled some camouflage netting off a ground turret, placed perfectly to ambush anyone who flew past. </p>
+
+<p>“Looks like we’ve got one mark and a turret. That’s all I’m seeing so far.” </p>
+
+<p>Sid lowered the Dragonfly’s signature as much as possible as they approached the hauling road on the other side of the mine. She checked her scans and didn’t quite believe them. They agreed with Cyrus. There was only one person and one turret guarding this side of the mine. </p>
+
+<p>Sid stealthily slid the Dragonfly between two rows of the spoil bank. She cut the engine as Cyrus hopped off and unholstered his sniper rifle. He braced the gun on the back of the parked Dragonfly and settled the crosshairs on the mechanic frantically repairing the ground turret. </p>
+
+<p>“That turret gonna give us trouble?” asked Sid. </p>
+
+<p>“Not if we move fast. Looks like it’s getting fixed.” </p>
+
+<p>“I’m gonna scout ahead.” </p>
+
+<p>“Got you covered,” replied Cyrus with an eye on the mechanic. “Gonna stay here and monitor Vucari chatter.” </p>
+
+<p>Cyrus had hacked into the stolen Dragonfly’s comms so they could stay abreast of the Vucari’s movements. Sid nodded, checked her suit’s scanners and then pushed forward. </p>
+
+<p>She hustled toward a better vantage point, then checked her scans again and still didn’t quite believe the results. Why would the Cadejo leave the spoil bank side of the mine so lightly defended?</p>
+
+<p>She watched the mechanic work for a moment. He turned to snag another tool, giving Sid a good look at his face. It was Devin, the kid who’d mistakenly wandered into the Falling Sky and started all of this. </p>
+
+<p>“This is definitely the place,” Sid commed. She waited for Cyrus’ response, but none came. “Cyrus . . . everything ok —” </p>
+
+<p>“They found the trail. Damn it, we forgot to wipe it.” </p>
+
+<p>“What?” </p>
+
+<p>“They’re coming, the Vucari. Master Kraujas just sent out a call for anyone in the area to join him on the trail.” </p>
+
+<p>On any other mission Sid and Cyrus would’ve wiped away the trail they had found leaving the ambush site, so no one could follow, but they’d been sloppy. The possibility that their daughter might still be alive exceeded everything else, even their better judgment. This oversight was exactly why Cyrus used to tell young mercs that they should never work something personal. </p>
+
+<p>“How much time do we got?” asked Sid. </p>
+
+<p>“Not enough, considering all the new variables.” Cyrus muttered and re-targeted the mechanic. “How’s that scan look? Should I take out that mechanic?” </p>
+
+<p>Sid looked back at Devin. Even though she despised him for his part on the attack of that convoy, she knew they needed him. </p>
+
+<p>“Negative. Let’s grab him instead. Find out if he knows what they did to Immanuelle. Move to me.” </p>
+
+<p>Cyrus carefully advanced forward until he was by her side. Sid checked her scanner once more, then lead them toward Devin and the turret. They had to hurry. If Devin got that thing working while they approached, it could chew them up in a heartbeat. </p>
+
+<p>Even though it’d been two decades since their last merc job, the two still moved in sync. When Sid looked one way, Cyrus swung the other. Sid stopped frequently to check the scans and collect her breath. Cyrus sighted his sniper rifle toward the mechanic, trying to assess the repairs being undertaken. </p>
+
+<p>They advanced to a spoil bank near the turret. Devin was too consumed by his repairs to keep an eye on what was going on around him. He pulled himself to his feet and stretched. All that was left to do was power up the turret and it should be good to go. </p>
+
+<p>He reached for the control panel only for a bullet to strike it first. Devin stumbled back in shock, tripping over his tools and falling to the ground. When he looked up there was a rifle in his face. </p>
+
+<p>“Hands up,” Sid loomed over him in her heavy armor. Devin raised his hands. “Now get up nice and slow. I don’t want to have to hurt you.” </p>
+
+<p>Devin obeyed the order, his eyes glued on her the entire time, though he didn’t seem to recognize Sid in her heavy armor. Good; she was going to relish the chance to order this little punk around. </p>
+
+<p>Cyrus advanced toward them with his sniper rifle raised and wasted no time getting to the point. “Where are the prisoners?” </p>
+
+<p>“What prisoners?” Devin replied nervously. </p>
+
+<p>“Don’t get him angry, Devin,” Sid interjected. </p>
+
+<p>“How do you know my na—?” </p>
+
+<p>“We know a lot of things,” Sid pushed on. “Like what you did to that convoy to Behistun.” </p>
+
+<p>“You’re Vucari, aren’t you?” </p>
+
+<p>Cyrus shook his head, “Just consider us the people with your life in our hands.” </p>
+
+<p>A soft tremble worked its way down Devin. It was subtle but Sid caught it. Time for the sweet talk.</p>
+
+<p>“Listen, help get us what we want and we’ll let you walk away. Understand?” </p>
+
+<p>Devin nodded nervously, “What do you want?” </p>
+
+<p>“I want to know where the hell my daughter is!” </p>
+
+<p>“How would . . . I mean, I don’t even know who you are. How am I supposed —” </p>
+
+<p>“She was a part of that convoy to Behistun. Her armor was in the pile you guys left behind.” </p>
+
+<p>Devin stared at Sid with a lost look on his face. Cyrus took a step forward. </p>
+
+<p>“Not a good time to play dumb, Devin,” said Sid. “Your help is what’s going to save your hide.” </p>
+
+<p>“But I don’t know what you’re talking about —” </p>
+
+<p>Cyrus unleashed a tight left hook to the liver. Devin dropped to a knee and sucked air. Sid laid a hand on Cyrus’ shoulder. </p>
+
+<p>“Don’t bullshit us,” Sid said sternly. “We know you played a part in what went down with that convoy.” </p>
+
+<p>“Yeah, but I don’t know nothing about any prisoners,” Devin slowly stood back up. </p>
+
+<p>“Do you have anyone locked up in the mine?” </p>
+
+<p>“No, why would we —” </p>
+
+<p>“Maybe they’re in the outpost then?” Sid pushed on. </p>
+
+<p>“I’m telling you. I don’t know anything about any prison—” </p>
+
+<p>Cyrus struck Devin again, same spot. The kid fell to all fours. Sid studied him. He was either a glutton for punishment or honestly clueless about their line of questioning. </p>
+
+<p>“Devin, it doesn’t need to be like this. Let’s make this easy for you, ok? Get up.” </p>
+
+<p>Devin nodded, as he slowly rose to his feet. Sid laid a massive hand from her heavy armor on his right shoulder. </p>
+
+<p>Devin winced under the weight, as it strained the side of his body that also held his liver. </p>
+
+<p>“Let’s break it down to what we know,” Sid began. “You were at the ambush, right? We know that for sure.” </p>
+
+<p>Devin nodded his head. </p>
+
+<p>“That’s a good start. Now, since you were there, can’t you understand why we find it tough to believe you absolutely have no idea what happened to the people in that convoy.” </p>
+
+<p>Devin’s eyes went wide. “That’s because Tomyris sent me off on a mission before they were done.” </p>
+
+<p>Cyrus glanced to Sid, who nodded. The kid had shown up at the Falling Sky and mistakenly passed along that message to her. Maybe the kid really didn’t know. He sure wasn’t acting like he was trying to hide a secret. </p>
+
+<p>“Who would know then, Tomyris?” </p>
+
+<p>Devin nodded. </p>
+
+<p>“Where is she?” </p></div><div class="cboth"></div></div>
+<div  class=' segment' ><div class="content"><p>Devin seemed better at keeping his mouth shut when he was sober. He quickly and quietly walked between the two of them as they descended into the mine, only speaking when asked a direct question. Sid and Cyrus peppered him with inquiries about what to expect at the outpost. </p>
+
+<p>His answers were quick and direct. No pauses indicating that he needed to think through an answer. Devin claimed there were but five inside, including Tomyris. That number seemed low to Sid. There had to be more he wasn’t telling them. </p>
+
+<p>Sid led the way, stopping frequently to consult her scans. The deeper they got, the more old mining equipment they saw scatter around them. Some of looked as if it had been pushed down to this depth from above.</p>
+
+<p>At the bottom of the mine, a massive crane sat in the middle of the pit floor. Around it were piles of old mining equipment and vehicles. Sid assessed the operation as they approached. It didn’t look like they were repairing or stripping anything, just using the massive crane to organize the debris. </p>
+
+<p>Cyrus kept his eyes peeled for signs of prisoners or strange ritual sites. So far he’d seen no evidence of either. He had no idea whether that was a good or bad sign for the safety of their daughter. </p>
+
+<p>Sid brought them to a stop behind a rusting vehicle about halfway across the pit floor. She pulled up her scanner and studied it. Then she looked up to see a faint Hathor Group logo on the side of the truck before her. Sid had seen it someplace else recently, but couldn’t quite place it. </p>
+
+<p>She shook it off and then glanced at their ultimate destination — the small outpost perched atop the other side. She studied a freight elevator built into the side of the mine behind the outpost. Taking it would be faster than footing it, but could attract attention. </p>
+
+<p>Cyrus glanced at the massive crane looming overhead. A giant metal disc dangled from the jib. Intrigued, he asked, “That some kind of magnet?” </p>
+
+<p>“Suckers so strong it pops a truck off the ground like nothing,” Devin said proudly. </p>
+
+<p>Sid tapped Cyrus, returning his attention to the issue at hand. </p>
+
+<p>“Give the lift a look.” </p>
+
+<p>He raised his sniper rifle and scanned the elevator. The area looked clear. Then he focused on the elevator’s console. He nodded to Sid, confident he could hack it so they wouldn’t see them coming. </p>
+
+<p>“How much ground is there between the elevator and outpost?” Sid prompted Devin. </p>
+
+<p>“I don’t know . . .” </p>
+
+<p>“Guess.” </p>
+
+<p>“I’m serious, I’m a terrible judge of distance. Thirty meters, maybe?” </p>
+
+<p>“What about those turrets?” </p>
+
+<p>“What about them?” </p>
+
+<p>“Are they gonna turn on us?” </p>
+
+<p>Devin shook his head. “They’re only programmed to care about hostiles in front of them. I can show you the —” </p>
+
+<p>“Just know this,” pushed Sid. “You’ll be standing right in front of us once we reach the top. If those things spin our way, they hit you first, understand?” </p>
+
+<p>Devin nodded. </p>
+
+<p>“So, let me ask you again. Should we be concerned about those turrets?” </p>
+
+<p>“No, I’m telling you the truth. I’m trying to help.” </p>
+
+<p>“I hope so. I really do.” </p>
+
+<p>“Have him describe the doors again,” Cyrus requested. </p>
+
+<p>“You heard the man. Don’t leave him disappointed.” </p>
+
+<p>Devin nodded, “When you step off the lift, there’s a door straight ahead. That opens up to the main room where they’ll all probably be inside. Then there’s a second like garage door just to its right that I can open for you.” </p>
+
+<p>Cyrus could hack his way in, but using the kid’s credentials would be quicker. The faster this plan developed for them the better. Right now, their only advantage was the element of surprise. </p>
+
+<p>“Explain the plan back to me, one last time,” Sid requested of Devin. </p>
+
+<p>“We, um, get to the top. Where I stay directly in front of you two as we hustle toward the garage door.”</p>
+
+<p>“And . . .” egged on Sid. </p>
+
+<p>“And . . .” Devin reluctantly continued. “If I’m ever more than two steps away of from either you or do anything stupid whatsoever, then you’ll probably kill me.” </p>
+
+<p>“Definitely kill you,” Cyrus emphasized. </p>
+
+<p>Devin gulped. </p>
+
+<p>“Now that we’re all on the same page,” said Sid. “Let’s move out.” </p>
+
+<p>The three crossed the pit floor to the lift. Cyrus hacked the console, took control and then killed the security cameras. They all got in and started their ascent. </p>
+
+<p>Sid shook her head, “I don’t get it.” </p>
+
+<p>“What?” Devin took the bait. </p>
+
+<p>“What you’re doing mixed up in all of this? Working with folks that do terrible, terrible things. I don’t know, guess it just doesn’t seem your style, kid.” </p>
+
+<p>“It’s not,” he shot back quickly. “I came here to repair that crane. I stayed because I believed in the mission.” </p>
+
+<p>“What miss —” </p>
+
+<p>Power to the elevator was cut. The car jerked to a stop as the brakes slammed into place. All systems went offline then suddenly rebooted, powering back up. </p>
+
+<p>Sid raised her rifle at Devin. </p>
+
+<p>“I didn’t do anything,” Devin hands slowly went above his head. </p>
+
+<p>Keeping her gun trained at him, Sid signaled Cyrus, who stepped to the console. He turned back to her and shook his head. They weren’t in control of the lift anymore. The tiny red light on the camera in the corner showed that they were being watched. </p>
+
+<p>Suddenly, the lift started moving upwards again. </p>
+
+<p>“Guess they want to meet us,” said Sid. </p>
+
+<p>“You best hope your friends like you enough to want to negotiate,” said Cyrus. </p>
+
+<p>“They need me, I swear,” said Devin. “I’m the only one ’round here that really knows anything about that damn crane.” </p>
+
+<p>Positioning Devin in front of the gate, Sid and Cyrus prepared themselves for an ambush. The lift settled into place. The gate lowered before them. Someone was inviting them forward. They instead stayed in place. </p>
+
+<p>A moment later, the main outpost door opened and a figure stepped forward slowly with its hands raised. </p>
+
+<p>“Who’s that?” </p>
+
+<p>“Tomyris,” replied Devin. </p>
+
+<p>Tomyris slowly stepped from the outpost and approached. Her armor had been through hell on the battlefield: impacts, gunshots, energy burns, the works. Strange symbols had been painted with loud splashes of color. About halfway across the field, the figure stopped and slowly took off her helmet. A lucky bandana held back her long brown hair. </p>
+
+<p>Cyrus lowered his sniper rifle after seeing her face, “I can’t believe it . . .” </p>
+
+<p>Cyrus carelessly rushed forward. </p>
+
+<p>Sid started to raise her weapon, but got a better look at the woman. The bandana, that defiant look in her eyes, it could be only one person. </p>
+
+<p>Cyrus reached the figure and scooped her up in an embrace. </p>
+
+<p>Devin looked over at Sid, “What the hell’s going on?” </p>
+
+<p>“That’s our daughter.” </p>
+
+<p>“Tomyris?” </p>
+
+<p>Sid nodded her head, looking at Immanuelle, having trouble believing it herself. “Apparently so.” </p>
+
+<h3>TO BE <span class="caps">CONTINUED</span>&#8230;</h3></div><div class="cboth"></div></div>
+<div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+</div>
+
+<script>
+(function( $ ){
+  var $window = $(window);
+  var windowHeight = $window.height();
+
+  $window.resize(function () {
+    windowHeight = $window.height();
+  });
+
+  $.fn.parallax = function(xpos, speedFactor, outerHeight) {
+    var $this = $(this);
+    var getHeight;
+    var firstTop;
+    var paddingTop = 0;
+    
+    //get the starting position of each element to have parallax applied to it    
+    $this.each(function(){
+        firstTop = $this.offset().top;
+    });
+
+    if (outerHeight) {
+      getHeight = function(jqo) {
+        return jqo.outerHeight(true);
+      };
+    } else {
+      getHeight = function(jqo) {
+        return jqo.height();
+      };
+    }
+      
+    // setup defaults if arguments aren't specified
+    if (arguments.length < 1 || xpos === null) xpos = "50%";
+    if (arguments.length < 2 || speedFactor === null) speedFactor = 0.1;
+    if (arguments.length < 3 || outerHeight === null) outerHeight = true;
+    
+    // function to be called whenever the window is scrolled or resized
+    function update(){
+      var pos = $window.scrollTop();        
+
+      $this.each(function(){
+        var $element = $(this);
+        var top = $element.offset().top;
+        var height = getHeight($element);
+
+        // Check if totally above or totally below viewport
+        if (top + height < pos || top > pos + windowHeight) {
+          return;
+        }
+
+        $this.css('backgroundPosition', xpos + " " + Math.round((firstTop - pos) * speedFactor) + "px");
+      });
+    }   
+
+    $window.bind('scroll', update).resize(update);
+    update();
+  };
+
+  $('.parallax-1').parallax("50%", 0.1, true);
+$('.parallax-2').parallax("50%", 0.1, true);
+$('.parallax-3').parallax("50%", 0.1, true);
+$('.parallax-4').parallax("50%", 0.1, true);
+$('.parallax-5').parallax("50%", 0.1, true);
+$('.parallax-6').parallax("50%", 0.1, true);
+$('.parallax-7').parallax("50%", 0.1, true);
+})(jQuery);
+</script>
+
+
+
+
+  <div class="wrapper">
+    
+    <div class="end-transmission-container">
+      <div class="glow left"></div>
+      <div class="title-bar">
+        <h1>End Transmission</h1>
+      </div>
+      <div class="glow right"></div>
+    </div>
+  </div>
+  
+
+  
+    <div class="two-line-separator"></div>
+  <div class="channel-banner">
+  <div class="header-container">
+                  <div>
+      <div class="header">
+        <div class="wrapper">
+                      <div class="image" style="background-image:url('/media/wyz6odpinzx25r/post_section_header/Sid-Cyrus-Title.jpg');"></div>
+                    <div class="texts">
+            <div class="title">
+              <div class="presented-by">Part of</div>
+              <div class="cboth"></div>
+              <h1>Sid &amp; Cyrus</h1>
+              <a  class="holobtn " href="/comm-link?series=Sid-and-Cyrus"  >
+  <span class="holobtn-top abs-overlay trans-02s">More in this series </span>
+  <span class="holobtn-bottom abs-overlay trans-02s"></span>
+</a>
+              <div class="cboth"></div>
+            </div>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content-carousel">
+    <div class="carousel-mask">
+      <div class="left-shadow shadow"></div>
+      <a href="" class="prev js-prev"><div class="hover trans-03s trans-opacity"></div></a>
+      <div class="centerer">
+        <div class="carousel">
+                      <a href="/comm-link/serialized-fiction/17945-Sid-Cyrus-Part-One" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/wyz6odpinzx25r/home_transmissions_item_expanded/Sid-Cyrus-Title.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Sid & Cyrus (Part One)</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">4 months ago</span></div>
+    <div class="section">serialized-fiction</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/serialized-fiction/17977-Sid-Cyrus-Part-Two" class="series-carousel-item content-block3 trans-05s  on">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/wyz6odpinzx25r/home_transmissions_item_expanded/Sid-Cyrus-Title.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Sid & Cyrus (Part Two)</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">3 months ago</span></div>
+    <div class="section">serialized-fiction</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/serialized-fiction/18027-Sid-Cyrus-Part-Three" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/wyz6odpinzx25r/home_transmissions_item_expanded/Sid-Cyrus-Title.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Sid & Cyrus (Part Three)</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2 months ago</span></div>
+    <div class="section">serialized-fiction</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                  </div>
+      </div>
+      <a href="" class="next js-next"><div class="hover trans-03s trans-opacity"></div></a>
+      <div class="right-shadow shadow"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $(".channel-banner .content-carousel").each(function(index, element) {
+      $(element).data("carousel", new RSI.FullCarousel({
+        holder:$(element).find(".carousel"),
+        prevButton:$(element).find(".js-prev"),
+        nextButton:$(element).find(".js-next"),
+        circular:false,
+        displayItems:1 // healthy amount so that we never see empty
+      }));
+    });
+  });
+</script>
+    
+
+  <div class="two-line-separator"></div>
+  
+    
+<div class="wrapper force-one-column" id="comments">
+  <div class="holder">
+    <div class="title-bar">
+      <div class="count">
+        <div class="label">Comments</div>
+        <div class="value">013.<span class="js-comment-decimal">0</span></div>
+        <div class="cboth"></div>
+      </div>
+      <div class="title">
+        <h1>Feedback</h1>
+      </div>
+      <div class="cboth"></div>
+    </div>
+
+    <div class="main-buttons-holder-container">
+      <div class="main-buttons-holder">
+        <a href="/connect?jumpto=/comm-link/serialized-fiction/17977-Sid-Cyrus-Part-Two" class="add-comment js-add-comment trans-02s js-modal-login">Add New Comment</a>
+        <div class="settings js-settings">
+          <h1>Settings</h1>
+          <label>View mode:</label>
+          <a href="#" class="js-comments-view to-one-column js-to-one-column trans-01s on">One column</a>
+          <a href="#" class="js-comments-view to-two-columns js-to-two-columns trans-01s ">Two columns</a>
+          <label>Sort by:</label>
+          <a href="#" class="js-comments-sort to-oldest js-to-oldest trans-01s on">Oldest first</a>
+          <a href="#" class="js-comments-sort to-newest js-to-newest trans-01s ">Newest first</a>
+          <a href="#" class="js-comments-sort to-appreciated js-to-appreciated trans-01s ">Most appreciated first</a>
+
+                  </div>
+        <a href="" class="view-settings js-view-settings"><div class="hover trans-02s"></div></a>
+        <div class="triangle"></div>
+      </div>
+    </div>
+
+    
+    <div class="comment-listing"></div>
+
+    <div class="comment-loader traj-loader">
+      <div class="fast-blink"></div>
+      <span>Loading Additional Feedback</span>
+    </div>
+
+    <div class="cboth"></div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    window.comments = new RSI.Comments({
+      atom_url:"/comm-link/serialized-fiction/17977-Sid-Cyrus-Part-Two",
+      comment_listing_el:$(".comment-listing"),
+      comment_submission_form_el:$(".comment-submission"),
+      api_object:RSI.Api.Comments,
+      lazyLoading: true,
+      comment_count: 13,
+      subject_id:17977,
+      append:false,
+      texts: {
+        "edit": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        },
+        "reply": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        }
+      },
+      "insertion_conf": {
+        "mode":"html"
+      },
+      "api_function_names": {
+        "delete":"erase",
+        "load":"listing",
+        "sort":"listing"
+      }
+    });
+  });
+</script>
+  
+</div>
+
+    </div>
+
+    
+  </div>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.11/moment-timezone-with-data.min.js"></script>
+
+<script type="text/plain" data-cookieconsent="statistics">
+  $.cookie('moment_timezone', moment.tz.guess(), { expires: 31, path: '/' });
+</script>
+
+
+
+
+               <script id="tpl_number_counter_digits" type="text/x-jsmart-tmpl">{if !$seperator}{$seperator=','}{/if}
+{if !$first_max}{$first_max=9}{/if}
+{for $digit = 0 to $length-1}
+  <div class="mask">
+    <div class="carousel">
+      {if $digit == 0}
+        {$max = $first_max}
+      {else}
+        {$max = 9}
+      {/if}
+      {for $i=0 to $max}
+        <div class="item {if $val_arr[$digit] == $i}on{/if}" rel="{$i}">{$i}</div>
+      {/for}
+    </div>
+  </div>
+  {if ($length - $digit) % 3 == 1 && $digit != $length-1}
+  <div class="seperator">{$seperator}</div>
+  {/if}
+{/for}</script>
+<script id="base_modal" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  <div class="top-border">
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+  </div>
+</div></script>
+<script id="base_modal_flat" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  </div>
+  
+</div></script>
+<script id="tpl_modals_slideshow" type="text/x-jsmart-tmpl"><img class="top-border" src="/rsi/static/images/modal_top.png">
+<a href="" class="close js-close"></a>
+<div class="mask">
+  <a class="js-prev prev control"></a>
+  <a class="js-next next control"></a>
+  <div class="slideshow-carousel carousel" rel="{$index}">
+    {foreach from=$images item="image"}
+      <div class="{if $index == $image@index}on{/if}">
+      {if $image.is_video}
+        <div class="video-holder">
+          <div id="slideshow_video_{$image@index}" data-source="{$image->source_url}">
+            <video width="100%" height="100%" preload="auto" {if $video}src="{$image->source_url}"{/if} controls></video>
+          </div>
+        </div>
+      {else}
+        <div class="media js-media-slideshow-{$image@iteration}">
+        {if $image.low_res}
+          <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source data-srcset="{$image.full_res}" media="(min-width: 300px)" />
+            <!--[if IE 9]></video><![endif]-->
+            <img data-srcset="{$image.low_res}" alt="{$image.title}" />
+          </picture>
+        {else}
+          <img data-src="{$image.source_url}" />
+        {/if}
+        </div>
+      {/if}
+        <div class="text">
+          {if !$image.is_video}
+          <a href="{$image.source_url}" class="download"></a>
+          {/if}
+          <div class="copyright">© 2012-{$year}<br />Cloud Imperium Games Corporation &<br />Roberts Space Industries Corp.</div>
+          <div class="page-number">{$image@iteration} / {count($images)}</div>
+          <div class="caption v-center">{if $image.title && $image.title != "undefined"}{$image.title}{/if}</div>
+          <div class="cboth"></div>
+        </div>
+      </div>
+    {/foreach}
+  </div>
+</div>
+<img class="bottom-border" src="/rsi/static/images/modal_bottom.png"></script>
+<script id="tpl_contact_us" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="contact" class="inner-content on">
+  <h2><span class="icon"></span>CONTACT</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+  <div class="error-message js-error-message"></div>
+  <div class="success-message js-success-message"></div>
+    <fieldset class="last">
+    <label for="contact_email">Email Address</label>
+    <input type="text" name="email" value="" class="trans-02s trans-color trans-box-shadow" id="contact_email" />
+  </fieldset>
+    <fieldset>
+    <label for="contact_subject">Subject</label>
+    <input type="text" name="subject" value="" class="trans-02s trans-color trans-box-shadow" id="contact_subject" />
+    <label>Contacting us for:</label>
+    <ul class="category-info">
+            <li id="tech_support_info">Questions about download, installation, networking, or in-game client problems</li>
+            <li id="subscription_info">Questions about monthly and yearly subscription plans</li>
+            <li id="account_billing_info">Issues related to your account, such as incorrect information or ability to access account, or Billing with regards to payments and payment methods</li>
+            <li id="melt_request_info">To reclaim a pledge over $1,000 for store credit (please note - this is a permanent action)</li>
+            <li id="merchandise_info">Questions about physical and/or shipped merchandise</li>
+            <li id="hacked_info">Issues related to compromised account or missing pledge.</li>
+            <li id="account_recovery_info">For issues with account authentication, lost passwords and related queries</li>
+            <li id="probation_info">Issues related to forums probation or ban</li>
+            <li id="refund_request_info">Refund requests and related inquiries</li>
+            <li id="customer_support_info">For general questions and queries regarding Star Citizen</li>
+          </ul>
+  </fieldset>
+  <fieldset>
+    <label for="contact_text">Fescription</label>
+    <textarea name="text" class="trans-02s trans-color trans-box-shadow" id="contact_text"></textarea>
+  </fieldset>
+  <div class="contact-submit-wrapper">
+    <div class="line"></div>
+    <button class="submit js-submit"><strong>submit your message</strong></button>
+  </div>
+</form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+<script id="tpl_error" type="text/x-jsmart-tmpl"><div class="modal-error js-modal-error">
+  <p class="modal-text js-modal-text"></p>
+  <a class="close js-close trans-03s .trans-opacity" href=""></a>
+</div></script>
+<script id="tpl_success" type="text/x-jsmart-tmpl"><div class="modal-success js-modal-success">
+  <p class="modal-text js-modal-text"></p>
+  <a class="close js-close trans-03s .trans-opacity" href=""></a>
+</div></script>
+<script id="tpl_progress" type="text/x-jsmart-tmpl"><div class="modal-progress js-modal-progress">
+  <div class="traj-loader">
+    <div class="fast-blink"></div>
+    <span class="modal-text js-modal-text"></span>
+  </div>
+</div></script>
+<script id="tpl_outbound" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="outbound" class="inner-content on">
+  <h2><span class="icon"></span>OUTBOUND LINK</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+      <div class="error-message js-error-message"> <span class=important>WARNING</span><br/><br/> This link will bring you outside of the RSI site and into the depths of the internet. Continue?<br/><br/><span class="url"></span> </div>
+      <div class="success-message js-success-message"><span class=important>STAND BY</span><br/><br/> Initiating hyperlink.<br/><br/></div>
+
+      <fieldset class="clearfix last">
+        <span class="submit-wrapper">
+          <span class="submit-hover trans-02s trans-opacity"></span>
+          <input type="submit" value="WARP" class="trans-02s trans-color trans-background" />
+        </span>
+      </fieldset>
+    </form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+
+<script id="tpl_l-notification-bar" type="text/x-jsmart-tmpl"><div class="l-notification-bar js-notification-bar">
+
+  <div class="l-notification-bar__watermark js-svg-inliner h-svg__logo-star-citizen"></div>
+
+  <div class="l-notification-bar__boxes">
+    {if !$viewedCookieNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='cookie'
+          title='COOKIES:'
+          message="Our website uses Google Analytics to analyze our traffic. <br/>To learn how you can control Google's use of your data and how you can opt out <a href='https://www.google.com/policies/privacy/partners/'>click here</a>."
+          linkText='See Details'
+          buttonText='Got it!'}
+      </div>
+    {/if}
+
+    {if !$viewedPrivacyNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='privacy'
+          title='PRIVACY POLICY:'
+          message='We adjusted the PP to reflect the decision of the European Court of Justice regarding Safe Harbor, the fact that RSI has moved and added some services providers.'
+          linkText='View Privacy Policy'
+          buttonText='Got it!'}
+      </div>
+    {/if}
+  </div>
+
+</div>
+</script>
+<script id="tpl_c-notification" type="text/x-jsmart-tmpl"><div class="c-notification js-bottom-notif-msg-{$type}">
+    <div class="c-notification__title">{$title}</div>
+    <div class="c-notification__message">
+      {$message}
+    </div>
+
+    {if $linkText}
+        <div class="c-notification__wrapper-link">
+            <a class="c-notification__link js-bottom-notif-link-{$type}">
+            {$linkText}
+            </a>
+        </div>
+    {/if}
+
+    <a class="c-notification__button js-bottom-notif-btn-{$type}">
+
+      <span class="c-notification__button-text">
+       {$buttonText}
+      </span>
+
+      {if $type neq 'announcement'}
+        <div class="c-iconed__icon c-iconed__icon--checkmark"></div>
+      {/if}
+    </a>
+</div>
+</script>
+
+<script id="tpl_confirm" type="text/x-jsmart-tmpl"><div class="modal-confirm js-modal-confirm clearfix">
+  <p class="modal-text js-modal-text"></p>
+  <a class="bt-close js-close trans-03s trans-opacity" href=""></a>
+  <a class="bt-confirm js-confirm trans-03s trans-opacity" href=""></a>
+	<div class="buttons">
+		<a class="shadow-button trans-02s trans-color js-close bt-close rm"     >
+  <span class="label js-label trans-02s">Cancel</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+		<a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">Confirm</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+	</div>
+</div>
+</script>
+<script id="tpl_alert" type="text/x-jsmart-tmpl"><div class="modal-alert js-modal-alert clearfix">
+  <p class="modal-text js-modal-text"></p>
+  <div class="buttons">
+    <a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">OK</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+  </div>
+</div></script>
+<script id="tpl_video" type="text/x-jsmart-tmpl">{extends file="base_modal"}
+{block name='modal_content'}
+<div id="ship-commercial" class="inner-content">
+  
+  <div class="hr"></div>
+  <div class="content-block4">
+   
+    <div class="bottom"></div>
+  </div>
+  {if $distant_source=="vimeo"}
+  <iframe id="commercial" src="//player.vimeo.com/video/{$video_id}?wmode=transparent" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+  {else}
+  <iframe id="commercial" frameborder="0" allowfullscreen="1" title="YouTube video player" width="100%" height="100%" src="https://www.youtube.com/embed/{$video_id}?autoplay=1"></iframe>
+  {/if}
+</div>
+{/block}
+</script>
+      
+  <script id="tpl_comment_report" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="comment-report" class="inner-content on">
+  <h2><span class="icon"></span>Report this comment</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+<input type="hidden" name="comment_id" value="">
+  <div class="error-message js-error-message"></div>
+  <div class="success-message js-success-message"></div>
+    <fieldset class="last">
+    <label for="report_email">Email Address</label>
+    <span class="corner-wrapper">
+      <input type="text" name="email" value="" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_email" />
+      <span class="corner corner-top-left"></span>
+      <span class="corner corner-top-right"></span>
+      <span class="corner corner-bottom-left"></span>
+      <span class="corner corner-bottom-right"></span>
+    </span>
+  </fieldset>
+    <fieldset>
+    <label>Report Type</label>
+    
+
+
+  
+    <a class="js-selectlist selectlist " rel="" href="">
+    <div class="arrow"></div>
+    <span>Please select the type best matching your report</span>
+              <ul class="body">
+              
+                                                              <li class="js-option option " rel="obscenity" >
+                                                                        Obscene Content
+                                                    </li>
+                                                                <li class="js-option option " rel="abuse" >
+                                                                        Abusive Conduct
+                                                    </li>
+                                                                <li class="js-option option " rel="other" >
+                                                                        Other
+                                                    </li>
+                                          
+            </ul>
+        <input type="hidden" name="category" class="js-category js-form-data" id="category"/>
+  </a>
+    </fieldset>
+  <fieldset>
+    <label for="report_text">Details</label>
+    <span class="corner-wrapper">
+      <textarea name="text" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_text" maxlength="2500"></textarea>
+      <span class="corner corner-top-left"></span>
+      <span class="corner corner-top-right"></span>
+      <span class="corner corner-bottom-left"></span>
+      <span class="corner corner-bottom-right"></span>
+    </span>
+  </fieldset>
+  <fieldset class="clearfix last">
+    <span class="submit-wrapper">
+      <span class="submit-hover trans-02s trans-opacity"></span>
+      <input type="submit" value="Submit" class="trans-02s trans-color trans-background" />
+    </span>
+  </fieldset>
+</form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+
+
+      
+        <footer class="c-platform-footer c-platform-footer--rsi">
+  <div class="l-platform-footer-container">
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--sc">
+        <li class="c-platform-footer-brand__item">
+
+          <span class="c-brand c-brand--sc js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--sc">
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Join the<br>Universe
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--sc">
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen" class="c-platform-footer-link">About the Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/howto/1" class="c-platform-footer-link">How to Play</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/universe" class="c-platform-footer-link">The Universe</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/media" class="c-platform-footer-link">Media</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/play-now"
+                class="c-platform-footer-link js-google-analytics-event-tracker"
+                data-event-category="FlyNow" data-event-label="footerClick">
+                Play Now
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__sc">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">
+              Social Links
+            </span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/RobertsSpaceIndustries/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/RobertsSpaceInd">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/robertsspaceind">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href=" https://www.youtube.com/channel/UCTeLqJq1mXUX5WWoNXLmOIA">
+                <span class="c-iconed__icon c-iconed__icon--youtube"></span>
+                Youtube
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.twitch.tv/starcitizen">
+                <span class="c-iconed__icon c-iconed__icon--twitch"></span>
+                Twitch
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--s42">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--s42 js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--s42">
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Start the<br>Adventure
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--s42">
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42" class="c-platform-footer-link">The Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#enlist" class="c-platform-footer-link">Enlist Today</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#roadmap" class="c-platform-footer-link">Status</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/pledge/Packages/Squadron-42-Standalone-Pledge" class="c-platform-footer-link">Pledge</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__s42">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">Social Links</span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/Squad42/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/squadron_42">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/squadron42">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column is-active">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--rsi">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--rsi js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--rsi">
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi--fullcolor"></span>
+            </span>
+            <span class="c-brand__label">
+              Follow the Development
+            </span>
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--rsi">
+            <li class="c-platform-footer-list__item">
+              <a href="/" class="c-platform-footer-link">Home</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/comm-link" class="c-platform-footer-link">Transmissions</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/community" class="c-platform-footer-link">Community</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/roadmap" class="c-platform-footer-link">Development</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--platform">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Platform
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--platform">
+                          <li class="c-platform-footer-list__item">
+                <a href="/pledge" class="c-platform-footer-link ">Pledge Store</a>
+              </li>
+            
+            <li class="c-platform-footer-list__item">
+              <a href="/download" class="c-platform-footer-link ">Download</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/spectrum/community/SC" class="c-platform-footer-link">Spectrum</a>
+            </li>
+
+                      </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--utility">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Utilities
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--utility">
+            <li class="c-platform-footer-list__item">
+              <a href="//support.robertsspaceindustries.com" class="c-platform-footer-link">Help</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/press" class="c-platform-footer-link">Press</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="https://cloudimperiumgames.com/join-us" class="c-platform-footer-link">Careers</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/tos" class="c-platform-footer-link">Terms of Services</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/privacy" class="c-platform-footer-link">Privacy Policy</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/eula" class="c-platform-footer-link">EULA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/dmca" class="c-platform-footer-link">DMCA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/legal" class="c-platform-footer-link">Legal</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/acknowledgements" class="c-platform-footer-link">Acknowledgements</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/responsible-disclosure" target="_blank" class="c-platform-footer-link">Responsible disclosure</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  
+</footer>
+
+<div class="c-platform-copyright c-platform-copyright--rsi">
+  <div class="l-platform-copyright-container">
+    <a href="https://cloudimperiumgames.com" class="c-platform-copyright__logo h-svg__logo-cig js-svg-inliner"></a>
+    <p class="c-platform-copyright__body">© 2012-2021 Cloud Imperium Rights LLC and Cloud Imperium Rights Ltd.</p>
+  </div>
+</div>
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHNFZPT"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<script type="text/javascript">
+  window.RSI.Footer = new RSI.Footer();
+</script>
+      
+    </div>
+
+    
+      <script type="text/javascript" src='/rsi/static/packages/platformbar/rsi.platformbar.build.05b39.js'></script>
+    
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"58013cabd7","applicationID":"375102748","transactionName":"Y1JaYktUWxZUV0QKV1oYe0NKQVoIGmZjKmtdQ111VltBF1pYXAZKDg1ZQlZYcwxbUA==","queueTime":0,"applicationTime":72,"atts":"TxVNFANOSEkXVRJZQ0lK","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>

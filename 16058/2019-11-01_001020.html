@@ -1,0 +1,1903 @@
+
+  <head>
+    
+            <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1130.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+      <meta name="viewport" content="width=device-width">
+      <meta name="description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans.">
+      <meta property="og:site_name" content="
+Collision Course: Part 1 - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+">
+      <meta property="og:image" content="https://robertsspaceindustries.com/media/1h4z81trokyttr/channel_item_full/CollisionCourse_pt1_FI.jpg">
+      <meta property="og:description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans.">
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://robertsspaceindustries.com/comm-link/SCW/16058-IMPORT">
+      <meta property="og:locale" content="us_EN">
+
+            
+
+            <link href="/rsi/static/css/cross-brand-less.css?v=3.2.9.0" media="all" rel="stylesheet">
+      <link href="/cache/en/rsi-platformbar-css.css?v=3.2.9.0" media="all" rel="stylesheet">
+            <script type="text/javascript" src="/cache/en/rsi-js.js?v=3.2.9.0"></script>
+      
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KHNFZPT');</script>
+<!-- End Google Tag Manager -->
+
+
+      <script>
+        $(document).ready(function() {
+          window.Common = new RSI.Common({});
+          window.Main = new RSI.Main({
+            'is_mobile': 0,
+            'probation_cookie' : '',
+            'require_captcha': 0
+          });
+          window.Mark = new Turbulent.Mark({ 'name' : 'Rsi-XSRF', 'token' : '', 'ttl' : 1800 });
+
+          window.WscOverlay = new RSI.WscOverlay({});
+
+          var destinations = [];
+
+window.Main.destinations = destinations;          
+  window.PageStore = new RSI.Store({
+    'store_prefix' : '/pledge',
+    'customizerConfig' : {"endpoint":"https:\/\/robertsspaceindustries.com\/","verify":true,"customizer":{"path":"\/customizer","view":"","api":"\/api","methods":{"start":"\/start","game":"\/configuration\/:id\/game","details":"\/configuration\/:id\/details","report":"\/configuration\/:id\/report","export-port-label":"\/admin\/export\/port\/label"}},"ga_tracking_code":"UA-39586040-5"}
+  });
+
+          
+          
+  var productsTracking = [];
+  var eCommerceData = {
+    'trackingAction': "",
+    'currency': "",
+    'trackingStep': "",
+    'trackingProducts': productsTracking
+  };
+  window.eCommerceTracking = new RSI.Store.eCommerceTracking(
+    eCommerceData
+  );
+
+        });
+
+        $(window).load(function() {
+          
+        });
+
+      </script>
+
+
+      <script>
+        window.recaptcha_is_loaded = false;
+        window.on_recaptcha_load_callback = function() {
+          window.recaptcha_is_loaded = true;
+        };
+      </script>
+
+      <script src="https://www.google.com/recaptcha/api.js?onload=on_recaptcha_load_callback&amp;render=explicit" async defer></script>
+
+      <script type="text/javascript">
+
+        
+
+                                </script>
+
+
+      <title>
+Collision Course: Part 1 - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+</title>
+
+      
+
+<style type="text/css">
+  /* CSS from ATOM */
+  hr {
+border-top: 2px solid #13d0ff;
+width: 300px;
+margin-left: 25%;
+}
+.rsi-markup .segment .content h5 { line-height:28px;max-width:774px;width:75%;min-width:300px}
+
+.parallax {
+height: 850px;
+background-position: 50% 50%;
+background-repeat: no-repeat;
+background-attachment: fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+
+.parallax-block { }
+.parallax-block .rsi-markup .segment .content { margin-left:0; margin-right:0 }
+.parallax-block hr { background-color:#09daff; border-top:0px;}
+.parallax-block .corner, .parallax-block  .top-line-thin, .parallax-block .top-line { display:none }
+.parallax-block .content-block1 { border:0}
+
+.parallax-segment { height:280px}
+
+.parallax-1 {
+background-image: url("/media/1h4z81trokyttr/source/CollisionCourse_pt1_FI.jpg");
+}
+
+.mb-full img { width: 100%;
+ }
+</style>
+
+<script type="text/javascript">
+  /* JS from ATOM */
+  
+</script>
+
+
+
+
+    
+
+  <style>
+    
+      background:url(/rsi/static/images/noisebg.gif) repeat center top #000b11;
+    
+  </style>
+
+    <link href="//fonts.googleapis.com/css?family=Electrolize%7COrbitron:400,500,700%7CShare+Tech+Mono" rel="stylesheet" type="text/css">
+
+    <link href="/cache/en/rsi-css.css?v=3.2.9.0" media="all" rel="stylesheet">
+  
+
+  </head>
+  <body id="" class="">
+
+    
+      <div class="l-notification-bar l-notification-bar--rsi js-notification-bar" id="notification-bar-root">
+  <c-notification-bar v-bind:latestagreementsslugs='["qwa3l7w316dgt","5uyoqclrxgfgf"]' v-bind:loggedin="0" v-bind:onhomepage="0"></c-notification-bar>
+  <div class="l-notification-bar__boxes js-notification-bar-boxes">
+      </div>
+
+</div>
+    
+
+    <div id="bodyWrapper">
+      <header class="c-header-wrapper c-header-wrapper--rsi js-header-wrapper " id="cross-brand-header">
+  <div id="platform-bar"></div>
+
+  <div class="c-right-sidebar c-right-sidebar--search" id="search-sidebar">
+  <div class="js-toggle-search__backdrop hidden"></div>
+  <a href="#" class="c-right-sidebar__back js-toggle-search">Back
+    <span></span>
+    <span></span>
+  </a>
+  <form class="c-right-sidebar__form">
+    <h1 class="c-right-sidebar__form-title">Search</h1>
+
+    <input class="c-right-sidebar__form-input" type="text" id="header-search-input" placeholder="Search for articles">
+
+    <input class="c-right-sidebar__form-submit c-right-sidebar__form-submit--search" type="submit" value="Go">
+  </form>
+</div>
+      <div class="c-right-sidebar c-right-sidebar--signin" id="account-sidebar">
+<div class="js-toggle-account__backdrop hidden"></div>
+  <a href="#" class="c-right-sidebar__back js-toggle-account">Back
+    <span></span>
+    <span></span>
+  </a>
+
+  <form method="post" class="c-right-sidebar__form c-right-sidebar__form--signin js-signin-form" id="signin-form">
+
+    <h1 class="c-right-sidebar__form-title">Sign into RSI</h1>
+
+    <div class="c-right-sidebar__form-error-message js-error-message"></div>
+
+    <input name="login_id" class="c-right-sidebar__form-input" type="text" id="signin_input_loginid" placeholder="Login">
+
+    <input name="password" class="c-right-sidebar__form-input c-right-sidebar__form-password" type="password" id="signin_input_password" placeholder="Password">
+
+    <div class="c-right-sidebar__form-captcha" id="signin-captcha"></div>
+
+    <div class="l-oneline l-oneline--fill">
+      <div class="l-checkbox">
+        <input class="c-right-sidebar__form-checkbox" id="sidebar-login-remember-me" name="remember" type="checkbox">
+        <label class="c-right-sidebar__form-label c-right-sidebar__form-checkbox-label" for="sidebar-login-remember-me">
+          Remember me
+        </label>
+      </div>
+
+      <input class="c-right-sidebar__form-submit c-right-sidebar__form-submit--login" type="submit" value="Sign In">
+      <span class="c-right-sidebar__form-success-message">
+        <span class="js-svg-inliner h-svg c-account__icon c-account__icon-success"></span>
+        Success
+      </span>
+    </div>
+    
+
+    <div class="l-oneline">
+      <a class="c-right-sidebar__form-icon-link js-show-recovery c-right-sidebar__form-icon-link--recovery" href="">
+        <span class="js-svg-inliner h-svg c-account__icon c-account__icon--smaller c-account__icon-lock"></span>
+        Account Recovery
+      </a>
+      <a class="c-right-sidebar__form-icon-link c-right-sidebar__form-icon-link--enlist" href="/enlist?jumpto=%2Fcomm-link%2FSCW%2F16058-IMPORT">
+        <span class="js-svg-inliner h-svg c-account__icon c-account__icon--smaller c-account__icon-go"></span>
+        Enlist Now
+      </a>
+    </div>
+  </form>
+
+  <form class="c-right-sidebar__form c-right-sidebar__form--recovery js-recovery-form is-hidden" id="recovery-form">
+
+    <h1 class="c-right-sidebar__form-title">Account Recovery</h1>
+
+    <div class="c-right-sidebar__form-error-message js-error-message"></div>
+
+    <label for="signin_recovery_email" class="c-right-sidebar__form-label">Enter the e-mail address associated with your RSI account. We will email you with the instructions on how to create a new password.</label>
+
+    <input name="email" class="c-right-sidebar__form-input" type="email" id="signin_recovery_email" placeholder="Your Email Address">
+
+    <input class="c-right-sidebar__form-submit c-right-sidebar__form-submit--recovery" type="submit" value="Submit">
+    <span class="c-right-sidebar__form-success-message">
+      <span class="js-svg-inliner h-svg c-account__icon c-account__icon-success"></span>
+      Success
+    </span>
+
+    <p class="slidedown-on-success">We've sent a recovery email to your email address. Click the link within to reset your password.</p>
+
+    <div class="l-oneline">
+      <a class="c-right-sidebar__form-icon-link c-right-sidebar__form-icon-link--signin js-show-signin" href="">
+        <span class="js-svg-inliner h-svg c-account__icon c-account__icon--smaller c-account__icon-power"></span>
+        Sign-In
+      </a>
+      <a class="c-right-sidebar__form-icon-link c-right-sidebar__form-icon-link--enlist" href="/enlist?jumpto=%2Fcomm-link%2FSCW%2F16058-IMPORT">
+        <span class="js-svg-inliner h-svg c-account__icon c-account__icon--smaller c-account__icon-go"></span>
+        Enlist Now
+      </a>
+    </div>
+    <a class="c-right-sidebar__form-icon-link c-right-sidebar__form-icon-link--support" href="//support.robertsspaceindustries.com">
+      <span class="js-svg-inliner h-svg c-account__icon c-account__icon--smaller c-account__icon-talk"></span>
+      Contact Customer Support
+    </a>
+  </form>
+
+
+  <form class="c-right-sidebar__form c-right-sidebar__form--two-step js-two-step-form is-hidden" id="two-step-form">
+
+    <h1 class="c-right-sidebar__form-title">Two-Step Authentication</h1>
+
+    <div class="c-right-sidebar__form-error-message js-error-message"></div>
+
+    <label for="two_step_input_code" class="c-right-sidebar__form-label js-twostep-label">Enter the code generated by your authenticator or one of your backup codes</label>
+    <input name="code" class="c-right-sidebar__form-input c-right-sidebar__form-input--code" type="text" id="code" placeholder="Authentication Code">
+
+    <label for="two_step_input_device" class="c-right-sidebar__form-label">Name of your Device</label>
+    <input name="device_name" class="c-right-sidebar__form-input c-right-sidebar__form-input--device" type="text" id="device_name" placeholder="My Device">
+    <input type="hidden" name="device_type" id="device_type" value="">
+
+    <label for="two_step_input_device" class="c-right-sidebar__form-label">Trust this device for</label>
+        
+
+
+  
+    <a class="js-selectlist selectlist " rel="" href="">
+    <div class="arrow"></div>
+    <span>Duration</span>
+              <ul class="body">
+              
+                                                              <li class="js-option option " rel="session">
+                                                                        This session only
+                                                    </li>
+                                                                <li class="js-option option " rel="day">
+                                                                        1 day
+                                                    </li>
+                                                                <li class="js-option option " rel="week">
+                                                                        1 week
+                                                    </li>
+                                                                <li class="js-option option " rel="month">
+                                                                        1 month
+                                                    </li>
+                                                                <li class="js-option option " rel="year">
+                                                                        1 year
+                                                    </li>
+                                          
+            </ul>
+        <input type="hidden" name="duration" class="js-duration js-form-data" id="duration">
+  </a>
+  
+    <input class="c-right-sidebar__form-submit c-right-sidebar__form-submit--twostep" type="submit" value="Authenticate">
+    <span class="c-right-sidebar__form-success-message">
+      <span class="js-svg-inliner h-svg c-account__icon c-account__icon-success"></span>
+      Success
+    </span>
+
+  </form>
+
+</div>
+
+<script>
+
+$(document).ready(function() {
+  this.signin = new RSI.Signin({
+    //success_url: $(e.currentTarget).data('success-url-signin'),
+    require_captcha: 0
+  });
+});
+</script>  
+  <div class="c-header-wrapper__backdrop js-toggle-games"></div>
+</header>
+
+<div id="platform-backdrop"></div>
+
+<script type="text/javascript">
+  RSI.Platformbar = {
+    theme: "rsi",
+    loggedState: "logged-out",
+    tabs: [
+      {
+        type: 'brands',
+        name: "Games",
+        subItems: [
+          {
+            name: "sc",
+            href: "/star-citizen",
+            description: "Join the Universe"
+          },
+          {
+            name: "s42",
+            href: "/squadron42",
+            description: "Start the adventure"
+          },
+          {
+            name: "rsi",
+            href: "/",
+            description: "Follow the Development"
+          }
+        ]
+      },
+      {
+        type: 'apps',
+        name: "Apps",
+        subItems: [
+          [
+            {
+              name: "Spectrum",
+              href: "/spectrum/community/SC",
+              description: "Your&nbsp;communication platform"
+            },
+            {
+              name: "Launcher",
+              href: "/download",
+              description: "Download Star&nbsp;Citizen",
+                          }
+          ],
+          [
+            {
+              name: "Roadmap",
+              href: "/roadmap",
+              description: "Keep track of the&nbsp;development"
+            },
+            {
+              name: "Telemetry",
+              href: "/telemetry",
+              description: "Keep&nbsp;track&nbsp;of&nbsp;the player&rsquo;s&nbsp;performance"
+            },
+            {
+              name: "Issue Council",
+              href: "/community/issue-council",
+              description: "Help&nbsp;us&nbsp;make the game better",
+                          }
+          ],
+          [
+            {
+              name: "Starmap",
+              href: "/starmap",
+              description: "Your map to&nbsp;the&nbsp;universe"
+            }
+          ]
+        ]
+      },
+              {
+          type: 'citizencon',
+          name: "Citizencon 2949",
+          href: "/citizencon"
+        }
+          ],
+    navigation: {
+      store: {
+        name: "Pledge Store",
+        href: "/pledge",
+        isHidden: false      },
+      support: {
+        name: "Support",
+        href: "//support.robertsspaceindustries.com"
+      },
+      account: {
+        name: "Account",
+        href: "/account/settings"
+      }
+    }
+  };
+
+  $(document).ready(function() {
+    window.header = new RSI.Header({});
+  });
+</script>
+
+
+      
+  
+<header class="c-brand-menu c-brand-menu----rsi" id="brand-menu">
+  <span class="c-brand-menu__section">
+    
+      Roberts Space Industries
+    
+  </span>
+  <div class="c-brand-menu__backdrop"></div>
+  <nav class="c-brand-menu__container">
+    <div class="c-brand-menu__logo">
+      <a href="/"><span class="h-svg h-svg__logo-rsi--fullcolor js-svg-inliner"></span> </a>
+    </div>
+    <div class="c-brand-menu__items-container">
+      <ul class="c-brand-menu__items">
+                <li class="c-brand-menu__item  ">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/comm-link">
+            <span class="c-brand-menu__item-text">Comm-Link</span>
+                                  </a>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/community">
+            <span class="c-brand-menu__item-text">Community</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Community</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/spectrum" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Spectrum
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/orgs" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Organizations
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/leaderboards/top" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Leaderboards
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community_events" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Event
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Hub
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/fankit" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Fankit
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/development">
+            <span class="c-brand-menu__item-text">Development</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Development</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/roadmap" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Roadmap
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/devtracker" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Dev Tracker
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/telemetry" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Telemetry
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/issue-council" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Issue Council
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/patch-notes" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Patch Notes
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/ship-matrix" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Ship Matrix
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/funding-goals" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Funding
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+              </ul>
+    </div>
+
+    <div class="c-brand-menu__cta">
+      
+          <a href="/star-citizen/fly-now" class="c-brand-cta-btn js-google-analytics-event-tracker" data-event-category="FlyNow" data-event-label="navMenuClick">
+            <div></div>
+              <span class="c-brand-cta-btn__text">
+                <strong>Fly now</strong>Alpha 3.7
+              </span>
+            <div></div>
+          </a>
+      
+    </div>
+  </nav>
+</header>
+
+
+
+      
+
+  
+  <div class="page-wrapper">
+    
+  <div id="post-background"></div>
+
+
+    <div id="contentbody" class="" style="">
+      
+
+<div id="post">
+  <div class="title-section">
+    
+      <div class="wrapper title-bar-container">
+        <div class="glow left"></div>
+        <div class="title-bar">
+          <div class="title with-subtitle">
+            <h1>Serialized Fiction</h1>
+            <h2>Short Stories</h2>
+          </div>
+          <div class="details">
+            <div>
+              <h3>ID:</h3>
+              <p>16058</p>
+              <div class="cboth"></div>
+            </div>
+            <div>
+              <h3>Comments:</h3>
+              <p class="comment-count">81</p>
+              <div class="cboth"></div>
+            </div>
+            <div>
+              <h3>Date:</h3>
+              <p>August 9th 2017</p>
+              <div class="cboth"></div>
+            </div>
+            <div></div>
+          </div>
+          <div class="cboth"></div>
+        </div>
+        <div class="glow right"></div>
+      </div>
+    
+  <div class="title-container">
+    <div class="title no-subtitle">Collision Course: Part 1</div>
+      </div>
+
+  </div>
+
+  
+  <div class="lightbar toplightbar">
+    <div class="lightbarlights"></div>
+    <div class="footershadow"></div>
+  </div>
+
+
+  <div class="parallax-block">
+
+<div class="mb-full parallax parallax-1"></div>
+
+<div class="wrapper"><div class="content-block1 rsi-markup">
+<div class=" segment"><div class="content"><h5><em>The normal weekly News Update will be taking a brief hiatus in order to bring you this special multi-part adventure,</em> Collision Course. <em>We hope you enjoy.</em>
+
+
+<br>
+<br>
+</h5>
+
+<p><span class="initial">T</span>he aircycler kicked on overhead and the grate covering the vent began to rattle. Again. </p>
+
+<p><em>How many hours of uninterrupted sleep was that this time? One? Two?</em></p>
+
+<p>With her eyes still closed, Clara debated if she should try to ignore it, or if she should just give in and wake up. Almost in response, a tingling itch began a slow crawl up her arm. That settled it. Better to get up and do something than lie here trying to ignore it. </p>
+
+<p>She sat up and checked her mobi. 4:00 am <span class="caps">SET</span>. She turned off the alarm she had optimistically set for 7:00 am and switched over to her comms. No responses from any of the jobs she had applied for. </p>
+
+<p><em>Crap.</em></p>
+
+<p>Clara had hoped that Gunther reaching out to his contacts would have given her a boost, but it seemed like both Crusader Security and Blackjack on ArcCorp were pretty firm in not wanting to throw any work her way. She thought that guild standings wouldn’t matter as much in Stanton, but apparently, they did. Or at least they did when it came to contracting with her.</p>
+
+<p>She brought up the job board and cruised past all the postings she had looked through yesterday. She hadn’t had any work since escorting an Aciedo repairman to a downed comm array in the sector a few days prior. By now her dry spell had lasted long enough that she was toying with the idea of shutting down a comm array herself just to generate another escort contract, but knew in her heart that if things ever got that desperate she’d try Hurston before going outlaw. </p>
+
+<p>Standing up, she waved her hand over the light switch and winced as the harsh overhead kicked on. The EZ-Hab was already looking worse for wear since she had moved in ten nights ago. She quickly rinsed her mouth with a half swallow of stale Smoltz and proceeded to get dressed. </p>
+
+<p>Clara was comforted by the weight of her pistol as it locked into place on her hip mount. Even if she couldn’t fire the thing aboard Port Olisar, she still liked knowing it was there. Plus, you never knew when you might run into a potential client. <em>Always pays to look the part</em>, she thought as she slicked her hair back and tucked it under the blue Mercenary Guild cap.</p>
+
+<p><em>Nothing wrong with wearing a hat, right? It’s people’s own fault if they leap to conclusions.</em></p>
+
+<p>Boots laced, she shoved as much of the trash as she could from the table into a grease-stained Whammer’s bag, and turned to head out into the station.</p>
+
+<p>Or at least she tried to. With a sigh, Clara waved the bag in front of the door’s motion sensor until it finally decided to pay attention. When EZ-Hab offered an econ-suite, they really meant it. Next job, she promised herself, she’d look into an upgrade, or at least pay the extra creds for the cleaning service.</p>
+
+<p>After depositing the trash in a bin, she navigated her way through the light crowd of travelers waiting to catch transfers down to the gas giant below and headed towards Garrity Defense.</p>
+
+<br>
+
+<hr>   
+<br>
+
+
+<p>“I’m telling you, I know my stuff,” said Clara. “Go on, test me.”</p>
+
+<p>“Look, I’m sure you do,” replied Diego, the Garrity Defense third-shift manager. “But I’m just not looking to hire.”</p>
+
+<p>“Test me,” insisted Clara, “and then decide. That’s all I’m asking.”</p>
+
+<p>Between docking fees, insurance and the price of keeping her ship loaded, fueled, and ready for action, her funds were rapidly drying up. Crunching the numbers, she had only about two days of credits left before she was going to have to either start living in her ship, stop eating, or worse. She figured if she could pull a couple shifts selling guns and armor, maybe she could hold on long enough until she could drum up some real work. It’s not like she was sleeping anyway, so why not?</p>
+
+<p>Diego, glancing up at her guild hat, finally shrugged and said, “Fine. You want a test? See that guy? He’s a shuttle jockey. Stays aboard Olisar once a week and probably spends half that time staring at the merch, not buying anything. Get him to actually spend some creds and we’ll talk about getting you some shifts here.”</p>
+
+<p>Clara appraised the man in question. The undersuit he was wearing was higher quality stuff than any transfer shuttle pilot should need — full armor connects, light <span class="caps">EVA</span> thrusters, and most importantly, spotless. Even the man’s boots looked untouched. Probably the most telling thing was the simple fact he was wearing it all inside the station when most people couldn’t wait to change into regular clothes after a flight.</p>
+
+<p>She walked up next to him and looked at the display of rifles on the wall. A moment passed before she said, “Thinking about getting the S71?”</p>
+
+<p>“I’m fine. Thanks,” the man responded.</p>
+
+<p>“That’s good ‘cause I don’t work here.”</p>
+
+<p>“Oh, sorry. I just thought —”</p>
+
+<p>“No, it’s okay. Don’t worry about it.” Clara took a step away and trained her focus on a lower rack showcasing some scopes.</p>
+
+<p>“You were saying something about the S71?” The man asked, gesturing towards the sleek, black rifle. </p>
+
+<p>“I was going to tell you not to get it.”</p>
+
+<p>“Why’s that?”</p>
+
+<p>“Because carrying one makes you a target. Strap that on, and everyone in the room marks you as a serious operator. I mean look at the thing. It screams, I’m a threat.” Clara put on her best thousand-yard stare and softened her voice, “My ex-partner Gunther used to pack one. Sure, he did a lot of good with it and yeah, there’s definitely a few less outlaws out there, but do I think he’d still be alive if he had chosen to carry a lesser weapon? You bet your ass I do.”</p>
+
+<p>The man stood slack-jawed as she finished. </p>
+
+<p>“I know it’s not my place to tell you what to do. I just promised myself that if I ever saw someone thinking about making the mistake he did, I would warn them if I could.” Suddenly, her mobiGlas chirped to alert her of an incoming comm. “Anyway, I gotta go.” </p>
+
+<p>With that, Clara turned and headed towards the door, making sure to give Diego a wink as she passed. She parked herself around the corner and brought up her mobi. </p>
+
+<p>She was a little surprised to see that the comm was from Eckhart Security. She had heard of the company back when she was with the guild, but she didn’t know much beyond their reputation of playing fast and loose with the rules. </p>
+
+<p>Then again, her rep wasn’t that great at the moment either.</p>
+
+<p>She answered, “Hello?”</p>
+
+<p>“Yeah, is this Clara Lin?” asked a gruff voice belonging to an equally weathered face. “I’m Miles Eckhart.”  </p>
+
+<p><em>A comm from the man himself</em>, thought Clara. <em>That’s something.</em> </p>
+
+<p>“A friend of yours contacted me this morning and had some interesting things to say.”</p>
+
+<p>She pretty much only had one friend in the ’verse right now. “Gunther?”</p>
+
+<p>“That’s the one. Me and him crossed each other’s path a few years back and long story short, I owed him a favor. Guess you’re it.”</p>
+
+<p>“You’re giving me a job?” Clara asked, trying not to let too much hope seep into her voice.</p>
+
+<p>“Ease up, all I’m doing is giving you an interview.”</p>
+
+<p>“What do you need to know?” Clara asked.</p>
+
+<p>The customer from Garrity Defense walked past. He tried to avoid eye contact as he quickened his pace and turned the corner.</p>
+
+<p>“Not over comms. I’m old fashioned that way,” said Miles. “I’ll send you the location.” A popup showed that she had received the coordinates. “One last thing. Show up ready to work.”</p>
+
+<p>The comm line switched off as the manager from Garrity Defense popped his head out of the store and came hurrying over. </p>
+
+<p>“There you are,” said Diego. “What did you say to him? He bought an S71 and every single attachment we carry. The job’s yours.”</p>
+
+<p>“Thanks. I’ll let you know,” said Clara, leaving behind a slightly confused Diego as she headed off to grab her gear.  </p>
+
+<br>
+
+<hr>
+<br>
+
+
+<p>Clara had never been to Levski before, and stepping into the station, she instantly suspected that this had been a good call. She knew about the People’s Alliance, but was surprised how much being surrounded by their anti-<span class="caps">UEE</span> sentiment made her skin crawl. She hadn’t served in the military or ever seriously considered becoming a Citizen, but she had been outside of the <span class="caps">UEE</span> before, and if she had to choose between the mess out there and the mess inside the Empire, the one where you can get a hamburger and a medpen whenever you wanted was the clear winner.</p>
+
+<p>The giant statue of a dead kid in the lobby didn’t really help with the vibe either.</p>
+
+<p>Avoiding the aggressive hawkers in the bazaar, she weaved her way to Cafe Musain, the local watering hole. As she stepped down the stairs, she was surprised by how comfortable the bar looked. The warm lighting, the worn art on the walls, the lingering smell of stale stim in the air, it all reminded her of the places she used to — </p>
+
+<p>Clara forcefully stopped that train of thought. She needed to focus right now. </p>
+
+<p>There. She spotted Eckhart sitting at a high-top table off to the side of the bar. The drink he was holding sloshed in his glass slightly as he browsed his mobi. </p>
+
+<p>Clara approached and was about to introduce herself when —</p>
+
+<p>“Grab a seat. I’ll be with you in a second.”</p>
+
+<p>Clara pulled out the stool across from him and waited. She noticed his particularly thick jacket and wondered if it was to hide weapons or if it was armored. Probably both, she decided.</p>
+
+<p>“You need a drink?” He asked as he closed his mobi.</p>
+
+<p>“I’m fine,” she said. </p>
+
+<p>“Good,” he said before taking a long sip of his own. “Then let’s get down to business. Which hand do you shoot with?”</p>
+
+<p>She hesitated for a moment before answering, “Left.”</p>
+
+<p>“Let me see.”</p>
+
+<p>Clara raised her hand and held it out. Miles took another swallow as he watched it. Her hand stayed steady. </p>
+
+<p>“Now the other.”</p>
+
+<p>Taking a deep breath, Clara held out her right hand. The slight tremble was apparent immediately. </p>
+
+<p>“Not good, but definitely not the worse I’ve seen. You clean?” </p>
+
+<p>“Three months,” said Clara as she lowered her arm.</p>
+
+<p>“Good.” Miles brought up his mobi again and sent her a file. “I just sent you the details for a black box retrieval.” </p>
+
+<p>“Wait, you had me come all the way out here just to look at my hands?”</p>
+
+<p>“You’d be surprised how many people I weed out just by making them fly to meet me,” said Miles. “Plus, I find it’s much harder to screw someone over after you’ve met them in person.” Miles finished off his drink. “Now, a client of mine lost a ship of theirs and wants to keep the whole thing private. I need you to recover the flight data before the insurance company can. Take a look and let me know if you can handle it.”</p>
+
+<p>Clara brought up the contract and looked it through. Seemed straightforward enough. The ship had been lost out near the asteroid cluster surrounding Crusader’s moon, Yela. Not particularly dangerous. Well, not any more dangerous than the rest of Crusader. Pay was a bit low. She said so.</p>
+
+<p>“Damn right, it’s low,” said Miles. “This is just a tryout. You pull it off and it’ll mean more jobs and more credits. You screw up and at least I’m squared away with Gunther. What do you say?”</p>
+
+<p>When she was part of the guild, Clara would have walked away from the table. It wasn’t that anything Miles had done or said was hinky, but one of the first things she learned starting off as a merc was to trust her gut. Right now, it was telling her Miles wasn’t exactly the sort of man she wanted to be in business with. It was telling her that she should just go back to Olisar and sell weapons and armor to people who most likely didn’t need them. </p>
+
+<p>She pressed the accept button on the contract anyway.</p>
+
+<br>
+
+<hr>
+<br>
+
+
+<p>She completed her fourth and last scan. Other than some residual EM signature from the few batteries that still had power scattered throughout the wreckage, all was quiet among the asteroids. </p>
+
+<p>It was a bit strange to be doing a mission solo. Caution was the key. In the past, she had flown with Gunther for five years, and with Jenn and Tal for the last two. Moving in a group always meant you had someone watching your back. Solo was a whole different beast.</p>
+
+<p>She scanned one more time for luck, then nudged her Buccaneer closer to the mass of debris that used to be a Constellation. Whoever had done this had done a thorough job, that’s for sure. Rotating slightly, she steadied the headlight of her ship onto the twisted and torn bridge. The black box would most likely still be in there. Clara debated if she should power down all the way, or leave her ship running just in case she needed a fast exit. In the end, she decided to just cut the engine, leaving the rest of the systems on, telling herself it was prudence and not the fact it would be really creepy out here with her ship’s lights turned off.</p>
+
+<p>She double checked her O2 levels, the seals on her suit, her pistol and her rifle, before finally pulling the cockpit release latch. The glass lifted up and with a small push off her seat, she drifted into space. She mentally rotated her center of gravity so that the bright ball of Yela was below her, instead of above. </p>
+
+<p>Following the beam of light from her Buc, she slowly pulsed her thrusters forward, carefully clearing any small bits of debris out of the way as she went. At the Guild, they always taught the new members <span class="caps">SSKY</span>: Stupid Stuff Kills You. Even then, about a third of the merc deaths you read about weren’t from outlaws blasting them out of the sky, but from little things like not tracking oxygen closely enough or forgetting to carry an extra medpen. The job was dangerous; no reason to make it more so.</p>
+
+<p>Clara cut her <span class="caps">EVA</span> thrusters and drifted the last few meters till she hit the cockpit glass with a soft ‘thunk.’ The ship groaned and creaked as metal scraped and settled. She swung her flashlight around the interior and saw that the black box was still safely nestled where it should be. </p>
+
+<p><em>Now to find a way in.</em></p>
+
+<p>She had never served aboard a Connie herself, but she had fought against one once. If she had been the attacker, the first thing she would have targeted was the turrets and from what she remembered, they weren’t exactly known for staying attached once you blew them up. </p>
+
+<p>She rotated so she was facing right way up relative to the plane of the ship, and then pulled herself to the top of the bridge. Sure enough, a gaping jagged tear along the hull marked where the dorsal turret had once been. Clara climbed into the empty turret shaft headfirst, to where the emergency hatch had sealed off the bridge once the turret had vented. She was about to manually override the hatch, when she noticed it.</p>
+
+<p>The thrusters of an approaching ship. </p>
+
+<h3>TO BE <span class="caps">CONTINUED</span> …</h3></div><div class="cboth"></div></div>
+<div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+</div>
+
+<script>
+(function( $ ){
+  var $window = $(window);
+  var windowHeight = $window.height();
+
+  $window.resize(function () {
+    windowHeight = $window.height();
+  });
+
+  $.fn.parallax = function(xpos, speedFactor, outerHeight) {
+    var $this = $(this);
+    var getHeight;
+    var firstTop;
+    var paddingTop = 0;
+    
+    //get the starting position of each element to have parallax applied to it    
+    $this.each(function(){
+        firstTop = $this.offset().top;
+    });
+
+    if (outerHeight) {
+      getHeight = function(jqo) {
+        return jqo.outerHeight(true);
+      };
+    } else {
+      getHeight = function(jqo) {
+        return jqo.height();
+      };
+    }
+      
+    // setup defaults if arguments aren't specified
+    if (arguments.length < 1 || xpos === null) xpos = "50%";
+    if (arguments.length < 2 || speedFactor === null) speedFactor = 0.1;
+    if (arguments.length < 3 || outerHeight === null) outerHeight = true;
+    
+    // function to be called whenever the window is scrolled or resized
+    function update(){
+      var pos = $window.scrollTop();        
+
+      $this.each(function(){
+        var $element = $(this);
+        var top = $element.offset().top;
+        var height = getHeight($element);
+
+        // Check if totally above or totally below viewport
+        if (top + height < pos || top > pos + windowHeight) {
+          return;
+        }
+
+        $this.css('backgroundPosition', xpos + " " + Math.round((firstTop - pos) * speedFactor) + "px");
+      });
+    }   
+
+    $window.bind('scroll', update).resize(update);
+    update();
+  };
+
+  $('.parallax-1').parallax("50%", 0.1, true);
+$('.parallax-2').parallax("50%", 0.1, true);
+$('.parallax-3').parallax("50%", 0.1, true);
+$('.parallax-4').parallax("50%", 0.1, true);
+$('.parallax-5').parallax("50%", 0.1, true);
+$('.parallax-6').parallax("50%", 0.1, true);
+$('.parallax-7').parallax("50%", 0.1, true);
+})(jQuery);
+</script>
+
+
+
+  <div class="wrapper">
+    
+    <div class="end-transmission-container">
+      <div class="glow left"></div>
+      <div class="title-bar">
+        <h1>End Transmission</h1>
+      </div>
+      <div class="glow right"></div>
+    </div>
+  </div>
+  
+
+  
+    <div class="two-line-separator"></div>
+  <div class="channel-banner">
+  <div class="header-container">
+                  <div>
+      <div class="header">
+        <div class="wrapper">
+                      <div class="image" style="background-image:url('/media/cvvgfgnny4asxr/post_section_header/CollisionCourse_pt3_FI.jpg');"></div>
+                    <div class="texts">
+            <div class="title">
+              <div class="presented-by">Part of</div>
+              <div class="cboth"></div>
+              <h1>Collision Course</h1>
+              <a class="holobtn " href="/comm-link?series=CollisionCourse">
+  <span class="holobtn-top abs-overlay trans-02s">More in this series </span>
+  <span class="holobtn-bottom abs-overlay trans-02s"></span>
+</a>
+              <div class="cboth"></div>
+            </div>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content-carousel">
+    <div class="carousel-mask">
+      <div class="left-shadow shadow"></div>
+      <a href="" class="prev js-prev"><div class="hover trans-03s trans-opacity"></div></a>
+      <div class="centerer">
+        <div class="carousel">
+                      <a href="/comm-link/serialized-fiction/16058-Collision-Course-Part-1" class="series-carousel-item content-block3 trans-05s  on">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/1h4z81trokyttr/home_transmissions_item_expanded/CollisionCourse_pt1_FI.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Collision Course: Part 1</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2 years ago</span></div>
+    <div class="section">serialized-fiction</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/serialized-fiction/16071-Collision-Course-Part-2" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/v4rch15todlrdr/home_transmissions_item_expanded/CollisionCourse_pt2_FI.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Collision Course - Part 2</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2 years ago</span></div>
+    <div class="section">serialized-fiction</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/serialized-fiction/16081-Collision-Course-Part-3" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/cvvgfgnny4asxr/home_transmissions_item_expanded/CollisionCourse_pt3_FI.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Collision Course: Part 3</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2 years ago</span></div>
+    <div class="section">serialized-fiction</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                  </div>
+      </div>
+      <a href="" class="next js-next"><div class="hover trans-03s trans-opacity"></div></a>
+      <div class="right-shadow shadow"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $(".channel-banner .content-carousel").each(function(index, element) {
+      $(element).data("carousel", new RSI.FullCarousel({
+        holder:$(element).find(".carousel"),
+        prevButton:$(element).find(".js-prev"),
+        nextButton:$(element).find(".js-next"),
+        circular:false,
+        displayItems:1 // healthy amount so that we never see empty
+      }));
+    });
+  });
+</script>
+    
+
+  <div class="two-line-separator"></div>
+  
+    
+<div class="wrapper force-one-column" id="comments">
+  <div class="holder">
+    <div class="title-bar">
+      <div class="count">
+        <div class="label">Comments</div>
+        <div class="value">081.<span class="js-comment-decimal">0</span></div>
+        <div class="cboth"></div>
+      </div>
+      <div class="title">
+        <h1>Feedback</h1>
+      </div>
+      <div class="cboth"></div>
+    </div>
+
+    <div class="main-buttons-holder-container">
+      <div class="main-buttons-holder">
+        <a href="/connect?jumpto=/comm-link/serialized-fiction/16058-Collision-Course-Part-1" class="add-comment js-add-comment trans-02s js-modal-login">Add New Comment</a>
+        <div class="settings js-settings">
+          <h1>Settings</h1>
+          <label>View mode:</label>
+          <a href="#" class="js-comments-view to-one-column js-to-one-column trans-01s on">One column</a>
+          <a href="#" class="js-comments-view to-two-columns js-to-two-columns trans-01s ">Two columns</a>
+          <label>Sort by:</label>
+          <a href="#" class="js-comments-sort to-oldest js-to-oldest trans-01s on">Oldest first</a>
+          <a href="#" class="js-comments-sort to-newest js-to-newest trans-01s ">Newest first</a>
+          <a href="#" class="js-comments-sort to-appreciated js-to-appreciated trans-01s ">Most appreciated first</a>
+
+                  </div>
+        <a href="" class="view-settings js-view-settings"><div class="hover trans-02s"></div></a>
+        <div class="triangle"></div>
+      </div>
+    </div>
+
+    
+    <div class="comment-listing"></div>
+
+    <div class="comment-loader traj-loader">
+      <div class="fast-blink"></div>
+      <span>Loading Additional Feedback</span>
+    </div>
+
+    <div class="cboth"></div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    window.comments = new RSI.Comments({
+      atom_url:"/comm-link/serialized-fiction/16058-Collision-Course-Part-1",
+      comment_listing_el:$(".comment-listing"),
+      comment_submission_form_el:$(".comment-submission"),
+      api_object:RSI.Api.Comments,
+      lazyLoading: true,
+      comment_count: 81,
+      subject_id:16058,
+      append:false,
+      texts: {
+        "edit": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        },
+        "reply": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        }
+      },
+      "insertion_conf": {
+        "mode":"html"
+      },
+      "api_function_names": {
+        "delete":"erase",
+        "load":"listing",
+        "sort":"listing"
+      }
+    });
+  });
+</script>
+  
+</div>
+
+    </div>
+
+    
+  </div>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.11/moment-timezone-with-data.min.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+      $.cookie('moment_timezone', moment.tz.guess(), { expires: 31, path: '/' });
+  });
+</script>
+
+
+
+
+               <script id="tpl_number_counter_digits" type="text/x-jsmart-tmpl">{if !$seperator}{$seperator=','}{/if}
+{if !$first_max}{$first_max=9}{/if}
+{for $digit = 0 to $length-1}
+  <div class="mask">
+    <div class="carousel">
+      {if $digit == 0}
+        {$max = $first_max}
+      {else}
+        {$max = 9}
+      {/if}
+      {for $i=0 to $max}
+        <div class="item {if $val_arr[$digit] == $i}on{/if}" rel="{$i}">{$i}</script></div>
+      {/for}
+    
+  
+  {if ($length - $digit) % 3 == 1 &amp;&amp; $digit != $length-1}
+  <div class="seperator">{$seperator}</div>
+  {/if}
+{/for}
+<script id="base_modal" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  <div class="top-border">
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+  
+</script>
+<script id="base_modal_flat" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  
+  
+</script>
+<script id="tpl_modals_slideshow" type="text/x-jsmart-tmpl"><img class="top-border" src="/rsi/static/images/modal_top.png">
+<a href="" class="close js-close">
+<div class="mask">
+  <a class="js-prev prev control">
+  <a class="js-next next control">
+  <div class="slideshow-carousel carousel" rel="{$index}">
+    {foreach from=$images item="image"}
+      <div class="{if $index == $image@index}on{/if}">
+      {if $image.is_video}
+        <div class="video-holder">
+          <div id="slideshow_video_{$image@index}" data-source="{$image->source_url}">
+            <video width="100%" height="100%" preload="auto" {if $video}src="{$image->source_url}"{/if} controls>
+          
+        
+      {else}
+        <div class="media js-media-slideshow-{$image@iteration}">
+        {if $image.low_res}
+          <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source data-srcset="{$image.full_res}" media="(min-width: 300px)" />
+            <!--[if IE 9]><![endif]-->
+            <img data-srcset="{$image.low_res}" alt="{$image.title}" />
+          
+        {else}
+          <img data-src="{$image.source_url}" />
+        {/if}
+        
+      {/if}
+        <div class="text">
+          {if !$image.is_video}
+          <a href="{$image.source_url}" class="download">
+          {/if}
+          <div class="copyright">&copy; 2012-{$year}<br />Cloud Imperium Games Corporation &<br />Roberts Space Industries Corp.
+          <div class="page-number">{$image@iteration} / {count($images)}
+          <div class="caption v-center">{if $image.title && $image.title != "undefined"}{$image.title}{/if}
+          <div class="cboth">
+        
+      
+    {/foreach}
+  
+
+<img class="bottom-border" src="/rsi/static/images/modal_bottom.png"></script>
+<script id="tpl_contact_us" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    
+<div id="contact" class="inner-content on">
+  <h2><span class="icon">CONTACT
+  <div class="padder">
+    <div class="separator">
+    <form name="" action="" method="POST">
+  <div class="error-message js-error-message">
+  <div class="success-message js-success-message">
+    <fieldset class="last">
+    <label for="contact_email">Email Address
+    <input type="text" name="email" value="" class="trans-02s trans-color trans-box-shadow" id="contact_email" />
+  
+    <fieldset>
+    <label for="contact_subject">Subject
+    <input type="text" name="subject" value="" class="trans-02s trans-color trans-box-shadow" id="contact_subject" />
+    <label>Contacting us for:
+    <ul class="category-info">
+            <li id="tech_support_info">Questions about download, installation, networking, or in-game client problems
+            <li id="subscription_info">Questions about monthly and yearly subscription plans
+            <li id="account_billing_info">Issues related to your account, such as incorrect information or ability to access account, or Billing with regards to payments and payment methods
+            <li id="melt_request_info">To reclaim a pledge over $1,000 for store credit (please note - this is a permanent action)
+            <li id="merchandise_info">Questions about physical and/or shipped merchandise
+            <li id="hacked_info">Issues related to compromised account or missing pledge.
+            <li id="account_recovery_info">For issues with account authentication, lost passwords and related queries
+            <li id="probation_info">Issues related to forums probation or ban
+            <li id="refund_request_info">Refund requests and related inquiries
+            <li id="customer_support_info">For general questions and queries regarding Star Citizen
+          
+  
+  <fieldset>
+    <label for="contact_text">Fescription
+    <textarea name="text" class="trans-02s trans-color trans-box-shadow" id="contact_text">
+  
+  <div class="contact-submit-wrapper">
+    <div class="line">
+    <button class="submit js-submit"><strong>submit your message
+  
+
+    <div class="separator">
+  
+
+
+    
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  
+</script>
+<script id="tpl_concierge" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+<img src="/rsi/static/images/modal_yellow_line.png" />
+
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    
+
+<div id="contact" class="inner-content on">
+  <h2><span class="icon">CONCIERGE
+  <div class="padder">
+    <div class="separator">
+    <form name="" action="" method="POST" class="concierge-form">
+      <p class="head">We recommend that you check out the <a href="/faq">FAQs and other resources below if you are in need of information regarding RSI or Star Citizen. If your topic isn&rsquo;t covered, feel free to contact us!<br/><br/> - Gameplay : <a href="https://forums.robertsspaceindustries.com/categories/ask-a-developer">Ask A Dev<br/> - Suggestions: <a href="https://forums.robertsspaceindustries.com/categories/game-ideas">Game Ideas<br/> - Bug Reports (including PTU): <a href="https://forums.robertsspaceindustries.com/categories/test-pilot-headquarters">Test Pilot Headquarters<br/>
+      <div class="error-message js-error-message">
+      <div class="success-message js-success-message">
+
+      <fieldset class="concierge-form__field concierge-form__field--issue">
+        <label for="concierge_issue">Please choose your issue below
+        <select required id="concierge_issue" name="issue" class="trans-02s trans-color trans-box-shadow">
+          <option value="-">
+            -
+          
+                  
+      
+
+      <fieldset class="concierge-form__field concierge-form__field--problem concierge-form__field--secondary hidden">
+        <label for="concierge_problem">
+        <select required id="concierge_problem" name="problem" class="trans-02s trans-color trans-box-shadow">
+        
+      
+
+      <div class="issue-subfields">
+
+      <fieldset class="concierge-form__field concierge-form__field--secondary concierge-form__field--optional hidden">
+        <label for="concierge_attachment">Attachments <span>- Optional
+        <div class="concierge-form__attachment">
+            Add file here
+          <input class="concierge-upload-images-container" type="file" id="concierge_attachment" name="attachment" accept="image/*" multiple/>
+        
+      
+
+      <fieldset class="concierge-form__field concierge-form__field--secondary concierge-form__field--optional hidden">
+        <span class="h-text h-text--size-13 h-text--univia h-text--brown"><strong>Uploaded files 
+        <div class="concierge-form__file-preview">
+      
+
+      <fieldset class="concierge-form__field concierge-form__field--submit concierge-form__field--secondary last hidden">
+        <span class="submit-arrow">
+        <input type="submit" value="Send" class="trans-02s trans-color trans-background" />
+      
+
+    
+    <div class="separator">
+  
+
+
+
+    
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    
+<img src="/rsi/static/images/modal_yellow_line.png" />
+
+  
+</script>
+<script id="tpl_error" type="text/x-jsmart-tmpl"><div class="modal-error js-modal-error">
+  <p class="modal-text js-modal-text">
+  <a class="close js-close trans-03s .trans-opacity" href="">
+</script>
+<script id="tpl_success" type="text/x-jsmart-tmpl"><div class="modal-success js-modal-success">
+  <p class="modal-text js-modal-text">
+  <a class="close js-close trans-03s .trans-opacity" href="">
+</script>
+<script id="tpl_progress" type="text/x-jsmart-tmpl"><div class="modal-progress js-modal-progress">
+  <div class="traj-loader">
+    <div class="fast-blink">
+    <span class="modal-text js-modal-text">
+  
+</script>
+<script id="tpl_outbound" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    
+<div id="outbound" class="inner-content on">
+  <h2><span class="icon">OUTBOUND LINK
+  <div class="padder">
+    <div class="separator">
+    <form name="" action="" method="POST">
+      <div class="error-message js-error-message"> <span class=important>WARNING<br/><br/> This link will bring you outside of the RSI site and into the depths of the internet. Continue?<br/><br/><span class="url"> 
+      <div class="success-message js-success-message"><span class=important>STAND BY<br/><br/> Initiating hyperlink.<br/><br/>
+
+      <fieldset class="clearfix last">
+        <span class="submit-wrapper">
+          <span class="submit-hover trans-02s trans-opacity">
+          <input type="submit" value="WARP" class="trans-02s trans-color trans-background" />
+        
+      
+    
+    <div class="separator">
+  
+
+
+    
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  
+</script>
+
+<script id="tpl_l-notification-bar" type="text/x-jsmart-tmpl"><div class="l-notification-bar js-notification-bar">
+
+  <div class="l-notification-bar__watermark js-svg-inliner h-svg__logo-star-citizen">
+
+  <div class="l-notification-bar__boxes">
+    {if !$viewedCookieNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='cookie'
+          title='COOKIES:'
+          message="Our website uses Google Analytics to analyze our traffic. <br/>To learn how you can control Google's use of your data and how you can opt out <a href='https://www.google.com/policies/privacy/partners/'>click here."
+          linkText='See Details'
+          buttonText='Got it!'}
+      
+    {/if}
+
+    {if !$viewedPrivacyNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='privacy'
+          title='PRIVACY POLICY:'
+          message='We adjusted the PP to reflect the decision of the European Court of Justice regarding Safe Harbor, the fact that RSI has moved and added some services providers.'
+          linkText='View Privacy Policy'
+          buttonText='Got it!'}
+      
+    {/if}
+  
+
+
+</script>
+<script id="tpl_c-notification" type="text/x-jsmart-tmpl"><div class="c-notification js-bottom-notif-msg-{$type}">
+    <div class="c-notification__title">{$title}
+    <div class="c-notification__message">
+      {$message}
+    
+
+    {if $linkText}
+        <div class="c-notification__wrapper-link">
+            <a class="c-notification__link js-bottom-notif-link-{$type}">
+            {$linkText}
+            
+        
+    {/if}
+
+    <a class="c-notification__button js-bottom-notif-btn-{$type}">
+
+      <span class="c-notification__button-text">
+       {$buttonText}
+      
+
+      {if $type neq 'announcement'}
+        <div class="c-iconed__icon c-iconed__icon--checkmark">
+      {/if}
+    
+
+</script>
+
+<script id="tpl_confirm" type="text/x-jsmart-tmpl"><div class="modal-confirm js-modal-confirm clearfix">
+  <p class="modal-text js-modal-text">
+  <a class="bt-close js-close trans-03s trans-opacity" href="">
+  <a class="bt-confirm js-confirm trans-03s trans-opacity" href="">
+	<div class="buttons">
+		<a class="shadow-button trans-02s trans-color js-close bt-close rm"     >
+  <span class="label js-label trans-02s">Cancel
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s">
+  <span class="left-section">
+  <span class="right-section">
+
+		<a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">Confirm
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s">
+  <span class="left-section">
+  <span class="right-section">
+
+	
+
+</script>
+<script id="tpl_alert" type="text/x-jsmart-tmpl"><div class="modal-alert js-modal-alert clearfix">
+  <p class="modal-text js-modal-text">
+  <div class="buttons">
+    <a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">OK
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s">
+  <span class="left-section">
+  <span class="right-section">
+
+  
+</script>
+<script id="tpl_video" type="text/x-jsmart-tmpl">{extends file="base_modal"}
+{block name='modal_content'}
+<div id="ship-commercial" class="inner-content">
+  
+  <div class="hr">
+  <div class="content-block4">
+   
+    <div class="bottom">
+  
+  {if $distant_source=="vimeo"}
+  <iframe id="commercial" src="//player.vimeo.com/video/{$video_id}?wmode=transparent" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+  {else}
+  <iframe id="commercial" frameborder="0" allowfullscreen="1" title="YouTube video player" width="100%" height="100%" src="https://www.youtube.com/embed/{$video_id}?autoplay=1">
+  {/if}
+
+{/block}
+</script>
+      
+  <script id="tpl_comment_report" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    
+<div id="comment-report" class="inner-content on">
+  <h2><span class="icon">Report this comment
+  <div class="padder">
+    <div class="separator">
+    <form name="" action="" method="POST">
+<input type="hidden" name="comment_id" value="">
+  <div class="error-message js-error-message">
+  <div class="success-message js-success-message">
+    <fieldset class="last">
+    <label for="report_email">Email Address
+    <span class="corner-wrapper">
+      <input type="text" name="email" value="" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_email" />
+      <span class="corner corner-top-left">
+      <span class="corner corner-top-right">
+      <span class="corner corner-bottom-left">
+      <span class="corner corner-bottom-right">
+    
+  
+    <fieldset>
+    <label>Report Type
+    
+
+
+  
+    <a class="js-selectlist selectlist " rel="" href="">
+    <div class="arrow">
+    <span>Please select the type best matching your report
+              <ul class="body">
+              
+                                                              <li class="js-option option " rel="obscenity" >
+                                                                        Obscene Content
+                                                    
+                                                                <li class="js-option option " rel="abuse" >
+                                                                        Abusive Conduct
+                                                    
+                                                                <li class="js-option option " rel="other" >
+                                                                        Other
+                                                    
+                                          
+            
+        <input type="hidden" name="category" class="js-category js-form-data" id="category"/>
+  
+    
+  <fieldset>
+    <label for="report_text">Details
+    <span class="corner-wrapper">
+      <textarea name="text" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_text" maxlength="2500">
+      <span class="corner corner-top-left">
+      <span class="corner corner-top-right">
+      <span class="corner corner-bottom-left">
+      <span class="corner corner-bottom-right">
+    
+  
+  <fieldset class="clearfix last">
+    <span class="submit-wrapper">
+      <span class="submit-hover trans-02s trans-opacity">
+      <input type="submit" value="Submit" class="trans-02s trans-color trans-background" />
+    
+  
+
+    <div class="separator">
+  
+
+
+    
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  
+</script>
+
+
+      <footer class="c-platform-footer c-platform-footer--rsi">
+  <div class="l-platform-footer-container">
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--sc">
+        <li class="c-platform-footer-brand__item">
+
+          <span class="c-brand c-brand--sc js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--sc">
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Join the<br>Universe
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--sc">
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen" class="c-platform-footer-link">About the Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/howto/1" class="c-platform-footer-link">How to Play</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/universe" class="c-platform-footer-link">The Universe</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/media" class="c-platform-footer-link">Media</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/fly-now" class="c-platform-footer-link js-google-analytics-event-tracker" data-event-category="FlyNow" data-event-label="footerClick">
+                Fly Now
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__sc">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">
+              Social Links
+            </span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/RobertsSpaceIndustries/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/RobertsSpaceInd">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/robertsspaceind">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.youtube.com/channel/UCTeLqJq1mXUX5WWoNXLmOIA">
+                <span class="c-iconed__icon c-iconed__icon--youtube"></span>
+                Youtube
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.twitch.tv/starcitizen">
+                <span class="c-iconed__icon c-iconed__icon--twitch"></span>
+                Twitch
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--s42">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--s42 js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--s42">
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Start the<br>Adventure
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--s42">
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42" class="c-platform-footer-link">The Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#enlist" class="c-platform-footer-link">Enlist Today</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#roadmap" class="c-platform-footer-link">Status</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/pledge/Packages/Squadron-42-Standalone-Pledge" class="c-platform-footer-link">Pledge</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__s42">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">Social Links</span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/Squad42/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/squadron_42">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/squadron42">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column is-active">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--rsi">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--rsi js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--rsi">
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi--fullcolor"></span>
+            </span>
+            <span class="c-brand__label">
+              Follow the Development
+            </span>
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--rsi">
+            <li class="c-platform-footer-list__item">
+              <a href="/" class="c-platform-footer-link">Home</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/comm-link" class="c-platform-footer-link">Transmissions</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/community" class="c-platform-footer-link">Community</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/roadmap" class="c-platform-footer-link">Development</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--platform">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Platform
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--platform">
+                          <li class="c-platform-footer-list__item">
+                <a href="/pledge" class="c-platform-footer-link ">Pledge Store</a>
+              </li>
+            
+            <li class="c-platform-footer-list__item">
+              <a href="/download" class="c-platform-footer-link ">Download</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/spectrum/community/SC" class="c-platform-footer-link">Spectrum</a>
+            </li>
+
+                          <li class="c-platform-footer-list__item">
+                <a href="/citizencon" class="c-platform-footer-link">Citizencon</a>
+              </li>
+                      </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--utility">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Utilities
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--utility">
+            <li class="c-platform-footer-list__item">
+              <a href="//support.robertsspaceindustries.com" class="c-platform-footer-link">Help</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/press" class="c-platform-footer-link">Press</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="https://cloudimperiumgames.com/join-us" class="c-platform-footer-link">Careers</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/tos" class="c-platform-footer-link">Terms of Services</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/privacy" class="c-platform-footer-link">Privacy Policy</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/eula" class="c-platform-footer-link">EULA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/dmca" class="c-platform-footer-link">DMCA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/acknowledgements" class="c-platform-footer-link">Acknowledgements</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  
+</footer>
+
+<div class="c-platform-copyright c-platform-copyright--rsi">
+  <div class="l-platform-copyright-container">
+    <a href="https://cloudimperiumgames.com" class="c-platform-copyright__logo h-svg__logo-cig js-svg-inliner"></a>
+    <p class="c-platform-copyright__body">© 2012-2019 Cloud Imperium Rights LLC and Cloud Imperium Rights Ltd</p>
+  </div>
+</div>
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHNFZPT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<script type="text/javascript">
+  window.RSI.Footer = new RSI.Footer();
+</script>
+
+    
+
+    <script type="text/javascript" src="/cache/en/rsi-platformbar-js.js?v=3.2.9.0"></script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"58013cabd7","applicationID":"375102748","transactionName":"Y1JaYktUWxZUV0QKV1oYe0NKQVoIGmZjKmtdQ111VltBF1pYXAZKDg1ZQlZYcwxbUA==","queueTime":0,"applicationTime":62,"atts":"TxVNFANOSEkXVRJZQ0lK","errorBeacon":"bam.nr-data.net","agent":""}</script></body>

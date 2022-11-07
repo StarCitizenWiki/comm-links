@@ -1,0 +1,2874 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    
+        <!-- Anti-flicker snippet (recommended)  -->
+        <style>.async-hide { opacity: 0 !important} </style>
+        <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+            h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+                    (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+                    })(window,document.documentElement,'async-hide','dataLayer',1500,
+                    {'GTM-KHNFZPT':true});</script>
+            <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"58013cabd7",applicationID:"375102748"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?u(e,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){e&&a&&e(n,r,i);for(var c=t(i),f=v(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[h[n]];return p&&p.push([b,n,r,c]),c}}function o(e,t){y[e]=v(e).concat(t)}function m(e,t){var n=y[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return y[e]||[]}function g(e){return p[e]=p[e]||i(n)}function w(e,t){s(e,function(e,n){t=t||"feature",h[n]=t,t in d||(d[t]=[])})}var y={},h={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:w,abort:c,aborted:!1};return b}function o(e){return u(e,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=e("gos"),s=e(6),d={},p={},l=t.exports=i();t.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(y,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var w=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1198.min.js"},h=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:w,features:{},xhrWrappable:h,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var x=0},{}],"wrap-function":[function(e,t,n){function r(e,t){function n(t,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],e)}c(n+"start",[o,a,f],s,u);try{return p=t.apply(a,o)}catch(m){throw c(n+"err",[o,a,m],s,u),m}finally{c(n+"end",[o,a,p],s,u)}}return a(t)?t:(n||(n=""),nrWrapper[p]=t,o(t,nrWrapper,e),nrWrapper)}function r(e,t,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<t.length;u++)f=t[u],c=e[f],a(c)||(e[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!m||t){var c=m;m=!0;try{e.emit(n,r,o,t,a)}catch(f){i([f,n,r,o],e)}m=c}}return e||(e=s),n.inPlace=r,n.flag=p,n}function i(e,t){t||(t=s);try{t.emit("internal-error",e)}catch(n){}}function o(e,t,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(e);return r.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(o){i([o],n)}for(var a in e)l.call(e,a)&&(t[a]=e[a]);return t}function a(e){return!(e&&e instanceof Function&&e.apply&&!e[p])}function c(e,t){var n=t(e);return n[p]=e,o(e,n,s),n}function f(e,t,n){var r=e[t];e[t]=c(r,n)}function u(){for(var e=arguments.length,t=new Array(e),n=0;n<e;++n)t[n]=arguments[n];return t}var s=e("ee"),d=e(7),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;t.exports=r,t.exports.wrapFunction=c,t.exports.wrapInPlace=f,t.exports.argsToArray=u},{}]},{},["loader"]);</script>
+      <meta name="viewport" content="width=device-width">
+      <meta name="description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans.">
+      <meta property="og:site_name" content="
+Letter from the Chairman - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+" />
+      <meta property="og:image" content="https://robertsspaceindustries.com/media/cg30691jdgb1tr/channel_item_full/ENV_Chop_Shop_Full_MV10_S.jpg" />
+      <meta property="og:description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans." />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://robertsspaceindustries.com/comm-link/SCW/14839-IMPORT" />
+      <meta property="og:locale" content="us_EN" />
+
+            
+
+            <link href="/rsi/static/css/cross-brand-less.css?v=5.46.0" media="all" rel="stylesheet">
+      <link href='/rsi/static/packages/platformbar/rsi.platformbar.build.05b39.css' media="all" rel="stylesheet">
+      <link href='/rsi/static/packages/enlist/rsi.enlist.build.c7560.css' media="all" rel="stylesheet"/>
+            <script type="text/javascript" src="/cache/en/rsi-external-js.js?v=5.46.0"></script>
+      <script type="text/javascript" src="/cache/en/rsi-templates-js.js?v=5.46.0"></script>
+
+            <link rel="stylesheet" href="https://use.typekit.net/dhw3beb.css">
+
+              <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="a687ee30-df65-45a0-9d22-90de6c1bb964" type="text/javascript"></script>
+      
+      
+    <!-- Google Tag Manager -->
+    <script data-cookieconsent="ignore">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHNFZPT');</script>
+    <!-- End Google Tag Manager -->
+
+
+      <title>
+Letter from the Chairman - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+</title>
+
+            <script type="text/javascript" src='/rsi/static/packages/core/rsi.core.build.804b0.js'></script>
+      <script type="text/javascript" src='/rsi/static/packages/account/rsi.account.build.609b5.js'></script>
+      <script type="text/javascript" src='/rsi/static/packages/store/rsi.store.build.cd9a7.js'></script>
+
+      <script>
+        $(document).ready(function() {
+          window.Common = new RSI.Common({});
+          window.Main = new RSI.Main({
+            'is_mobile': 0,
+            'probation_cookie' : '',
+            'require_captcha': 0
+          });
+          window.Mark = new Turbulent.Mark({ 'name' : 'Rsi-XSRF', 'token' : '', 'ttl' : 1800 });
+
+          window.WscOverlay = new RSI.WscOverlay({});
+
+          var destinations = [];
+
+window.Main.destinations = destinations;          
+  window.PageStore = new RSI.Store({
+    'store_prefix' : '/pledge',
+    'bootstrapConfig': {"injection":{"attachmentClass":"RSIStoreApp","files":{"js":["bootstrap.js"],"css":["index.css"]}},"platform":{"api":"\/api"},"store":{"path":"\/pledge-store","manifest":"manifest.json"},"customizer":{"api":"\/pledge-store\/api\/customizer","ga_tracking_code":"UA-39586040-5"}}
+  });
+
+          
+          
+  var productsTracking = [];
+  var eCommerceData = {
+    'trackingAction': "",
+    'currency': "",
+    'trackingStep': "",
+    'trackingProducts': productsTracking
+  };
+  window.eCommerceTracking = new RSI.Store.eCommerceTracking(
+    eCommerceData
+  );
+
+        });
+
+        $(window).load(function() {
+          
+        });
+
+      </script>
+
+
+      <script>
+        window.recaptcha_is_loaded = false;
+        window.on_recaptcha_load_callback = function() {
+          window.recaptcha_is_loaded = true;
+        };
+      </script>
+
+      <script src="https://www.google.com/recaptcha/api.js?onload=on_recaptcha_load_callback&render=6LerBOgUAAAAAKPg6vsAFPTN66Woz-jBClxdQU-o" async defer></script>
+
+      <script type="text/javascript">
+
+        
+
+                                </script>
+
+      
+
+<style type="text/css">
+  /* CSS from ATOM */
+  .rsi-markup .segment .content .portrait .image .caption {width:auto; max-width:220px; text-align:center;}
+
+#post-background { opacity: 0.2; }
+
+.rsi-markup .segment .content p .initial { display: inline; font-size: inherit; text-transform: inherit; float: none; line-height: inherit; height: auto; margin-right: auto; }
+
+
+.mb-box { max-width: 800px; margin: auto; margin-top: 100px; margin-bottom: 75px;  }
+.mb-box p { font-size: 18px; font-family: "Electrolize"; text-align: center; color: white;}
+
+.mb-box h1 {
+margin: 0px;
+font-size: 32px;
+color: #00e7ff;
+text-transform: uppercase;
+text-shadow: 0 0 0 #00E0FF, 0 0 11px #00A0B6;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+height: 57px;
+line-height: 57px;
+text-align: center;
+}
+
+.mb-full img { width: 100%; }
+
+#post .title-section .title-container .subtitle { font-size: 18px; }
+
+.variant-block { }
+.variant-block h2 { 
+font-family: "Electrolize";
+color: #fff;
+line-height: 40px;
+text-transform: uppercase;
+font-size: 16px;
+margin: 0px;
+margin-left: 0px;
+}
+
+#contentbody .variant-block p { font-size: 14px;  line-height: 18px;}
+
+#contentbody .variant-block a.image { margin:-15px 0px 30px 20px;}
+
+
+#contentbody .variant-block.variant-left p { float: right;  }
+#contentbody .variant-block.variant-left a.image { float: left; }
+
+#contentbody .variant-block a.image { padding: 5px; border: 1px solid rgba(0, 162, 253, 0.25); border-radius: 0px; }
+
+#contentbody .variant-block a.image img { border-radius: 0px; border: 0;  }
+
+
+.variant-block .glow-box {
+background-color: #13d0ff;
+width: 11px;
+height: 5px;
+float: left;
+box-shadow: 0px 0px 20px #1397FF;
+margin-top: 17px;
+margin-right: 18px;
+}
+
+#contentbody .variant-block .thumbs .image:nth-child(odd) { float: left; }
+#contentbody .variant-block .thumbs .image:nth-child(even) { float: right; }
+#contentbody .variant-block .caption { width: auto; }
+
+
+#contentbody .variant-block p a.ship-button {
+font-family: "Electrolize";
+text-transform: uppercase;
+font-size: 16px;
+color: #2c799f;
+line-height: 22px;
+position: relative;
+width: 250px;
+display: block;
+text-decoration: none;
+margin-top: 20px;
+border: 0;
+}
+
+
+#contentbody .variant-block p a.broc-button span {
+font-family: "Electrolize";
+text-transform: uppercase;
+font-size: 14px;
+color: #999999;
+line-height: 22px;
+position: relative;
+width: 250px;
+display: block;
+text-decoration: none;
+margin-top: 20px;
+border: 0;
+}
+
+
+
+#contentbody .variant-block p a.ship-button span {
+font-family: "Electrolize";
+max-width: 195px;
+display: block;
+float: left;
+}
+
+#contentbody .variant-block p a.ship-button .arrow {
+background: url('/rsi/static/images/store/viewall-arrows.png') no-repeat center center;
+width: 10px;
+height: 20px;
+display: block;
+position: absolute;
+float: left;
+}
+
+#contentbody .variant-block p a.ship-button .arrow.arrow1 {
+right: 21px;
+}
+#contentbody .variant-block p a.ship-button .arrow.arrow2 { right: 14px; }
+#contentbody .variant-block p a.ship-button .arrow.arrow3 { right: 7px; }
+
+.rsi-markup .segment .content p { width: inherit; max-width: inherit; }
+
+.rsi-markup .segment .content table tr td:first-child { border-right: 1px dashed #465F7A;}
+.rsi-markup .segment .content table tr td strong { color: white; }
+.rsi-markup .segment .content table tr td { padding: 6px; text-align: left; color: #999999;  }
+
+.rsi-markup .segment .content .smaller .image {margin-top:0px!important; max-width:500px;}
+</style>
+
+<script type="text/javascript">
+  /* JS from ATOM */
+  
+</script>
+
+
+
+
+    
+
+  <style>
+    
+      background:url(/rsi/static/images/noisebg.gif) repeat center top #000b11;
+    
+  </style>
+
+    <link href="//fonts.googleapis.com/css?family=Electrolize|Orbitron:400,500,700|Quantico|Share+Tech+Mono&display=swap" rel="stylesheet" type="text/css">
+
+    <link href="/cache/en/rsi-css.css?v=5.46.0" media="all" rel="stylesheet">
+
+
+  </head>
+  <body id="" class="" >
+
+    
+      <div class="l-notification-bar l-notification-bar--rsi js-notification-bar" id="notification-bar-root">
+  <c-notification-bar v-bind:latestagreementsslugs=["w29v6zurhelps","xalvbabalttku"] v-bind:loggedin="0" v-bind:onhomepage="0"></c-notification-bar>
+  <div class="l-notification-container l-notification-bar__boxes js-notification-bar-boxes">
+    <div class="l-notification__wrapper">
+      
+      <c-unsupported-browser v-cloak>
+        <div class="l-notification-bar__box js-notification-bar-box">
+          <div class="c-notification  c-notification--browser-support js-bottom-notif-msg-browser-support">
+  <div class="c-notification__inner">
+
+    <div class="c-notification__content">
+      <div class="c-notification__title">
+        IE11 is no longer supported
+      </div>
+      <div class="c-notification__message">
+        We do not support Internet Explorer 11 and below. Please use a different web browser.
+      </div>
+    </div>
+
+    <div class="c-notification__actions">
+      
+      
+          </div>
+
+  </div>
+</div>
+        </div>
+      </c-unsupported-browser>
+    </div>
+  </div>
+
+</div>
+    
+
+    <div id="bodyWrapper">
+      <header class='c-header-wrapper c-header-wrapper--rsi js-header-wrapper '  id='cross-brand-header'>
+  <div id="platform-bar" class="c-header__platform-bar"></div>
+
+      <div class='c-right-sidebar c-right-sidebar--signin' id="account-sidebar">
+      <div class="js-toggle-account__backdrop invisible"></div>
+
+      <a href="#" class='c-right-sidebar__back js-toggle-account'>Back
+        <span></span>
+        <span></span>
+      </a>
+
+      <div id="enlist-root" data-theme="rsi" data-enlisting="" data-ptu=""></div>
+      <script type="text/javascript" src='/rsi/static/packages/enlist/rsi.enlist.build.c7560.js'></script>
+    </div>
+  
+  <div class="c-header-wrapper__backdrop js-toggle-games"></div>
+</header>
+
+<div id="platform-backdrop"></div>
+
+<script type='text/javascript'>
+  RSI.Platformbar = {
+    theme: "rsi",
+    loggedState: "logged-out",
+    tabs: [
+      {
+        type: 'brands',
+        name: "Games",
+        subItems: [
+          {
+            name: "sc",
+            href: "/star-citizen",
+            description: "Join the Universe"
+          },
+          {
+            name: "s42",
+            href: "/squadron42",
+            description: "Start the adventure"
+          },
+          {
+            name: "rsi",
+            href: "/",
+            description: "Follow the Development"
+          }
+        ]
+      },
+      {
+        type: 'apps',
+        name: "Apps",
+        subItems: [
+          [
+            {
+              name: "Spectrum",
+              href: "/spectrum/community/SC",
+              description: "Your communication platform"
+            },
+            {
+              name: "Launcher",
+              href: "/download",
+              description: "Download Star Citizen",
+                          }
+          ],
+          [
+            {
+              name: "Roadmap",
+              href: "/roadmap",
+              description: "Keep track of the development"
+            },
+            {
+              name: "Telemetry",
+              href: "/telemetry",
+              description: "Keep track of the player’s performance"
+            },
+            {
+              name: "Issue Council",
+                          href: "/community/issue-council",
+                          description: "Help us make the game better",
+                          }
+          ],
+          [
+            {
+              name: "Starmap",
+              href: "/starmap",
+              description: "Your map to the universe"
+            },
+            {
+              name: "Galactapedia",
+              href: "/galactapedia",
+              description: "Your guide to the universe"
+            }
+          ]
+        ]
+      },
+          ],
+    navigation: {
+      store: {
+        name: "Pledge Store",
+        href: "/pledge",
+        isHidden: false      },
+      hub: {
+        name: "Learn How to Play",
+        href: "/playstarcitizen",
+        show: false      },
+      support: {
+        name: "Support",
+        href: "//support.robertsspaceindustries.com"
+      },
+      account: {
+        name: "Account",
+        href: "/account/settings",
+        isHidden: false      }
+    }
+  };
+
+  $(document).ready(function() {
+    window.header = new RSI.Header({});
+  });
+</script>
+
+
+      
+  
+<header class='c-brand-menu c-brand-menu----rsi' id='brand-menu'>
+  <span class="c-brand-menu__section">
+    
+      Roberts Space Industries
+    
+  </span>
+  <div class="c-brand-menu__backdrop"></div>
+  <nav class="c-brand-menu__container">
+    <div class="c-brand-menu__logo">
+      <a href="/"><span class="h-svg h-svg__logo-rsi--fullcolor js-svg-inliner"></span> </a>
+    </div>
+    <div class="c-brand-menu__items-container">
+      <ul class="c-brand-menu__items">
+                <li class="c-brand-menu__item  ">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/comm-link">
+            <span class="c-brand-menu__item-text">Comm-Link</span>
+                                  </a>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/community">
+            <span class="c-brand-menu__item-text">Community</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Community</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/spectrum" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Spectrum
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/orgs" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Organizations
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/leaderboards/top" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Leaderboards
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community_events" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Event
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Hub
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/fankit" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Fankit
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/development">
+            <span class="c-brand-menu__item-text">Development</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Development</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/roadmap" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Roadmap
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/devtracker" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Dev Tracker
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/telemetry" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Telemetry
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/issue-council" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Issue Council
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/patch-notes" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Patch Notes
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/ship-matrix" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Ship Matrix
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/funding-goals" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Funding
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+              </ul>
+    </div>
+
+    <div class="c-brand-menu__cta">
+      
+        <a href="/star-citizen/play-now" class="c-brand-cta-btn js-google-analytics-event-tracker"
+          data-event-category="FlyNow" data-event-label="navMenuClick">
+          <div></div>
+            <span class="c-brand-cta-btn__text">
+              <strong>Play now</strong>
+            </span>
+          <div></div>
+        </a>
+      
+    </div>
+  </nav>
+</header>
+
+
+
+      
+
+  
+  <div class="page-wrapper">
+    
+  <div id="post-background" style="background-image:url('/media/v2aq7dsoh84ddr/source/5-Spider_Cathcart_ConceptArt_Final_021513_thumb.jpg');"></div>
+
+
+    <div id="contentbody" class="" style="">
+      
+
+<div id="post">
+  <div class="title-section">
+    
+      <div class="wrapper title-bar-container">
+        <div class="glow left"></div>
+        <div class="title-bar">
+          <div class="title with-subtitle">
+            <h1>Transmission</h1>
+            <h2>General</h2>
+          </div>
+          <div class="details">
+            <div>
+              <h3>ID:</h3>
+              <p>14839</p>
+              <div class="cboth"></div>
+            </div>
+            <div>
+              <h3>Comments:</h3>
+              <p class="comment-count">373</p>
+              <div class="cboth"></div>
+            </div>
+            <div>
+              <h3>Date:</h3>
+              <p>July 20th 2015</p>
+              <div class="cboth"></div>
+            </div>
+            <div></div>
+          </div>
+          <div class="cboth"></div>
+        </div>
+        <div class="glow right"></div>
+      </div>
+    
+  <div class="title-container">
+    <div class="title ">Letter from the Chairman</div>
+    <div class="subtitle">Back Home!</div>  </div>
+
+  </div>
+
+  
+  <div class="lightbar toplightbar">
+    <div class="lightbarlights"></div>
+    <div class="footershadow"></div>
+  </div>
+
+
+  <div class="wrapper"><div class="hr"></div><div class="content-block4"><div class="content"><div class="top"></div><h1>Letter from the Chairman</h1><div class="cboth"></div></div><div class="bottom"></div></div><div class="content-block2"><div class="content clearfix"><img src="/media/cg30691jdgb1tr/post_section_header/ENV_Chop_Shop_Full_MV10_S.jpg" /><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div><div class="content-block1 rsi-markup">
+
+<div  class=' segment' ><div class="content"><p><div class="variant-block"></p>
+
+<h2>Hi everyone,</h2>
+
+<a class="image  js-open-in-slideshow" data-id="6v457k2ttzgwsr" data-full_res="/media/6v457k2ttzgwsr/source/New_chairman_photo.png" data-low_res="/media/6v457k2ttzgwsr/slideshow_pager/New_chairman_photo.png" data-source_url="/media/6v457k2ttzgwsr/source/New_chairman_photo.png" rel="post"><img src="/media/6v457k2ttzgwsr/post/New_chairman_photo.png" alt="On the set of Squadron 42" /><span class="caption">On the set of Squadron 42</span></a>
+
+<p><span class="initial">N</span>ow that I am back in Los Angeles I thought I would write a letter to all of you who have backed Star Citizen.  I haven’t had the chance to communicate to everyone as frequently as I normally have due to my directing duties on the Squadron 42 performance capture shoot. Directing a shoot is a pretty intensive affair which absorbed most of my time.  The rest of the hours I wasn’t sleeping were taken up with the business of directing a game as large as Star Citizen with video conferences and emails or online collaboration with the six development studios spread across two continents and six time zones. To help address some of the questions that came up during the shoot, I&#8217;ve put together a special 10 for the Chairman companion piece to this letter, which you can <a href="https://robertsspaceindustries.com/comm-link/transmission/14844-10-For-The-Chairman">find here</a>.</p>
+
+<p>A week ago Wednesday we wrapped the main performance and motion capture for Squadron 42, Episode 1, after 66 shooting days.  We started shooting on March 31st at Ealing Studios in London and completed principal performance and motion capture on July 8th.  This is more shooting days than any film I’ve ever been involved with! I directed my last scene on Friday July 3rd, leaving David Haddock, our lead writer, who along with William Weissbaum wrote the Squadron 42 script, to direct the last three days of secondary character “wild lines” and motion sets the following Monday through Wednesday.</p>
+
+<div class="clearfix"></div>
+
+<h2>A Grand Tour</h2>
+
+<p>That Monday I took a train up to Wilmslow to the Foundry 42 UK Office to spend some time with the Squadron 42 development team in person as well as gather key people from our various studios and our technical partners for a technical summit on our character and facial animation technology and pipeline.  Like everything on Star Citizen and Squadron 42 we are aiming to push the envelope – with the tech we are working on for animation, shaders and AI we are aiming to give you a fluid immersion inside the story of Squadron 42 and later the bigger world of the Persistent Universe of Star Citizen, in a way that conveys the emotional subtlety of film. It’s one of the reasons why our performance capture shoot was so long – maybe 10% of the scenes we shot were for cinematics, the rest were all for scenes where we allow full player control that play out during game control from your <span class="caps">POV</span>. Most games just record voiceovers for these types of scenes over a few days, but for us it was important to capture the full performance of our amazing cast. This allows us to then blend the captured performance of the actor&#8217;s face and body with other motions to adjust the game character’s looks and movement so they react in a natural manner to the player’s actions (whatever they may be). At the fidelity we are going for we are definitely breaking new ground, but luckily we are working with some of the leading companies and people in the area of scanning real people and bringing their performances into 3D in the most life-like way. 3 Lateral and Cubic Motion are well known for their amazing work in this field and we are partnering with them to push performance capture and real time playback beyond what you have seen in a game before. Internally we have been hiring up some incredible talent, including the architect of the CryEngine animation system, who recently joined us in Frankfurt.</p>
+
+<br />
+<br />
+<br />
+
+
+<p><div class="portrait"></p>
+
+<a class="image  js-open-in-slideshow" data-id="aewro31epdm19r" data-full_res="/media/aewro31epdm19r/source/Star-Citizen-2-Of-57.jpg" data-low_res="/media/aewro31epdm19r/slideshow_pager/Star-Citizen-2-Of-57.jpg" data-source_url="/media/aewro31epdm19r/source/Star-Citizen-2-Of-57.jpg" rel="post"><img src="/media/aewro31epdm19r/post/Star-Citizen-2-Of-57.jpg" alt="Some photos from my adventure in London" /><span class="caption">Some photos from my adventure in London</span></a>
+
+<p>Wednesday night I flew with my brother Erin to Frankfurt Germany to visit the German Foundry 42 development studio, where the 22 newest members of the Star Citizen family have just moved into their new home, after being crammed into temporary offices for the last few months. The energy and enthusiasm there was fantastic to experience first-hand. We have been lucky enough to have some of the best technologists and game developers in the business join us these past few months, the very people who were involved in building the engine we are using. These are guys who did things with a PC in 2003 and 2006 that no one thought possible. Star Citizen is lucky to have them and we spent Thursday and Friday going over our engine and technology road map, as well as reviewing some of the work they have been doing these last months. As we have mentioned before, Star Citizen (and even Squadron 42) presents a challenge in terms of detail and scale that no game has tackled successfully to date. To do what the game requires there needs to be a different approach to how things are organized, rendered and updated. This is why we spent eight months converting the engine to 64 bit precision and why we have developed some new technologies like the Zone system and local grids, which fundamentally change how the engine organizes, streams, updates and renders objects in the world (or more accurately: the ‘verse).  We can now manage one massive play area with all sorts of objects; single seat fighters, multi crew ships, capital ships with hundreds of rooms and thousands of objects inside, huge space stations or incredibly detailed landing environments. We will be showing you the first preview of this in action at Gamescom. We still have lots of work to do, not the least being the network side of things, to be able to update all this with a decent amount of players participating. Even in the early stages it is incredibly exhilarating.</p>
+
+<div class="clearfix"></div>
+
+<p></div></p>
+
+<a class="image  js-open-in-slideshow" data-id="cg30691jdgb1tr" data-full_res="/media/cg30691jdgb1tr/source/ENV_Chop_Shop_Full_MV10_S.jpg" data-low_res="/media/cg30691jdgb1tr/slideshow_pager/ENV_Chop_Shop_Full_MV10_S.jpg" data-source_url="/media/cg30691jdgb1tr/source/ENV_Chop_Shop_Full_MV10_S.jpg" rel="post"><img src="/media/cg30691jdgb1tr/post/ENV_Chop_Shop_Full_MV10_S.jpg" alt="Squadron 42 concept art, the "Chop Shop"" /><span class="caption">Squadron 42 concept art, the "Chop Shop"</span></a>
+
+<p>Squadron 42 is going to be something special. I could feel it on set with the performances we were getting, with me knowing how we can bring those into the game. Squadron 42 is going to be like this amazing sci-fi movie where instead of just watching, you truly feel you’re in the world, emotionally connected to the other characters in the story. The action goes fluidly from space, to ship board, to on-foot gun battles aboard ships, stations and asteroid bases – all from the same 1st person point of view, all fluidly blending with no loading screens.</p>
+
+<div class="clearfix"></div>
+
+<p>I look at the work Tony is spearheading on the Persistent Universe side: some of the environments we are constructing, the rendering and graphics technology we have in the pipeline to render these worlds in a fluid manner to go from space flight to being on-foot at your destination. Also the attention Tony is spending on making sure there are many different careers and roles you can play in the bigger universe. I know the dream game that I have always wanted to make and that you all want to play and backed for is closer than ever.</p>
+
+<p>I have never been more excited by what we are building then I am now.</p>
+
+<p>That’s not to say I did not come home to a little drama :)</p>
+
+<a class="image  js-open-in-slideshow" data-id="b7vtzx2eplvoxr" data-full_res="/media/b7vtzx2eplvoxr/source/Star-Citizen-24-Of-57.jpg" data-low_res="/media/b7vtzx2eplvoxr/slideshow_pager/Star-Citizen-24-Of-57.jpg" data-source_url="/media/b7vtzx2eplvoxr/source/Star-Citizen-24-Of-57.jpg" rel="post"><img src="/media/b7vtzx2eplvoxr/post/Star-Citizen-24-Of-57.jpg" alt="" /></a>
+
+<h2>Star Marine &amp; Production</h2>
+
+<p>It seems some gaming outlets got a little confused with my last <span class="caps">FPS</span> letter, which was no different to the one that we did back in May to let people know where we were on Star Marine / the <span class="caps">FPS</span> module.  As you all know we are shy of announcing firm dates for module releases until they are in the Public Test Universe (<span class="caps">PTU</span>) as it’s hard to predict exact dates in open development, especially in the stages that still involve R&amp;D, unless you build in large time buffers. We have been burned by this multiple times before so I have heeded all your wishes to not give out dates until we are sure. Perhaps we stressed the point a little too strongly as suddenly gaming websites were running with the headline, “Star Citizen <span class="caps">FPS</span> delayed indefinitely!” which was unfortunate as this phrase is usually a euphemism for a project being put on indefinite hold or canceled. </p>
+
+<p>Don’t worry, it’s not! We’re hard at work on the <span class="caps">FPS</span> – as you can see from <a href="https://robertsspaceindustries.com/comm-link/transmission/14838-Star-Marine-Status-Update">our update on Friday</a> – and you will have it in your hands sooner rather than later.</p>
+
+<p>Shortly after the <span class="caps">FPS</span> flap, the news that the LA Studio’s Executive Producer, Alex Mayberry,  had left for personal reasons after a year on the job combined with a couple of other staff departures that we had previously announced had some people worrying about whether they should be concerned.</p>
+
+<p>With a company the size of <span class="caps">CIG</span> and its subsidiaries there is always going to be turnover. We are a very large company now, dedicated entirely to making Star Citizen and Squadron 42. We have four development studios:  Los Angeles, Austin, Wilmslow, UK and Frankfurt, Germany. Our internal headcount has gone from five at the end of 2012 to 59 at the end of 2013 to 183 at the end of 2014 and to 255 now.  That’s some pretty huge growth. The turnover at <span class="caps">CIG</span> is no more or less than it was at Origin, EA, Digital Anvil or Microsoft when I was making games there. The difference is that since we conduct our development in an open manner people get the opportunity to know some of the individuals working on the game, in a way you wouldn’t with a normal publisher, so a departure becomes more noticeable. Sometimes an employee may get an opportunity to go elsewhere in a role they feel will be more rewarding personally. Sometimes our breakneck pace of development is too much, or sometimes people just want to make a change for personal reasons.</p>
+
+<a class="image  js-open-in-slideshow" data-id="ttw3hptqeoeotr" data-full_res="/media/ttw3hptqeoeotr/source/Foundry42_DE_Team.jpg" data-low_res="/media/ttw3hptqeoeotr/slideshow_pager/Foundry42_DE_Team.jpg" data-source_url="/media/ttw3hptqeoeotr/source/Foundry42_DE_Team.jpg" rel="post"><img src="/media/ttw3hptqeoeotr/post/Foundry42_DE_Team.jpg" alt="The Foundry 42 DE team!" /><span class="caption">The Foundry 42 DE team!</span></a>
+
+<p>We made a conscious decision early on to go where the developers were as opposed to making them come to one place. If I hadn’t done this we would only have an office in LA as that’s where I live, but I decided in today’s world with fast Internet (we run 1 Gigabit connections at all our offices), Cloud and online sharing technology we don’t have to force talented people to leave their homes to work on Star Citizen. This approach has allowed us to staff up with some of the best people in the business. The UK and German office are key examples of this. This approach of distributed development is not new or unusual but it does require you to work hard to keep all locations working together as harmoniously as possible.</p>
+
+<p>As such, we are constantly reassessing our development structure and methodology to improve our efficiency. With Alex’s departure we took the opportunity to streamline all production leadership under Erin. Erin has an amazing track record, delivering more than $500M worth of Lego games during his seven years of running Traveler’s Tales Fusion, not to mention the titles he has built with me at Origin, EA and Digital Anvil. I had asked Erin to take on this role originally when he joined but at the time he wanted to concentrate on building up Foundry 42. Now with Foundry 42 as our largest studio (between Wilmslow and Frankfurt there are 138 people) and those teams operating efficiently, Erin felt comfortable taking on a wider role. I could not be happier as he has been with me since the first Wing Commander and the best producer / production executive I know.</p>
+
+<br />
+<br />
+
+
+<p><div class="smaller"></p>
+
+<a class="image  js-open-in-slideshow" data-id="d0s2twvv7hclpr" data-full_res="/media/d0s2twvv7hclpr/source/NF_Arccorp_PaintoverDumperdepotview_01072015-Tweaked.jpg" data-low_res="/media/d0s2twvv7hclpr/slideshow_pager/NF_Arccorp_PaintoverDumperdepotview_01072015-Tweaked.jpg" data-source_url="/media/d0s2twvv7hclpr/source/NF_Arccorp_PaintoverDumperdepotview_01072015-Tweaked.jpg" rel="post"><img src="/media/d0s2twvv7hclpr/post/NF_Arccorp_PaintoverDumperdepotview_01072015-Tweaked.jpg" alt="Meanwhile, the PU team in Austin is working on the next planet in the ArcCorp system" /><span class="caption">Meanwhile, the PU team in Austin is working on the next planet in the ArcCorp system</span></a>
+
+<h2>Open Development</h2>
+
+<p>If you have followed Star Citizen from our kickoff in October, 2012, you know that the game we’re building today is a bigger and more technically accomplished project than I thought was possible back then. The original crowd funding goal was to raise enough money to deliver regular community updates, access to the multiplayer dogfighting alpha and a single player campaign called Squadron 42. You can see the first goal, which was achieved on 25th of October 2012 <a href="https://robertsspaceindustries.com/funding-goals">here</a>.  It’s no secret that I originally thought I would have to build a smaller game first and then over time add features and content to get close to the full living universe that I have always wanted to realize. This community came together and, both through your financial support and your belief in the project, made something incredible possible. You went above and beyond in backing our dream and so we are going to, also. Because of you, we’re building cities where I had hoped for just landing pads, we’re building armadas of starships where I asked for squadrons and we’re populating a living, breathing world in ways I didn’t dare to dream of in 2012. </p>
+
+<p></div></p>
+
+<div class="clearfix"></div>
+
+<p>You all know that already; you’ve lived that. You’ve seen Star Citizen evolve and start to come together. You’ve watched our atoms form molecules, our modules form a real, playable game (that you can boot up and play today!). There are people out there who are going to tell you that this is all a <span class="caps">BAD</span> <span class="caps">THING</span>. That it’s ‘feature creep’ and we should make a smaller, less impressive game for the sake of having it out more quickly or in order to meet artificial deadlines. Now I’ll answer those claims in one word: Bullshit! </p>
+
+<p>Star Citizen matters <span class="caps">BECAUSE</span> it is big, because it is a bold dream. It is something everyone else is scared to try. You didn’t back Star Citizen because you want what you’ve seen before. You’re here and reading this because we are willing to go big, to do the things that terrify publishers. You’ve trusted us with your money so we can build a game, not line our pockets. And we sure as hell didn’t run this campaign so we could put that money in the bank, guarantee ourselves a profit and turn out some flimsy replica of a game I’ve made before. You went all in supporting us and we’ve gone all in making the game. Is Star Citizen today a bigger goal than I imagined in 2012? Absolutely. Is that a bad thing? Absolutely not: it’s the whole damn point.</p>
+
+<br />
+<br />
+
+
+<p><div class="smaller"></p>
+
+<a class="image  js-open-in-slideshow" data-id="q3azrql4eao3zr" data-full_res="/media/q3azrql4eao3zr/source/NF_Arccorp_PaintoverJuin_26062015.jpg" data-low_res="/media/q3azrql4eao3zr/slideshow_pager/NF_Arccorp_PaintoverJuin_26062015.jpg" data-source_url="/media/q3azrql4eao3zr/source/NF_Arccorp_PaintoverJuin_26062015.jpg" rel="post"><img src="/media/q3azrql4eao3zr/post/NF_Arccorp_PaintoverJuin_26062015.jpg" alt="" /></a>
+
+<p>Will it take longer to deliver all this? Of course! When the scope changes, the amount of time it will take to deliver all the features naturally increases. This is something we are acutely aware of. How do we balance the mutually conflicting wants of the community; to have this hugely ambitious game, but not wait forever for it?</p>
+
+<p>Our answer is to embrace open development and share features and functionality that will go into the final game before everything is completed. Originally we had just planned to share a multiplayer dogfighting alpha and then the beta of the game (which would have just been Squadron 42). As we smashed every stretch goal, and continued to power through additional ones, it was pretty apparent we had to find a way to keep people engaged while we were building this virtual universe. In today’s 24/7 short attention-span world people don’t have the patience to wait around for years. This is why we decided on multiple modules: the Hangar, so you could first see your ships and walk around them in the manner you would in the final game, then Arena Commander, to allow people to get a taste and give feedback on the basic dogfight and flight mechanics. Star Marine, which will be available shortly, is the module for backers to experience and give their feedback on the First Person Shooting component of the game. Not long after that we will be releasing the next level of Arena Commander, allowing players with bigger ships to fly them with friends, on maps that are closer in size to the huge ones you’ll have in the final game. Then we’re rolling out aspects of the Persistent Universe: first there will be just planet side environments to explore, but not long after you’ll be able to transition to space and fly to another destination, and then after that to another system.  We have taken this route to allow people to experience and give feedback to make the game better as we build it. Almost no one else does this. And we&#8217;re still doing it: case in point, our first 16-player version of Arena Commander went to the <span class="caps">PTU</span> on Saturday! I’ve said it countless times: my goal is to make the journey of Star Citizen’s development worth the price of admission and the final game be the best bonus in the world.</p>
+
+<p></div></p>
+
+<p>So while it will take longer to build the full vision that all of you are helping to achieve by contributing your funds, our plan is to have you play large sections of it without having to wait for everything to be done like you would on a normal retail product. That is the advantage of being online and on the PC. It should be a win / win: you get to play a more limited version early, a version that is closer to the original goals, but you know the bigger, fuller featured version is coming – and the best bit is that you get it all for your initial pledge!</p>
+
+<p>Is ‘feature creep’ a worry? Sure… it’s always a worry, and we are well aware of it. However, building the game to the stretch goals embraced and endorsed by the community is not feature creep! We made the decision to stop stretch goals at the end of last year. That was a hard choice to abandon one of the central tenets of crowd funding projects, the idea that the sky is the limit… but it’s one we felt we had to make for the better of the game. Today, we have a radical design that’s like nothing else in the industry and we’re building towards it every hour of every day. We count on the community’s continued support to build the game to the high level that we set out to accomplish. Allowing independent authors to do more is the point of crowd funding, and going beyond our limitations is the entire point of Star Citizen.</p>
+
+<p>Occasionally I see comments out there from people who haven’t taken the time to watch the thousands of YouTube videos of people running around their ships and hangars or dogfighting in space, or visit our site to read the vast amount of information we make publicly available that call us vaporware or a glorified tech demo. Arena Commander, which is still evolving, is a better looking and playing game than a lot of finished games out there. We are maintaining a live game and building one all at the same time. It’s harder than just developing, as most companies that run online games will tell you, but it’s worth it, both to ensure you get to experience features as soon as they are ready and to make a better game in the long run.</p>
+
+<p>This is all being made possible by your enthusiasm and support. As we promised since the start of the campaign, we invest every dollar raised into the game. Anyone with knowledge about game development can assess our spending based on the information we share every month. It speaks for itself that from the outset our <span class="caps">TOS</span> provides for an accounting to be published if we ever had to stop development before delivering. With the progress and the funds we’ve raised this is no longer an issue, but quite obviously we wouldn’t have provided for this clause, if we weren’t using your funds very carefully for the development of Star Citizen.</p>
+
+<p>The rest of the team and I are immensely grateful for all your support and passion. We’re hard at work on finishing up the next Arena Commander patch, Star Marine, the Persistent Universe, Squadron 42, as well as working on something special to show you all at Gamescom!</p>
+
+<p>We genuinely want people to be happy with their decision to back Star Citizen, because I and everyone else on the team passionately believe in Star Citizen. This is the dream game that all of us have wanted to build all our lives. And while I can’t promise you everything will always go smoothly or features or content won’t arrive later than we want them to, I can promise that we will never stop until we have achieved this dream.</p>
+
+<p>To paraphrase a key speech from the beginning of Squadron 42;</p>
+
+<p>“<em>Several years from now, when you are surrounded by your loved ones, and they ask you what did you do during the battle for Space Sims and PC games, you can look them in the eye and say; I helped make Star Citizen.</em>”</p>
+
+<p></div></p></div><div class="cboth"></div></div>
+<div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+<div class="wrapper"><div class="content-block1 rsi-markup"><div class="segment"><div class="content"><div class="embed-container vimeo">
+  <iframe src="//player.vimeo.com/video/133801690?wmode=transparent" width="640" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+</div>
+</div><div class="cboth"></div></div><div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+
+
+  <div class="wrapper">
+    
+    <div class="end-transmission-container">
+      <div class="glow left"></div>
+      <div class="title-bar">
+        <h1>End Transmission</h1>
+      </div>
+      <div class="glow right"></div>
+    </div>
+  </div>
+  
+
+  
+    <div class="two-line-separator"></div>
+  <div class="channel-banner">
+  <div class="header-container">
+                  <div>
+      <div class="header">
+        <div class="wrapper">
+                      <div class="image" style="background-image:url('/media/oi5egc666gc0qr/post_section_header/Chris_roberts0_cinema_12800.jpg');"></div>
+                    <div class="texts">
+            <div class="title">
+              <div class="presented-by">Part of</div>
+              <div class="cboth"></div>
+              <h1>From the Chairman</h1>
+              <a  class="holobtn " href="/comm-link?series=letter-from-the-chairman"  >
+  <span class="holobtn-top abs-overlay trans-02s">More in this series </span>
+  <span class="holobtn-bottom abs-overlay trans-02s"></span>
+</a>
+              <div class="cboth"></div>
+            </div>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content-carousel">
+    <div class="carousel-mask">
+      <div class="left-shadow shadow"></div>
+      <a href="" class="prev js-prev"><div class="hover trans-03s trans-opacity"></div></a>
+      <div class="centerer">
+        <div class="carousel">
+                      <a href="/comm-link/transmission/12765-3-Million-Update-From-Chris-Roberts" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/ktvld5a7g7cipr/home_transmissions_item_expanded/Hornetblastoff.jpg');"></div>
+    <div class="title trans-opacity trans-03s">$3 Million! - Update from Chris Roberts</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2012-11-08 16:31:06</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/12777-35-Million-Unlock" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/40ynycyq65ik4r/home_transmissions_item_expanded/Orion.jpg');"></div>
+    <div class="title trans-opacity trans-03s">$3.5 Million Unlock!</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2012-11-14 03:25:53</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/12811-55-Million-On-To-The-Stars" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/bck39n3gu30oyr/home_transmissions_item_expanded/Carrierrear1.jpeg');"></div>
+    <div class="title trans-opacity trans-03s">$5.5 Million - On to the Stars!</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2012-11-19 06:31:30</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13048-10-Million" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/03r49tr491g63r/home_transmissions_item_expanded/Sol_moscow_Aerial_sketch_04_refined.jpg');"></div>
+    <div class="title trans-opacity trans-03s">$10 Million!</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-06-10 18:17:12</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13120-Letter-From-The-Chairman" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/xmgwmpi5p8v3tr/home_transmissions_item_expanded/Chairman_letter.png');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-06-29 16:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13124-12-Million" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/lruepdggk287cr/home_transmissions_item_expanded/350r_brochure_v008_comp.jpg');"></div>
+    <div class="title trans-opacity trans-03s">$12 Million!</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-07-01 21:25:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13130-Thank-You" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/l4snd3fsyu71xr/home_transmissions_item_expanded/Test_renders6b_Main_comp.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Thank You!</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-07-07 00:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13131-13-Million" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/hjl0ta7zubdl8r/home_transmissions_item_expanded/Test_renders6h_Main_comp_bord.jpg');"></div>
+    <div class="title trans-opacity trans-03s">$13 Million!</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-07-05 21:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13159-15-Million" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/4q5ba3nq6brdor/home_transmissions_item_expanded/350r_brochure_v005_compflat.jpg');"></div>
+    <div class="title trans-opacity trans-03s">$15 Million!</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-08-01 12:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13214-Letter-From-The-Chairman-The-Hangar-Module" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/dyvxafmdq9f6vr/home_transmissions_item_expanded/Aurora_in_hangar.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman: The Hangar Module</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-08-23 22:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13226-16-Million" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/dssb4ros9wt3rr/home_transmissions_item_expanded/Stanton-Arccorp_Bar.jpg');"></div>
+    <div class="title trans-opacity trans-03s">$16 Million!</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-08-24 22:50:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13234-Letter-From-The-Chairman-Hangar-Store-Launched" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/xg7msv5u3emdir/home_transmissions_item_expanded/Hangar_buggy.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman: Hangar Store Launched</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-08-30 18:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13241-Letter-From-The-Chairman-17-Million" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/ze1crhxouch10r/home_transmissions_item_expanded/Constellationinterior.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman: $17 Million!</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-08-31 23:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13249-Letter-From-The-Chairman-18-Million" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/444vit339ao9tr/home_transmissions_item_expanded/Terralandingcut.png');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman: $18 Million!</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-09-06 16:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13266-Letter-From-The-Chairman-19-Million" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/r1ctr3pgoapt7r/home_transmissions_item_expanded/CathCart-Spider016.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman: $19 Million!</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-09-17 02:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13284-Letter-From-The-Chairman-20-Million" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/v48kjlj7va8wgr/home_transmissions_item_expanded/GossII_Cassel_Landing_02.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman: $20 Million!</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-09-26 16:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13305-Letter-From-The-Chairman-21-Million" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/bhe3x4aihmem0r/home_transmissions_item_expanded/RihlahIV_Final_4k.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman: $21 Million!</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-10-08 02:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13317-22-Million-And-Hangar-Patch-Live" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type slideshow"><div class="icon"></div><span>slideshow</span></div>
+      <div class="image" style="background-image:url('/media/vciaiqj2qghnqr/home_transmissions_item_expanded/Avenger_wip_b.jpg');"></div>
+    <div class="title trans-opacity trans-03s">$22 Million and Hangar Patch Live!</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-10-12 22:30:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13324-Letter-From-The-Chairman-23-Million" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/um0zcebbwryb9r/home_transmissions_item_expanded/RETALIATORcockpit.JPG');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman: $23 Million!</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-10-17 22:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13334-Letter-From-The-Chairman-24-Million" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/llnb0j0upq6efr/home_transmissions_item_expanded/Hero_shot.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman: $24 Million!</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-10-23 00:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13345-Letter-From-The-Chairman-25-Million" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/m5tmy3b4um8y4r/home_transmissions_item_expanded/Hornet09.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman: $25 Million!</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-10-26 23:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13358-Letter-From-The-Chairman-26-Million" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/82hxl8ej168ner/home_transmissions_item_expanded/Hornet04.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman: $26 Million!</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-11-03 16:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13368-Letter-From-The-Chairman-27-Million" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/ty9j54vg7qe0cr/home_transmissions_item_expanded/Hornet06.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman: $27 Million!</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-11-11 16:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13382-Letter-From-The-Chairman-28-Million" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/jfme7ueve6b1ur/home_transmissions_item_expanded/Fujin.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman: $28 Million!</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-11-19 14:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13389-Letter-From-The-Chairman-29-Million-Squadron-42" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/ktvld5a7g7cipr/home_transmissions_item_expanded/Hornetblastoff.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman: $29 Million! Squadron 42!</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-11-22 14:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13391-Letter-From-The-Chairman-30-Million" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type slideshow"><div class="icon"></div><span>slideshow</span></div>
+      <div class="image" style="background-image:url('/media/2vth4h2myozcir/home_transmissions_item_expanded/Gladiator_InFlight_Rev1_Hobbins.png');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman: $30 Million!</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-11-23 18:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13394-Letter-From-The-Chairman-31-Million" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/tk7vrvj46saz6r/home_transmissions_item_expanded/Borea_MagnusII.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman: $31 Million</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-11-25 14:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13398-Letter-From-The-Chairman-32-Million" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/6idlut4vwykn8r/home_transmissions_item_expanded/Asteroid_base_comp02.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman: $32 Million</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-11-26 06:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13400-Letter-From-The-Chairman-33-Million" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/fqgd70qhsbyhzr/home_transmissions_item_expanded/Xis_approach_sketch_d.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman: $33 Million</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-11-26 23:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13420-Letter-From-The-Chairman-34-Million" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/ql6xhee628o5xr/home_transmissions_item_expanded/Landing_pad_03.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman: $34 Million</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-12-07 00:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13432-Letter-From-The-Chairman-On-Dogfighting" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/jgoybqt0vzabar/home_transmissions_item_expanded/Screenshot02.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman: On Dogfighting</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-12-16 18:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13449-Letter-From-The-Chairman-35-Million" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/p4pdufxngpurpr/home_transmissions_item_expanded/City_center_cornerstone_01.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman: $35 Million</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-12-22 16:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13464-Letter-From-The-Chairman-36-Million" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/uyulcbjmvz6fsr/home_transmissions_item_expanded/Blocks_area_street02.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman: $36 Million</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2014-01-05 00:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13490-Letter-From-The-Chairman-37-Million" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/vbdtlc7oh7za4r/home_transmissions_item_expanded/Dome_image_01_copy_thumb.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman: $37 Million</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2014-01-22 00:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13550-Letter-From-The-Chairman-38-Million" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url("/rsi/static/images/atom/series-carousel-default.png");"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman: $38 Million</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2014-02-04 12:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13588-Letter-From-The-Chairman-39-Million" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/16xhxg0tb1fnir/home_transmissions_item_expanded/Javelin_Landing_Hobbins.png');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman: $39 Million</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2014-02-21 17:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13626-Letter-From-The-Chairman-40-Million" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/pavu2t93hwnwor/home_transmissions_item_expanded/NF_Asteroid-Hangar_ControlTowerINT-02high.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman: $40 Million</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2014-03-10 23:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13783-Letter-From-The-Chairman-41-Million" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/6scczvow14x5rr/home_transmissions_item_expanded/Dfm_dyingstar_new_05_adjustment.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman: $41 Million </div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2014-03-31 21:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13812-Letter-From-The-Chairman-42-Million" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/zzm815t5epc4sr/home_transmissions_item_expanded/StarCitizenDev-2014-04-11-14-11-18-95.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman: $42 Million</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2014-04-14 20:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13840-Letter-From-The-Chairman-43-Million" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/be58acxe7vlf6r/home_transmissions_item_expanded/Gladius02.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman: $43 Million</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2014-04-28 12:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13888-Letter-From-The-Chairman-44-Million" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/yqb38g9976f1ir/home_transmissions_item_expanded/Banu_int2.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman: $44 Million</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2014-05-23 12:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13930-Letter-From-The-Chairman-45-Million" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/rn2379al0qfxzr/home_transmissions_item_expanded/FreelancerBG.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman: $45 Million</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2014-06-06 23:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13944-Letter-From-The-Chairman-46-Million" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/6sfcnupculqydr/home_transmissions_item_expanded/Z_soon.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman: $46 Million</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2014-06-12 12:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/13951-Flight-Model-And-Input-Controls" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/3lvrwmcu6rssyr/home_transmissions_item_expanded/Left_Bank.JPG');"></div>
+    <div class="title trans-opacity trans-03s">Flight Model and Input Controls</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2014-06-16 20:00:00</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/13971-Letter-From-The-Chairman-47-Million" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/rrnb9hyt391bbr/home_transmissions_item_expanded/Xianheader.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman: $47 Million</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2014-06-22 23:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/14015-Letter-From-The-Chairman-48-Million" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/2gxj0uwypo59br/home_transmissions_item_expanded/NF-Astro_Armada-01bhigh.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman: $48 Million</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2014-07-14 00:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/14055-Letter-From-The-Chairman" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/anahqoa0lmbpdr/home_transmissions_item_expanded/M50_DS_shot2_LOGO.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2014-08-04 18:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/14089-Letter-From-The-Chairman" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type video"><div class="icon"></div><span>video</span></div>
+      <div class="image" style="background-image:url('/media/kp3jxdzfubi85r/home_transmissions_item_expanded/Phoenix_BeautyShot.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2014-08-19 23:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/14102-Letter-From-The-Chairman" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/i8jxt206icfbar/home_transmissions_item_expanded/Glaive2comp0059comp2.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2014-08-26 14:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/14151-Letter-From-The-Chairman" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/qehiwmy7i9h5zr/home_transmissions_item_expanded/Shubin_CommTower_Reverse_v001_002_Jmc.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2014-09-16 14:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/14172-Letter-From-The-Chairman" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type video"><div class="icon"></div><span>video</span></div>
+      <div class="image" style="background-image:url('/media/06a4mw8k9yaavr/home_transmissions_item_expanded/Broken-Moon.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2014-09-25 14:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link//14176-55M" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type goal"><div class="icon"></div><span>goal</span></div>
+      <div class="image" style="background-image:url("/rsi/static/images/atom/series-carousel-default.png");"></div>
+    <div class="title trans-opacity trans-03s">55M</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2014-09-29 13:38:24</span></div>
+    <div class="section"></div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/14184-Letter-From-The-Chairman" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/h1gyyuaujmu67r/home_transmissions_item_expanded/Ghull_reclaimerv14b_140930.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2014-09-30 18:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/14197-Letter-From-The-Chairman" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/nftkpawoc1b69r/home_transmissions_item_expanded/PANTHERcockpitfore.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2014-10-07 17:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/14209-Letter-From-The-Chairman" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type video"><div class="icon"></div><span>video</span></div>
+      <div class="image" style="background-image:url('/media/wu7n77btamt16r/home_transmissions_item_expanded/Starfarer_Corridor_Perspective_v014.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2014-10-14 21:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/14248-Letter-From-The-Chairman" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/efha93pacvinir/home_transmissions_item_expanded/Whatcoulditbe.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2014-10-28 23:47:54</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/14283-Letter-From-The-Chairman" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/9rvh28d7cj9dbr/home_transmissions_item_expanded/Imcoming.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2014-11-06 12:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/14295-Letter-From-The-Chairman" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/awd9smk6hz88nr/home_transmissions_item_expanded/Comingsoon.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2014-11-12 17:56:37</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/14336-Letter-From-The-Chairman" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/u5jhpvsz6tgher/home_transmissions_item_expanded/BeautyE_v2_0004.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2014-11-27 00:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/14354-Letter-From-The-Chairman" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/wsfo3lwxgulfsr/home_transmissions_item_expanded/XianTransport_airlock_final_20141010c.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2014-12-06 01:03:18</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/14414-Letter-From-The-Chairman" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/9nnpkam7lbz5ir/home_transmissions_item_expanded/Screen-Shot-2014-12-19-At-53936-PM.png');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2014-12-31 23:41:37</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/14520-Letter-From-The-Chairman" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/ksw1et16raza1r/home_transmissions_item_expanded/Bengal_bridge_20150210.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-02-21 05:55:17</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/14554-Note-From-The-Chairman" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/qrkmrxkdhk5z8r/home_transmissions_item_expanded/Underworldascendant.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Note from the Chairman</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-03-03 19:57:20</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/14579-Note-From-The-Chairman" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/aoix2mxwkiru9r/home_transmissions_item_expanded/Crowfall_Screenshot.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Note from the Chairman</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-03-11 00:43:19</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/14589-Letter-From-The-Chairman" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/d4fratk8ony48r/home_transmissions_item_expanded/Stanton-Arccorp_Bar.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-03-14 03:25:54</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/14651-Note-From-The-Chairman" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/d7eujocuxuyh6r/home_transmissions_item_expanded/Gladiator_Hangar_01-Copy.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Note from the Chairman</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-04-11 04:12:44</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/14754-Note-From-The-Chairman" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/2kjsraznu4wwhr/home_transmissions_item_expanded/TheBardsTaleIV.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Note from the Chairman</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-06-03 21:45:51</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/14803-Letter-From-The-Chairman" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/huqkv9z8ijzugr/home_transmissions_item_expanded/09.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-06-27 01:40:44</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/14839-Letter-From-The-Chairman" class="series-carousel-item content-block3 trans-05s  on">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/cg30691jdgb1tr/home_transmissions_item_expanded/ENV_Chop_Shop_Full_MV10_S.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-07-20 21:17:56</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/14931-Note-From-The-Chairman-EVERSPACE" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/14la51nmarv9er/home_transmissions_item_expanded/Everspace_KS_Screenshot_002.png');"></div>
+    <div class="title trans-opacity trans-03s">Note from the Chairman: EVERSPACE</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-09-01 22:19:29</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/15007-Letter-From-The-Chairman" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/jqcx00dknv2hwr/home_transmissions_item_expanded/Concept_citcon2015_4.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-10-14 00:53:08</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/15037-Note-From-The-Chairman" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/tviyhmqyn6pjwr/home_transmissions_item_expanded/BATTLESCAPE_PROMO_2.png');"></div>
+    <div class="title trans-opacity trans-03s">Note from the Chairman</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-11-04 22:11:27</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/15138-Letter-From-The-Chairman" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/zac3x7kt2jhudr/home_transmissions_item_expanded/Freelancer_interior_02.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-12-24 04:30:07</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/15246-Note-From-The-Chairman" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/k83b0i1jxz0obr/home_transmissions_item_expanded/Star_traders_Banner.png');"></div>
+    <div class="title trans-opacity trans-03s">Note from the Chairman</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2016-03-16 23:01:32</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/15515-Note-From-The-Chairman" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/9k5kapsn34zfbr/home_transmissions_item_expanded/04_space_station_market_v02.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Note from the Chairman</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2016-09-15 18:29:45</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/15603-Letter-From-The-Chairman" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/lfwou7mcq5ndqr/home_transmissions_item_expanded/Sc.png');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2016-11-19 00:11:07</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link//15842-Letter-From-The-Chairman-The-Road-Ahead" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/squxp7sfqi6z4r/home_transmissions_item_expanded/Lftc-Settlement.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman: The Road Ahead</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">4 years ago</span></div>
+    <div class="section"></div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/16508-Letter-From-The-Chairman" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/fm7w0j26sjwylr/home_transmissions_item_expanded/Source.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">3 years ago</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/16700-Letter-From-The-Chairman" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/sfdol8g83wodmr/home_transmissions_item_expanded/Thing.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">3 years ago</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/16865-Letter-From-The-Chairman" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/uwzzf20kw74gkr/home_transmissions_item_expanded/Backerss.png');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">3 years ago</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/16912-Letter-From-The-Chairman" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/5p28du0nfr9s1r/home_transmissions_item_expanded/Hurston_LandscapeSea_201810.png');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2 years ago</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/17805-Letter-From-The-Chairman" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/udos6rhv4n49kr/home_transmissions_item_expanded/Screen-Shot-2014-12-19-At-53936-PM.png');"></div>
+    <div class="title trans-opacity trans-03s">Letter from the Chairman</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">5 months ago</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                  </div>
+      </div>
+      <a href="" class="next js-next"><div class="hover trans-03s trans-opacity"></div></a>
+      <div class="right-shadow shadow"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $(".channel-banner .content-carousel").each(function(index, element) {
+      $(element).data("carousel", new RSI.FullCarousel({
+        holder:$(element).find(".carousel"),
+        prevButton:$(element).find(".js-prev"),
+        nextButton:$(element).find(".js-next"),
+        circular:true,
+        displayItems:3 // healthy amount so that we never see empty
+      }));
+    });
+  });
+</script>
+    
+
+  <div class="two-line-separator"></div>
+  
+    
+<div class="wrapper force-one-column" id="comments">
+  <div class="holder">
+    <div class="title-bar">
+      <div class="count">
+        <div class="label">Comments</div>
+        <div class="value">0373.<span class="js-comment-decimal">0</span></div>
+        <div class="cboth"></div>
+      </div>
+      <div class="title">
+        <h1>Feedback</h1>
+      </div>
+      <div class="cboth"></div>
+    </div>
+
+    <div class="main-buttons-holder-container">
+      <div class="main-buttons-holder">
+        <a href="/connect?jumpto=/comm-link/transmission/14839-Letter-From-The-Chairman" class="add-comment js-add-comment trans-02s js-modal-login">Add New Comment</a>
+        <div class="settings js-settings">
+          <h1>Settings</h1>
+          <label>View mode:</label>
+          <a href="#" class="js-comments-view to-one-column js-to-one-column trans-01s on">One column</a>
+          <a href="#" class="js-comments-view to-two-columns js-to-two-columns trans-01s ">Two columns</a>
+          <label>Sort by:</label>
+          <a href="#" class="js-comments-sort to-oldest js-to-oldest trans-01s on">Oldest first</a>
+          <a href="#" class="js-comments-sort to-newest js-to-newest trans-01s ">Newest first</a>
+          <a href="#" class="js-comments-sort to-appreciated js-to-appreciated trans-01s ">Most appreciated first</a>
+
+                  </div>
+        <a href="" class="view-settings js-view-settings"><div class="hover trans-02s"></div></a>
+        <div class="triangle"></div>
+      </div>
+    </div>
+
+    
+    <div class="comment-listing"></div>
+
+    <div class="comment-loader traj-loader">
+      <div class="fast-blink"></div>
+      <span>Loading Additional Feedback</span>
+    </div>
+
+    <div class="cboth"></div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    window.comments = new RSI.Comments({
+      atom_url:"/comm-link/transmission/14839-Letter-From-The-Chairman",
+      comment_listing_el:$(".comment-listing"),
+      comment_submission_form_el:$(".comment-submission"),
+      api_object:RSI.Api.Comments,
+      lazyLoading: true,
+      comment_count: 373,
+      subject_id:14839,
+      append:false,
+      texts: {
+        "edit": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        },
+        "reply": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        }
+      },
+      "insertion_conf": {
+        "mode":"html"
+      },
+      "api_function_names": {
+        "delete":"erase",
+        "load":"listing",
+        "sort":"listing"
+      }
+    });
+  });
+</script>
+  
+</div>
+
+    </div>
+
+    
+  </div>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.11/moment-timezone-with-data.min.js"></script>
+
+<script type="text/plain" data-cookieconsent="statistics">
+  $.cookie('moment_timezone', moment.tz.guess(), { expires: 31, path: '/' });
+</script>
+
+
+
+
+               <script id="tpl_number_counter_digits" type="text/x-jsmart-tmpl">{if !$seperator}{$seperator=','}{/if}
+{if !$first_max}{$first_max=9}{/if}
+{for $digit = 0 to $length-1}
+  <div class="mask">
+    <div class="carousel">
+      {if $digit == 0}
+        {$max = $first_max}
+      {else}
+        {$max = 9}
+      {/if}
+      {for $i=0 to $max}
+        <div class="item {if $val_arr[$digit] == $i}on{/if}" rel="{$i}">{$i}</div>
+      {/for}
+    </div>
+  </div>
+  {if ($length - $digit) % 3 == 1 && $digit != $length-1}
+  <div class="seperator">{$seperator}</div>
+  {/if}
+{/for}</script>
+<script id="base_modal" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  <div class="top-border">
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+  </div>
+</div></script>
+<script id="base_modal_flat" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  </div>
+  
+</div></script>
+<script id="tpl_modals_slideshow" type="text/x-jsmart-tmpl"><img class="top-border" src="/rsi/static/images/modal_top.png">
+<a href="" class="close js-close"></a>
+<div class="mask">
+  <a class="js-prev prev control"></a>
+  <a class="js-next next control"></a>
+  <div class="slideshow-carousel carousel" rel="{$index}">
+    {foreach from=$images item="image"}
+      <div class="{if $index == $image@index}on{/if}">
+      {if $image.is_video}
+        <div class="video-holder">
+          <div id="slideshow_video_{$image@index}" data-source="{$image->source_url}">
+            <video width="100%" height="100%" preload="auto" {if $video}src="{$image->source_url}"{/if} controls></video>
+          </div>
+        </div>
+      {else}
+        <div class="media js-media-slideshow-{$image@iteration}">
+        {if $image.low_res}
+          <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source data-srcset="{$image.full_res}" media="(min-width: 300px)" />
+            <!--[if IE 9]></video><![endif]-->
+            <img data-srcset="{$image.low_res}" alt="{$image.title}" />
+          </picture>
+        {else}
+          <img data-src="{$image.source_url}" />
+        {/if}
+        </div>
+      {/if}
+        <div class="text">
+          {if !$image.is_video}
+          <a href="{$image.source_url}" class="download"></a>
+          {/if}
+          <div class="copyright">© 2012-{$year}<br />Cloud Imperium Games Corporation &<br />Roberts Space Industries Corp.</div>
+          <div class="page-number">{$image@iteration} / {count($images)}</div>
+          <div class="caption v-center">{if $image.title && $image.title != "undefined"}{$image.title}{/if}</div>
+          <div class="cboth"></div>
+        </div>
+      </div>
+    {/foreach}
+  </div>
+</div>
+<img class="bottom-border" src="/rsi/static/images/modal_bottom.png"></script>
+<script id="tpl_contact_us" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="contact" class="inner-content on">
+  <h2><span class="icon"></span>CONTACT</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+  <div class="error-message js-error-message"></div>
+  <div class="success-message js-success-message"></div>
+    <fieldset class="last">
+    <label for="contact_email">Email Address</label>
+    <input type="text" name="email" value="" class="trans-02s trans-color trans-box-shadow" id="contact_email" />
+  </fieldset>
+    <fieldset>
+    <label for="contact_subject">Subject</label>
+    <input type="text" name="subject" value="" class="trans-02s trans-color trans-box-shadow" id="contact_subject" />
+    <label>Contacting us for:</label>
+    <ul class="category-info">
+            <li id="tech_support_info">Questions about download, installation, networking, or in-game client problems</li>
+            <li id="subscription_info">Questions about monthly and yearly subscription plans</li>
+            <li id="account_billing_info">Issues related to your account, such as incorrect information or ability to access account, or Billing with regards to payments and payment methods</li>
+            <li id="melt_request_info">To reclaim a pledge over $1,000 for store credit (please note - this is a permanent action)</li>
+            <li id="merchandise_info">Questions about physical and/or shipped merchandise</li>
+            <li id="hacked_info">Issues related to compromised account or missing pledge.</li>
+            <li id="account_recovery_info">For issues with account authentication, lost passwords and related queries</li>
+            <li id="probation_info">Issues related to forums probation or ban</li>
+            <li id="refund_request_info">Refund requests and related inquiries</li>
+            <li id="customer_support_info">For general questions and queries regarding Star Citizen</li>
+          </ul>
+  </fieldset>
+  <fieldset>
+    <label for="contact_text">Fescription</label>
+    <textarea name="text" class="trans-02s trans-color trans-box-shadow" id="contact_text"></textarea>
+  </fieldset>
+  <div class="contact-submit-wrapper">
+    <div class="line"></div>
+    <button class="submit js-submit"><strong>submit your message</strong></button>
+  </div>
+</form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+<script id="tpl_error" type="text/x-jsmart-tmpl"><div class="modal-error js-modal-error">
+  <p class="modal-text js-modal-text"></p>
+  <a class="close js-close trans-03s .trans-opacity" href=""></a>
+</div></script>
+<script id="tpl_success" type="text/x-jsmart-tmpl"><div class="modal-success js-modal-success">
+  <p class="modal-text js-modal-text"></p>
+  <a class="close js-close trans-03s .trans-opacity" href=""></a>
+</div></script>
+<script id="tpl_progress" type="text/x-jsmart-tmpl"><div class="modal-progress js-modal-progress">
+  <div class="traj-loader">
+    <div class="fast-blink"></div>
+    <span class="modal-text js-modal-text"></span>
+  </div>
+</div></script>
+<script id="tpl_outbound" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="outbound" class="inner-content on">
+  <h2><span class="icon"></span>OUTBOUND LINK</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+      <div class="error-message js-error-message"> <span class=important>WARNING</span><br/><br/> This link will bring you outside of the RSI site and into the depths of the internet. Continue?<br/><br/><span class="url"></span> </div>
+      <div class="success-message js-success-message"><span class=important>STAND BY</span><br/><br/> Initiating hyperlink.<br/><br/></div>
+
+      <fieldset class="clearfix last">
+        <span class="submit-wrapper">
+          <span class="submit-hover trans-02s trans-opacity"></span>
+          <input type="submit" value="WARP" class="trans-02s trans-color trans-background" />
+        </span>
+      </fieldset>
+    </form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+
+<script id="tpl_l-notification-bar" type="text/x-jsmart-tmpl"><div class="l-notification-bar js-notification-bar">
+
+  <div class="l-notification-bar__watermark js-svg-inliner h-svg__logo-star-citizen"></div>
+
+  <div class="l-notification-bar__boxes">
+    {if !$viewedCookieNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='cookie'
+          title='COOKIES:'
+          message="Our website uses Google Analytics to analyze our traffic. <br/>To learn how you can control Google's use of your data and how you can opt out <a href='https://www.google.com/policies/privacy/partners/'>click here</a>."
+          linkText='See Details'
+          buttonText='Got it!'}
+      </div>
+    {/if}
+
+    {if !$viewedPrivacyNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='privacy'
+          title='PRIVACY POLICY:'
+          message='We adjusted the PP to reflect the decision of the European Court of Justice regarding Safe Harbor, the fact that RSI has moved and added some services providers.'
+          linkText='View Privacy Policy'
+          buttonText='Got it!'}
+      </div>
+    {/if}
+  </div>
+
+</div>
+</script>
+<script id="tpl_c-notification" type="text/x-jsmart-tmpl"><div class="c-notification js-bottom-notif-msg-{$type}">
+    <div class="c-notification__title">{$title}</div>
+    <div class="c-notification__message">
+      {$message}
+    </div>
+
+    {if $linkText}
+        <div class="c-notification__wrapper-link">
+            <a class="c-notification__link js-bottom-notif-link-{$type}">
+            {$linkText}
+            </a>
+        </div>
+    {/if}
+
+    <a class="c-notification__button js-bottom-notif-btn-{$type}">
+
+      <span class="c-notification__button-text">
+       {$buttonText}
+      </span>
+
+      {if $type neq 'announcement'}
+        <div class="c-iconed__icon c-iconed__icon--checkmark"></div>
+      {/if}
+    </a>
+</div>
+</script>
+
+<script id="tpl_confirm" type="text/x-jsmart-tmpl"><div class="modal-confirm js-modal-confirm clearfix">
+  <p class="modal-text js-modal-text"></p>
+  <a class="bt-close js-close trans-03s trans-opacity" href=""></a>
+  <a class="bt-confirm js-confirm trans-03s trans-opacity" href=""></a>
+	<div class="buttons">
+		<a class="shadow-button trans-02s trans-color js-close bt-close rm"     >
+  <span class="label js-label trans-02s">Cancel</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+		<a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">Confirm</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+	</div>
+</div>
+</script>
+<script id="tpl_alert" type="text/x-jsmart-tmpl"><div class="modal-alert js-modal-alert clearfix">
+  <p class="modal-text js-modal-text"></p>
+  <div class="buttons">
+    <a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">OK</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+  </div>
+</div></script>
+<script id="tpl_video" type="text/x-jsmart-tmpl">{extends file="base_modal"}
+{block name='modal_content'}
+<div id="ship-commercial" class="inner-content">
+  
+  <div class="hr"></div>
+  <div class="content-block4">
+   
+    <div class="bottom"></div>
+  </div>
+  {if $distant_source=="vimeo"}
+  <iframe id="commercial" src="//player.vimeo.com/video/{$video_id}?wmode=transparent" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+  {else}
+  <iframe id="commercial" frameborder="0" allowfullscreen="1" title="YouTube video player" width="100%" height="100%" src="https://www.youtube.com/embed/{$video_id}?autoplay=1"></iframe>
+  {/if}
+</div>
+{/block}
+</script>
+      
+  <script id="tpl_comment_report" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="comment-report" class="inner-content on">
+  <h2><span class="icon"></span>Report this comment</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+<input type="hidden" name="comment_id" value="">
+  <div class="error-message js-error-message"></div>
+  <div class="success-message js-success-message"></div>
+    <fieldset class="last">
+    <label for="report_email">Email Address</label>
+    <span class="corner-wrapper">
+      <input type="text" name="email" value="" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_email" />
+      <span class="corner corner-top-left"></span>
+      <span class="corner corner-top-right"></span>
+      <span class="corner corner-bottom-left"></span>
+      <span class="corner corner-bottom-right"></span>
+    </span>
+  </fieldset>
+    <fieldset>
+    <label>Report Type</label>
+    
+
+
+  
+    <a class="js-selectlist selectlist " rel="" href="">
+    <div class="arrow"></div>
+    <span>Please select the type best matching your report</span>
+              <ul class="body">
+              
+                                                              <li class="js-option option " rel="obscenity" >
+                                                                        Obscene Content
+                                                    </li>
+                                                                <li class="js-option option " rel="abuse" >
+                                                                        Abusive Conduct
+                                                    </li>
+                                                                <li class="js-option option " rel="other" >
+                                                                        Other
+                                                    </li>
+                                          
+            </ul>
+        <input type="hidden" name="category" class="js-category js-form-data" id="category"/>
+  </a>
+    </fieldset>
+  <fieldset>
+    <label for="report_text">Details</label>
+    <span class="corner-wrapper">
+      <textarea name="text" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_text" maxlength="2500"></textarea>
+      <span class="corner corner-top-left"></span>
+      <span class="corner corner-top-right"></span>
+      <span class="corner corner-bottom-left"></span>
+      <span class="corner corner-bottom-right"></span>
+    </span>
+  </fieldset>
+  <fieldset class="clearfix last">
+    <span class="submit-wrapper">
+      <span class="submit-hover trans-02s trans-opacity"></span>
+      <input type="submit" value="Submit" class="trans-02s trans-color trans-background" />
+    </span>
+  </fieldset>
+</form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+
+
+      
+        <footer class="c-platform-footer c-platform-footer--rsi">
+  <div class="l-platform-footer-container">
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--sc">
+        <li class="c-platform-footer-brand__item">
+
+          <span class="c-brand c-brand--sc js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--sc">
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Join the<br>Universe
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--sc">
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen" class="c-platform-footer-link">About the Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/howto/1" class="c-platform-footer-link">How to Play</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/universe" class="c-platform-footer-link">The Universe</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/media" class="c-platform-footer-link">Media</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/play-now"
+                class="c-platform-footer-link js-google-analytics-event-tracker"
+                data-event-category="FlyNow" data-event-label="footerClick">
+                Play Now
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__sc">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">
+              Social Links
+            </span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/RobertsSpaceIndustries/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/RobertsSpaceInd">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/robertsspaceind">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href=" https://www.youtube.com/channel/UCTeLqJq1mXUX5WWoNXLmOIA">
+                <span class="c-iconed__icon c-iconed__icon--youtube"></span>
+                Youtube
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.twitch.tv/starcitizen">
+                <span class="c-iconed__icon c-iconed__icon--twitch"></span>
+                Twitch
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--s42">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--s42 js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--s42">
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Start the<br>Adventure
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--s42">
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42" class="c-platform-footer-link">The Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#enlist" class="c-platform-footer-link">Enlist Today</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#roadmap" class="c-platform-footer-link">Status</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/pledge/Packages/Squadron-42-Standalone-Pledge" class="c-platform-footer-link">Pledge</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__s42">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">Social Links</span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/Squad42/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/squadron_42">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/squadron42">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column is-active">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--rsi">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--rsi js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--rsi">
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi--fullcolor"></span>
+            </span>
+            <span class="c-brand__label">
+              Follow the Development
+            </span>
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--rsi">
+            <li class="c-platform-footer-list__item">
+              <a href="/" class="c-platform-footer-link">Home</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/comm-link" class="c-platform-footer-link">Transmissions</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/community" class="c-platform-footer-link">Community</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/roadmap" class="c-platform-footer-link">Development</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--platform">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Platform
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--platform">
+                          <li class="c-platform-footer-list__item">
+                <a href="/pledge" class="c-platform-footer-link ">Pledge Store</a>
+              </li>
+            
+            <li class="c-platform-footer-list__item">
+              <a href="/download" class="c-platform-footer-link ">Download</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/spectrum/community/SC" class="c-platform-footer-link">Spectrum</a>
+            </li>
+
+                      </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--utility">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Utilities
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--utility">
+            <li class="c-platform-footer-list__item">
+              <a href="//support.robertsspaceindustries.com" class="c-platform-footer-link">Help</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/press" class="c-platform-footer-link">Press</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="https://cloudimperiumgames.com/join-us" class="c-platform-footer-link">Careers</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/tos" class="c-platform-footer-link">Terms of Services</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/privacy" class="c-platform-footer-link">Privacy Policy</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/eula" class="c-platform-footer-link">EULA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/dmca" class="c-platform-footer-link">DMCA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/legal" class="c-platform-footer-link">Legal</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/acknowledgements" class="c-platform-footer-link">Acknowledgements</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  
+</footer>
+
+<div class="c-platform-copyright c-platform-copyright--rsi">
+  <div class="l-platform-copyright-container">
+    <a href="https://cloudimperiumgames.com" class="c-platform-copyright__logo h-svg__logo-cig js-svg-inliner"></a>
+    <p class="c-platform-copyright__body">© 2012-2021 Cloud Imperium Rights LLC and Cloud Imperium Rights Ltd.</p>
+  </div>
+</div>
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHNFZPT"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<script type="text/javascript">
+  window.RSI.Footer = new RSI.Footer();
+</script>
+      
+    </div>
+
+    
+      <script type="text/javascript" src='/rsi/static/packages/platformbar/rsi.platformbar.build.05b39.js'></script>
+    
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"58013cabd7","applicationID":"375102748","transactionName":"Y1JaYktUWxZUV0QKV1oYe0NKQVoIGmZjKmtdQ111VltBF1pYXAZKDg1ZQlZYcwxbUA==","queueTime":0,"applicationTime":95,"atts":"TxVNFANOSEkXVRJZQ0lK","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>

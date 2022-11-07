@@ -1,0 +1,1454 @@
+<head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"58013cabd7",applicationID:"375102748"};window.NREUM||(NREUM={}),__nr_require=function(n,e,t){function r(t){if(!e[t]){var i=e[t]={exports:{}};n[t][0].call(i.exports,function(e){var i=n[t][1][e];return r(i||e)},i,i.exports)}return e[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(n,e,t){function r(){}function i(n,e,t){return function(){return o(n,[u.now()].concat(f(arguments)),e?null:this,t),e?void 0:this}}var o=n("handle"),a=n(4),f=n(5),c=n("ee").get("tracer"),u=n("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(n,e){s[e]=i(d+e,!0,"api")}),s.addPageAction=i(d+"addPageAction",!0),s.setCurrentRouteName=i(d+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(n,e){var t={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),n,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return e.apply(this,arguments)}catch(n){throw c.emit("fn-err",[arguments,this,n],t),n}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(n,e){m[e]=i(l+e)}),newrelic.noticeError=function(n,e){"string"==typeof n&&(n=new Error(n)),o("err",[n,u.now(),!1,e])}},{}],2:[function(n,e,t){function r(n,e){var t=n.getEntries();t.forEach(function(n){"first-paint"===n.name?a("timing",["fp",Math.floor(n.startTime)]):"first-contentful-paint"===n.name&&a("timing",["fcp",Math.floor(n.startTime)])})}function i(n){if(n instanceof c&&!s){var e,t=Math.round(n.timeStamp);e=t>1e12?Date.now()-t:f.now()-t,s=!0,a("timing",["fi",t,{type:n.type,fid:e}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var o,a=n("handle"),f=n("loader"),c=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){o=new PerformanceObserver(r);try{o.observe({entryTypes:["paint"]})}catch(u){}}if("addEventListener"in document){var s=!1,p=["click","keydown","mousedown","pointerdown","touchstart"];p.forEach(function(n){document.addEventListener(n,i,!1)})}}},{}],3:[function(n,e,t){function r(n,e){if(!i)return!1;if(n!==i)return!1;if(!e)return!0;if(!o)return!1;for(var t=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],4:[function(n,e,t){function r(n,e){var t=[],r="",o=0;for(r in n)i.call(n,r)&&(t[o]=e(r,n[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],5:[function(n,e,t){function r(n,e,t){e||(e=0),"undefined"==typeof t&&(t=n?n.length:0);for(var r=-1,i=t-e||0,o=Array(i<0?0:i);++r<i;)o[r]=n[e+r];return o}e.exports=r},{}],6:[function(n,e,t){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(n,e,t){function r(){}function i(n){function e(n){return n&&n instanceof r?n:n?c(n,f,o):o()}function t(t,r,i,o){if(!d.aborted||o){n&&n(t,r,i);for(var a=e(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(n,e){h[n]=v(n).concat(e)}function m(n,e){var t=h[n];if(t)for(var r=0;r<t.length;r++)t[r]===e&&t.splice(r,1)}function v(n){return h[n]||[]}function g(n){return p[n]=p[n]||i(t)}function w(n,e){u(n,function(n,t){e=e||"feature",y[t]=e,e in s||(s[e]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:e,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var f="nr@context",c=n("gos"),u=n(4),s={},p={},d=e.exports=i();d.backlog=s},{}],gos:[function(n,e,t){function r(n,e,t){if(i.call(n,e))return n[e];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(n,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return n[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(n,e,t){function r(n,e,t,r){i.buffer([n],r),i.emit(n,e,t)}var i=n("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(n,e,t){function r(n){var e=typeof n;return!n||"object"!==e&&"function"!==e?-1:n===window?0:a(n,o,function(){return i++})}var i=1,o="nr@id",a=n("gos");e.exports=r},{}],loader:[function(n,e,t){function r(){if(!x++){var n=E.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(n&&n.licenseKey&&n.applicationID&&e))return s.abort();u(y,function(e,t){n[e]||(n[e]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=l.createElement("script");t.src="https://"+n.agent,e.parentNode.insertBefore(t,e)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=n("handle"),u=n(4),s=n("ee"),p=n(3),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1153.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=e.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};n(1),n(2),l[m]?(l[m]("DOMContentLoaded",o,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",i),d[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=n(6)},{}],"wrap-function":[function(n,e,t){function r(n){return!(n&&n instanceof Function&&n.apply&&!n[a])}var i=n("ee"),o=n(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;e.exports=function(n,e){function t(n,e,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){d([u,"",[r,a,i],f])}s(e+"start",[r,a,i],f);try{return c=n.apply(a,r)}catch(p){throw s(e+"err",[r,a,p],f),p}finally{s(e+"end",[r,a,c],f)}}return r(n)?n:(e||(e=""),nrWrapper[a]=n,p(n,nrWrapper),nrWrapper)}function u(n,e,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<e.length;c++)f=e[c],a=n[f],r(a)||(n[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||e){var o=c;c=!0;try{n.emit(t,r,i,e)}catch(a){d([a,t,r,i])}c=o}}function p(n,e){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(n);return t.forEach(function(t){Object.defineProperty(e,t,{get:function(){return n[t]},set:function(e){return n[t]=e,e}})}),e}catch(r){d([r])}for(var i in n)f.call(n,i)&&(e[i]=n[i]);return e}function d(e){try{n.emit("internal-error",e)}catch(t){}}return n||(n=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans."><meta property="og:site_name" content="
+  Argo Mole - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+"><meta property="og:image" content="https://robertsspaceindustries.comhttps://media.robertsspaceindustries.com/hamcauwix52wd/channel_item_full.jpg"><meta property="og:description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans."><meta property="og:type" content="website"><meta property="og:url" content="https://robertsspaceindustries.com/comm-link/SCW/17399-IMPORT"><meta property="og:locale" content="us_EN"><link rel="preconnect" href="//fonts.googleapis.com"><link rel="preconnect" href="//fonts.fstatic.com"><link rel="preconnect" href="//cdnjs.cloudflare.com"><link rel="preconnect" href="//media.robertsspaceindustries.com"><link rel="preconnect" href="//www.google-analytics.com"><link rel="stylesheet" href="https://use.typekit.net/mah8gas.css"><link href="https://fonts.googleapis.com/css?family=Exo:300,300i,400,400i,700,700i&amp;display=swap" rel="stylesheet"><link rel="preload" as="font" href="https://robertsspaceindustries.com/rsi/static/platformbar/static/fonts/univia-pro/univia-pro-400.woff2"><link rel="preload" as="font" href="https://robertsspaceindustries.com/rsi/static/platformbar/static/fonts/univia-pro/univia-pro-700.woff2"><link rel="preload" as="font" href="https://robertsspaceindustries.com/rsi/static/platformbar/static/fonts/univia-pro/univia-pro-800.woff2"><link href="/rsi/static/css/cross-brand-less.css?v=3.4.1.1" media="all" rel="stylesheet"><link href="/cache/en/rsi-platformbar-css.css?v=3.4.1.1" media="all" rel="stylesheet"><script type="text/javascript" src="/cache/en/rsi-js.js?v=3.4.1.1"></script><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KHNFZPT');</script><!-- End Google Tag Manager --><script>
+        $(document).ready(function() {
+          window.Common = new RSI.Common({});
+          window.Main = new RSI.Main({
+            'is_mobile': 0,
+            'probation_cookie' : '',
+            'require_captcha': 0
+          });
+          window.Mark = new Turbulent.Mark({ 'name' : 'Rsi-XSRF', 'token' : '', 'ttl' : 1800 });
+
+          window.WscOverlay = new RSI.WscOverlay({});
+
+          var destinations = [];
+
+window.Main.destinations = destinations;          
+  window.PageStore = new RSI.Store({
+    'store_prefix' : '/pledge',
+    'bootstrapConfig': {"injection":{"attachmentClass":"RSIStoreApp","files":{"js":["index.js"],"css":["index.css"]}},"platform":{"api":"\/api"},"store":{"path":"\/pledge-store","manifest":"manifest.json"},"customizer":{"api":"\/customizer\/api","ga_tracking_code":"UA-39586040-5"}}
+  });
+
+          
+          
+  var productsTracking = [];
+  var eCommerceData = {
+    'trackingAction': "",
+    'currency': "EUR",
+    'trackingStep': "",
+    'trackingProducts': productsTracking
+  };
+  window.eCommerceTracking = new RSI.Store.eCommerceTracking(
+    eCommerceData
+  );
+
+        });
+
+        $(window).load(function() {
+          
+        });
+
+      </script><script>
+        window.recaptcha_is_loaded = false;
+        window.on_recaptcha_load_callback = function() {
+          window.recaptcha_is_loaded = true;
+        };
+      </script><script src="https://www.google.com/recaptcha/api.js?onload=on_recaptcha_load_callback&amp;render=explicit" async defer></script><script type="text/javascript">
+
+        
+
+                                </script><title>
+  Argo Mole - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+</title><link href="//fonts.googleapis.com/css?family=Electrolize%7COrbitron:400,500,700%7CShare+Tech+Mono" rel="stylesheet" type="text/css"><link href="/cache/en/rsi-css.css?v=3.4.1.1" media="all" rel="stylesheet"><script type="text/javascript" src="/layoutscache/argo-mole/en/bundle.js?v=21b91"></script><link rel="stylesheet" href="/layoutscache/argo-mole/en/bundle.css?v=21b91" media="all"><style type="text/css">
+  .c-header-wrapper > .l-container,
+  .c-brand-menu,
+  .c-brand-cta-btn {
+    transform: translateY(-20px);
+  }
+  .c-brand-menu,
+  .c-brand-cta-btn {
+    opacity: 0;
+  }
+
+  #loader {
+    background-color: #232323;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    pointer-events: none;
+    -webkit-user-select: none;
+      -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    margin: 0;
+  }
+
+  .loader-svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 240px;
+    height: 240px;
+    display: block;
+    overflow: hidden;
+    transform: translate3d(0,0,0);
+    text-align: center;
+    opacity: 1;
+    z-index: 10;
+  }
+
+  .argo-circle {
+    opacity: 0;
+    transform: translateY(-10px);
+    transform-origin: 61px 61px;
+  }
+</style><script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.9/lottie_light.js" type="text/javascript"></script><script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js" preload></script><script type="text/javascript">
+window.addEventListener('load', function() {
+  lottie.loadAnimation({
+    container: document.querySelector('.loader-svg'),
+    renderer: 'svg',
+    path: '/rsi/layouts/types/argo-mole/assets/animation/argo-logo-lottie.json',
+    loop: true,
+    autoplay: true,
+    rendererSettings: {
+      progressiveLoad: false,
+      preserveAspectRatio: 'xMinYMid meet',
+    }
+  });
+});
+</script></head><body><div id="loader">
+  <div class="loader-svg"></div>
+</div>
+  <style type="text/css">
+    /* CSS from ATOM */
+    .c-top-banner__logo-block-word {
+    display: none !important;
+}
+  </style><script type="text/javascript">
+    /* JS from ATOM */
+    
+  </script><style type="text/css">
+    /* CSS from Layouts  */
+    
+  </style><div class="l-notification-bar l-notification-bar--rsi js-notification-bar" id="notification-bar-root">
+  <c-notification-bar v-bind:latestagreementsslugs='["bxcvj3l6e1yy1","qwa3l7w316dgt"]' v-bind:loggedin="1" v-bind:onhomepage="0"></c-notification-bar><div class="l-notification-bar__boxes js-notification-bar-boxes">
+      </div>
+
+</div>
+    
+
+    <div id="bodyWrapper">
+      <header class="c-header-wrapper c-header-wrapper--rsi js-header-wrapper is-connected" id="cross-brand-header"><div id="platform-bar"></div>
+
+  <div class="c-right-sidebar c-right-sidebar--search" id="search-sidebar">
+  <div class="js-toggle-search__backdrop hidden"></div>
+  <a href="#" class="c-right-sidebar__back js-toggle-search">Back
+    <span></span>
+    <span></span>
+  </a>
+  <form class="c-right-sidebar__form">
+    <h1 class="c-right-sidebar__form-title">Search</h1>
+
+    <input class="c-right-sidebar__form-input" type="text" id="header-search-input" placeholder="Search for articles"><input class="c-right-sidebar__form-submit c-right-sidebar__form-submit--search" type="submit" value="Go"></form>
+</div>
+      
+<div class="c-right-sidebar c-right-sidebar--account" id="account-sidebar">
+  <div class="js-toggle-account__backdrop hidden"></div>
+  <a href="#" class="c-right-sidebar__back js-toggle-account">Back
+    <span></span>
+    <span></span>
+  </a>
+
+  <div class="c-account-sidebar__profile">
+    <div class="c-account-sidebar__profile-metas">
+
+      <a class="c-account-sidebar__profile-metas-avatar" href="https://robertsspaceindustries.com/citizens/star-citizen-wiki" style="background-image:url('/media/6zg0fizwcelhpr/avatar/Wiki_logo_stern_abgen0wumg.png');"></a>
+
+      <span class="c-account-sidebar__profile-metas-badge c-account-sidebar__profile-metas-badge--icon" data-tip="">
+        <img src="https://robertsspaceindustries.com/media/ls27iyxog62nnr/heap_note/Subscriber.png" alt="Subscriber" title="Subscriber"></span>
+
+      <a href="/orgs/WIKI" class="c-account-sidebar__profile-metas-badge c-account-sidebar__profile-metas-badge--org" data-tip="star-citizen.wiki">
+        <img src="/media/h68aa8sq3cv44r/heap_note/WIKI-Thumbnail.png" alt="star-citizen.wiki" title="star-citizen.wiki"></a>
+
+    </div>
+
+    <div class="c-account-sidebar__profile-info">
+
+      <a href="https://robertsspaceindustries.com/citizens/star-citizen-wiki" class="c-account-sidebar__profile-info-displayname">Star Citizen Wiki</a>
+
+      <span class="c-account-sidebar__profile-info-handle">star-citizen-wiki</span>
+
+      <a href="" class="c-account-sidebar__profile-info-signout js-sign-out">Sign Out</a>
+
+      <div class="c-account-sidebar__profile-info-credits">
+        <span class="c-account-sidebar__profile-info-credits-label">STORE</span>
+        <span class="c-account-sidebar__profile-info-credits-amount c-account-sidebar__profile-info-credits-amount--pledge">$0.00 USD</span>
+
+        <span class="c-account-sidebar__profile-info-credits-label">UEC</span>
+        <span class="c-account-sidebar__profile-info-credits-amount c-account-sidebar__profile-info-credits-amount--uec">¤6,500 UEC</span>
+
+        <span class="c-account-sidebar__profile-info-credits-label">REC</span>
+        <span class="c-account-sidebar__profile-info-credits-amount c-account-sidebar__profile-info-credits-amount--rec">¤300,000 REC</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="c-account-sidebar__links">
+    <a href="/account/settings" class="c-account-sidebar__links-link">Settings</a>
+    <a href="/account/pledges" class="c-account-sidebar__links-link">My Hangar</a>
+              <a href="/subscribers/vault" class="c-account-sidebar__links-link">Subscribers</a>
+          </div>
+
+  <div class="c-account-sidebar-tabs">
+    <div class="c-account-sidebar-tabs__list">
+      <a class="c-account-sidebar-tabs__tab">Contacts</a>
+    </div>
+
+    <div class="c-account-sidebar-tabs__content c-account-sidebar-tabs__content--contacts">
+      <div class="c-account-sidebar-contacts" id="sidebar-contacts-list">
+        <form class="c-right-sidebar__form c-account-sidebar-contacts__search js-contacts-search">
+
+          <input type="text" class="c-right-sidebar__form-input c-account-sidebar-contacts__search-input js-contacts-search-input" placeholder="Search"><a class="c-account-sidebar-contacts__search-submit js-submit-contacts-search">
+            <span></span>
+            <span></span>
+          </a>
+
+          <div class="l-oneline l-oneline--fill">
+            <div class="l-checkbox">
+              <input class="c-right-sidebar__form-checkbox js-only-contacts" id="sidebar-only-contacts" name="only-contacts" type="checkbox"><label class="c-right-sidebar__form-label c-right-sidebar__form-checkbox-label" for="sidebar-only-contacts">
+                Only in your contact list
+              </label>
+            </div>
+
+            <div class="c-account-sidebar-contacts__search-amount js-search-amount">-</div>
+          </div>
+        </form>
+
+        <div class="c-account-sidebar-contacts__results">
+          <div class="c-account-sidebar-contacts__results-title-wrapper">
+            <span class="c-account-sidebar-contacts__results-title c-account-sidebar-contacts__results-title--contacts">My Contacts</span>
+            <span class="c-account-sidebar-contacts__results-title c-account-sidebar-contacts__results-title--results">Results</span>
+                      </div>
+
+          <div class="c-account-sidebar-contacts__results-list js-contacts-list" data-public-profile-url="https://robertsspaceindustries.com/citizens/">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/template" id="contact-item-tpl">
+  <div class="c-account-sidebar-contacts__results-list-item js-contact <% if(following) { %>is-following<% } %>">
+
+    <a class="c-account-sidebar-contacts__results-list-item-avatar " href="https://robertsspaceindustries.com/citizens/<%= nickname %>" title="" style="background-image:url('<%= avatar %>');">
+    
+
+    <div class="c-account-sidebar-contacts__results-list-item-info">
+      <a class="c-account-sidebar-contacts__results-list-item-displayname" href="https://robertsspaceindustries.com/citizens/<%= nickname %>" title=""><%= displayname %>
+
+      <span class="c-account-sidebar-contacts__results-list-item-handle js-nickname"><%= nickname %>
+
+      <div class="c-account-sidebar-contacts__results-list-item-actions">
+        <a class="c-account-sidebar-contacts__results-list-item-action c-account-sidebar-contacts__results-list-item-action--dossier" href="https://robertsspaceindustries.com/citizens/<%= nickname %>" title="">
+          <span class="js-svg-inliner h-svg c-account__icon c-account__icon--smaller c-account__icon-star-citizen">
+          Citizen Dossier
+        
+        <a class="c-account-sidebar-contacts__results-list-item-action c-account-sidebar-contacts__results-list-item-action--follow js-contact-follow js-follow" title="">
+          <span class="js-svg-inliner h-svg c-account__icon c-account__icon--smaller c-account__icon-profile">
+          Follow
+        
+        <a class="c-account-sidebar-contacts__results-list-item-action c-account-sidebar-contacts__results-list-item-action--unfollow js-contact-follow js-unfollow" title="">
+          <span class="js-svg-inliner h-svg c-account__icon c-account__icon--smaller c-account__icon-trash">
+          Unfollow
+        
+      </script></header></div>
+    
+
+
+    <div class="error js-error"></div>
+
+  
+
+
+<script>
+  $(document).ready(function() {
+    this.accountSidebar = new RSI.AccountSidebar({
+    });
+  });
+</script><div class="c-header-wrapper__backdrop js-toggle-games"></div>
+
+
+<div id="platform-backdrop"></div>
+
+<script type="text/javascript">
+  RSI.Platformbar = {
+    theme: "rsi",
+    loggedState: "logged-in",
+    tabs: [
+      {
+        type: 'brands',
+        name: "Games",
+        subItems: [
+          {
+            name: "sc",
+            href: "/star-citizen",
+            description: "Join the Universe"
+          },
+          {
+            name: "s42",
+            href: "/squadron42",
+            description: "Start the adventure"
+          },
+          {
+            name: "rsi",
+            href: "/",
+            description: "Follow the Development"
+          }
+        ]
+      },
+      {
+        type: 'apps',
+        name: "Apps",
+        subItems: [
+          [
+            {
+              name: "Spectrum",
+              href: "/spectrum/community/SC",
+              description: "Your&nbsp;communication platform"
+            },
+            {
+              name: "Launcher",
+              href: "/download",
+              description: "Download Star&nbsp;Citizen",
+                          }
+          ],
+          [
+            {
+              name: "Roadmap",
+              href: "/roadmap",
+              description: "Keep track of the&nbsp;development"
+            },
+            {
+              name: "Telemetry",
+              href: "/telemetry",
+              description: "Keep&nbsp;track&nbsp;of&nbsp;the player&rsquo;s&nbsp;performance"
+            },
+            {
+              name: "Issue Council",
+              href: "/community/issue-council",
+              description: "Help&nbsp;us&nbsp;make the game better",
+                          }
+          ],
+          [
+            {
+              name: "Starmap",
+              href: "/starmap",
+              description: "Your map to&nbsp;the&nbsp;universe"
+            },
+            {
+              name: "Galactapedia",
+              href: "/galactapedia",
+              description: "Your guide to&nbsp;the&nbsp;universe"
+            }
+          ]
+        ]
+      },
+          ],
+    navigation: {
+      store: {
+        name: "Pledge Store",
+        href: "/pledge",
+        isHidden: false      },
+      support: {
+        name: "Support",
+        href: "//support.robertsspaceindustries.com"
+      },
+      account: {
+        name: "Account",
+        href: "/account/settings"
+      }
+    }
+  };
+
+  $(document).ready(function() {
+    window.header = new RSI.Header({});
+  });
+</script><header class="c-brand-menu c-brand-menu----rsi" id="brand-menu"><span class="c-brand-menu__section">
+    
+      Roberts Space Industries
+    
+  </span>
+  <div class="c-brand-menu__backdrop"></div>
+  <nav class="c-brand-menu__container"><div class="c-brand-menu__logo">
+      <a href="/"><span class="h-svg h-svg__logo-rsi--fullcolor js-svg-inliner"></span> </a>
+    </div>
+    <div class="c-brand-menu__items-container">
+      <ul class="c-brand-menu__items"><li class="c-brand-menu__item  ">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/comm-link">
+            <span class="c-brand-menu__item-text">Comm-Link</span>
+                                  </a>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/community">
+            <span class="c-brand-menu__item-text">Community</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Community</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items"><li class="c-brand-submenu__item ">
+                      <a href="/spectrum" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Spectrum
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/orgs" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Organizations
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/leaderboards/top" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Leaderboards
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community_events" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Event
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Hub
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/fankit" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Fankit
+                      </a>
+                    </li>
+                                    </ul></div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/development">
+            <span class="c-brand-menu__item-text">Development</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Development</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items"><li class="c-brand-submenu__item ">
+                      <a href="/roadmap" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Roadmap
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/devtracker" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Dev Tracker
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/telemetry" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Telemetry
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/issue-council" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Issue Council
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/patch-notes" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Patch Notes
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/ship-matrix" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Ship Matrix
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/funding-goals" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Funding
+                      </a>
+                    </li>
+                                    </ul></div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+              </ul></div>
+
+    <div class="c-brand-menu__cta">
+      
+          <a href="/star-citizen/fly-now" class="c-brand-cta-btn js-google-analytics-event-tracker" data-event-category="FlyNow" data-event-label="navMenuClick">
+            <div></div>
+              <span class="c-brand-cta-btn__text">
+                <strong>Fly now</strong>Alpha 3.8
+              </span>
+            <div></div>
+          </a>
+      
+    </div>
+  </nav></header><div class="page-wrapper">
+    
+  <div id="post-background"></div>
+
+
+    <div id="contentbody" class="" style="">
+      
+    <div id="layout-system" class="initial"><!--Banner--><c-top-banner v-cloak background-image-mobile="/rsi/layouts/types/argo-mole/assets/images/top-banner-bg-mobile.jpg" video="/rsi/layouts/types/argo-mole/assets/video/argo-mole-clip.mp4"><template slot="main-title">
+    M.O.L.E
+  </template><temlate slot="word-block-logo"></temlate><template slot="argo-astronautics-logo"><img src="/rsi/layouts/types/argo-mole/assets/svg/argo-astronautics-logo.svg" alt="Logo Argo Astronautics" class="logo-argo"></template></c-top-banner><!--/Banner--><!--Multi Tab--><c-multi-tab v-cloak :tabs="[
+    {
+      label: 'Distinct Style',
+      title: 'Distinct Style',
+      text: 'ARGO’s pragmatic no-nonsense approach to ship design is celebrated in the unmistakable silhouette of the MOLE. Just one look at this machine and you know it means business.',
+      background: 'https://media.robertsspaceindustries.com/it2e4pxcnn6fe/source.jpg'
+    },
+    {
+      label: 'Power Mining',
+      title: 'Power Mining',
+      text: 'Tap into your full potential with the combined force of ARGO’s patented trilateral mining system. The MOLE has a total of 24 mineral pods, each holding 12 SCU. Eight pods are usable at one time – when they’re full, either head home or jettison them for collection by another vessel and carry on mining.',
+      background: 'https://media.robertsspaceindustries.com/m1vvrebhvgo94/source.jpg'
+    },
+    {
+      label: 'Multi-Crew',
+      title: 'Multi Crew',
+      text: 'Three independently controlled articulated extraction stations allow for maximum power and near-limitless versatility. The MOLE lives by the adage ’many hands make for light work’.',
+      background: 'https://media.robertsspaceindustries.com/rzhp585yplw4r/source.jpg'
+    }
+  ]" :timer="10000"></c-multi-tab><!--/Multi Tab--><!--Trailer--><c-trailer v-cloak video-id="NYQKyhXii2Y" placeholder-image="/rsi/layouts/types/argo-mole/assets/images/trailer-placeholder.jpg" placeholder-image-alt="Argo Mole trailer" button="/rsi/layouts/types/argo-mole/assets/svg/trailer-button.svg" clipped-corner="/rsi/layouts/types/argo-mole/assets/svg/trailer-clipped-corner.svg" clipped-corner-alt="Clipped corner"><template slot="title">
+    Get the job done with the ARGO MOLE.
+  </template></c-trailer><!--/Trailer--><!--Explore--><c-explore><template slot="explore-ship" slot-scope="scope"><c-explore-ship title="Ex plo re" src="/rsi/layouts/types/argo-mole/assets/images/explore-image.png" alt="Argo Mole ship" ship-sprite-image="/rsi/layouts/types/argo-mole/assets/images/explore-sprite.png" :ship-background-position="scope.shipBackgroundPosition"></c-explore-ship></template><template slot="explore-decks" slot-scope="scope"><c-explore-decks v-bind="scope" :decks="[
+        {
+          label: 'A1',
+          title: 'Trilateral Mining',
+          content: 'Minimize hassle and maximize profits with ARGO\'s patented trilateral mining mode.',
+          x: 0,
+          y: 1
+        },
+        {
+          label: 'A2',
+          title: 'Mineral Capacity',
+          content: '24 mineral pods, each holding 12 SCU, ensure nothing valuable is left behind (flying capacity: 96 SCU).',
+          x: 0,
+          y: 2
+        },
+        {
+          label: 'A3',
+          title: 'Crew Capacity',
+          content: 'Travel to the most fruitful locations in comfort with comprehensive crew facilities for four.',
+          x: 0,
+          y: 3
+        },
+        {
+          label: 'A4',
+          title: 'Hardware',
+          content: 'The outsized power plant gets the job done without the stress of overheating.',
+          x: 0,
+          y: 4
+        },
+        {
+          label: 'A5',
+          title: 'Power',
+          content: 'Size 2 laser heads have twice the range of the MOLE\'s competitors for safer, more versatile mining.',
+          x: 0,
+          y: 5
+        },
+        {
+          label: 'A6',
+          title: 'Control',
+          content: 'Find the perfect position with nuanced controls and ARGO\'s most intuitive interface ever.',
+          x: 0,
+          y: 6
+        }
+      ]"></c-explore-decks></template></c-explore><!--/Explore--><!--Specs--><c-specs v-cloak :specs="[
+    {
+      label: 'Length',
+      value: '38.5 M',
+    },
+    {
+      label: 'Width',
+      value: '17 M',
+    },
+    {
+      label: 'Height',
+      value: '8 M',
+    },
+    {
+      label: 'Max Crew',
+      value: '4',
+    },
+    {
+      label: 'Number of Pods',
+      value: '24',
+    },
+    {
+      label: 'Max Capacity',
+      value: '288 SCU',
+    },
+  ]"><template slot="title">
+    MOLE by the numbers
+  </template></c-specs><!--/Specs--><!--Slider--><c-slider v-cloak :images="[
+    'https://media.robertsspaceindustries.com/9akhrozhe83hl/source.jpg',
+    'https://media.robertsspaceindustries.com/jp8bxc46k592j/source.jpg',
+    'https://media.robertsspaceindustries.com/66rky1qg3cgnm/source.jpg',
+    'https://media.robertsspaceindustries.com/wsh7wt9ifde62/source.jpg',
+    'https://media.robertsspaceindustries.com/rl2eaagm16f1y/source.jpg',               'https://media.robertsspaceindustries.com/7k0mdkqgr9zcx/source.jpg',               'https://media.robertsspaceindustries.com/oplipm3j59gyk/source.jpg',
+  ]" :timer="5000"></c-slider><!--/Slider--><!--Upgrade--><c-upgrade image-src="/rsi/layouts/types/argo-mole/assets/images/upgrade-image.jpg" image-alt="Argo Mole in mining mode"><template slot="content"><a href="#" data-toshipid="12024" data-toskuid="13309" class="js-open-ship-upgrades">Upgrade to an ARGO MOLE</a><br>and take your mining game to the next level!
+  </template></c-upgrade><!--/Upgrade--><!--SKUs Standalone--><!-- 
+  -----------------------------
+  'skus-number' must not include the concierge one
+  So if there is 3 skus + the one for concierge,
+  skus-number would be 3
+  -----------------------------
+--><c-skus-standalone v-cloak :skus-number="3" background-image="/rsi/layouts/types/argo-mole/assets/images/background-skus-standalone.png" background-image-concierge="/rsi/layouts/types/argo-mole/assets/images/background-skus-concierge.png"><template slot="logo-argo-astronautics"><img src="/rsi/layouts/types/argo-mole/assets/images/argo-astronautics-type.png" alt="Logo Argo Astronautics" class="c-skus-standalone__logo-argo"></template><template slot="sku-concierge-title">
+    ARGO MOLE<br>Carbon Edition
+  </template><template slot="sku-concierge-description">
+    Exclusively for Concierge members, the Carbon Edition offers the MOLE's revered mining ability with a distinctive all-black finish. Includes Lifetime Insurance.
+  </template><template slot="sku-concierge-item"></template><template slot="sku-1-title">
+    ARGO MOLE<br>Talus Edition
+  </template><template slot="sku-1-description">
+    The MOLE Talus Edition boasts the same mining proficiency as the standard ship along with a more discreet gray skin. Includes Lifetime Insurance.
+  </template><template slot="sku-1-item"><section class="store-embed"><div class="product-item small trans-02s">
+    <a href="/pledge/Standalone-Ships/Argo-Mole-Talus-Edition-Warbond"><img src="https://media.robertsspaceindustries.com/ghac95q2ncobp/store_small.jpg" class="trans-02s"></a>
+    <div class="info clearfix trans-02s">
+      <div class="title">
+        Argo Mole Talus Edition - Warbond<span> - Standalone Ship</span>
+      </div>
+      <div class="price ">            <strong class="final-price" data-value="29780" data-currency="EUR">€297<span class="super">.80 <span class="currency">EUR</span></span></strong>            <div class="taxes js-taxes">
+  <div class="taxes-details trans-02s">
+    <div class="arrow"></div>
+    Tax Included: <br><ul><li>VAT 19%</li>
+        </ul></div>
+</div>
+</div>      <span class="state" style="color:#00ff00;">
+                              In stock
+                        </span>
+      <a class="more" href="/pledge/Standalone-Ships/Argo-Mole-Talus-Edition-Warbond">more info</a>
+                                      <a class="holosmallbtn add-cart add-cart ty-js-add-to-cart" href="/pledge/Standalone-Ships/Argo-Mole-Talus-Edition-Warbond" data-sku="13292" data-name="Argo Mole Talus Edition - Warbond" data-tracking-infos='{ "id":"SCP6-DAO-ARGO-MOLE-TALUS-WB","name":"Argo Mole Talus Edition - Warbond","brand":"pledge","category":"Standalone Ship","price":"250.25","dimension1":"-1","stockLevel":"high"}'>
+  <span class="holosmallbtn-top abs-overlay trans-02s js-label">Add to cart</span>
+  <span class="holosmallbtn-bottom abs-overlay trans-02s"></span>
+</a>          </div>
+  </div>
+</section></template><template slot="sku-2-title">
+    ARGO MOLE<br>Warbond
+  </template><template slot="sku-2-description">
+    Work faster and more effectively than ever before with ARGO’s iconic multi-crew miner. Includes Lifetime Insurance.
+  </template><template slot="sku-2-item"><section class="store-embed"><div class="product-item small trans-02s">
+    <a href="/pledge/Standalone-Ships/Argo-Mole-Warbond"><img src="https://media.robertsspaceindustries.com/r7t5ke4l3svvv/store_small.jpg" class="trans-02s"></a>
+    <div class="info clearfix trans-02s">
+      <div class="title">
+        Argo Mole - Warbond<span> - Standalone Ship</span>
+      </div>
+      <div class="price ">            <strong class="final-price" data-value="29780" data-currency="EUR">€297<span class="super">.80 <span class="currency">EUR</span></span></strong>            <div class="taxes js-taxes">
+  <div class="taxes-details trans-02s">
+    <div class="arrow"></div>
+    Tax Included: <br><ul><li>VAT 19%</li>
+        </ul></div>
+</div>
+</div>      <span class="state" style="color:#00ff00;">
+                              In stock
+                        </span>
+      <a class="more" href="/pledge/Standalone-Ships/Argo-Mole-Warbond">more info</a>
+                                      <a class="holosmallbtn add-cart add-cart ty-js-add-to-cart" href="/pledge/Standalone-Ships/Argo-Mole-Warbond" data-sku="13313" data-name="Argo Mole - Warbond" data-tracking-infos='{ "id":"SCP6-DAO-ARGO-MOLE-WB","name":"Argo Mole - Warbond","brand":"pledge","category":"Standalone Ship","price":"250.25","dimension1":"-1","stockLevel":"high"}'>
+  <span class="holosmallbtn-top abs-overlay trans-02s js-label">Add to cart</span>
+  <span class="holosmallbtn-bottom abs-overlay trans-02s"></span>
+</a>          </div>
+  </div>
+</section></template><template slot="sku-3-title">
+    ARGO MOLE
+  </template><template slot="sku-3-description">
+    Work faster and more effectively than ever before with ARGO’s iconic multi-crew miner.
+  </template><template slot="sku-3-item"><section class="store-embed"><div class="product-item small trans-02s">
+    <a href="/pledge/Standalone-Ships/Argo-Mole"><img src="https://media.robertsspaceindustries.com/r7t5ke4l3svvv/store_small.jpg" class="trans-02s"></a>
+    <div class="info clearfix trans-02s">
+      <div class="title">
+        Argo Mole<span> - Standalone Ship</span>
+      </div>
+      <div class="price ">            <strong class="final-price" data-value="34111" data-currency="EUR">€341<span class="super">.11 <span class="currency">EUR</span></span></strong>            <div class="taxes js-taxes">
+  <div class="taxes-details trans-02s">
+    <div class="arrow"></div>
+    Tax Included: <br><ul><li>VAT 19%</li>
+        </ul></div>
+</div>
+</div>      <span class="state" style="color:#00ff00;">
+                              In stock
+                        </span>
+      <a class="more" href="/pledge/Standalone-Ships/Argo-Mole">more info</a>
+                                      <a class="holosmallbtn add-cart add-cart ty-js-add-to-cart" href="/pledge/Standalone-Ships/Argo-Mole" data-sku="13293" data-name="Argo Mole" data-tracking-infos='{ "id":"SCP6-DAO-ARGO-MOLE","name":"Argo Mole","brand":"pledge","category":"Standalone Ship","price":"286.65","dimension1":"-1","stockLevel":"high"}'>
+  <span class="holosmallbtn-top abs-overlay trans-02s js-label">Add to cart</span>
+  <span class="holosmallbtn-bottom abs-overlay trans-02s"></span>
+</a>          </div>
+  </div>
+</section></template></c-skus-standalone><!--/SKUs Standalone--><!--SKUs Game Package--><c-skus-game-package v-cloak background-image="/rsi/layouts/types/argo-mole/assets/images/background-skus-game-package.png"><template slot="title">
+    Industrial Revolution Pack
+  </template><template slot="text">
+    Launch your empire in the stars with these industry-focused ship packs.
+  </template><template slot="skus"><li class="c-skus-game-package__skus-item concierge">
+    <li class="c-skus-game-package__skus-item"> 
+<section class="store-embed"><div class="product-item small trans-02s">
+    <a href="/pledge/Add-Ons/Argo-Pack-Warbond"><img src="https://media.robertsspaceindustries.com/xy42e7o6z9zul/store_small.jpg" class="trans-02s"></a>
+    <div class="info clearfix trans-02s">
+      <div class="title">
+        Argo Pack - Warbond<span> - Add-Ons</span>
+      </div>
+      <div class="price ">            <strong class="final-price" data-value="48731" data-currency="EUR">€487<span class="super">.31 <span class="currency">EUR</span></span></strong>            <div class="taxes js-taxes">
+  <div class="taxes-details trans-02s">
+    <div class="arrow"></div>
+    Tax Included: <br><ul><li>VAT 19%</li>
+        </ul></div>
+</div>
+</div>      <span class="state" style="color:#00ff00;">
+                              In stock
+                        </span>
+      <a class="more" href="/pledge/Add-Ons/Argo-Pack-Warbond">more info</a>
+                                      <a class="holosmallbtn add-cart add-cart ty-js-add-to-cart" href="/pledge/Add-Ons/Argo-Pack-Warbond" data-sku="13296" data-name="Argo Pack - Warbond" data-tracking-infos='{ "id":"SCP6-DAO-ARGO-MOLE-PACK-TALUS-WB","name":"Argo Pack - Warbond","brand":"pledge","category":"Add-Ons","price":"409.5","dimension1":"-1","stockLevel":"high"}'>
+  <span class="holosmallbtn-top abs-overlay trans-02s js-label">Add to cart</span>
+  <span class="holosmallbtn-bottom abs-overlay trans-02s"></span>
+</a>          </div>
+  </div>
+</section></li>
+    <li class="c-skus-game-package__skus-item"> 
+<section class="store-embed"><div class="product-item small trans-02s">
+    <a href="/pledge/Add-Ons/Argo-Mole-Dig-Ditch-Pack-Warbond"><img src="https://media.robertsspaceindustries.com/d8h2umd8xkzto/store_small.jpg" class="trans-02s"></a>
+    <div class="info clearfix trans-02s">
+      <div class="title">
+        Argo Mole Dig &amp; Ditch Pack - Warbond<span> - Add-Ons</span>
+      </div>
+      <div class="price ">            <strong class="final-price" data-value="40609" data-currency="EUR">€406<span class="super">.09 <span class="currency">EUR</span></span></strong>            <div class="taxes js-taxes">
+  <div class="taxes-details trans-02s">
+    <div class="arrow"></div>
+    Tax Included: <br><ul><li>VAT 19%</li>
+        </ul></div>
+</div>
+</div>      <span class="state" style="color:#00ff00;">
+                              In stock
+                        </span>
+      <a class="more" href="/pledge/Add-Ons/Argo-Mole-Dig-Ditch-Pack-Warbond">more info</a>
+                                      <a class="holosmallbtn add-cart add-cart ty-js-add-to-cart" href="/pledge/Add-Ons/Argo-Mole-Dig-Ditch-Pack-Warbond" data-sku="13298" data-name="Argo Mole Dig &amp; Ditch Pack - Warbond" data-tracking-infos='{ "id":"SCP6-DAO-ARGO-MOLE-DIGDITCH-WB","name":"Argo Mole Dig &amp; Ditch Pack - Warbond","brand":"pledge","category":"Add-Ons","price":"341.25","dimension1":"-1","stockLevel":"high"}'>
+  <span class="holosmallbtn-top abs-overlay trans-02s js-label">Add to cart</span>
+  <span class="holosmallbtn-bottom abs-overlay trans-02s"></span>
+</a>          </div>
+  </div>
+</section></li>
+    <li class="c-skus-game-package__skus-item concierge">
+    <li class="c-skus-game-package__skus-item"> 
+<section class="store-embed"><div class="product-item small trans-02s">
+    <a href="/pledge/Add-Ons/Argo-Pack"><img src="https://media.robertsspaceindustries.com/cz9f9crtx6kkx/store_small.jpg" class="trans-02s"></a>
+    <div class="info clearfix trans-02s">
+      <div class="title">
+        Argo Pack<span> - Add-Ons</span>
+      </div>
+      <div class="price ">            <strong class="final-price" data-value="54145" data-currency="EUR">€541<span class="super">.45 <span class="currency">EUR</span></span></strong>            <div class="taxes js-taxes">
+  <div class="taxes-details trans-02s">
+    <div class="arrow"></div>
+    Tax Included: <br><ul><li>VAT 19%</li>
+        </ul></div>
+</div>
+</div>      <span class="state" style="color:#00ff00;">
+                              In stock
+                        </span>
+      <a class="more" href="/pledge/Add-Ons/Argo-Pack">more info</a>
+                                      <a class="holosmallbtn add-cart add-cart ty-js-add-to-cart" href="/pledge/Add-Ons/Argo-Pack" data-sku="13297" data-name="Argo Pack" data-tracking-infos='{ "id":"SCP6-DAO-ARGO-MOLE-PACK","name":"Argo Pack","brand":"pledge","category":"Add-Ons","price":"455","dimension1":"-1","stockLevel":"high"}'>
+  <span class="holosmallbtn-top abs-overlay trans-02s js-label">Add to cart</span>
+  <span class="holosmallbtn-bottom abs-overlay trans-02s"></span>
+</a>          </div>
+  </div>
+</section></li>
+    <li class="c-skus-game-package__skus-item"> 
+<section class="store-embed"><div class="product-item small trans-02s">
+    <a href="/pledge/Add-Ons/Argo-Mole-Dig-Ditch-Pack"><img src="https://media.robertsspaceindustries.com/2tgx7mwui2b74/store_small.jpg" class="trans-02s"></a>
+    <div class="info clearfix trans-02s">
+      <div class="title">
+        Argo Mole Dig &amp; Ditch Pack<span> - Add-Ons</span>
+      </div>
+      <div class="price ">            <strong class="final-price" data-value="46023" data-currency="EUR">€460<span class="super">.23 <span class="currency">EUR</span></span></strong>            <div class="taxes js-taxes">
+  <div class="taxes-details trans-02s">
+    <div class="arrow"></div>
+    Tax Included: <br><ul><li>VAT 19%</li>
+        </ul></div>
+</div>
+</div>      <span class="state" style="color:#00ff00;">
+                              In stock
+                        </span>
+      <a class="more" href="/pledge/Add-Ons/Argo-Mole-Dig-Ditch-Pack">more info</a>
+                                      <a class="holosmallbtn add-cart add-cart ty-js-add-to-cart" href="/pledge/Add-Ons/Argo-Mole-Dig-Ditch-Pack" data-sku="13299" data-name="Argo Mole Dig &amp; Ditch Pack" data-tracking-infos='{ "id":"SCP6-DAO-ARGO-MOLE-DIGDITCH","name":"Argo Mole Dig &amp; Ditch Pack","brand":"pledge","category":"Add-Ons","price":"386.75","dimension1":"-1","stockLevel":"high"}'>
+  <span class="holosmallbtn-top abs-overlay trans-02s js-label">Add to cart</span>
+  <span class="holosmallbtn-bottom abs-overlay trans-02s"></span>
+</a>          </div>
+  </div>
+</section></li>
+  </template></c-skus-game-package><!--/SKUs Game Package--><!--Disclaimer--><c-disclaimer><template slot="disclaimer-title">
+    Disclaimer
+  </template><template slot="disclaimer-text">
+    We offer pledge vehicles to help fund Star Citizen’s development. The funding received from events such as this allows
+    us to include deeper features in the Star Citizen world. These vehicles will be obtainable in the final universe and
+    they are not required to start the game.
+  </template></c-disclaimer><!--/Disclaimer--></div><!--/layout-system-->
+  <script type="text/javascript">
+    /* JS from Layouts */
+    
+  </script></div>
+
+    
+  </div>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.11/moment-timezone-with-data.min.js"></script><script type="text/javascript">
+  $(window).load(function(){
+      $.cookie('moment_timezone', moment.tz.guess(), { expires: 31, path: '/' });
+  });
+</script><script id="tpl_number_counter_digits" type="text/x-jsmart-tmpl">{if !$seperator}{$seperator=','}{/if}
+{if !$first_max}{$first_max=9}{/if}
+{for $digit = 0 to $length-1}
+  <div class="mask">
+    <div class="carousel">
+      {if $digit == 0}
+        {$max = $first_max}
+      {else}
+        {$max = 9}
+      {/if}
+      {for $i=0 to $max}
+        <div class="item {if $val_arr[$digit] == $i}on{/if}" rel="{$i}">{$i}
+      {/for}
+    
+  
+  {if ($length - $digit) % 3 == 1 && $digit != $length-1}
+  <div class="seperator">{$seperator}
+  {/if}
+{/for}</script><script id="base_modal" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  <div class="top-border">
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+  
+</script><script id="base_modal_flat" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  
+  
+</script><script id="tpl_modals_slideshow" type="text/x-jsmart-tmpl"><img class="top-border" src="/rsi/static/images/modal_top.png">
+<a href="" class="close js-close">
+<div class="mask">
+  <a class="js-prev prev control">
+  <a class="js-next next control">
+  <div class="slideshow-carousel carousel" rel="{$index}">
+    {foreach from=$images item="image"}
+      <div class="{if $index == $image@index}on{/if}">
+      {if $image.is_video}
+        <div class="video-holder">
+          <div id="slideshow_video_{$image@index}" data-source="{$image->source_url}">
+            <video width="100%" height="100%" preload="auto" {if $video}src="{$image->source_url}"{/if} controls>
+          
+        
+      {else}
+        <div class="media js-media-slideshow-{$image@iteration}">
+        {if $image.low_res}
+          <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source data-srcset="{$image.full_res}" media="(min-width: 300px)" />
+            <!--[if IE 9]><![endif]-->
+            <img data-srcset="{$image.low_res}" alt="{$image.title}" />
+          
+        {else}
+          <img data-src="{$image.source_url}" />
+        {/if}
+        
+      {/if}
+        <div class="text">
+          {if !$image.is_video}
+          <a href="{$image.source_url}" class="download">
+          {/if}
+          <div class="copyright">&copy; 2012-{$year}<br />Cloud Imperium Games Corporation &<br />Roberts Space Industries Corp.
+          <div class="page-number">{$image@iteration} / {count($images)}
+          <div class="caption v-center">{if $image.title && $image.title != "undefined"}{$image.title}{/if}
+          <div class="cboth">
+        
+      
+    {/foreach}
+  
+
+<img class="bottom-border" src="/rsi/static/images/modal_bottom.png"></script><script id="tpl_contact_us" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    
+<div id="contact" class="inner-content on">
+  <h2><span class="icon">CONTACT
+  <div class="padder">
+    <div class="separator">
+    <form name="" action="" method="POST">
+  <div class="error-message js-error-message">
+  <div class="success-message js-success-message">
+    <fieldset>
+    <label for="contact_subject">Subject
+    <input type="text" name="subject" value="" class="trans-02s trans-color trans-box-shadow" id="contact_subject" />
+    <label>Contacting us for:
+    <ul class="category-info">
+            <li id="tech_support_info">Questions about download, installation, networking, or in-game client problems
+            <li id="subscription_info">Questions about monthly and yearly subscription plans
+            <li id="account_billing_info">Issues related to your account, such as incorrect information or ability to access account, or Billing with regards to payments and payment methods
+            <li id="melt_request_info">To reclaim a pledge over $1,000 for store credit (please note - this is a permanent action)
+            <li id="merchandise_info">Questions about physical and/or shipped merchandise
+            <li id="hacked_info">Issues related to compromised account or missing pledge.
+            <li id="account_recovery_info">For issues with account authentication, lost passwords and related queries
+            <li id="probation_info">Issues related to forums probation or ban
+            <li id="refund_request_info">Refund requests and related inquiries
+            <li id="customer_support_info">For general questions and queries regarding Star Citizen
+          
+  
+  <fieldset>
+    <label for="contact_text">Fescription
+    <textarea name="text" class="trans-02s trans-color trans-box-shadow" id="contact_text">
+  
+  <div class="contact-submit-wrapper">
+    <div class="line">
+    <button class="submit js-submit"><strong>submit your message
+  
+
+    <div class="separator">
+  
+
+
+    
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  
+</script><script id="tpl_error" type="text/x-jsmart-tmpl"><div class="modal-error js-modal-error">
+  <p class="modal-text js-modal-text">
+  <a class="close js-close trans-03s .trans-opacity" href="">
+</script><script id="tpl_success" type="text/x-jsmart-tmpl"><div class="modal-success js-modal-success">
+  <p class="modal-text js-modal-text">
+  <a class="close js-close trans-03s .trans-opacity" href="">
+</script><script id="tpl_progress" type="text/x-jsmart-tmpl"><div class="modal-progress js-modal-progress">
+  <div class="traj-loader">
+    <div class="fast-blink">
+    <span class="modal-text js-modal-text">
+  
+</script><script id="tpl_outbound" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    
+<div id="outbound" class="inner-content on">
+  <h2><span class="icon">OUTBOUND LINK
+  <div class="padder">
+    <div class="separator">
+    <form name="" action="" method="POST">
+      <div class="error-message js-error-message"> <span class=important>WARNING<br/><br/> This link will bring you outside of the RSI site and into the depths of the internet. Continue?<br/><br/><span class="url"> 
+      <div class="success-message js-success-message"><span class=important>STAND BY<br/><br/> Initiating hyperlink.<br/><br/>
+
+      <fieldset class="clearfix last">
+        <span class="submit-wrapper">
+          <span class="submit-hover trans-02s trans-opacity">
+          <input type="submit" value="WARP" class="trans-02s trans-color trans-background" />
+        
+      
+    
+    <div class="separator">
+  
+
+
+    
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  
+</script><script id="tpl_l-notification-bar" type="text/x-jsmart-tmpl"><div class="l-notification-bar js-notification-bar">
+
+  <div class="l-notification-bar__watermark js-svg-inliner h-svg__logo-star-citizen">
+
+  <div class="l-notification-bar__boxes">
+    {if !$viewedCookieNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='cookie'
+          title='COOKIES:'
+          message="Our website uses Google Analytics to analyze our traffic. <br/>To learn how you can control Google's use of your data and how you can opt out <a href='https://www.google.com/policies/privacy/partners/'>click here."
+          linkText='See Details'
+          buttonText='Got it!'}
+      
+    {/if}
+
+    {if !$viewedPrivacyNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='privacy'
+          title='PRIVACY POLICY:'
+          message='We adjusted the PP to reflect the decision of the European Court of Justice regarding Safe Harbor, the fact that RSI has moved and added some services providers.'
+          linkText='View Privacy Policy'
+          buttonText='Got it!'}
+      
+    {/if}
+  
+
+
+</script><script id="tpl_c-notification" type="text/x-jsmart-tmpl"><div class="c-notification js-bottom-notif-msg-{$type}">
+    <div class="c-notification__title">{$title}
+    <div class="c-notification__message">
+      {$message}
+    
+
+    {if $linkText}
+        <div class="c-notification__wrapper-link">
+            <a class="c-notification__link js-bottom-notif-link-{$type}">
+            {$linkText}
+            
+        
+    {/if}
+
+    <a class="c-notification__button js-bottom-notif-btn-{$type}">
+
+      <span class="c-notification__button-text">
+       {$buttonText}
+      
+
+      {if $type neq 'announcement'}
+        <div class="c-iconed__icon c-iconed__icon--checkmark">
+      {/if}
+    
+
+</script><script id="tpl_confirm" type="text/x-jsmart-tmpl"><div class="modal-confirm js-modal-confirm clearfix">
+  <p class="modal-text js-modal-text">
+  <a class="bt-close js-close trans-03s trans-opacity" href="">
+  <a class="bt-confirm js-confirm trans-03s trans-opacity" href="">
+	<div class="buttons">
+		<a class="shadow-button trans-02s trans-color js-close bt-close rm"     >
+  <span class="label js-label trans-02s">Cancel
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s">
+  <span class="left-section">
+  <span class="right-section">
+
+		<a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">Confirm
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s">
+  <span class="left-section">
+  <span class="right-section">
+
+	
+
+</script><script id="tpl_alert" type="text/x-jsmart-tmpl"><div class="modal-alert js-modal-alert clearfix">
+  <p class="modal-text js-modal-text">
+  <div class="buttons">
+    <a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">OK
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s">
+  <span class="left-section">
+  <span class="right-section">
+
+  
+</script><script id="tpl_video" type="text/x-jsmart-tmpl">{extends file="base_modal"}
+{block name='modal_content'}
+<div id="ship-commercial" class="inner-content">
+  
+  <div class="hr">
+  <div class="content-block4">
+   
+    <div class="bottom">
+  
+  {if $distant_source=="vimeo"}
+  <iframe id="commercial" src="//player.vimeo.com/video/{$video_id}?wmode=transparent" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+  {else}
+  <iframe id="commercial" frameborder="0" allowfullscreen="1" title="YouTube video player" width="100%" height="100%" src="https://www.youtube.com/embed/{$video_id}?autoplay=1">
+  {/if}
+
+{/block}
+</script><script id="tpl_comment_report" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    
+<div id="comment-report" class="inner-content on">
+  <h2><span class="icon">Report this comment
+  <div class="padder">
+    <div class="separator">
+    <form name="" action="" method="POST">
+<input type="hidden" name="comment_id" value="">
+  <div class="error-message js-error-message">
+  <div class="success-message js-success-message">
+    <fieldset>
+    <label>Report Type
+    
+
+
+  
+    <a class="js-selectlist selectlist " rel="" href="">
+    <div class="arrow">
+    <span>Please select the type best matching your report
+              <ul class="body">
+              
+                                                              <li class="js-option option " rel="obscenity" >
+                                                                        Obscene Content
+                                                    
+                                                                <li class="js-option option " rel="abuse" >
+                                                                        Abusive Conduct
+                                                    
+                                                                <li class="js-option option " rel="other" >
+                                                                        Other
+                                                    
+                                          
+            
+        <input type="hidden" name="category" class="js-category js-form-data" id="category"/>
+  
+    
+  <fieldset>
+    <label for="report_text">Details
+    <span class="corner-wrapper">
+      <textarea name="text" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_text" maxlength="2500">
+      <span class="corner corner-top-left">
+      <span class="corner corner-top-right">
+      <span class="corner corner-bottom-left">
+      <span class="corner corner-bottom-right">
+    
+  
+  <fieldset class="clearfix last">
+    <span class="submit-wrapper">
+      <span class="submit-hover trans-02s trans-opacity">
+      <input type="submit" value="Submit" class="trans-02s trans-color trans-background" />
+    
+  
+
+    <div class="separator">
+  
+
+
+    
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  
+</script><footer class="c-platform-footer c-platform-footer--rsi"><div class="l-platform-footer-container">
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--sc"><li class="c-platform-footer-brand__item">
+
+          <span class="c-brand c-brand--sc js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--sc">
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Join the<br>Universe
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path></svg></span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--sc"><li class="c-platform-footer-list__item">
+              <a href="/star-citizen" class="c-platform-footer-link">About the Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/howto/1" class="c-platform-footer-link">How to Play</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/universe" class="c-platform-footer-link">The Universe</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/media" class="c-platform-footer-link">Media</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/fly-now" class="c-platform-footer-link js-google-analytics-event-tracker" data-event-category="FlyNow" data-event-label="footerClick">
+                Fly Now
+              </a>
+            </li>
+          </ul></li>
+      </ul><ul class="c-platform-footer-social"><li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__sc">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">
+              Social Links
+            </span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links"><li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/RobertsSpaceIndustries/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/RobertsSpaceInd">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/robertsspaceind">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.youtube.com/channel/UCTeLqJq1mXUX5WWoNXLmOIA">
+                <span class="c-iconed__icon c-iconed__icon--youtube"></span>
+                Youtube
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.twitch.tv/starcitizen">
+                <span class="c-iconed__icon c-iconed__icon--twitch"></span>
+                Twitch
+              </a>
+            </li>
+          </ul></li>
+      </ul></div>
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--s42"><li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--s42 js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--s42">
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Start the<br>Adventure
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path></svg></span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--s42"><li class="c-platform-footer-list__item">
+              <a href="/squadron42" class="c-platform-footer-link">The Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#enlist" class="c-platform-footer-link">Enlist Today</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#roadmap" class="c-platform-footer-link">Status</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/pledge/Packages/Squadron-42-Standalone-Pledge" class="c-platform-footer-link">Pledge</a>
+            </li>
+          </ul></li>
+      </ul><ul class="c-platform-footer-social"><li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__s42">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">Social Links</span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links"><li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/Squad42/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/squadron_42">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/squadron42">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+          </ul></li>
+      </ul></div>
+
+    <div class="c-platform-footer__column l-column is-active">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--rsi"><li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--rsi js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--rsi">
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi--fullcolor"></span>
+            </span>
+            <span class="c-brand__label">
+              Follow the Development
+            </span>
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path></svg></span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--rsi"><li class="c-platform-footer-list__item">
+              <a href="/" class="c-platform-footer-link">Home</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/comm-link" class="c-platform-footer-link">Transmissions</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/community" class="c-platform-footer-link">Community</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/roadmap" class="c-platform-footer-link">Development</a>
+            </li>
+          </ul></li>
+      </ul></div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--platform"><li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Platform
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path></svg></span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--platform"><li class="c-platform-footer-list__item">
+                <a href="/pledge" class="c-platform-footer-link ">Pledge Store</a>
+              </li>
+            
+            <li class="c-platform-footer-list__item">
+              <a href="/download" class="c-platform-footer-link ">Download</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/spectrum/community/SC" class="c-platform-footer-link">Spectrum</a>
+            </li>
+
+                      </ul></li>
+      </ul></div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--utility"><li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Utilities
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path></svg></span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--utility"><li class="c-platform-footer-list__item">
+              <a href="//support.robertsspaceindustries.com" class="c-platform-footer-link">Help</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/press" class="c-platform-footer-link">Press</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="https://cloudimperiumgames.com/join-us" class="c-platform-footer-link">Careers</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/tos" class="c-platform-footer-link">Terms of Services</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/privacy" class="c-platform-footer-link">Privacy Policy</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/eula" class="c-platform-footer-link">EULA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/dmca" class="c-platform-footer-link">DMCA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/acknowledgements" class="c-platform-footer-link">Acknowledgements</a>
+            </li>
+          </ul></li>
+      </ul></div>
+
+  </div>
+
+  
+</footer><div class="c-platform-copyright c-platform-copyright--rsi">
+  <div class="l-platform-copyright-container">
+    <a href="https://cloudimperiumgames.com" class="c-platform-copyright__logo h-svg__logo-cig js-svg-inliner"></a>
+    <p class="c-platform-copyright__body">© 2012-2019 Cloud Imperium Rights LLC and Cloud Imperium Rights Ltd.</p>
+  </div>
+</div>
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHNFZPT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<script type="text/javascript">
+  window.RSI.Footer = new RSI.Footer();
+</script><script type="text/javascript" src="/cache/en/rsi-platformbar-js.js?v=3.4.1.1"></script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"58013cabd7","applicationID":"375102748","transactionName":"Y1JaYktUWxZUV0QKV1oYe0NKQVoIGmZjKmtdQ111VltBF1pYXAZKDg1ZQlZYcwxbUA==","queueTime":0,"applicationTime":385,"atts":"TxVNFANOSEkXVRJZQ0lK","errorBeacon":"bam.nr-data.net","agent":""}</script></body>

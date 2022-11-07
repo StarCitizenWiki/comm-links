@@ -1,0 +1,2189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    
+      <!-- Anti-flicker snippet (recommended)  -->
+      <style>.async-hide { opacity: 0 !important} </style>
+      <script type="text/javascript">(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+      h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+      (a[n]=a[n]||[]).hide=h;if (d) a[n].push({'userId' : d});setTimeout(function(){i();h.end=null},c);h.timeout=c;
+      })(window,document.documentElement,'async-hide','dataLayer',1500,
+      {'GTM-KHNFZPT':true},undefined,'');</script>
+
+            <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"58013cabd7",applicationID:"375102748"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+      <meta name="viewport" content="width=device-width">
+      <meta name="description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans.">
+      <meta property="og:site_name" content="
+Design Notes: Shields & Management - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+" />
+      <meta property="og:image" content="https://robertsspaceindustries.com/media/xa28r2s11nw87r/channel_item_full/Shield-Hornet.png" />
+      <meta property="og:description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans." />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://robertsspaceindustries.com/comm-link/SCW/14489-IMPORT" />
+      <meta property="og:locale" content="us_EN" />
+
+            
+
+            
+      <link href="/rsi/static/css/cross-brand-less.css?v=6.29.1" media="all" rel="stylesheet">
+      <link href='/rsi/static/packages/platformbar/rsi.platformbar.build.8e4cb.css' media="all" rel="stylesheet">
+      <link href='/rsi/static/packages/enlist/rsi.enlist.build.2e61e.css' media="all" rel="stylesheet"/>
+      
+            <script type="text/javascript" src="/cache/en/rsi-external-js.js?v=6.29.1"></script>
+      <script type="text/javascript" src="/cache/en/rsi-templates-js.js?v=6.29.1"></script>
+
+            
+      <link rel="stylesheet" href="https://use.typekit.net/dhw3beb.css">
+      
+
+              <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="a687ee30-df65-45a0-9d22-90de6c1bb964" type="text/javascript"></script>
+      
+      
+    <!-- Google Tag Manager -->
+        <script type="text/plain" data-cookieconsent="statistics">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHNFZPT');</script>
+    <!-- End Google Tag Manager -->
+
+
+      <title>
+Design Notes: Shields & Management - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+</title>
+
+            <script type="text/javascript" src='/rsi/static/packages/core/rsi.core.build.804b0.js'></script>
+      <script type="text/javascript" src='/rsi/static/packages/account/rsi.account.build.609b5.js'></script>
+      <script type="text/javascript" src='/rsi/static/packages/store/rsi.store.build.cd9a7.js'></script>
+
+      <script>
+        $(document).ready(function() {
+          window.Common = new RSI.Common({});
+          window.Main = new RSI.Main({
+            'is_mobile': 0,
+            'probation_cookie' : '',
+            'require_captcha': 0
+          });
+          window.Mark = new Turbulent.Mark({ 'name' : 'Rsi-XSRF', 'token' : '', 'ttl' : 1800 });
+
+          window.WscOverlay = new RSI.WscOverlay({});
+
+          var destinations = [];
+
+window.Main.destinations = destinations;          
+  window.PageStore = new RSI.Store({
+    'store_prefix' : '/pledge',
+    'bootstrapConfig': {"injection":{"attachmentClass":"RSIStoreApp","files":{"js":["bootstrap.js"],"css":["index.css"]}},"platform":{"api":"\/api"},"store":{"path":"\/pledge-store","manifest":"manifest.json"},"customizer":{"api":"\/pledge-store\/api\/customizer","ga_tracking_code":"UA-39586040-5"}}
+  });
+
+          
+          
+  var productsTracking = [];
+  var eCommerceData = {
+    'trackingAction': "",
+    'currency': "",
+    'trackingStep': "",
+    'trackingProducts': productsTracking
+  };
+  window.eCommerceTracking = new RSI.Store.eCommerceTracking(
+    eCommerceData
+  );
+
+        });
+
+        $(window).load(function() {
+          
+        });
+
+      </script>
+
+      
+      <script>
+        window.recaptcha_is_loaded = false;
+        window.on_recaptcha_load_callback = function() {
+          window.recaptcha_is_loaded = true;
+        };
+      </script>
+
+      <script src="https://www.google.com/recaptcha/api.js?onload=on_recaptcha_load_callback&render=6LerBOgUAAAAAKPg6vsAFPTN66Woz-jBClxdQU-o" async defer></script>
+      
+
+      <script type="text/javascript">
+
+        
+
+                                </script>
+
+      
+
+<style type="text/css">
+  /* CSS from ATOM */
+  #post-background { opacity: 0.2; }
+
+.rsi-markup .segment .content p .initial { display: inline; font-size: inherit; text-transform: inherit; float: none; line-height: inherit; height: auto; margin-right: auto; }
+
+.rsi-markup .segment .content .image img { border: 1px solid #2C4261; border-radius: 0; }
+.rsi-markup .segment .content .image { border-radius: 0; }
+
+.rsi-markup .segment .content p { width: auto; max-width: none; font-size: 12px; line-height: 18px; }
+.rsi-markup .segment .content ul li, .rsi-markup .segment .content ol li { font-size: 12px; line-height: 18px; background-position: 0 8px; }
+.rsi-markup .segment .content ol li { margin-bottom: 20px; }
+.rsi-markup .segment .content ul li > strong, .rsi-markup .segment .content ol li > strong { color: white; text-transform: uppercase; }
+
+.rsi-markup .segment .content .image .caption { line-height: 14px; }
+
+.rsi-markup .segment .content h2:first-child { margin-top: 0; }
+
+.mb-box { max-width: 800px; margin: auto; margin-top: 100px; margin-bottom: 75px;  }
+.mb-box p { font-size: 18px; font-family: "Electrolize"; text-align: center; color: white;}
+
+.rsi-markup .segment .content .variant-block .image { float: none; display: inline; }
+.rsi-markup .segment .content .variant-block { text-align: center; margin: 50px 0; }
+
+.full-screen-image > img { width: 119%; margin-left: -90px; }
+.half-page-image { width: 45%; display: inline-block; margin-right: 20px; }
+.half-page-image > img { width: 100%; }
+</style>
+
+<script type="text/javascript">
+  /* JS from ATOM */
+  
+</script>
+
+
+
+
+    
+
+  <style>
+    
+      background:url(/rsi/static/images/noisebg.gif) repeat center top #000b11;
+    
+  </style>
+
+    <link href="//fonts.googleapis.com/css?family=Electrolize|Orbitron:400,500,700|Quantico|Share+Tech+Mono&display=swap" rel="stylesheet" type="text/css">
+
+    <link href="/cache/en/rsi-css.css?v=6.29.1" media="all" rel="stylesheet">
+
+
+  </head>
+  <body id="" class="" >
+
+    
+      <div class="l-notification-bar l-notification-bar--rsi js-notification-bar" id="notification-bar-root">
+  <c-notification-bar v-bind:latestagreementsslugs=[] v-bind:loggedin="0" v-bind:onhomepage="0"></c-notification-bar>
+  <div class="l-notification-container l-notification-bar__boxes js-notification-bar-boxes">
+    <div class="l-notification__wrapper">
+      
+      <c-unsupported-browser v-cloak>
+        <div class="l-notification-bar__box js-notification-bar-box">
+          <div class="c-notification  c-notification--browser-support js-bottom-notif-msg-browser-support">
+  <div class="c-notification__inner">
+
+    <div class="c-notification__content">
+      <div class="c-notification__title">
+        IE11 is no longer supported
+      </div>
+      <div class="c-notification__message">
+        We do not support Internet Explorer 11 and below. Please use a different web browser.
+      </div>
+    </div>
+
+    <div class="c-notification__actions">
+      
+      
+          </div>
+
+  </div>
+</div>
+        </div>
+      </c-unsupported-browser>
+    </div>
+  </div>
+
+</div>
+    
+
+    <div id="bodyWrapper">
+      <header class='c-header-wrapper c-header-wrapper--rsi js-header-wrapper '  id='cross-brand-header'>
+  <div id="platform-bar" class="c-header__platform-bar"></div>
+
+      <div class='c-right-sidebar c-right-sidebar--signin' id="account-sidebar">
+      <div class="js-toggle-account__backdrop invisible"></div>
+
+      <a href="#" class='c-right-sidebar__back js-toggle-account'>Back
+        <span></span>
+        <span></span>
+      </a>
+
+      <div id="enlist-root" data-theme="rsi" data-enlisting="" data-ptu=""></div>
+      <script type="text/javascript" src='/rsi/static/packages/enlist/rsi.enlist.build.2e61e.js'></script>
+    </div>
+  
+  <div class="c-header-wrapper__backdrop js-toggle-games"></div>
+</header>
+
+<div id="platform-backdrop"></div>
+
+<script type='text/javascript'>
+  RSI.Platformbar = {
+    theme: "rsi",
+    loggedState: "logged-out",
+    tabs: [
+      {
+        type: 'brands',
+        name: "Games",
+        subItems: [
+          {
+            name: "sc",
+            href: "/star-citizen",
+            description: "Join the Universe"
+          },
+          {
+            name: "s42",
+            href: "/squadron42",
+            description: "Start the adventure"
+          },
+          {
+            name: "rsi",
+            href: "/",
+            description: "Follow the Development"
+          }
+        ]
+      },
+      {
+        type: 'apps',
+        name: "Apps",
+        subItems: [
+          [
+            {
+              name: "Spectrum",
+              href: "/spectrum/community/SC",
+              description: "Your communication platform"
+            },
+            {
+              name: "Launcher",
+              href: "/download",
+              description: "Download Star Citizen",
+                          }
+          ],
+          [
+            {
+              name: "Roadmap",
+              href: "/roadmap",
+              description: "Keep track of the development"
+            },
+            {
+              name: "Telemetry",
+              href: "/telemetry",
+              description: "Keep track of the player’s performance"
+            },
+            {
+              name: "Issue Council",
+                          href: "https://issue-council.robertsspaceindustries.com",
+                          description: "Help us make the game better",
+                          }
+          ],
+          [
+            {
+              name: "Starmap",
+              href: "/starmap",
+              description: "Your map to the universe"
+            },
+            {
+              name: "Galactapedia",
+              href: "/galactapedia",
+              description: "Your guide to the universe"
+            }
+          ]
+        ]
+      },
+          ],
+    navigation: {
+      store: {
+        name: "Pledge Store",
+        href: "/pledge",
+        isHidden: false      },
+      hub: {
+        name: "Learn How to Play",
+        href: "/playstarcitizen",
+        show: false      },
+      support: {
+        name: "Support",
+        href: "//support.robertsspaceindustries.com"
+      },
+      account: {
+        name: "Account",
+        href: "/account/settings",
+        isHidden: false      }
+    }
+  };
+
+  $(document).ready(function() {
+    window.header = new RSI.Header({});
+  });
+</script>
+
+
+      
+  
+<header class='c-brand-menu c-brand-menu----rsi' id='brand-menu'>
+  <span class="c-brand-menu__section">
+    
+      Roberts Space Industries <sup>&#174;</sup>
+    
+  </span>
+  <div class="c-brand-menu__backdrop"></div>
+  <nav class="c-brand-menu__container">
+    <div class="c-brand-menu__logo">
+      <a href="/"><span class="h-svg h-svg__logo-rsi--fullcolor-large js-svg-inliner"></span> </a>
+    </div>
+    <div class="c-brand-menu__items-container">
+      <ul class="c-brand-menu__items">
+                <li class="c-brand-menu__item  ">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/comm-link">
+            <span class="c-brand-menu__item-text">Comm-Link</span>
+                                  </a>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/community">
+            <span class="c-brand-menu__item-text">Community</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Community</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/spectrum" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Spectrum
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/orgs" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Organizations
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/leaderboards/top" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Leaderboards
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community_events" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Event
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Hub
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/fankit" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Fankit
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/development">
+            <span class="c-brand-menu__item-text">Development</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Development</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/roadmap" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Roadmap
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/devtracker" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Dev Tracker
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/telemetry" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Telemetry
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="https://issue-council.robertsspaceindustries.com" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Issue Council
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/patch-notes" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Patch Notes
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/ship-matrix" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Ship Matrix
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/funding-goals" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Funding
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+              </ul>
+    </div>
+
+    <div class="c-brand-menu__cta">
+      
+        <a href="/star-citizen/play-now" class="c-brand-cta-btn js-google-analytics-event-tracker"
+          data-event-category="FlyNow" data-event-label="navMenuClick">
+          <div></div>
+            <span class="c-brand-cta-btn__text">
+              <strong>Play now</strong>
+            </span>
+          <div></div>
+        </a>
+      
+    </div>
+  </nav>
+</header>
+
+
+
+      
+
+  
+  <div class="page-wrapper">
+    
+  <div id="post-background" style="background-image:url('/media/qcgxozkbsq0znr/source/Starfarer_Cockpit_view_1_v009.jpg');"></div>
+
+
+    <div id="contentbody" class="" style="">
+      
+
+<div id="post">
+  <div class="title-section">
+    
+      <div class="wrapper title-bar-container">
+        <div class="glow left"></div>
+        <div class="title-bar">
+          <div class="title with-subtitle">
+            <h1>Engineering</h1>
+            <h2>Development</h2>
+          </div>
+          <div class="details">
+            <div>
+              <h3>ID:</h3>
+              <p>14489</p>
+              <div class="cboth"></div>
+            </div>
+            <div>
+              <h3>Comments:</h3>
+              <p class="comment-count">311</p>
+              <div class="cboth"></div>
+            </div>
+            <div>
+              <h3>Date:</h3>
+              <p>February 7th 2015</p>
+              <div class="cboth"></div>
+            </div>
+            <div></div>
+          </div>
+          <div class="cboth"></div>
+        </div>
+        <div class="glow right"></div>
+      </div>
+    
+  <div class="title-container">
+    <div class="title no-subtitle">Design Notes: Shields & Management</div>
+      </div>
+
+  </div>
+
+  
+  <div class="lightbar toplightbar">
+    <div class="lightbarlights"></div>
+    <div class="footershadow"></div>
+  </div>
+
+
+  <div class="wrapper"><div class="hr"></div><div class="content-block4"><div class="content"><div class="top"></div><h1>Design: Shields & Management</h1><div class="cboth"></div></div><div class="bottom"></div></div><div class="content-block2"><div class="content clearfix"><img src="/media/xa28r2s11nw87r/post_section_header/Shield-Hornet.png" /><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div><div class="content-block1 rsi-markup">
+<div  class=' segment' ><div class="content"><h2>Greetings Citizens,</h2>
+
+<p><span class="initial">S</span>hields are an iconic part of science fiction drama – if there’s a spaceship involved, chances are that shields are involved. Whether someone is redirecting power to the forward shield or reporting to their commanding officer that shields are seconds away from failing, their existence has become an unquestioned piece of standard equipment in future worlds. </p>
+
+<p>In space game design, shields serve another purpose. In their earliest iterations, like the original Wing Commander, shields were a way to alter gameplay significantly from traditional air combat encounters. Players could engage the enemy safe in the knowledge that there was a regenerative buffer should they suffer damage… meaning that head on attacks and other maneuvers were suddenly more of a viable option.</p>
+
+<a class="image  js-open-in-slideshow" data-id="jcukn76o2w4w2r" data-full_res="/media/jcukn76o2w4w2r/source/Shields_in_privateer.png" data-low_res="/media/jcukn76o2w4w2r/slideshow_pager/Shields_in_privateer.png" data-source_url="/media/jcukn76o2w4w2r/source/Shields_in_privateer.png" rel="post"><img src="/media/jcukn76o2w4w2r/post/Shields_in_privateer.png" alt="Privateer was Chris Roberts' first game to feature shield management." /><span class="caption">Privateer was Chris Roberts' first game to feature shield management.</span></a>
+
+<p>As space sims ‘grew up’ they adopted varying systems of shield management. Players could live their own microcosm of Star Trek’s “she needs more power!” moments by changing how much energy went to individual systems (typically shields, engines and weapons.) Shield management is the perfect distillation of the high stakes strategy and anticipation of space combat, gambling your life and your crew on the next move your opponent will make. There’s a lot going on in those tense moments, weighing resources against reality to squeeze out those few extra moments that can mean the difference between victory and defeat. </p>
+
+<p>Which is to say: shield management is a pretty important thing to get right in Star Citizen! As we hope to go deeper into a science fiction world than ever before attempted in gaming, we know we need a comprehensive shield system that goes beyond ‘shields up’ versus ‘shields down.’ It’s an incredibly important thing to get right, and the task ahead of the design team is to define all the little pieces that will begin to add up to those memorable moments.</p>
+
+<p>Today, shield and power management in Arena Commander may seem simplistic… but it’s going to get much, much more interesting!</p></div><div class="cboth"></div></div>
+<div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+<div class="wrapper"><div class="hr"></div><div class="content-block4"><div class="content"><div class="top"></div><h1>Shields in Star Citizen</h1><div class="cboth"></div></div><div class="bottom"></div></div><div class="content-block1 rsi-markup">
+<div  class=' segment' ><div class="content"><a class="image  js-open-in-slideshow" data-id="2leqhp0deu6kor" data-full_res="/media/2leqhp0deu6kor/source/Shield_management.png" data-low_res="/media/2leqhp0deu6kor/slideshow_pager/Shield_management.png" data-source_url="/media/2leqhp0deu6kor/source/Shield_management.png" rel="post"><img src="/media/2leqhp0deu6kor/post/Shield_management.png" alt="" /></a>
+
+<p><span class="initial">I</span>n Star Citizen, shields react uniquely depending on the kinds of forces they are deflecting, with energy weapons being absorbed entirely (chipping away faster at the health of the shields) or with ballistic weapons simply being slowed to weaken the impact that does make it through (inflicting reduced but lasting damage). The higher power shields specialize by splitting that output among multiple faces, and by better deflecting splash damage, for example. Augmentation items can be used to push these effects even further, or to find a middle ground relative to the more standard shield setups.</p>
+
+<a class="image  js-open-in-slideshow" data-id="vv93mrayul4yor" data-full_res="/media/vv93mrayul4yor/source/SECO_S2_F4_DD.jpg" data-low_res="/media/vv93mrayul4yor/slideshow_pager/SECO_S2_F4_DD.jpg" data-source_url="/media/vv93mrayul4yor/source/SECO_S2_F4_DD.jpg" rel="post"><img src="/media/vv93mrayul4yor/post/SECO_S2_F4_DD.jpg" alt="By bolstering the direct fire absorption of their all-purpose shield generator line, Seal Corporation’s INK-Mark generator sacrifices some resistance to splash damage to allow a ship to better weather a focused attack." /><span class="caption">By bolstering the direct fire absorption of their all-purpose shield generator line, Seal Corporation’s INK-Mark generator sacrifices some resistance to splash damage to allow a ship to better weather a focused attack.</span></a>
+
+<a class="image  js-open-in-slideshow" data-id="sydevox0s09j4r" data-full_res="/media/sydevox0s09j4r/source/SECO_S2_F4_SD.jpg" data-low_res="/media/sydevox0s09j4r/slideshow_pager/SECO_S2_F4_SD.jpg" data-source_url="/media/sydevox0s09j4r/source/SECO_S2_F4_SD.jpg" rel="post"><img src="/media/sydevox0s09j4r/post/SECO_S2_F4_SD.jpg" alt="Focus on improving the splash damage absorption of their all-purpose shield generator line, Seal Corporation’s INK-Splash generator exchanges some protection from direct fire for extra strength against missiles." /><span class="caption">Focus on improving the splash damage absorption of their all-purpose shield generator line, Seal Corporation’s INK-Splash generator exchanges some protection from direct fire for extra strength against missiles.</span></a>
+
+<a class="image  js-open-in-slideshow" data-id="ltyvkw5tmefvcr" data-full_res="/media/ltyvkw5tmefvcr/source/Shield-325R-2.jpg" data-low_res="/media/ltyvkw5tmefvcr/slideshow_pager/Shield-325R-2.jpg" data-source_url="/media/ltyvkw5tmefvcr/source/Shield-325R-2.jpg" rel="post"><img src="/media/ltyvkw5tmefvcr/post/Shield-325R-2.jpg" alt="" /></a>
+
+<p>We’ve just completed the first round of variant shield generators, representing 2 variant styles with size 1-4 models available. When setting these generators up, we first roughed out a general set of variant styles to help set a baseline for how they’ll perform in game. After that, we brought in David and Will to help us sort out which of our component manufactures would really be producing these kinds of equipment.<br />
+Here are some of the high-level shield variations we’ve been thinking of. Not all of these are built out, but it serves as a reference point when helping to figure out who makes what:</p>
+
+<ul>
+	<li><strong>Military</strong> – High Damage, High Recharge, High Power Use, High Signal</li>
+</ul>
+
+<ul>
+	<li><strong>Stealth</strong> – Low Damage, Low Power Use, Low Signal</li>
+</ul>
+
+<ul>
+	<li><strong>Civilian</strong> – Everything’s Even</li>
+</ul>
+
+<ul>
+	<li><strong>Racer</strong> – Low Damage, Rapid Recharge</li>
+</ul>
+
+<ul>
+	<li><strong>Industrial</strong> – High Damage, Low Recharge, Low Power Use, High Signal</li>
+</ul>
+
+<ul>
+	<li><strong>Outlaw</strong> – Weird Stuff – Vampire Shields, Flux Shields, etc.</li>
+</ul>
+
+<p>Next, manufactures were assigned to the high-level ideas:</p>
+
+<ul>
+	<li><strong>Military</strong> – Gorgon Defender Industries</li>
+</ul>
+
+<ul>
+	<li><strong>Stealth</strong> – Ascension Astro (or Lightning Power <span class="caps">LTD</span>)</li>
+</ul>
+
+<ul>
+	<li><strong>Civilian</strong> – Seal Corp (Average), Behring (high end)</li>
+</ul>
+
+<ul>
+	<li><strong>Racer</strong> – Yorm</li>
+</ul>
+
+<ul>
+	<li><strong>Industrial</strong> – Basilisk</li>
+</ul>
+
+<ul>
+	<li><strong>Outlaw</strong> – SternenKatzen</li>
+</ul>
+
+<p>Now on to the variant styles. These are the 6 styles we’ve started to build out and get ready for use, along with their high-level role and assigned manufacture.</p>
+
+<ul>
+	<li><strong>Rapid Charge</strong> – Low recharge delay and high recharge value, offset by weaker base shields with lower HP. – Racer (Yorm)</li>
+</ul>
+
+<ul>
+	<li><strong>Durable Item</strong> – Reinforced components with strong component HP and boosted shield HP at the expense of a higher signal. – Industrial (Basilisk)</li>
+</ul>
+
+<ul>
+	<li><strong>Direct Damage Shell</strong> – Improved direct fire absorption with reduced splash damage absorb. – Civilian (Behring or Seal)</li>
+</ul>
+
+<ul>
+	<li><strong>Splash Damage Guard</strong> – Improved splash damage absorption with reduced direct fire absorb. – Civilian (Behring or Seal)</li>
+</ul>
+
+<ul>
+	<li><strong>Second Skin</strong> – Improved overall damage absorption with higher power draw. – Military (Gorgon)</li>
+</ul>
+
+<ul>
+	<li><strong>Hard Light</strong> – Substantially improved shield HP and absorption with increased Heat generation. – Military (Gorgon)</li>
+</ul>
+
+<p>After this, we went over the actual art assets that will be used for the new generators, and for the new shields being added with 1.0.2, we decided that Seal Corp would be the best fit. Now, with the design, art, and fiction for these shields all lined up, we end up with the new Seal Corp <span class="caps">INK</span>-Mark and <span class="caps">INK</span>-Splash Shield Generators. </p>
+
+<p>The <span class="caps">INK</span>-Mark represents the Direct damage style, with the <span class="caps">INK</span>-Splash filling the Splash Damage style. As their style describes them, they’re each tuned to improve their performance against a specific type of incoming damage. Direct damage variants will have higher absorption from direct kinetic, energy and distortion damage, while it’s splash-absorption for each damage type is reduced. Similarly, the splash damage variants will be the inverse, with boosted splash kinetic, energy, and distortion absorption. </p>
+
+<p>If you’re having trouble with missiles, a Splash Damage variant shield will help give you some extra breathing room to return fire. If you can dodge missiles well enough, and want more head-to-head fighting power, the Direct Damage variants will be ideal, taking some of the punch out of your enemies guns. In the end, it’s all about the operator having enough choices to make their ship fit their playstyle.</p>
+
+<p>These new shields are also just the first of many variants for not only shields, but any ship component. We’re taking a similar approach to each major component, starting with a few core variants, and building a foundation to help guide future variants both in terms of their performance and their lore. </p>
+
+<p>Zane and Brandon are working to bring increased levels of control to the shield systems, from the interfaces that allow players to manually prioritize their shields, to the use of presets to switch quickly in the heat of battle, to the more advanced kits which can throttle power for individual shield faces. This will open up opportunities for stealth ships to ease into a situation without announcing themselves, or for the truly desperate to push their shields, coolers, and power plants to the breaking point in the fight to survive.</p>
+
+<p>With Multi-Crew just over the horizon, we’re continuing to look at ways to make shield gameplay more cooperative and more active to benefit those interested in putting in the effort to reap the rewards. A ship decked out with high output shields, custom augmentations, and shield-boosting mastery can effectively run as a defensive screen for a friendly ship, with maximum effectiveness coming from tight formations of focused players covering each other’s blind spots.</p></div><div class="cboth"></div></div>
+<div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+<div class="wrapper"><div class="hr"></div><div class="content-block4"><div class="content"><div class="top"></div><h1>Management of Shields</h1><div class="cboth"></div></div><div class="bottom"></div></div><div class="content-block1 rsi-markup">
+<div  class=' segment' ><div class="content"><a class="image  js-open-in-slideshow" data-id="ti51cieg6uytdr" data-full_res="/media/ti51cieg6uytdr/source/Current_shield_management.png" data-low_res="/media/ti51cieg6uytdr/slideshow_pager/Current_shield_management.png" data-source_url="/media/ti51cieg6uytdr/source/Current_shield_management.png" rel="post"><img src="/media/ti51cieg6uytdr/post/Current_shield_management.png" alt="" /></a>
+
+<h2>Shield Management Today</h2>
+
+<p><span class="initial">C</span>urrent shield management is handled through a dedicated context on the <span class="caps">CVI</span> (Combat Visor Interface), or on a Multi-Function Display. Here, one can redistribute the allocation of power to each of the various shield faces, as well as monitor the status of each shield face. Shield allocation is handled by positioning the allocation pips for both your ship’s longitudinal and vertical axes. </p>
+
+<h2>Shield Management Tomorrow</h2>
+
+<p>But that’s just the start! We are currently developing a much more comprehensive system, which will premiere on multi-crew ships (before being adopted back to single seaters.) </p>
+
+<p>The multi-crew shield management screen allows a support crew member to manage both the shield generators installed on this ship and any shield segments generated. The multi-crew shield management screen also allows from more granular control of the ships shield generators. A mockup of the shield management screen is included, which breaks down into several individual pieces.</p>
+
+<div class="full-screen-image">
+<img src="https://robertsspaceindustries.com/media/jfbmxoc7hx5h0r/source/Multicrew2.png" />
+</div>
+
+<h2>Action Shelf</h2>
+
+<a class="image  js-open-in-slideshow" data-id="35g3d1nj2vl8ar" data-full_res="/media/35g3d1nj2vl8ar/source/Action-Shelf.png" data-low_res="/media/35g3d1nj2vl8ar/slideshow_pager/Action-Shelf.png" data-source_url="/media/35g3d1nj2vl8ar/source/Action-Shelf.png" rel="post"><img src="/media/35g3d1nj2vl8ar/post/Action-Shelf.png" alt="" /></a>
+
+<p>The Action Shelf shows all available actions as tabs much like the way the management pages are shown on the single-pilot ship <span class="caps">HUD</span>s. The Action Shelf consists of the following:</p>
+
+<ul>
+	<li><strong>Action Tabs</strong>: The actions available to this station – usually limited to three actions. Each shows an acronym for the action the tab represents i.e. <span class="caps">PWR</span> for Power Management</li>
+</ul>
+
+<ul>
+	<li><strong>User details</strong>: This section shows who is logged on to the action</li>
+</ul>
+
+<ul>
+	<li><strong>Settings</strong>: Opens a settings panel</li>
+</ul>
+
+<h2>Ship Information Section</h2>
+
+<a class="image  js-open-in-slideshow" data-id="ajjb8rzv2v0y0r" data-full_res="/media/ajjb8rzv2v0y0r/source/Shipinformation.png" data-low_res="/media/ajjb8rzv2v0y0r/slideshow_pager/Shipinformation.png" data-source_url="/media/ajjb8rzv2v0y0r/source/Shipinformation.png" rel="post"><img src="/media/ajjb8rzv2v0y0r/post/Shipinformation.png" alt="" /></a>
+
+<p>This is your overall view of a ship’s shield situation. It shows the general ship information, of use to any crew member. The 3D schematic shows a holographic view of the ship including components, shield segments and hull damage, which the player will be able to maniupate by dragging and dropping the mesh. Rotate, zoom and pan! The player will also be able to select objects by left-clicking. Objects so selected will indicate the status of individual components.</p>
+
+<p>Information included in the ship information section is as follows:</p>
+
+<ul>
+	<li><strong>Power Usage</strong>: Shows the condition of the power plant, whether it is online or offline, the total power points available, the current idle usage and the potential power usage (if all components are active.)</li>
+</ul>
+
+<ul>
+	<li><strong><span class="caps">CPU</span> Usage</strong>: Shows the ships’ <span class="caps">CPU</span> usage and load, whether online or offline, the total <span class="caps">CPU</span> cycles available, the current idle usage and the potential <span class="caps">CPU</span> load (if all applicable components are active.)</li>
+</ul>
+
+<ul>
+	<li><strong>IR and EM output</strong>: These function exactly as the IM and EM output meters on the AC ships <span class="caps">HUD</span>. Each bar shows the ships current EM or heat output. The minimum bar value represents zero (i.e. no heat or all power is off) and the maximum bar value represents the highest potential heat or EM output for that ship with all fitted components active. As a predetermined amount of time expires a new bar is added to the graph and the other bars shift to the left.</li>
+</ul>
+
+<h2>Presets</h2>
+
+<p>Each action has five presets allowing the player to save their current configuration or recall a saved one. They may also import presets from ships of the same type. This will allow pilots to have favorite options selected depending on the situation. Want more power to the shields when you’re in an asteroid field? Or want a setting that reduces your power entirely for a quick escape? The presets let you make these choices quickly!</p>
+
+<a class="image  js-open-in-slideshow" data-id="kd44x5snnzmyrr" data-full_res="/media/kd44x5snnzmyrr/source/Presets.png" data-low_res="/media/kd44x5snnzmyrr/slideshow_pager/Presets.png" data-source_url="/media/kd44x5snnzmyrr/source/Presets.png" rel="post"><img src="/media/kd44x5snnzmyrr/post/Presets.png" alt="" /></a>
+
+<h2>Generator Info</h2>
+
+<a class="image  js-open-in-slideshow" data-id="oh2whrjfol0c8r" data-full_res="/media/oh2whrjfol0c8r/source/Generatorinfo.png" data-low_res="/media/oh2whrjfol0c8r/slideshow_pager/Generatorinfo.png" data-source_url="/media/oh2whrjfol0c8r/source/Generatorinfo.png" rel="post"><img src="/media/oh2whrjfol0c8r/post/Generatorinfo.png" alt="" /></a>
+
+<p>This section shows all the shield generators installed on the player&#8217;s ship and allows the player to tweak their performance. The Generator Info pane further divides into several subsections.</p>
+
+<p><strong>Installed Generators</strong>: In this example, there are four slots here which can be taken up by shield generators. This allows the player to gain basic generator information at a glance. This section shows:</p>
+
+<ul>
+	<li>If the generator is powered on or off</li>
+	<li>If the generator is disabled or destroyed</li>
+	<li>The current damage level of the generator</li>
+</ul>
+
+<p>These buttons can be selected to show more information about the highlighted generator. Once selected the panel to the right is filled with additional information:</p>
+
+<ul>
+	<li>The name of the generator</li>
+	<li>Heat levels</li>
+</ul>
+
+<p><strong>Generator Priority</strong>: The player may also set the performance priority of the generators with the caveat that increasing performance in one area reduces the effectiveness of the other two. There are three attributes the player can tweak:</p>
+
+<ol>
+	<li><strong>Maximum Shield Points (<span class="caps">MSP</span>):</strong> The amount of shield points that the generators have to distribute between all shield segments. Although this increases the strength of the shields it also puts more pressure on the power plant which must spend more of its time and output regenerating the shields.</li>
+	<li><strong>Shield Regeneration (<span class="caps">RGN</span>):</strong> This is the amount of points the shields regenerate per “pip”. Increasing this reduces the time it take to take the shields back to full health when damaged.</li>
+	<li><strong>Shield recovery (<span class="caps">REC</span>):</strong> When a shield segment is taken down it requires time to recover i.e. before the regeneration starts. During this time the players’ ship is vulnerable. Increases this attribute reduces the amount of time needed to the shields to recover.</li>
+</ol>
+
+<h2>Generator Priority Example</h2>
+
+<p>This example assumes tha the player has a single shield generator capable of generating 100 shield points. It recharges at 10 shield points per second and has a recovery time of 2 seconds. In the default positon the bars are shown at 33% each. </p>
+
+<a class="image  js-open-in-slideshow" data-id="xid72j04i2uner" data-full_res="/media/xid72j04i2uner/source/Generator-Priority-Example1.png" data-low_res="/media/xid72j04i2uner/slideshow_pager/Generator-Priority-Example1.png" data-source_url="/media/xid72j04i2uner/source/Generator-Priority-Example1.png" rel="post"><img src="/media/xid72j04i2uner/post/Generator-Priority-Example1.png" alt="" /></a>
+
+<p>If the player fully prioritizes the <span class="caps">MSP</span> attribute by 25% the <span class="caps">RGN</span> and <span class="caps">REC</span> are both decreased by 12.5% each</p>
+
+<a class="image  js-open-in-slideshow" data-id="y5xoeithqegt5r" data-full_res="/media/y5xoeithqegt5r/source/Generator-Priority-Example2.png" data-low_res="/media/y5xoeithqegt5r/slideshow_pager/Generator-Priority-Example2.png" data-source_url="/media/y5xoeithqegt5r/source/Generator-Priority-Example2.png" rel="post"><img src="/media/y5xoeithqegt5r/post/Generator-Priority-Example2.png" alt="" /></a>
+
+<h2>Shield Segments</h2>
+
+<p>This section allows the player to manage up to six shield segments and allows the same functionality seen on the single-player ship <span class="caps">HUD</span>. </p>
+
+<ul>
+	<li><strong>Change priority levels</strong>: The player can prioritise a particular segment by modifying the slider. Increasing the priority of a shield segment takes the required shield points from all adjacent segments but does not require any more power to achieve.</li>
+</ul>
+
+<ul>
+	<li><strong>Reinforce</strong>: Reinforcing a segment allows that segment to exceed its normal maximum limit. This is achieved by shunting shield points from all other segments. This is not a safe procedure and draws additional power from the plant equal to the amount of shield points transferred.</li>
+</ul>
+
+<ul>
+	<li><strong>Boost</strong>: The player can boost the regeneration of a shield segment. This draws power directly from the plant to achieve the boost.</li>
+</ul>
+
+<h2>Social</h2>
+
+<p>Social?! That’s right: on larger ships, you will want to interact with a crew of friends and <span class="caps">NPC</span>s to balance shields as needed. Imagine your buddy reporting his shield has taken a hit and his turret is now unprotected… so you can reroute power to cover him quick!</p>
+
+<p><div class="variant-block"></p>
+
+<a class="image  js-open-in-slideshow" data-id="386wpch43cd27r" data-full_res="/media/386wpch43cd27r/source/Social-Section.png" data-low_res="/media/386wpch43cd27r/slideshow_pager/Social-Section.png" data-source_url="/media/386wpch43cd27r/source/Social-Section.png" rel="post"><img src="/media/386wpch43cd27r/source/Social-Section.png" alt="" /></a>
+
+<a class="image  js-open-in-slideshow" data-id="tew867mcv9gwur" data-full_res="/media/tew867mcv9gwur/source/Notifications-Section.png" data-low_res="/media/tew867mcv9gwur/slideshow_pager/Notifications-Section.png" data-source_url="/media/tew867mcv9gwur/source/Notifications-Section.png" rel="post"><img src="/media/tew867mcv9gwur/source/Notifications-Section.png" alt="" /></a>
+
+<p></div></p>
+
+<p>In addition to the standard flight log, the social panel will display messages relating to actions: player requests, damage to ships or weapons and critical component states. Notifications are requests or commands from other players which appear as selectable buttons in the list. Each button has the following attributes:</p>
+
+<ul>
+	<li>An icon indicating the action required. For example a power on/off request would appear as a power icon.</li>
+	<li>The name of the player that sent the request</li>
+	<li>A brief description of the action requested<br />
+Selecting a request opens the request window where the operator may accept or decline the request.</li>
+</ul>
+
+<p>That’s our vision for shield management in future iterations of Arena Commander. The hope is that it will be both simple and complex: easy to pick up, hard to learn. And as ships get larger, we see it as an opportunity to encourage players to work together to better crew a ship… and to have the experiences they’re craving after a lifetime of seeing multicrew ships in films and on television!</p></div><div class="cboth"></div></div>
+<div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+<div class="wrapper"><div class="hr"></div><div class="content-block4"><div class="content"><div class="top"></div><h1>Under the Hood</h1><div class="cboth"></div></div><div class="bottom"></div></div><div class="content-block1 rsi-markup">
+<div  class=' segment' ><div class="content"><a class="image  js-open-in-slideshow" data-id="uvs00bx3zq0rlr" data-full_res="/media/uvs00bx3zq0rlr/source/Earlyshield-1.png" data-low_res="/media/uvs00bx3zq0rlr/slideshow_pager/Earlyshield-1.png" data-source_url="/media/uvs00bx3zq0rlr/source/Earlyshield-1.png" rel="post"><img src="/media/uvs00bx3zq0rlr/post/Earlyshield-1.png" alt="Sequence of images showing our initial iteration of the shield that give an idea of the noise patterns that go into it" /><span class="caption">Sequence of images showing our initial iteration of the shield that give an idea of the noise patterns that go into it</span></a>
+
+<a class="image  js-open-in-slideshow" data-id="qmbgekm2rm2pdr" data-full_res="/media/qmbgekm2rm2pdr/source/Earlyshield-2.png" data-low_res="/media/qmbgekm2rm2pdr/slideshow_pager/Earlyshield-2.png" data-source_url="/media/qmbgekm2rm2pdr/source/Earlyshield-2.png" rel="post"><img src="/media/qmbgekm2rm2pdr/post/Earlyshield-2.png" alt="" /></a>
+
+<a class="image  js-open-in-slideshow" data-id="yf2ruznk45zqvr" data-full_res="/media/yf2ruznk45zqvr/source/Earlyshield-3.png" data-low_res="/media/yf2ruznk45zqvr/slideshow_pager/Earlyshield-3.png" data-source_url="/media/yf2ruznk45zqvr/source/Earlyshield-3.png" rel="post"><img src="/media/yf2ruznk45zqvr/post/Earlyshield-3.png" alt="" /></a>
+
+<p><span class="initial">T</span>hat’s all well and good, but how do our shields work, deep down? With the current implementation, we keep track of up to 32 simultaneous hits on each ship that are rendered onto a bespoke shield mesh. An impact wave is generated and mapped onto the shield mesh for each hit based on the hit’s parameters, and by applying a variety of 4 dimensional coherent noise/gradient patterns, we are able to make the effect propagate smoothly over the shield’s surface.</p>
+
+<p>We plan to overhaul the effect soon though, to address some of its existing limitations and add features requested by Chris Roberts. The biggest change involves dynamically generating the shape of the shield every frame using the existing art and physics meshes. This will allow the shield to wrap more tighter around every part of the ship, morph to match animating parts such as turrets and engines, and adapt to changes in the ship’s silhouette due to parts being blown off. It will also simplify ship setup as we will no longer need to manually create a <span class="caps">UVW</span>-unwrapped shield mesh for each ship.</p>
+
+<p>To improve the scalability of the effect, hit impacts will be accumulated in an off-screen buffer first, then shaded in a deferred pass. This will allow for a larger number of simultaneous impacts, which will be crucial for our larger ships. The noise patterns will also be read from textures instead of being calculated procedurally, to allow for more variety and better artist control.</p></div><div class="cboth"></div></div>
+<div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+<div class="wrapper"><div class="hr"></div><div class="content-block4"><div class="content"><div class="top"></div><h1>First Person Shooter</h1><div class="cboth"></div></div><div class="bottom"></div></div><div class="content-block1 rsi-markup">
+<div  class=' segment' ><div class="content"><p><span class="initial">S</span>hips aren’t the only place shields appear in Star Citizen! We are also working on personal shields which can be used in the upcoming First Person Shooter module. In <span class="caps">FPS</span>, players are able to deploy a gadget that can protect them from incoming fire. The <span class="caps">QDB</span> (Quick Deployment Barricade), also referred to as the Quikcade, can be deployed anywhere it can fit and in any area that has gravity. The <span class="caps">QDB</span> has just enough shield power to prevent damage in those critical moments. Players are able to use the <span class="caps">QDB</span> as a cover surface as well. The <span class="caps">QDB</span> uses the same technology behind shields used by ships, but in a small compact form. Shields take up a lot of energy, so the <span class="caps">QDB</span> can’t withstand as much damage as ships because of its portable nature.</p>
+
+<p>While on board a ship, players will find shields being used in many other places. From Hangar bay doors and other blockers within the ships structure, the variety of your encounters while on foot could be vast. How a shield is being powered will determine how much health it has. </p>
+
+<div class="half-page-image">
+<img src="https://robertsspaceindustries.com/media/kwxpu4cbyo1nlr/post/Shield_Up.gif" />
+</div>
+
+<div class="half-page-image">
+<img src="https://robertsspaceindustries.com/media/a6vwjuhp1bar0r/post/Shield_Down.gif" />
+</div></div><div class="cboth"></div></div>
+<div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+<div class="wrapper"><div class="hr"></div><div class="content-block4"><div class="content"><div class="top"></div><h1>What's Next?</h1><div class="cboth"></div></div><div class="bottom"></div></div><div class="content-block1 rsi-markup">
+<div  class=' segment' ><div class="content"><a class="image  js-open-in-slideshow" data-id="mhq9sg82u772kr" data-full_res="/media/mhq9sg82u772kr/source/Shield-325R.jpg" data-low_res="/media/mhq9sg82u772kr/slideshow_pager/Shield-325R.jpg" data-source_url="/media/mhq9sg82u772kr/source/Shield-325R.jpg" rel="post"><img src="/media/mhq9sg82u772kr/post/Shield-325R.jpg" alt="" /></a>
+
+<p><span class="initial">B</span>eyond what we’ve discussed above, there are a number of improvements to the shield systems that we’ve started to consider, and while these designs aren&#8217;t fleshed out yet, this is the perfect place to provide that first glimpse of what is to come.</p>
+
+<p>One such improvement comes from an unexpected place – signature management. Among the necessary pieces for signature management is the relative signals of the environment and other objects that effectively give you something to hide behind, and that same system extends to help describe exactly how the local gases, radiation or ion storm will affect your shields. This gives rise to the player having ways to push back against these adverse conditions, a new element to juggle when deciding how to manage those shield allocations described before. Sometimes it will be enough to push all your shields towards the firefight, but sometimes you’ll need to take into account how weaknesses in one part of the system could affect the performance of the whole… weaknesses derived directly from the core stats of the shield items, meaning that each one will have its own particular balance for you to find. (Score another win for the Arena Commander test bed!)</p>
+
+<p>As the ships we implement continue to get larger, we begin to see opportunities to further physicalize our systems. The strongest elements of Star Citizen give a sense of really existing, functioning such that it can be seen performing its functions, rather than tucked safely away behind a menu or hidden deep within the ship. One way this could be applied to the shield system is by associating shield faces with stabilization emitters, simple little devices placed upon the hull of the ship that conspire to emit an interference pattern which facilitates the movement of energy through the shield system while allowing it to retain its effective shape – all of which is to say that doing damage to an emitter would reduce the health of its shield face, making angle of attack even more important than it already is.</p>
+
+<p>But as long as there’s this snazzy lore for how shields work, why not push it further? Imagine managing shields that behave like a fluid dynamics system, into which you can send impulses to move that energy around, taking a very active role in manipulating even those emitters directly, compensating for damage or preparing for the next onslaught in ways that go well beyond anything your pilot will even understand is happening. Now, while that may not be the direction we end up going at all, it does begin to illustrate the main goal to make these systems deep and involving and proactive.</p>
+
+<p>There could be a Shield Pulse subsystem, in which you sacrifice a great deal of the power sustaining your shields in order to build up a charge, one which will significantly boost those shields for a short time when you release that energy again. This charge-up would gradually increase heat and power signature, making it a balance game for anyone using this to get the upper hand in an ambush before they give themselves away, and the charge could be built up in stages, giving the ambushee the chance to push their shields every time they can break line of sight for a few moments.</p>
+
+<p>We could have a Direct Projection Mode, which takes all of your shield faces and merges them down into only one – leaving you exposed to attacks from all other directions, but strengthening the health and regeneration of the remaining face beyond even the total health you might normally get (energy fields reinforcing each other, you understand). Then the shield operator could aim this singular shield face directly, taking a very hands-on approach to damage mitigation, making a well-oiled machine of a team into a true force to be reckoned with.</p>
+
+<p>And all of that is great, and it’s territory ripe for exploration, but the core of shields (and of SC as a whole) remains in carving out your own experience. Each of these features is designed to layer atop the next, providing a deeper experience to those who seek it while those interested in other things get the tools to have fun without it. </p></div><div class="cboth"></div></div>
+<div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+<div class="wrapper"><div class="hr"></div><div class="content-block4"><div class="content"><div class="top"></div><h1>DISCLAIMER</h1><div class="cboth"></div></div><div class="bottom"></div></div><div class="content-block1 rsi-markup">
+<div  class=' segment' ><div class="content"><p><em>As with any design post, this article represents our current thinking for the systems covered. All content is subject to change as a result of testing. The numbers provided here represent data that is current as of publication, but which will likely be altered in a number of ways before launch to create the best possible Star Citizen experience.</em></p></div><div class="cboth"></div></div>
+<div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+
+  <div class="wrapper">
+    
+    <div class="end-transmission-container">
+      <div class="glow left"></div>
+      <div class="title-bar">
+        <h1>End Transmission</h1>
+      </div>
+      <div class="glow right"></div>
+    </div>
+  </div>
+  
+
+  
+    <div class="two-line-separator"></div>
+  <div class="channel-banner">
+  <div class="header-container">
+                  <div>
+      <div class="header">
+        <div class="wrapper">
+                      <div class="image" style="background-image:url('/media/pyyixaff2cnk6r/post_section_header/Screen-Shot-2015-03-13-At-23753-PM.png');"></div>
+                    <div class="texts">
+            <div class="title">
+              <div class="presented-by">Part of</div>
+              <div class="cboth"></div>
+              <h1>Design Post</h1>
+              <a  class="holobtn " href="/comm-link?series=design"  >
+  <span class="holobtn-top abs-overlay trans-02s">More in this series </span>
+  <span class="holobtn-bottom abs-overlay trans-02s"></span>
+</a>
+              <div class="cboth"></div>
+            </div>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content-carousel">
+    <div class="carousel-mask">
+      <div class="left-shadow shadow"></div>
+      <a href="" class="prev js-prev"><div class="hover trans-03s trans-opacity"></div></a>
+      <div class="centerer">
+        <div class="carousel">
+                      <a href="/comm-link/transmission/12741-Physics-Not-A-Dirty-Word" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/to9187vbpgz71r/home_transmissions_item_expanded/Physics_landing.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Physics - Not a Dirty Word</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2012-10-20 10:47:56</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/12770-Chris-Roberts-On-Multiplayer-Single-Player-And-Instancing" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/k7uyn4grjdco9r/home_transmissions_item_expanded/Instance1.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Chris Roberts on Multiplayer, Single Player and Instancing</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2012-11-11 08:36:07</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/12879-Death-Of-A-Spaceman" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/49k0oeirhn5vor/home_transmissions_item_expanded/Ejectfloat2.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Death of a Spaceman</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-02-05 17:02:05</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/13128-The-Star-Citizen-Economy" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/dak6923763l85r/home_transmissions_item_expanded/Screen-Shot-2013-07-05-At-94729-AM.png');"></div>
+    <div class="title trans-opacity trans-03s">The Star Citizen Economy</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2013-07-05 23:45:00</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/13951-Flight-Model-And-Input-Controls" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/3lvrwmcu6rssyr/home_transmissions_item_expanded/Left_Bank.JPG');"></div>
+    <div class="title trans-opacity trans-03s">Flight Model and Input Controls</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2014-06-16 20:00:00</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/transmission/14142-Design-Updating-Ship-Stats-For-Gameplay" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/4xqx0qga0j56qr/home_transmissions_item_expanded/M50_comp52.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Design: Updating Ship Stats for Gameplay</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2014-09-12 12:00:00</span></div>
+    <div class="section">transmission</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/14318-Healing-Your-Spacemen" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/r5gowdf3n4m2vr/home_transmissions_item_expanded/Sequence-01Still015.png');"></div>
+    <div class="title trans-opacity trans-03s">Healing Your Spacemen</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2014-11-21 00:00:00</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/14466-Design-Notes-MobiGlas" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/s4t7x926y5vf3r/home_transmissions_item_expanded/01_cover.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Design Notes: mobiGlas</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-01-31 00:37:26</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/14489-Design-Notes-Shields-Management" class="series-carousel-item content-block3 trans-05s  on">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/xa28r2s11nw87r/home_transmissions_item_expanded/Shield-Hornet.png');"></div>
+    <div class="title trans-opacity trans-03s">Design Notes: Shields & Management</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-02-07 03:03:36</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/14502-Design-Notes-Rental-Equipment-Credits" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/a0o1lglus208kr/home_transmissions_item_expanded/ArenaCommanderLogoSkinned.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Design Notes: Rental Equipment Credits</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-02-14 03:07:55</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/14522-Design-Notes-Mining" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/nwpgwvdk2pnfqr/home_transmissions_item_expanded/ShubinPaintOverTest2.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Design Notes: Mining</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-02-21 04:09:35</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/14568-Design-Notes-New-Damage-System" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/iv87768rqlz33r/home_transmissions_item_expanded/Figure14.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Design Notes: New Damage System</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-03-08 00:32:29</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/14570-Design-Notes-Weapons-Mount-Updates" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/dv9x6o6y5xidwr/home_transmissions_item_expanded/Designweapons-Wildm50.png');"></div>
+    <div class="title trans-opacity trans-03s">Design Notes: Weapons Mount Updates</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-03-14 03:20:01</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/14653-Design-Notes-FPS-Stances-Breathing" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/jxtod1bu7y1m9r/home_transmissions_item_expanded/Stance_HEADER.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Design Notes: FPS Stances & Breathing</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-04-11 01:01:38</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/14677-Design-Notes-Cargo-Interaction" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/zqr3nh7bf8u6mr/home_transmissions_item_expanded/Manifest_1_by_zane_bien.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Design Notes: Cargo Interaction</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-04-25 05:38:48</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/14804-Design-Notes-Civilian-Passenger-Transport" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/jsy6db85v0i3rr/home_transmissions_item_expanded/Starliner_full.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Design Notes: Civilian Passenger Transport</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-06-27 01:45:45</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/14974-Design-Notes-The-Endeavor" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/ikzf72nss6tkpr/home_transmissions_item_expanded/CO_Beauty_Supercollider.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Design Notes: The Endeavor</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-09-30 00:47:01</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/15062-Design-Notes-Ship-Repair-And-Maintenance" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/vxj1ppzl3xmhdr/home_transmissions_item_expanded/AnvilcrucibleREARMAINTENANCE.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Design Notes: Ship Repair and Maintenance</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-11-19 19:34:40</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16163-The-Shipyard-Careers-And-Roles" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/t56meua5137aar/home_transmissions_item_expanded/Resources1.jpg');"></div>
+    <div class="title trans-opacity trans-03s">The Shipyard: Careers and Roles</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">4 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16170-The-Shipyard-Ship-Mass" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/j5u3m8f6mvohfr/home_transmissions_item_expanded/Support2.jpg');"></div>
+    <div class="title trans-opacity trans-03s">The Shipyard: Ship Mass</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">4 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16172-The-Shipyard-Ship-Technical-Information" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/oddca9e9b7g65r/home_transmissions_item_expanded/Anvil_Terrapin_Piece_01_Hangar.jpg');"></div>
+    <div class="title trans-opacity trans-03s">The Shipyard: Ship Technical Information</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">4 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16179-The-Shipyard-Ship-Thrusters-And-You" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/p65z93se1d9j8r/home_transmissions_item_expanded/Gladius_Front.jpg');"></div>
+    <div class="title trans-opacity trans-03s">The Shipyard: Ship Thrusters and You</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">4 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16181-The-Shipyard-Weapon-Hardpoints" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/7t5g0mci5il9zr/home_transmissions_item_expanded/Hornet05.jpg');"></div>
+    <div class="title trans-opacity trans-03s">The Shipyard: Weapon Hardpoints</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">4 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16185-The-Shipyard-Turrets" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/lkj9x01i6jdmvr/home_transmissions_item_expanded/Turret-Battle-Copy.jpg');"></div>
+    <div class="title trans-opacity trans-03s">The Shipyard: Turrets</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">4 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16190-The-Shipyard-Ordnance-Hardpoints" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/s685xhw6lcf5mr/home_transmissions_item_expanded/HRST_all.jpg');"></div>
+    <div class="title trans-opacity trans-03s">The Shipyard: Ordnance Hardpoints</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">4 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16193-The-Shipyard-Other-Ship-Items" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/5gwalmm7tic6fr/home_transmissions_item_expanded/Sub-Item_Master_Sheet-Comp.jpg');"></div>
+    <div class="title trans-opacity trans-03s">The Shipyard: Other Ship Items</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">4 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16204-The-Shipyard-SCU-And-Cargo-Capacity" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/tblqxdwnnye8mr/home_transmissions_item_expanded/Grid.png');"></div>
+    <div class="title trans-opacity trans-03s">The Shipyard: SCU and Cargo Capacity</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">4 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16205-The-Shipyard-Variants-And-Modules" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/ugt59cfkhgl0fr/home_transmissions_item_expanded/ScreenShot0001.jpg');"></div>
+    <div class="title trans-opacity trans-03s">The Shipyard: Variants and Modules</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">4 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16517-The-Shipyard-Fuel-Mechanics" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/ci67ohd53cy78r/home_transmissions_item_expanded/Air.jpg');"></div>
+    <div class="title trans-opacity trans-03s">The Shipyard: Fuel Mechanics</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">4 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16671-The-Shipyard-Medical-Gameplay" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/igz05do2rrv3jr/home_transmissions_item_expanded/RSI_Apollo_medevac_v01.jpg');"></div>
+    <div class="title trans-opacity trans-03s">The Shipyard: Medical Gameplay</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">3 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                  </div>
+      </div>
+      <a href="" class="next js-next"><div class="hover trans-03s trans-opacity"></div></a>
+      <div class="right-shadow shadow"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $(".channel-banner .content-carousel").each(function(index, element) {
+      $(element).data("carousel", new RSI.FullCarousel({
+        holder:$(element).find(".carousel"),
+        prevButton:$(element).find(".js-prev"),
+        nextButton:$(element).find(".js-next"),
+        circular:true,
+        displayItems:3 // healthy amount so that we never see empty
+      }));
+    });
+  });
+</script>
+    
+
+  <div class="two-line-separator"></div>
+  
+    
+<div class="wrapper force-one-column" id="comments">
+  <div class="holder">
+    <div class="title-bar">
+      <div class="count">
+        <div class="label">Comments</div>
+        <div class="value">0311.<span class="js-comment-decimal">0</span></div>
+        <div class="cboth"></div>
+      </div>
+      <div class="title">
+        <h1>Feedback</h1>
+      </div>
+      <div class="cboth"></div>
+    </div>
+
+    <div class="main-buttons-holder-container">
+      <div class="main-buttons-holder">
+        <a href="/connect?jumpto=/comm-link/engineering/14489-Design-Notes-Shields-Management" class="add-comment js-add-comment trans-02s js-modal-login">Add New Comment</a>
+        <div class="settings js-settings">
+          <h1>Settings</h1>
+          <label>View mode:</label>
+          <a href="#" class="js-comments-view to-one-column js-to-one-column trans-01s on">One column</a>
+          <a href="#" class="js-comments-view to-two-columns js-to-two-columns trans-01s ">Two columns</a>
+          <label>Sort by:</label>
+          <a href="#" class="js-comments-sort to-oldest js-to-oldest trans-01s on">Oldest first</a>
+          <a href="#" class="js-comments-sort to-newest js-to-newest trans-01s ">Newest first</a>
+          <a href="#" class="js-comments-sort to-appreciated js-to-appreciated trans-01s ">Most appreciated first</a>
+
+                  </div>
+        <a href="" class="view-settings js-view-settings"><div class="hover trans-02s"></div></a>
+        <div class="triangle"></div>
+      </div>
+    </div>
+
+    
+    <div class="comment-listing"></div>
+
+    <div class="comment-loader traj-loader">
+      <div class="fast-blink"></div>
+      <span>Loading Additional Feedback</span>
+    </div>
+
+    <div class="cboth"></div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    window.comments = new RSI.Comments({
+      atom_url:"/comm-link/engineering/14489-Design-Notes-Shields-Management",
+      comment_listing_el:$(".comment-listing"),
+      comment_submission_form_el:$(".comment-submission"),
+      api_object:RSI.Api.Comments,
+      lazyLoading: true,
+      comment_count: 311,
+      subject_id:14489,
+      append:false,
+      texts: {
+        "edit": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        },
+        "reply": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        }
+      },
+      "insertion_conf": {
+        "mode":"html"
+      },
+      "api_function_names": {
+        "delete":"erase",
+        "load":"listing",
+        "sort":"listing"
+      }
+    });
+  });
+</script>
+  
+</div>
+
+    </div>
+
+    
+  </div>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.11/moment-timezone-with-data.min.js"></script>
+
+<script type="text/plain" data-cookieconsent="statistics">
+  $.cookie('moment_timezone', moment.tz.guess(), { expires: 31, path: '/' });
+</script>
+
+
+
+
+               <script id="tpl_number_counter_digits" type="text/x-jsmart-tmpl">{if !$seperator}{$seperator=','}{/if}
+{if !$first_max}{$first_max=9}{/if}
+{for $digit = 0 to $length-1}
+  <div class="mask">
+    <div class="carousel">
+      {if $digit == 0}
+        {$max = $first_max}
+      {else}
+        {$max = 9}
+      {/if}
+      {for $i=0 to $max}
+        <div class="item {if $val_arr[$digit] == $i}on{/if}" rel="{$i}">{$i}</div>
+      {/for}
+    </div>
+  </div>
+  {if ($length - $digit) % 3 == 1 && $digit != $length-1}
+  <div class="seperator">{$seperator}</div>
+  {/if}
+{/for}</script>
+<script id="base_modal" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  <div class="top-border">
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+  </div>
+</div></script>
+<script id="base_modal_flat" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  </div>
+  
+</div></script>
+<script id="tpl_modals_slideshow" type="text/x-jsmart-tmpl"><img class="top-border" src="/rsi/static/images/modal_top.png">
+<a href="" class="close js-close"></a>
+<div class="mask">
+  <a class="js-prev prev control"></a>
+  <a class="js-next next control"></a>
+  <div class="slideshow-carousel carousel" rel="{$index}">
+    {foreach from=$images item="image"}
+      <div class="{if $index == $image@index}on{/if}">
+      {if $image.is_video}
+        <div class="video-holder">
+          <div id="slideshow_video_{$image@index}" data-source="{$image->source_url}">
+            <video width="100%" height="100%" preload="auto" {if $video}src="{$image->source_url}"{/if} controls></video>
+          </div>
+        </div>
+      {else}
+        <div class="media js-media-slideshow-{$image@iteration}">
+        {if $image.low_res}
+          <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source data-srcset="{$image.full_res}" media="(min-width: 300px)" />
+            <!--[if IE 9]></video><![endif]-->
+            <img data-srcset="{$image.low_res}" alt="{$image.title}" />
+          </picture>
+        {else}
+          <img data-src="{$image.source_url}" />
+        {/if}
+        </div>
+      {/if}
+        <div class="text">
+          {if !$image.is_video}
+          <a href="{$image.source_url}" class="download"></a>
+          {/if}
+          <div class="copyright">© 2012-{$year}<br />Cloud Imperium Games Corporation &<br />Roberts Space Industries Corp.</div>
+          <div class="page-number">{$image@iteration} / {count($images)}</div>
+          <div class="caption v-center">{if $image.title && $image.title != "undefined"}{$image.title}{/if}</div>
+          <div class="cboth"></div>
+        </div>
+      </div>
+    {/foreach}
+  </div>
+</div>
+<img class="bottom-border" src="/rsi/static/images/modal_bottom.png"></script>
+<script id="tpl_contact_us" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="contact" class="inner-content on">
+  <h2><span class="icon"></span>CONTACT</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+  <div class="error-message js-error-message"></div>
+  <div class="success-message js-success-message"></div>
+    <fieldset class="last">
+    <label for="contact_email">Email Address</label>
+    <input type="text" name="email" value="" class="trans-02s trans-color trans-box-shadow" id="contact_email" />
+  </fieldset>
+    <fieldset>
+    <label for="contact_subject">Subject</label>
+    <input type="text" name="subject" value="" class="trans-02s trans-color trans-box-shadow" id="contact_subject" />
+    <label>Contacting us for:</label>
+    <ul class="category-info">
+            <li id="tech_support_info">Questions about download, installation, networking, or in-game client problems</li>
+            <li id="subscription_info">Questions about monthly and yearly subscription plans</li>
+            <li id="account_billing_info">Issues related to your account, such as incorrect information or ability to access account, or Billing with regards to payments and payment methods</li>
+            <li id="melt_request_info">To reclaim a pledge over $1,000 for store credit (please note - this is a permanent action)</li>
+            <li id="merchandise_info">Questions about physical and/or shipped merchandise</li>
+            <li id="hacked_info">Issues related to compromised account or missing pledge.</li>
+            <li id="account_recovery_info">For issues with account authentication, lost passwords and related queries</li>
+            <li id="probation_info">Issues related to forums probation or ban</li>
+            <li id="refund_request_info">Refund requests and related inquiries</li>
+            <li id="customer_support_info">For general questions and queries regarding Star Citizen</li>
+          </ul>
+  </fieldset>
+  <fieldset>
+    <label for="contact_text">Fescription</label>
+    <textarea name="text" class="trans-02s trans-color trans-box-shadow" id="contact_text"></textarea>
+  </fieldset>
+  <div class="contact-submit-wrapper">
+    <div class="line"></div>
+    <button class="submit js-submit"><strong>submit your message</strong></button>
+  </div>
+</form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+<script id="tpl_error" type="text/x-jsmart-tmpl"><div class="modal-error js-modal-error">
+  <p class="modal-text js-modal-text"></p>
+  <a class="close js-close trans-03s .trans-opacity" href=""></a>
+</div></script>
+<script id="tpl_success" type="text/x-jsmart-tmpl"><div class="modal-success js-modal-success">
+  <p class="modal-text js-modal-text"></p>
+  <a class="close js-close trans-03s .trans-opacity" href=""></a>
+</div></script>
+<script id="tpl_progress" type="text/x-jsmart-tmpl"><div class="modal-progress js-modal-progress">
+  <div class="traj-loader">
+    <div class="fast-blink"></div>
+    <span class="modal-text js-modal-text"></span>
+  </div>
+</div></script>
+<script id="tpl_outbound" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="outbound" class="inner-content on">
+  <h2><span class="icon"></span>OUTBOUND LINK</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+      <div class="error-message js-error-message"> <span class=important>WARNING</span><br/><br/> This link will bring you outside of the RSI site and into the depths of the internet. Continue?<br/><br/><span class="url"></span> </div>
+      <div class="success-message js-success-message"><span class=important>STAND BY</span><br/><br/> Initiating hyperlink.<br/><br/></div>
+
+      <fieldset class="clearfix last">
+        <span class="submit-wrapper">
+          <span class="submit-hover trans-02s trans-opacity"></span>
+          <input type="submit" value="WARP" class="trans-02s trans-color trans-background" />
+        </span>
+      </fieldset>
+    </form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+
+<script id="tpl_l-notification-bar" type="text/x-jsmart-tmpl"><div class="l-notification-bar js-notification-bar">
+
+  <div class="l-notification-bar__watermark js-svg-inliner h-svg__logo-star-citizen"></div>
+
+  <div class="l-notification-bar__boxes">
+    {if !$viewedCookieNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='cookie'
+          title='COOKIES:'
+          message="Our website uses Google Analytics to analyze our traffic. <br/>To learn how you can control Google's use of your data and how you can opt out <a href='https://www.google.com/policies/privacy/partners/'>click here</a>."
+          linkText='See Details'
+          buttonText='Got it!'}
+      </div>
+    {/if}
+
+    {if !$viewedPrivacyNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='privacy'
+          title='PRIVACY POLICY:'
+          message='We adjusted the PP to reflect the decision of the European Court of Justice regarding Safe Harbor, the fact that RSI has moved and added some services providers.'
+          linkText='View Privacy Policy'
+          buttonText='Got it!'}
+      </div>
+    {/if}
+  </div>
+
+</div>
+</script>
+<script id="tpl_c-notification" type="text/x-jsmart-tmpl"><div class="c-notification js-bottom-notif-msg-{$type}">
+    <div class="c-notification__title">{$title}</div>
+    <div class="c-notification__message">
+      {$message}
+    </div>
+
+    {if $linkText}
+        <div class="c-notification__wrapper-link">
+            <a class="c-notification__link js-bottom-notif-link-{$type}">
+            {$linkText}
+            </a>
+        </div>
+    {/if}
+
+    <a class="c-notification__button js-bottom-notif-btn-{$type}">
+
+      <span class="c-notification__button-text">
+       {$buttonText}
+      </span>
+
+      {if $type neq 'announcement'}
+        <div class="c-iconed__icon c-iconed__icon--checkmark"></div>
+      {/if}
+    </a>
+</div>
+</script>
+
+<script id="tpl_confirm" type="text/x-jsmart-tmpl"><div class="modal-confirm js-modal-confirm clearfix">
+  <p class="modal-text js-modal-text"></p>
+  <a class="bt-close js-close trans-03s trans-opacity" href=""></a>
+  <a class="bt-confirm js-confirm trans-03s trans-opacity" href=""></a>
+	<div class="buttons">
+		<a class="shadow-button trans-02s trans-color js-close bt-close rm"     >
+  <span class="label js-label trans-02s">Cancel</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+		<a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">Confirm</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+	</div>
+</div>
+</script>
+<script id="tpl_alert" type="text/x-jsmart-tmpl"><div class="modal-alert js-modal-alert clearfix">
+  <p class="modal-text js-modal-text"></p>
+  <div class="buttons">
+    <a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">OK</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+  </div>
+</div></script>
+<script id="tpl_video" type="text/x-jsmart-tmpl">{extends file="base_modal"}
+{block name='modal_content'}
+<div id="ship-commercial" class="inner-content">
+  
+  <div class="hr"></div>
+  <div class="content-block4">
+   
+    <div class="bottom"></div>
+  </div>
+  {if $distant_source=="vimeo"}
+  <iframe id="commercial" src="//player.vimeo.com/video/{$video_id}?wmode=transparent" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+  {else}
+  <iframe id="commercial" frameborder="0" allowfullscreen="1" title="YouTube video player" width="100%" height="100%" src="https://www.youtube.com/embed/{$video_id}?autoplay=1"></iframe>
+  {/if}
+</div>
+{/block}
+</script>
+      
+  <script id="tpl_comment_report" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="comment-report" class="inner-content on">
+  <h2><span class="icon"></span>Report this comment</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+<input type="hidden" name="comment_id" value="">
+  <div class="error-message js-error-message"></div>
+  <div class="success-message js-success-message"></div>
+    <fieldset class="last">
+    <label for="report_email">Email Address</label>
+    <span class="corner-wrapper">
+      <input type="text" name="email" value="" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_email" />
+      <span class="corner corner-top-left"></span>
+      <span class="corner corner-top-right"></span>
+      <span class="corner corner-bottom-left"></span>
+      <span class="corner corner-bottom-right"></span>
+    </span>
+  </fieldset>
+    <fieldset>
+    <label>Report Type</label>
+    
+
+
+  
+    <a class="js-selectlist selectlist " rel="" href="">
+    <div class="arrow"></div>
+    <span>Please select the type best matching your report</span>
+              <ul class="body">
+              
+                                                              <li class="js-option option " rel="obscenity" >
+                                                                        Obscene Content
+                                                    </li>
+                                                                <li class="js-option option " rel="abuse" >
+                                                                        Abusive Conduct
+                                                    </li>
+                                                                <li class="js-option option " rel="other" >
+                                                                        Other
+                                                    </li>
+                                          
+            </ul>
+        <input type="hidden" name="category" class="js-category js-form-data" id="category"/>
+  </a>
+    </fieldset>
+  <fieldset>
+    <label for="report_text">Details</label>
+    <span class="corner-wrapper">
+      <textarea name="text" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_text" maxlength="2500"></textarea>
+      <span class="corner corner-top-left"></span>
+      <span class="corner corner-top-right"></span>
+      <span class="corner corner-bottom-left"></span>
+      <span class="corner corner-bottom-right"></span>
+    </span>
+  </fieldset>
+  <fieldset class="clearfix last">
+    <span class="submit-wrapper">
+      <span class="submit-hover trans-02s trans-opacity"></span>
+      <input type="submit" value="Submit" class="trans-02s trans-color trans-background" />
+    </span>
+  </fieldset>
+</form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+
+
+      
+        <footer class="c-platform-footer c-platform-footer--rsi">
+  <div class="l-platform-footer-container">
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--sc">
+        <li class="c-platform-footer-brand__item">
+
+          <span class="c-brand c-brand--sc js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--sc">
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Join the<br>Universe
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--sc">
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen" class="c-platform-footer-link">About the Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/howto/1" class="c-platform-footer-link">How to Play</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/universe" class="c-platform-footer-link">The Universe</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/media" class="c-platform-footer-link">Media</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/play-now"
+                class="c-platform-footer-link js-google-analytics-event-tracker"
+                data-event-category="FlyNow" data-event-label="footerClick">
+                Play Now
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__sc">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">
+              Social Links
+            </span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/RobertsSpaceIndustries/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/RobertsSpaceInd">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/robertsspaceind">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href=" https://www.youtube.com/channel/UCTeLqJq1mXUX5WWoNXLmOIA">
+                <span class="c-iconed__icon c-iconed__icon--youtube"></span>
+                Youtube
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.twitch.tv/starcitizen">
+                <span class="c-iconed__icon c-iconed__icon--twitch"></span>
+                Twitch
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--s42">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--s42 js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--s42">
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Start the<br>Adventure
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--s42">
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42" class="c-platform-footer-link">The Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#enlist" class="c-platform-footer-link">Enlist Today</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#roadmap" class="c-platform-footer-link">Status</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/pledge/Packages/Squadron-42-Standalone-Pledge" class="c-platform-footer-link">Pledge</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__s42">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">Social Links</span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/Squad42/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/squadron_42">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/squadron42">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column is-active">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--rsi">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--rsi js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--rsi">
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi--fullcolor"></span>
+            </span>
+            <span class="c-brand__label">
+              Follow the Development
+            </span>
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--rsi">
+            <li class="c-platform-footer-list__item">
+              <a href="/" class="c-platform-footer-link">Home</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/comm-link" class="c-platform-footer-link">Transmissions</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/community" class="c-platform-footer-link">Community</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/roadmap" class="c-platform-footer-link">Development</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--platform">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Platform
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--platform">
+                          <li class="c-platform-footer-list__item">
+                <a href="/pledge" class="c-platform-footer-link ">Pledge Store</a>
+              </li>
+            
+            <li class="c-platform-footer-list__item">
+              <a href="/download" class="c-platform-footer-link ">Download</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/spectrum/community/SC" class="c-platform-footer-link">Spectrum</a>
+            </li>
+
+                      </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--utility">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Utilities
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--utility">
+            <li class="c-platform-footer-list__item">
+              <a href="//support.robertsspaceindustries.com" class="c-platform-footer-link">Help</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/press" class="c-platform-footer-link">Press</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="https://cloudimperiumgames.com/join-us" class="c-platform-footer-link">Careers</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/tos" class="c-platform-footer-link">Terms of Services</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/privacy" class="c-platform-footer-link">Privacy Policy</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/eula" class="c-platform-footer-link">EULA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/dmca" class="c-platform-footer-link">DMCA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/legal" class="c-platform-footer-link">Legal</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/acknowledgements" class="c-platform-footer-link">Acknowledgements</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/responsible-disclosure" target="_blank" class="c-platform-footer-link">Responsible disclosure</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  
+</footer>
+
+<div class="c-platform-copyright c-platform-copyright--rsi">
+  <div class="l-platform-copyright-container">
+    <a href="https://cloudimperiumgames.com" class="c-platform-copyright__logo h-svg__logo-cig js-svg-inliner"></a>
+    <p class="c-platform-copyright__body">© 2012-2021 Cloud Imperium Rights LLC and Cloud Imperium Rights Ltd.</p>
+  </div>
+</div>
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHNFZPT"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<script type="text/javascript">
+  window.RSI.Footer = new RSI.Footer();
+</script>
+      
+    </div>
+
+    
+      <script type="text/javascript" src='/rsi/static/packages/platformbar/rsi.platformbar.build.8e4cb.js'></script>
+    
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"58013cabd7","applicationID":"375102748","transactionName":"Y1JaYktUWxZUV0QKV1oYe0NKQVoIGmZjKmtdQ111VltBF1pYXAZKDg1ZQlZYcwxbUA==","queueTime":0,"applicationTime":88,"atts":"TxVNFANOSEkXVRJZQ0lK","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>

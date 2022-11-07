@@ -1,0 +1,2335 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    
+        <!-- Anti-flicker snippet (recommended)  -->
+        <style>.async-hide { opacity: 0 !important} </style>
+        <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+        h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+        (a[n]=a[n]||[]).hide=h;if (d) a[n].push({'userId' : d});setTimeout(function(){i();h.end=null},c);h.timeout=c;
+        })(window,document.documentElement,'async-hide','dataLayer',1500,
+        {'GTM-KHNFZPT':true},undefined,'');</script>
+            <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"58013cabd7",applicationID:"375102748"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(7),c=e(8),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(9);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e){return!(!e||!e.protocol||"file:"===e.protocol)}t.exports=r},{}],4:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(6),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],5:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],6:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],7:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],8:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],9:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?u(e,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){e&&a&&e(n,r,i);for(var c=t(i),f=v(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[h[n]];return p&&p.push([b,n,r,c]),c}}function o(e,t){y[e]=v(e).concat(t)}function m(e,t){var n=y[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return y[e]||[]}function g(e){return p[e]=p[e]||i(n)}function w(e,t){s(e,function(e,n){t=t||"feature",h[n]=t,t in d||(d[t]=[])})}var y={},h={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:w,abort:c,aborted:!1};return b}function o(e){return u(e,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=e("gos"),s=e(7),d={},p={},l=t.exports=i();t.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=x.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+x.offset],null,"api"),c("timing",["load",n]);var r=l.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+x.offset],null,"api")}var a=e(2),c=e("handle"),f=e(7),u=e("ee"),s=e(5),d=e(3),p=window,l=p.document,m="addEventListener",v="attachEvent",g=p.XMLHttpRequest,w=g&&g.prototype;if(d(p.location)){NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:g,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1208.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:b,userAgent:s};e(1),e(4),l[m]?(l[m]("DOMContentLoaded",o,!1),p[m]("load",r,!1)):(l[v]("onreadystatechange",i),p[v]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0}},{}],"wrap-function":[function(e,t,n){function r(e,t){function n(t,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],e)}c(n+"start",[o,a,f],s,u);try{return p=t.apply(a,o)}catch(m){throw c(n+"err",[o,a,m],s,u),m}finally{c(n+"end",[o,a,p],s,u)}}return a(t)?t:(n||(n=""),nrWrapper[p]=t,o(t,nrWrapper,e),nrWrapper)}function r(e,t,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<t.length;u++)f=t[u],c=e[f],a(c)||(e[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!m||t){var c=m;m=!0;try{e.emit(n,r,o,t,a)}catch(f){i([f,n,r,o],e)}m=c}}return e||(e=s),n.inPlace=r,n.flag=p,n}function i(e,t){t||(t=s);try{t.emit("internal-error",e)}catch(n){}}function o(e,t,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(e);return r.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(o){i([o],n)}for(var a in e)l.call(e,a)&&(t[a]=e[a]);return t}function a(e){return!(e&&e instanceof Function&&e.apply&&!e[p])}function c(e,t){var n=t(e);return n[p]=e,o(e,n,s),n}function f(e,t,n){var r=e[t];e[t]=c(r,n)}function u(){for(var e=arguments.length,t=new Array(e),n=0;n<e;++n)t[n]=arguments[n];return t}var s=e("ee"),d=e(8),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;t.exports=r,t.exports.wrapFunction=c,t.exports.wrapInPlace=f,t.exports.argsToArray=u},{}]},{},["loader"]);</script>
+      <meta name="viewport" content="width=device-width">
+      <meta name="description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans.">
+      <meta property="og:site_name" content="
+Star Citizen Alpha 3.0.0 - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+" />
+      <meta property="og:image" content="https://robertsspaceindustries.com/rsi/static/images/RSI-logo-fb.jpg" />
+      <meta property="og:description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans." />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://robertsspaceindustries.com/comm-link/SCW/16349-IMPORT" />
+      <meta property="og:locale" content="us_EN" />
+
+            
+
+            <link href="/rsi/static/css/cross-brand-less.css?v=5.54.0" media="all" rel="stylesheet">
+      <link href='/rsi/static/packages/platformbar/rsi.platformbar.build.05b39.css' media="all" rel="stylesheet">
+      <link href='/rsi/static/packages/enlist/rsi.enlist.build.b888e.css' media="all" rel="stylesheet"/>
+            <script type="text/javascript" src="/cache/en/rsi-external-js.js?v=5.54.0"></script>
+      <script type="text/javascript" src="/cache/en/rsi-templates-js.js?v=5.54.0"></script>
+
+            <link rel="stylesheet" href="https://use.typekit.net/dhw3beb.css">
+
+              <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="a687ee30-df65-45a0-9d22-90de6c1bb964" type="text/javascript"></script>
+      
+      
+    <!-- Google Tag Manager -->
+    <script data-cookieconsent="ignore">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHNFZPT');</script>
+    <!-- End Google Tag Manager -->
+
+
+      <title>
+Star Citizen Alpha 3.0.0 - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+</title>
+
+            <script type="text/javascript" src='/rsi/static/packages/core/rsi.core.build.804b0.js'></script>
+      <script type="text/javascript" src='/rsi/static/packages/account/rsi.account.build.609b5.js'></script>
+      <script type="text/javascript" src='/rsi/static/packages/store/rsi.store.build.cd9a7.js'></script>
+
+      <script>
+        $(document).ready(function() {
+          window.Common = new RSI.Common({});
+          window.Main = new RSI.Main({
+            'is_mobile': 0,
+            'probation_cookie' : '',
+            'require_captcha': 0
+          });
+          window.Mark = new Turbulent.Mark({ 'name' : 'Rsi-XSRF', 'token' : '', 'ttl' : 1800 });
+
+          window.WscOverlay = new RSI.WscOverlay({});
+
+          var destinations = [];
+
+window.Main.destinations = destinations;          
+  window.PageStore = new RSI.Store({
+    'store_prefix' : '/pledge',
+    'bootstrapConfig': {"injection":{"attachmentClass":"RSIStoreApp","files":{"js":["bootstrap.js"],"css":["index.css"]}},"platform":{"api":"\/api"},"store":{"path":"\/pledge-store","manifest":"manifest.json"},"customizer":{"api":"\/pledge-store\/api\/customizer","ga_tracking_code":"UA-39586040-5"}}
+  });
+
+          
+          
+  var productsTracking = [];
+  var eCommerceData = {
+    'trackingAction': "",
+    'currency': "",
+    'trackingStep': "",
+    'trackingProducts': productsTracking
+  };
+  window.eCommerceTracking = new RSI.Store.eCommerceTracking(
+    eCommerceData
+  );
+
+        });
+
+        $(window).load(function() {
+          
+        });
+
+      </script>
+
+
+      <script>
+        window.recaptcha_is_loaded = false;
+        window.on_recaptcha_load_callback = function() {
+          window.recaptcha_is_loaded = true;
+        };
+      </script>
+
+      <script src="https://www.google.com/recaptcha/api.js?onload=on_recaptcha_load_callback&render=6LerBOgUAAAAAKPg6vsAFPTN66Woz-jBClxdQU-o" async defer></script>
+
+      <script type="text/javascript">
+
+        
+
+                                </script>
+
+      
+
+<style type="text/css">
+  /* CSS from ATOM */
+  span.initial{font-size:inherit!important; margin-right:0px!important;}
+
+.variant-left a.image {
+float: left!important;
+margin-top:0px!important;
+margin-right:20px!important;
+}
+
+h1 {margin:20px 0px 30px 0px!important;}
+
+.rsi-markup .segment .content .image img{border-radius: 0!important}
+
+.rsi-markup .segment .content {padding-bottom:0px!important; padding-top:0px!important}
+
+.rsi-markup .segment .content .variant-left p {width:auto!important; max-width:none!important;}
+
+.mb-full img { width: 100%;
+}
+</style>
+
+<script type="text/javascript">
+  /* JS from ATOM */
+  
+</script>
+
+
+    
+
+  <style>
+    
+      background:url(/rsi/static/images/noisebg.gif) repeat center top #000b11;
+    
+  </style>
+
+    <link href="//fonts.googleapis.com/css?family=Electrolize|Orbitron:400,500,700|Quantico|Share+Tech+Mono&display=swap" rel="stylesheet" type="text/css">
+
+    <link href="/cache/en/rsi-css.css?v=5.54.0" media="all" rel="stylesheet">
+
+
+  </head>
+  <body id="" class="" >
+
+    
+      <div class="l-notification-bar l-notification-bar--rsi js-notification-bar" id="notification-bar-root">
+  <c-notification-bar v-bind:latestagreementsslugs=[] v-bind:loggedin="0" v-bind:onhomepage="0"></c-notification-bar>
+  <div class="l-notification-container l-notification-bar__boxes js-notification-bar-boxes">
+    <div class="l-notification__wrapper">
+      
+      <c-unsupported-browser v-cloak>
+        <div class="l-notification-bar__box js-notification-bar-box">
+          <div class="c-notification  c-notification--browser-support js-bottom-notif-msg-browser-support">
+  <div class="c-notification__inner">
+
+    <div class="c-notification__content">
+      <div class="c-notification__title">
+        IE11 is no longer supported
+      </div>
+      <div class="c-notification__message">
+        We do not support Internet Explorer 11 and below. Please use a different web browser.
+      </div>
+    </div>
+
+    <div class="c-notification__actions">
+      
+      
+          </div>
+
+  </div>
+</div>
+        </div>
+      </c-unsupported-browser>
+    </div>
+  </div>
+
+</div>
+    
+
+    <div id="bodyWrapper">
+      <header class='c-header-wrapper c-header-wrapper--rsi js-header-wrapper '  id='cross-brand-header'>
+  <div id="platform-bar" class="c-header__platform-bar"></div>
+
+      <div class='c-right-sidebar c-right-sidebar--signin' id="account-sidebar">
+      <div class="js-toggle-account__backdrop invisible"></div>
+
+      <a href="#" class='c-right-sidebar__back js-toggle-account'>Back
+        <span></span>
+        <span></span>
+      </a>
+
+      <div id="enlist-root" data-theme="rsi" data-enlisting="" data-ptu=""></div>
+      <script type="text/javascript" src='/rsi/static/packages/enlist/rsi.enlist.build.b888e.js'></script>
+    </div>
+  
+  <div class="c-header-wrapper__backdrop js-toggle-games"></div>
+</header>
+
+<div id="platform-backdrop"></div>
+
+<script type='text/javascript'>
+  RSI.Platformbar = {
+    theme: "rsi",
+    loggedState: "logged-out",
+    tabs: [
+      {
+        type: 'brands',
+        name: "Games",
+        subItems: [
+          {
+            name: "sc",
+            href: "/star-citizen",
+            description: "Join the Universe"
+          },
+          {
+            name: "s42",
+            href: "/squadron42",
+            description: "Start the adventure"
+          },
+          {
+            name: "rsi",
+            href: "/",
+            description: "Follow the Development"
+          }
+        ]
+      },
+      {
+        type: 'apps',
+        name: "Apps",
+        subItems: [
+          [
+            {
+              name: "Spectrum",
+              href: "/spectrum/community/SC",
+              description: "Your communication platform"
+            },
+            {
+              name: "Launcher",
+              href: "/download",
+              description: "Download Star Citizen",
+                          }
+          ],
+          [
+            {
+              name: "Roadmap",
+              href: "/roadmap",
+              description: "Keep track of the development"
+            },
+            {
+              name: "Telemetry",
+              href: "/telemetry",
+              description: "Keep track of the player’s performance"
+            },
+            {
+              name: "Issue Council",
+                          href: "/community/issue-council",
+                          description: "Help us make the game better",
+                          }
+          ],
+          [
+            {
+              name: "Starmap",
+              href: "/starmap",
+              description: "Your map to the universe"
+            },
+            {
+              name: "Galactapedia",
+              href: "/galactapedia",
+              description: "Your guide to the universe"
+            }
+          ]
+        ]
+      },
+          ],
+    navigation: {
+      store: {
+        name: "Pledge Store",
+        href: "/pledge",
+        isHidden: false      },
+      hub: {
+        name: "Learn How to Play",
+        href: "/playstarcitizen",
+        show: false      },
+      support: {
+        name: "Support",
+        href: "//support.robertsspaceindustries.com"
+      },
+      account: {
+        name: "Account",
+        href: "/account/settings",
+        isHidden: false      }
+    }
+  };
+
+  $(document).ready(function() {
+    window.header = new RSI.Header({});
+  });
+</script>
+
+
+      
+  
+<header class='c-brand-menu c-brand-menu----rsi' id='brand-menu'>
+  <span class="c-brand-menu__section">
+    
+      Roberts Space Industries
+    
+  </span>
+  <div class="c-brand-menu__backdrop"></div>
+  <nav class="c-brand-menu__container">
+    <div class="c-brand-menu__logo">
+      <a href="/"><span class="h-svg h-svg__logo-rsi--fullcolor js-svg-inliner"></span> </a>
+    </div>
+    <div class="c-brand-menu__items-container">
+      <ul class="c-brand-menu__items">
+                <li class="c-brand-menu__item  ">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/comm-link">
+            <span class="c-brand-menu__item-text">Comm-Link</span>
+                                  </a>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/community">
+            <span class="c-brand-menu__item-text">Community</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Community</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/spectrum" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Spectrum
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/orgs" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Organizations
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/leaderboards/top" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Leaderboards
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community_events" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Event
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Hub
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/fankit" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Fankit
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/development">
+            <span class="c-brand-menu__item-text">Development</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Development</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/roadmap" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Roadmap
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/devtracker" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Dev Tracker
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/telemetry" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Telemetry
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/issue-council" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Issue Council
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/patch-notes" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Patch Notes
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/ship-matrix" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Ship Matrix
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/funding-goals" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Funding
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+              </ul>
+    </div>
+
+    <div class="c-brand-menu__cta">
+      
+        <a href="/star-citizen/play-now" class="c-brand-cta-btn js-google-analytics-event-tracker"
+          data-event-category="FlyNow" data-event-label="navMenuClick">
+          <div></div>
+            <span class="c-brand-cta-btn__text">
+              <strong>Play now</strong>
+            </span>
+          <div></div>
+        </a>
+      
+    </div>
+  </nav>
+</header>
+
+
+
+      
+
+  
+  <div class="page-wrapper">
+    
+  <div id="post-background" ></div>
+
+
+    <div id="contentbody" class="" style="">
+      
+
+<div id="post">
+  <div class="title-section">
+    
+      <div class="wrapper title-bar-container">
+        <div class="glow left"></div>
+        <div class="title-bar">
+          <div class="title with-subtitle">
+            <h1>Transmission</h1>
+            <h2>General</h2>
+          </div>
+          <div class="details">
+            <div>
+              <h3>ID:</h3>
+              <p>16349</p>
+              <div class="cboth"></div>
+            </div>
+            <div>
+              <h3>Comments:</h3>
+              <p class="comment-count">101</p>
+              <div class="cboth"></div>
+            </div>
+            <div>
+              <h3>Date:</h3>
+              <p>December 23rd 2017</p>
+              <div class="cboth"></div>
+            </div>
+            <div></div>
+          </div>
+          <div class="cboth"></div>
+        </div>
+        <div class="glow right"></div>
+      </div>
+    
+  <div class="title-container">
+    <div class="title no-subtitle">Star Citizen Alpha 3.0.0</div>
+      </div>
+
+  </div>
+
+  
+  <div class="lightbar toplightbar">
+    <div class="lightbarlights"></div>
+    <div class="footershadow"></div>
+  </div>
+
+
+  <div class="wrapper"><div class="content-block1 rsi-markup"><div  class=' segment' ><div class="content"><p><A NAME="top"></A></p>
+
+<h1><span style="color:lightblue;">Star Citizen Patch 3.0.0</span></h1>
+
+<p><span style="color:lightblue;">Star Citizen Alpha Patch 3.0.0 is now available! Alpha 3.0.0 is our largest content release to date featuring numerous tech, core system updates, and new features. Players will have access to planetary surfaces for the first time on four moons (Yela, Daymar, and Cellin) along with an asteroid (Delamar).  These new surfaces are expansive, with over 3 million square kilometers dotted with surface outposts and derelict ships.  Additionally, we have added four new ships, our first dedicated surface vehicle (Ursa Explorer), the foundation of our revamped mission system with new missions, a completely new launcher and patcher system, and so much more!</span></p>
+
+<p><span style="color:lightblue;">Your launcher should should show &#8220;3.0.0-695052&#8221; as the client version. It is strongly recommended that players delete their <span class="caps">USER</span> folder for the Public client after patching, particularly if you start encountering any odd character graphical issues or crash on loading. The <span class="caps">USER</span> folder can be found (in default installations) at C:\Program Files\Roberts Space Industries\StarCitizen\LIVE.</span></p>
+
+<p><span style="color:lightblue;">Important:</span></p>
+
+<ul>
+	<li>Many new features are present as a first implementation and still have numerous adjustments and tweaks to be made to bring them to full design specifications.</li>
+	<li>Many optimizations are still incoming and performance isn&#8217;t up to our standard as is.</li>
+	<li>With no many new systems coming online, there are likely to be numerous bugs left to smash and balance changes to hammer out.</li>
+	<li>We want you to be part of our open development!  Report issues and bugs you encounter on our issue council: https://robertsspaceindustries.com/community/issue-council.</li>
+</ul>
+
+<p><span style="color:lightblue;">Key Game-play How Tos:</span></p>
+
+<p><b>Ship Start Up:</b> Approach the entry point of your ship, then press and hold &#8220;F&#8221; to activate the interaction system.  Select from the various inner thought prompts using the cursor or mouse wheel to move between them.  Once inside your ship, again press and hold &#8220;F&#8221; and select the &#8220;Flight Ready&#8221; prompt to run through complete ship start up.  Alternatively, there are hotkeys available for quick start-up which you can find under &#8220;Advanced Controls Customization&#8221;</p>
+
+<p><b>Landing:</b> Landing now takes place through an Air Traffic Control (<span class="caps">ATC</span>) system. When close to a landing location, request a landing by navigating to your &#8220;Comms&#8221; menu on the MobiGlas (note: this is incorrectly displayed as a ship icon) and pushing the hail button (wifi symbol). Wait a moment, and <span class="caps">ATC</span> should assign you a landing location. Note, you may need to request take off to leave Levski (trigger opening of bay doors).</p>
+
+<p><b>Quantum Travel:</b> To quantum travel to a destination, open your MobiGlas (F1) and select the Starmap App (diamond shaped symbol).  From there, use the mouse to select a destination. Whether or not an object can be selected for QT is determined by gravitational values (The larger the object the further away you can detect it, large objects with small objects in orbit drown out their detection capabilities at long ranges). Meaning you will not be able to travel from point A to B at all times, but instead may need to move into orbit of a larger body to detect destinations also in orbit. For example, to get to a station orbiting a moon that orbits a planet, the route is Planet&gt;Moon&gt;Station.  Once you have a destination selected you can &#8220;set destination&#8221; on your MobiGlas to bring up a quantum travel target.  As before, align with the QT target and press &#8220;B&#8221; to travel.</p>
+
+<p><b>Changes to Default Keybindings:</b> Controls now default to a &#8220;basic&#8221; mapping that only includes core functions and leaves many things unbound.  The &#8220;basic&#8221; mapping is meant to be simplified controls for beginners.  Players can then go through keybinds and bind how they wish or import an &#8220;advanced&#8221; binding from among several presets. Experienced players will most likely want to do one of those two things to gain full functionality.  Advanced profiles can be found under Keybindings→Advanced Controls Customization→Control Profiles.</p>
+
+<p><b>Afterburner:</b> There is now a single afterburner with the ability to achieve higher top velocity under certain conditions, giving us AB <span class="caps">SCM</span> and AB Cruise with the only distinction being two different speeds. You can only enter AB Cruise if your flight path is a straight, forward line. Otherwise you&#8217;re limited to AB <span class="caps">SCM</span>, i.e. while maneuvering/strafing. Once in AB Cruise you can release the afterburner key and go into an AB idle mode to maintain your current speed.  Throttle setting and y-axis strafe level allows incremental speeds, but you will decelerate if you change your vector. If you continue to hold AB and maneuver, you drop to AB <span class="caps">SCM</span> speed until you return to straight-line flight. AB Idle holds your current velocity as long as you&#8217;re not maneuvering and decoupled rotation is allowed while in AB idle.</p>
+
+<p><span style="color:lightblue;">Major Known Issues:</span></p>
+
+<ul>
+	<li>Persistent player location respawn is currently only working if the player returns to the same instance.  This is not the intended final functionality.</li>
+	<li>The combat visor is an early, spartan prototype that is meant to give players core functionality. There&#8217;s still work remaining.</li>
+</ul>
+
+<p><strong><span style="color:lightblue;">Contents:</span></strong></p>
+
+<ul>
+	<li><A HREF="#NF">New Features</A>
+	<ul>
+		<li><A HREF="#NFGC">General Content</A>
+		<ul>
+			<li><A HREF="#NFASS">Breathing, Stamina &amp; Heart Rate</A></li>
+			<li><A HREF="#NFIS">Interaction System</A></li>
+			<li><A HREF="#NFHS">Hint System</A></li>
+			<li><A HREF="#NFPLS">Party Launch System</A></li>
+		</ul></li>
+		<li><A HREF="#NFU">Universe</A>
+		<ul>
+			<li><A HREF="#NFPSS">Planetary Surfaces</A></li>
+			<li><A HREF="#NFPM">Planetary Motion</A></li>
+			<li><A HREF="#NFSO">Surface Outposts</A></li>
+			<li><A HREF="#NFPI">Persistence and Insurance</A></li>
+			<li><A HREF="#NFATC">Air Traffic Control (<span class="caps">ATC</span>)</A></li>
+			<li><A HREF="#NFNL">New Locations</A></li>
+			<li><A HREF="#NFAS">AI Subsumption</A></li>
+			<li><A HREF="#NFTUS">Turret System</A></li>
+			<li><A HREF="#NFK">Kiosks</A></li>
+			<li><A HREF="#NFDIP">Dynamic Inventories and Pricing</A></li>
+			<li><A HREF="#NFAB">Afterburner</A></li>
+			<li><A HREF="#NFQTS">Quantum Travel System</A></li>
+			<li><A HREF="#NFMS">Mission System</A></li>
+			<li><A HREF="#NFIEM">Interdiction and Environmental Missions</A></li>
+			<li><A HREF="#NFDA">Doors and Airlocks</A></li>
+			<li><A HREF="#NFI">Item 2.0 and UI</A></li>
+			<li><A HREF="#NFC">Cargo and Commodities</A></li>
+		</ul></li>
+		<li><A HREF="#NFSM">Star Marine</A></li>
+		<li><A HREF="#NFSV">Ships &amp; Vehicles</A></li>
+		<li><A HREF="#NFFP">First Person</A></li>
+		<li><A HREF="#NFUI">User Interface</A></li>
+		<li><A HREF="#NFTechnical">Technical</A></li>
+	</ul></li>
+	<li><A HREF="#FU">Feature Updates</A>
+	<ul>
+		<li><A HREF="#FUU">Universe</A></li>
+		<li><A HREF="#FUSV">Ships &amp; Vehicles</A></li>
+		<li><A HREF="#FUSM">Star Marine</A></li>
+		<li><A HREF="#FUAC">Arena Commander</A></li>
+		<li><A HREF="#FUFP">First Person</A></li>
+		<li><A HREF="#FUT">Technical</A></li>
+		<li><A HREF="#FUF">Fixes</A>
+		<ul>
+			<li><A HREF="#FUBF">Bug Fixes</A></li>
+			<li><A HREF="#FUB">Balance</A></li>
+		</ul></li>
+		</ul></li>
+	<li><A HREF="#BFWA">Bugs, Issues, and Work Arounds (W/A)</A></li>
+</ul>
+
+<h1><span style="color:lightblue;">New Features</span><br />
+<A NAME="NF"></A></h1>
+
+<h2><span style="color:lightblue;">General Content</span><br />
+<A NAME="NFGC"></A></h2>
+
+<h3><span style="color:lightblue;">Breathing, Stamina &amp; Heart Rate</span><br />
+<A NAME="NFASS"></A></h3>
+
+<ul>
+	<li><b>Oxygen Supply:</b> Many areas, such as space or the moons of Crusader, do not have breathable atmospheres and are dangerous for characters unless they’re wearing a pressure suit. Most pressure suits are equipped standard with an oxygen tank. As you breathe, you will slowly consume the oxygen inside your tank. Your oxygen tank will automatically begin to refill once you are inside an area, station, ship or outpost with a breathable atmosphere. If your oxygen supply runs out, your pressure suit contains a small buffer of oxygen to provide you with a short amount of time to try to find an oxygen supply. If your suit is not sealed or you’re not wearing a helmet, you will not have this buffer. If you do not have any oxygen available, you will asphyxiate and quickly pass out.</li>
+</ul>
+
+<ul>
+	<li><b> Stamina:</b> As you exert more effort by running, jumping, etc., your muscles work harder and begin to consume more oxygen. To keep up with this higher demand, your heart rate and breathing increase to provide your muscles with a steady supply of oxygen. Wearing heavier armor will increase how much effort it takes to do actions and will tire you out sooner. The more you exert yourself, the harder you breathe and the faster your oxygen supply will be depleted.</li>
+</ul>
+
+<ul>
+	<li><b>Heart Rate Monitor:</b> The heart rate monitor on your helmet’s <span class="caps">HUD</span> and in your mobiGlas functions as an exertion/stamina meter. As a character exerts themselves, their heart rate increases. If a character exerts themselves too much, they will enter a Hyperventilated state. This will restrict the actions that you can perform, and things like running, sprinting or vaulting will be blocked until you exit the hyperventilated state. Heart rate and breathing can also effect recoil handling and aim. As your heart rate increases the character’s aim will begin to sway, ranging from a minor wobble to wild drifting. Once levels reach certain critical thresholds your vision will also begin to be effected, slowly dimming till it goes completely black.  Once your heart rate returns to normal, so will your vision and movement.</li>
+</ul>
+
+<ul>
+	<li><b> Wound System: ,</b> Injury is now taken into account for status effects to a small degree including movement penalties for limb damage.</li>
+</ul>
+
+<h3><span style="color:lightblue;">Hint System</span><br />
+<A NAME="NFHS"></A></h3>
+
+<p><span class="initial">A</span>dded the foundation of a new &#8220;hint system&#8221; which will allow players to learn about how to play the game whilst playing it and reduce the burden of having to consult an off-line resource.</p>
+
+<h3><span style="color:lightblue;">Interaction System</span><br />
+<A NAME="NFIS"></A></h3>
+
+<p><b>Interaction Mode</b></p>
+
+<ul>
+	<li>Holding down the [F] key will activate Interaction Mode &#8211; a contextual cursor will appear in the center of the screen, interaction points will highlighted, even from a distance. The parallax cursor movement allows selection of anything on screen with little head movement, while retaining full input control. Movement is limited to walking speed while in Interaction Mode. Holding the right mouse button enters into &#8216;focus&#8217;; the camera rotates and zooms in on the cursor location, putting it in the center of the screen. From here, the cursor behaves normally. Releasing right click returns to standard view. Left click confirms the selection, and the associated action begins. Releasing [F] will always immediately return to natural gameplay.</li>
+</ul>
+
+<p><b>Inner Thought Prompt</b></p>
+
+<ul>
+	<li>When near enough to interact, the inner thought prompt will softly appear on the player screen, tilting towards the location of the interaction to help provide context to the inner thought text. The text will inform you of the action that will be performed upon interaction. Moving away, looking away, or having line of sight to the interaction point blocked will remove the inner thought prompt. The inner thought text will display on screen relative to the object of interaction, but will stay at a fixed size so it&#8217;s guaranteed readable. The ellipse below the text indicates that secondary options are available, and they can be accessed with the cursor or mouse wheel.</li>
+</ul>
+
+
+<h3><span style="color:lightblue;">Party Launch System</span><br />
+<A NAME="NFPLS"></A></h3>
+
+
+<p>Added new command /partylaunch. If the party leader enters /partylaunch into the chat window in game, this will send a notification to each party member when the leader enters an instance that they can either accept or ignore. If accepted they will be put into Matchmaking system to join the leader. If the server doesn&#8217;t have enough space for the full party, all players in the party will be put back into Matchmaking to find another server.  If not in a server, whenever the party leader launches into a new server a partylaunch will automatically be generated for everyone.   </p>
+
+
+<h2><span style="color:lightblue;">Universe</span><br />
+<A NAME="NFU"></A></h2>
+
+
+<h3><span style="color:lightblue;">Planetary Surfaces</span><br />
+<A NAME="NFPSS"></A></h3>
+
+
+<p>We have implemented the first fully modeled, explorable planetary surfaces.  These include three moons; Yela, Daymar, and Celin, as well as the mining planetoid Delamar.  Each planetary body has unique atmospheric composition, pressure, and gravity as well as a variety of surface outposts and derelict ships to explore, many tied to our new missions system.</p>
+
+
+<h3><span style="color:lightblue;">Planetary Motion</span><br />
+<A NAME="NFPM"></A></h3>
+
+
+<p>Planetary bodies now have rotational motion complete with dynamic day/night cycles.</p>
+
+<h3><span style="color:lightblue;">Surface Outposts</span><br />
+<A NAME="NFSO"></A></h3>
+
+
+<p>Planetary surfaces are dotted with surface outposts representing a variety organizations and functions. Each outpost is unique and has its own power system and oxygen supply, many with usable Kiosks and landing pads with associated <span class="caps">ASOP</span> terminals.</p>
+
+
+<h3><span style="color:lightblue;">Persistence</span><br />
+<A NAME="NFPI"></A></h3>
+
+
+<p>Your character and ship&#8217;s persistence state is now being updated every few minutes and on logout. After death, you will respawn in the station you last visited. Visiting is determined by proximity.  Additionally, players can now logout using ship beds.  Entering a ship bed will present the player with a &#8220;logout&#8221; option that if used will persist the ship and player&#8217;s location.  Upon return, the player will wake in their ship bed with their ship in the location of logout.</p>
+
+
+<h3><span style="color:lightblue;">Air Traffic Control (<span class="caps">ATC</span>)</span><br />
+<A NAME="NFATC"></A></h3>
+
+
+<p>Landing and take off at larger public facilities is now controlled by Air Traffic Control (<span class="caps">ATC</span>).  The <span class="caps">ATC</span> acts as the connection between you and the landing tower using the <span class="caps">MFD</span> comms function in every ship. When attempting to land, you will open a communication channel to the tower and ask for permission. The tower then checks if all the requirements are fulfilled and will advise appropriately. To hail <span class="caps">ATC</span>, cycle one of your ship <span class="caps">MFD</span>s to the &#8220;Comms&#8221; panel and select the hail symbol for the desired port.</p>
+
+
+<h3><span style="color:lightblue;">New Locations</span><br />
+<A NAME="NFNL"></A></h3>
+
+<p><b>Levski:</b> Levski is a base built directly into the rock on the asteroid Delamar. The base was originally an active mining facility but, after being left derelict for a number of years, new residents moved in and it became a hotbed for political radicals &amp; criminals. The main areas are controlled by various political groups with a strong anti-<span class="caps">UEE</span> sentiment and they try to keep order best they can.  Levski has the choice of numerous shops spread across multiple floors with many missions available. You can access Levski by foot, ship or ground vehicle.</p>
+
+<p><b>Shops:</b> New items (clothing, armor, weapons, components) added to shop inventory. Added Dumper&#8217;s Depot to major locations.</p>
+
+
+<h3><span style="color:lightblue;">AI Subsumption</span><br />
+<A NAME="NFAS"></A></h3>
+
+
+<p>We have introduced the basics of subsumption.  You should now see <span class="caps">NPC</span>s going about their daily lives at all 3 major landing zones (Grim Hex, Port Olisar, and Levski).</p>
+
+<h3><span style="color:lightblue;">Turret System</span><br />
+<A NAME="NFTUS"></A></h3>
+
+
+<ul>
+	<li>Updated Turrets: Turrets have been updated with the addition of targeting deadzones, movement ranges that prevent you from shooting your own ship, an updated UI, and a staggered fire mode.</li>
+	<li>Automated Turrets: You will find automated turrets defending Port Olisar, Security Post Kareah, and the various Comm Arrays.  These turrets will automatically engage and fire at wanted criminals.</li>
+</ul>
+
+
+<h3><span style="color:lightblue;">Kiosks</span><br />
+<A NAME="NFK"></A></h3>
+
+<p>We have introduced shop Kiosks.  The main variants of the Kiosk will be used for buying/selling commodities (cargo).  The intention is that you will have separate inventories at each station and major landing zone.  Kiosks will only be able to interact with items that are local to the shop&#8217;s location.  The kiosk will be able to interrogate, and manipulate, any cargo, loadout, or the inventory of these local elements.  By default, the kiosk will show everything you have access to in that location, but will be able to drill down to facilitate any specific ship cargo manifest. </p>
+
+<h3><span style="color:lightblue;">Dynamic Inventories and Pricing</span><br />
+<A NAME="NFDIP"></A></h3>
+
+<p>Locations have variable commodity pricing that will fluctuate over-time based on stock levels and restock rates.  At the moment, this only effects cargo purchased at kiosks and is only present at major spawn locations (Levski, GrimHex, and Port Olisar).</p>
+
+<h3><span style="color:lightblue;">Afterburner</span><br />
+<A NAME="NFAB"></A></h3>
+
+<p>There is now a single afterburner with the ability to achieve higher top velocity under certain conditions, giving us AB <span class="caps">SCM</span> and AB Cruise with the only distinction being two different speeds. You can only enter AB Cruise if your flight path is a straight, forward line. Otherwise you&#8217;re limited to AB <span class="caps">SCM</span>, i.e. while maneuvering/strafing. Once in AB Cruise you can release the afterburner key and go into an AB idle mode to maintain your current speed.  Throttle setting and y-axis strafe level allows incremental speeds, but you will decelerate if you change your vector. If you continue to hold AB and maneuver, you drop to AB <span class="caps">SCM</span> speed until you return to straight-line flight. AB Idle holds your current velocity as long as you&#8217;re not maneuvering and decoupled rotation is allowed while in AB idle.</p>
+
+<h3><span style="color:lightblue;">Quantum Travel System</span><br />
+<A NAME="NFQTS"></A></h3>
+
+<ul>
+	<li>Quantum travel (QT) destinations are now selected via the MobiGlas Starmap app or via the 3D radar Starmap on appropriate ships.</li>
+	<li>Whether or not an object can be targeted for QT is determined by the drive&#8217;s detection range and is based off gravitational values (The larger the object the further away you can detect it, large objects with small objects in orbit drown out their detection capabilities at long ranges). Meaning you will not be able to travel from point A to B at all times, but instead may need to move into orbit of a larger body to detect destinations also in orbit.  For example, to get to a station orbiting a moon that orbits a planet, the route is Planet&gt;Moon&gt;Station.</li>
+	<li>There&#8217;s now a short range quantum travel for moving around different orbital points of moons and small planetary bodies.</li>
+	<li>Quantum travel speeds, spooling, and cooldown times are variable based on the size and quality of the drive.</li>
+</ul>
+
+
+<h3><span style="color:lightblue;">Mission System</span><br />
+<A NAME="NFMS"></A></h3>
+
+<p>The missions system has been revamped with new missions, mission givers, and greater variety.  Each of the below missions has many variants and types, including lawful/unlawful, and many can be done in cooperation with other players.  Some variants will require the player to gain a certain kind of reputation.</p>
+
+<ul>
+	<li>Delivery</li>
+	<li>Deploy</li>
+	<li>Recovery</li>
+	<li>AI Bounty Hunt</li>
+	<li>AI Assassination</li>
+	<li>Collection</li>
+	<li>Waste disposal</li>
+	<li>Patrol</li>
+	<li>Derelict investigation</li>
+	<li>Escort</li>
+	<li>Mission Givers: Ruto and Eckhart</li>
+</ul>
+
+
+<h3><span style="color:lightblue;">Interdiction and Environmental Missions</span><br />
+<A NAME="NFIEM"></A></h3>
+
+<ul>
+	<li>AI now have the capability to interdict players during quantum travel, forcing them to drop out of quantum.  In addition, there are random environmental encounters scattered throughout the verse.</li>
+</ul>
+
+
+<h3><span style="color:lightblue;">Doors and Airlocks</span><br />
+<A NAME="NFDA"></A></h3>
+
+
+<ul>
+	<li>Doors and airlocks have been updated with additional functionality.</li>
+	<li>Introduced basic ship security including the ability to lock and unlock your ships to control access.</li>
+</ul>
+
+<h3><span style="color:lightblue;">Item 2.0 and UI</span><br />
+<A NAME="NFI"></A></h3>
+
+
+<p>First introduction of item 2.0 system for ships, including the following:<br />
+<ul>
+	<li>Power – Includes the ability to control how much power is generated by the power plants and is distributed to all of the other systems to use.</li>
+	<li>Heat – Includes the ability to monitor how much heat, EM, and IR the ship is generating, and the ability to temporarily reduce IR.</li>
+	<li>Shields – Includes the ability to monitor and adjust shield strength and repair behavior, and adjust power usage and performance.</li>
+	<li>Screen Switch Behavior – Includes the ability to switch between various screens on the same physical monitor.</li><br />
+</ul></p>
+
+
+<h3><span style="color:lightblue;">Cargo and Commodities</span><br />
+<A NAME="NFC"></A></h3>
+
+<p>Introduced the first implementation of cargo</p>
+
+<ul>
+	<li>Salvage
+	<ul>
+		<li>Some items are transported in small, portable boxes, which can be bought and sold at vendors.</li>
+		<li>These items are placed in/around the Stanton system’s wreckages and procedurally on planet surfaces.</li>
+		<li>They will be generated when destroying cargo-carrying ships</li>
+		<li>0.5m boxes can be lifted and moved using the existing hand-lifting system</li>
+		<li>1 <span class="caps">SCU</span> cargo cannot be lifted or moved.</li>
+	</ul></li>
+	<li>Storing Small Items in the Cargo Grid
+	<ul>
+		<li>Ships will have &#8216;Cargo Grids&#8217; set up inside that governs how cargo is placed/secured within it.</li>
+		<li>Placing 0.5m boxes within the Cargo Grid will be considered ‘secured’ in the ship.</li>
+		<li>0.5m boxes will align within the Cargo Grid.</li>
+		<li>Any loose items placed within the grid will not align to this.</li>
+		<li>Loose Items placed inside the Cargo Grid will be added to the ship’s &#8216;manifest&#8217;.</li>
+		<li>Items placed outside of the grid will therefore not be added to the &#8216;manifest&#8217;.</li>
+		<li>Items can be taken from one ship’s hold, carried to another ship and stored in its hold instead.</li>
+	</ul></li>
+	<li>Buy/Sell Cargo through Market Vendors1 <span class="caps">SCU</span> crates full of a single commodity can bought and sold at vendors.
+	<ul>
+		<li>0.5m boxes the player discovers, or recovers can be sold at vendors.</li>
+		<li>Commodities can be bought at a vendor in selected spots.</li>
+		<li>Players will walk up to the kiosk and use it to initiate an interaction.</li>
+		<li>Only the stock the vendor buys/sells will be listed and the price they want for each.</li>
+		<li>Transactions takes place entirely in the interface.</li>
+	</ul></li>
+	</ul>
+
+
+<h2><span style="color:lightblue;">Star Marine</span><br />
+<A NAME="NFSM"></A></h2>
+
+<ul>
+	<li>Armors
+	<ul>
+		<li>Added: Heavy outlaw (slaver).</li>
+		<li>Added: Heavy marine.</li>
+	</ul></li>
+	<li>Consumables
+	<ul>
+		<li>Oxygen Capsule: Can be used to temporarily refill your suit oxygen supply.</li>
+	</ul></li>
+	<li>Weapons
+	<ul>
+		<li>Added: Behring P8-SC <span class="caps">SMG</span>.</li>
+	</ul></li>
+	</ul>
+
+<h2><span style="color:lightblue;">Ships &amp; Vehicles</span><br />
+<A NAME="NFSV"></A></h2>
+
+
+<p>Ships<br />
+<ul>
+	<li>General
+	<ul>
+		<li>Added hit reactions.</li>
+		<li>Added damaged and emergency interior states.</li>
+		<li>Added compressed and/or springs to many ships landing gear.</li>
+		<li>Hydrogen fuel is now required for normal ship operation.  Running out will result in the loss of engine power.</li>
+	</ul></li>
+	<li>New
+	<ul>
+		<li><span class="caps">RSI</span> Constellation Aquila</li>
+		<li><span class="caps">MISC</span> Prospector</li>
+		<li>Aopoa Nox</li>
+		<li>Drake Dragonfly</li>
+		<li>Aegis Sabre Raven</li>
+	</ul></li>
+	</ul></p>
+
+<p>Vehicles<br />
+<ul>
+	<li>New
+	<ul>
+		<li><span class="caps">RSI</span> Ursa Rover</li>
+	</ul></li>
+	</ul></p>
+
+<p>Weapons<br />
+<ul>
+	<li>Added Quarreler Laser Cannon (Size 3).<br />
+Components</li>
+	<li>Gravlev System.</li>
+	<li>Shield Emitters, Coolers, and Power Plants have returned with new functionality.</li>
+	<li>Addition of the quantum drive as an customizable component.</li><br />
+</ul></p>
+
+<h2><span style="color:lightblue;">First Person</span><br />
+<A NAME="NFFP"></A></h2>
+
+<p>Animations<br />
+<ul>
+	<li>Greatly expanded the number of usable items (benches, stools, ect) that can be interacted with by both players and <span class="caps">NPC</span>s.</li><br />
+</ul></p>
+
+<p>Appearance<br />
+<ul>
+	<li>Clothing
+	<ul>
+		<li>New clothing and clothing variants have been added.</li>
+	</ul></li>
+	</ul></p>
+
+<p>Gear<br />
+<ul>
+	<li>Armor
+	<ul>
+		<li>Armor now consists of modular pieces that can be equipped, interchanged, and purchased as separate pieces</li>
+		<li>There are several new armor sets that can be found at various shops throughout the verse.</li>
+	</ul></li>
+	<li>Weapons
+	<ul>
+		<li>Added: Apocalypse Arms Scourge Railgun.</li>
+		<li>Added: Behring P8-SC.</li>
+		<li>Added: Custodian <span class="caps">SMG</span>.</li>
+	</ul></li>
+	</ul></p>
+
+
+<h2><span style="color:lightblue;">User Interface</span><br />
+<A NAME="NFUI"></A></h2>
+
+
+<p><b>New Mobiglas Interface</b><br />
+Personal Manager App<br />
+<ul>
+	<li>Using this app, you are able to select individual areas of clothing, armor, and items to change, add, or remove from the player&#8217;s character. To do this select a category and choose from options available in your inventory. Equipping an item may open up further ports for the user to equip more items such as Grenades, Gadgets and Magazines. Once the item is equipped, you can Save and Apply these changes to your character.</li><br />
+</ul></p>
+
+<p>StarMap App<br />
+<ul>
+	<li>You will be able to navigate the various rings in the Starmap which display the orbital rotations of the areas to explore. You can use the right mouse button to move the Starmap around, and the left to rotate and select areas. Use the mousewheel to zoom in and out and double-click on planets to center and zoom into them. Once zoomed in on a planet or moon you will see x, y and z positions mapped out to quantum travel to, making it easier to decide which side of the planet to go to.</li><br />
+</ul></p>
+
+<p>Contract Manager App<br />
+<ul>
+	<li>Use this app to check available missions, track/untrack accepted missions, and view your mission history.</li>
+	<li>Comm App (detailed below with <span class="caps">MFD</span>s).</li><br />
+</ul></p>
+
+
+<p><b>New Ship Multiple Selectable <span class="caps">MFD</span> featuring Render to Texture (<span class="caps">RTT</span>).</b></p>
+
+<p><b>Heat</b><br />
+System<br />
+<ul>
+	<li>Signals &#8211; The same signals readout as the Power <span class="caps">MFD</span>.</li>
+	<li>IR Suppression &#8211; This button toggles suppressing the IR signal multiplier (which temporarily reduces your IR signal) at the cost of all items (and thus, the entire ship via the Heat Sink) heating rapidly. When IR Suppression is active, you should see that IR starts to drop down, and Heat starts to creep up toward its overheat value.System
+	<ul>
+		<li>System IR Suppression &#8211; All groups are suppressed. This overrides any groups below.</li>
+		<li>System IR Suppression &#8211; All groups are suppressed. This overrides any groups below.</li>
+	</ul></li>
+	<li>IR Levels &#8211; Shows the IR levels of each item category.<br />
+Items</li>
+	<li>On Button &#8211; This denotes the on/Off state of the item.</li>
+	<li>Item Name &#8211; Reorder alphabetically by item name (all categories).
+	<ul>
+		<li>Item Name &#8211; Item Name.</li>
+		<li>Distortion Damage &#8211; Appears when distortion damage is received, and disappears when there is none.</li>
+	</ul></li>
+	<li>Item Type &#8211; Reorder by cycling item type (all categories). This is a list of available types:
+	<ul>
+		<li>Power Plant (power in this case is power generated)</li>
+		<li>Cooler (no heat, but for health/wear indication)</li>
+		<li>Shield Generator</li>
+		<li>Gun</li>
+		<li>Main Thruster</li>
+		<li>Maneuvering Thruster</li>
+		<li>Quantum Drive</li>
+		<li>Jump Drive</li>
+		<li>Radar</li>
+	</ul></li>
+	<li>Power &#8211; The current item power usage.</li>
+	<li>Heat &#8211; The current heat the item is generating.</li>
+	<li>Health &#8211; How much health each item has remaining.</li>
+	<li>Wear &#8211; How much wear each item has remaining.</li><br />
+</ul></p>
+
+<p><b>Power</b><br />
+System<br />
+<ul>
+	<li>On Button &#8211; Turns all power plants on/Off.</li>
+	<li>Power Throttle
+	<ul>
+		<li>Throttle &#8211; This throttles the connected Power Plants&#8217; maximum power output.</li>
+		<li>Throttle Max &#8211; This is the 100% value for the Power Plants maximum power output.</li>
+		<li>Throttle Stealth &#8211; This is an updating bar which denotes the Stealth value that Throttle is set to when the Stealth Button is pressed (see below).</li>
+		<li>Power Usage &#8211; Currently generated power.</li>
+		<li>Power Required &#8211; Required power by all items.</li>
+		<li>Power Deficiency &#8211; Amount of required power minus the currently generated power. Only appears when the power plants aren&#8217;t able to supply enough required power.</li>
+	</ul></li>
+	<li>Stealth &#8211; This button sets the Throttle to the Stealth value, which is the sum on Power value of all connected items that are on, plus a small reserve value (10% to start). As individual items will be able to be turned off, this bar will move up and down as the Stealth value changes.  Once the Stealth Button has been activated and the Throttle value reduced, you may then readjust the Throttle to suit your needs or adjust the Power Priority Triangle to work with the reduced power output.</li>
+	<li>Power Priority Triangle &#8211; Moving the indicator on the Power Priority Triangle adjusts the percentage of power that is distributed to the three major systems (Shields, Weapons, and Thrusters) if total power requested is larger than available power generated.  Nudging toward one system should add to it, and take proportionally to the other systems.
+	<ul>
+		<li>Groups &#8211; Each group (Shields, Weapons, Thrust) are represented by icons.</li>
+		<li>Priority &#8211; Percentages for each group. These should total 100%; dead center of the triangle should indicate 33% on each corner of the triangle.</li>
+		<li>Power Deficiency &#8211; If any group isn&#8217;t receiving its requested power, it is indicated by an icon.</li>
+		<li>Signals: Heat &#8211; As the point of throttling power to items is to control your ship&#8217;s signals, they are indicated here.</li>
+		<li>Heat &#8211; Total heat generated by items.</li>
+		<li>Heat Capacity &#8211; Total heat capacity available to the ship.</li>
+	</ul></li>
+	<li>EM &#8211; Current total EMsignature.</li>
+	<li>IR &#8211; Current total IR signature.</li><br />
+</ul></p>
+
+<p>Items<br />
+<ul>
+	<li>On Button &#8211; This turns individual power plants on/Off. Please note that the only items that can be turned on and off from this page are power plants. All other items are only observable in their on/off states.</li>
+	<li>Item Name
+	<ul>
+		<li>Item Name</li>
+		<li>Distortion Damage &#8211; Appears when distortion damage is received, and disappears when there is none.</li>
+	</ul></li>
+	<li>Item Type &#8211; Reorder by cycling item type (all categories). This is a list of available types:
+	<ul>
+		<li>Power Plant (power in this case is power generated)</li>
+		<li>Shield Generator</li>
+		<li>Gun</li>
+		<li>Main Thruster</li>
+		<li>Maneuvering Thruster</li>
+		<li>Quantum Drive</li>
+		<li>Jump Drive</li>
+		<li>Radar</li>
+		<li>Avionics</li>
+	</ul></li>
+	<li>Power &#8211; For power plants, power generation. For all other items, item power usage.</li>
+	<li>Heat &#8211; The current heat the item is generating.</li>
+	<li>Health &#8211; How much health each item has remaining.</li>
+	<li>Wear &#8211; How much wear each item has remaining.</li>
+	<li>Item Group
+	<ul>
+		<li>Power</li>
+		<li>Shields</li>
+		<li>Weapons</li>
+		<li>Thrusters</li>
+	</ul></li>
+	</ul></p>
+
+<p><b>Shields</b><br />
+Systems<br />
+<ul>
+	<li>On Button &#8211; Turns all shield emitters and shield generators on/Off.</li>
+	<li>Shield Generator Throttle &#8211; This works exactly like the Power Throttle in all other <span class="caps">MFD</span>s and throttles Power for the shield generators.</li>
+	<li>Shield Status &#8211; As before, a top-down (for front, back, left, and right) and side (top and bottom) shield health is displayed. Face repair is represented by the highlighted bar, and each face&#8217;s health is indicated by the value next to it.
+	<ul>
+		<li>Top &#8211; Represents the health to front, back, left, and right.</li>
+		<li>Side &#8211; Represents the health to top and bottom.</li>
+	</ul></li>
+	<li>Face Priority &#8211; Dragging the pip toward a face moves priority toward that face. Increasing face priority both increases the rate at which it is repaired when damaged, and also redistributes health toward it when the shields are healthy.
+	<ul>
+		<li>Top &#8211; Represents the face priority to front, back, left, and right.</li>
+		<li>Side &#8211; Represents to the face priority to top and bottom.</li>
+	</ul></li>
+	<li>Face Hardening &#8211; Selecting a face temporarily gives it extra resistance, allowing you to brace for damage to a particular face.</li>
+	<li>Standby &#8211; This button turns off the actual shield temporarily to allow it to repair more quickly at the cost of not having the shields on while this is happening.</li><br />
+</ul></p>
+
+<p>Items<br />
+<ul>
+	<li>On Button &#8211; This turns individual shield generators on/Off.</li>
+	<li>Item Name &#8211; Reorder alphabetically by shield generator name.
+	<ul>
+		<li>Item Name &#8211; Shield Generator name.</li>
+		<li>Distortion Damage &#8211; Appears when distortion damage is received, and disappears when there is none.</li>
+	</ul></li>
+	<li>Type &#8211; Item Type Icon</li>
+	<li>Power &#8211; Shield generator power usage.</li>
+	<li>Heat &#8211; The current heat the shield generator is generating.</li>
+	<li>Health &#8211; How much health each shield generator has remaining.</li>
+	<li>Wear &#8211; How much wear each shield generator has remaining.</li><br />
+</ul></p>
+
+<p><b>Weapons</b><br />
+System<br />
+<ul>
+	<li>On Button &#8211; Turns all weapons and missiles on/Off.</li>
+	<li>Weapon Group On Button- This turns all weapons in the weapon group on/Off.</li>
+	<li>Weapon Group Number &#8211; Weapon Group 1 or 2.</li>
+	<li>Weapon Group Throttle &#8211; This works exactly like the Power Throttle in all other <span class="caps">MFD</span>s and throttles Power for that Weapon Group.</li>
+	<li>Weapons Number &#8211; Number of weapons in that Weapon Group.</li>
+	<li>Missiles On Button &#8211; This turns all missiles on/Off.</li>
+	<li>Missiles Icon</li>
+	<li>Missiles Number &#8211; Number of missiles left.</li><br />
+</ul></p>
+
+<p>Items<br />
+<ul>
+	<li>On Button &#8211; This turns individual weapons on/Off.</li>
+	<li>Item Name.
+	<ul>
+		<li>Item Name &#8211; Weapon Name</li>
+		<li>Distortion Damage &#8211; Appears when distortion damage is received, and disappears when there is none.</li>
+	</ul></li>
+	<li>Weapon Group &#8211; The Weapon Group number (there are two). Clicking this specific element switches the fire group to the other fire group (there are currently two fire groups).</li>
+	<li>Ammo Type</li>
+	<li>Ammo
+	<ul>
+		<li>Remaining Ammo &#8211; Ammo remaining in current reload.</li>
+		<li>Reloads &#8211; Ammo reloads remaining.</li>
+	</ul></li>
+	<li>Power &#8211; Gun power usage.  This will be useful for showing you how much power each gun requires to use.</li>
+	<li>Heat &#8211; The current heat the item is generating.</li>
+	<li>Health &#8211; How much health each gun has remaining.</li>
+	<li>Wear &#8211; How much wear each gun has remaining.</li><br />
+</ul></p>
+
+<p><b>Comms</b></p>
+
+<p>The Comms system is available as a menu option on ship <span class="caps">MFD</span>s as well as on the MobiGlas  To use <span class="caps">MFD</span> comms, the player will have to enter Interaction Mode (hold down &#8220;F&#8221;) in order to see and select the appropriate <span class="caps">MFD</span> panel and interact with comm functionality.</p>
+
+<ul>
+	<li>Requesting landing: Use the Comms system when in range of a landing zone to request a landing pad.  The air traffic control (<span class="caps">ATC</span>) will respond and assign you a pad.  In some instances, such as at Levski where the landing pads are enclosed, you will need to use the same system to request a take off.</li>
+</ul>
+
+<h2><span style="color:lightblue;">Technical</span><br />
+<A NAME="NFTechnical"></A></h2>
+
+<p>Universe<br />
+<ul>
+	<li>Increased player-cap to 50.</li><br />
+</ul></p>
+
+<p>Menu<br />
+<ul>
+	<li>Added <span class="caps">FOV</span> scale to menu.</li><br />
+</ul></p>
+
+<p>Audio<br />
+<ul>
+	<li>New low ammo audio.</li>
+	<li>New ship weapon audio.</li>
+	<li>New ship engine audio.</li><br />
+</ul></p>
+
+
+<p>Graphical<br />
+<ul>
+	<li>New &#8220;Fog&#8221; <span class="caps">VFX</span>.</li>
+	<li>New Debris Motion.</li>
+	<li>New Quantum Travel <span class="caps">VFX</span>.</li>
+	<li>New Ship Destruction <span class="caps">VFX</span>.</li>
+	<li>New Ship &#8220;trails&#8221; <span class="caps">VFX</span>.</li>
+	<li>New layered ship weapon impacts.</li><br />
+</ul></p>
+
+
+<p>Optimizations<br />
+<ul>
+	<li>Added additional serialization.</li>
+	<li>Improved emitter update performance.</li><br />
+</ul></p>
+
+
+
+<h1><span style="color:lightblue;">Feature Updates</span><br />
+<A NAME="FU"></A></h1>
+
+<h2><span style="color:lightblue;">Universe</span><br />
+<A NAME="FUU"></A></h2>
+
+<p>General<br />
+<ul>
+	<li>Updated color-grade for Crusader.</li><br />
+</ul></p>
+
+<p><span class="caps">ASOP</span> Terminals<br />
+<ul>
+	<li>Added ship selector with more information.</li><br />
+</ul></p>
+
+<p>Shops<br />
+<ul>
+	<li>Adding magazines and grenades to Cubby Blast.</li>
+	<li>Added new armors/weapons to Garrity Defense.</li>
+	<li>Added new clothing to various stores.</li><br />
+</ul></p>
+
+<p>CrimeStat<br />
+<ul>
+	<li>Split &#8220;wanted&#8221; and &#8220;criminality&#8221; reputations.</li>
+	<li>Only players at wanted level 3 should appear hostile.</li>
+	<li>If criminal is killed by security, they lose wanted levels.</li><br />
+</ul></p>
+
+<p>Grim Hex<br />
+<ul>
+	<li>Additional props.</li>
+	<li>Updated art assets.</li>
+	<li>Moved <span class="caps">ASOP</span> terminals to main railing.</li><br />
+</ul></p>
+
+<h2><span style="color:lightblue;">Ships &amp; Vehicles</span><br />
+<A NAME="FUSV"></A></h2>
+
+ General
+<ul>
+	<li>Updated with new hit reactions.</li>
+	<li>Updated ship entry and interaction animations.</li>
+</ul>
+
+<p>Ships<br />
+<ul>
+	<li>Drake Cutlass Black: Complete Rework.</li>
+	<li><span class="caps">RSI</span> Aurora Series: Complete Rework.</li>
+	<li>Aegis Avenger
+	<ul>
+		<li>Updated dashboard.</li>
+	</ul></li>
+	<li>Aegis Vanguard
+	<ul>
+		<li>Cockpit rework.</li>
+	</ul></li>
+	<li>Aegis Sabre
+	<ul>
+		<li>Cockpit display rework.</li>
+	</ul></li>
+	<li>Aegis Gladius
+	<ul>
+		<li>Cockpit display rework.</li>
+		<li><span class="caps">HUD</span> update.</li>
+	</ul></li>
+	<li>Anvil Gladiator
+	<ul>
+		<li>Separated art for pilot/copilot geometry.</li>
+	</ul></li>
+	<li>Drake Herald
+	<ul>
+		<li>Rescaled self-destruct timer.</li>
+	</ul></li>
+	<li>Vanduul series
+	<ul>
+		<li>Updated lighting.</li>
+	</ul></li>
+	<li>Merlin
+	<ul>
+		<li>Updated lighting.</li>
+	</ul></li>
+	<li><span class="caps">MISC</span> Reliant
+	<ul>
+		<li>Updated lighting.</li>
+	</ul></li>
+	<li>Drake Caterpillar
+	<ul>
+		<li>Added airlock hole for <span class="caps">EVA</span> hatch.</li>
+	</ul></li>
+	</ul></p>
+
+<p>Ship Weapons<br />
+<ul>
+	<li>Updated animations.</li>
+	<li>Knightbridge Arms series: Complete Rework.</li>
+	<li>Klaus and Werner Repeater Series: Complete Rework.</li><br />
+</ul></p>
+
+<h2><span style="color:lightblue;">Star Marine</span><br />
+<A NAME="FUSM"></A></h2>
+
+
+<p>Armors<br />
+<ul>
+	<li>Armor and equipment weight now alters run speed and stamina drain.</li>
+	<li>Light/Medium/Heavy armor piece damage reduction balancing.<br />
+Weapons</li>
+	<li>New P8-SC <span class="caps">SMG</span> available.</li>
+	<li>Tweaks and balance changes across all weapons.</li><br />
+</ul></p>
+
+<h2><span style="color:lightblue;">Arena Commander</span><br />
+<A NAME="FUAC"></A></h2>
+
+<p>Scoring rework.</p>
+
+<h2><span style="color:lightblue;">First Person</span><br />
+<A NAME="FUFP"></A></h2>
+
+<p>Animations<br />
+<ul>
+	<li>Updated jumping.</li>
+	<li>Updated pistol animations.</li><br />
+</ul></p>
+
+<p>Gear<br />
+<ul>
+	<li>Equipment Weight: Equipment weight now influences actor state and run speed.</li>
+	<li>Weapons
+	<ul>
+		<li>Complete art rework: Devastator 12 Shotgun.</li>
+		<li>Complete art rework: Arrowhead Sniper Rifle.</li>
+		<li>Complete art rework: P4-AR Assault Rifle.</li>
+		<li>Complete art rework: Arclight Pistol.</li>
+		<li>Complete art rework: Gallant Rifle.</li>
+		<li>Complete art rework: Gemini L86.</li>
+	</ul></li>
+	</ul></p>
+
+<h2><span style="color:lightblue;">Technical</span><br />
+<A NAME="FUT"></A></h2>
+
+<p>Universe<br />
+<ul>
+	<li>Increased player cap to 50.</li><br />
+</ul></p>
+
+<p>Menu<br />
+<ul>
+	<li>Reskinned &#8220;Contacts&#8221; page.</li><br />
+</ul></p>
+
+<p>Keybindings and Controls<br />
+<ul>
+	<li>Complete rework of all keybindings.</li>
+	<li>Tweaked controls for turrets for improved experience.</li>
+	<li>Added joystick mappings for <span class="caps">EVA</span> and <span class="caps">FPS</span>.</li>
+	<li>Added joystick mappings for interaction mode.</li>
+	<li>Added gamepad mappings for interaction mode.</li>
+	<li>Added <span class="caps">ADS</span> zoom in and out for gamepad.</li><br />
+</ul></p>
+
+<p>Audio<br />
+<ul>
+	<li>Updated internal ship audio.</li>
+	<li>Updated quantum travel audio.</li>
+	<li>Updated shopping UI audio.</li>
+	<li>Updated collision audio.</li><br />
+</ul></p>
+
+<p>Graphical<br />
+<ul>
+	<li>Exposure Improvements.</li>
+	<li>Specular Improvements.</li><br />
+</ul></p>
+
+
+<h2><span style="color:lightblue;">Fixes</span><br />
+<A NAME="FUF"></A></h2>
+
+
+<h3><span style="color:lightblue;">Bug Fixes</span><br />
+<A NAME="FUBF"></A></h3>
+
+
+<p>Universe<br />
+<ul>
+	<li>Fixed <span class="caps">LOD</span> issues on Olisar.</li>
+	<li>Fixed delayed/missing music in Crusader.</li>
+	<li>Fixed missing purchasable items form ArcCorp.</li>
+	<li>Added proper collision to GrimHex shop window.</li>
+	<li>Fixed an issue where spawning a Freelancer in front of a Scythe would cause them to collide.</li>
+	<li>Fixed missing collision in Aeroview hangar.</li><br />
+</ul></p>
+
+<p>Vehicles<br />
+<ul>
+	<li>Suspension should now work properly.</li><br />
+</ul></p>
+
+
+<p>Ships<br />
+<ul>
+	<li><span class="caps">EMP</span> Charges no longer have a chance to kill players.</li>
+	<li>Fixed some audio feedback issues.</li>
+	<li>Khartu-Al
+	<ul>
+		<li>Corrected several backward or missing decals.</li>
+	</ul></li>
+	<li>Gladiator
+	<ul>
+		<li>Fixed exterior lighting.</li>
+	</ul></li>
+	<li>Mustang Series
+	<ul>
+		<li>Corrected several backward or missing decals.</li>
+		<li>Fixed cracked glass appearance on cockpit from a distance.</li>
+	</ul></li>
+	<li>Caterpillar
+	<ul>
+		<li>Fixed an issue with shadow flicker in cockpit.</li>
+	</ul></li>
+	<li>300 Seires
+	<ul>
+		<li>Corrected several backward or missing decals.</li>
+		<li>Fixed some clipping geometry.</li>
+		<li>Fixed texture normals.</li>
+	</ul></li>
+	<li>Vanguard series
+	<ul>
+		<li>Fixed a bug with Hoplite destruction <span class="caps">VFX</span>.</li>
+	</ul></li>
+	<li>Vanduul
+	<ul>
+		<li>Fixed collision issues with Scythe and Glaive landing gear.</li>
+	</ul></li>
+	<li>Starfarer
+	<ul>
+		<li>Player no longer t-poses when entering/exiting turret.</li>
+	</ul></li>
+	<li>Constellation series
+	<ul>
+		<li>Reduced the interaction point size of ladders.</li>
+		<li>Resolved missing or quiet audio for fly by.</li>
+	</ul></li>
+	</ul></p>
+
+
+<p><span class="caps">FPS</span><br />
+<ul>
+	<li>Fixed some issues with grenade markers.</li>
+	<li>Fixed players momentarily in aim pose during jump.</li>
+	<li>Projectiles sh ould now spawn in correct zone.</li>
+	<li>Fixed issue where players could use MediPen without reducing supply or without <span class="caps">HUD</span> updating.</li><br />
+</ul></p>
+
+<p>Arena Commander<br />
+<ul>
+	<li>Fixed <span class="caps">LOD</span> issue on Dying Star central spire.</li>
+	<li>Fixed <span class="caps">LOD</span> issues for landing pads.</li><br />
+</ul></p>
+
+<p>Star Marine<br />
+<ul>
+	<li>Visual Clean-ups for Star Marine: Demien.</li>
+	<li>Cleaned up issues with player lighting.</li>
+	<li>Fixed issue where all players were marked hostile for spectator.</li>
+	<li>Players no longer slide into hacking animation when interacting with terminals from side or back.</li>
+	<li>Removed grenade damage through barrier into spawn room.</li><br />
+</ul></p>
+
+<p>General<br />
+<ul>
+	<li>Fixed issue where players were unable to join on friends if different regions are selected.</li>
+	<li>Fixed issue where if both players add each other to contacts they both appear as permanently offline.</li>
+	<li>Fixed an issue where only the first <span class="caps">PTU</span> account copy would get added to friends system.</li>
+	<li>Fixed an issue where loading into the universe would present no destinations after finishing a match of Arena Commander.</li>
+	<li>Fixed an issue where input recognition would fail when overlapping inputs.</li><br />
+</ul></p>
+
+
+<h3><span style="color:lightblue;">Balance</span><br />
+<A NAME="FUB"></A></h3>
+
+<p>Ships<br />
+<ul>
+	<li>Boost and afterner are additive rather than multiplicative</li>
+	<li>Quantum fuel tanks and consumption have been updated for new planet.ary distances.</li>
+	<li>Shield regen now has a &#8220;set-back&#8221; value that varies regeneration based on incoming damage.</li>
+	<li>Completely reworked armor.  All ships now have armor to varying degrees with more combat focused ships having thicker armor and greater damage reduction.  Armor now reduces incoming energy damage more than physical damage.</li>
+	<li>Adjusted shield and ship health values.</li>
+	<li>All ships have had their velocities, both linear and angular, increased.</li>
+	<li>Hydrogen fuel consumptions and regeneration has been reworked.</li>
+	<li><span class="caps">EMP</span>s no longer effect the source ship.</li><br />
+</ul></p>
+
+<p><span class="caps">FPS</span><br />
+<ul>
+	<li>Increased hip fire recoil.</li>
+	<li>Damage and spread balancing across all weapons.</li>
+	<li>Reduced procedural breathing sway effects in <span class="caps">ADS</span>.</li>
+	<li>Added damage reduction component to armor items.</li>
+	<li>Increased damage reduction of medium and heavy armors.</li>
+	<li>Increased movement speed difference between light and medium.</li><br />
+</ul></p>
+
+
+<h1><span style="color:lightblue;">Bugs, Issues, and Work Arounds (W/A)</span><br />
+<A NAME="BFWA"></A></h1>
+
+<ul>
+	<li>Some ships may be spawning without items or without the ability to &#8220;flight ready&#8221;. W/A: If this happens please file an insurance claim to replace the ship.</li>
+	<li>Various actions can cause the player to holser their weapon (medipens, springting, vaulting, ect).</li>
+	<li>Changing loadouts on the Star Marine menu incosistent and often doesn&#8217;t work.</li>
+	<li>Score does not remain consistent in Star Marine if you leave and rejoin.</li>
+	<li>AI often fly out of bounds in Arena Commander.</li>
+	<li>Close proximity ship to ship passes cause a large <span class="caps">FPS</span> stutter.</li>
+	<li>Game mode and map images are not scaled correctly on the Arena Commander menu.</li>
+	<li>Pickups are inconsistent in Arena Commander.</li>
+	<li>The chatbox regularly goes away due to various actions (interacting with some objects, switching to 3rd person camera, ect). W/A: You can consistently bring back the chat window using &#8220;F12&#8221;.</li>
+	<li><span class="caps">IFCS</span> has some control error under ship acceleration.</li>
+	<li><span class="caps">ESP</span> isn&#8217;t functioning correctly, especially in lower framerates.</li>
+</ul>
+
+<p><A HREF="#top">Back to top</A></p></div><div class="cboth"></div></div><div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+
+  <div class="wrapper">
+    
+    <div class="end-transmission-container">
+      <div class="glow left"></div>
+      <div class="title-bar">
+        <h1>End Transmission</h1>
+      </div>
+      <div class="glow right"></div>
+    </div>
+  </div>
+  
+
+  
+    
+
+  <div class="two-line-separator"></div>
+  
+    
+<div class="wrapper force-one-column" id="comments">
+  <div class="holder">
+    <div class="title-bar">
+      <div class="count">
+        <div class="label">Comments</div>
+        <div class="value">0101.<span class="js-comment-decimal">0</span></div>
+        <div class="cboth"></div>
+      </div>
+      <div class="title">
+        <h1>Feedback</h1>
+      </div>
+      <div class="cboth"></div>
+    </div>
+
+    <div class="main-buttons-holder-container">
+      <div class="main-buttons-holder">
+        <a href="/connect?jumpto=/comm-link/transmission/16349-Star-Citizen-Alpha-300" class="add-comment js-add-comment trans-02s js-modal-login">Add New Comment</a>
+        <div class="settings js-settings">
+          <h1>Settings</h1>
+          <label>View mode:</label>
+          <a href="#" class="js-comments-view to-one-column js-to-one-column trans-01s on">One column</a>
+          <a href="#" class="js-comments-view to-two-columns js-to-two-columns trans-01s ">Two columns</a>
+          <label>Sort by:</label>
+          <a href="#" class="js-comments-sort to-oldest js-to-oldest trans-01s on">Oldest first</a>
+          <a href="#" class="js-comments-sort to-newest js-to-newest trans-01s ">Newest first</a>
+          <a href="#" class="js-comments-sort to-appreciated js-to-appreciated trans-01s ">Most appreciated first</a>
+
+                  </div>
+        <a href="" class="view-settings js-view-settings"><div class="hover trans-02s"></div></a>
+        <div class="triangle"></div>
+      </div>
+    </div>
+
+    
+    <div class="comment-listing"></div>
+
+    <div class="comment-loader traj-loader">
+      <div class="fast-blink"></div>
+      <span>Loading Additional Feedback</span>
+    </div>
+
+    <div class="cboth"></div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    window.comments = new RSI.Comments({
+      atom_url:"/comm-link/transmission/16349-Star-Citizen-Alpha-300",
+      comment_listing_el:$(".comment-listing"),
+      comment_submission_form_el:$(".comment-submission"),
+      api_object:RSI.Api.Comments,
+      lazyLoading: true,
+      comment_count: 101,
+      subject_id:16349,
+      append:false,
+      texts: {
+        "edit": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        },
+        "reply": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        }
+      },
+      "insertion_conf": {
+        "mode":"html"
+      },
+      "api_function_names": {
+        "delete":"erase",
+        "load":"listing",
+        "sort":"listing"
+      }
+    });
+  });
+</script>
+  
+</div>
+
+    </div>
+
+    
+  </div>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.11/moment-timezone-with-data.min.js"></script>
+
+<script type="text/plain" data-cookieconsent="statistics">
+  $.cookie('moment_timezone', moment.tz.guess(), { expires: 31, path: '/' });
+</script>
+
+
+
+
+               <script id="tpl_number_counter_digits" type="text/x-jsmart-tmpl">{if !$seperator}{$seperator=','}{/if}
+{if !$first_max}{$first_max=9}{/if}
+{for $digit = 0 to $length-1}
+  <div class="mask">
+    <div class="carousel">
+      {if $digit == 0}
+        {$max = $first_max}
+      {else}
+        {$max = 9}
+      {/if}
+      {for $i=0 to $max}
+        <div class="item {if $val_arr[$digit] == $i}on{/if}" rel="{$i}">{$i}</div>
+      {/for}
+    </div>
+  </div>
+  {if ($length - $digit) % 3 == 1 && $digit != $length-1}
+  <div class="seperator">{$seperator}</div>
+  {/if}
+{/for}</script>
+<script id="base_modal" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  <div class="top-border">
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+  </div>
+</div></script>
+<script id="base_modal_flat" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  </div>
+  
+</div></script>
+<script id="tpl_modals_slideshow" type="text/x-jsmart-tmpl"><img class="top-border" src="/rsi/static/images/modal_top.png">
+<a href="" class="close js-close"></a>
+<div class="mask">
+  <a class="js-prev prev control"></a>
+  <a class="js-next next control"></a>
+  <div class="slideshow-carousel carousel" rel="{$index}">
+    {foreach from=$images item="image"}
+      <div class="{if $index == $image@index}on{/if}">
+      {if $image.is_video}
+        <div class="video-holder">
+          <div id="slideshow_video_{$image@index}" data-source="{$image->source_url}">
+            <video width="100%" height="100%" preload="auto" {if $video}src="{$image->source_url}"{/if} controls></video>
+          </div>
+        </div>
+      {else}
+        <div class="media js-media-slideshow-{$image@iteration}">
+        {if $image.low_res}
+          <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source data-srcset="{$image.full_res}" media="(min-width: 300px)" />
+            <!--[if IE 9]></video><![endif]-->
+            <img data-srcset="{$image.low_res}" alt="{$image.title}" />
+          </picture>
+        {else}
+          <img data-src="{$image.source_url}" />
+        {/if}
+        </div>
+      {/if}
+        <div class="text">
+          {if !$image.is_video}
+          <a href="{$image.source_url}" class="download"></a>
+          {/if}
+          <div class="copyright">© 2012-{$year}<br />Cloud Imperium Games Corporation &<br />Roberts Space Industries Corp.</div>
+          <div class="page-number">{$image@iteration} / {count($images)}</div>
+          <div class="caption v-center">{if $image.title && $image.title != "undefined"}{$image.title}{/if}</div>
+          <div class="cboth"></div>
+        </div>
+      </div>
+    {/foreach}
+  </div>
+</div>
+<img class="bottom-border" src="/rsi/static/images/modal_bottom.png"></script>
+<script id="tpl_contact_us" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="contact" class="inner-content on">
+  <h2><span class="icon"></span>CONTACT</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+  <div class="error-message js-error-message"></div>
+  <div class="success-message js-success-message"></div>
+    <fieldset class="last">
+    <label for="contact_email">Email Address</label>
+    <input type="text" name="email" value="" class="trans-02s trans-color trans-box-shadow" id="contact_email" />
+  </fieldset>
+    <fieldset>
+    <label for="contact_subject">Subject</label>
+    <input type="text" name="subject" value="" class="trans-02s trans-color trans-box-shadow" id="contact_subject" />
+    <label>Contacting us for:</label>
+    <ul class="category-info">
+            <li id="tech_support_info">Questions about download, installation, networking, or in-game client problems</li>
+            <li id="subscription_info">Questions about monthly and yearly subscription plans</li>
+            <li id="account_billing_info">Issues related to your account, such as incorrect information or ability to access account, or Billing with regards to payments and payment methods</li>
+            <li id="melt_request_info">To reclaim a pledge over $1,000 for store credit (please note - this is a permanent action)</li>
+            <li id="merchandise_info">Questions about physical and/or shipped merchandise</li>
+            <li id="hacked_info">Issues related to compromised account or missing pledge.</li>
+            <li id="account_recovery_info">For issues with account authentication, lost passwords and related queries</li>
+            <li id="probation_info">Issues related to forums probation or ban</li>
+            <li id="refund_request_info">Refund requests and related inquiries</li>
+            <li id="customer_support_info">For general questions and queries regarding Star Citizen</li>
+          </ul>
+  </fieldset>
+  <fieldset>
+    <label for="contact_text">Fescription</label>
+    <textarea name="text" class="trans-02s trans-color trans-box-shadow" id="contact_text"></textarea>
+  </fieldset>
+  <div class="contact-submit-wrapper">
+    <div class="line"></div>
+    <button class="submit js-submit"><strong>submit your message</strong></button>
+  </div>
+</form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+<script id="tpl_error" type="text/x-jsmart-tmpl"><div class="modal-error js-modal-error">
+  <p class="modal-text js-modal-text"></p>
+  <a class="close js-close trans-03s .trans-opacity" href=""></a>
+</div></script>
+<script id="tpl_success" type="text/x-jsmart-tmpl"><div class="modal-success js-modal-success">
+  <p class="modal-text js-modal-text"></p>
+  <a class="close js-close trans-03s .trans-opacity" href=""></a>
+</div></script>
+<script id="tpl_progress" type="text/x-jsmart-tmpl"><div class="modal-progress js-modal-progress">
+  <div class="traj-loader">
+    <div class="fast-blink"></div>
+    <span class="modal-text js-modal-text"></span>
+  </div>
+</div></script>
+<script id="tpl_outbound" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="outbound" class="inner-content on">
+  <h2><span class="icon"></span>OUTBOUND LINK</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+      <div class="error-message js-error-message"> <span class=important>WARNING</span><br/><br/> This link will bring you outside of the RSI site and into the depths of the internet. Continue?<br/><br/><span class="url"></span> </div>
+      <div class="success-message js-success-message"><span class=important>STAND BY</span><br/><br/> Initiating hyperlink.<br/><br/></div>
+
+      <fieldset class="clearfix last">
+        <span class="submit-wrapper">
+          <span class="submit-hover trans-02s trans-opacity"></span>
+          <input type="submit" value="WARP" class="trans-02s trans-color trans-background" />
+        </span>
+      </fieldset>
+    </form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+
+<script id="tpl_l-notification-bar" type="text/x-jsmart-tmpl"><div class="l-notification-bar js-notification-bar">
+
+  <div class="l-notification-bar__watermark js-svg-inliner h-svg__logo-star-citizen"></div>
+
+  <div class="l-notification-bar__boxes">
+    {if !$viewedCookieNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='cookie'
+          title='COOKIES:'
+          message="Our website uses Google Analytics to analyze our traffic. <br/>To learn how you can control Google's use of your data and how you can opt out <a href='https://www.google.com/policies/privacy/partners/'>click here</a>."
+          linkText='See Details'
+          buttonText='Got it!'}
+      </div>
+    {/if}
+
+    {if !$viewedPrivacyNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='privacy'
+          title='PRIVACY POLICY:'
+          message='We adjusted the PP to reflect the decision of the European Court of Justice regarding Safe Harbor, the fact that RSI has moved and added some services providers.'
+          linkText='View Privacy Policy'
+          buttonText='Got it!'}
+      </div>
+    {/if}
+  </div>
+
+</div>
+</script>
+<script id="tpl_c-notification" type="text/x-jsmart-tmpl"><div class="c-notification js-bottom-notif-msg-{$type}">
+    <div class="c-notification__title">{$title}</div>
+    <div class="c-notification__message">
+      {$message}
+    </div>
+
+    {if $linkText}
+        <div class="c-notification__wrapper-link">
+            <a class="c-notification__link js-bottom-notif-link-{$type}">
+            {$linkText}
+            </a>
+        </div>
+    {/if}
+
+    <a class="c-notification__button js-bottom-notif-btn-{$type}">
+
+      <span class="c-notification__button-text">
+       {$buttonText}
+      </span>
+
+      {if $type neq 'announcement'}
+        <div class="c-iconed__icon c-iconed__icon--checkmark"></div>
+      {/if}
+    </a>
+</div>
+</script>
+
+<script id="tpl_confirm" type="text/x-jsmart-tmpl"><div class="modal-confirm js-modal-confirm clearfix">
+  <p class="modal-text js-modal-text"></p>
+  <a class="bt-close js-close trans-03s trans-opacity" href=""></a>
+  <a class="bt-confirm js-confirm trans-03s trans-opacity" href=""></a>
+	<div class="buttons">
+		<a class="shadow-button trans-02s trans-color js-close bt-close rm"     >
+  <span class="label js-label trans-02s">Cancel</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+		<a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">Confirm</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+	</div>
+</div>
+</script>
+<script id="tpl_alert" type="text/x-jsmart-tmpl"><div class="modal-alert js-modal-alert clearfix">
+  <p class="modal-text js-modal-text"></p>
+  <div class="buttons">
+    <a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">OK</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+  </div>
+</div></script>
+<script id="tpl_video" type="text/x-jsmart-tmpl">{extends file="base_modal"}
+{block name='modal_content'}
+<div id="ship-commercial" class="inner-content">
+  
+  <div class="hr"></div>
+  <div class="content-block4">
+   
+    <div class="bottom"></div>
+  </div>
+  {if $distant_source=="vimeo"}
+  <iframe id="commercial" src="//player.vimeo.com/video/{$video_id}?wmode=transparent" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+  {else}
+  <iframe id="commercial" frameborder="0" allowfullscreen="1" title="YouTube video player" width="100%" height="100%" src="https://www.youtube.com/embed/{$video_id}?autoplay=1"></iframe>
+  {/if}
+</div>
+{/block}
+</script>
+      
+  <script id="tpl_comment_report" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="comment-report" class="inner-content on">
+  <h2><span class="icon"></span>Report this comment</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+<input type="hidden" name="comment_id" value="">
+  <div class="error-message js-error-message"></div>
+  <div class="success-message js-success-message"></div>
+    <fieldset class="last">
+    <label for="report_email">Email Address</label>
+    <span class="corner-wrapper">
+      <input type="text" name="email" value="" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_email" />
+      <span class="corner corner-top-left"></span>
+      <span class="corner corner-top-right"></span>
+      <span class="corner corner-bottom-left"></span>
+      <span class="corner corner-bottom-right"></span>
+    </span>
+  </fieldset>
+    <fieldset>
+    <label>Report Type</label>
+    
+
+
+  
+    <a class="js-selectlist selectlist " rel="" href="">
+    <div class="arrow"></div>
+    <span>Please select the type best matching your report</span>
+              <ul class="body">
+              
+                                                              <li class="js-option option " rel="obscenity" >
+                                                                        Obscene Content
+                                                    </li>
+                                                                <li class="js-option option " rel="abuse" >
+                                                                        Abusive Conduct
+                                                    </li>
+                                                                <li class="js-option option " rel="other" >
+                                                                        Other
+                                                    </li>
+                                          
+            </ul>
+        <input type="hidden" name="category" class="js-category js-form-data" id="category"/>
+  </a>
+    </fieldset>
+  <fieldset>
+    <label for="report_text">Details</label>
+    <span class="corner-wrapper">
+      <textarea name="text" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_text" maxlength="2500"></textarea>
+      <span class="corner corner-top-left"></span>
+      <span class="corner corner-top-right"></span>
+      <span class="corner corner-bottom-left"></span>
+      <span class="corner corner-bottom-right"></span>
+    </span>
+  </fieldset>
+  <fieldset class="clearfix last">
+    <span class="submit-wrapper">
+      <span class="submit-hover trans-02s trans-opacity"></span>
+      <input type="submit" value="Submit" class="trans-02s trans-color trans-background" />
+    </span>
+  </fieldset>
+</form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+
+
+      
+        <footer class="c-platform-footer c-platform-footer--rsi">
+  <div class="l-platform-footer-container">
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--sc">
+        <li class="c-platform-footer-brand__item">
+
+          <span class="c-brand c-brand--sc js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--sc">
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Join the<br>Universe
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--sc">
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen" class="c-platform-footer-link">About the Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/howto/1" class="c-platform-footer-link">How to Play</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/universe" class="c-platform-footer-link">The Universe</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/media" class="c-platform-footer-link">Media</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/play-now"
+                class="c-platform-footer-link js-google-analytics-event-tracker"
+                data-event-category="FlyNow" data-event-label="footerClick">
+                Play Now
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__sc">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">
+              Social Links
+            </span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/RobertsSpaceIndustries/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/RobertsSpaceInd">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/robertsspaceind">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href=" https://www.youtube.com/channel/UCTeLqJq1mXUX5WWoNXLmOIA">
+                <span class="c-iconed__icon c-iconed__icon--youtube"></span>
+                Youtube
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.twitch.tv/starcitizen">
+                <span class="c-iconed__icon c-iconed__icon--twitch"></span>
+                Twitch
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--s42">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--s42 js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--s42">
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Start the<br>Adventure
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--s42">
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42" class="c-platform-footer-link">The Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#enlist" class="c-platform-footer-link">Enlist Today</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#roadmap" class="c-platform-footer-link">Status</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/pledge/Packages/Squadron-42-Standalone-Pledge" class="c-platform-footer-link">Pledge</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__s42">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">Social Links</span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/Squad42/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/squadron_42">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/squadron42">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column is-active">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--rsi">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--rsi js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--rsi">
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi--fullcolor"></span>
+            </span>
+            <span class="c-brand__label">
+              Follow the Development
+            </span>
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--rsi">
+            <li class="c-platform-footer-list__item">
+              <a href="/" class="c-platform-footer-link">Home</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/comm-link" class="c-platform-footer-link">Transmissions</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/community" class="c-platform-footer-link">Community</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/roadmap" class="c-platform-footer-link">Development</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--platform">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Platform
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--platform">
+                          <li class="c-platform-footer-list__item">
+                <a href="/pledge" class="c-platform-footer-link ">Pledge Store</a>
+              </li>
+            
+            <li class="c-platform-footer-list__item">
+              <a href="/download" class="c-platform-footer-link ">Download</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/spectrum/community/SC" class="c-platform-footer-link">Spectrum</a>
+            </li>
+
+                      </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--utility">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Utilities
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--utility">
+            <li class="c-platform-footer-list__item">
+              <a href="//support.robertsspaceindustries.com" class="c-platform-footer-link">Help</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/press" class="c-platform-footer-link">Press</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="https://cloudimperiumgames.com/join-us" class="c-platform-footer-link">Careers</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/tos" class="c-platform-footer-link">Terms of Services</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/privacy" class="c-platform-footer-link">Privacy Policy</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/eula" class="c-platform-footer-link">EULA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/dmca" class="c-platform-footer-link">DMCA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/legal" class="c-platform-footer-link">Legal</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/acknowledgements" class="c-platform-footer-link">Acknowledgements</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/responsible-disclosure" target="_blank" class="c-platform-footer-link">Responsible disclosure</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  
+</footer>
+
+<div class="c-platform-copyright c-platform-copyright--rsi">
+  <div class="l-platform-copyright-container">
+    <a href="https://cloudimperiumgames.com" class="c-platform-copyright__logo h-svg__logo-cig js-svg-inliner"></a>
+    <p class="c-platform-copyright__body">© 2012-2021 Cloud Imperium Rights LLC and Cloud Imperium Rights Ltd.</p>
+  </div>
+</div>
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHNFZPT"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<script type="text/javascript">
+  window.RSI.Footer = new RSI.Footer();
+</script>
+      
+    </div>
+
+    
+      <script type="text/javascript" src='/rsi/static/packages/platformbar/rsi.platformbar.build.05b39.js'></script>
+    
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"58013cabd7","applicationID":"375102748","transactionName":"Y1JaYktUWxZUV0QKV1oYe0NKQVoIGmZjKmtdQ111VltBF1pYXAZKDg1ZQlZYcwxbUA==","queueTime":0,"applicationTime":66,"atts":"TxVNFANOSEkXVRJZQ0lK","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>

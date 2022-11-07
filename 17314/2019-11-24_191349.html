@@ -1,0 +1,2854 @@
+<head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"58013cabd7",applicationID:"375102748"};window.NREUM||(NREUM={}),__nr_require=function(n,e,t){function r(t){if(!e[t]){var i=e[t]={exports:{}};n[t][0].call(i.exports,function(e){var i=n[t][1][e];return r(i||e)},i,i.exports)}return e[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(n,e,t){function r(){}function i(n,e,t){return function(){return o(n,[u.now()].concat(f(arguments)),e?null:this,t),e?void 0:this}}var o=n("handle"),a=n(4),f=n(5),c=n("ee").get("tracer"),u=n("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(n,e){s[e]=i(d+e,!0,"api")}),s.addPageAction=i(d+"addPageAction",!0),s.setCurrentRouteName=i(d+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(n,e){var t={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),n,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return e.apply(this,arguments)}catch(n){throw c.emit("fn-err",[arguments,this,n],t),n}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(n,e){m[e]=i(l+e)}),newrelic.noticeError=function(n,e){"string"==typeof n&&(n=new Error(n)),o("err",[n,u.now(),!1,e])}},{}],2:[function(n,e,t){function r(n,e){var t=n.getEntries();t.forEach(function(n){"first-paint"===n.name?a("timing",["fp",Math.floor(n.startTime)]):"first-contentful-paint"===n.name&&a("timing",["fcp",Math.floor(n.startTime)])})}function i(n){if(n instanceof c&&!s){var e,t=Math.round(n.timeStamp);e=t>1e12?Date.now()-t:f.now()-t,s=!0,a("timing",["fi",t,{type:n.type,fid:e}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var o,a=n("handle"),f=n("loader"),c=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){o=new PerformanceObserver(r);try{o.observe({entryTypes:["paint"]})}catch(u){}}if("addEventListener"in document){var s=!1,p=["click","keydown","mousedown","pointerdown","touchstart"];p.forEach(function(n){document.addEventListener(n,i,!1)})}}},{}],3:[function(n,e,t){function r(n,e){if(!i)return!1;if(n!==i)return!1;if(!e)return!0;if(!o)return!1;for(var t=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],4:[function(n,e,t){function r(n,e){var t=[],r="",o=0;for(r in n)i.call(n,r)&&(t[o]=e(r,n[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],5:[function(n,e,t){function r(n,e,t){e||(e=0),"undefined"==typeof t&&(t=n?n.length:0);for(var r=-1,i=t-e||0,o=Array(i<0?0:i);++r<i;)o[r]=n[e+r];return o}e.exports=r},{}],6:[function(n,e,t){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(n,e,t){function r(){}function i(n){function e(n){return n&&n instanceof r?n:n?c(n,f,o):o()}function t(t,r,i,o){if(!d.aborted||o){n&&n(t,r,i);for(var a=e(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(n,e){h[n]=v(n).concat(e)}function m(n,e){var t=h[n];if(t)for(var r=0;r<t.length;r++)t[r]===e&&t.splice(r,1)}function v(n){return h[n]||[]}function g(n){return p[n]=p[n]||i(t)}function w(n,e){u(n,function(n,t){e=e||"feature",y[t]=e,e in s||(s[e]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:e,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var f="nr@context",c=n("gos"),u=n(4),s={},p={},d=e.exports=i();d.backlog=s},{}],gos:[function(n,e,t){function r(n,e,t){if(i.call(n,e))return n[e];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(n,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return n[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(n,e,t){function r(n,e,t,r){i.buffer([n],r),i.emit(n,e,t)}var i=n("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(n,e,t){function r(n){var e=typeof n;return!n||"object"!==e&&"function"!==e?-1:n===window?0:a(n,o,function(){return i++})}var i=1,o="nr@id",a=n("gos");e.exports=r},{}],loader:[function(n,e,t){function r(){if(!x++){var n=E.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(n&&n.licenseKey&&n.applicationID&&e))return s.abort();u(y,function(e,t){n[e]||(n[e]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=l.createElement("script");t.src="https://"+n.agent,e.parentNode.insertBefore(t,e)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=n("handle"),u=n(4),s=n("ee"),p=n(3),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1153.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=e.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};n(1),n(2),l[m]?(l[m]("DOMContentLoaded",o,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",i),d[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=n(6)},{}],"wrap-function":[function(n,e,t){function r(n){return!(n&&n instanceof Function&&n.apply&&!n[a])}var i=n("ee"),o=n(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;e.exports=function(n,e){function t(n,e,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){d([u,"",[r,a,i],f])}s(e+"start",[r,a,i],f);try{return c=n.apply(a,r)}catch(p){throw s(e+"err",[r,a,p],f),p}finally{s(e+"end",[r,a,c],f)}}return r(n)?n:(e||(e=""),nrWrapper[a]=n,p(n,nrWrapper),nrWrapper)}function u(n,e,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<e.length;c++)f=e[c],a=n[f],r(a)||(n[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||e){var o=c;c=!0;try{n.emit(t,r,i,e)}catch(a){d([a,t,r,i])}c=o}}function p(n,e){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(n);return t.forEach(function(t){Object.defineProperty(e,t,{get:function(){return n[t]},set:function(e){return n[t]=e,e}})}),e}catch(r){d([r])}for(var i in n)f.call(n,i)&&(e[i]=n[i]);return e}function d(e){try{n.emit("internal-error",e)}catch(t){}}return n||(n=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans."><meta property="og:site_name" content="
+   IAE 2949 - Whitley's Guide - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+"><meta property="og:image" content="https://robertsspaceindustries.comhttps://media.robertsspaceindustries.com/skpw8baox1mqa/channel_item_full.jpg"><meta property="og:description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans."><meta property="og:type" content="website"><meta property="og:url" content="https://robertsspaceindustries.com/comm-link/SCW/17314-IMPORT"><meta property="og:locale" content="us_EN"><link rel="preconnect" href="//fonts.googleapis.com"><link rel="preconnect" href="//fonts.fstatic.com"><link rel="preconnect" href="//cdnjs.cloudflare.com"><link rel="preconnect" href="//media.robertsspaceindustries.com"><link rel="preconnect" href="//www.google-analytics.com"><link rel="preload" as="font" href="https://robertsspaceindustries.com/rsi/static/platformbar/static/fonts/univia-pro/univia-pro-400.woff2"><link rel="preload" as="font" href="https://robertsspaceindustries.com/rsi/static/platformbar/static/fonts/univia-pro/univia-pro-700.woff2"><link rel="preload" as="font" href="https://robertsspaceindustries.com/rsi/static/platformbar/static/fonts/univia-pro/univia-pro-800.woff2"><link href="/rsi/static/css/cross-brand-less.css?v=3.3.6.6" media="all" rel="stylesheet"><link href="/cache/en/rsi-platformbar-css.css?v=3.3.6.6" media="all" rel="stylesheet"><script type="text/javascript" src="/cache/en/rsi-js.js?v=3.3.6.6"></script><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KHNFZPT');</script><!-- End Google Tag Manager --><script>
+        $(document).ready(function() {
+          window.Common = new RSI.Common({});
+          window.Main = new RSI.Main({
+            'is_mobile': 0,
+            'probation_cookie' : '',
+            'require_captcha': 0
+          });
+          window.Mark = new Turbulent.Mark({ 'name' : 'Rsi-XSRF', 'token' : '', 'ttl' : 1800 });
+
+          window.WscOverlay = new RSI.WscOverlay({});
+
+          var destinations = [];
+
+window.Main.destinations = destinations;          
+  window.PageStore = new RSI.Store({
+    'store_prefix' : '/pledge',
+    'bootstrapConfig': {"injection":{"attachmentClass":"RSIStoreApp","files":{"js":["index.js"],"css":["index.css"]}},"platform":{"api":"\/api"},"store":{"path":"\/pledge-store","manifest":"manifest.json"},"customizer":{"api":"\/customizer\/api","ga_tracking_code":"UA-39586040-5"}}
+  });
+
+          
+          
+  var productsTracking = [];
+  var eCommerceData = {
+    'trackingAction': "",
+    'currency': "",
+    'trackingStep': "",
+    'trackingProducts': productsTracking
+  };
+  window.eCommerceTracking = new RSI.Store.eCommerceTracking(
+    eCommerceData
+  );
+
+        });
+
+        $(window).load(function() {
+          
+        });
+
+      </script><script>
+        window.recaptcha_is_loaded = false;
+        window.on_recaptcha_load_callback = function() {
+          window.recaptcha_is_loaded = true;
+        };
+      </script><script src="https://www.google.com/recaptcha/api.js?onload=on_recaptcha_load_callback&amp;render=explicit" async defer></script><script type="text/javascript">
+
+        
+
+                                </script><title>
+   IAE 2949 - Whitley's Guide - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+</title><link href="//fonts.googleapis.com/css?family=Electrolize%7COrbitron:400,500,700%7CShare+Tech+Mono" rel="stylesheet" type="text/css"><link rel="stylesheet" href="https://use.typekit.net/ief7gaw.css"><link href="/cache/en/rsi-css.css?v=3.3.6.6" media="all" rel="stylesheet"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/resize-observer-polyfill-futurepress@1.4.2/dist/ResizeObserver.min.js"></script><script type="text/javascript" src="/layoutscache/anniversary2019/en/bundle.js?v=3c0e1"></script><link rel="stylesheet" href="/layoutscache/anniversary2019/en/bundle.css?v=3c0e1" media="all"><style type="text/css">
+  .c-header-wrapper > .l-container,
+  .c-brand-menu,
+  .c-brand-cta-btn {
+    transform: translateY(-20px);
+  }
+  .c-brand-menu,
+  .c-brand-cta-btn {
+    opacity: 0;
+  }
+
+  #loader {
+    background-color: #EEEEEE;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    pointer-events: none;
+    -webkit-user-select: none;
+      -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    margin: 0;
+  }
+  #lottie {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 140px;
+    height: 140px;
+    display: block;
+    overflow: hidden;
+    transform: translate3d(0,0,0);
+    background-color: #EEEEEE;
+    text-align: center;
+    opacity: 1;
+  }
+</style><script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.9/lottie_light.js" type="text/javascript"></script><script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js" preload></script></head><body><div id="loader">
+  <div id="lottie"></div>
+</div>
+
+<script>
+  var animationData = {
+    "v": "5.5.8",
+    "fr": 60,
+    "ip": 0,
+    "op": 200,
+    "w": 140,
+    "h": 140,
+    "nm": "Loading",
+    "ddd": 0,
+    "assets": [],
+    "layers": [{
+        "ddd": 0,
+        "ind": 1,
+        "ty": 4,
+        "nm": "Circle",
+        "sr": 1,
+        "ks": {
+            "o": {
+                "a": 1,
+                "k": [{
+                    "i": {
+                        "x": [0.833],
+                        "y": [0.833]
+                    },
+                    "o": {
+                        "x": [0.167],
+                        "y": [0.167]
+                    },
+                    "t": 6,
+                    "s": [4]
+                }, {
+                    "i": {
+                        "x": [0.833],
+                        "y": [0.833]
+                    },
+                    "o": {
+                        "x": [0.167],
+                        "y": [0.167]
+                    },
+                    "t": 47,
+                    "s": [100]
+                }, {
+                    "i": {
+                        "x": [0.833],
+                        "y": [0.833]
+                    },
+                    "o": {
+                        "x": [0.167],
+                        "y": [0.167]
+                    },
+                    "t": 77,
+                    "s": [100]
+                }, {
+                    "t": 199,
+                    "s": [0]
+                }],
+                "ix": 11
+            },
+            "r": {
+                "a": 0,
+                "k": 0,
+                "ix": 10
+            },
+            "p": {
+                "a": 0,
+                "k": [70.412, 70, 0],
+                "ix": 2
+            },
+            "a": {
+                "a": 0,
+                "k": [80.75, 80.75, 0],
+                "ix": 1
+            },
+            "s": {
+                "a": 0,
+                "k": [82.353, 82.353, 100],
+                "ix": 6
+            }
+        },
+        "ao": 0,
+        "hasMask": true,
+        "masksProperties": [{
+            "inv": false,
+            "mode": "a",
+            "pt": {
+                "a": 1,
+                "k": [{
+                    "i": {
+                        "x": 0.833,
+                        "y": 0.833
+                    },
+                    "o": {
+                        "x": 0.167,
+                        "y": 0.167
+                    },
+                    "t": 6,
+                    "s": [{
+                        "i": [
+                            [0, 0],
+                            [0, 0],
+                            [0, 0],
+                            [0, 0]
+                        ],
+                        "o": [
+                            [0, 0],
+                            [0, 0],
+                            [0, 0],
+                            [0, 0]
+                        ],
+                        "v": [
+                            [185.174, -9.251],
+                            [81.25, -9.251],
+                            [81.174, -4.1],
+                            [185.098, -4.1]
+                        ],
+                        "c": true
+                    }]
+                }, {
+                    "t": 46.8515625,
+                    "s": [{
+                        "i": [
+                            [0, 0],
+                            [0, 0],
+                            [0, 0],
+                            [0, 0]
+                        ],
+                        "o": [
+                            [0, 0],
+                            [0, 0],
+                            [0, 0],
+                            [0, 0]
+                        ],
+                        "v": [
+                            [185.174, -9.251],
+                            [81.25, -9.251],
+                            [81.25, 181.9],
+                            [185.174, 181.9]
+                        ],
+                        "c": true
+                    }]
+                }],
+                "ix": 1
+            },
+            "o": {
+                "a": 0,
+                "k": 100,
+                "ix": 3
+            },
+            "x": {
+                "a": 0,
+                "k": 0,
+                "ix": 4
+            },
+            "nm": "Masque 1"
+        }, {
+            "inv": false,
+            "mode": "a",
+            "pt": {
+                "a": 1,
+                "k": [{
+                    "i": {
+                        "x": 0.833,
+                        "y": 0.833
+                    },
+                    "o": {
+                        "x": 0.167,
+                        "y": 0.167
+                    },
+                    "t": 24.219,
+                    "s": [{
+                        "i": [
+                            [0, 0],
+                            [0, 0],
+                            [0, 0],
+                            [0, 0]
+                        ],
+                        "o": [
+                            [0, 0],
+                            [0, 0],
+                            [0, 0],
+                            [0, 0]
+                        ],
+                        "v": [
+                            [185.75, 80.695],
+                            [183.909, 80.531],
+                            [183.909, 182.585],
+                            [185.75, 182.749]
+                        ],
+                        "c": true
+                    }]
+                }, {
+                    "i": {
+                        "x": 0.833,
+                        "y": 0.833
+                    },
+                    "o": {
+                        "x": 0.167,
+                        "y": 0.167
+                    },
+                    "t": 46.852,
+                    "s": [{
+                        "i": [
+                            [0, 0],
+                            [0, 0],
+                            [0, 0],
+                            [0, 0]
+                        ],
+                        "o": [
+                            [0, 0],
+                            [0, 0],
+                            [0, 0],
+                            [0, 0]
+                        ],
+                        "v": [
+                            [185.75, 80.695],
+                            [80.909, 81.14],
+                            [80.909, 182.695],
+                            [185.75, 182.749]
+                        ],
+                        "c": true
+                    }]
+                }, {
+                    "t": 67.4296875,
+                    "s": [{
+                        "i": [
+                            [0, 0],
+                            [0, 0],
+                            [0, 0],
+                            [0, 0]
+                        ],
+                        "o": [
+                            [0, 0],
+                            [0, 0],
+                            [0, 0],
+                            [0, 0]
+                        ],
+                        "v": [
+                            [185.75, 80.695],
+                            [-5.592, 80.695],
+                            [-5.592, 182.749],
+                            [185.75, 182.749]
+                        ],
+                        "c": true
+                    }]
+                }],
+                "ix": 1
+            },
+            "o": {
+                "a": 0,
+                "k": 100,
+                "ix": 3
+            },
+            "x": {
+                "a": 0,
+                "k": 0,
+                "ix": 4
+            },
+            "nm": "Masque 2"
+        }, {
+            "inv": false,
+            "mode": "a",
+            "pt": {
+                "a": 1,
+                "k": [{
+                    "i": {
+                        "x": 0.833,
+                        "y": 0.833
+                    },
+                    "o": {
+                        "x": 0.167,
+                        "y": 0.167
+                    },
+                    "t": 46.852,
+                    "s": [{
+                        "i": [
+                            [0, 0],
+                            [0, 0],
+                            [0, 0],
+                            [0, 0]
+                        ],
+                        "o": [
+                            [0, 0],
+                            [0, 0],
+                            [0, 0],
+                            [0, 0]
+                        ],
+                        "v": [
+                            [85.68, 180.3],
+                            [-5.427, 180.3],
+                            [-5.25, 181.749],
+                            [85.358, 181.749]
+                        ],
+                        "c": true
+                    }]
+                }, {
+                    "i": {
+                        "x": 0.833,
+                        "y": 0.833
+                    },
+                    "o": {
+                        "x": 0.167,
+                        "y": 0.167
+                    },
+                    "t": 67.43,
+                    "s": [{
+                        "i": [
+                            [0, 0],
+                            [0, 0],
+                            [0, 0],
+                            [0, 0]
+                        ],
+                        "o": [
+                            [0, 0],
+                            [0, 0],
+                            [0, 0],
+                            [0, 0]
+                        ],
+                        "v": [
+                            [85.465, 80.8],
+                            [-5.142, 80.8],
+                            [-5.25, 181.749],
+                            [85.358, 181.749]
+                        ],
+                        "c": true
+                    }]
+                }, {
+                    "t": 88,
+                    "s": [{
+                        "i": [
+                            [0, 0],
+                            [0, 0],
+                            [0, 0],
+                            [0, 0]
+                        ],
+                        "o": [
+                            [0, 0],
+                            [0, 0],
+                            [0, 0],
+                            [0, 0]
+                        ],
+                        "v": [
+                            [85.358, -9.7],
+                            [-5.25, -9.7],
+                            [-5.25, 181.749],
+                            [85.358, 181.749]
+                        ],
+                        "c": true
+                    }]
+                }],
+                "ix": 1
+            },
+            "o": {
+                "a": 0,
+                "k": 100,
+                "ix": 3
+            },
+            "x": {
+                "a": 0,
+                "k": 0,
+                "ix": 4
+            },
+            "nm": "Masque 3"
+        }],
+        "shapes": [{
+            "ty": "gr",
+            "it": [{
+                "ind": 0,
+                "ty": "sh",
+                "ix": 1,
+                "ks": {
+                    "a": 0,
+                    "k": {
+                        "i": [
+                            [0, 41.758],
+                            [41.758, 0],
+                            [0, -41.759],
+                            [-41.759, 0]
+                        ],
+                        "o": [
+                            [0, -41.758],
+                            [-41.759, 0],
+                            [0, 41.759],
+                            [41.758, 0]
+                        ],
+                        "v": [
+                            [75.721, 0.11],
+                            [0.111, -75.5],
+                            [-76, 0.11],
+                            [0.111, 75.72]
+                        ],
+                        "c": true
+                    },
+                    "ix": 2
+                },
+                "nm": "Trac&eacute; 1",
+                "mn": "ADBE Vector Shape - Group",
+                "hd": false
+            }, {
+                "ind": 1,
+                "ty": "sh",
+                "ix": 2,
+                "ks": {
+                    "a": 0,
+                    "k": {
+                        "i": [
+                            [0, -44.459],
+                            [44.459, 0],
+                            [0, 44.459],
+                            [-44.459, 0]
+                        ],
+                        "o": [
+                            [0, 44.459],
+                            [-44.459, 0],
+                            [0, -44.459],
+                            [44.459, 0]
+                        ],
+                        "v": [
+                            [80.5, 0],
+                            [0, 80.5],
+                            [-81, 0],
+                            [0, -80.5]
+                        ],
+                        "c": true
+                    },
+                    "ix": 2
+                },
+                "nm": "Trac&eacute; 2",
+                "mn": "ADBE Vector Shape - Group",
+                "hd": false
+            }, {
+                "ty": "mm",
+                "mm": 1,
+                "nm": "Fusionner les trac&eacute;s 1",
+                "mn": "ADBE Vector Filter - Merge",
+                "hd": false
+            }, {
+                "ty": "fl",
+                "c": {
+                    "a": 0,
+                    "k": [0.756862745098, 0.133333333333, 0.611764705882, 1],
+                    "ix": 4
+                },
+                "o": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 5
+                },
+                "r": 1,
+                "bm": 0,
+                "nm": "Fond 1",
+                "mn": "ADBE Vector Graphic - Fill",
+                "hd": false
+            }, {
+                "ty": "tr",
+                "p": {
+                    "a": 0,
+                    "k": [80.75, 80.75],
+                    "ix": 2
+                },
+                "a": {
+                    "a": 0,
+                    "k": [0, 0],
+                    "ix": 1
+                },
+                "s": {
+                    "a": 0,
+                    "k": [100, 100],
+                    "ix": 3
+                },
+                "r": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                },
+                "o": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 7
+                },
+                "sk": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 4
+                },
+                "sa": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 5
+                },
+                "nm": "Transformer "
+            }],
+            "nm": "Groupe 1",
+            "np": 4,
+            "cix": 2,
+            "bm": 0,
+            "ix": 1,
+            "mn": "ADBE Vector Group",
+            "hd": false
+        }],
+        "ip": 6,
+        "op": 200,
+        "st": 6,
+        "bm": 0
+    }, {
+        "ddd": 0,
+        "ind": 2,
+        "ty": 4,
+        "nm": "Mask_Logo1",
+        "td": 1,
+        "sr": 1,
+        "ks": {
+            "o": {
+                "a": 0,
+                "k": 100,
+                "ix": 11
+            },
+            "r": {
+                "a": 0,
+                "k": 0,
+                "ix": 10
+            },
+            "p": {
+                "a": 0,
+                "k": [71.235, 70.824, 0],
+                "ix": 2
+            },
+            "a": {
+                "a": 0,
+                "k": [1.5, -54.5, 0],
+                "ix": 1
+            },
+            "s": {
+                "a": 0,
+                "k": [79.169, 79.169, 100],
+                "ix": 6
+            }
+        },
+        "ao": 0,
+        "shapes": [{
+            "ty": "gr",
+            "it": [{
+                "d": 1,
+                "ty": "el",
+                "s": {
+                    "a": 0,
+                    "k": [157.604, 160.062],
+                    "ix": 2
+                },
+                "p": {
+                    "a": 0,
+                    "k": [0, 0],
+                    "ix": 3
+                },
+                "nm": "Trac&eacute; d'ellipse 1",
+                "mn": "ADBE Vector Shape - Ellipse",
+                "hd": false
+            }, {
+                "ty": "fl",
+                "c": {
+                    "a": 0,
+                    "k": [1, 1, 1, 1],
+                    "ix": 4
+                },
+                "o": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 5
+                },
+                "r": 1,
+                "bm": 0,
+                "nm": "Fond 1",
+                "mn": "ADBE Vector Graphic - Fill",
+                "hd": false
+            }, {
+                "ty": "tr",
+                "p": {
+                    "a": 0,
+                    "k": [0.302, -55.469],
+                    "ix": 2
+                },
+                "a": {
+                    "a": 0,
+                    "k": [0, 0],
+                    "ix": 1
+                },
+                "s": {
+                    "a": 0,
+                    "k": [100, 100],
+                    "ix": 3
+                },
+                "r": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                },
+                "o": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 7
+                },
+                "sk": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 4
+                },
+                "sa": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 5
+                },
+                "nm": "Transformer "
+            }],
+            "nm": "Ellipse 1",
+            "np": 3,
+            "cix": 2,
+            "bm": 0,
+            "ix": 1,
+            "mn": "ADBE Vector Group",
+            "hd": false
+        }],
+        "ip": 33,
+        "op": 217,
+        "st": 33,
+        "bm": 0
+    }, {
+        "ddd": 0,
+        "ind": 3,
+        "ty": 4,
+        "nm": "Logo_1",
+        "tt": 1,
+        "sr": 1,
+        "ks": {
+            "o": {
+                "a": 1,
+                "k": [{
+                    "i": {
+                        "x": [0.667],
+                        "y": [1]
+                    },
+                    "o": {
+                        "x": [0.333],
+                        "y": [0]
+                    },
+                    "t": 33,
+                    "s": [0]
+                }, {
+                    "i": {
+                        "x": [0.833],
+                        "y": [1]
+                    },
+                    "o": {
+                        "x": [0.167],
+                        "y": [0]
+                    },
+                    "t": 59.047,
+                    "s": [100]
+                }, {
+                    "i": {
+                        "x": [0.833],
+                        "y": [1]
+                    },
+                    "o": {
+                        "x": [0.167],
+                        "y": [0]
+                    },
+                    "t": 142,
+                    "s": [100]
+                }, {
+                    "t": 171,
+                    "s": [0],
+                    "h": 1
+                }],
+                "ix": 11
+            },
+            "r": {
+                "a": 0,
+                "k": 0,
+                "ix": 10
+            },
+            "p": {
+                "a": 1,
+                "k": [{
+                    "i": {
+                        "x": 0.667,
+                        "y": 1
+                    },
+                    "o": {
+                        "x": 0.333,
+                        "y": 0
+                    },
+                    "t": 33,
+                    "s": [71.195, 227.778, 0],
+                    "to": [0, -33.765, 0],
+                    "ti": [0, 33.765, 0]
+                }, {
+                    "i": {
+                        "x": 0.667,
+                        "y": 0.667
+                    },
+                    "o": {
+                        "x": 0.167,
+                        "y": 0.167
+                    },
+                    "t": 88.35,
+                    "s": [71.195, 25.19, 0],
+                    "to": [0, 0, 0],
+                    "ti": [0, 0, 0]
+                }, {
+                    "i": {
+                        "x": 0.667,
+                        "y": 1
+                    },
+                    "o": {
+                        "x": 0.167,
+                        "y": 0
+                    },
+                    "t": 142,
+                    "s": [71.195, 25.19, 0],
+                    "to": [0, -20.382, 0],
+                    "ti": [0, 20.382, 0]
+                }, {
+                    "t": 171,
+                    "s": [71.195, -97.104, 0],
+                    "h": 1
+                }],
+                "ix": 2
+            },
+            "a": {
+                "a": 0,
+                "k": [68.617, 120.157, 0],
+                "ix": 1
+            },
+            "s": {
+                "a": 0,
+                "k": [82.353, 82.353, 100],
+                "ix": 6
+            }
+        },
+        "ao": 0,
+        "shapes": [{
+            "ty": "gr",
+            "it": [{
+                "ind": 0,
+                "ty": "sh",
+                "ix": 1,
+                "ks": {
+                    "a": 0,
+                    "k": {
+                        "i": [
+                            [0, 0],
+                            [1.661, 30.473],
+                            [0, 0],
+                            [0, 0],
+                            [0, 0],
+                            [0, 0],
+                            [0, 0],
+                            [-21.429, -32.35],
+                            [0, 0],
+                            [-5.247, 10.8]
+                        ],
+                        "o": [
+                            [-19.758, -24.259],
+                            [0, 0],
+                            [0, 0],
+                            [0, 0],
+                            [0, 0],
+                            [0, 0],
+                            [0, 40.853],
+                            [0, 0],
+                            [9.385, -7.249],
+                            [0, 0]
+                        ],
+                        "v": [
+                            [9.714, 59.521],
+                            [-23.115, -24.555],
+                            [-27.115, -127.567],
+                            [-29.5, -127.567],
+                            [-29.5, -26.752],
+                            [-29.5, -17.695],
+                            [-29.5, -7.163],
+                            [3.55, 105.743],
+                            [75.696, 255.248],
+                            [134.5, 208.816]
+                        ],
+                        "c": true
+                    },
+                    "ix": 2
+                },
+                "nm": "Trac&eacute; 1",
+                "mn": "ADBE Vector Shape - Group",
+                "hd": false
+            }, {
+                "ty": "fl",
+                "c": {
+                    "a": 0,
+                    "k": [0.756862745098, 0.133333333333, 0.611764705882, 1],
+                    "ix": 4
+                },
+                "o": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 5
+                },
+                "r": 1,
+                "bm": 0,
+                "nm": "Fond 1",
+                "mn": "ADBE Vector Graphic - Fill",
+                "hd": false
+            }, {
+                "ty": "tr",
+                "p": {
+                    "a": 0,
+                    "k": [107.484, 127.817],
+                    "ix": 2
+                },
+                "a": {
+                    "a": 0,
+                    "k": [0, 0],
+                    "ix": 1
+                },
+                "s": {
+                    "a": 0,
+                    "k": [100, 100],
+                    "ix": 3
+                },
+                "r": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                },
+                "o": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 7
+                },
+                "sk": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 4
+                },
+                "sa": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 5
+                },
+                "nm": "Transformer "
+            }],
+            "nm": "Groupe 1",
+            "np": 2,
+            "cix": 2,
+            "bm": 0,
+            "ix": 1,
+            "mn": "ADBE Vector Group",
+            "hd": false
+        }, {
+            "ty": "gr",
+            "it": [{
+                "ind": 0,
+                "ty": "sh",
+                "ix": 1,
+                "ks": {
+                    "a": 0,
+                    "k": {
+                        "i": [
+                            [0, 0],
+                            [0, 0],
+                            [20.137, -24.607],
+                            [0, 0],
+                            [-9.654, -7.03],
+                            [0, 0],
+                            [0, 41.007],
+                            [0, 0],
+                            [0, 0],
+                            [0, 0]
+                        ],
+                        "o": [
+                            [0, 0],
+                            [-1.483, 30.933],
+                            [0, 0],
+                            [7.916, 9.421],
+                            [0, 0],
+                            [21.611, -32.471],
+                            [0, 0],
+                            [0, 0],
+                            [0, 0],
+                            [0, 0]
+                        ],
+                        "v": [
+                            [27.115, -128.067],
+                            [24.115, -26.739],
+                            [-9.049, 58.619],
+                            [-169.5, 209.831],
+                            [-115.314, 256.247],
+                            [-2.832, 105.013],
+                            [30.5, -8.317],
+                            [30.5, -18.195],
+                            [30.5, -28.253],
+                            [30.5, -128.067]
+                        ],
+                        "c": true
+                    },
+                    "ix": 2
+                },
+                "nm": "Trac&eacute; 1",
+                "mn": "ADBE Vector Shape - Group",
+                "hd": false
+            }, {
+                "ty": "fl",
+                "c": {
+                    "a": 0,
+                    "k": [0.756862745098, 0.133333333333, 0.611764705882, 1],
+                    "ix": 4
+                },
+                "o": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 5
+                },
+                "r": 1,
+                "bm": 0,
+                "nm": "Fond 1",
+                "mn": "ADBE Vector Graphic - Fill",
+                "hd": false
+            }, {
+                "ty": "tr",
+                "p": {
+                    "a": 0,
+                    "k": [30.75, 128.317],
+                    "ix": 2
+                },
+                "a": {
+                    "a": 0,
+                    "k": [0, 0],
+                    "ix": 1
+                },
+                "s": {
+                    "a": 0,
+                    "k": [100, 100],
+                    "ix": 3
+                },
+                "r": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                },
+                "o": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 7
+                },
+                "sk": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 4
+                },
+                "sa": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 5
+                },
+                "nm": "Transformer "
+            }],
+            "nm": "Groupe 2",
+            "np": 2,
+            "cix": 2,
+            "bm": 0,
+            "ix": 2,
+            "mn": "ADBE Vector Group",
+            "hd": false
+        }],
+        "ip": 33,
+        "op": 217,
+        "st": 33,
+        "bm": 0
+    }, {
+        "ddd": 0,
+        "ind": 4,
+        "ty": 4,
+        "nm": "Mask_Logo2",
+        "td": 1,
+        "sr": 1,
+        "ks": {
+            "o": {
+                "a": 0,
+                "k": 100,
+                "ix": 11
+            },
+            "r": {
+                "a": 0,
+                "k": 0,
+                "ix": 10
+            },
+            "p": {
+                "a": 0,
+                "k": [71.235, 70, 0],
+                "ix": 2
+            },
+            "a": {
+                "a": 0,
+                "k": [1.5, -55.5, 0],
+                "ix": 1
+            },
+            "s": {
+                "a": 0,
+                "k": [79.7, 79.7, 100],
+                "ix": 6
+            }
+        },
+        "ao": 0,
+        "shapes": [{
+            "ty": "gr",
+            "it": [{
+                "d": 1,
+                "ty": "el",
+                "s": {
+                    "a": 0,
+                    "k": [157.604, 160.062],
+                    "ix": 2
+                },
+                "p": {
+                    "a": 0,
+                    "k": [0, 0],
+                    "ix": 3
+                },
+                "nm": "Trac&eacute; d'ellipse 1",
+                "mn": "ADBE Vector Shape - Ellipse",
+                "hd": false
+            }, {
+                "ty": "fl",
+                "c": {
+                    "a": 0,
+                    "k": [1, 1, 1, 1],
+                    "ix": 4
+                },
+                "o": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 5
+                },
+                "r": 1,
+                "bm": 0,
+                "nm": "Fond 1",
+                "mn": "ADBE Vector Graphic - Fill",
+                "hd": false
+            }, {
+                "ty": "tr",
+                "p": {
+                    "a": 0,
+                    "k": [0.302, -55.469],
+                    "ix": 2
+                },
+                "a": {
+                    "a": 0,
+                    "k": [0, 0],
+                    "ix": 1
+                },
+                "s": {
+                    "a": 0,
+                    "k": [100, 100],
+                    "ix": 3
+                },
+                "r": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                },
+                "o": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 7
+                },
+                "sk": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 4
+                },
+                "sa": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 5
+                },
+                "nm": "Transformer "
+            }],
+            "nm": "Ellipse 1",
+            "np": 3,
+            "cix": 2,
+            "bm": 0,
+            "ix": 1,
+            "mn": "ADBE Vector Group",
+            "hd": false
+        }],
+        "ip": 42,
+        "op": 217,
+        "st": 42,
+        "bm": 0
+    }, {
+        "ddd": 0,
+        "ind": 5,
+        "ty": 4,
+        "nm": "Logo_2",
+        "tt": 1,
+        "sr": 1,
+        "ks": {
+            "o": {
+                "a": 1,
+                "k": [{
+                    "i": {
+                        "x": [0.667],
+                        "y": [1]
+                    },
+                    "o": {
+                        "x": [0.333],
+                        "y": [0]
+                    },
+                    "t": 47.65,
+                    "s": [0]
+                }, {
+                    "i": {
+                        "x": [0.833],
+                        "y": [1]
+                    },
+                    "o": {
+                        "x": [0.167],
+                        "y": [0]
+                    },
+                    "t": 103,
+                    "s": [100]
+                }, {
+                    "i": {
+                        "x": [0.833],
+                        "y": [1]
+                    },
+                    "o": {
+                        "x": [0.167],
+                        "y": [0]
+                    },
+                    "t": 142,
+                    "s": [100]
+                }, {
+                    "t": 171,
+                    "s": [0],
+                    "h": 1
+                }],
+                "ix": 11
+            },
+            "r": {
+                "a": 0,
+                "k": 0,
+                "ix": 10
+            },
+            "p": {
+                "a": 1,
+                "k": [{
+                    "i": {
+                        "x": 0.667,
+                        "y": 1
+                    },
+                    "o": {
+                        "x": 0.333,
+                        "y": 0
+                    },
+                    "t": 47.65,
+                    "s": [71.647, 241.249, 0],
+                    "to": [0, -35, 0],
+                    "ti": [0, 35, 0]
+                }, {
+                    "i": {
+                        "x": 0.582,
+                        "y": 0.582
+                    },
+                    "o": {
+                        "x": 0.18,
+                        "y": 0.18
+                    },
+                    "t": 103,
+                    "s": [71.647, 31.249, 0],
+                    "to": [0, 0, 0],
+                    "ti": [0, 0, 0]
+                }, {
+                    "i": {
+                        "x": 0.702,
+                        "y": 1
+                    },
+                    "o": {
+                        "x": 0.347,
+                        "y": 0
+                    },
+                    "t": 142,
+                    "s": [71.647, 31.249, 0],
+                    "to": [0, 0, 0],
+                    "ti": [0, 0, 0]
+                }, {
+                    "t": 171,
+                    "s": [71.647, 19.249, 0],
+                    "h": 1
+                }],
+                "ix": 2
+            },
+            "a": {
+                "a": 0,
+                "k": [20.25, 127.8, 0],
+                "ix": 1
+            },
+            "s": {
+                "a": 0,
+                "k": [82.353, 82.353, 100],
+                "ix": 6
+            }
+        },
+        "ao": 0,
+        "shapes": [{
+            "ty": "gr",
+            "it": [{
+                "ind": 0,
+                "ty": "sh",
+                "ix": 1,
+                "ks": {
+                    "a": 0,
+                    "k": {
+                        "i": [
+                            [0, 0],
+                            [1.043, 0],
+                            [0.222, -0.002],
+                            [0, 0],
+                            [11.829, -25.809],
+                            [0, 0],
+                            [0, 0],
+                            [0, 0],
+                            [7.143, 21.986],
+                            [0, 32.167]
+                        ],
+                        "o": [
+                            [-1.033, -0.04],
+                            [-0.223, 0],
+                            [0, 0],
+                            [0, 32.405],
+                            [-6.892, 21.418],
+                            [0, 0],
+                            [0, 0],
+                            [0, 0],
+                            [-11.662, -25.703],
+                            [0, 0]
+                        ],
+                        "v": [
+                            [1.02, -135.787],
+                            [-0.093, -135.853],
+                            [-0.759, -135.845],
+                            [-1.759, 27.255],
+                            [-20, 116.969],
+                            [-34.094, 157.54],
+                            [-0.838, 158.712],
+                            [33.366, 156.147],
+                            [20, 116.401],
+                            [2.02, 27.255]
+                        ],
+                        "c": true
+                    },
+                    "ix": 2
+                },
+                "nm": "Trac&eacute; 1",
+                "mn": "ADBE Vector Shape - Group",
+                "hd": false
+            }, {
+                "ty": "mm",
+                "mm": 4,
+                "nm": "Fusionner les trac&eacute;s 1",
+                "mn": "ADBE Vector Filter - Merge",
+                "hd": false
+            }, {
+                "ty": "fl",
+                "c": {
+                    "a": 0,
+                    "k": [0.756862745098, 0.133333333333, 0.611764705882, 1],
+                    "ix": 4
+                },
+                "o": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 5
+                },
+                "r": 1,
+                "bm": 0,
+                "nm": "Fond 1",
+                "mn": "ADBE Vector Graphic - Fill",
+                "hd": false
+            }, {
+                "ty": "tr",
+                "p": {
+                    "a": 0,
+                    "k": [20.25, 136.103],
+                    "ix": 2
+                },
+                "a": {
+                    "a": 0,
+                    "k": [0, 0],
+                    "ix": 1
+                },
+                "s": {
+                    "a": 0,
+                    "k": [100, 100],
+                    "ix": 3
+                },
+                "r": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                },
+                "o": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 7
+                },
+                "sk": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 4
+                },
+                "sa": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 5
+                },
+                "nm": "Transformer "
+            }],
+            "nm": "Groupe 1",
+            "np": 3,
+            "cix": 2,
+            "bm": 0,
+            "ix": 1,
+            "mn": "ADBE Vector Group",
+            "hd": false
+        }],
+        "ip": 42,
+        "op": 217,
+        "st": 42,
+        "bm": 0
+    }, {
+        "ddd": 0,
+        "ind": 6,
+        "ty": 4,
+        "nm": "Circle 2",
+        "sr": 1,
+        "ks": {
+            "o": {
+                "a": 0,
+                "k": 100,
+                "ix": 11
+            },
+            "r": {
+                "a": 0,
+                "k": 0,
+                "ix": 10
+            },
+            "p": {
+                "a": 0,
+                "k": [70.412, 70, 0],
+                "ix": 2
+            },
+            "a": {
+                "a": 0,
+                "k": [80.75, 80.75, 0],
+                "ix": 1
+            },
+            "s": {
+                "a": 0,
+                "k": [82.353, 82.353, 100],
+                "ix": 6
+            }
+        },
+        "ao": 0,
+        "shapes": [{
+            "ty": "gr",
+            "it": [{
+                "ind": 0,
+                "ty": "sh",
+                "ix": 1,
+                "ks": {
+                    "a": 0,
+                    "k": {
+                        "i": [
+                            [0, 41.758],
+                            [41.758, 0],
+                            [0, -41.759],
+                            [-41.759, 0]
+                        ],
+                        "o": [
+                            [0, -41.758],
+                            [-41.759, 0],
+                            [0, 41.759],
+                            [41.758, 0]
+                        ],
+                        "v": [
+                            [75.721, 0.11],
+                            [0.111, -75.5],
+                            [-76, 0.11],
+                            [0.111, 75.72]
+                        ],
+                        "c": true
+                    },
+                    "ix": 2
+                },
+                "nm": "Trac&eacute; 1",
+                "mn": "ADBE Vector Shape - Group",
+                "hd": false
+            }, {
+                "ind": 1,
+                "ty": "sh",
+                "ix": 2,
+                "ks": {
+                    "a": 0,
+                    "k": {
+                        "i": [
+                            [0, -44.459],
+                            [44.459, 0],
+                            [0, 44.459],
+                            [-44.459, 0]
+                        ],
+                        "o": [
+                            [0, 44.459],
+                            [-44.459, 0],
+                            [0, -44.459],
+                            [44.459, 0]
+                        ],
+                        "v": [
+                            [80.5, 0],
+                            [0, 80.5],
+                            [-81, 0],
+                            [0, -80.5]
+                        ],
+                        "c": true
+                    },
+                    "ix": 2
+                },
+                "nm": "Trac&eacute; 2",
+                "mn": "ADBE Vector Shape - Group",
+                "hd": false
+            }, {
+                "ty": "mm",
+                "mm": 1,
+                "nm": "Fusionner les trac&eacute;s 1",
+                "mn": "ADBE Vector Filter - Merge",
+                "hd": false
+            }, {
+                "ty": "fl",
+                "c": {
+                    "a": 0,
+                    "k": [0.789445465686, 0.676337567498, 0.763124772614, 1],
+                    "ix": 4
+                },
+                "o": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 5
+                },
+                "r": 1,
+                "bm": 0,
+                "nm": "Fond 1",
+                "mn": "ADBE Vector Graphic - Fill",
+                "hd": false
+            }, {
+                "ty": "tr",
+                "p": {
+                    "a": 0,
+                    "k": [80.75, 80.75],
+                    "ix": 2
+                },
+                "a": {
+                    "a": 0,
+                    "k": [0, 0],
+                    "ix": 1
+                },
+                "s": {
+                    "a": 0,
+                    "k": [100, 100],
+                    "ix": 3
+                },
+                "r": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 6
+                },
+                "o": {
+                    "a": 0,
+                    "k": 100,
+                    "ix": 7
+                },
+                "sk": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 4
+                },
+                "sa": {
+                    "a": 0,
+                    "k": 0,
+                    "ix": 5
+                },
+                "nm": "Transformer "
+            }],
+            "nm": "Groupe 1",
+            "np": 4,
+            "cix": 2,
+            "bm": 0,
+            "ix": 1,
+            "mn": "ADBE Vector Group",
+            "hd": false
+        }],
+        "ip": 0,
+        "op": 200,
+        "st": 6,
+        "bm": 0
+    }],
+    "markers": []
+  };
+
+  var params = {
+      container: document.getElementById('lottie'),
+      renderer: 'svg',
+      loop: false,
+      autoplay: false,
+      animationData: animationData
+  };
+
+  window.addEventListener('DOMContentLoaded', function() {
+    window.lottieLoaderAnim = lottie.loadAnimation(params);
+    window.lottieLoaderAnim.setSpeed(1.8);
+    window.lottieLoaderAnim.play();
+
+    var watchAnim = function(animation) {
+      if(animation.currentTime > 100) {
+        window.lottieLoaderAnim.pause();
+        window.lottieLoaderAnim.removeEventListener("enterFrame", watchAnim);
+      }
+    };
+    window.lottieLoaderAnim.addEventListener("enterFrame", watchAnim);
+  });
+</script><style type="text/css">
+    /* CSS from ATOM */
+    .c-news-page { z-index: 2; }
+
+.c-brand-menu.is-open, .c-brand-cta-btn {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+#lottie { 
+    overflow: hidden;
+    width: 132px !important;
+    height: 132px !important;
+}
+#lottie svg {
+    width: 140px !important;
+    height: 140px !important;
+    top: -2px;
+    left: -7px !important;
+    position: relative !important;
+}
+  </style><script type="text/javascript">
+    /* JS from ATOM */
+    
+  </script><style type="text/css">
+    /* CSS from Layouts  */
+    
+  </style><div class="l-notification-bar l-notification-bar--rsi js-notification-bar" id="notification-bar-root">
+  <c-notification-bar v-bind:latestagreementsslugs='["bxcvj3l6e1yy1","qwa3l7w316dgt"]' v-bind:loggedin="0" v-bind:onhomepage="0"></c-notification-bar><div class="l-notification-bar__boxes js-notification-bar-boxes">
+      </div>
+
+</div>
+    
+
+    <div id="bodyWrapper">
+      <header class="c-header-wrapper c-header-wrapper--rsi js-header-wrapper " id="cross-brand-header"><div id="platform-bar"></div>
+
+  <div class="c-right-sidebar c-right-sidebar--search" id="search-sidebar">
+  <div class="js-toggle-search__backdrop hidden"></div>
+  <a href="#" class="c-right-sidebar__back js-toggle-search">Back
+    <span></span>
+    <span></span>
+  </a>
+  <form class="c-right-sidebar__form">
+    <h1 class="c-right-sidebar__form-title">Search</h1>
+
+    <input class="c-right-sidebar__form-input" type="text" id="header-search-input" placeholder="Search for articles"><input class="c-right-sidebar__form-submit c-right-sidebar__form-submit--search" type="submit" value="Go"></form>
+</div>
+      <div class="c-right-sidebar c-right-sidebar--signin" id="account-sidebar">
+<div class="js-toggle-account__backdrop hidden"></div>
+  <a href="#" class="c-right-sidebar__back js-toggle-account">Back
+    <span></span>
+    <span></span>
+  </a>
+
+  <form method="post" class="c-right-sidebar__form c-right-sidebar__form--signin js-signin-form" id="signin-form">
+
+    <h1 class="c-right-sidebar__form-title">Sign into RSI</h1>
+
+    <div class="c-right-sidebar__form-error-message js-error-message"></div>
+
+    <input name="login_id" class="c-right-sidebar__form-input" type="text" id="signin_input_loginid" placeholder="Login"><input name="password" class="c-right-sidebar__form-input c-right-sidebar__form-password" type="password" id="signin_input_password" placeholder="Password"><div class="c-right-sidebar__form-captcha" id="signin-captcha"></div>
+
+    <div class="l-oneline l-oneline--fill">
+      <div class="l-checkbox">
+        <input class="c-right-sidebar__form-checkbox" id="sidebar-login-remember-me" name="remember" type="checkbox"><label class="c-right-sidebar__form-label c-right-sidebar__form-checkbox-label" for="sidebar-login-remember-me">
+          Remember me
+        </label>
+      </div>
+
+      <input class="c-right-sidebar__form-submit c-right-sidebar__form-submit--login" type="submit" value="Sign In"><span class="c-right-sidebar__form-success-message">
+        <span class="js-svg-inliner h-svg c-account__icon c-account__icon-success"></span>
+        Success
+      </span>
+    </div>
+    
+
+    <div class="l-oneline">
+      <a class="c-right-sidebar__form-icon-link js-show-recovery c-right-sidebar__form-icon-link--recovery" href="">
+        <span class="js-svg-inliner h-svg c-account__icon c-account__icon--smaller c-account__icon-lock"></span>
+        Account Recovery
+      </a>
+      <a class="c-right-sidebar__form-icon-link c-right-sidebar__form-icon-link--enlist" href="/enlist?jumpto=%2Fcomm-link%2FSCW%2F17314-IMPORT">
+        <span class="js-svg-inliner h-svg c-account__icon c-account__icon--smaller c-account__icon-go"></span>
+        Enlist Now
+      </a>
+    </div>
+  </form>
+
+  <form class="c-right-sidebar__form c-right-sidebar__form--recovery js-recovery-form is-hidden" id="recovery-form">
+
+    <h1 class="c-right-sidebar__form-title">Account Recovery</h1>
+
+    <div class="c-right-sidebar__form-error-message js-error-message"></div>
+
+    <label for="signin_recovery_email" class="c-right-sidebar__form-label">Enter the e-mail address associated with your RSI account. We will email you with the instructions on how to create a new password.</label>
+
+    <input name="email" class="c-right-sidebar__form-input" type="email" id="signin_recovery_email" placeholder="Your Email Address"><input class="c-right-sidebar__form-submit c-right-sidebar__form-submit--recovery" type="submit" value="Submit"><span class="c-right-sidebar__form-success-message">
+      <span class="js-svg-inliner h-svg c-account__icon c-account__icon-success"></span>
+      Success
+    </span>
+
+    <p class="slidedown-on-success">We've sent a recovery email to your email address. Click the link within to reset your password.</p>
+
+    <div class="l-oneline">
+      <a class="c-right-sidebar__form-icon-link c-right-sidebar__form-icon-link--signin js-show-signin" href="">
+        <span class="js-svg-inliner h-svg c-account__icon c-account__icon--smaller c-account__icon-power"></span>
+        Sign-In
+      </a>
+      <a class="c-right-sidebar__form-icon-link c-right-sidebar__form-icon-link--enlist" href="/enlist?jumpto=%2Fcomm-link%2FSCW%2F17314-IMPORT">
+        <span class="js-svg-inliner h-svg c-account__icon c-account__icon--smaller c-account__icon-go"></span>
+        Enlist Now
+      </a>
+    </div>
+    <a class="c-right-sidebar__form-icon-link c-right-sidebar__form-icon-link--support" href="//support.robertsspaceindustries.com">
+      <span class="js-svg-inliner h-svg c-account__icon c-account__icon--smaller c-account__icon-talk"></span>
+      Contact Customer Support
+    </a>
+  </form>
+
+
+  <form class="c-right-sidebar__form c-right-sidebar__form--two-step js-two-step-form is-hidden" id="two-step-form">
+
+    <h1 class="c-right-sidebar__form-title">Two-Step Authentication</h1>
+
+    <div class="c-right-sidebar__form-error-message js-error-message"></div>
+
+    <label for="two_step_input_code" class="c-right-sidebar__form-label js-twostep-label">Enter the code generated by your authenticator or one of your backup codes</label>
+    <input name="code" class="c-right-sidebar__form-input c-right-sidebar__form-input--code" type="text" id="code" placeholder="Authentication Code"><label for="two_step_input_device" class="c-right-sidebar__form-label">Name of your Device</label>
+    <input name="device_name" class="c-right-sidebar__form-input c-right-sidebar__form-input--device" type="text" id="device_name" placeholder="My Device"><input type="hidden" name="device_type" id="device_type" value=""><label for="two_step_input_device" class="c-right-sidebar__form-label">Trust this device for</label>
+        
+
+
+  
+    <a class="js-selectlist selectlist " rel="" href="">
+    <div class="arrow"></div>
+    <span>Duration</span>
+              <ul class="body"><li class="js-option option " rel="session">
+                                                                        This session only
+                                                    </li>
+                                                                <li class="js-option option " rel="day">
+                                                                        1 day
+                                                    </li>
+                                                                <li class="js-option option " rel="week">
+                                                                        1 week
+                                                    </li>
+                                                                <li class="js-option option " rel="month">
+                                                                        1 month
+                                                    </li>
+                                                                <li class="js-option option " rel="year">
+                                                                        1 year
+                                                    </li>
+                                          
+            </ul><input type="hidden" name="duration" class="js-duration js-form-data" id="duration"></a>
+  
+    <input class="c-right-sidebar__form-submit c-right-sidebar__form-submit--twostep" type="submit" value="Authenticate"><span class="c-right-sidebar__form-success-message">
+      <span class="js-svg-inliner h-svg c-account__icon c-account__icon-success"></span>
+      Success
+    </span>
+
+  </form>
+
+</div>
+
+<script>
+
+$(document).ready(function() {
+  this.signin = new RSI.Signin({
+    //success_url: $(e.currentTarget).data('success-url-signin'),
+    require_captcha: 0
+  });
+});
+</script><div class="c-header-wrapper__backdrop js-toggle-games"></div>
+</header><div id="platform-backdrop"></div>
+
+<script type="text/javascript">
+  RSI.Platformbar = {
+    theme: "rsi",
+    loggedState: "logged-out",
+    tabs: [
+      {
+        type: 'brands',
+        name: "Games",
+        subItems: [
+          {
+            name: "sc",
+            href: "/star-citizen",
+            description: "Join the Universe"
+          },
+          {
+            name: "s42",
+            href: "/squadron42",
+            description: "Start the adventure"
+          },
+          {
+            name: "rsi",
+            href: "/",
+            description: "Follow the Development"
+          }
+        ]
+      },
+      {
+        type: 'apps',
+        name: "Apps",
+        subItems: [
+          [
+            {
+              name: "Spectrum",
+              href: "/spectrum/community/SC",
+              description: "Your&nbsp;communication platform"
+            },
+            {
+              name: "Launcher",
+              href: "/download",
+              description: "Download Star&nbsp;Citizen",
+                          }
+          ],
+          [
+            {
+              name: "Roadmap",
+              href: "/roadmap",
+              description: "Keep track of the&nbsp;development"
+            },
+            {
+              name: "Telemetry",
+              href: "/telemetry",
+              description: "Keep&nbsp;track&nbsp;of&nbsp;the player&rsquo;s&nbsp;performance"
+            },
+            {
+              name: "Issue Council",
+              href: "/community/issue-council",
+              description: "Help&nbsp;us&nbsp;make the game better",
+                          }
+          ],
+          [
+            {
+              name: "Starmap",
+              href: "/starmap",
+              description: "Your map to&nbsp;the&nbsp;universe"
+            },
+                          {
+                name: "Galactapedia",
+                href: "/galactapedia",
+                description: "Your guide to&nbsp;the&nbsp;universe"
+              }
+                      ]
+        ]
+      },
+              {
+          type: 'citizencon',
+          name: "Citizencon 2949",
+          href: "/citizencon"
+        }
+          ],
+    navigation: {
+      store: {
+        name: "Pledge Store",
+        href: "/pledge",
+        isHidden: false      },
+      support: {
+        name: "Support",
+        href: "//support.robertsspaceindustries.com"
+      },
+      account: {
+        name: "Account",
+        href: "/account/settings"
+      }
+    }
+  };
+
+  $(document).ready(function() {
+    window.header = new RSI.Header({});
+  });
+</script><header class="c-brand-menu c-brand-menu----rsi" id="brand-menu"><span class="c-brand-menu__section">
+    
+      Roberts Space Industries
+    
+  </span>
+  <div class="c-brand-menu__backdrop"></div>
+  <nav class="c-brand-menu__container"><div class="c-brand-menu__logo">
+      <a href="/"><span class="h-svg h-svg__logo-rsi--fullcolor js-svg-inliner"></span> </a>
+    </div>
+    <div class="c-brand-menu__items-container">
+      <ul class="c-brand-menu__items"><li class="c-brand-menu__item  ">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/comm-link">
+            <span class="c-brand-menu__item-text">Comm-Link</span>
+                                  </a>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/community">
+            <span class="c-brand-menu__item-text">Community</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Community</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items"><li class="c-brand-submenu__item ">
+                      <a href="/spectrum" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Spectrum
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/orgs" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Organizations
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/leaderboards/top" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Leaderboards
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community_events" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Event
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Hub
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/fankit" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Fankit
+                      </a>
+                    </li>
+                                    </ul></div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/development">
+            <span class="c-brand-menu__item-text">Development</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Development</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items"><li class="c-brand-submenu__item ">
+                      <a href="/roadmap" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Roadmap
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/devtracker" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Dev Tracker
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/telemetry" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Telemetry
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/issue-council" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Issue Council
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/patch-notes" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Patch Notes
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/ship-matrix" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Ship Matrix
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/funding-goals" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Funding
+                      </a>
+                    </li>
+                                    </ul></div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+              </ul></div>
+
+    <div class="c-brand-menu__cta">
+      
+          <a href="/star-citizen/fly-now" class="c-brand-cta-btn js-google-analytics-event-tracker" data-event-category="FlyNow" data-event-label="navMenuClick">
+            <div></div>
+              <span class="c-brand-cta-btn__text">
+                <strong>Fly now</strong>Alpha 3.7
+              </span>
+            <div></div>
+          </a>
+      
+    </div>
+  </nav></header><div class="page-wrapper">
+    
+  <div id="post-background"></div>
+
+
+    <div id="contentbody" class="" style="">
+      
+    <div id="layout-system" class="initial"><!--Top Menu--><c-top-menu logo-link="#" logo-link-title="Back to homepage" flynow="https://robertsspaceindustries.com/star-citizen/fly-now" :items="[{
+    content: 'schedule',
+    url: '/comm-link/transmission/17312-IAE-2949',
+    linkTitle: 'Visit the IAE schedule',
+  },{
+    content: 'About the expo',
+    url: '/comm-link/transmission/17315-Getting-To-The-Expo',
+    linkTitle: 'How to get to the IAE event',
+  },{
+    content: 'Whitley\'s guide',
+    url: '/comm-link/transmission/17314-IAE-2949-Whitleys-Guide',
+    linkTitle: 'visit the IAE news',
+    isActive: true,
+  }]"><template slot="logo"><img src="/rsi/layouts/types/anniversary2019/assets/images/logo-IAE.png" alt="Logo IAE"></template><template slot="menu-sentence">
+    The Year's Biggest Aerospace Event
+  </template><template slot="flynow">
+    Fly Free
+  </template></c-top-menu><!--/Top Menu--><!--News Page--><c-news-page><c-page-header>
+    Whitley's Guide at the <strong>IAE</strong>
+  </c-page-header><!-- Day 1 --><c-news-block-container><c-news-block video-src="https://www.youtube.com/embed/exJi4m7oZwU" image-src="https://media.robertsspaceindustries.com/skpw8baox1mqa/source.jpg" media-right><template slot="title">Starting with a Bang!</template><template slot="subtitle">Anvil Aerospace</template><template slot="content"><p>Jax McCleary is back as the host of Whitley's Guide Video. That’s right, Whitley’s, the most trusted name in news and reviews for things you can use, is now your new favorite spectrum series. And we’ve just landed at the Intergalactic Aerospace Expo. Jax kicks things off by looking at some of Anvil's newest bruisers and blowing things up in the name of consumer awareness.</p>  
+      </template></c-news-block></c-news-block-container></c-news-page><!--/News Page--><!--Footer--><c-footer :logo-sponsors="[
+    'arccorp',
+    'anvil',
+    'whitleys',
+    'argo',
+    'crusader',
+    'drake',
+  ]" :logo-new-sponsors="[
+  ]"><template slot="title">
+    IAE2949 <span>SCHEDULE</span>
+  </template><template slot="title-logo"><img src="/rsi/layouts/types/anniversary2019/assets/images/iae-footer-title.png" alt="Logo IAE"></template><template slot="logo-IAE"><img src="/rsi/layouts/types/anniversary2019/assets/images/iae-footer-logo.png" alt="Logo IAE"></template><template slot="schedule"><a href="/comm-link/transmission/17312-IAE-2949" class="c-footer__link" title="Visit the IAE schedule">
+      Schedule
+    </a>
+  </template><template slot="getting-there"><a href="/comm-link/transmission/17315-Getting-To-The-Expo" class="c-footer__link" title="How to get to the IAE event">
+      About the expo
+    </a>
+  </template><template slot="news"><a href="/comm-link/transmission/17314-Whitleys-Guide" class="c-footer__link" title="visit the IAE news">
+      Whitley's guide
+    </a>
+  </template><template slot="flynow"><a href="https://robertsspaceindustries.com/star-citizen/fly-now" class="c-footer__link" title="play now!">
+      Fly Free
+    </a>
+  </template><template slot="sponsors-title">
+    Our sponsors
+  </template><template slot="paragraph-sponsors"><p class="sponsors__content">
+     We extend our sincere appreciation to our sponsors, without whom our season would not be possible.
+    </p>
+  </template><!-- slot for unexpected sponsors --><!--  <template slot="aegis">
+    <svg viewBox="0 0 299 212" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+      <path
+        d="M130.5475 46.3443L77.763 121.9441 68 112.66 138.1522 0h23.6956L232 112.6602 222.1783 122h-.179l-52.824-75.6557v37.828L206.7769 122h-46.9551V29.065s-2.0265-9.0293-9.9774-9.0293c-7.9507 0-10.1324 9.0293-10.1324 9.0293V122H92.9462l37.6013-37.8277v-37.828zM145 79.544S147.154 78 149.8463 78C152.5386 78 155 79.3896 155 79.3896V122h-10V79.5439zM206 188v-51h16v51h-16zm-73-38.0075H89.7707v6.0115H133v12.9922H89.7707v6.0113H133V188H74v-51h59v12.9925zm-107.2352 7.6552h27.4704v-7.6552H25.7648v7.6552zM62.4838 137L69 143.4568V188H53.2352v-27.03l-8.0564 9.67h-19.414V188H10v-44.5432L16.5161 137h45.9672v.0006L62.484 137zM199 183.476L194.4332 188H145.0133L140 183.0343v-41.0304L145.0521 137h49.3425L199 141.5626v8.4299h-43.2292v25.015h27.4584v-6.011h-20.884v-12.9922h20.884v-.0198H199v27.4914zM281.983 188H228v-12.9925h42.7784v-6.0113H228V141.347l4.358-4.347H289v.1279l-10.4389 12.8646h-34.8987v6.011h27.116v-.019h15.663v19.023h.0003v8.5454L281.983 188zM210 212v-12h3v12h-3zm-196.8441-3.503h.011v-4.7998h-.0094c.0022-.0222.007-.0433.007-.0664 0-.3786-.271-.6923-.6275-.7567v-.0081H2.8333v6.2683h9.5086v-.0098c.0223.0022.0434.0073.0656.0073.3746 0 .6844-.2741.7484-.6347zm2.8372-4.994H16v4.994h-.0028c-.0797 1.9477-1.6614 3.5027-3.6058 3.5027-.0167 0-.0328-.0022-.0495-.0025V212H.4791v-.0003H0V200H12.537c1.8777.0787 3.3821 1.6036 3.456 3.503zM54.325 200H58l-6.5467 8.1836V212h-2.8708v-3.7715L42 200h3.6743L50 205.4074 54.325 200zm42.8207.0019H100v9.6666h-.0003c-.0017.0197-.0736.8423-.8462 1.618-.7821.7856-1.518.7116-1.518.7116s-1.1016.0222-1.5347-.1542c-.4551-.1847-.6833-.445-.6833-.445l-8.5633-8.598v9.199H84v-9.6667s.0644-.835.8465-1.6205c.7824-.7853 1.7714-.7108 1.7714-.7108s.9834.0208 1.4167.1973c.4546.1846.608.3457.608.3457l8.5032 8.537v-9.08zm34.8171 5.968h3.0736l-1.3754-2.8933h-.322l-1.3762 2.8933zm4.1937-4.1551L141 212h-3.0954l-1.5046-3.1643h-5.8L129.0954 212H126l4.8437-10.1852S131.6007 200 133.5 200c1.8993 0 2.6566 1.8148 2.6566 1.8148zm47.8254.3984H184V212h-2.825v-8.788l-2.8672 6.86S177.557 212 175.5565 212c-2.0004 0-2.8643-1.928-2.8643-1.928l-2.8672-6.86V212H167v-9.7868h.018c.0485-.2577.2217-.893.8199-1.4999.7744-.7856 1.7536-.7114 1.7536-.7114s.9686.0337 1.4022.1976c.7791.2943 1.078 1.0462 1.078 1.0462v.0003l3.2216 7.707h.4142l3.2213-7.707-.0003-.0003s.299-.752 1.078-1.0462c.434-.1639 1.4023-.1976 1.4023-.1976s.9792-.0742 1.7533.7114c.5988.6069.772 1.2422.8199 1.5zm64.3838 6.9262H255V212h-12.5373c-1.8774-.079-3.3816-1.603-3.456-3.503H239v-4.9943h.003c.0793-1.9474 1.661-3.5027 3.6053-3.5027.0167 0 .0328.0025.0495.0028V200H255v2.866h-12.3423v.009c-.0216-.002-.043-.0068-.0655-.0068-.3749 0-.6844.2744-.748.6345h-.0112v4.7996h.0092c-.002.0227-.0067.0438-.0067.0666 0 .3786.271.6923.6272.7567v.0084h5.9031v.0054zM299 208.2952c0 2.0422-1.6404 3.6972-3.6655 3.7037V212h-14.2071v-2.866h14.1937v-.0025c.0061 0 .0109.0011.0173.0011.4494 0 .8148-.3668.8148-.82 0-.4533-.3654-.8204-.8148-.8204-.0064 0-.0112.001-.0173.0014v-.0017h-11.6427v-.083l-.0006.083c-2.031 0-3.6778-1.742-3.6778-3.7874 0-2.046 1.6469-3.7045 3.6778-3.7045h14.2079v2.866h-14.2073v.0025c-.0056 0-.0112-.002-.0168-.002-.45 0-.8153.3674-.8153.8206 0 .4534.3654.9028.8153.9028.0056 0 .0112-.0017.0168-.0017v.0006h11.656v.0025c2.0252.0073 3.6656 1.6624 3.6656 3.704z" />
+    </svg>
+  </template>--></c-footer><section class="c-disclaimer"><div class="l-container">
+    <h3 class="c-disclaimer__title">
+      Disclaimer
+    </h3>
+    <article class="c-disclaimer__content"><p>
+        We offer pledge vehicles to help fund Star Citizen’s development.
+        The funding received from events such as this allows us to include
+        deeper features in the Star Citizen world. These vehicles will be
+        obtainable in the final universe and they are not required to start
+        the game.
+      </p>
+    </article></div>
+</section><!--/Footer--></div><!--/layout-system-->
+  <script type="text/javascript">
+    /* JS from Layouts */
+    
+  </script></div>
+
+    
+  </div>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.11/moment-timezone-with-data.min.js"></script><script type="text/javascript">
+  $(window).load(function(){
+      $.cookie('moment_timezone', moment.tz.guess(), { expires: 31, path: '/' });
+  });
+</script><script id="tpl_number_counter_digits" type="text/x-jsmart-tmpl">{if !$seperator}{$seperator=','}{/if}
+{if !$first_max}{$first_max=9}{/if}
+{for $digit = 0 to $length-1}
+  <div class="mask">
+    <div class="carousel">
+      {if $digit == 0}
+        {$max = $first_max}
+      {else}
+        {$max = 9}
+      {/if}
+      {for $i=0 to $max}
+        <div class="item {if $val_arr[$digit] == $i}on{/if}" rel="{$i}">{$i}</script></div>
+      {/for}
+    
+  
+  {if ($length - $digit) % 3 == 1 &amp;&amp; $digit != $length-1}
+  <div class="seperator">{$seperator}</div>
+  {/if}
+{/for}
+<script id="base_modal" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  <div class="top-border">
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+  
+</script><script id="base_modal_flat" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  
+  
+</script><script id="tpl_modals_slideshow" type="text/x-jsmart-tmpl"><img class="top-border" src="/rsi/static/images/modal_top.png">
+<a href="" class="close js-close">
+<div class="mask">
+  <a class="js-prev prev control">
+  <a class="js-next next control">
+  <div class="slideshow-carousel carousel" rel="{$index}">
+    {foreach from=$images item="image"}
+      <div class="{if $index == $image@index}on{/if}">
+      {if $image.is_video}
+        <div class="video-holder">
+          <div id="slideshow_video_{$image@index}" data-source="{$image->source_url}">
+            <video width="100%" height="100%" preload="auto" {if $video}src="{$image->source_url}"{/if} controls>
+          
+        
+      {else}
+        <div class="media js-media-slideshow-{$image@iteration}">
+        {if $image.low_res}
+          <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source data-srcset="{$image.full_res}" media="(min-width: 300px)" />
+            <!--[if IE 9]><![endif]-->
+            <img data-srcset="{$image.low_res}" alt="{$image.title}" />
+          
+        {else}
+          <img data-src="{$image.source_url}" />
+        {/if}
+        
+      {/if}
+        <div class="text">
+          {if !$image.is_video}
+          <a href="{$image.source_url}" class="download">
+          {/if}
+          <div class="copyright">&copy; 2012-{$year}<br />Cloud Imperium Games Corporation &<br />Roberts Space Industries Corp.
+          <div class="page-number">{$image@iteration} / {count($images)}
+          <div class="caption v-center">{if $image.title && $image.title != "undefined"}{$image.title}{/if}
+          <div class="cboth">
+        
+      
+    {/foreach}
+  
+
+<img class="bottom-border" src="/rsi/static/images/modal_bottom.png"></script><script id="tpl_contact_us" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    
+<div id="contact" class="inner-content on">
+  <h2><span class="icon">CONTACT
+  <div class="padder">
+    <div class="separator">
+    <form name="" action="" method="POST">
+  <div class="error-message js-error-message">
+  <div class="success-message js-success-message">
+    <fieldset class="last">
+    <label for="contact_email">Email Address
+    <input type="text" name="email" value="" class="trans-02s trans-color trans-box-shadow" id="contact_email" />
+  
+    <fieldset>
+    <label for="contact_subject">Subject
+    <input type="text" name="subject" value="" class="trans-02s trans-color trans-box-shadow" id="contact_subject" />
+    <label>Contacting us for:
+    <ul class="category-info">
+            <li id="tech_support_info">Questions about download, installation, networking, or in-game client problems
+            <li id="subscription_info">Questions about monthly and yearly subscription plans
+            <li id="account_billing_info">Issues related to your account, such as incorrect information or ability to access account, or Billing with regards to payments and payment methods
+            <li id="melt_request_info">To reclaim a pledge over $1,000 for store credit (please note - this is a permanent action)
+            <li id="merchandise_info">Questions about physical and/or shipped merchandise
+            <li id="hacked_info">Issues related to compromised account or missing pledge.
+            <li id="account_recovery_info">For issues with account authentication, lost passwords and related queries
+            <li id="probation_info">Issues related to forums probation or ban
+            <li id="refund_request_info">Refund requests and related inquiries
+            <li id="customer_support_info">For general questions and queries regarding Star Citizen
+          
+  
+  <fieldset>
+    <label for="contact_text">Fescription
+    <textarea name="text" class="trans-02s trans-color trans-box-shadow" id="contact_text">
+  
+  <div class="contact-submit-wrapper">
+    <div class="line">
+    <button class="submit js-submit"><strong>submit your message
+  
+
+    <div class="separator">
+  
+
+
+    
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  
+</script><script id="tpl_concierge" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+<img src="/rsi/static/images/modal_yellow_line.png" />
+
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    
+
+<div id="contact" class="inner-content on">
+  <h2><span class="icon">CONCIERGE
+  <div class="padder">
+    <div class="separator">
+    <form name="" action="" method="POST" class="concierge-form">
+      <p class="head">We recommend that you check out the <a href="/faq">FAQs and other resources below if you are in need of information regarding RSI or Star Citizen. If your topic isn&rsquo;t covered, feel free to contact us!<br/><br/> - Gameplay : <a href="https://forums.robertsspaceindustries.com/categories/ask-a-developer">Ask A Dev<br/> - Suggestions: <a href="https://forums.robertsspaceindustries.com/categories/game-ideas">Game Ideas<br/> - Bug Reports (including PTU): <a href="https://forums.robertsspaceindustries.com/categories/test-pilot-headquarters">Test Pilot Headquarters<br/>
+      <div class="error-message js-error-message">
+      <div class="success-message js-success-message">
+
+      <fieldset class="concierge-form__field concierge-form__field--issue">
+        <label for="concierge_issue">Please choose your issue below
+        <select required id="concierge_issue" name="issue" class="trans-02s trans-color trans-box-shadow">
+          <option value="-">
+            -
+          
+                  
+      
+
+      <fieldset class="concierge-form__field concierge-form__field--problem concierge-form__field--secondary hidden">
+        <label for="concierge_problem">
+        <select required id="concierge_problem" name="problem" class="trans-02s trans-color trans-box-shadow">
+        
+      
+
+      <div class="issue-subfields">
+
+      <fieldset class="concierge-form__field concierge-form__field--secondary concierge-form__field--optional hidden">
+        <label for="concierge_attachment">Attachments <span>- Optional
+        <div class="concierge-form__attachment">
+            Add file here
+          <input class="concierge-upload-images-container" type="file" id="concierge_attachment" name="attachment" accept="image/*" multiple/>
+        
+      
+
+      <fieldset class="concierge-form__field concierge-form__field--secondary concierge-form__field--optional hidden">
+        <span class="h-text h-text--size-13 h-text--univia h-text--brown"><strong>Uploaded files 
+        <div class="concierge-form__file-preview">
+      
+
+      <fieldset class="concierge-form__field concierge-form__field--submit concierge-form__field--secondary last hidden">
+        <span class="submit-arrow">
+        <input type="submit" value="Send" class="trans-02s trans-color trans-background" />
+      
+
+    
+    <div class="separator">
+  
+
+
+
+    
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    
+<img src="/rsi/static/images/modal_yellow_line.png" />
+
+  
+</script><script id="tpl_error" type="text/x-jsmart-tmpl"><div class="modal-error js-modal-error">
+  <p class="modal-text js-modal-text">
+  <a class="close js-close trans-03s .trans-opacity" href="">
+</script><script id="tpl_success" type="text/x-jsmart-tmpl"><div class="modal-success js-modal-success">
+  <p class="modal-text js-modal-text">
+  <a class="close js-close trans-03s .trans-opacity" href="">
+</script><script id="tpl_progress" type="text/x-jsmart-tmpl"><div class="modal-progress js-modal-progress">
+  <div class="traj-loader">
+    <div class="fast-blink">
+    <span class="modal-text js-modal-text">
+  
+</script><script id="tpl_outbound" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    
+<div id="outbound" class="inner-content on">
+  <h2><span class="icon">OUTBOUND LINK
+  <div class="padder">
+    <div class="separator">
+    <form name="" action="" method="POST">
+      <div class="error-message js-error-message"> <span class=important>WARNING<br/><br/> This link will bring you outside of the RSI site and into the depths of the internet. Continue?<br/><br/><span class="url"> 
+      <div class="success-message js-success-message"><span class=important>STAND BY<br/><br/> Initiating hyperlink.<br/><br/>
+
+      <fieldset class="clearfix last">
+        <span class="submit-wrapper">
+          <span class="submit-hover trans-02s trans-opacity">
+          <input type="submit" value="WARP" class="trans-02s trans-color trans-background" />
+        
+      
+    
+    <div class="separator">
+  
+
+
+    
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  
+</script><script id="tpl_l-notification-bar" type="text/x-jsmart-tmpl"><div class="l-notification-bar js-notification-bar">
+
+  <div class="l-notification-bar__watermark js-svg-inliner h-svg__logo-star-citizen">
+
+  <div class="l-notification-bar__boxes">
+    {if !$viewedCookieNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='cookie'
+          title='COOKIES:'
+          message="Our website uses Google Analytics to analyze our traffic. <br/>To learn how you can control Google's use of your data and how you can opt out <a href='https://www.google.com/policies/privacy/partners/'>click here."
+          linkText='See Details'
+          buttonText='Got it!'}
+      
+    {/if}
+
+    {if !$viewedPrivacyNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='privacy'
+          title='PRIVACY POLICY:'
+          message='We adjusted the PP to reflect the decision of the European Court of Justice regarding Safe Harbor, the fact that RSI has moved and added some services providers.'
+          linkText='View Privacy Policy'
+          buttonText='Got it!'}
+      
+    {/if}
+  
+
+
+</script><script id="tpl_c-notification" type="text/x-jsmart-tmpl"><div class="c-notification js-bottom-notif-msg-{$type}">
+    <div class="c-notification__title">{$title}
+    <div class="c-notification__message">
+      {$message}
+    
+
+    {if $linkText}
+        <div class="c-notification__wrapper-link">
+            <a class="c-notification__link js-bottom-notif-link-{$type}">
+            {$linkText}
+            
+        
+    {/if}
+
+    <a class="c-notification__button js-bottom-notif-btn-{$type}">
+
+      <span class="c-notification__button-text">
+       {$buttonText}
+      
+
+      {if $type neq 'announcement'}
+        <div class="c-iconed__icon c-iconed__icon--checkmark">
+      {/if}
+    
+
+</script><script id="tpl_confirm" type="text/x-jsmart-tmpl"><div class="modal-confirm js-modal-confirm clearfix">
+  <p class="modal-text js-modal-text">
+  <a class="bt-close js-close trans-03s trans-opacity" href="">
+  <a class="bt-confirm js-confirm trans-03s trans-opacity" href="">
+	<div class="buttons">
+		<a class="shadow-button trans-02s trans-color js-close bt-close rm"     >
+  <span class="label js-label trans-02s">Cancel
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s">
+  <span class="left-section">
+  <span class="right-section">
+
+		<a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">Confirm
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s">
+  <span class="left-section">
+  <span class="right-section">
+
+	
+
+</script><script id="tpl_alert" type="text/x-jsmart-tmpl"><div class="modal-alert js-modal-alert clearfix">
+  <p class="modal-text js-modal-text">
+  <div class="buttons">
+    <a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">OK
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s">
+  <span class="left-section">
+  <span class="right-section">
+
+  
+</script><script id="tpl_video" type="text/x-jsmart-tmpl">{extends file="base_modal"}
+{block name='modal_content'}
+<div id="ship-commercial" class="inner-content">
+  
+  <div class="hr">
+  <div class="content-block4">
+   
+    <div class="bottom">
+  
+  {if $distant_source=="vimeo"}
+  <iframe id="commercial" src="//player.vimeo.com/video/{$video_id}?wmode=transparent" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+  {else}
+  <iframe id="commercial" frameborder="0" allowfullscreen="1" title="YouTube video player" width="100%" height="100%" src="https://www.youtube.com/embed/{$video_id}?autoplay=1">
+  {/if}
+
+{/block}
+</script><script id="tpl_comment_report" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    
+<div id="comment-report" class="inner-content on">
+  <h2><span class="icon">Report this comment
+  <div class="padder">
+    <div class="separator">
+    <form name="" action="" method="POST">
+<input type="hidden" name="comment_id" value="">
+  <div class="error-message js-error-message">
+  <div class="success-message js-success-message">
+    <fieldset class="last">
+    <label for="report_email">Email Address
+    <span class="corner-wrapper">
+      <input type="text" name="email" value="" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_email" />
+      <span class="corner corner-top-left">
+      <span class="corner corner-top-right">
+      <span class="corner corner-bottom-left">
+      <span class="corner corner-bottom-right">
+    
+  
+    <fieldset>
+    <label>Report Type
+    
+
+
+  
+    <a class="js-selectlist selectlist " rel="" href="">
+    <div class="arrow">
+    <span>Please select the type best matching your report
+              <ul class="body">
+              
+                                                              <li class="js-option option " rel="obscenity" >
+                                                                        Obscene Content
+                                                    
+                                                                <li class="js-option option " rel="abuse" >
+                                                                        Abusive Conduct
+                                                    
+                                                                <li class="js-option option " rel="other" >
+                                                                        Other
+                                                    
+                                          
+            
+        <input type="hidden" name="category" class="js-category js-form-data" id="category"/>
+  
+    
+  <fieldset>
+    <label for="report_text">Details
+    <span class="corner-wrapper">
+      <textarea name="text" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_text" maxlength="2500">
+      <span class="corner corner-top-left">
+      <span class="corner corner-top-right">
+      <span class="corner corner-bottom-left">
+      <span class="corner corner-bottom-right">
+    
+  
+  <fieldset class="clearfix last">
+    <span class="submit-wrapper">
+      <span class="submit-hover trans-02s trans-opacity">
+      <input type="submit" value="Submit" class="trans-02s trans-color trans-background" />
+    
+  
+
+    <div class="separator">
+  
+
+
+    
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  
+</script><footer class="c-platform-footer c-platform-footer--rsi"><div class="l-platform-footer-container">
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--sc"><li class="c-platform-footer-brand__item">
+
+          <span class="c-brand c-brand--sc js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--sc">
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Join the<br>Universe
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path></svg></span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--sc"><li class="c-platform-footer-list__item">
+              <a href="/star-citizen" class="c-platform-footer-link">About the Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/howto/1" class="c-platform-footer-link">How to Play</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/universe" class="c-platform-footer-link">The Universe</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/media" class="c-platform-footer-link">Media</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/fly-now" class="c-platform-footer-link js-google-analytics-event-tracker" data-event-category="FlyNow" data-event-label="footerClick">
+                Fly Now
+              </a>
+            </li>
+          </ul></li>
+      </ul><ul class="c-platform-footer-social"><li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__sc">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">
+              Social Links
+            </span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links"><li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/RobertsSpaceIndustries/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/RobertsSpaceInd">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/robertsspaceind">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.youtube.com/channel/UCTeLqJq1mXUX5WWoNXLmOIA">
+                <span class="c-iconed__icon c-iconed__icon--youtube"></span>
+                Youtube
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.twitch.tv/starcitizen">
+                <span class="c-iconed__icon c-iconed__icon--twitch"></span>
+                Twitch
+              </a>
+            </li>
+          </ul></li>
+      </ul></div>
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--s42"><li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--s42 js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--s42">
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Start the<br>Adventure
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path></svg></span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--s42"><li class="c-platform-footer-list__item">
+              <a href="/squadron42" class="c-platform-footer-link">The Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#enlist" class="c-platform-footer-link">Enlist Today</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#roadmap" class="c-platform-footer-link">Status</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/pledge/Packages/Squadron-42-Standalone-Pledge" class="c-platform-footer-link">Pledge</a>
+            </li>
+          </ul></li>
+      </ul><ul class="c-platform-footer-social"><li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__s42">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">Social Links</span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links"><li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/Squad42/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/squadron_42">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/squadron42">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+          </ul></li>
+      </ul></div>
+
+    <div class="c-platform-footer__column l-column is-active">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--rsi"><li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--rsi js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--rsi">
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi--fullcolor"></span>
+            </span>
+            <span class="c-brand__label">
+              Follow the Development
+            </span>
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path></svg></span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--rsi"><li class="c-platform-footer-list__item">
+              <a href="/" class="c-platform-footer-link">Home</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/comm-link" class="c-platform-footer-link">Transmissions</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/community" class="c-platform-footer-link">Community</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/roadmap" class="c-platform-footer-link">Development</a>
+            </li>
+          </ul></li>
+      </ul></div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--platform"><li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Platform
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path></svg></span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--platform"><li class="c-platform-footer-list__item">
+                <a href="/pledge" class="c-platform-footer-link ">Pledge Store</a>
+              </li>
+            
+            <li class="c-platform-footer-list__item">
+              <a href="/download" class="c-platform-footer-link ">Download</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/spectrum/community/SC" class="c-platform-footer-link">Spectrum</a>
+            </li>
+
+                          <li class="c-platform-footer-list__item">
+                <a href="/citizencon" class="c-platform-footer-link">Citizencon</a>
+              </li>
+                      </ul></li>
+      </ul></div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--utility"><li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Utilities
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path></svg></span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--utility"><li class="c-platform-footer-list__item">
+              <a href="//support.robertsspaceindustries.com" class="c-platform-footer-link">Help</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/press" class="c-platform-footer-link">Press</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="https://cloudimperiumgames.com/join-us" class="c-platform-footer-link">Careers</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/tos" class="c-platform-footer-link">Terms of Services</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/privacy" class="c-platform-footer-link">Privacy Policy</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/eula" class="c-platform-footer-link">EULA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/dmca" class="c-platform-footer-link">DMCA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/acknowledgements" class="c-platform-footer-link">Acknowledgements</a>
+            </li>
+          </ul></li>
+      </ul></div>
+
+  </div>
+
+  
+</footer><div class="c-platform-copyright c-platform-copyright--rsi">
+  <div class="l-platform-copyright-container">
+    <a href="https://cloudimperiumgames.com" class="c-platform-copyright__logo h-svg__logo-cig js-svg-inliner"></a>
+    <p class="c-platform-copyright__body">© 2012-2019 Cloud Imperium Rights LLC and Cloud Imperium Rights Ltd.</p>
+  </div>
+</div>
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHNFZPT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<script type="text/javascript">
+  window.RSI.Footer = new RSI.Footer();
+</script><script type="text/javascript" src="/cache/en/rsi-platformbar-js.js?v=3.3.6.6"></script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"58013cabd7","applicationID":"375102748","transactionName":"Y1JaYktUWxZUV0QKV1oYe0NKQVoIGmZjKmtdQ111VltBF1pYXAZKDg1ZQlZYcwxbUA==","queueTime":0,"applicationTime":22,"atts":"TxVNFANOSEkXVRJZQ0lK","errorBeacon":"bam.nr-data.net","agent":""}</script></body>

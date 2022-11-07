@@ -1,0 +1,2146 @@
+
+  <head>
+    
+            <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1130.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+      <meta name="viewport" content="width=device-width">
+      <meta name="description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans.">
+      <meta property="og:site_name" content="
+ Star Citizen Alpha 2.6.0 - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+">
+      <meta property="og:image" content="https://robertsspaceindustries.com/rsi/static/images/RSI-logo-fb.jpg">
+      <meta property="og:description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans.">
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://robertsspaceindustries.com/comm-link/SCW/15653-IMPORT">
+      <meta property="og:locale" content="us_EN">
+
+            
+
+            <link href="/rsi/static/css/cross-brand-less.css?v=3.2.9.0" media="all" rel="stylesheet">
+      <link href="/cache/en/rsi-platformbar-css.css?v=3.2.9.0" media="all" rel="stylesheet">
+            <script type="text/javascript" src="/cache/en/rsi-js.js?v=3.2.9.0"></script>
+      
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KHNFZPT');</script>
+<!-- End Google Tag Manager -->
+
+
+      <script>
+        $(document).ready(function() {
+          window.Common = new RSI.Common({});
+          window.Main = new RSI.Main({
+            'is_mobile': 0,
+            'probation_cookie' : '',
+            'require_captcha': 0
+          });
+          window.Mark = new Turbulent.Mark({ 'name' : 'Rsi-XSRF', 'token' : '', 'ttl' : 1800 });
+
+          window.WscOverlay = new RSI.WscOverlay({});
+
+          var destinations = [];
+
+window.Main.destinations = destinations;          
+  window.PageStore = new RSI.Store({
+    'store_prefix' : '/pledge',
+    'customizerConfig' : {"endpoint":"https:\/\/robertsspaceindustries.com\/","verify":true,"customizer":{"path":"\/customizer","view":"","api":"\/api","methods":{"start":"\/start","game":"\/configuration\/:id\/game","details":"\/configuration\/:id\/details","report":"\/configuration\/:id\/report","export-port-label":"\/admin\/export\/port\/label"}},"ga_tracking_code":"UA-39586040-5"}
+  });
+
+          
+          
+  var productsTracking = [];
+  var eCommerceData = {
+    'trackingAction': "",
+    'currency': "",
+    'trackingStep': "",
+    'trackingProducts': productsTracking
+  };
+  window.eCommerceTracking = new RSI.Store.eCommerceTracking(
+    eCommerceData
+  );
+
+        });
+
+        $(window).load(function() {
+          
+        });
+
+      </script>
+
+
+      <script>
+        window.recaptcha_is_loaded = false;
+        window.on_recaptcha_load_callback = function() {
+          window.recaptcha_is_loaded = true;
+        };
+      </script>
+
+      <script src="https://www.google.com/recaptcha/api.js?onload=on_recaptcha_load_callback&amp;render=explicit" async defer></script>
+
+      <script type="text/javascript">
+
+        
+
+                                </script>
+
+
+      <title>
+ Star Citizen Alpha 2.6.0 - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+</title>
+
+      
+
+<style type="text/css">
+  /* CSS from ATOM */
+  
+</style>
+
+<script type="text/javascript">
+  /* JS from ATOM */
+  
+</script>
+
+
+    
+
+  <style>
+    
+      background:url(/rsi/static/images/noisebg.gif) repeat center top #000b11;
+    
+  </style>
+
+    <link href="//fonts.googleapis.com/css?family=Electrolize%7COrbitron:400,500,700%7CShare+Tech+Mono" rel="stylesheet" type="text/css">
+
+    <link href="/cache/en/rsi-css.css?v=3.2.9.0" media="all" rel="stylesheet">
+  
+
+  </head>
+  <body id="" class="">
+
+    
+      <div class="l-notification-bar l-notification-bar--rsi js-notification-bar" id="notification-bar-root">
+  <c-notification-bar v-bind:latestagreementsslugs='["qwa3l7w316dgt","5uyoqclrxgfgf"]' v-bind:loggedin="1" v-bind:onhomepage="0"></c-notification-bar>
+  <div class="l-notification-bar__boxes js-notification-bar-boxes">
+      </div>
+
+</div>
+    
+
+    <div id="bodyWrapper">
+      <header class="c-header-wrapper c-header-wrapper--rsi js-header-wrapper is-connected" id="cross-brand-header">
+  <div id="platform-bar"></div>
+
+  <div class="c-right-sidebar c-right-sidebar--search" id="search-sidebar">
+  <div class="js-toggle-search__backdrop hidden"></div>
+  <a href="#" class="c-right-sidebar__back js-toggle-search">Back
+    <span></span>
+    <span></span>
+  </a>
+  <form class="c-right-sidebar__form">
+    <h1 class="c-right-sidebar__form-title">Search</h1>
+
+    <input class="c-right-sidebar__form-input" type="text" id="header-search-input" placeholder="Search for articles">
+
+    <input class="c-right-sidebar__form-submit c-right-sidebar__form-submit--search" type="submit" value="Go">
+  </form>
+</div>
+      
+<div class="c-right-sidebar c-right-sidebar--account" id="account-sidebar">
+  <div class="js-toggle-account__backdrop hidden"></div>
+  <a href="#" class="c-right-sidebar__back js-toggle-account">Back
+    <span></span>
+    <span></span>
+  </a>
+
+  <div class="c-account-sidebar__profile">
+    <div class="c-account-sidebar__profile-metas">
+
+      <a class="c-account-sidebar__profile-metas-avatar" href="https://robertsspaceindustries.com/citizens/star-citizen-wiki" style="background-image:url('/media/6zg0fizwcelhpr/avatar/Wiki_logo_stern_abgen0wumg.png');"></a>
+
+      <span class="c-account-sidebar__profile-metas-badge c-account-sidebar__profile-metas-badge--icon" data-tip="">
+        <img src="https://robertsspaceindustries.com/media/ls27iyxog62nnr/heap_note/Subscriber.png" alt="Subscriber" title="Subscriber">
+      </span>
+
+      <a href="/orgs/WIKI" class="c-account-sidebar__profile-metas-badge c-account-sidebar__profile-metas-badge--org" data-tip="star-citizen.wiki">
+        <img src="/media/h68aa8sq3cv44r/heap_note/WIKI-Thumbnail.png" alt="star-citizen.wiki" title="star-citizen.wiki">
+      </a>
+
+    </div>
+
+    <div class="c-account-sidebar__profile-info">
+
+      <a href="https://robertsspaceindustries.com/citizens/star-citizen-wiki" class="c-account-sidebar__profile-info-displayname">Star Citizen Wiki</a>
+
+      <span class="c-account-sidebar__profile-info-handle">star-citizen-wiki</span>
+
+      <a href="" class="c-account-sidebar__profile-info-signout js-sign-out">Sign Out</a>
+
+      <div class="c-account-sidebar__profile-info-credits">
+        <span class="c-account-sidebar__profile-info-credits-label">STORE</span>
+        <span class="c-account-sidebar__profile-info-credits-amount c-account-sidebar__profile-info-credits-amount--pledge">$0.00 USD</span>
+
+        <span class="c-account-sidebar__profile-info-credits-label">UEC</span>
+        <span class="c-account-sidebar__profile-info-credits-amount c-account-sidebar__profile-info-credits-amount--uec">¤6,500 UEC</span>
+
+        <span class="c-account-sidebar__profile-info-credits-label">REC</span>
+        <span class="c-account-sidebar__profile-info-credits-amount c-account-sidebar__profile-info-credits-amount--rec">¤260,000 REC</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="c-account-sidebar__links">
+    <a href="/account/settings" class="c-account-sidebar__links-link">Settings</a>
+    <a href="/account/pledges" class="c-account-sidebar__links-link">My Hangar</a>
+              <a href="/subscribers/vault" class="c-account-sidebar__links-link">Subscribers</a>
+          </div>
+
+  <div class="c-account-sidebar-tabs">
+    <div class="c-account-sidebar-tabs__list">
+      <a class="c-account-sidebar-tabs__tab">Contacts</a>
+    </div>
+
+    <div class="c-account-sidebar-tabs__content c-account-sidebar-tabs__content--contacts">
+      <div class="c-account-sidebar-contacts" id="sidebar-contacts-list">
+        <form class="c-right-sidebar__form c-account-sidebar-contacts__search js-contacts-search">
+
+          <input type="text" class="c-right-sidebar__form-input c-account-sidebar-contacts__search-input js-contacts-search-input" placeholder="Search">
+          <a class="c-account-sidebar-contacts__search-submit js-submit-contacts-search">
+            <span></span>
+            <span></span>
+          </a>
+
+          <div class="l-oneline l-oneline--fill">
+            <div class="l-checkbox">
+              <input class="c-right-sidebar__form-checkbox js-only-contacts" id="sidebar-only-contacts" name="only-contacts" type="checkbox">
+              <label class="c-right-sidebar__form-label c-right-sidebar__form-checkbox-label" for="sidebar-only-contacts">
+                Only in your contact list
+              </label>
+            </div>
+
+            <div class="c-account-sidebar-contacts__search-amount js-search-amount">-</div>
+          </div>
+        </form>
+
+        <div class="c-account-sidebar-contacts__results">
+          <div class="c-account-sidebar-contacts__results-title-wrapper">
+            <span class="c-account-sidebar-contacts__results-title c-account-sidebar-contacts__results-title--contacts">My Contacts</span>
+            <span class="c-account-sidebar-contacts__results-title c-account-sidebar-contacts__results-title--results">Results</span>
+                      </div>
+
+          <div class="c-account-sidebar-contacts__results-list js-contacts-list" data-public-profile-url="https://robertsspaceindustries.com/citizens/">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/template" id="contact-item-tpl">
+  <div class="c-account-sidebar-contacts__results-list-item js-contact <% if(following) { %>is-following<% } %>">
+
+    <a class="c-account-sidebar-contacts__results-list-item-avatar " href="https://robertsspaceindustries.com/citizens/<%= nickname %>" title="" style="background-image:url('<%= avatar %>');">
+    
+
+    <div class="c-account-sidebar-contacts__results-list-item-info">
+      <a class="c-account-sidebar-contacts__results-list-item-displayname" href="https://robertsspaceindustries.com/citizens/<%= nickname %>" title=""><%= displayname %>
+
+      <span class="c-account-sidebar-contacts__results-list-item-handle js-nickname"><%= nickname %>
+
+      <div class="c-account-sidebar-contacts__results-list-item-actions">
+        <a class="c-account-sidebar-contacts__results-list-item-action c-account-sidebar-contacts__results-list-item-action--dossier" href="https://robertsspaceindustries.com/citizens/<%= nickname %>" title="">
+          <span class="js-svg-inliner h-svg c-account__icon c-account__icon--smaller c-account__icon-star-citizen">
+          Citizen Dossier
+        
+        <a class="c-account-sidebar-contacts__results-list-item-action c-account-sidebar-contacts__results-list-item-action--follow js-contact-follow js-follow" title="">
+          <span class="js-svg-inliner h-svg c-account__icon c-account__icon--smaller c-account__icon-profile">
+          Follow
+        
+        <a class="c-account-sidebar-contacts__results-list-item-action c-account-sidebar-contacts__results-list-item-action--unfollow js-contact-follow js-unfollow" title="">
+          <span class="js-svg-inliner h-svg c-account__icon c-account__icon--smaller c-account__icon-trash">
+          Unfollow
+        
+      </script></header></div>
+    
+
+
+    <div class="error js-error"></div>
+
+  
+
+
+<script>
+  $(document).ready(function() {
+    this.accountSidebar = new RSI.AccountSidebar({
+    });
+  });
+</script>  
+  <div class="c-header-wrapper__backdrop js-toggle-games"></div>
+
+
+<div id="platform-backdrop"></div>
+
+<script type="text/javascript">
+  RSI.Platformbar = {
+    theme: "rsi",
+    loggedState: "logged-in",
+    tabs: [
+      {
+        type: 'brands',
+        name: "Games",
+        subItems: [
+          {
+            name: "sc",
+            href: "/star-citizen",
+            description: "Join the Universe"
+          },
+          {
+            name: "s42",
+            href: "/squadron42",
+            description: "Start the adventure"
+          },
+          {
+            name: "rsi",
+            href: "/",
+            description: "Follow the Development"
+          }
+        ]
+      },
+      {
+        type: 'apps',
+        name: "Apps",
+        subItems: [
+          [
+            {
+              name: "Spectrum",
+              href: "/spectrum/community/SC",
+              description: "Your&nbsp;communication platform"
+            },
+            {
+              name: "Launcher",
+              href: "/download",
+              description: "Download Star&nbsp;Citizen",
+                          }
+          ],
+          [
+            {
+              name: "Roadmap",
+              href: "/roadmap",
+              description: "Keep track of the&nbsp;development"
+            },
+            {
+              name: "Telemetry",
+              href: "/telemetry",
+              description: "Keep&nbsp;track&nbsp;of&nbsp;the player&rsquo;s&nbsp;performance"
+            },
+            {
+              name: "Issue Council",
+              href: "/community/issue-council",
+              description: "Help&nbsp;us&nbsp;make the game better",
+                          }
+          ],
+          [
+            {
+              name: "Starmap",
+              href: "/starmap",
+              description: "Your map to&nbsp;the&nbsp;universe"
+            }
+          ]
+        ]
+      },
+              {
+          type: 'citizencon',
+          name: "Citizencon 2949",
+          href: "/citizencon"
+        }
+          ],
+    navigation: {
+      store: {
+        name: "Pledge Store",
+        href: "/pledge",
+        isHidden: false      },
+      support: {
+        name: "Support",
+        href: "//support.robertsspaceindustries.com"
+      },
+      account: {
+        name: "Account",
+        href: "/account/settings"
+      }
+    }
+  };
+
+  $(document).ready(function() {
+    window.header = new RSI.Header({});
+  });
+</script>
+
+
+      
+  
+<header class="c-brand-menu c-brand-menu----rsi" id="brand-menu">
+  <span class="c-brand-menu__section">
+    
+      Roberts Space Industries
+    
+  </span>
+  <div class="c-brand-menu__backdrop"></div>
+  <nav class="c-brand-menu__container">
+    <div class="c-brand-menu__logo">
+      <a href="/"><span class="h-svg h-svg__logo-rsi--fullcolor js-svg-inliner"></span> </a>
+    </div>
+    <div class="c-brand-menu__items-container">
+      <ul class="c-brand-menu__items">
+                <li class="c-brand-menu__item  ">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/comm-link">
+            <span class="c-brand-menu__item-text">Comm-Link</span>
+                                  </a>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/community">
+            <span class="c-brand-menu__item-text">Community</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Community</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/spectrum" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Spectrum
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/orgs" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Organizations
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/leaderboards/top" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Leaderboards
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community_events" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Event
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Hub
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/fankit" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Fankit
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/development">
+            <span class="c-brand-menu__item-text">Development</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Development</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/roadmap" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Roadmap
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/devtracker" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Dev Tracker
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/telemetry" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Telemetry
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/issue-council" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Issue Council
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/patch-notes" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Patch Notes
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/ship-matrix" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Ship Matrix
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/funding-goals" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Funding
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+              </ul>
+    </div>
+
+    <div class="c-brand-menu__cta">
+      
+          <a href="/star-citizen/fly-now" class="c-brand-cta-btn js-google-analytics-event-tracker" data-event-category="FlyNow" data-event-label="navMenuClick">
+            <div></div>
+              <span class="c-brand-cta-btn__text">
+                <strong>Fly now</strong>Alpha 3.7
+              </span>
+            <div></div>
+          </a>
+      
+    </div>
+  </nav>
+</header>
+
+
+
+      
+
+  
+  <div class="page-wrapper">
+    
+  <div id="post-background"></div>
+
+
+    <div id="contentbody" class="" style="">
+      
+
+<div id="post">
+  <div class="title-section">
+    
+      <div class="wrapper title-bar-container">
+        <div class="glow left"></div>
+        <div class="title-bar">
+          <div class="title with-subtitle">
+            <h1></h1>
+            <h2></h2>
+          </div>
+          <div class="details">
+            <div>
+              <h3>ID:</h3>
+              <p>15653</p>
+              <div class="cboth"></div>
+            </div>
+            <div>
+              <h3>Comments:</h3>
+              <p class="comment-count">47</p>
+              <div class="cboth"></div>
+            </div>
+            <div>
+              <h3>Date:</h3>
+              <p>January 3rd 2017</p>
+              <div class="cboth"></div>
+            </div>
+            <div></div>
+          </div>
+          <div class="cboth"></div>
+        </div>
+        <div class="glow right"></div>
+      </div>
+    
+  <div class="title-container">
+    <div class="title no-subtitle"> Star Citizen Alpha 2.6.0</div>
+      </div>
+
+  </div>
+
+  
+  <div class="lightbar toplightbar">
+    <div class="lightbarlights"></div>
+    <div class="footershadow"></div>
+  </div>
+
+
+  <div class="wrapper"><div class="content-block1 rsi-markup"><div class=" segment"><div class="content"><p><a name="top"></a></p>
+
+<h1><span style="color:lightblue;">Star Citizen Patch 2.6.0</span></h1>
+
+<p><span style="color:lightblue;">Alpha Patch 2.6.0 has been released, and is now available for players! This patch provides access to Star Marine – with two maps and two game modes to choose from, we hope you’re all as excited as we are for this release! We also have four new flyable ships, four new variants of existing ships, new <span class="caps">FPS</span> combat mechanics such as cover, mantle and vault, major ship balance changes, Pirate Swarm game mode and so much more in the form of fixes and updates to existing content!</span></p>
+
+<p><span style="color:lightblue;">Your launcher should show “2.6.0-490789-c” as the client version. It is strongly recommended that players delete their <span class="caps">USER</span> folder for the Live client after patching, particularly if you start encountering any odd character graphical issues or crash on loading. The <span class="caps">USER</span> folder can be found (in default installations) at C:\Program Files\Cloud Imperium Games\StarCitizen\Public.</span></p>
+
+<p><span style="color:lightblue;">Please review our <a href="https://robertsspaceindustries.com/faq/liveknownissues" target="_blank">Knowledge Base</a>, and take full advantage of our <a href="https://robertsspaceindustries.com/community/issue-council" target="_blank">Issue Council</a> area of the Community site to report any bugs you encounter, as well as contribute to other players submissions.</span></p>
+
+<h2>Important Issues: </h2>
+
+<ul>
+	<li>Players in a party will be separated after finishing a multiplayer game. You will have to re-form parties after a match.</li>
+	<li>Star Marine Leaderboards are not yet in-game, and will show up as “Coming Soon”.</li>
+	<li>Star Marine loadouts can take 15-30 seconds to save to the database. If you proceed into the game right away, it will sometimes place you in the default loadout instead.</li>
+</ul>
+
+<h3>Patcher Stalls</h3>
+
+<p><span style="color:lightblue;">If you find that your launcher has stalled with only a small quantity of data remaining left to download, we recommend that you use a <span class="caps">VPN</span> to complete the download.</span></p>
+
+<p><span style="color:lightblue;">Should you need a free <span class="caps">VPN</span> Service that we have confirmed to work as a solution for this problem we recommend checking out Tunnelbear found <a href="https://www.tunnelbear.com/" target="_blank">here</a>.</span></p>
+
+<p><span style="color:lightblue;">Should you need more assistance with this issue please feel free to contact us via our support page <a href="https://robertsspaceindustries.com/help" target="_blank">here</a>.</span></p>
+
+<p><strong><span style="color:lightblue;">Contents:</span></strong></p>
+
+<ul>
+	<li><a href="#NF">New Features</a>
+	<ul>
+		<li><a href="#NFSS">Star Systems</a></li>
+		<li><a href="#NFGS">Game Systems</a></li>
+		<li><a href="#NFShips">Ships</a></li>
+		<li><a href="#NFFP">First Person</a></li>
+		<li><a href="#NFTechnical">User Interface</a></li>
+	</ul></li>
+	<li><a href="#UF">Updates and Fixes</a>
+	<ul>
+		<li><a href="#UFSS">Star Systems</a></li>
+		<li><a href="#UFGS">Game Systems</a></li>
+		<li><a href="#UFShips">Ships</a></li>
+		<li><a href="#UFFP">First Person</a></li>
+		<li><a href="#UFUI">User Interface</a></li>
+		<li><a href="#UFTechnical">Technical</a></li>
+	</ul></li>
+	</ul>
+
+<h1><span style="color:lightblue;">New Features</span><br>
+<a name="NF"></a></h1>
+
+<h2><span style="color:lightblue;">Star Systems:</span><br>
+<a name="NFSS"></a></h2>
+
+<h3>Crusader</h3>
+
+<ul>
+	<li>The Grim <span class="caps">HEX</span> Bar is now open and ready for your absolutely legal and legitimate business!</li>
+	<li>Crusader has several new locations to visit and a new <span class="caps">ICC</span> Probe mission.</li>
+	<li>The Yela Asteroid belt has received some updates, with a much denser field and more varied salvage locations.</li>
+</ul>
+
+<h2><span style="color:lightblue;">Game Systems:</span><br>
+<a name="NFGS"></a></h2>
+
+<h3>Arena Commander</h3>
+
+<ul>
+	<li>Pirate Swarm is a new game mode to Arena Commander, for both Drone Sim and Spectrum matchups.
+	<ul>
+		<li>Players will be challenged to defeat increasing numbers and increasingly difficult waves of varied pirates.</li>
+		<li>The number of pirates that spawn will scale based on the number of players present.</li>
+	</ul></li>
+	<li>Enemies in specific Arena Commander game modes (Vanduul Swarm, Pirate Swarm, Squadron Battle, Battle Royale) now drop pickup items.
+	<ul>
+		<li>Anyone in the match can obtain these pickups by flying through them.</li>
+		<li>These pickups come in four types, and will restore afterburner fuel, missiles, ballistic ammo or repair your ship.</li>
+	</ul></li>
+	<li>Players are now promoted through the ranks of the <span class="caps">UEE</span> Navy on the Arena Commander leaderboards.
+	<ul>
+		<li>Work your way up from Starman Recruit all the way up to Legatus Navium – a special rank only awarded to the first player to reach it per season.</li>
+	</ul></li>
+	<li>The majority of ships are unlocked for use in Arena Commander private and single player matches, including the Constellation, Retaliator and Caterpillar.</li>
+	<li>Capture the Core has been deactivated as an available Arena Commander game mode at this time.</li>
+</ul>
+
+<h3>Star Marine!</h3>
+
+<ul>
+	<li>Our first-person combat simulator Star Marine is now available for players!</li>
+	<li>Two maps will be available in the initial Star Marine release, OP Station Demien and Echo Eleven.</li>
+	<li>Star Marine has two available game modes for 2.6.0.
+	<ul>
+		<li>Elimination, an every-man-for themselves mode where you duke it out for the highest kill-score.</li>
+		<li>Last Stand, where Outlaws and Marines wrestle for control of four key computer access points to earn points for their team over 4 rounds. The team with the most points wins!</li>
+	</ul></li>
+	<li>Beyond the weaponry you’ve already come to know and love in Crusader, grenades are also available in Star Marine from the ammo crates.</li>
+	<li>Leaderboards are also now available for Star Marine via the website.
+	<ul>
+		<li>These include tracking of points, ranking and score similar to what is already available in Arena Commander.</li>
+	</ul></li>
+	<li>Players are now promoted through the ranks of the <span class="caps">UEE</span> Marines on the leaderboards.
+	<ul>
+		<li>Work your way up from Trooper all the way up to Legatus Marinuum – a special rank only awarded to the first player to reach it per season.</li>
+	</ul></li>
+	<li>Loadout customization is enabled for Star Marine.
+	<ul>
+		<li>Users can select weapons for each available slot, and armor type (light or medium).</li>
+		<li>Please keep in mind because team distribution is random, players will need to edit both their Outlaw and Marine loadouts to ensure that they receive a correct loadout for both teams.</li>
+	</ul></li>
+	</ul>
+
+<h3>Star Marine Scoring</h3>
+
+<ul>
+	<li>Standard Kills are worth 100 points.</li>
+	<li>A “Bleed Out Kill” is worth 75 points.
+	<ul>
+		<li>This is based on who got the last blow on an enemy before they subsequently bled to death.</li>
+	</ul></li>
+	<li>Suicide inflicts a penalty of -200 points.</li>
+	<li>“First Blood” kills give a bonus of +100 points, rewarded to the first player to score a kill.</li>
+	<li>“Revenge Kill” +50 points, rewarded if your next kill was the player who last killed you.</li>
+	<li>“Ace Award” +100 points.
+	<ul>
+		<li>Ace is awarded if you kill 5 players without dying.</li>
+		<li>You are marked to all over players with a pulse of an icon at your location every time you make a kill at 5 and over.</li>
+	</ul></li>
+	<li>“Ace Spree” is +25 points, and increases for each kill by an Ace over the first five until their Ace Spree ends.
+	<ul>
+		<li>Kill #6 a bonus of +25, at #7 kills a bonus of +50, ect.</li>
+	</ul></li>
+	<li>“Ace Kill” +150 bonus points awarded for killing an enemy who is an Ace.
+	<ul>
+		<li>+25 points for every one of their kills over 5.</li>
+	</ul></li>
+	<li>“Nemesis Award” +150 points, awarded for killing the same enemy 3 times without being killed by them.</li>
+	<li>“Redemption Award” +150 points, awarded for killing your Nemesis.</li>
+	<li>“Resurgence Award” +50 points, awarded for killing an enemy when you have had more than 3 deaths without a kill.
+	<ul>
+		<li>Bonus +50 points for every death without a kill over 3.</li>
+	</ul></li>
+	</ul>
+
+<h3>Combat Emotes</h3>
+
+<ul>
+	<li>In addition to everything else that comes with Star Marine, we have also implemented some basic combat signals to the keypad of the keyboard for Star Marine.</li>
+	<li>These will broadcast at a much shorter range then a chat message or emote normally would, and allow players who are not in voice chat to convey very basic strategy to each other.
+	<ul>
+		<li>/left – Keypad 1</li>
+		<li>/stop – Keypad 2</li>
+		<li>/right – Keypad 3</li>
+		<li>/yes – Keypad 4</li>
+		<li>/forward – Keypad 5</li>
+		<li>/no – Keypad 6</li>
+		<li>These are not bound to the Gamepad at this time.</li>
+	</ul></li>
+	</ul>
+
+<h3>Health System Updates</h3>
+
+<ul>
+	<li><strong>Bleeding</strong> has been added to the game!</li>
+	<li>Bleeding is a debuff that stacks (additive) with itself, and will decrease your total health pool each second it ticks down.</li>
+	<li>Each body part that enters a ruined state (10% or less health) can apply a stack of Bleeding.</li>
+	<li>Right now, each Bleeding stack deals 1 damage per second.</li>
+	<li>When your health pool reaches zero, your character dies.</li>
+	<li>To stop bleeding, you must use a MediPen to restore your injured limb out of the Ruined state.</li>
+</ul>
+
+<h3>Lobby Refactor</h3>
+
+<ul>
+	<li>Our new front end user interface is now implemented, with updated graphics and new features.</li>
+	<li>Some notable changes include all new loadout customization section for Arena Commander.
+	<ul>
+		<li>This allows players to edit their ship components for Arena Commander matches through the game interface without the use of Port Modification.</li>
+		<li>Ship loadouts edited in this way will be retained from session to session and carry over into Arena Commander, but not Crusader.</li>
+		<li>Players still have the option of viewing and editing their ships via the Port Modification in the hangar.</li>
+	</ul></li>
+	<li>Players already in a Lobby will now be able to receive, accept and decline invites to other lobbies.</li>
+	<li>Changing the game mode or map while in a Lobby will now unready all players, so they can re-confirm the new match configuration.</li>
+</ul>
+
+<h3>Third Person Camera</h3>
+
+<ul>
+	<li>The third-person cameras for both Vehicle and On-Foot have received some major quality of life changes in 2.6.0.</li>
+	<li>Many of the improvements are “under the hood” for our teams to use for new content, videos and cinematics, but there are some new features that players can use right away in 2.6.0 to help you get that perfect shot.</li>
+	<li>Vehicle/Ship Camera now has three third-person camera modes – <strong>Chase Camera, Vehicle Orbit</strong> and <strong>Passenger Orbit</strong>.
+	<ul>
+		<li><strong>Chase Camera</strong> is similar to the classic third person view of your ship from the upper-rear, but with many more features.</li>
+		<li><strong>Vehicle Orbit</strong> gives you control of a full range of rotation for your camera centered around the vehicle.</li>
+		<li><strong>Passenger Orbit</strong> gives you control of a full range of rotation for your camera centered around the passenger.</li>
+	</ul></li>
+	<li>On Foot Camera now has two third-person camera modes – <strong>Third-Person Follow</strong> and <strong>Third Person Orbit</strong>.
+	<ul>
+		<li><strong>Third-Person Follow</strong> is identical to the current 2.5.0 camera implementation and does not support the new features at this time.</li>
+		<li><strong>Third Person Orbit</strong> gives you control of a full range of rotation for your camera centered around your character.</li>
+	</ul></li>
+	<li>You can switch between the camera views by tapping F4 on the keyboard. However behind the F4 modifier there are several new features, including the ability to adjust the camera field of view via different lens sizes, or offsetting the position of the camera around the ship for different angled shots.
+	<ul>
+		<li><strong>New: Lens Size Selection (Chase Camera, Vehicle Orbit, Passenger Orbit and Third Person Orbit)</strong>
+		<ul>
+			<li><span class="caps">HOLD</span> F4 &amp; Numpad + will increases the lens size, and <span class="caps">HOLD</span> F4 &amp; Numpad – will decreases the lens size.</li>
+		</ul></li>
+		<li><strong>New: Camera Offset (Chase Camera, Vehicle Orbit, Passenger Orbit and Third Person Orbit)</strong>
+		<ul>
+			<li><span class="caps">HOLD</span> F4 &amp; Left/Right Arrows moves the target position in the X axis, <span class="caps">HOLD</span> F4 &amp; Up/Down Arrows moves the target position in the Y axis, and <span class="caps">HOLD</span> F4 &amp; PageUp/PageDown moves the target position in the Z axis</li>
+		</ul></li>
+		<li><strong>New: Orbit (Vehicle Orbit, Passenger Orbit and Third Person Orbit).</strong>
+		<ul>
+			<li>Z to toggle the Orbit on and off. When active, the user can control the camera rotation via their mouse movements.</li>
+		</ul></li>
+		<li><strong>New: Reset to Default</strong>
+		<ul>
+			<li><span class="caps">HOLD</span> F4 &amp; Numpad * will reset the third-person camera to default.</li>
+		</ul></li>
+		</ul></li>
+		</ul>
+
+<h3>Social Module</h3>
+
+<ul>
+	<li>New chat commands and functionality have been added!
+	<ul>
+		<li>/addignore , /removeignore , /showignore, /tell, /partyinvite , /partyleave, /addcontact, /removecontact</li>
+		<li>“Ignore” is new, and will add players to your ignore list. There is currently not UI to view which players you have ignored other then the /showignore command, so use with caution.</li>
+		<li>/tell allows you to send a private message to another player.</li>
+		<li>The party and contact chat commands are shortcuts with the same as the existing functions in your Contact UI.</li>
+	</ul></li>
+	</ul>
+
+<h2><span style="color:lightblue;">Ships:</span><br>
+<a name="NFShips"></a></h2>
+
+<ul>
+	<li>Four new ships are both flight and hangar ready!
+	<ul>
+		<li>The Aegis Vanguard Hoplite</li>
+		<li>The Drake Herald</li>
+		<li>The Drake Caterpillar</li>
+		<li>And the Origin 85X</li>
+	</ul></li>
+	<li>Four new ship variants are available!
+	<ul>
+		<li>The Anvil Hornet F7C Wildfire</li>
+		<li>The Aegis Avenger Titan Renegade</li>
+		<li>The Aegis Sabre Comet</li>
+		<li>The Aegis Gladius Valiant</li>
+	</ul></li>
+	<li>We have also made the following ships available in Arena Commander, though they are restricted to Private Matches and Single Player games.
+	<ul>
+		<li>Constellation Andromeda</li>
+		<li>Retaliator</li>
+		<li>Caterpillar</li>
+	</ul></li>
+	</ul>
+
+<h3>Ship Balance Updates</h3>
+
+<p><span style="color:lightblue;">We have made some significant changes to how ships perform in 2.6.0, and expect this will significantly alter combat tactics for many players. One of the largest changes has been in ship speeds. As more and more ships have gone into the game, the speeds have slowly crept up to make room for them. The end result is that combat in <span class="caps">SCM</span> mode has progressively got worse and further apart. With these increased speeds, undesirable sliding when turning comes in, and with that, more unintended collisions and a general requirement to not fly near any of our cool setups in the world.</span></p>
+
+<p><span style="color:lightblue;">Up to now, certain ships were held as a gold standard, meaning that we had to force values for new ships far beyond where they should naturally sit. Our goal is to nominalize speed and reset the balance across the board. Reducing the <span class="caps">SCM</span> speeds has allowed us to keep/tweak the afterburner/cruise speeds close to what they currently are and to put a resource on boost fuel and its management to hop between engagements.</span></p>
+
+<p><span style="color:lightblue;">Alongside the flight speed changes, we’re also rebalancing a lot of the weapon velocities, as they also had started stretching out to match the speeds. While these reductions in velocities are not as drastic as the <span class="caps">SCM</span> reductions, the goal is to bring both in line for a more satisfying combat experience.</span></p>
+
+<p><span style="color:lightblue;">The changes mean that the management of this boost and afterburner going forward is once again become a viable combat tactic.</span></p>
+
+<p><strong>Flight System Changes</strong></p>
+
+<ul>
+	<li>Complete rebalance of <span class="caps">SCM</span> speeds and ship handling for all ships.</li>
+	<li>Cruise mode has been removed at this time.
+	<ul>
+		<li>Afterburner has been rebalanced such that the max speed of Afterburner is now comparable to (2.5.0) Cruise, and fuel consumption/availability has been adjusted accordingly.</li>
+		<li>The goal is that Afterburner becomes the method to engage/disengage combat as well as gives the choice between outright speed or better handling.</li>
+	</ul></li>
+	<li>Precision mode still exists, but can only be accessed via Landing mode.</li>
+	<li>The keyboard binding “V” no longer shifts between Cruise/Precision/SCM as the two first modes have been removed.</li>
+	<li>All ships have had a pass on their thruster fuel consumption values and heat generation.</li>
+	<li>All ships have had a pass on their fuel intake regeneration rates.</li>
+	<li>All ships have had a pass on their fuel tank capacities.</li>
+	<li>General thruster usage now consumes a small amount of fuel.</li>
+	<li>Both Afterburner and Boost now consume fuel.
+	<ul>
+		<li>Afterburner consumes more fuel than Boost on a per item basis.</li>
+		<li>Depending on the maneuvers being pulled with Boost this may feel like Boost is draining more fuel.</li>
+		<li>Consumption and regeneration rates have been retuned to allow for long distance straight-line speeds.</li>
+	</ul></li>
+	<li>Strafe has had some adjustments made to fit the many flight changes made.
+	<ul>
+		<li>Using strafe during normal flight, you should only get a change in velocity of +/- <span class="caps">SCM</span> max velocity, rather than +/- Afterburner max velocity.</li>
+		<li>Your strafe velocity range is no longer higher when using Afterburner.</li>
+		<li>If you are flying over <span class="caps">SCM</span> max speed and switch into decoupled mode, strafe will allow you to decelerate, but not accelerate.</li>
+		<li>Strafing forward while in decoupled mode now properly uses the main engine and allows for AB usage.</li>
+	</ul></li>
+	<li>Made adjustments (based on player feedback) to how Dual Stick controls are interpreted by the <span class="caps">IFCS</span>.</li>
+</ul>
+
+<p><strong>Afterburner Functionality Changes</strong></p>
+
+<ul>
+	<li>Afterburner and boost consumption rates have been adjusted.
+	<ul>
+		<li>Once fuel is depleted you are kicked out of afterburner until enough has regenerated.</li>
+		<li>Afterburner no longer automatic disables <span class="caps">GSAFE</span>.</li>
+	</ul></li>
+	<li>When Afterburner is pressed:
+	<ul>
+		<li>Fuel when Afterburner is being used is rapidly consumed. Please note that fuel is burned more when accelerating.</li>
+		<li>Afterburner fuel consumption stops when <span class="caps">SHIFT</span> is released or desired Afterburner speed is achieved. Please note that no fuel is burned when idling, i.e., not accelerating.</li>
+		<li>Maneuvering ability is currently not scaled down as you get closer to Max Afterburner.</li>
+	</ul></li>
+	<li>When Afterburner is released:
+	<ul>
+		<li>Power drawn and heat signature increase are proportional to percentage of Max Afterburner speed you are at.</li>
+		<li>If you try to pitch or yaw, <span class="caps">IFCS</span> will arrest you down to the <span class="caps">SCM</span> speed indicated by the throttle setting (roll does not trigger this).</li>
+		<li>This arrest of speed is more gradual and smoother than a direct throttle adjustment. The drop in velocity is currently at the normal deceleration rate for <span class="caps">SCM</span>.</li>
+	</ul></li>
+	</ul>
+
+<p><strong>Boost Functionality</strong></p>
+
+<ul>
+	<li>Boost (“X” on the keyboard) replaces the former Space Brake mapping.</li>
+	<li>Space Brake is now “LeftAlt + X” on the keyboard (“ShoulderLeft+ThumbLeft” on gamepad) and is a shifted version of Boost.
+	<ul>
+		<li>Functions the same as before in that it does not alter your throttle position, but uses Boost to stop quickly.</li>
+	</ul></li>
+	<li>Boost improves thrust to all secondary maneuvering/retro thrusters.
+	<ul>
+		<li>Whilst these thrusters consume less fuel in their Boost state, depending on the maneuvers being pulled you may experience a higher draw of fuel.</li>
+	</ul></li>
+	<li>Holding down Boost (“X” on the keyboard) allows you to turn/stop quicker.</li>
+	<li>If you want to brake quickly, throttle to zero and press (“X” on the keyboard).</li>
+</ul>
+
+<p><strong>General Balance Changes</strong></p>
+
+<ul>
+	<li>Complete rebalance of all missile loadouts for all ships.
+	<ul>
+		<li>All new missile racks and missiles have been created and outfitted to all ships.</li>
+		<li>Every ship has had its missile rack hardpoints adjusted.</li>
+	</ul></li>
+	<li>Rebalance of countermeasure ammo.</li>
+	<li>All missile rack hardpoints are now editable and missile rack items can be exchanged again.</li>
+	<li>Complete rebalance of all shields for all ships.
+	<ul>
+		<li>These simulate the Item 2.0 shield values that will come with a future patch.</li>
+		<li>As such they are approximations of the intended default loadouts.</li>
+	</ul></li>
+	</ul>
+
+<h2><span style="color:lightblue;">First Person:</span><br>
+<a name="NFFP"></a></h2>
+
+<h3>Animations</h3>
+
+<ul>
+	<li>We have made a huge number of updates and additions to first-person combat animations in 2.6.0.
+	<ul>
+		<li>This includes cover (both while standing and in crouch).</li>
+		<li>Vaulting, which allows characters to jumping over obstacles and low cover such as over railings.</li>
+		<li>Mantle, which allows characters to grab ledges or other hand-holds and pull themselves on top of other objects.</li>
+	</ul></li>
+	<li>These are primarily implemented Star Marine at this point, to allow players to test them in a focused environment.</li>
+	<li>The Klaus and Werner <span class="caps">ATT</span>-4 Laser Rifle is now named “Klaus and Werner Gallant Laser Rifle” in-game.</li>
+	<li>The Gemini LH-86 Ballistic Pistol is now named “Gemini L86 Ballistic Pistol” in-game.</li>
+</ul>
+
+<h2><span style="color:lightblue;">User Interface:</span><br>
+<a name="NFFP"></a></h2>
+
+<p><span class="initial">T</span>he following updates have been made to the Default keybindings. All the below changes can be rebound as desired.<br>
+</p><ul>
+	<li>Scoreboard in Arena Commander and Star Marine is now activated via “F1” on the Keyboard.</li>
+	<li>“Exit Seat” is no longer behind Modifier 1 on any device.</li>
+	<li>Exit Seat “Hold F” on the keyboard and “Hold Y” on the gamepad will now exit, however the “hold” time has been increased.</li>
+	<li>Holster weapon is now “Hold R” on the keyboard, and “Hold X” on the gamepad</li>
+	<li>Removed the Throttle Max and Throttle Min from the double tap “S” and “W” on the keyboard.
+	<ul>
+		<li>Max / Min Throttle can be toggled via Backspace still on the default keybinds.</li>
+	</ul></li>
+	<li>Added prone toggle (independent of crouch) on “X” on the keyboard.
+	<ul>
+		<li>Crouch is still on “LeftCtrl” on the keyboard.</li>
+	</ul></li>
+	<li>Afterburner is now the only action on “LeftShift” for the Keyboard, “B” on the Gampad, and “Button 7” on the Joystick.</li>
+	<li>Boost is now on “X” for the Keyboard, “L3” on the Gampad, and “Button 6” on the Joystick.</li>
+	<li>Spacebrake is now on “LeftAlt+X” for the Keyboard – see the details of the flight balance changes to understand how Space Brake now uses boost to break faster.</li>
+	<li><span class="caps">IFCS</span> mode shift has been removed, as Cruise has been removed and accessing Precision mode is done via activating Landing Mode.</li>
+	<li>Cycle safeties are now on the “V” key of the Keyboard, no modifier required.</li>
+	<li>Heal moved to “V” on the Keyboard to minimize accidental presses of the grenade when trying to heal.</li>
+	<li>New camera controls accessed via holding down “F4” – see the section in the 2.6.0 patch notes for the new <strong>Third-Person Cameras</strong>.</li>
+	<li>Walk moved to “B” on the Keyboard.</li>
+	<li>Combat emotes mapped to Numpad 1 through 6. See the section in the 2.6.0 patch notes for the new <strong>Combat Emotes</strong>.</li>
+	<li>Flight Pitch is now inverted by default on the Gamepad.</li>
+	<li>3rd Person Orbit camera is now on “LB + R3” on the Gamepad.</li><br>
+</ul>
+
+<h1><span style="color:lightblue;">Updates and Fixes</span><br>
+<a name="UF"></a></h1>
+
+<h2><span style="color:lightblue;">Star Systems:</span><br>
+<a name="UFSS"></a></h2>
+
+<h3>Area 18, ArcCorp</h3>
+
+<ul>
+	<li>Fixed a number of small geometry holes around and outside of AstroArmada.</li>
+	<li>Fixed a number of missing graphical detail levels around Dumper’s Depot.</li>
+	<li>Fixed a number of props in the Casaba Outlet that were clipping into each other.</li>
+	<li>Fixed an issue where players could very rarely find themselves unable to move if they left ArcCorp directly after dying inside of a buggy and immediately returned to the server.</li>
+	<li>Fixed a number of texture conflicts in the alley behind Casaba Outlet.</li>
+</ul>
+
+<h3>Crusader</h3>
+
+<ul>
+	<li>Fixed an issue where deceased players would sometimes function as ammo crates.</li>
+	<li>Fixed a number of missing graphical detail levels on Port Olisar props.</li>
+	<li>Fixed an issue where the Reliant <span class="caps">KORE</span> would sometimes spawn partially inside of the Port Olisar landing pad.</li>
+</ul>
+
+<h3>Grim <span class="caps">HEX</span>, Crusader</h3>
+
+<ul>
+	<li>Fixed a texture conflict issue on several directional arrow decals in Grim <span class="caps">HEX</span>.</li>
+	<li>Fixed texture conflicts on a number of Grim <span class="caps">HEX</span> props.</li>
+	<li>Fixed reversed warning decals on the Grim <span class="caps">HEX</span> generators.</li>
+	<li>Fixed a typo on one of the decals in the Grim <span class="caps">HEX</span> cargo area.</li>
+	<li>Fixed an issue where one of the Grim <span class="caps">HEX</span> asteroids was missing some collision.</li>
+	<li>Fixed an issue where the Grim <span class="caps">HEX</span> elevator doors were missing audio.</li>
+	<li>Fixed a number of issues with flickering decals in and around the Grim <span class="caps">HEX</span> landing pads.</li>
+</ul>
+
+<h3>Hangars (All)</h3>
+
+<ul>
+	<li>Fixed an issue where the fish were missing from several of the fish tank flair items.</li>
+	<li>Fixed an issue where the hangar elevator screen could become unpinned if the user moved their mouse during interaction.</li>
+</ul>
+
+<h3>Aeroview Hangar</h3>
+
+<ul>
+	<li>Fixed an issue where players would see a unintended haze in the Aeroview hangar.</li>
+</ul>
+
+<h3>Selfland Hangar</h3>
+
+<ul>
+	<li>Fixed an issue where several door panels were missing graphical detail levels and would disappear at specific distances/angles.</li>
+</ul>
+
+<h3><span class="caps">VFG</span> Industrial</h3>
+
+<ul>
+	<li>Fixed an issue where several small tables in the <span class="caps">VFG</span> Industrial hangar would disappear at specific distances.</li>
+	<li>Fixed an issue where the lighting in the <span class="caps">VFG</span> Industrial hangar would shift drastically when the player camera was at specific angles and locations.</li>
+</ul>
+
+<h3>Million Mile High Club</h3>
+
+<ul>
+	<li>Fixed a number of small texture conflicts on the ceiling of Million Mile High Club.</li>
+</ul>
+
+<h2><span style="color:lightblue;">Game Systems:</span><br>
+<a name="UFGS"></a></h2>
+
+<h3>Shopping</h3>
+
+<ul>
+	<li>Fixed an issue when players in flightsuits would find their flashlight remaining in mid-air when they tried on civilian clothing.</li>
+</ul>
+
+<h3>Social Systems</h3>
+
+<ul>
+	<li>Fixed an issue where players who are in your party and your contact list would appear on your contact list twice.</li>
+</ul>
+
+<h3>Arena Commander</h3>
+
+<ul>
+	<li>Fixed an issue where the “Join Team” button would appear as available for the team the user was already on.</li>
+	<li>Fixed a number of missing Arena Commander audio cues.</li>
+	<li>Ejections in Squadron Battle and Battle Royale should no longer count toward the kill/death ratio on Leaderboards.</li>
+	<li>The game mode “Capture the Core” has been deactivated for the foreseeable future.</li>
+	<li>Fixed an issue where the scoreboard could get stuck on screen in Vanduul Swarm if it was on-screen when the character died.</li>
+	<li>Fixed an issue where ship components such as weapons and turrets were not correctly generating points when damaged in AC game modes.</li>
+</ul>
+
+<h2><span style="color:lightblue;">Ships:</span><br>
+<a name="UFShips"></a></h2>
+
+<ul>
+	<li>Fixed an issue where Automatic Landing would activate intermittently when approaching a landing area.</li>
+	<li>Fixed an issue where killing the pilot of a ship with a <span class="caps">FPS</span> weapon would cause the pilot to enter a death/respawn loop until they relogged or the ship was destroyed.</li>
+	<li>Fixed several issues where turret auto-stabilization was not functioning when the ship was in motion.</li>
+	<li>Fixed an issue where character items (flashlight, mobiGlas, weapons) would trail behind the pilot when their ship was in motion.</li>
+	<li>Fixed an issue where certain <span class="caps">HUD</span> or UI elements would be stuck on the player screen if they ejected and survived.</li>
+	<li>Updated the ship headlights on the Aurora (all), M50, 300i, Reliant, Freelancer, Mustang (all), Argo <span class="caps">MPUV</span>, Hornet (all), Gladiator, Vanguard, Sabre, Retaliator and Gladius.</li>
+	<li>Fixed an issue where missile splash damage was not correctly affecting ship shields.</li>
+	<li>Chaff countermeasures should now be more effective in breaking target lock and reducing CS signature.</li>
+	<li>Fixed an issue with missiles, so they should now properly inherit velocity from the ship that fired them.</li>
+	<li>Fixed a bug preventing Space Brake from working properly in Decoupled Mode.</li>
+</ul>
+
+<h3>Individual Ships</h3>
+
+<ul>
+	<li><strong>300 Series</strong>
+	<ul>
+		<li>Fixed an issue with low detail levels on certain 300 components.</li>
+	</ul></li>
+	<li><strong>Avenger Stalker</strong>
+	<ul>
+		<li>Fixed some of the pilot animations where they were not correctly aligned with the Avenger flightstick.</li>
+	</ul></li>
+	<li><strong>Avenger Warlock</strong>
+	<ul>
+		<li>Fixed an issue causing the Avenger Warlock’s <span class="caps">EMP</span> charge level to display for everyone in the instance.</li>
+	</ul></li>
+	<li><strong>Constellation Andromeda</strong>
+	<ul>
+		<li>Fixed a texture conflict with a specific orange decal on the Constellation Andromeda support pillars.</li>
+		<li>Fixed an issue with the gimbals on the lower nacelles of the Constellation Andromeda that would allow it to accept weapons too large for the location and port.</li>
+	</ul></li>
+	<li><strong>Constellation Phoenix</strong>
+	<ul>
+		<li>Fixed an issue where there was no audio for entering the turret seat of the Phoenix.</li>
+	</ul></li>
+	<li><strong>Freelancer</strong>
+	<ul>
+		<li>Fixed an issue where the Freelancer turret was missing key audio.</li>
+		<li>Fixed an issue where the Freelancer shields could not be toggled off.</li>
+	</ul></li>
+	<li><strong>Freelancer <span class="caps">DUR</span>/MAX/MIS</strong>
+	<ul>
+		<li>Fixed an issue where the audio systems of these ships could be edited in the hangar and swapped with the systems of other ships.</li>
+	</ul></li>
+	<li><strong>Gladiator</strong>
+	<ul>
+		<li>Fixed an issue where the third-person cockpit view would be too close to the player when the ship was moving.</li>
+		<li>Fixed an issue where the orbit passenger camera was not focusing on the passenger properly.</li>
+	</ul></li>
+	<li><strong>Gladius</strong>
+	<ul>
+		<li>Fixed an issue where the third-person cockpit view would be too close to the pilot when the ship was moving.</li>
+	</ul></li>
+	<li><strong>Hornet Series (All)</strong>
+	<ul>
+		<li>Fixed an issue with low detail levels on certain Hornet components.</li>
+		<li>Fixed an issue where sitting in the turret of a Hornet would sometimes teleport the gunner to the map origin.</li>
+	</ul></li>
+	<li><strong>Hornet F7CM</strong>
+	<ul>
+		<li>Fixed an issue where the wing lights would continue following the ship after the wing or tail had been destroyed.</li>
+	</ul></li>
+	<li><strong>Khartu-Al</strong>
+	<ul>
+		<li>Fixed a number of small lighting issues with the Khartu-Al during landing and taking off.</li>
+		<li>Fixed an issue where the Khartu-Al boosters would not reappear after the ship was repaired.</li>
+	</ul></li>
+	<li><strong>Mustang Beta</strong>
+	<ul>
+		<li>Fixed an issue where the main weapons would appear to fire in a 360 arc when transitioning camera angles.</li>
+	</ul></li>
+	<li><strong>P-52 Merlin</strong>
+	<ul>
+		<li>The P-52 Merlin now temporarily will regenerate boost/afterburner fuel.
+		<ul>
+			<li>This is a temporary change, until parasite craft can refuel by docking with their host craft in the PU.</li>
+		</ul></li>
+		</ul></li>
+	<li><strong>Retaliator</strong>
+	<ul>
+		<li>Fixed an issue where the gunners wrists appeared to be broken when seated in the turrets.</li>
+	</ul></li>
+	<li><strong>Reliant <span class="caps">KORE</span></strong>
+	<ul>
+		<li>Fixed several minor issues with how the pilot gripped the flightstick of the Reliant.</li>
+		<li>Fixed a number of minor lighting issues inside of the Reliant cargo hold.</li>
+	</ul></li>
+	<li><strong>Vanduul Glaive and Scythe</strong>
+	<ul>
+		<li>Fixed an issue where the “cockpit” would remain open after the pilot had entered the ship and taken off.</li>
+	</ul></li>
+	<li><strong>Vanguard Warden</strong>
+	<ul>
+		<li>Fixed the hand positioning of the turret gunner in the Vanguard Warden.</li>
+		<li>Fixed the port for the Warden nose gun, so that it can no longer accept weapons not intended for it.</li>
+		<li>Fixed an issue where some of the Vanguard Warden multi-function displays could not be viewed.</li>
+	</ul></li>
+	</ul>
+
+<h2><span style="color:lightblue;">First Person:</span><br>
+<a name="UFFP"></a></h2>
+
+<h3>Animations</h3>
+
+<ul>
+	<li>Fixed a number of issues with transitions during various jumping animations.</li>
+	<li>Fixed a number of minor animation issues with weapon draw, aim and fire while in crouch and prone.</li>
+	<li>Fixed a number of issues tied into characters being able to continue firing their <span class="caps">FPS</span> weapons while in the middle of an emote such as /dance.</li>
+	<li>Fixed an issue where players would not see any animations play when other characters on the server looted an item.</li>
+</ul>
+
+<h3>Weapons</h3>
+
+<ul>
+	<li>All of our <span class="caps">FPS</span> weapons have received audio and graphical tweaks.</li>
+	<li>Fixed an issue where the Behring P4-AR would be missing the sights after respawn on Crusader.</li>
+</ul>
+
+<h2><span style="color:lightblue;">User Interface:</span><br>
+<a name="UFUI"></a></h2>
+
+<h3>Gamepad</h3>
+
+<ul>
+	<li>Updated the default ship aiming curve for pilots using the Gamepad.</li>
+	<li>Fixed an issue where Gamepad users could change teams in the Arena Commander lobby, even when there was only one team available.</li>
+</ul>
+
+<h3>Joystick</h3>
+
+<ul>
+	<li>Fixed a number of problems joystick users were experiencing with E.S.P.</li>
+</ul>
+
+<h2><span style="color:lightblue;">Technical:</span><br>
+<a name="UFFP"></a></h2>
+
+<ul>
+	<li>Fixed some performance drops associated with rapid transition of camera views.</li>
+	<li>Fixed an issue where spamming the Escape key on a loading screen would load the menu without any options or means to back out without a client restart.</li>
+	<li>Fixed a number of rare issues with account persistence, where data would stop updating after certain upgrades.</li>
+	<li>Fixed a number of edge cases with account persistence that would sometimes cause players to spawn in invisible, missing certain equipment and other similar bugs.</li>
+	<li>Fixed a number of client crashes.</li>
+	<li>Fixed a number of server crashes.</li>
+</ul>
+
+<p><a href="#top">Back to top</a></p></div><div class="cboth"></div></div><div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+
+  <div class="wrapper">
+    
+    <div class="end-transmission-container">
+      <div class="glow left"></div>
+      <div class="title-bar">
+        <h1>End Transmission</h1>
+      </div>
+      <div class="glow right"></div>
+    </div>
+  </div>
+  
+
+  
+    
+
+  <div class="two-line-separator"></div>
+  
+    
+<div class="wrapper force-one-column" id="comments">
+  <div class="holder">
+    <div class="title-bar">
+      <div class="count">
+        <div class="label">Comments</div>
+        <div class="value">047.<span class="js-comment-decimal">0</span></div>
+        <div class="cboth"></div>
+      </div>
+      <div class="title">
+        <h1>Feedback</h1>
+      </div>
+      <div class="cboth"></div>
+    </div>
+
+    <div class="main-buttons-holder-container">
+      <div class="main-buttons-holder">
+        <a href="/comm-link//15653-Star-Citizen-Alpha-260" class="add-comment js-add-comment trans-02s ">Add New Comment</a>
+        <div class="settings js-settings">
+          <h1>Settings</h1>
+          <label>View mode:</label>
+          <a href="#" class="js-comments-view to-one-column js-to-one-column trans-01s on">One column</a>
+          <a href="#" class="js-comments-view to-two-columns js-to-two-columns trans-01s ">Two columns</a>
+          <label>Sort by:</label>
+          <a href="#" class="js-comments-sort to-oldest js-to-oldest trans-01s on">Oldest first</a>
+          <a href="#" class="js-comments-sort to-newest js-to-newest trans-01s ">Newest first</a>
+          <a href="#" class="js-comments-sort to-appreciated js-to-appreciated trans-01s ">Most appreciated first</a>
+
+                    <label class="checkbox show-appreciation js-show-appreciation on">
+            <input type="checkbox">
+            <span>Enable appreciation</span>
+          </label>
+                  </div>
+        <a href="" class="view-settings js-view-settings"><div class="hover trans-02s"></div></a>
+        <div class="triangle"></div>
+      </div>
+    </div>
+
+          <form class="reaction-form js-comment-form comment-submission">
+        <input type="hidden" class="js-form-data js-id id" name="id" value="15653">
+  <textarea class="js-form-data body js-body js-focus-me" name="body"></textarea>
+  <div class="cboth"></div>
+  <a class="shadow-button trans-02s trans-color submit js-submit">
+  <span class="label js-label trans-02s">Submit</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+    <div class="success-message js-success-message">Your comment has been posted successfully.</div>
+  <div class="error-message js-error-message"></div>
+  <div class="cboth"></div>
+</form>    
+    <div class="comment-listing"></div>
+
+    <div class="comment-loader traj-loader">
+      <div class="fast-blink"></div>
+      <span>Loading Additional Feedback</span>
+    </div>
+
+    <div class="cboth"></div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    window.comments = new RSI.Comments({
+      atom_url:"/comm-link//15653-Star-Citizen-Alpha-260",
+      comment_listing_el:$(".comment-listing"),
+      comment_submission_form_el:$(".comment-submission"),
+      api_object:RSI.Api.Comments,
+      lazyLoading: true,
+      comment_count: 47,
+      subject_id:15653,
+      append:false,
+      texts: {
+        "edit": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        },
+        "reply": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        }
+      },
+      "insertion_conf": {
+        "mode":"html"
+      },
+      "api_function_names": {
+        "delete":"erase",
+        "load":"listing",
+        "sort":"listing"
+      }
+    });
+  });
+</script>
+  
+</div>
+
+    </div>
+
+    
+  </div>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.11/moment-timezone-with-data.min.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+      $.cookie('moment_timezone', moment.tz.guess(), { expires: 31, path: '/' });
+  });
+</script>
+
+
+
+
+               <script id="tpl_number_counter_digits" type="text/x-jsmart-tmpl">{if !$seperator}{$seperator=','}{/if}
+{if !$first_max}{$first_max=9}{/if}
+{for $digit = 0 to $length-1}
+  <div class="mask">
+    <div class="carousel">
+      {if $digit == 0}
+        {$max = $first_max}
+      {else}
+        {$max = 9}
+      {/if}
+      {for $i=0 to $max}
+        <div class="item {if $val_arr[$digit] == $i}on{/if}" rel="{$i}">{$i}
+      {/for}
+    
+  
+  {if ($length - $digit) % 3 == 1 && $digit != $length-1}
+  <div class="seperator">{$seperator}
+  {/if}
+{/for}</script>
+<script id="base_modal" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  <div class="top-border">
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+  
+</script>
+<script id="base_modal_flat" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  
+  
+</script>
+<script id="tpl_modals_slideshow" type="text/x-jsmart-tmpl"><img class="top-border" src="/rsi/static/images/modal_top.png">
+<a href="" class="close js-close">
+<div class="mask">
+  <a class="js-prev prev control">
+  <a class="js-next next control">
+  <div class="slideshow-carousel carousel" rel="{$index}">
+    {foreach from=$images item="image"}
+      <div class="{if $index == $image@index}on{/if}">
+      {if $image.is_video}
+        <div class="video-holder">
+          <div id="slideshow_video_{$image@index}" data-source="{$image->source_url}">
+            <video width="100%" height="100%" preload="auto" {if $video}src="{$image->source_url}"{/if} controls>
+          
+        
+      {else}
+        <div class="media js-media-slideshow-{$image@iteration}">
+        {if $image.low_res}
+          <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source data-srcset="{$image.full_res}" media="(min-width: 300px)" />
+            <!--[if IE 9]><![endif]-->
+            <img data-srcset="{$image.low_res}" alt="{$image.title}" />
+          
+        {else}
+          <img data-src="{$image.source_url}" />
+        {/if}
+        
+      {/if}
+        <div class="text">
+          {if !$image.is_video}
+          <a href="{$image.source_url}" class="download">
+          {/if}
+          <div class="copyright">&copy; 2012-{$year}<br />Cloud Imperium Games Corporation &<br />Roberts Space Industries Corp.
+          <div class="page-number">{$image@iteration} / {count($images)}
+          <div class="caption v-center">{if $image.title && $image.title != "undefined"}{$image.title}{/if}
+          <div class="cboth">
+        
+      
+    {/foreach}
+  
+
+<img class="bottom-border" src="/rsi/static/images/modal_bottom.png"></script>
+<script id="tpl_contact_us" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    
+<div id="contact" class="inner-content on">
+  <h2><span class="icon">CONTACT
+  <div class="padder">
+    <div class="separator">
+    <form name="" action="" method="POST">
+  <div class="error-message js-error-message">
+  <div class="success-message js-success-message">
+    <fieldset>
+    <label for="contact_subject">Subject
+    <input type="text" name="subject" value="" class="trans-02s trans-color trans-box-shadow" id="contact_subject" />
+    <label>Contacting us for:
+    <ul class="category-info">
+            <li id="tech_support_info">Questions about download, installation, networking, or in-game client problems
+            <li id="subscription_info">Questions about monthly and yearly subscription plans
+            <li id="account_billing_info">Issues related to your account, such as incorrect information or ability to access account, or Billing with regards to payments and payment methods
+            <li id="melt_request_info">To reclaim a pledge over $1,000 for store credit (please note - this is a permanent action)
+            <li id="merchandise_info">Questions about physical and/or shipped merchandise
+            <li id="hacked_info">Issues related to compromised account or missing pledge.
+            <li id="account_recovery_info">For issues with account authentication, lost passwords and related queries
+            <li id="probation_info">Issues related to forums probation or ban
+            <li id="refund_request_info">Refund requests and related inquiries
+            <li id="customer_support_info">For general questions and queries regarding Star Citizen
+          
+  
+  <fieldset>
+    <label for="contact_text">Fescription
+    <textarea name="text" class="trans-02s trans-color trans-box-shadow" id="contact_text">
+  
+  <div class="contact-submit-wrapper">
+    <div class="line">
+    <button class="submit js-submit"><strong>submit your message
+  
+
+    <div class="separator">
+  
+
+
+    
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  
+</script>
+<script id="tpl_concierge" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+<img src="/rsi/static/images/modal_yellow_line.png" />
+
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    
+
+<div id="contact" class="inner-content on">
+  <h2><span class="icon">CONCIERGE
+  <div class="padder">
+    <div class="separator">
+    <form name="" action="" method="POST" class="concierge-form">
+      <p class="head">We recommend that you check out the <a href="/faq">FAQs and other resources below if you are in need of information regarding RSI or Star Citizen. If your topic isn&rsquo;t covered, feel free to contact us!<br/><br/> - Gameplay : <a href="https://forums.robertsspaceindustries.com/categories/ask-a-developer">Ask A Dev<br/> - Suggestions: <a href="https://forums.robertsspaceindustries.com/categories/game-ideas">Game Ideas<br/> - Bug Reports (including PTU): <a href="https://forums.robertsspaceindustries.com/categories/test-pilot-headquarters">Test Pilot Headquarters<br/>
+      <div class="error-message js-error-message">
+      <div class="success-message js-success-message">
+
+      <fieldset class="concierge-form__field concierge-form__field--issue">
+        <label for="concierge_issue">Please choose your issue below
+        <select required id="concierge_issue" name="issue" class="trans-02s trans-color trans-box-shadow">
+          <option value="-">
+            -
+          
+                  
+      
+
+      <fieldset class="concierge-form__field concierge-form__field--problem concierge-form__field--secondary hidden">
+        <label for="concierge_problem">
+        <select required id="concierge_problem" name="problem" class="trans-02s trans-color trans-box-shadow">
+        
+      
+
+      <div class="issue-subfields">
+
+      <fieldset class="concierge-form__field concierge-form__field--secondary concierge-form__field--optional hidden">
+        <label for="concierge_attachment">Attachments <span>- Optional
+        <div class="concierge-form__attachment">
+            Add file here
+          <input class="concierge-upload-images-container" type="file" id="concierge_attachment" name="attachment" accept="image/*" multiple/>
+        
+      
+
+      <fieldset class="concierge-form__field concierge-form__field--secondary concierge-form__field--optional hidden">
+        <span class="h-text h-text--size-13 h-text--univia h-text--brown"><strong>Uploaded files 
+        <div class="concierge-form__file-preview">
+      
+
+      <fieldset class="concierge-form__field concierge-form__field--submit concierge-form__field--secondary last hidden">
+        <span class="submit-arrow">
+        <input type="submit" value="Send" class="trans-02s trans-color trans-background" />
+      
+
+    
+    <div class="separator">
+  
+
+
+
+    
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    
+<img src="/rsi/static/images/modal_yellow_line.png" />
+
+  
+</script>
+<script id="tpl_error" type="text/x-jsmart-tmpl"><div class="modal-error js-modal-error">
+  <p class="modal-text js-modal-text">
+  <a class="close js-close trans-03s .trans-opacity" href="">
+</script>
+<script id="tpl_success" type="text/x-jsmart-tmpl"><div class="modal-success js-modal-success">
+  <p class="modal-text js-modal-text">
+  <a class="close js-close trans-03s .trans-opacity" href="">
+</script>
+<script id="tpl_progress" type="text/x-jsmart-tmpl"><div class="modal-progress js-modal-progress">
+  <div class="traj-loader">
+    <div class="fast-blink">
+    <span class="modal-text js-modal-text">
+  
+</script>
+<script id="tpl_outbound" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    
+<div id="outbound" class="inner-content on">
+  <h2><span class="icon">OUTBOUND LINK
+  <div class="padder">
+    <div class="separator">
+    <form name="" action="" method="POST">
+      <div class="error-message js-error-message"> <span class=important>WARNING<br/><br/> This link will bring you outside of the RSI site and into the depths of the internet. Continue?<br/><br/><span class="url"> 
+      <div class="success-message js-success-message"><span class=important>STAND BY<br/><br/> Initiating hyperlink.<br/><br/>
+
+      <fieldset class="clearfix last">
+        <span class="submit-wrapper">
+          <span class="submit-hover trans-02s trans-opacity">
+          <input type="submit" value="WARP" class="trans-02s trans-color trans-background" />
+        
+      
+    
+    <div class="separator">
+  
+
+
+    
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  
+</script>
+
+<script id="tpl_l-notification-bar" type="text/x-jsmart-tmpl"><div class="l-notification-bar js-notification-bar">
+
+  <div class="l-notification-bar__watermark js-svg-inliner h-svg__logo-star-citizen">
+
+  <div class="l-notification-bar__boxes">
+    {if !$viewedCookieNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='cookie'
+          title='COOKIES:'
+          message="Our website uses Google Analytics to analyze our traffic. <br/>To learn how you can control Google's use of your data and how you can opt out <a href='https://www.google.com/policies/privacy/partners/'>click here."
+          linkText='See Details'
+          buttonText='Got it!'}
+      
+    {/if}
+
+    {if !$viewedPrivacyNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='privacy'
+          title='PRIVACY POLICY:'
+          message='We adjusted the PP to reflect the decision of the European Court of Justice regarding Safe Harbor, the fact that RSI has moved and added some services providers.'
+          linkText='View Privacy Policy'
+          buttonText='Got it!'}
+      
+    {/if}
+  
+
+
+</script>
+<script id="tpl_c-notification" type="text/x-jsmart-tmpl"><div class="c-notification js-bottom-notif-msg-{$type}">
+    <div class="c-notification__title">{$title}
+    <div class="c-notification__message">
+      {$message}
+    
+
+    {if $linkText}
+        <div class="c-notification__wrapper-link">
+            <a class="c-notification__link js-bottom-notif-link-{$type}">
+            {$linkText}
+            
+        
+    {/if}
+
+    <a class="c-notification__button js-bottom-notif-btn-{$type}">
+
+      <span class="c-notification__button-text">
+       {$buttonText}
+      
+
+      {if $type neq 'announcement'}
+        <div class="c-iconed__icon c-iconed__icon--checkmark">
+      {/if}
+    
+
+</script>
+
+<script id="tpl_confirm" type="text/x-jsmart-tmpl"><div class="modal-confirm js-modal-confirm clearfix">
+  <p class="modal-text js-modal-text">
+  <a class="bt-close js-close trans-03s trans-opacity" href="">
+  <a class="bt-confirm js-confirm trans-03s trans-opacity" href="">
+	<div class="buttons">
+		<a class="shadow-button trans-02s trans-color js-close bt-close rm"     >
+  <span class="label js-label trans-02s">Cancel
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s">
+  <span class="left-section">
+  <span class="right-section">
+
+		<a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">Confirm
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s">
+  <span class="left-section">
+  <span class="right-section">
+
+	
+
+</script>
+<script id="tpl_alert" type="text/x-jsmart-tmpl"><div class="modal-alert js-modal-alert clearfix">
+  <p class="modal-text js-modal-text">
+  <div class="buttons">
+    <a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">OK
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s">
+  <span class="left-section">
+  <span class="right-section">
+
+  
+</script>
+<script id="tpl_video" type="text/x-jsmart-tmpl">{extends file="base_modal"}
+{block name='modal_content'}
+<div id="ship-commercial" class="inner-content">
+  
+  <div class="hr">
+  <div class="content-block4">
+   
+    <div class="bottom">
+  
+  {if $distant_source=="vimeo"}
+  <iframe id="commercial" src="//player.vimeo.com/video/{$video_id}?wmode=transparent" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+  {else}
+  <iframe id="commercial" frameborder="0" allowfullscreen="1" title="YouTube video player" width="100%" height="100%" src="https://www.youtube.com/embed/{$video_id}?autoplay=1">
+  {/if}
+
+{/block}
+</script>
+      
+  <script id="tpl_comment_report" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    
+<div id="comment-report" class="inner-content on">
+  <h2><span class="icon">Report this comment
+  <div class="padder">
+    <div class="separator">
+    <form name="" action="" method="POST">
+<input type="hidden" name="comment_id" value="">
+  <div class="error-message js-error-message">
+  <div class="success-message js-success-message">
+    <fieldset>
+    <label>Report Type
+    
+
+
+  
+    <a class="js-selectlist selectlist " rel="" href="">
+    <div class="arrow">
+    <span>Please select the type best matching your report
+              <ul class="body">
+              
+                                                              <li class="js-option option " rel="obscenity" >
+                                                                        Obscene Content
+                                                    
+                                                                <li class="js-option option " rel="abuse" >
+                                                                        Abusive Conduct
+                                                    
+                                                                <li class="js-option option " rel="other" >
+                                                                        Other
+                                                    
+                                          
+            
+        <input type="hidden" name="category" class="js-category js-form-data" id="category"/>
+  
+    
+  <fieldset>
+    <label for="report_text">Details
+    <span class="corner-wrapper">
+      <textarea name="text" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_text" maxlength="2500">
+      <span class="corner corner-top-left">
+      <span class="corner corner-top-right">
+      <span class="corner corner-bottom-left">
+      <span class="corner corner-bottom-right">
+    
+  
+  <fieldset class="clearfix last">
+    <span class="submit-wrapper">
+      <span class="submit-hover trans-02s trans-opacity">
+      <input type="submit" value="Submit" class="trans-02s trans-color trans-background" />
+    
+  
+
+    <div class="separator">
+  
+
+
+    
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  
+</script>
+
+
+      <footer class="c-platform-footer c-platform-footer--rsi">
+  <div class="l-platform-footer-container">
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--sc">
+        <li class="c-platform-footer-brand__item">
+
+          <span class="c-brand c-brand--sc js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--sc">
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Join the<br>Universe
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--sc">
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen" class="c-platform-footer-link">About the Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/howto/1" class="c-platform-footer-link">How to Play</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/universe" class="c-platform-footer-link">The Universe</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/media" class="c-platform-footer-link">Media</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/fly-now" class="c-platform-footer-link js-google-analytics-event-tracker" data-event-category="FlyNow" data-event-label="footerClick">
+                Fly Now
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__sc">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">
+              Social Links
+            </span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/RobertsSpaceIndustries/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/RobertsSpaceInd">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/robertsspaceind">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.youtube.com/channel/UCTeLqJq1mXUX5WWoNXLmOIA">
+                <span class="c-iconed__icon c-iconed__icon--youtube"></span>
+                Youtube
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.twitch.tv/starcitizen">
+                <span class="c-iconed__icon c-iconed__icon--twitch"></span>
+                Twitch
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--s42">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--s42 js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--s42">
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Start the<br>Adventure
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--s42">
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42" class="c-platform-footer-link">The Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#enlist" class="c-platform-footer-link">Enlist Today</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#roadmap" class="c-platform-footer-link">Status</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/pledge/Packages/Squadron-42-Standalone-Pledge" class="c-platform-footer-link">Pledge</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__s42">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">Social Links</span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/Squad42/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/squadron_42">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/squadron42">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column is-active">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--rsi">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--rsi js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--rsi">
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi--fullcolor"></span>
+            </span>
+            <span class="c-brand__label">
+              Follow the Development
+            </span>
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--rsi">
+            <li class="c-platform-footer-list__item">
+              <a href="/" class="c-platform-footer-link">Home</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/comm-link" class="c-platform-footer-link">Transmissions</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/community" class="c-platform-footer-link">Community</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/roadmap" class="c-platform-footer-link">Development</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--platform">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Platform
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--platform">
+                          <li class="c-platform-footer-list__item">
+                <a href="/pledge" class="c-platform-footer-link ">Pledge Store</a>
+              </li>
+            
+            <li class="c-platform-footer-list__item">
+              <a href="/download" class="c-platform-footer-link ">Download</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/spectrum/community/SC" class="c-platform-footer-link">Spectrum</a>
+            </li>
+
+                          <li class="c-platform-footer-list__item">
+                <a href="/citizencon" class="c-platform-footer-link">Citizencon</a>
+              </li>
+                      </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--utility">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Utilities
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--utility">
+            <li class="c-platform-footer-list__item">
+              <a href="//support.robertsspaceindustries.com" class="c-platform-footer-link">Help</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/press" class="c-platform-footer-link">Press</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="https://cloudimperiumgames.com/join-us" class="c-platform-footer-link">Careers</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/tos" class="c-platform-footer-link">Terms of Services</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/privacy" class="c-platform-footer-link">Privacy Policy</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/eula" class="c-platform-footer-link">EULA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/dmca" class="c-platform-footer-link">DMCA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/acknowledgements" class="c-platform-footer-link">Acknowledgements</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  
+</footer>
+
+<div class="c-platform-copyright c-platform-copyright--rsi">
+  <div class="l-platform-copyright-container">
+    <a href="https://cloudimperiumgames.com" class="c-platform-copyright__logo h-svg__logo-cig js-svg-inliner"></a>
+    <p class="c-platform-copyright__body">© 2012-2019 Cloud Imperium Rights LLC and Cloud Imperium Rights Ltd</p>
+  </div>
+</div>
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHNFZPT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<script type="text/javascript">
+  window.RSI.Footer = new RSI.Footer();
+</script>
+
+    
+
+    <script type="text/javascript" src="/cache/en/rsi-platformbar-js.js?v=3.2.9.0"></script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"58013cabd7","applicationID":"375102748","transactionName":"Y1JaYktUWxZUV0QKV1oYe0NKQVoIGmZjKmtdQ111VltBF1pYXAZKDg1ZQlZYcwxbUA==","queueTime":0,"applicationTime":68,"atts":"TxVNFANOSEkXVRJZQ0lK","errorBeacon":"bam.nr-data.net","agent":""}</script></body>

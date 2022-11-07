@@ -1,0 +1,2066 @@
+
+  <head>
+    
+            <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1130.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+      <meta name="viewport" content="width=device-width">
+      <meta name="description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans.">
+      <meta property="og:site_name" content="
+The Knowledge of Good and Evil: Part Four - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+">
+      <meta property="og:image" content="https://robertsspaceindustries.com/media/k9ipggp9rdec7r/channel_item_full/GoodAndEvil_pt4.jpg">
+      <meta property="og:description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans.">
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://robertsspaceindustries.com/comm-link/SCW/16727-IMPORT">
+      <meta property="og:locale" content="us_EN">
+
+            
+
+            <link href="/rsi/static/css/cross-brand-less.css?v=3.2.9.0" media="all" rel="stylesheet">
+      <link href="/cache/en/rsi-platformbar-css.css?v=3.2.9.0" media="all" rel="stylesheet">
+            <script type="text/javascript" src="/cache/en/rsi-js.js?v=3.2.9.0"></script>
+      
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KHNFZPT');</script>
+<!-- End Google Tag Manager -->
+
+
+      <script>
+        $(document).ready(function() {
+          window.Common = new RSI.Common({});
+          window.Main = new RSI.Main({
+            'is_mobile': 0,
+            'probation_cookie' : '',
+            'require_captcha': 0
+          });
+          window.Mark = new Turbulent.Mark({ 'name' : 'Rsi-XSRF', 'token' : '', 'ttl' : 1800 });
+
+          window.WscOverlay = new RSI.WscOverlay({});
+
+          var destinations = [];
+
+window.Main.destinations = destinations;          
+  window.PageStore = new RSI.Store({
+    'store_prefix' : '/pledge',
+    'customizerConfig' : {"endpoint":"https:\/\/robertsspaceindustries.com\/","verify":true,"customizer":{"path":"\/customizer","view":"","api":"\/api","methods":{"start":"\/start","game":"\/configuration\/:id\/game","details":"\/configuration\/:id\/details","report":"\/configuration\/:id\/report","export-port-label":"\/admin\/export\/port\/label"}},"ga_tracking_code":"UA-39586040-5"}
+  });
+
+          
+          
+  var productsTracking = [];
+  var eCommerceData = {
+    'trackingAction': "",
+    'currency': "",
+    'trackingStep': "",
+    'trackingProducts': productsTracking
+  };
+  window.eCommerceTracking = new RSI.Store.eCommerceTracking(
+    eCommerceData
+  );
+
+        });
+
+        $(window).load(function() {
+          
+        });
+
+      </script>
+
+
+      <script>
+        window.recaptcha_is_loaded = false;
+        window.on_recaptcha_load_callback = function() {
+          window.recaptcha_is_loaded = true;
+        };
+      </script>
+
+      <script src="https://www.google.com/recaptcha/api.js?onload=on_recaptcha_load_callback&amp;render=explicit" async defer></script>
+
+      <script type="text/javascript">
+
+        
+
+                                </script>
+
+
+      <title>
+The Knowledge of Good and Evil: Part Four - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+</title>
+
+      
+
+<style type="text/css">
+  /* CSS from ATOM */
+  hr {
+border-top: 2px solid #13d0ff;
+width: 300px;
+margin-left: 25%;
+}
+.rsi-markup .segment .content h5 { line-height:28px;max-width:774px;width:75%;min-width:300px}
+
+.parallax {
+height: 850px;
+background-position: 50% 50%;
+background-repeat: no-repeat;
+background-attachment: fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+
+.parallax-block { }
+.parallax-block .rsi-markup .segment .content { margin-left:0; margin-right:0 }
+.parallax-block hr { background-color:#09daff; border-top:0px;}
+.parallax-block .corner, .parallax-block  .top-line-thin, .parallax-block .top-line { display:none }
+.parallax-block .content-block1 { border:0}
+
+.parallax-segment { height:280px}
+
+.parallax-1 {
+background-image: url("/media/k9ipggp9rdec7r/source/GoodAndEvil_pt4.jpg");
+}
+
+.mb-full img { width: 100%;
+ }
+ span.initial{font-size:inherit!important; 
+margin-right:0!important;}
+
+</style>
+
+<script type="text/javascript">
+  /* JS from ATOM */
+  
+</script>
+
+
+
+
+    
+
+  <style>
+    
+      background:url(/rsi/static/images/noisebg.gif) repeat center top #000b11;
+    
+  </style>
+
+    <link href="//fonts.googleapis.com/css?family=Electrolize%7COrbitron:400,500,700%7CShare+Tech+Mono" rel="stylesheet" type="text/css">
+
+    <link href="/cache/en/rsi-css.css?v=3.2.9.0" media="all" rel="stylesheet">
+  
+
+  </head>
+  <body id="" class="">
+
+    
+      <div class="l-notification-bar l-notification-bar--rsi js-notification-bar" id="notification-bar-root">
+  <c-notification-bar v-bind:latestagreementsslugs='["qwa3l7w316dgt","5uyoqclrxgfgf"]' v-bind:loggedin="1" v-bind:onhomepage="0"></c-notification-bar>
+  <div class="l-notification-bar__boxes js-notification-bar-boxes">
+      </div>
+
+</div>
+    
+
+    <div id="bodyWrapper">
+      <header class="c-header-wrapper c-header-wrapper--rsi js-header-wrapper is-connected" id="cross-brand-header">
+  <div id="platform-bar"></div>
+
+  <div class="c-right-sidebar c-right-sidebar--search" id="search-sidebar">
+  <div class="js-toggle-search__backdrop hidden"></div>
+  <a href="#" class="c-right-sidebar__back js-toggle-search">Back
+    <span></span>
+    <span></span>
+  </a>
+  <form class="c-right-sidebar__form">
+    <h1 class="c-right-sidebar__form-title">Search</h1>
+
+    <input class="c-right-sidebar__form-input" type="text" id="header-search-input" placeholder="Search for articles">
+
+    <input class="c-right-sidebar__form-submit c-right-sidebar__form-submit--search" type="submit" value="Go">
+  </form>
+</div>
+      
+<div class="c-right-sidebar c-right-sidebar--account" id="account-sidebar">
+  <div class="js-toggle-account__backdrop hidden"></div>
+  <a href="#" class="c-right-sidebar__back js-toggle-account">Back
+    <span></span>
+    <span></span>
+  </a>
+
+  <div class="c-account-sidebar__profile">
+    <div class="c-account-sidebar__profile-metas">
+
+      <a class="c-account-sidebar__profile-metas-avatar" href="https://robertsspaceindustries.com/citizens/star-citizen-wiki" style="background-image:url('/media/6zg0fizwcelhpr/avatar/Wiki_logo_stern_abgen0wumg.png');"></a>
+
+      <span class="c-account-sidebar__profile-metas-badge c-account-sidebar__profile-metas-badge--icon" data-tip="">
+        <img src="https://robertsspaceindustries.com/media/ls27iyxog62nnr/heap_note/Subscriber.png" alt="Subscriber" title="Subscriber">
+      </span>
+
+      <a href="/orgs/WIKI" class="c-account-sidebar__profile-metas-badge c-account-sidebar__profile-metas-badge--org" data-tip="star-citizen.wiki">
+        <img src="/media/h68aa8sq3cv44r/heap_note/WIKI-Thumbnail.png" alt="star-citizen.wiki" title="star-citizen.wiki">
+      </a>
+
+    </div>
+
+    <div class="c-account-sidebar__profile-info">
+
+      <a href="https://robertsspaceindustries.com/citizens/star-citizen-wiki" class="c-account-sidebar__profile-info-displayname">Star Citizen Wiki</a>
+
+      <span class="c-account-sidebar__profile-info-handle">star-citizen-wiki</span>
+
+      <a href="" class="c-account-sidebar__profile-info-signout js-sign-out">Sign Out</a>
+
+      <div class="c-account-sidebar__profile-info-credits">
+        <span class="c-account-sidebar__profile-info-credits-label">STORE</span>
+        <span class="c-account-sidebar__profile-info-credits-amount c-account-sidebar__profile-info-credits-amount--pledge">$0.00 USD</span>
+
+        <span class="c-account-sidebar__profile-info-credits-label">UEC</span>
+        <span class="c-account-sidebar__profile-info-credits-amount c-account-sidebar__profile-info-credits-amount--uec">¤6,500 UEC</span>
+
+        <span class="c-account-sidebar__profile-info-credits-label">REC</span>
+        <span class="c-account-sidebar__profile-info-credits-amount c-account-sidebar__profile-info-credits-amount--rec">¤260,000 REC</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="c-account-sidebar__links">
+    <a href="/account/settings" class="c-account-sidebar__links-link">Settings</a>
+    <a href="/account/pledges" class="c-account-sidebar__links-link">My Hangar</a>
+              <a href="/subscribers/vault" class="c-account-sidebar__links-link">Subscribers</a>
+          </div>
+
+  <div class="c-account-sidebar-tabs">
+    <div class="c-account-sidebar-tabs__list">
+      <a class="c-account-sidebar-tabs__tab">Contacts</a>
+    </div>
+
+    <div class="c-account-sidebar-tabs__content c-account-sidebar-tabs__content--contacts">
+      <div class="c-account-sidebar-contacts" id="sidebar-contacts-list">
+        <form class="c-right-sidebar__form c-account-sidebar-contacts__search js-contacts-search">
+
+          <input type="text" class="c-right-sidebar__form-input c-account-sidebar-contacts__search-input js-contacts-search-input" placeholder="Search">
+          <a class="c-account-sidebar-contacts__search-submit js-submit-contacts-search">
+            <span></span>
+            <span></span>
+          </a>
+
+          <div class="l-oneline l-oneline--fill">
+            <div class="l-checkbox">
+              <input class="c-right-sidebar__form-checkbox js-only-contacts" id="sidebar-only-contacts" name="only-contacts" type="checkbox">
+              <label class="c-right-sidebar__form-label c-right-sidebar__form-checkbox-label" for="sidebar-only-contacts">
+                Only in your contact list
+              </label>
+            </div>
+
+            <div class="c-account-sidebar-contacts__search-amount js-search-amount">-</div>
+          </div>
+        </form>
+
+        <div class="c-account-sidebar-contacts__results">
+          <div class="c-account-sidebar-contacts__results-title-wrapper">
+            <span class="c-account-sidebar-contacts__results-title c-account-sidebar-contacts__results-title--contacts">My Contacts</span>
+            <span class="c-account-sidebar-contacts__results-title c-account-sidebar-contacts__results-title--results">Results</span>
+                      </div>
+
+          <div class="c-account-sidebar-contacts__results-list js-contacts-list" data-public-profile-url="https://robertsspaceindustries.com/citizens/">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/template" id="contact-item-tpl">
+  <div class="c-account-sidebar-contacts__results-list-item js-contact <% if(following) { %>is-following<% } %>">
+
+    <a class="c-account-sidebar-contacts__results-list-item-avatar " href="https://robertsspaceindustries.com/citizens/<%= nickname %>" title="" style="background-image:url('<%= avatar %>');">
+    
+
+    <div class="c-account-sidebar-contacts__results-list-item-info">
+      <a class="c-account-sidebar-contacts__results-list-item-displayname" href="https://robertsspaceindustries.com/citizens/<%= nickname %>" title=""><%= displayname %>
+
+      <span class="c-account-sidebar-contacts__results-list-item-handle js-nickname"><%= nickname %>
+
+      <div class="c-account-sidebar-contacts__results-list-item-actions">
+        <a class="c-account-sidebar-contacts__results-list-item-action c-account-sidebar-contacts__results-list-item-action--dossier" href="https://robertsspaceindustries.com/citizens/<%= nickname %>" title="">
+          <span class="js-svg-inliner h-svg c-account__icon c-account__icon--smaller c-account__icon-star-citizen">
+          Citizen Dossier
+        
+        <a class="c-account-sidebar-contacts__results-list-item-action c-account-sidebar-contacts__results-list-item-action--follow js-contact-follow js-follow" title="">
+          <span class="js-svg-inliner h-svg c-account__icon c-account__icon--smaller c-account__icon-profile">
+          Follow
+        
+        <a class="c-account-sidebar-contacts__results-list-item-action c-account-sidebar-contacts__results-list-item-action--unfollow js-contact-follow js-unfollow" title="">
+          <span class="js-svg-inliner h-svg c-account__icon c-account__icon--smaller c-account__icon-trash">
+          Unfollow
+        
+      </script></header></div>
+    
+
+
+    <div class="error js-error"></div>
+
+  
+
+
+<script>
+  $(document).ready(function() {
+    this.accountSidebar = new RSI.AccountSidebar({
+    });
+  });
+</script>  
+  <div class="c-header-wrapper__backdrop js-toggle-games"></div>
+
+
+<div id="platform-backdrop"></div>
+
+<script type="text/javascript">
+  RSI.Platformbar = {
+    theme: "rsi",
+    loggedState: "logged-in",
+    tabs: [
+      {
+        type: 'brands',
+        name: "Games",
+        subItems: [
+          {
+            name: "sc",
+            href: "/star-citizen",
+            description: "Join the Universe"
+          },
+          {
+            name: "s42",
+            href: "/squadron42",
+            description: "Start the adventure"
+          },
+          {
+            name: "rsi",
+            href: "/",
+            description: "Follow the Development"
+          }
+        ]
+      },
+      {
+        type: 'apps',
+        name: "Apps",
+        subItems: [
+          [
+            {
+              name: "Spectrum",
+              href: "/spectrum/community/SC",
+              description: "Your&nbsp;communication platform"
+            },
+            {
+              name: "Launcher",
+              href: "/download",
+              description: "Download Star&nbsp;Citizen",
+                          }
+          ],
+          [
+            {
+              name: "Roadmap",
+              href: "/roadmap",
+              description: "Keep track of the&nbsp;development"
+            },
+            {
+              name: "Telemetry",
+              href: "/telemetry",
+              description: "Keep&nbsp;track&nbsp;of&nbsp;the player&rsquo;s&nbsp;performance"
+            },
+            {
+              name: "Issue Council",
+              href: "/community/issue-council",
+              description: "Help&nbsp;us&nbsp;make the game better",
+                          }
+          ],
+          [
+            {
+              name: "Starmap",
+              href: "/starmap",
+              description: "Your map to&nbsp;the&nbsp;universe"
+            }
+          ]
+        ]
+      },
+              {
+          type: 'citizencon',
+          name: "Citizencon 2949",
+          href: "/citizencon"
+        }
+          ],
+    navigation: {
+      store: {
+        name: "Pledge Store",
+        href: "/pledge",
+        isHidden: false      },
+      support: {
+        name: "Support",
+        href: "//support.robertsspaceindustries.com"
+      },
+      account: {
+        name: "Account",
+        href: "/account/settings"
+      }
+    }
+  };
+
+  $(document).ready(function() {
+    window.header = new RSI.Header({});
+  });
+</script>
+
+
+      
+  
+<header class="c-brand-menu c-brand-menu----rsi" id="brand-menu">
+  <span class="c-brand-menu__section">
+    
+      Roberts Space Industries
+    
+  </span>
+  <div class="c-brand-menu__backdrop"></div>
+  <nav class="c-brand-menu__container">
+    <div class="c-brand-menu__logo">
+      <a href="/"><span class="h-svg h-svg__logo-rsi--fullcolor js-svg-inliner"></span> </a>
+    </div>
+    <div class="c-brand-menu__items-container">
+      <ul class="c-brand-menu__items">
+                <li class="c-brand-menu__item  ">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/comm-link">
+            <span class="c-brand-menu__item-text">Comm-Link</span>
+                                  </a>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/community">
+            <span class="c-brand-menu__item-text">Community</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Community</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/spectrum" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Spectrum
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/orgs" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Organizations
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/leaderboards/top" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Leaderboards
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community_events" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Event
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Hub
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/fankit" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Fankit
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/development">
+            <span class="c-brand-menu__item-text">Development</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Development</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/roadmap" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Roadmap
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/devtracker" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Dev Tracker
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/telemetry" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Telemetry
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/issue-council" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Issue Council
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/patch-notes" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Patch Notes
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/ship-matrix" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Ship Matrix
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/funding-goals" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Funding
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+              </ul>
+    </div>
+
+    <div class="c-brand-menu__cta">
+      
+          <a href="/star-citizen/fly-now" class="c-brand-cta-btn js-google-analytics-event-tracker" data-event-category="FlyNow" data-event-label="navMenuClick">
+            <div></div>
+              <span class="c-brand-cta-btn__text">
+                <strong>Fly now</strong>Alpha 3.7
+              </span>
+            <div></div>
+          </a>
+      
+    </div>
+  </nav>
+</header>
+
+
+
+      
+
+  
+  <div class="page-wrapper">
+    
+  <div id="post-background"></div>
+
+
+    <div id="contentbody" class="" style="">
+      
+
+<div id="post">
+  <div class="title-section">
+    
+      <div class="wrapper title-bar-container">
+        <div class="glow left"></div>
+        <div class="title-bar">
+          <div class="title with-subtitle">
+            <h1>Serialized Fiction</h1>
+            <h2>Short Stories</h2>
+          </div>
+          <div class="details">
+            <div>
+              <h3>ID:</h3>
+              <p>16727</p>
+              <div class="cboth"></div>
+            </div>
+            <div>
+              <h3>Comments:</h3>
+              <p class="comment-count">19</p>
+              <div class="cboth"></div>
+            </div>
+            <div>
+              <h3>Date:</h3>
+              <p>August 29th 2018</p>
+              <div class="cboth"></div>
+            </div>
+            <div></div>
+          </div>
+          <div class="cboth"></div>
+        </div>
+        <div class="glow right"></div>
+      </div>
+    
+  <div class="title-container">
+    <div class="title no-subtitle">The Knowledge of Good and Evil: Part Four</div>
+      </div>
+
+  </div>
+
+  
+  <div class="lightbar toplightbar">
+    <div class="lightbarlights"></div>
+    <div class="footershadow"></div>
+  </div>
+
+
+  <div class="parallax-block">
+
+<div class="mb-full parallax parallax-1"></div>
+
+<div class="wrapper"><div class="content-block1 rsi-markup">
+<div class=" segment"><div class="content"><h5>Writer’s Note: <em>The Knowledge of Good and Evil: Part Four</em> was published originally in Jump Point 2.12. Catch up on the story by reading <a href="https://robertsspaceindustries.com/comm-link/serialized-fiction/16584-The-Knowledge-Of-Good-And-Evil-Part-One" title="Part One">Part One</a>, <a href="https://robertsspaceindustries.com/comm-link/serialized-fiction/16633-The-Knowledge-Of-Good-And-Evil-Part-Two" title="Part Two">Part Two</a>, <a href="https://robertsspaceindustries.com/comm-link/serialized-fiction/16680-The-Knowledge-Of-Good-And-Evil-Part-Three" title="Part Three">Part Three</a>.</h5>
+
+<p>“Forgive me.” I feel cold though I know it’s not the library’s air. My finger just about to press the button on Dirk’s small, black, featureless cube. My muttered prayer ringing in my own ears. Someone else responds as I feel a hand close around my wrist.</p>
+
+<p>“Forgive you for what?”</p>
+
+<p>I wheel around and come to face the speaker as I pull hard to wrench my wrist free, falling to the ground. Mom Super is standing over me like a dark tower.</p>
+
+<p>“For what are you asking forgiveness, young one? What is that device?” Her words are soft but with an edge of steel.</p>
+
+<p>No. Anyone but her. Let me be delayed or shamed or caught, but not by her. Not Mom Super. I can’t . . .</p>
+
+<p>I break down at the realization that I will either have to lie to Mom Super just so I can betray her more, or admit I’ve already lied and am about to try and destroy the Holy Vault for Dirk.</p>
+
+<p>“Young one, what’s wrong?” Mom Super starts to come to my aid.</p>
+
+<p>“No!” I shout. I can barely speak through my sobs. “No, don’t help me. You can’t. Because of what Dirk . . .”</p>
+
+<p>“Dirk? The man you used to work for in the Bazaar? Is that who’s been attacking you? What did he do?”</p>
+
+<p>I don’t know what else to do. “He didn’t . . . he hasn’t yet. But . . . if I don’t wipe out the Vault he’s going to kill the children.” I’m panting for breath.</p>
+
+<p>I point at the dormant cube. “If I don’t use that thing to fry the Vault, Dirk’s going to kill them all.”</p>
+
+<p>She looks at me with a rage I’ve never seen, but eventually breaks the stare that has me paralyzed. She steps to the desk and picks up the cube and studies it. I’ve never felt this dirty or guilty in my life. The nights I slept in trash were cleaner than this.</p>
+
+<p>“You will explain this, young one. Now.”</p>
+
+<p>“I . . . I.” Gulping down a breath, I closed my eyes and clenched my fist. I already lied to her. I can’t do it again.</p>
+
+<p>“I had an old debt to Dirk. He found me. Said I was finally going to pay him back. Knew I was with the Sisters. Threatened to hurt the school children if I didn’t do what he said. I brought it,” I point to the cube, “back with me.”</p>
+
+<p>I look for some sign of sympathy but I don’t see any. Shoulder to me, she is only looking at the thing in her hands.</p>
+
+<p>“I didn’t do it! I studied it, the cube, and I found out what it did. I couldn’t do that. I couldn’t let it attack the Vault. So I took it back and told him I wouldn’t do it. And then he stunned me and the others, and now he’s kidnapped the children, and now if I don’t do it he’s going to kill them!”</p>
+
+<p>I haven’t felt like it, but by the end I am almost yelling, my helplessness finally coming out as tired anger.</p>
+
+<p>The silence is hot and heavy. My ears thunder with each heartbeat.</p>
+
+<p>“You lied to us about what was happening to you and it has put the children we befriended in mortal danger. If you had told us earlier we could have had the authorities looking into the matter all the sooner. Now, their efforts may already be too late. And this?” She thrust the cube towards me, “Did you know what this would do then, if you turned it on? Did you lie to me about what you knew?”</p>
+
+<p>“Yes.”</p>
+
+<p>“Then you have attacked us all. There is nothing I can do for you.” Mom Super pulls out her mobiGlas and enters some commands.</p>
+
+<p>I stay where I fell, unable to motivate myself to move. Soon four Sisters arrive and pick me up. Mom Super turns her back without another look at me. The Sisters escort me out of the library, but I notice they are not leading me back to the rooms.</p>
+
+<p>We get to the door that leads out into the world and another Sister, the Returned, meets us with a large bag. Her hood is up on her habit. I suddenly realize all of them have their hoods up. The way the Sister do around outsiders.</p>
+
+<p>“Oh god, no!” I say it out loud when I only mean to think it.</p>
+
+<p>She thrusts the bag into my arms.</p>
+
+<p>I don’t have the energy for more tears.</p>
+
+<p>“You must go, now.”</p>
+
+<p>The massive door opens to the first hints of light across the sky. The other Sisters back away from me. I turn to go, not wanting to. Each step feeling like a new punishment.</p>
+
+<p>As I step across the doorway, a sudden memory flashes across my mind of the abused and beaten child being held by Dirk. Then my mind conjures worse of what might happen to them now. Does Mom Super think that the Blues care about a bunch of street rats going missing? They’ll call every shelter in the city but they won’t step one foot onto the dirty streets of Bazaar to actually find them.</p>
+
+<p>My back stiffens and I turn around to say something.</p>
+
+<p>The Sisters have left and only the closing door remains where my former life among them had been.</p>
+
+<p>No good watching a door close when I have to find the kids. I don’t even know how long I have. Dirk might not be patient enough to wait a week to do something to them. If he hasn’t already, just to make his life easier. I pull my mobiGlas from my bag and ignore the pang of guilt remembering where it came from and why. I’m no good to the kids if I’m not strong enough to take care of myself.</p>
+
+<p>Just standing there, the weight from the bag is starting to drag on me and I remember I haven’t slept in . . . I don’t know how long.</p>
+
+<p>But it’s time to hunt Dirk and get my kids back.</p>
+
+<p>I have to get back on the street. I’ve been using a lot of old information, and what I know about Dirk doesn’t match what’s been happening. Attacking the Sisters makes no sense for a Bazaar Boss. And since when does a Boss kidnap kids and make death threats?</p>
+
+<p>His old shop is a noodle stand now. I’d checked into that when I’d first started teaching school with the Sisters. Barely anyone remembered that it had been a tech shop at all.</p>
+
+<p>I feel two steps behind. I’ve been playing this to Dirk’s tune the whole way and it’s only gotten me into worse trouble. I was and still am a street rat and I can use that. The streets are hard and you don’t get ahead without making some enemies. If I can nose out Dirk’s reputation, I might get a better idea where he’s operating from. That’s my top priority. Find the kids.</p>
+
+<p>A plan starts coming together in my head. Dirk is like me. He came from the street. No matter how far he’s gone up in the world, he probably has loose ends around Bazaar, and if I can find them they might just lead me to where he’s holding the kids.</p>
+
+<p>“I’m coming. Hold on.”</p></div><div class="cboth"></div></div>
+<div class=" segment"><div class="content"><p>I’m on the rail at first light, headed towards Bazaar Street. I get off two stops early and as I walk I see some street children, but most bolt when they notice me looking at them. They seem used to being chased off, since they are close to places the Blues and shop owners actually care about. I spend a few hours avoiding main drags and looking down alleys for the right kid to approach.</p>
+
+<p>I finally pick out an older kid, maybe thirteen or so, loitering at the entrance of an alley like she has a purpose to be there. She has a tool pouch too, bingo. I walk up to her. I’m far enough away from Bazaar still that I hope she won’t recognize me if she ever came to school. Street kids all try to look the same and they tend to do a good enough job. The kid sees me coming and sets her feet, ready to talk or run.</p>
+
+<p>“Eh rat. Need lock some info. Got a name, need a place.”</p>
+
+<p>“Ha. Creds talk Lady. Null comm free. Creds up front.”</p>
+
+<p>The kid points to the ledge on the wall next to her. Her slang is different than I’m used to, almost Bazaar, but I catch the meaning well enough. I’ve got to pay her up front and place it out in the clear for others to see if I want information. Making sure I’m not a Blue and making me a target if I flash too much money. Smart move. I don’t have much money, just one ten credit. I take it out and put it on the ledge. The kid eyes me and then snatches the chit.</p>
+
+<p>“Wha’ handle got tha’ need indexed, Up?”</p>
+
+<p>“Boss Dirk.” The kid does a good song and dance. Even stroking her chin as she ‘thinks.’</p>
+
+<p>“Yeah . . . Oldie name tha’. Wrong eve’. Dirk ain’ null Boss. Dirk’s a Big. Been ’round long time. Tech stuff most . . .”</p>
+
+<p>Dirk as a Big Boss? That means lots of credits and a crew of people working for him. There were only two Bigs in all of Bazaar when I was a rat. Did Dirk off one and take his place, or stake his own territory? Too complicated, I just need the basics right now.</p>
+
+<p>“I need a place, got business with him. Hard kind.”</p>
+
+<p>“Res’ ’s fuzz, Up. Hard ta scanner.”</p>
+
+<p>The kid points to the ledge again. I already overpaid and she knows it.</p>
+
+<p>“Listen, you give me where and you’ll get fifty more cred when I’m done with Dirk. Deal?”</p>
+
+<p>This time she actually does think about it for awhile. Even if she has a boss that takes a cut, this would make her week. Maybe her month.</p>
+
+<p>“Yeah . . . Some got say he got place at tha towers. Some got say a place down in Black Street. Lock is tha’ him got both. Tower stuff is legit front for wha’ he got at Black. Chop an’ Break shop makin’ parts out a black salvage. Gang stuff maybe.”</p>
+
+<p>I know the place by name and the fear that was put in me as a street rat. No one goes to Black Street. I pull up the map on my mobiGlass. “Where in Black Street?”</p>
+
+<p>“Dun know Lady, got some fuzz ’bout . . .”</p>
+
+<p>Dodging again to try and get more cred. I’ve already promised what I don’t have. I can’t shake this with another empty bribe. I need to offer her something else. Her tool belt is welder style, but without a torch in the holster. She has some tech tools, but most are heavier, like for vehicle or ship work. She’s old enough she might be able to get work at the welding depot at the commercial spaceport. Working there gets you certifications. Certs means fees and a steady job. They take walk-ins and train them up, but don’t advertise it. That had been my backup plan for a few years now. Maybe it’ll be enough.</p>
+
+<p>“Lock tha’ you got ship tools. Wha’ some rat doin’ with them? Got think tha’ ships is can get you out from here? How you going to get work on ships? I know some welders that work ships. Got ta be good at welding. You torch some?”</p>
+
+<p>The sudden shift in conversation puts the kid on her heels. She looks away, trying to come up with one answer to all of my question.</p>
+
+<p>“I torch some! Had ta trade ta meds when ’m got sick las’ freez.” The anger in her voice is a thin disguise for pain. Having to trade a prize possession for medicine. That depression didn’t kill her afterwards says a lot.</p>
+
+<p>“Trade you straight info for info. Spaceport always needs welders. They’ll train you and get you basic certs. You use their gear and get paid daily. No lie. I plan on doing it but got business with Dirk first. You got your info now. So, you for info for me or not?”</p>
+
+<p>That’s my last chip in a game I’m losing. I probably won’t get a second shot with someone else without more credits to start things off. The kid looks at me hard for awhile. Trying to weigh the worth of what I told her, whether it’s a lie.</p>
+
+<p>“Rats an’ works know ’bout Big Dirk. Put out ’cast ta whole local ta work for him. Dirk double scans ’em for Gov or Blues an’ take ’em ta eight hundred wes’ sixteen thousand south.”</p>
+
+<p>She taps my map to set the point.</p>
+
+<p>“Got info out a rat tha’ run. Place got hangars ’round an’ one tower some. Only place like i’ ’round. Lot some folk head tha’ way. Null come back. Some ships come an’ get chopped. Some come an’ go. Rat tha’ ran say ’em work dead hard an’ then got sold ta slavers.”</p>
+
+<p>The information almost sounds first hand. Maybe this kid could help me.</p>
+
+<p>“You the rat that got out? Might need a guide around the place.”</p>
+
+<p>No answer for that and the kid looks like she wants to bolt now.</p>
+
+<p>“’m null go there. Craz that. Go at i’ from tha wes’ an you’ll get pas’ tha cams easy. Tha’s all ’m got tell. Ain’ eve’ glint zap on ya. You craz Up goin’ there. Ain’ none Up got business there.”</p>
+
+<p>The kid give me one last look and walks away down the alley to places I shouldn’t follow. It’s a bad idea to push someone that just did you a favor on the street. My old street habits are starting to come back more as I check my surroundings and catch at least one person’s eyes lingering on me longer than they should have. I take in the rest of the passing crowd and don’t see anything that looks like a setup. I’m feeling paranoid. If Dirk really is a Big he could have people anywhere.</p>
+
+<p>I get chills thinking that, and the kid’s comment about not having a weapon repeats in my head. I put up my hood and check that the map saved the location of Dirk’s chop shop. I make sure to avoid the area near the lingering eyes as I leave and don’t look back. I’ve got a lead, even if it’s a trap. I’m still the only hope my kids have.</p>
+
+<p>I only hope I’m not too late.</p></div><div class="cboth"></div></div>
+<div class=" segment"><div class="content"><p>The place I’m watching has to be Dirk’s. It fits the description and it’s in the most dangerous area of Bazaar, where even rats never go. Blues don’t come here, not like they care about Bazaar or rats. I saw three bodies on the ground on the way here. No way to check if they’re alive or dead without the chance of getting stabbed for interrupting someone’s high. My perch in the abandoned organics storehouse across from the compound is cold and the smell makes the sandwich I stole taste terrible. I only manage to force down a few bites, and my stomach is rebelling against even those.</p>
+
+<p>From here I’ve been able to pick up some transmissions from the four-story office tower and the hangar’s fire suppression and alarm systems. My directional antenna found a dead spot in the office building, though. Second floor, northwest corner. Everywhere else has at least some sort of signal coming out. I even got the model number and command access of the robot vacuum next to it, but that area is dead. Like someone’s trying to hide something there. It’s my best shot.</p>
+
+<p>While I’m planning out my approach I see armed people going between the hangars and the office. They’ve got about twice as many much-worse-off-looking adults surrounded. I see one of the group being herded turn and make a run for the fence. He doesn’t make it ten steps before a shot catches him in the back.</p>
+
+<p>He falls to the ground, spun by the force of the shot hitting him. I’m thankful I can’t hear the sounds he makes thrashing on the ground. At least he’s still alive, I think blackly. The guards pick the runner up by the arms and drag him back to the hangar. It doesn’t look like they’re taking him to a medic. Dirk’s thugs mean business.</p>
+
+<p>After watching all that I decide to make some modifications to my recently acquired stunner to give it more kick. I had lifted the cheap stun pistol from a rich Up kid I saw taking vid of Bazaar folks like it’s some sort of zoo. It might fry the first time I use it, but I’ll have to take that risk.</p>
+
+<p>It’s only taken me a few hours to get here, set up, and find all this out. I put in a call to Mom Super but she didn’t answer. I don’t blame her. The Sisters have locked me out of the systems at the convent, but I had a direct tunnel to my education program that I never turned off. Like a private connection. It only lets me get to that room’s equipment, but it’s a way for me to get a message into the convent where someone might see it.</p>
+
+<p>I’ve turned up the volume on the speakers and recorded a message. That message includes the video of what I saw earlier and explains what I’m doing so that someone will know even if I don’t get out. Now I’m just waiting here in this stink, second-guessing myself.</p></div><div class="cboth"></div></div>
+<div class=" segment"><div class="content"><p>The sun has started to go down finally and my nerves are buzzing again. I’ve got thirty minutes before the next guard patrol will check this side of the grounds. If the kid I got this information from decided to sell me out, I’ll know soon enough. I double check my connection to my jury-rigged life-line and start towards the fence. At the fence I check it for a charge or alarms and don’t find any. My snips make quick work of the wire and I slip through.</p>
+
+<p>A quick optic and radio scan shows cameras in the area, but none I can’t dodge. Thank god for small miracles. There’s still about fifteen meters of open pavement between the hangar I’m using for cover and the door to the service stairwell I picked out. I peek around the corner of the hanger and see that the main door is closed. I take a deep breath and start towards the office building.</p>
+
+<p>About halfway there I hear the sound of ship engines and look up. Landing lights trace the ground a little ways away. I dash to the door and watch the ships appear and then travel out of sight from where I am. The hangar I had come from opens and a truck full of armed people drives out and off in the same direction. My heart is pounding and I know I didn’t run hard. I’ve got to pull it together. I turn my attention to the door.</p>
+
+<p>A standard lock that’s not networked. No risk of external hack like that. Too bad for them, I’m right here. I pop the front panel off and start working. I almost have the bypass ready when I notice the inconspicuous block with two wires in it. Explosives.</p>
+
+<p>I break out into a sweat as I realize how close I am to setting it off with what I’m about to do. How could I have been so stupid? This is craz. A bomb in a door? I was about to actually blow this and the kids would still be in danger. How can I do this if I can’t even get through the first door?</p>
+
+<p>My hands are frozen as I look at what’s in front of me. It takes everything I have not to turn and run. My mind starts to latch on to things about the door to replace my runaway emotions. This is a prefab, like the ones on rail cars. Doors like this are cheap but not cheaply made. They cut corners on features, not substance. Like only having one power source.</p>
+
+<p>That’s it. If I can cut the power to the lock, it will come free just like on a rail car. Hopefully no power will also mean no boom. It takes me just a second to find the thick connector that is the power plug and grab a hold. I take a deep breath and hold it, then I pull hard. I hear a hollow pop and the status lights inside the door panel all fade out. No boom and I’m still here. I let out the breath I’m holding long and slow. I have to keep moving.</p>
+
+<p>After a few more seconds of frantic work in the dark I’ve got it rigged to stay open for when I come back. I hear the sounds of the truck coming just before I slip into the dim stairwell. About half the lights are missing and the unpainted walls show water spots and neglect. Not a camera in sight.</p>
+
+<p>The second floor door is high tech but still not networked. The indicator shows locked. The access panel is on the other side. I rack my brain for something to get past it. After a few painful minutes of nothing I lean against it in despair. It moves. The latch must not have been caught.</p>
+
+<p>I can’t believe it. I open it just enough to roll a camera sphere out as I pull up the feed on my mobiGlas.</p>
+
+<p>The picture shows a bright white hallway with an elevator at one end and only a few other doors. I see one camera but it is pointed at the elevator. Two big men with pistols on their hips come out from the farthest room and get in the elevator. I freeze even though they can’t see me. The indicator shows it going down. I say a silent prayer hoping they are going out to meet the new arrivals. I find the door that looks like it should lead to where I’m going. I wait a few seconds more, and then walk into the hall and head for my target.</p>
+
+<p>It has an old manual handle and is unlocked. My heart skips a beat at the thought of a trap. I take the stun pistol from its holster and open the door.</p>
+
+<p>I look around but find myself alone in a big room. I close the door quickly and quietly, finding myself surrounded by computer panels and monitor lights. My mobiGlas beeps. I’ve lost connection to the outside. My eyes take a moment to adjust to dim lighting once more, as I put the stunner away.</p>
+
+<p>I head to the station that looks most important. It’s a system monitoring terminal that has stats on dozens of sub-systems, all of them seemingly run from this room. I sit down and dig in. The setup is incredible. Star charts, financial information, shipping schedules, even payroll information for dozens of companies. All of them must be fake and controlled from here. This is how Dirk is laundering his salvage. The kid had said one side of Dirk’s operation is legit. Not for long. There is another set of information here that’s being kept separate. Ship manifests with destinations in Banu space. Pictures of people chained together and prices per shipment labeled only as ‘cargo.’ I skim through them quickly but I don’t see any of my children in the pictures. I copy as much as I can to my mobiGlas’s storage. This is all good, but it’s not why I’m here.</p>
+
+<p>After some digging I find access to the cameras and pull up all the local feeds.</p>
+
+<p>I get one of each floor’s elevator door, the main entrance, the front gate, a small room with a single chair in the middle, and a few showing parts of the fence. The last feed I check is an entirely black picture. It seems out of place in such a spartan set of things to record. I check it again. It’s a live feed. Then I see something. Black moving in the black. Something small. Someone.</p>
+
+<p>My heart jumps. That has to be them. The label on the feed is Hangar 4 Storage. I’d seen that each hangar has a number painted on the side and know that 4 is on the north side of the building. It’s away from all the action outside right now, but the only way in from the outside is a huge cargo door. I pull up the controls for the door and try to open the cargo door remotely. As I do, I see a red warning flag pop up and the system locks. I must have triggered something!</p>
+
+<p>I need to get out of this room.</p>
+
+<p>They may already know I’m here, and if they don’t they will soon. I jog out the door and make a mental note as my mobiGlas beeps its reconnection to the network.</p>
+
+<p>I head around the side of the building to the north and get within sight of the number 4 hangar. Lights are flashing on each of the buildings and a siren goes off. I hear shouts behind me and the sound of ship engines revving to launch prep. I head straight to the hangar door’s access panel. This one is standard, like the one to the stairwell, but this time no explosives. I get it to open after just a few tries and I scramble underneath and into the safety lighting.</p>
+
+<p>A door just inside has ‘Storage’ on it stenciled in white. I run to it. It’s another manual door but it’s been chained shut.</p>
+
+<p>My wire cutters can’t get through something this thick. I didn’t bring a torch. A chain? That’s stopping me? I got past explosives and around guards and into computers and now I can’t get past a chain? I kick the lock in frustration.</p>
+
+<p>Flakes of rust float from the chain to the floor.</p>
+
+<p>The rundown hangar has rusting bits and pieces all around. On the ground I see a pipe about two meters long. Jackpot!</p>
+
+<p>I grab the pipe and examine the chain. It’s got some links that have been repaired before. I remember the materials book I studied. The chain is more likely to break than the pipe because of the welded links. I struggle a bit to wedge it between the door and chain. Once it’s securely set, I put my whole weight into pulling. The pole starts to bend but I keep the pressure on.</p>
+
+<p>I hear a pop. Then a clang and the pipe goes slack, almost tumbling me to the floor. At the same time the chain and lock fall to the floor loudly. I recover, grabbing the door handle and pulling.</p>
+
+<p>Light from the hangar lights flows into the small room as seven sets of eyes all stare back at me. The smell of human waste hits me like a wall. One child is lying on the floor. All the others are standing, backs against the wall. I can see the bruises. The ripped clothes. The gauntness. The fear. But they are still alive. Thank god, they are still alive.</p>
+
+<p>One speaks in a whisper, “Sister?”</p>
+
+<p>I almost say yes, but Mom Super’s betrayed face flashes in my mind.</p>
+
+<p>“I’m here to get you out.” I hold out my hand to encourage them. “We have to go before the guards come.”</p>
+
+<p>That seems to get through to them. One, then two more start to come out of the filthy prison they’d been kept in.</p>
+
+<p>Another one is standing at the back of the room next to the child who hasn’t moved from the floor.</p>
+
+<p>“’em can’ null walk none.” The standing one says, looking at his companion on the floor. I rush in and scoop up the child in one hand, trying not to gag on the smell.</p>
+
+<p>“Out, everyone, and then through the door, then left keep going till the fence.”</p>
+
+<p>Seeing me take their weakest as a burden sets the rest of them in motion, but as I come out of the filthy closet I see a pair of trucks loaded with vicious looking people heading straight for us.</p>
+
+<p>All the children have stopped with me just inside the door. They’re looking at me. I can feel the one I’m holding barely breathing.</p>
+
+<p>I will not let them take you.</p>
+
+<p>I slam my fist into the door release and the door comes rattling down.</p>
+
+<p>I pull the stunner from its holster, aim at the door’s control panel and pull the trigger. Nothing. I pull it again. Nothing.</p>
+
+<p>“Got a hold tha trig down ta shot.” One of the children said it so softly I almost didn’t hear it. It was the one in my arm.</p>
+
+<p>I do as she tells me and hold down the trigger. Seconds tick by and I hear the trucks stopping. The door is starting to move again. Suddenly my stunner fires and fries the controls. Someone on the other side doesn’t like that and points a weapon through the three centimeter opening and starts to fire.</p>
+
+<p>The children duck behind what larger scrap pieces are around. Someone shouts and the shooting stops. The alarm sirens are still wailing but I can hear more commotion on the other side of the door.</p>
+
+<p>“Rat! ’m know you there!” It’s Dirk. “Give up, rat! You null comin’ out a there ’less ’m let you out!”</p>
+
+<p>The children start moving to better cover. If there is one thing a street kid knows, it’s how to find a place to hide. I look down at the one in my arms, passed out and filthy. Helpless.</p>
+
+<p>“I’m not going to let them take you.” I say softly. Then I turn my face to the door and let out all the rage and anger I can call on. “You’re not my boss anymore, Dirk. You’re nothing to me now. You’re bigger than us, and you’ve got guns, so you think you can do whatever you want. And maybe you can, but I’m not gonna make it easy. I’m gonna fight for these kids. I’m stronger and smarter than you think, Dirk. All us rats are.”</p>
+
+<p>A shot rings out and I duck back behind the beam I’ve crouched next to. The bullet punched a hole in the door. Someone sticks a hook through the hole and I hear an engine rev outside. The whole door starts to creak and strain.</p>
+
+<p>Another shot, hole and hook. A second truck revs up and I see the panels of the door flexing under the pull. I have to find a way out of here. I remember specs of old hangars sometimes having ventilation at the ceiling. My eyes shoot up, looking for some sign of that and I find it almost immediately.</p>
+
+<p>“You all have to climb. Get into the vents. It’s a way out. Come on.”</p>
+
+<p>These children have been through hell and still they amaze me as they start to climb, helping each other. I nearly cry as they break every rule of the street by doing that. The first of them gets to the opening. One after the other they disappear into the closest thing to safety I can get them to. It’s little comfort but a better chance than they had locked up.</p>
+
+<p>The last one through turns around to me, “Get heading, Sister. Got get out.”</p>
+
+<p>I’m still holding the child in my arms and I realize I can’t climb and take her with me.</p>
+
+<p>“Go, I can’t make it, I’m too big. I have to stay and take care of them.”</p>
+
+<p>I get an intense look from more than one set of eyes.</p>
+
+<p>“Go!”</p>
+
+<p>The walls start to shake, the eyes disappear from the vent and dust falls from every angle as one side of the massive front door comes crashing down. It’s still obstructing the way but once the other side pulls free . . .</p>
+
+<p>I move as far back among the scrap metal and tools as possible. I can barely see through the dust. There is yelling and flashlights shining into the newly opened gap. The trucks rev their engines again and then suddenly — they stop.</p>
+
+<p>Gun and laser fire pop off and I can hear a new siren. No, sirens. They’re growing louder and closer. The trucks rev up again but this time I can hear them heading away.</p>
+
+<p>The new sirens get louder still and then I see flashing blue lights streak past. Then again. And again. The Blues? How?</p>
+
+<p>As the dust clears some vehicles pull to a stop outside the wrecked hangar door and several large men in plain clothes get out, guns drawn.</p>
+
+<p>I shrink down, still keeping an eye on them, hoping they’ll leave if they don’t find anything.</p>
+
+<p>Another vehicle stops and, like a ghost in a dream, I see Mom Super get out with a uniformed Blue next to her.</p>
+
+<p>My lungs burn as I take in a dust-filled breath trying to shout to her, but I only cough. I get up and all eyes move to me and the child I’m carrying. I stumble out from behind my hiding place. I have to get to Mom Super.</p>
+
+<p>That thought drives me forward. I stumble and fall. One of the Blues catches me, taking the child gently from my hands and laying me down against a wall.</p>
+
+<p>“Are you hurt?” the Blue asks, “are there others?”</p>
+
+<p>“The vents,” I cough, “in the vents.”</p>
+
+<p>The Blue shines a light to the vent opening where six children are looking back at her. I motion them down with my arm and after a long pause they start to climb out. More Blues are coming in and helping the children. Blues helping street rats. This time the tears do come.</p>
+
+<p>Mom Super is here now, next to me.</p>
+
+<p>“Are you all right? Are you injured?”</p>
+
+<p>The concern in her eyes and voice shame me. I don’t deserve her caring about me.</p>
+
+<p>I take off my mobiGlas and hold it out to her. I clear my throat with a cough.</p>
+
+<p>“I got as much information about Dirk’s operation as I could. Financials, dummy corps, contacts. It’s more than enough to shut him down if you give it to the Blues. This can keep the rest of the children safe.” I’m so exhausted my arm shakes with the effort of holding up the weight of the mobiGlas.</p>
+
+<p>Mom Super takes it and moves past my hand towards me. Her arms surround me in an embrace. I don’t even know what to do. I let my hands fall to my side, feeling unworthy to hold the only Mother I’ve known.</p>
+
+<p>“Well done, young one.”</p></div><div class="cboth"></div></div>
+<div class=" segment"><div class="content"><p>A week later, the Blues have all the information I collected and I have my mobiGlas back. The children have been put in protective custody. Dirk’s operations have been shut down, though he is nowhere to be found. The news is talking about fixing poverty in the city. Street School has started again, with kids coming from all over. This week over a hundred come. They call us the Big Sisters now, like the Sisters took Dirk’s title. All of this and I’m getting ready to leave.</p>
+
+<p>Mom Super has said that I can stay at the convent but I know I can’t. I put the children we were trying to help in danger and I almost attacked the core of the Sisters’ religion. I’m going to go to space and see all the things I’ve read about. I’ve always been just a guest here. I’ve never been one of them. I’m packing the last of my things when she comes to see me.</p>
+
+<p>“Hello, young one,” she says. My back’s to the door.</p>
+
+<p>“I’m not so young anymore,” I answer. “I’ve grown a bit since you gave me that name.”</p>
+
+<p>Mom Super has a grin in her voice. “Gave you a name, did I? You refused to tell me what to call you. So I choose a description by which to call you. Hardly a name I think.”</p>
+
+<p>There’s an unspoken ending to that sentence. I can feel it.</p>
+
+<p>I turn around to see Mom Super standing in the doorway wearing her best habit. I guess it makes sense she would wear it on the day that I leave.</p>
+
+<p>“We have something for you.”</p>
+
+<p>“We?” I ask.</p>
+
+<p>“Come, young one. It is time I do what you claim I have done already.”</p>
+
+<p>There’s no way to refuse Mom Super when she has a plan.</p>
+
+<p>She motions with her hand and I follow her out of the living area, past the meal hall and into the library.</p>
+
+<p>Where rows of Sisters stand waiting in front of the book cases.</p>
+
+<p>Three stories full. Rows about twenty feet long of sisters in their ceremonial best. One sister stands in the middle of the assembly on the main floor with a camera. Mom Super walks to stand next to her. I’m frozen just inside the door trying not to panic.</p>
+
+<p>Turning in place Mom Super looks at me and then up to the gathered Sisters. She speaks loudly, “One has come among us whom we now know. One has been our guest who has had no name. One among us is leaving, following the call of her heart. These are all the same person. She had meant to do us harm but only in the cause of saving others, which she then did of her own accord. It would be right to record her name and good deeds in the histories of our Hall, but it would not be right to do so without using her name. What say you?”</p>
+
+<p>A figure from the left of me steps forward, “We propose that she be given a name.”</p>
+
+<p>Another figure steps forward, this time from my right. “We have come to consensus in this.”</p>
+
+<p>“Step forward,” Mom Super says as she motions me toward her. I walk in a daze and stop when she signals.</p>
+
+<p>Mom Super lays a hand on my shoulder. Her gaze drills into my eyes as she speaks. “This one has been found worthy and good among us. An inspiration to the study of knowledge and an example of courage. A changed person, remade by the force of her own will. What will you name her?”</p>
+
+<p>A chorus replies as one.</p>
+
+<p>“Luther, the reformer.”</p>
+
+<h3>The End</h3></div><div class="cboth"></div></div>
+<div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+</div>
+
+<script>
+(function( $ ){
+  var $window = $(window);
+  var windowHeight = $window.height();
+
+  $window.resize(function () {
+    windowHeight = $window.height();
+  });
+
+  $.fn.parallax = function(xpos, speedFactor, outerHeight) {
+    var $this = $(this);
+    var getHeight;
+    var firstTop;
+    var paddingTop = 0;
+    
+    //get the starting position of each element to have parallax applied to it    
+    $this.each(function(){
+        firstTop = $this.offset().top;
+    });
+
+    if (outerHeight) {
+      getHeight = function(jqo) {
+        return jqo.outerHeight(true);
+      };
+    } else {
+      getHeight = function(jqo) {
+        return jqo.height();
+      };
+    }
+      
+    // setup defaults if arguments aren't specified
+    if (arguments.length < 1 || xpos === null) xpos = "50%";
+    if (arguments.length < 2 || speedFactor === null) speedFactor = 0.1;
+    if (arguments.length < 3 || outerHeight === null) outerHeight = true;
+    
+    // function to be called whenever the window is scrolled or resized
+    function update(){
+      var pos = $window.scrollTop();        
+
+      $this.each(function(){
+        var $element = $(this);
+        var top = $element.offset().top;
+        var height = getHeight($element);
+
+        // Check if totally above or totally below viewport
+        if (top + height < pos || top > pos + windowHeight) {
+          return;
+        }
+
+        $this.css('backgroundPosition', xpos + " " + Math.round((firstTop - pos) * speedFactor) + "px");
+      });
+    }   
+
+    $window.bind('scroll', update).resize(update);
+    update();
+  };
+
+  $('.parallax-1').parallax("50%", 0.1, true);
+$('.parallax-2').parallax("50%", 0.1, true);
+$('.parallax-3').parallax("50%", 0.1, true);
+$('.parallax-4').parallax("50%", 0.1, true);
+$('.parallax-5').parallax("50%", 0.1, true);
+$('.parallax-6').parallax("50%", 0.1, true);
+$('.parallax-7').parallax("50%", 0.1, true);
+})(jQuery);
+</script> 
+
+
+  <div class="wrapper">
+    
+    <div class="end-transmission-container">
+      <div class="glow left"></div>
+      <div class="title-bar">
+        <h1>End Transmission</h1>
+      </div>
+      <div class="glow right"></div>
+    </div>
+  </div>
+  
+
+  
+    <div class="two-line-separator"></div>
+  <div class="channel-banner">
+  <div class="header-container">
+                  <div>
+      <div class="header">
+        <div class="wrapper">
+                      <div class="image" style="background-image:url('/media/5bb3nxmqlaz7rr/post_section_header/GoodAndEvil_pt1.jpg');"></div>
+                    <div class="texts">
+            <div class="title">
+              <div class="presented-by">Part of</div>
+              <div class="cboth"></div>
+              <h1>The Knowledge of Good and Evil</h1>
+              <a class="holobtn " href="/comm-link?series=Good-and-Evil">
+  <span class="holobtn-top abs-overlay trans-02s">More in this series </span>
+  <span class="holobtn-bottom abs-overlay trans-02s"></span>
+</a>
+              <div class="cboth"></div>
+            </div>
+            <p></p><p>Knowledge sets you free.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content-carousel">
+    <div class="carousel-mask">
+      <div class="left-shadow shadow"></div>
+      <a href="" class="prev js-prev"><div class="hover trans-03s trans-opacity"></div></a>
+      <div class="centerer">
+        <div class="carousel">
+                      <a href="/comm-link/serialized-fiction/16584-The-Knowledge-Of-Good-And-Evil-Part-One" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/5bb3nxmqlaz7rr/home_transmissions_item_expanded/GoodAndEvil_pt1.jpg');"></div>
+    <div class="title trans-opacity trans-03s">The Knowledge of Good and Evil: Part One</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2 years ago</span></div>
+    <div class="section">serialized-fiction</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/serialized-fiction/16633-The-Knowledge-Of-Good-And-Evil-Part-Two" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/z13iwjfrggl2xr/home_transmissions_item_expanded/GoodAndEvil_pt2.jpg');"></div>
+    <div class="title trans-opacity trans-03s">The Knowledge of Good and Evil: Part Two</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2 years ago</span></div>
+    <div class="section">serialized-fiction</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/serialized-fiction/16680-The-Knowledge-Of-Good-And-Evil-Part-Three" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/dm5wcxn0dqr6cr/home_transmissions_item_expanded/GoodAndEvil_pt3.jpg');"></div>
+    <div class="title trans-opacity trans-03s">The Knowledge of Good and Evil: Part Three</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">1 year ago</span></div>
+    <div class="section">serialized-fiction</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/serialized-fiction/16727-The-Knowledge-Of-Good-And-Evil-Part-Four" class="series-carousel-item content-block3 trans-05s  on">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/k9ipggp9rdec7r/home_transmissions_item_expanded/GoodAndEvil_pt4.jpg');"></div>
+    <div class="title trans-opacity trans-03s">The Knowledge of Good and Evil: Part Four</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">1 year ago</span></div>
+    <div class="section">serialized-fiction</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                  </div>
+      </div>
+      <a href="" class="next js-next"><div class="hover trans-03s trans-opacity"></div></a>
+      <div class="right-shadow shadow"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $(".channel-banner .content-carousel").each(function(index, element) {
+      $(element).data("carousel", new RSI.FullCarousel({
+        holder:$(element).find(".carousel"),
+        prevButton:$(element).find(".js-prev"),
+        nextButton:$(element).find(".js-next"),
+        circular:true,
+        displayItems:3 // healthy amount so that we never see empty
+      }));
+    });
+  });
+</script>
+    
+
+  <div class="two-line-separator"></div>
+  
+    
+<div class="wrapper force-one-column" id="comments">
+  <div class="holder">
+    <div class="title-bar">
+      <div class="count">
+        <div class="label">Comments</div>
+        <div class="value">019.<span class="js-comment-decimal">0</span></div>
+        <div class="cboth"></div>
+      </div>
+      <div class="title">
+        <h1>Feedback</h1>
+      </div>
+      <div class="cboth"></div>
+    </div>
+
+    <div class="main-buttons-holder-container">
+      <div class="main-buttons-holder">
+        <a href="/comm-link/serialized-fiction/16727-The-Knowledge-Of-Good-And-Evil-Part-Four" class="add-comment js-add-comment trans-02s ">Add New Comment</a>
+        <div class="settings js-settings">
+          <h1>Settings</h1>
+          <label>View mode:</label>
+          <a href="#" class="js-comments-view to-one-column js-to-one-column trans-01s on">One column</a>
+          <a href="#" class="js-comments-view to-two-columns js-to-two-columns trans-01s ">Two columns</a>
+          <label>Sort by:</label>
+          <a href="#" class="js-comments-sort to-oldest js-to-oldest trans-01s on">Oldest first</a>
+          <a href="#" class="js-comments-sort to-newest js-to-newest trans-01s ">Newest first</a>
+          <a href="#" class="js-comments-sort to-appreciated js-to-appreciated trans-01s ">Most appreciated first</a>
+
+                    <label class="checkbox show-appreciation js-show-appreciation on">
+            <input type="checkbox">
+            <span>Enable appreciation</span>
+          </label>
+                  </div>
+        <a href="" class="view-settings js-view-settings"><div class="hover trans-02s"></div></a>
+        <div class="triangle"></div>
+      </div>
+    </div>
+
+          <form class="reaction-form js-comment-form comment-submission">
+        <input type="hidden" class="js-form-data js-id id" name="id" value="16727">
+  <textarea class="js-form-data body js-body js-focus-me" name="body"></textarea>
+  <div class="cboth"></div>
+  <a class="shadow-button trans-02s trans-color submit js-submit">
+  <span class="label js-label trans-02s">Submit</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+    <div class="success-message js-success-message">Your comment has been posted successfully.</div>
+  <div class="error-message js-error-message"></div>
+  <div class="cboth"></div>
+</form>    
+    <div class="comment-listing"></div>
+
+    <div class="comment-loader traj-loader">
+      <div class="fast-blink"></div>
+      <span>Loading Additional Feedback</span>
+    </div>
+
+    <div class="cboth"></div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    window.comments = new RSI.Comments({
+      atom_url:"/comm-link/serialized-fiction/16727-The-Knowledge-Of-Good-And-Evil-Part-Four",
+      comment_listing_el:$(".comment-listing"),
+      comment_submission_form_el:$(".comment-submission"),
+      api_object:RSI.Api.Comments,
+      lazyLoading: true,
+      comment_count: 19,
+      subject_id:16727,
+      append:false,
+      texts: {
+        "edit": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        },
+        "reply": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        }
+      },
+      "insertion_conf": {
+        "mode":"html"
+      },
+      "api_function_names": {
+        "delete":"erase",
+        "load":"listing",
+        "sort":"listing"
+      }
+    });
+  });
+</script>
+  
+</div>
+
+    </div>
+
+    
+  </div>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.11/moment-timezone-with-data.min.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+      $.cookie('moment_timezone', moment.tz.guess(), { expires: 31, path: '/' });
+  });
+</script>
+
+
+
+
+               <script id="tpl_number_counter_digits" type="text/x-jsmart-tmpl">{if !$seperator}{$seperator=','}{/if}
+{if !$first_max}{$first_max=9}{/if}
+{for $digit = 0 to $length-1}
+  <div class="mask">
+    <div class="carousel">
+      {if $digit == 0}
+        {$max = $first_max}
+      {else}
+        {$max = 9}
+      {/if}
+      {for $i=0 to $max}
+        <div class="item {if $val_arr[$digit] == $i}on{/if}" rel="{$i}">{$i}
+      {/for}
+    
+  
+  {if ($length - $digit) % 3 == 1 && $digit != $length-1}
+  <div class="seperator">{$seperator}
+  {/if}
+{/for}</script>
+<script id="base_modal" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  <div class="top-border">
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+  
+</script>
+<script id="base_modal_flat" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  
+  
+</script>
+<script id="tpl_modals_slideshow" type="text/x-jsmart-tmpl"><img class="top-border" src="/rsi/static/images/modal_top.png">
+<a href="" class="close js-close">
+<div class="mask">
+  <a class="js-prev prev control">
+  <a class="js-next next control">
+  <div class="slideshow-carousel carousel" rel="{$index}">
+    {foreach from=$images item="image"}
+      <div class="{if $index == $image@index}on{/if}">
+      {if $image.is_video}
+        <div class="video-holder">
+          <div id="slideshow_video_{$image@index}" data-source="{$image->source_url}">
+            <video width="100%" height="100%" preload="auto" {if $video}src="{$image->source_url}"{/if} controls>
+          
+        
+      {else}
+        <div class="media js-media-slideshow-{$image@iteration}">
+        {if $image.low_res}
+          <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source data-srcset="{$image.full_res}" media="(min-width: 300px)" />
+            <!--[if IE 9]><![endif]-->
+            <img data-srcset="{$image.low_res}" alt="{$image.title}" />
+          
+        {else}
+          <img data-src="{$image.source_url}" />
+        {/if}
+        
+      {/if}
+        <div class="text">
+          {if !$image.is_video}
+          <a href="{$image.source_url}" class="download">
+          {/if}
+          <div class="copyright">&copy; 2012-{$year}<br />Cloud Imperium Games Corporation &<br />Roberts Space Industries Corp.
+          <div class="page-number">{$image@iteration} / {count($images)}
+          <div class="caption v-center">{if $image.title && $image.title != "undefined"}{$image.title}{/if}
+          <div class="cboth">
+        
+      
+    {/foreach}
+  
+
+<img class="bottom-border" src="/rsi/static/images/modal_bottom.png"></script>
+<script id="tpl_contact_us" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    
+<div id="contact" class="inner-content on">
+  <h2><span class="icon">CONTACT
+  <div class="padder">
+    <div class="separator">
+    <form name="" action="" method="POST">
+  <div class="error-message js-error-message">
+  <div class="success-message js-success-message">
+    <fieldset>
+    <label for="contact_subject">Subject
+    <input type="text" name="subject" value="" class="trans-02s trans-color trans-box-shadow" id="contact_subject" />
+    <label>Contacting us for:
+    <ul class="category-info">
+            <li id="tech_support_info">Questions about download, installation, networking, or in-game client problems
+            <li id="subscription_info">Questions about monthly and yearly subscription plans
+            <li id="account_billing_info">Issues related to your account, such as incorrect information or ability to access account, or Billing with regards to payments and payment methods
+            <li id="melt_request_info">To reclaim a pledge over $1,000 for store credit (please note - this is a permanent action)
+            <li id="merchandise_info">Questions about physical and/or shipped merchandise
+            <li id="hacked_info">Issues related to compromised account or missing pledge.
+            <li id="account_recovery_info">For issues with account authentication, lost passwords and related queries
+            <li id="probation_info">Issues related to forums probation or ban
+            <li id="refund_request_info">Refund requests and related inquiries
+            <li id="customer_support_info">For general questions and queries regarding Star Citizen
+          
+  
+  <fieldset>
+    <label for="contact_text">Fescription
+    <textarea name="text" class="trans-02s trans-color trans-box-shadow" id="contact_text">
+  
+  <div class="contact-submit-wrapper">
+    <div class="line">
+    <button class="submit js-submit"><strong>submit your message
+  
+
+    <div class="separator">
+  
+
+
+    
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  
+</script>
+<script id="tpl_concierge" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+<img src="/rsi/static/images/modal_yellow_line.png" />
+
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    
+
+<div id="contact" class="inner-content on">
+  <h2><span class="icon">CONCIERGE
+  <div class="padder">
+    <div class="separator">
+    <form name="" action="" method="POST" class="concierge-form">
+      <p class="head">We recommend that you check out the <a href="/faq">FAQs and other resources below if you are in need of information regarding RSI or Star Citizen. If your topic isn&rsquo;t covered, feel free to contact us!<br/><br/> - Gameplay : <a href="https://forums.robertsspaceindustries.com/categories/ask-a-developer">Ask A Dev<br/> - Suggestions: <a href="https://forums.robertsspaceindustries.com/categories/game-ideas">Game Ideas<br/> - Bug Reports (including PTU): <a href="https://forums.robertsspaceindustries.com/categories/test-pilot-headquarters">Test Pilot Headquarters<br/>
+      <div class="error-message js-error-message">
+      <div class="success-message js-success-message">
+
+      <fieldset class="concierge-form__field concierge-form__field--issue">
+        <label for="concierge_issue">Please choose your issue below
+        <select required id="concierge_issue" name="issue" class="trans-02s trans-color trans-box-shadow">
+          <option value="-">
+            -
+          
+                  
+      
+
+      <fieldset class="concierge-form__field concierge-form__field--problem concierge-form__field--secondary hidden">
+        <label for="concierge_problem">
+        <select required id="concierge_problem" name="problem" class="trans-02s trans-color trans-box-shadow">
+        
+      
+
+      <div class="issue-subfields">
+
+      <fieldset class="concierge-form__field concierge-form__field--secondary concierge-form__field--optional hidden">
+        <label for="concierge_attachment">Attachments <span>- Optional
+        <div class="concierge-form__attachment">
+            Add file here
+          <input class="concierge-upload-images-container" type="file" id="concierge_attachment" name="attachment" accept="image/*" multiple/>
+        
+      
+
+      <fieldset class="concierge-form__field concierge-form__field--secondary concierge-form__field--optional hidden">
+        <span class="h-text h-text--size-13 h-text--univia h-text--brown"><strong>Uploaded files 
+        <div class="concierge-form__file-preview">
+      
+
+      <fieldset class="concierge-form__field concierge-form__field--submit concierge-form__field--secondary last hidden">
+        <span class="submit-arrow">
+        <input type="submit" value="Send" class="trans-02s trans-color trans-background" />
+      
+
+    
+    <div class="separator">
+  
+
+
+
+    
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    
+<img src="/rsi/static/images/modal_yellow_line.png" />
+
+  
+</script>
+<script id="tpl_error" type="text/x-jsmart-tmpl"><div class="modal-error js-modal-error">
+  <p class="modal-text js-modal-text">
+  <a class="close js-close trans-03s .trans-opacity" href="">
+</script>
+<script id="tpl_success" type="text/x-jsmart-tmpl"><div class="modal-success js-modal-success">
+  <p class="modal-text js-modal-text">
+  <a class="close js-close trans-03s .trans-opacity" href="">
+</script>
+<script id="tpl_progress" type="text/x-jsmart-tmpl"><div class="modal-progress js-modal-progress">
+  <div class="traj-loader">
+    <div class="fast-blink">
+    <span class="modal-text js-modal-text">
+  
+</script>
+<script id="tpl_outbound" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    
+<div id="outbound" class="inner-content on">
+  <h2><span class="icon">OUTBOUND LINK
+  <div class="padder">
+    <div class="separator">
+    <form name="" action="" method="POST">
+      <div class="error-message js-error-message"> <span class=important>WARNING<br/><br/> This link will bring you outside of the RSI site and into the depths of the internet. Continue?<br/><br/><span class="url"> 
+      <div class="success-message js-success-message"><span class=important>STAND BY<br/><br/> Initiating hyperlink.<br/><br/>
+
+      <fieldset class="clearfix last">
+        <span class="submit-wrapper">
+          <span class="submit-hover trans-02s trans-opacity">
+          <input type="submit" value="WARP" class="trans-02s trans-color trans-background" />
+        
+      
+    
+    <div class="separator">
+  
+
+
+    
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  
+</script>
+
+<script id="tpl_l-notification-bar" type="text/x-jsmart-tmpl"><div class="l-notification-bar js-notification-bar">
+
+  <div class="l-notification-bar__watermark js-svg-inliner h-svg__logo-star-citizen">
+
+  <div class="l-notification-bar__boxes">
+    {if !$viewedCookieNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='cookie'
+          title='COOKIES:'
+          message="Our website uses Google Analytics to analyze our traffic. <br/>To learn how you can control Google's use of your data and how you can opt out <a href='https://www.google.com/policies/privacy/partners/'>click here."
+          linkText='See Details'
+          buttonText='Got it!'}
+      
+    {/if}
+
+    {if !$viewedPrivacyNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='privacy'
+          title='PRIVACY POLICY:'
+          message='We adjusted the PP to reflect the decision of the European Court of Justice regarding Safe Harbor, the fact that RSI has moved and added some services providers.'
+          linkText='View Privacy Policy'
+          buttonText='Got it!'}
+      
+    {/if}
+  
+
+
+</script>
+<script id="tpl_c-notification" type="text/x-jsmart-tmpl"><div class="c-notification js-bottom-notif-msg-{$type}">
+    <div class="c-notification__title">{$title}
+    <div class="c-notification__message">
+      {$message}
+    
+
+    {if $linkText}
+        <div class="c-notification__wrapper-link">
+            <a class="c-notification__link js-bottom-notif-link-{$type}">
+            {$linkText}
+            
+        
+    {/if}
+
+    <a class="c-notification__button js-bottom-notif-btn-{$type}">
+
+      <span class="c-notification__button-text">
+       {$buttonText}
+      
+
+      {if $type neq 'announcement'}
+        <div class="c-iconed__icon c-iconed__icon--checkmark">
+      {/if}
+    
+
+</script>
+
+<script id="tpl_confirm" type="text/x-jsmart-tmpl"><div class="modal-confirm js-modal-confirm clearfix">
+  <p class="modal-text js-modal-text">
+  <a class="bt-close js-close trans-03s trans-opacity" href="">
+  <a class="bt-confirm js-confirm trans-03s trans-opacity" href="">
+	<div class="buttons">
+		<a class="shadow-button trans-02s trans-color js-close bt-close rm"     >
+  <span class="label js-label trans-02s">Cancel
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s">
+  <span class="left-section">
+  <span class="right-section">
+
+		<a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">Confirm
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s">
+  <span class="left-section">
+  <span class="right-section">
+
+	
+
+</script>
+<script id="tpl_alert" type="text/x-jsmart-tmpl"><div class="modal-alert js-modal-alert clearfix">
+  <p class="modal-text js-modal-text">
+  <div class="buttons">
+    <a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">OK
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s">
+  <span class="left-section">
+  <span class="right-section">
+
+  
+</script>
+<script id="tpl_video" type="text/x-jsmart-tmpl">{extends file="base_modal"}
+{block name='modal_content'}
+<div id="ship-commercial" class="inner-content">
+  
+  <div class="hr">
+  <div class="content-block4">
+   
+    <div class="bottom">
+  
+  {if $distant_source=="vimeo"}
+  <iframe id="commercial" src="//player.vimeo.com/video/{$video_id}?wmode=transparent" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+  {else}
+  <iframe id="commercial" frameborder="0" allowfullscreen="1" title="YouTube video player" width="100%" height="100%" src="https://www.youtube.com/embed/{$video_id}?autoplay=1">
+  {/if}
+
+{/block}
+</script>
+      
+  <script id="tpl_comment_report" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    
+<div id="comment-report" class="inner-content on">
+  <h2><span class="icon">Report this comment
+  <div class="padder">
+    <div class="separator">
+    <form name="" action="" method="POST">
+<input type="hidden" name="comment_id" value="">
+  <div class="error-message js-error-message">
+  <div class="success-message js-success-message">
+    <fieldset>
+    <label>Report Type
+    
+
+
+  
+    <a class="js-selectlist selectlist " rel="" href="">
+    <div class="arrow">
+    <span>Please select the type best matching your report
+              <ul class="body">
+              
+                                                              <li class="js-option option " rel="obscenity" >
+                                                                        Obscene Content
+                                                    
+                                                                <li class="js-option option " rel="abuse" >
+                                                                        Abusive Conduct
+                                                    
+                                                                <li class="js-option option " rel="other" >
+                                                                        Other
+                                                    
+                                          
+            
+        <input type="hidden" name="category" class="js-category js-form-data" id="category"/>
+  
+    
+  <fieldset>
+    <label for="report_text">Details
+    <span class="corner-wrapper">
+      <textarea name="text" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_text" maxlength="2500">
+      <span class="corner corner-top-left">
+      <span class="corner corner-top-right">
+      <span class="corner corner-bottom-left">
+      <span class="corner corner-bottom-right">
+    
+  
+  <fieldset class="clearfix last">
+    <span class="submit-wrapper">
+      <span class="submit-hover trans-02s trans-opacity">
+      <input type="submit" value="Submit" class="trans-02s trans-color trans-background" />
+    
+  
+
+    <div class="separator">
+  
+
+
+    
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  
+</script>
+
+
+      <footer class="c-platform-footer c-platform-footer--rsi">
+  <div class="l-platform-footer-container">
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--sc">
+        <li class="c-platform-footer-brand__item">
+
+          <span class="c-brand c-brand--sc js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--sc">
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Join the<br>Universe
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--sc">
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen" class="c-platform-footer-link">About the Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/howto/1" class="c-platform-footer-link">How to Play</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/universe" class="c-platform-footer-link">The Universe</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/media" class="c-platform-footer-link">Media</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/fly-now" class="c-platform-footer-link js-google-analytics-event-tracker" data-event-category="FlyNow" data-event-label="footerClick">
+                Fly Now
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__sc">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">
+              Social Links
+            </span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/RobertsSpaceIndustries/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/RobertsSpaceInd">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/robertsspaceind">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.youtube.com/channel/UCTeLqJq1mXUX5WWoNXLmOIA">
+                <span class="c-iconed__icon c-iconed__icon--youtube"></span>
+                Youtube
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.twitch.tv/starcitizen">
+                <span class="c-iconed__icon c-iconed__icon--twitch"></span>
+                Twitch
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--s42">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--s42 js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--s42">
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Start the<br>Adventure
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--s42">
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42" class="c-platform-footer-link">The Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#enlist" class="c-platform-footer-link">Enlist Today</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#roadmap" class="c-platform-footer-link">Status</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/pledge/Packages/Squadron-42-Standalone-Pledge" class="c-platform-footer-link">Pledge</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__s42">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">Social Links</span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/Squad42/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/squadron_42">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/squadron42">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column is-active">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--rsi">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--rsi js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--rsi">
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi--fullcolor"></span>
+            </span>
+            <span class="c-brand__label">
+              Follow the Development
+            </span>
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--rsi">
+            <li class="c-platform-footer-list__item">
+              <a href="/" class="c-platform-footer-link">Home</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/comm-link" class="c-platform-footer-link">Transmissions</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/community" class="c-platform-footer-link">Community</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/roadmap" class="c-platform-footer-link">Development</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--platform">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Platform
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--platform">
+                          <li class="c-platform-footer-list__item">
+                <a href="/pledge" class="c-platform-footer-link ">Pledge Store</a>
+              </li>
+            
+            <li class="c-platform-footer-list__item">
+              <a href="/download" class="c-platform-footer-link ">Download</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/spectrum/community/SC" class="c-platform-footer-link">Spectrum</a>
+            </li>
+
+                          <li class="c-platform-footer-list__item">
+                <a href="/citizencon" class="c-platform-footer-link">Citizencon</a>
+              </li>
+                      </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--utility">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Utilities
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--utility">
+            <li class="c-platform-footer-list__item">
+              <a href="//support.robertsspaceindustries.com" class="c-platform-footer-link">Help</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/press" class="c-platform-footer-link">Press</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="https://cloudimperiumgames.com/join-us" class="c-platform-footer-link">Careers</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/tos" class="c-platform-footer-link">Terms of Services</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/privacy" class="c-platform-footer-link">Privacy Policy</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/eula" class="c-platform-footer-link">EULA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/dmca" class="c-platform-footer-link">DMCA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/acknowledgements" class="c-platform-footer-link">Acknowledgements</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  
+</footer>
+
+<div class="c-platform-copyright c-platform-copyright--rsi">
+  <div class="l-platform-copyright-container">
+    <a href="https://cloudimperiumgames.com" class="c-platform-copyright__logo h-svg__logo-cig js-svg-inliner"></a>
+    <p class="c-platform-copyright__body">© 2012-2019 Cloud Imperium Rights LLC and Cloud Imperium Rights Ltd</p>
+  </div>
+</div>
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHNFZPT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<script type="text/javascript">
+  window.RSI.Footer = new RSI.Footer();
+</script>
+
+    
+
+    <script type="text/javascript" src="/cache/en/rsi-platformbar-js.js?v=3.2.9.0"></script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"58013cabd7","applicationID":"375102748","transactionName":"Y1JaYktUWxZUV0QKV1oYe0NKQVoIGmZjKmtdQ111VltBF1pYXAZKDg1ZQlZYcwxbUA==","queueTime":0,"applicationTime":74,"atts":"TxVNFANOSEkXVRJZQ0lK","errorBeacon":"bam.nr-data.net","agent":""}</script></body>

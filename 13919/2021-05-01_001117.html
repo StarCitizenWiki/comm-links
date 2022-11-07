@@ -1,0 +1,2521 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    
+        <!-- Anti-flicker snippet (recommended)  -->
+        <style>.async-hide { opacity: 0 !important} </style>
+        <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+        h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+        (a[n]=a[n]||[]).hide=h;if (d) a[n].push({'userId' : d});setTimeout(function(){i();h.end=null},c);h.timeout=c;
+        })(window,document.documentElement,'async-hide','dataLayer',1500,
+        {'GTM-KHNFZPT':true},undefined,'');</script>
+            <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"58013cabd7",applicationID:"375102748"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(7),c=e(8),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(9);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e){return!(!e||!e.protocol||"file:"===e.protocol)}t.exports=r},{}],4:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(6),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],5:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],6:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],7:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],8:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],9:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?u(e,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){e&&a&&e(n,r,i);for(var c=t(i),f=v(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[h[n]];return p&&p.push([b,n,r,c]),c}}function o(e,t){y[e]=v(e).concat(t)}function m(e,t){var n=y[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return y[e]||[]}function g(e){return p[e]=p[e]||i(n)}function w(e,t){s(e,function(e,n){t=t||"feature",h[n]=t,t in d||(d[t]=[])})}var y={},h={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:w,abort:c,aborted:!1};return b}function o(e){return u(e,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=e("gos"),s=e(7),d={},p={},l=t.exports=i();t.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=x.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+x.offset],null,"api"),c("timing",["load",n]);var r=l.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+x.offset],null,"api")}var a=e(2),c=e("handle"),f=e(7),u=e("ee"),s=e(5),d=e(3),p=window,l=p.document,m="addEventListener",v="attachEvent",g=p.XMLHttpRequest,w=g&&g.prototype;if(d(p.location)){NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:g,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1208.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:b,userAgent:s};e(1),e(4),l[m]?(l[m]("DOMContentLoaded",o,!1),p[m]("load",r,!1)):(l[v]("onreadystatechange",i),p[v]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0}},{}],"wrap-function":[function(e,t,n){function r(e,t){function n(t,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],e)}c(n+"start",[o,a,f],s,u);try{return p=t.apply(a,o)}catch(m){throw c(n+"err",[o,a,m],s,u),m}finally{c(n+"end",[o,a,p],s,u)}}return a(t)?t:(n||(n=""),nrWrapper[p]=t,o(t,nrWrapper,e),nrWrapper)}function r(e,t,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<t.length;u++)f=t[u],c=e[f],a(c)||(e[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!m||t){var c=m;m=!0;try{e.emit(n,r,o,t,a)}catch(f){i([f,n,r,o],e)}m=c}}return e||(e=s),n.inPlace=r,n.flag=p,n}function i(e,t){t||(t=s);try{t.emit("internal-error",e)}catch(n){}}function o(e,t,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(e);return r.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(o){i([o],n)}for(var a in e)l.call(e,a)&&(t[a]=e[a]);return t}function a(e){return!(e&&e instanceof Function&&e.apply&&!e[p])}function c(e,t){var n=t(e);return n[p]=e,o(e,n,s),n}function f(e,t,n){var r=e[t];e[t]=c(r,n)}function u(){for(var e=arguments.length,t=new Array(e),n=0;n<e;++n)t[n]=arguments[n];return t}var s=e("ee"),d=e(8),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;t.exports=r,t.exports.wrapFunction=c,t.exports.wrapInPlace=f,t.exports.argsToArray=u},{}]},{},["loader"]);</script>
+      <meta name="viewport" content="width=device-width">
+      <meta name="description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans.">
+      <meta property="og:site_name" content="
+Arena Commander Build Update! - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+" />
+      <meta property="og:image" content="https://robertsspaceindustries.com/media/a0o1lglus208kr/channel_item_full/ArenaCommanderLogoSkinned.jpg" />
+      <meta property="og:description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans." />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://robertsspaceindustries.com/comm-link/SCW/13919-IMPORT" />
+      <meta property="og:locale" content="us_EN" />
+
+            
+
+            <link href="/rsi/static/css/cross-brand-less.css?v=6.0.1" media="all" rel="stylesheet">
+      <link href='/rsi/static/packages/platformbar/rsi.platformbar.build.05b39.css' media="all" rel="stylesheet">
+      <link href='/rsi/static/packages/enlist/rsi.enlist.build.0ff8b.css' media="all" rel="stylesheet"/>
+            <script type="text/javascript" src="/cache/en/rsi-external-js.js?v=6.0.1"></script>
+      <script type="text/javascript" src="/cache/en/rsi-templates-js.js?v=6.0.1"></script>
+
+            <link rel="stylesheet" href="https://use.typekit.net/dhw3beb.css">
+
+              <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="a687ee30-df65-45a0-9d22-90de6c1bb964" type="text/javascript"></script>
+      
+      
+    <!-- Google Tag Manager -->
+    <script data-cookieconsent="ignore">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHNFZPT');</script>
+    <!-- End Google Tag Manager -->
+
+
+      <title>
+Arena Commander Build Update! - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+</title>
+
+            <script type="text/javascript" src='/rsi/static/packages/core/rsi.core.build.804b0.js'></script>
+      <script type="text/javascript" src='/rsi/static/packages/account/rsi.account.build.609b5.js'></script>
+      <script type="text/javascript" src='/rsi/static/packages/store/rsi.store.build.cd9a7.js'></script>
+
+      <script>
+        $(document).ready(function() {
+          window.Common = new RSI.Common({});
+          window.Main = new RSI.Main({
+            'is_mobile': 0,
+            'probation_cookie' : '',
+            'require_captcha': 0
+          });
+          window.Mark = new Turbulent.Mark({ 'name' : 'Rsi-XSRF', 'token' : '', 'ttl' : 1800 });
+
+          window.WscOverlay = new RSI.WscOverlay({});
+
+          var destinations = [];
+
+window.Main.destinations = destinations;          
+  window.PageStore = new RSI.Store({
+    'store_prefix' : '/pledge',
+    'bootstrapConfig': {"injection":{"attachmentClass":"RSIStoreApp","files":{"js":["bootstrap.js"],"css":["index.css"]}},"platform":{"api":"\/api"},"store":{"path":"\/pledge-store","manifest":"manifest.json"},"customizer":{"api":"\/pledge-store\/api\/customizer","ga_tracking_code":"UA-39586040-5"}}
+  });
+
+          
+          
+  var productsTracking = [];
+  var eCommerceData = {
+    'trackingAction': "",
+    'currency': "",
+    'trackingStep': "",
+    'trackingProducts': productsTracking
+  };
+  window.eCommerceTracking = new RSI.Store.eCommerceTracking(
+    eCommerceData
+  );
+
+        });
+
+        $(window).load(function() {
+          
+        });
+
+      </script>
+
+
+      <script>
+        window.recaptcha_is_loaded = false;
+        window.on_recaptcha_load_callback = function() {
+          window.recaptcha_is_loaded = true;
+        };
+      </script>
+
+      <script src="https://www.google.com/recaptcha/api.js?onload=on_recaptcha_load_callback&render=6LerBOgUAAAAAKPg6vsAFPTN66Woz-jBClxdQU-o" async defer></script>
+
+      <script type="text/javascript">
+
+        
+
+                                </script>
+
+      
+
+<style type="text/css">
+  /* CSS from ATOM */
+  
+</style>
+
+<script type="text/javascript">
+  /* JS from ATOM */
+  
+</script>
+
+
+    
+
+  <style>
+    
+      background:url(/rsi/static/images/noisebg.gif) repeat center top #000b11;
+    
+  </style>
+
+    <link href="//fonts.googleapis.com/css?family=Electrolize|Orbitron:400,500,700|Quantico|Share+Tech+Mono&display=swap" rel="stylesheet" type="text/css">
+
+    <link href="/cache/en/rsi-css.css?v=6.0.1" media="all" rel="stylesheet">
+
+
+  </head>
+  <body id="" class="" >
+
+    
+      <div class="l-notification-bar l-notification-bar--rsi js-notification-bar" id="notification-bar-root">
+  <c-notification-bar v-bind:latestagreementsslugs=[] v-bind:loggedin="0" v-bind:onhomepage="0"></c-notification-bar>
+  <div class="l-notification-container l-notification-bar__boxes js-notification-bar-boxes">
+    <div class="l-notification__wrapper">
+      
+      <c-unsupported-browser v-cloak>
+        <div class="l-notification-bar__box js-notification-bar-box">
+          <div class="c-notification  c-notification--browser-support js-bottom-notif-msg-browser-support">
+  <div class="c-notification__inner">
+
+    <div class="c-notification__content">
+      <div class="c-notification__title">
+        IE11 is no longer supported
+      </div>
+      <div class="c-notification__message">
+        We do not support Internet Explorer 11 and below. Please use a different web browser.
+      </div>
+    </div>
+
+    <div class="c-notification__actions">
+      
+      
+          </div>
+
+  </div>
+</div>
+        </div>
+      </c-unsupported-browser>
+    </div>
+  </div>
+
+</div>
+    
+
+    <div id="bodyWrapper">
+      <header class='c-header-wrapper c-header-wrapper--rsi js-header-wrapper '  id='cross-brand-header'>
+  <div id="platform-bar" class="c-header__platform-bar"></div>
+
+      <div class='c-right-sidebar c-right-sidebar--signin' id="account-sidebar">
+      <div class="js-toggle-account__backdrop invisible"></div>
+
+      <a href="#" class='c-right-sidebar__back js-toggle-account'>Back
+        <span></span>
+        <span></span>
+      </a>
+
+      <div id="enlist-root" data-theme="rsi" data-enlisting="" data-ptu=""></div>
+      <script type="text/javascript" src='/rsi/static/packages/enlist/rsi.enlist.build.0ff8b.js'></script>
+    </div>
+  
+  <div class="c-header-wrapper__backdrop js-toggle-games"></div>
+</header>
+
+<div id="platform-backdrop"></div>
+
+<script type='text/javascript'>
+  RSI.Platformbar = {
+    theme: "rsi",
+    loggedState: "logged-out",
+    tabs: [
+      {
+        type: 'brands',
+        name: "Games",
+        subItems: [
+          {
+            name: "sc",
+            href: "/star-citizen",
+            description: "Join the Universe"
+          },
+          {
+            name: "s42",
+            href: "/squadron42",
+            description: "Start the adventure"
+          },
+          {
+            name: "rsi",
+            href: "/",
+            description: "Follow the Development"
+          }
+        ]
+      },
+      {
+        type: 'apps',
+        name: "Apps",
+        subItems: [
+          [
+            {
+              name: "Spectrum",
+              href: "/spectrum/community/SC",
+              description: "Your communication platform"
+            },
+            {
+              name: "Launcher",
+              href: "/download",
+              description: "Download Star Citizen",
+                          }
+          ],
+          [
+            {
+              name: "Roadmap",
+              href: "/roadmap",
+              description: "Keep track of the development"
+            },
+            {
+              name: "Telemetry",
+              href: "/telemetry",
+              description: "Keep track of the player’s performance"
+            },
+            {
+              name: "Issue Council",
+                          href: "https://issue-council.robertsspaceindustries.com",
+                          description: "Help us make the game better",
+                          }
+          ],
+          [
+            {
+              name: "Starmap",
+              href: "/starmap",
+              description: "Your map to the universe"
+            },
+            {
+              name: "Galactapedia",
+              href: "/galactapedia",
+              description: "Your guide to the universe"
+            }
+          ]
+        ]
+      },
+          ],
+    navigation: {
+      store: {
+        name: "Pledge Store",
+        href: "/pledge",
+        isHidden: false      },
+      hub: {
+        name: "Learn How to Play",
+        href: "/playstarcitizen",
+        show: false      },
+      support: {
+        name: "Support",
+        href: "//support.robertsspaceindustries.com"
+      },
+      account: {
+        name: "Account",
+        href: "/account/settings",
+        isHidden: false      }
+    }
+  };
+
+  $(document).ready(function() {
+    window.header = new RSI.Header({});
+  });
+</script>
+
+
+      
+  
+<header class='c-brand-menu c-brand-menu----rsi' id='brand-menu'>
+  <span class="c-brand-menu__section">
+    
+      Roberts Space Industries
+    
+  </span>
+  <div class="c-brand-menu__backdrop"></div>
+  <nav class="c-brand-menu__container">
+    <div class="c-brand-menu__logo">
+      <a href="/"><span class="h-svg h-svg__logo-rsi--fullcolor js-svg-inliner"></span> </a>
+    </div>
+    <div class="c-brand-menu__items-container">
+      <ul class="c-brand-menu__items">
+                <li class="c-brand-menu__item  ">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/comm-link">
+            <span class="c-brand-menu__item-text">Comm-Link</span>
+                                  </a>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/community">
+            <span class="c-brand-menu__item-text">Community</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Community</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/spectrum" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Spectrum
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/orgs" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Organizations
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/leaderboards/top" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Leaderboards
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community_events" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Event
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Hub
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/fankit" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Fankit
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/development">
+            <span class="c-brand-menu__item-text">Development</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Development</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/roadmap" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Roadmap
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/devtracker" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Dev Tracker
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/telemetry" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Telemetry
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="https://issue-council.robertsspaceindustries.com" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Issue Council
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/patch-notes" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Patch Notes
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/ship-matrix" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Ship Matrix
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/funding-goals" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Funding
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+              </ul>
+    </div>
+
+    <div class="c-brand-menu__cta">
+      
+        <a href="/star-citizen/play-now" class="c-brand-cta-btn js-google-analytics-event-tracker"
+          data-event-category="FlyNow" data-event-label="navMenuClick">
+          <div></div>
+            <span class="c-brand-cta-btn__text">
+              <strong>Play now</strong>
+            </span>
+          <div></div>
+        </a>
+      
+    </div>
+  </nav>
+</header>
+
+
+
+      
+
+  
+  <div class="page-wrapper">
+    
+  <div id="post-background" ></div>
+
+
+    <div id="contentbody" class="" style="">
+      
+
+<div id="post">
+  <div class="title-section">
+    
+      <div class="wrapper title-bar-container">
+        <div class="glow left"></div>
+        <div class="title-bar">
+          <div class="title with-subtitle">
+            <h1>Transmission</h1>
+            <h2>General</h2>
+          </div>
+          <div class="details">
+            <div>
+              <h3>ID:</h3>
+              <p>13919</p>
+              <div class="cboth"></div>
+            </div>
+            <div>
+              <h3>Comments:</h3>
+              <p class="comment-count">425</p>
+              <div class="cboth"></div>
+            </div>
+            <div>
+              <h3>Date:</h3>
+              <p>June 3rd 2014</p>
+              <div class="cboth"></div>
+            </div>
+            <div></div>
+          </div>
+          <div class="cboth"></div>
+        </div>
+        <div class="glow right"></div>
+      </div>
+    
+  <div class="two-line-separator"></div>
+  <div class="small-title-container">
+    <div class="title">Arena Commander Build Update!</div>
+    <div class="subtitle"></div>
+  </div>
+
+  </div>
+
+  
+<div class="wrapper">
+  <div class="content-block2">
+    <div class="atom-special-block">
+      <div id="slideshow" class="atom-slideshow slideshow">
+        <div class="mask">
+          <a class="js-prev prev control"></a>
+          <a class="js-next next control"></a>
+          <div class="carousel">
+                        <div data-source_url="/media/h475dn3kexvner/source/UnhappyRibbons.jpg" data-full_res="/media/h475dn3kexvner/source/UnhappyRibbons.jpg" data-low_res="/media/h475dn3kexvner/slideshow_pager/UnhappyRibbons.jpg" data-slide="1" rel="vault-items">
+              <div class="media js-media-slideshow-1">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/h475dn3kexvner/slideshow/UnhappyRibbons.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/h475dn3kexvner/slideshow_pager/UnhappyRibbons.jpg" alt="Our missiles used to bounce a lot">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/h475dn3kexvner/source/UnhappyRibbons.jpg" class="download" target="_blank"></a>
+                <div class="page-number">1 / 58</div>
+                <div class="caption">Our missiles used to bounce a lot</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/n2krdoerj71cjr/source/Stretch.png" data-full_res="/media/n2krdoerj71cjr/source/Stretch.png" data-low_res="/media/n2krdoerj71cjr/slideshow_pager/Stretch.png" data-slide="2" rel="vault-items">
+              <div class="media js-media-slideshow-2">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/n2krdoerj71cjr/slideshow/Stretch.png" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/n2krdoerj71cjr/slideshow_pager/Stretch.png" alt="Animation is difficult">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/n2krdoerj71cjr/source/Stretch.png" class="download" target="_blank"></a>
+                <div class="page-number">2 / 58</div>
+                <div class="caption">Animation is difficult</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/b3ky5nar2up5ur/source/SphericalProjectionGoneWild.png" data-full_res="/media/b3ky5nar2up5ur/source/SphericalProjectionGoneWild.png" data-low_res="/media/b3ky5nar2up5ur/slideshow_pager/SphericalProjectionGoneWild.png" data-slide="3" rel="vault-items">
+              <div class="media js-media-slideshow-3">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/b3ky5nar2up5ur/slideshow/SphericalProjectionGoneWild.png" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/b3ky5nar2up5ur/slideshow_pager/SphericalProjectionGoneWild.png" alt="The IT guy was out, I still got this">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/b3ky5nar2up5ur/source/SphericalProjectionGoneWild.png" class="download" target="_blank"></a>
+                <div class="page-number">3 / 58</div>
+                <div class="caption">The IT guy was out, I still got this</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/o2s4hl18er41rr/source/DeadHornet.PNG" data-full_res="/media/o2s4hl18er41rr/source/DeadHornet.PNG" data-low_res="/media/o2s4hl18er41rr/slideshow_pager/DeadHornet.PNG" data-slide="4" rel="vault-items">
+              <div class="media js-media-slideshow-4">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/o2s4hl18er41rr/slideshow/DeadHornet.PNG" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/o2s4hl18er41rr/slideshow_pager/DeadHornet.PNG" alt="Dead Hornet stuck in an animation">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/o2s4hl18er41rr/source/DeadHornet.PNG" class="download" target="_blank"></a>
+                <div class="page-number">4 / 58</div>
+                <div class="caption">Dead Hornet stuck in an animation</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/asazrnug16cwkr/source/Frankmiller.png" data-full_res="/media/asazrnug16cwkr/source/Frankmiller.png" data-low_res="/media/asazrnug16cwkr/slideshow_pager/Frankmiller.png" data-slide="5" rel="vault-items">
+              <div class="media js-media-slideshow-5">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/asazrnug16cwkr/slideshow/Frankmiller.png" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/asazrnug16cwkr/slideshow_pager/Frankmiller.png" alt="The Frank Miller shader bug">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/asazrnug16cwkr/source/Frankmiller.png" class="download" target="_blank"></a>
+                <div class="page-number">5 / 58</div>
+                <div class="caption">The Frank Miller shader bug</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/jprgykjrtkfdar/source/HDRDebug.jpg" data-full_res="/media/jprgykjrtkfdar/source/HDRDebug.jpg" data-low_res="/media/jprgykjrtkfdar/slideshow_pager/HDRDebug.jpg" data-slide="6" rel="vault-items">
+              <div class="media js-media-slideshow-6">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/jprgykjrtkfdar/slideshow/HDRDebug.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/jprgykjrtkfdar/slideshow_pager/HDRDebug.jpg" alt="This is what happens when HCR has negative values">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/jprgykjrtkfdar/source/HDRDebug.jpg" class="download" target="_blank"></a>
+                <div class="page-number">6 / 58</div>
+                <div class="caption">This is what happens when HCR has negative values</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/ooj0qrvdbb3wdr/source/Hornet-Ramming.jpg" data-full_res="/media/ooj0qrvdbb3wdr/source/Hornet-Ramming.jpg" data-low_res="/media/ooj0qrvdbb3wdr/slideshow_pager/Hornet-Ramming.jpg" data-slide="7" rel="vault-items">
+              <div class="media js-media-slideshow-7">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/ooj0qrvdbb3wdr/slideshow/Hornet-Ramming.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/ooj0qrvdbb3wdr/slideshow_pager/Hornet-Ramming.jpg" alt="We used to able to control ships without a cockpit ">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/ooj0qrvdbb3wdr/source/Hornet-Ramming.jpg" class="download" target="_blank"></a>
+                <div class="page-number">7 / 58</div>
+                <div class="caption">We used to able to control ships without a cockpit </div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/doux5fmph16n1r/source/Bodies.png" data-full_res="/media/doux5fmph16n1r/source/Bodies.png" data-low_res="/media/doux5fmph16n1r/slideshow_pager/Bodies.png" data-slide="8" rel="vault-items">
+              <div class="media js-media-slideshow-8">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/doux5fmph16n1r/slideshow/Bodies.png" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/doux5fmph16n1r/slideshow_pager/Bodies.png" alt="Ragdoll test case">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/doux5fmph16n1r/source/Bodies.png" class="download" target="_blank"></a>
+                <div class="page-number">8 / 58</div>
+                <div class="caption">Ragdoll test case</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/ixrfrriumtzair/source/Bob-Yoga.jpg" data-full_res="/media/ixrfrriumtzair/source/Bob-Yoga.jpg" data-low_res="/media/ixrfrriumtzair/slideshow_pager/Bob-Yoga.jpg" data-slide="9" rel="vault-items">
+              <div class="media js-media-slideshow-9">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/ixrfrriumtzair/slideshow/Bob-Yoga.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/ixrfrriumtzair/slideshow_pager/Bob-Yoga.jpg" alt="He lost his face to make matters worse">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/ixrfrriumtzair/source/Bob-Yoga.jpg" class="download" target="_blank"></a>
+                <div class="page-number">9 / 58</div>
+                <div class="caption">He lost his face to make matters worse</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/oeddyjmgydhvmr/source/300i_Galaxies_2.png" data-full_res="/media/oeddyjmgydhvmr/source/300i_Galaxies_2.png" data-low_res="/media/oeddyjmgydhvmr/slideshow_pager/300i_Galaxies_2.png" data-slide="10" rel="vault-items">
+              <div class="media js-media-slideshow-10">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/oeddyjmgydhvmr/slideshow/300i_Galaxies_2.png" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/oeddyjmgydhvmr/slideshow_pager/300i_Galaxies_2.png" alt="PBR, Specular, and Light Probe issue causes the 300i galaxy">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/oeddyjmgydhvmr/source/300i_Galaxies_2.png" class="download" target="_blank"></a>
+                <div class="page-number">10 / 58</div>
+                <div class="caption">PBR, Specular, and Light Probe issue causes the 300i galaxy</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/7apmksogv9fkbr/source/300i_Galaxies.png" data-full_res="/media/7apmksogv9fkbr/source/300i_Galaxies.png" data-low_res="/media/7apmksogv9fkbr/slideshow_pager/300i_Galaxies.png" data-slide="11" rel="vault-items">
+              <div class="media js-media-slideshow-11">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/7apmksogv9fkbr/slideshow/300i_Galaxies.png" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/7apmksogv9fkbr/slideshow_pager/300i_Galaxies.png" alt="Look at the stars see how they shine for you">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/7apmksogv9fkbr/source/300i_Galaxies.png" class="download" target="_blank"></a>
+                <div class="page-number">11 / 58</div>
+                <div class="caption">Look at the stars see how they shine for you</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/vdgbazjmf7o0vr/source/Drunkbuggy.PNG" data-full_res="/media/vdgbazjmf7o0vr/source/Drunkbuggy.PNG" data-low_res="/media/vdgbazjmf7o0vr/slideshow_pager/Drunkbuggy.PNG" data-slide="12" rel="vault-items">
+              <div class="media js-media-slideshow-12">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/vdgbazjmf7o0vr/slideshow/Drunkbuggy.PNG" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/vdgbazjmf7o0vr/slideshow_pager/Drunkbuggy.PNG" alt="The haunted buggy">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/vdgbazjmf7o0vr/source/Drunkbuggy.PNG" class="download" target="_blank"></a>
+                <div class="page-number">12 / 58</div>
+                <div class="caption">The haunted buggy</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/jjd77zjp6qs13r/source/WhenYouLookIntoTheCockpit.PNG" data-full_res="/media/jjd77zjp6qs13r/source/WhenYouLookIntoTheCockpit.PNG" data-low_res="/media/jjd77zjp6qs13r/slideshow_pager/WhenYouLookIntoTheCockpit.PNG" data-slide="13" rel="vault-items">
+              <div class="media js-media-slideshow-13">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/jjd77zjp6qs13r/slideshow/WhenYouLookIntoTheCockpit.PNG" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/jjd77zjp6qs13r/slideshow_pager/WhenYouLookIntoTheCockpit.PNG" alt="The all seeing eye">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/jjd77zjp6qs13r/source/WhenYouLookIntoTheCockpit.PNG" class="download" target="_blank"></a>
+                <div class="page-number">13 / 58</div>
+                <div class="caption">The all seeing eye</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/8tv9gvg0ba04pr/source/Stretchy.jpg" data-full_res="/media/8tv9gvg0ba04pr/source/Stretchy.jpg" data-low_res="/media/8tv9gvg0ba04pr/slideshow_pager/Stretchy.jpg" data-slide="14" rel="vault-items">
+              <div class="media js-media-slideshow-14">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/8tv9gvg0ba04pr/slideshow/Stretchy.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/8tv9gvg0ba04pr/slideshow_pager/Stretchy.jpg" alt="More Space Yoga">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/8tv9gvg0ba04pr/source/Stretchy.jpg" class="download" target="_blank"></a>
+                <div class="page-number">14 / 58</div>
+                <div class="caption">More Space Yoga</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/tqvp1n8dpy41ar/source/Stretch_neck_strong.jpg" data-full_res="/media/tqvp1n8dpy41ar/source/Stretch_neck_strong.jpg" data-low_res="/media/tqvp1n8dpy41ar/slideshow_pager/Stretch_neck_strong.jpg" data-slide="15" rel="vault-items">
+              <div class="media js-media-slideshow-15">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/tqvp1n8dpy41ar/slideshow/Stretch_neck_strong.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/tqvp1n8dpy41ar/slideshow_pager/Stretch_neck_strong.jpg" alt="We call him Giraffe Man">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/tqvp1n8dpy41ar/source/Stretch_neck_strong.jpg" class="download" target="_blank"></a>
+                <div class="page-number">15 / 58</div>
+                <div class="caption">We call him Giraffe Man</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/2s9gr9nrlg8j2r/source/Mannequin_Hornet_-_Scythe.png" data-full_res="/media/2s9gr9nrlg8j2r/source/Mannequin_Hornet_-_Scythe.png" data-low_res="/media/2s9gr9nrlg8j2r/slideshow_pager/Mannequin_Hornet_-_Scythe.png" data-slide="16" rel="vault-items">
+              <div class="media js-media-slideshow-16">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/2s9gr9nrlg8j2r/slideshow/Mannequin_Hornet_-_Scythe.png" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/2s9gr9nrlg8j2r/slideshow_pager/Mannequin_Hornet_-_Scythe.png" alt="The attachments used to scale to infinity ">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/2s9gr9nrlg8j2r/source/Mannequin_Hornet_-_Scythe.png" class="download" target="_blank"></a>
+                <div class="page-number">16 / 58</div>
+                <div class="caption">The attachments used to scale to infinity </div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/hlrqezcwrjlijr/source/Oh_hi.png" data-full_res="/media/hlrqezcwrjlijr/source/Oh_hi.png" data-low_res="/media/hlrqezcwrjlijr/slideshow_pager/Oh_hi.png" data-slide="17" rel="vault-items">
+              <div class="media js-media-slideshow-17">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/hlrqezcwrjlijr/slideshow/Oh_hi.png" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/hlrqezcwrjlijr/slideshow_pager/Oh_hi.png" alt="I don&#039;t even....">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/hlrqezcwrjlijr/source/Oh_hi.png" class="download" target="_blank"></a>
+                <div class="page-number">17 / 58</div>
+                <div class="caption">I don't even....</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/qpes1a5oxxbzar/source/OhFuckEye2.PNG" data-full_res="/media/qpes1a5oxxbzar/source/OhFuckEye2.PNG" data-low_res="/media/qpes1a5oxxbzar/slideshow_pager/OhFuckEye2.PNG" data-slide="18" rel="vault-items">
+              <div class="media js-media-slideshow-18">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/qpes1a5oxxbzar/slideshow/OhFuckEye2.PNG" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/qpes1a5oxxbzar/slideshow_pager/OhFuckEye2.PNG" alt="As you can tell we made sure to get the eyes right on our character models">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/qpes1a5oxxbzar/source/OhFuckEye2.PNG" class="download" target="_blank"></a>
+                <div class="page-number">18 / 58</div>
+                <div class="caption">As you can tell we made sure to get the eyes right on our character models</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/ge82pt8tlebk3r/source/ScreenShot0000.jpg" data-full_res="/media/ge82pt8tlebk3r/source/ScreenShot0000.jpg" data-low_res="/media/ge82pt8tlebk3r/slideshow_pager/ScreenShot0000.jpg" data-slide="19" rel="vault-items">
+              <div class="media js-media-slideshow-19">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/ge82pt8tlebk3r/slideshow/ScreenShot0000.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/ge82pt8tlebk3r/slideshow_pager/ScreenShot0000.jpg" alt="Helmet and Face textures didn&#039;t always agree">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/ge82pt8tlebk3r/source/ScreenShot0000.jpg" class="download" target="_blank"></a>
+                <div class="page-number">19 / 58</div>
+                <div class="caption">Helmet and Face textures didn't always agree</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/r9aimytv83l8yr/source/Ma_Cargos.JPG" data-full_res="/media/r9aimytv83l8yr/source/Ma_Cargos.JPG" data-low_res="/media/r9aimytv83l8yr/slideshow_pager/Ma_Cargos.JPG" data-slide="20" rel="vault-items">
+              <div class="media js-media-slideshow-20">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/r9aimytv83l8yr/slideshow/Ma_Cargos.JPG" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/r9aimytv83l8yr/slideshow_pager/Ma_Cargos.JPG" alt="Again with the eyes">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/r9aimytv83l8yr/source/Ma_Cargos.JPG" class="download" target="_blank"></a>
+                <div class="page-number">20 / 58</div>
+                <div class="caption">Again with the eyes</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/3suvo7qna3q5vr/source/JebOnTheTerraformer.PNG" data-full_res="/media/3suvo7qna3q5vr/source/JebOnTheTerraformer.PNG" data-low_res="/media/3suvo7qna3q5vr/slideshow_pager/JebOnTheTerraformer.PNG" data-slide="21" rel="vault-items">
+              <div class="media js-media-slideshow-21">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/3suvo7qna3q5vr/slideshow/JebOnTheTerraformer.PNG" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/3suvo7qna3q5vr/slideshow_pager/JebOnTheTerraformer.PNG" alt="We finally got the lights to work">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/3suvo7qna3q5vr/source/JebOnTheTerraformer.PNG" class="download" target="_blank"></a>
+                <div class="page-number">21 / 58</div>
+                <div class="caption">We finally got the lights to work</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/sy3oud9uq816cr/source/IMG_29042014_174741.png" data-full_res="/media/sy3oud9uq816cr/source/IMG_29042014_174741.png" data-low_res="/media/sy3oud9uq816cr/slideshow_pager/IMG_29042014_174741.png" data-slide="22" rel="vault-items">
+              <div class="media js-media-slideshow-22">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/sy3oud9uq816cr/slideshow/IMG_29042014_174741.png" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/sy3oud9uq816cr/slideshow_pager/IMG_29042014_174741.png" alt="Keeping the body frame together was a constant struggle">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/sy3oud9uq816cr/source/IMG_29042014_174741.png" class="download" target="_blank"></a>
+                <div class="page-number">22 / 58</div>
+                <div class="caption">Keeping the body frame together was a constant struggle</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/7xh6cm8ethmunr/source/IMG_07042014_181346.png" data-full_res="/media/7xh6cm8ethmunr/source/IMG_07042014_181346.png" data-low_res="/media/7xh6cm8ethmunr/slideshow_pager/IMG_07042014_181346.png" data-slide="23" rel="vault-items">
+              <div class="media js-media-slideshow-23">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/7xh6cm8ethmunr/slideshow/IMG_07042014_181346.png" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/7xh6cm8ethmunr/slideshow_pager/IMG_07042014_181346.png" alt="We then decided not to include blind elves ">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/7xh6cm8ethmunr/source/IMG_07042014_181346.png" class="download" target="_blank"></a>
+                <div class="page-number">23 / 58</div>
+                <div class="caption">We then decided not to include blind elves </div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/zij458oyytsf1r/source/Hornet_300i.png" data-full_res="/media/zij458oyytsf1r/source/Hornet_300i.png" data-low_res="/media/zij458oyytsf1r/slideshow_pager/Hornet_300i.png" data-slide="24" rel="vault-items">
+              <div class="media js-media-slideshow-24">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/zij458oyytsf1r/slideshow/Hornet_300i.png" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/zij458oyytsf1r/slideshow_pager/Hornet_300i.png" alt="The Hornet 300i?">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/zij458oyytsf1r/source/Hornet_300i.png" class="download" target="_blank"></a>
+                <div class="page-number">24 / 58</div>
+                <div class="caption">The Hornet 300i?</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/99m3cwe2rfr2pr/source/Hobbit_hole.JPG" data-full_res="/media/99m3cwe2rfr2pr/source/Hobbit_hole.JPG" data-low_res="/media/99m3cwe2rfr2pr/slideshow_pager/Hobbit_hole.JPG" data-slide="25" rel="vault-items">
+              <div class="media js-media-slideshow-25">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/99m3cwe2rfr2pr/slideshow/Hobbit_hole.JPG" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/99m3cwe2rfr2pr/slideshow_pager/Hobbit_hole.JPG" alt="I have no idea what I&#039;m doing">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/99m3cwe2rfr2pr/source/Hobbit_hole.JPG" class="download" target="_blank"></a>
+                <div class="page-number">25 / 58</div>
+                <div class="caption">I have no idea what I'm doing</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/xgwro89xxe4szr/source/Eye_See_You.JPG" data-full_res="/media/xgwro89xxe4szr/source/Eye_See_You.JPG" data-low_res="/media/xgwro89xxe4szr/slideshow_pager/Eye_See_You.JPG" data-slide="26" rel="vault-items">
+              <div class="media js-media-slideshow-26">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/xgwro89xxe4szr/slideshow/Eye_See_You.JPG" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/xgwro89xxe4szr/slideshow_pager/Eye_See_You.JPG" alt="OK we spent a lot of time on the eyes">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/xgwro89xxe4szr/source/Eye_See_You.JPG" class="download" target="_blank"></a>
+                <div class="page-number">26 / 58</div>
+                <div class="caption">OK we spent a lot of time on the eyes</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/wjpvqkzcpw15yr/source/Crazyeyes.png" data-full_res="/media/wjpvqkzcpw15yr/source/Crazyeyes.png" data-low_res="/media/wjpvqkzcpw15yr/slideshow_pager/Crazyeyes.png" data-slide="27" rel="vault-items">
+              <div class="media js-media-slideshow-27">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/wjpvqkzcpw15yr/slideshow/Crazyeyes.png" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/wjpvqkzcpw15yr/slideshow_pager/Crazyeyes.png" alt="Eye see everything!">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/wjpvqkzcpw15yr/source/Crazyeyes.png" class="download" target="_blank"></a>
+                <div class="page-number">27 / 58</div>
+                <div class="caption">Eye see everything!</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/0y7ih79uqwijfr/source/BlackEyeMan.PNG" data-full_res="/media/0y7ih79uqwijfr/source/BlackEyeMan.PNG" data-low_res="/media/0y7ih79uqwijfr/slideshow_pager/BlackEyeMan.PNG" data-slide="28" rel="vault-items">
+              <div class="media js-media-slideshow-28">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/0y7ih79uqwijfr/slideshow/BlackEyeMan.PNG" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/0y7ih79uqwijfr/slideshow_pager/BlackEyeMan.PNG" alt="Colors didn&#039;t always load in correctly ">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/0y7ih79uqwijfr/source/BlackEyeMan.PNG" class="download" target="_blank"></a>
+                <div class="page-number">28 / 58</div>
+                <div class="caption">Colors didn't always load in correctly </div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/w13odqdfx3gygr/source/Chromed.jpg" data-full_res="/media/w13odqdfx3gygr/source/Chromed.jpg" data-low_res="/media/w13odqdfx3gygr/slideshow_pager/Chromed.jpg" data-slide="29" rel="vault-items">
+              <div class="media js-media-slideshow-29">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/w13odqdfx3gygr/slideshow/Chromed.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/w13odqdfx3gygr/slideshow_pager/Chromed.jpg" alt="Got that Chrome Buggy">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/w13odqdfx3gygr/source/Chromed.jpg" class="download" target="_blank"></a>
+                <div class="page-number">29 / 58</div>
+                <div class="caption">Got that Chrome Buggy</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/00u86dxjhh3v1r/source/AwkRock.PNG" data-full_res="/media/00u86dxjhh3v1r/source/AwkRock.PNG" data-low_res="/media/00u86dxjhh3v1r/slideshow_pager/AwkRock.PNG" data-slide="30" rel="vault-items">
+              <div class="media js-media-slideshow-30">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/00u86dxjhh3v1r/slideshow/AwkRock.PNG" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/00u86dxjhh3v1r/slideshow_pager/AwkRock.PNG" alt="The Earth looks so small from up here">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/00u86dxjhh3v1r/source/AwkRock.PNG" class="download" target="_blank"></a>
+                <div class="page-number">30 / 58</div>
+                <div class="caption">The Earth looks so small from up here</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/5v9niqkhp18z5r/source/CrazyeyesWallpaper.png" data-full_res="/media/5v9niqkhp18z5r/source/CrazyeyesWallpaper.png" data-low_res="/media/5v9niqkhp18z5r/slideshow_pager/CrazyeyesWallpaper.png" data-slide="31" rel="vault-items">
+              <div class="media js-media-slideshow-31">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/5v9niqkhp18z5r/slideshow/CrazyeyesWallpaper.png" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/5v9niqkhp18z5r/slideshow_pager/CrazyeyesWallpaper.png" alt="You wouldn&#039;t like me when I&#039;m angry">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/5v9niqkhp18z5r/source/CrazyeyesWallpaper.png" class="download" target="_blank"></a>
+                <div class="page-number">31 / 58</div>
+                <div class="caption">You wouldn't like me when I'm angry</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/2rcn3psah8281r/source/DadsGonnaBePissed.PNG" data-full_res="/media/2rcn3psah8281r/source/DadsGonnaBePissed.PNG" data-low_res="/media/2rcn3psah8281r/slideshow_pager/DadsGonnaBePissed.PNG" data-slide="32" rel="vault-items">
+              <div class="media js-media-slideshow-32">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/2rcn3psah8281r/slideshow/DadsGonnaBePissed.PNG" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/2rcn3psah8281r/slideshow_pager/DadsGonnaBePissed.PNG" alt="Dad is going to be soooo mad">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/2rcn3psah8281r/source/DadsGonnaBePissed.PNG" class="download" target="_blank"></a>
+                <div class="page-number">32 / 58</div>
+                <div class="caption">Dad is going to be soooo mad</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/ff6swxd3lfxy7r/source/Crazyeyes.png" data-full_res="/media/ff6swxd3lfxy7r/source/Crazyeyes.png" data-low_res="/media/ff6swxd3lfxy7r/slideshow_pager/Crazyeyes.png" data-slide="33" rel="vault-items">
+              <div class="media js-media-slideshow-33">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/ff6swxd3lfxy7r/slideshow/Crazyeyes.png" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/ff6swxd3lfxy7r/slideshow_pager/Crazyeyes.png" alt="Eye see you">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/ff6swxd3lfxy7r/source/Crazyeyes.png" class="download" target="_blank"></a>
+                <div class="page-number">33 / 58</div>
+                <div class="caption">Eye see you</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/d02614v4yj6s7r/source/Chatter.png" data-full_res="/media/d02614v4yj6s7r/source/Chatter.png" data-low_res="/media/d02614v4yj6s7r/slideshow_pager/Chatter.png" data-slide="34" rel="vault-items">
+              <div class="media js-media-slideshow-34">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/d02614v4yj6s7r/slideshow/Chatter.png" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/d02614v4yj6s7r/slideshow_pager/Chatter.png" alt="Space Chatterer ">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/d02614v4yj6s7r/source/Chatter.png" class="download" target="_blank"></a>
+                <div class="page-number">34 / 58</div>
+                <div class="caption">Space Chatterer </div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/zxp1nf1a4uzwvr/source/DarkJeb.PNG" data-full_res="/media/zxp1nf1a4uzwvr/source/DarkJeb.PNG" data-low_res="/media/zxp1nf1a4uzwvr/slideshow_pager/DarkJeb.PNG" data-slide="35" rel="vault-items">
+              <div class="media js-media-slideshow-35">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/zxp1nf1a4uzwvr/slideshow/DarkJeb.PNG" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/zxp1nf1a4uzwvr/slideshow_pager/DarkJeb.PNG" alt="Come to the dark side">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/zxp1nf1a4uzwvr/source/DarkJeb.PNG" class="download" target="_blank"></a>
+                <div class="page-number">35 / 58</div>
+                <div class="caption">Come to the dark side</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/esy5xlltpzjycr/source/DebrisShip3.PNG" data-full_res="/media/esy5xlltpzjycr/source/DebrisShip3.PNG" data-low_res="/media/esy5xlltpzjycr/slideshow_pager/DebrisShip3.PNG" data-slide="36" rel="vault-items">
+              <div class="media js-media-slideshow-36">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/esy5xlltpzjycr/slideshow/DebrisShip3.PNG" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/esy5xlltpzjycr/slideshow_pager/DebrisShip3.PNG" alt="The debris unionized. ">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/esy5xlltpzjycr/source/DebrisShip3.PNG" class="download" target="_blank"></a>
+                <div class="page-number">36 / 58</div>
+                <div class="caption">The debris unionized. </div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/m5a2z1maoxa6wr/source/Eyes.PNG" data-full_res="/media/m5a2z1maoxa6wr/source/Eyes.PNG" data-low_res="/media/m5a2z1maoxa6wr/slideshow_pager/Eyes.PNG" data-slide="37" rel="vault-items">
+              <div class="media js-media-slideshow-37">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/m5a2z1maoxa6wr/slideshow/Eyes.PNG" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/m5a2z1maoxa6wr/slideshow_pager/Eyes.PNG" alt="When you stare into the cockpit the cockpit stares also into you.">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/m5a2z1maoxa6wr/source/Eyes.PNG" class="download" target="_blank"></a>
+                <div class="page-number">37 / 58</div>
+                <div class="caption">When you stare into the cockpit the cockpit stares also into you.</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/2n7gxydvqvl2nr/source/Face.PNG" data-full_res="/media/2n7gxydvqvl2nr/source/Face.PNG" data-low_res="/media/2n7gxydvqvl2nr/slideshow_pager/Face.PNG" data-slide="38" rel="vault-items">
+              <div class="media js-media-slideshow-38">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/2n7gxydvqvl2nr/slideshow/Face.PNG" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/2n7gxydvqvl2nr/slideshow_pager/Face.PNG" alt="We don&#039;t really know what happened here.">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/2n7gxydvqvl2nr/source/Face.PNG" class="download" target="_blank"></a>
+                <div class="page-number">38 / 58</div>
+                <div class="caption">We don't really know what happened here.</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/gpcwd3hj7u22lr/source/Hornet_300i.png" data-full_res="/media/gpcwd3hj7u22lr/source/Hornet_300i.png" data-low_res="/media/gpcwd3hj7u22lr/slideshow_pager/Hornet_300i.png" data-slide="39" rel="vault-items">
+              <div class="media js-media-slideshow-39">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/gpcwd3hj7u22lr/slideshow/Hornet_300i.png" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/gpcwd3hj7u22lr/slideshow_pager/Hornet_300i.png" alt="The Hornet 300i?">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/gpcwd3hj7u22lr/source/Hornet_300i.png" class="download" target="_blank"></a>
+                <div class="page-number">39 / 58</div>
+                <div class="caption">The Hornet 300i?</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/qnsizf3m3bv1ur/source/HeadlessJeb.PNG" data-full_res="/media/qnsizf3m3bv1ur/source/HeadlessJeb.PNG" data-low_res="/media/qnsizf3m3bv1ur/slideshow_pager/HeadlessJeb.PNG" data-slide="40" rel="vault-items">
+              <div class="media js-media-slideshow-40">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/qnsizf3m3bv1ur/slideshow/HeadlessJeb.PNG" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/qnsizf3m3bv1ur/slideshow_pager/HeadlessJeb.PNG" alt="The headless Hornetman">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/qnsizf3m3bv1ur/source/HeadlessJeb.PNG" class="download" target="_blank"></a>
+                <div class="page-number">40 / 58</div>
+                <div class="caption">The headless Hornetman</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/oxnwxb5azgkxnr/source/Grin.jpg" data-full_res="/media/oxnwxb5azgkxnr/source/Grin.jpg" data-low_res="/media/oxnwxb5azgkxnr/slideshow_pager/Grin.jpg" data-slide="41" rel="vault-items">
+              <div class="media js-media-slideshow-41">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/oxnwxb5azgkxnr/slideshow/Grin.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/oxnwxb5azgkxnr/slideshow_pager/Grin.jpg" alt="SMILE!!!">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/oxnwxb5azgkxnr/source/Grin.jpg" class="download" target="_blank"></a>
+                <div class="page-number">41 / 58</div>
+                <div class="caption">SMILE!!!</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/vmvb7o6usken6r/source/Fish-Tank.png" data-full_res="/media/vmvb7o6usken6r/source/Fish-Tank.png" data-low_res="/media/vmvb7o6usken6r/slideshow_pager/Fish-Tank.png" data-slide="42" rel="vault-items">
+              <div class="media js-media-slideshow-42">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/vmvb7o6usken6r/slideshow/Fish-Tank.png" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/vmvb7o6usken6r/slideshow_pager/Fish-Tank.png" alt="Typical Error Message ">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/vmvb7o6usken6r/source/Fish-Tank.png" class="download" target="_blank"></a>
+                <div class="page-number">42 / 58</div>
+                <div class="caption">Typical Error Message </div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/4v7wy84gawkugr/source/Maw.PNG" data-full_res="/media/4v7wy84gawkugr/source/Maw.PNG" data-low_res="/media/4v7wy84gawkugr/slideshow_pager/Maw.PNG" data-slide="43" rel="vault-items">
+              <div class="media js-media-slideshow-43">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/4v7wy84gawkugr/slideshow/Maw.PNG" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/4v7wy84gawkugr/slideshow_pager/Maw.PNG" alt="That blue plane is his eye ball.">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/4v7wy84gawkugr/source/Maw.PNG" class="download" target="_blank"></a>
+                <div class="page-number">43 / 58</div>
+                <div class="caption">That blue plane is his eye ball.</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/q3nhry7zngy2jr/source/QuiteACrash.PNG" data-full_res="/media/q3nhry7zngy2jr/source/QuiteACrash.PNG" data-low_res="/media/q3nhry7zngy2jr/slideshow_pager/QuiteACrash.PNG" data-slide="44" rel="vault-items">
+              <div class="media js-media-slideshow-44">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/q3nhry7zngy2jr/slideshow/QuiteACrash.PNG" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/q3nhry7zngy2jr/slideshow_pager/QuiteACrash.PNG" alt="More Space Yoga">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/q3nhry7zngy2jr/source/QuiteACrash.PNG" class="download" target="_blank"></a>
+                <div class="page-number">44 / 58</div>
+                <div class="caption">More Space Yoga</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/5n6s96tvgxla1r/source/QuiteACrash2.PNG" data-full_res="/media/5n6s96tvgxla1r/source/QuiteACrash2.PNG" data-low_res="/media/5n6s96tvgxla1r/slideshow_pager/QuiteACrash2.PNG" data-slide="45" rel="vault-items">
+              <div class="media js-media-slideshow-45">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/5n6s96tvgxla1r/slideshow/QuiteACrash2.PNG" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/5n6s96tvgxla1r/slideshow_pager/QuiteACrash2.PNG" alt="Who needs a torso?">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/5n6s96tvgxla1r/source/QuiteACrash2.PNG" class="download" target="_blank"></a>
+                <div class="page-number">45 / 58</div>
+                <div class="caption">Who needs a torso?</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/w1b7h5oz2zculr/source/QuiteACrash3.PNG" data-full_res="/media/w1b7h5oz2zculr/source/QuiteACrash3.PNG" data-low_res="/media/w1b7h5oz2zculr/slideshow_pager/QuiteACrash3.PNG" data-slide="46" rel="vault-items">
+              <div class="media js-media-slideshow-46">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/w1b7h5oz2zculr/slideshow/QuiteACrash3.PNG" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/w1b7h5oz2zculr/slideshow_pager/QuiteACrash3.PNG" alt="Yo Sup">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/w1b7h5oz2zculr/source/QuiteACrash3.PNG" class="download" target="_blank"></a>
+                <div class="page-number">46 / 58</div>
+                <div class="caption">Yo Sup</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/dzt8qcqlczb31r/source/WhatIsMan.PNG" data-full_res="/media/dzt8qcqlczb31r/source/WhatIsMan.PNG" data-low_res="/media/dzt8qcqlczb31r/slideshow_pager/WhatIsMan.PNG" data-slide="47" rel="vault-items">
+              <div class="media js-media-slideshow-47">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/dzt8qcqlczb31r/slideshow/WhatIsMan.PNG" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/dzt8qcqlczb31r/slideshow_pager/WhatIsMan.PNG" alt="Fun with broken ragdolls">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/dzt8qcqlczb31r/source/WhatIsMan.PNG" class="download" target="_blank"></a>
+                <div class="page-number">47 / 58</div>
+                <div class="caption">Fun with broken ragdolls</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/6t5ny45brlfgqr/source/Vents.jpg" data-full_res="/media/6t5ny45brlfgqr/source/Vents.jpg" data-low_res="/media/6t5ny45brlfgqr/slideshow_pager/Vents.jpg" data-slide="48" rel="vault-items">
+              <div class="media js-media-slideshow-48">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/6t5ny45brlfgqr/slideshow/Vents.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/6t5ny45brlfgqr/slideshow_pager/Vents.jpg" alt="He lost his bones">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/6t5ny45brlfgqr/source/Vents.jpg" class="download" target="_blank"></a>
+                <div class="page-number">48 / 58</div>
+                <div class="caption">He lost his bones</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/f5nhfkkoq3nyvr/source/Turret.png" data-full_res="/media/f5nhfkkoq3nyvr/source/Turret.png" data-low_res="/media/f5nhfkkoq3nyvr/slideshow_pager/Turret.png" data-slide="49" rel="vault-items">
+              <div class="media js-media-slideshow-49">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/f5nhfkkoq3nyvr/slideshow/Turret.png" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/f5nhfkkoq3nyvr/slideshow_pager/Turret.png" alt="We call him Turret Man, the human Turret">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/f5nhfkkoq3nyvr/source/Turret.png" class="download" target="_blank"></a>
+                <div class="page-number">49 / 58</div>
+                <div class="caption">We call him Turret Man, the human Turret</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/8qs67ue3v6z27r/source/TransformAndFreakOut2.PNG" data-full_res="/media/8qs67ue3v6z27r/source/TransformAndFreakOut2.PNG" data-low_res="/media/8qs67ue3v6z27r/slideshow_pager/TransformAndFreakOut2.PNG" data-slide="50" rel="vault-items">
+              <div class="media js-media-slideshow-50">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/8qs67ue3v6z27r/slideshow/TransformAndFreakOut2.PNG" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/8qs67ue3v6z27r/slideshow_pager/TransformAndFreakOut2.PNG" alt="He dreamed of being a Starship">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/8qs67ue3v6z27r/source/TransformAndFreakOut2.PNG" class="download" target="_blank"></a>
+                <div class="page-number">50 / 58</div>
+                <div class="caption">He dreamed of being a Starship</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/4guljortpkwj0r/source/SkeletonHornetGrounded.PNG" data-full_res="/media/4guljortpkwj0r/source/SkeletonHornetGrounded.PNG" data-low_res="/media/4guljortpkwj0r/slideshow_pager/SkeletonHornetGrounded.PNG" data-slide="51" rel="vault-items">
+              <div class="media js-media-slideshow-51">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/4guljortpkwj0r/slideshow/SkeletonHornetGrounded.PNG" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/4guljortpkwj0r/slideshow_pager/SkeletonHornetGrounded.PNG" alt="Busted XML file stopped parts of the ship from appearing.">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/4guljortpkwj0r/source/SkeletonHornetGrounded.PNG" class="download" target="_blank"></a>
+                <div class="page-number">51 / 58</div>
+                <div class="caption">Busted XML file stopped parts of the ship from appearing.</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/q0vkt2q27fl6dr/source/Stretch.png" data-full_res="/media/q0vkt2q27fl6dr/source/Stretch.png" data-low_res="/media/q0vkt2q27fl6dr/slideshow_pager/Stretch.png" data-slide="52" rel="vault-items">
+              <div class="media js-media-slideshow-52">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/q0vkt2q27fl6dr/slideshow/Stretch.png" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/q0vkt2q27fl6dr/slideshow_pager/Stretch.png" alt="Animation is difficult">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/q0vkt2q27fl6dr/source/Stretch.png" class="download" target="_blank"></a>
+                <div class="page-number">52 / 58</div>
+                <div class="caption">Animation is difficult</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/t9hrl0lht1r72r/source/Stretchy.jpg" data-full_res="/media/t9hrl0lht1r72r/source/Stretchy.jpg" data-low_res="/media/t9hrl0lht1r72r/slideshow_pager/Stretchy.jpg" data-slide="53" rel="vault-items">
+              <div class="media js-media-slideshow-53">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/t9hrl0lht1r72r/slideshow/Stretchy.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/t9hrl0lht1r72r/slideshow_pager/Stretchy.jpg" alt="Space Yoga. It&#039;s important to stretch before getting into your ship.">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/t9hrl0lht1r72r/source/Stretchy.jpg" class="download" target="_blank"></a>
+                <div class="page-number">53 / 58</div>
+                <div class="caption">Space Yoga. It's important to stretch before getting into your ship.</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/tyltm07f2szh1r/source/Teeth.PNG" data-full_res="/media/tyltm07f2szh1r/source/Teeth.PNG" data-low_res="/media/tyltm07f2szh1r/slideshow_pager/Teeth.PNG" data-slide="54" rel="vault-items">
+              <div class="media js-media-slideshow-54">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/tyltm07f2szh1r/slideshow/Teeth.PNG" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/tyltm07f2szh1r/slideshow_pager/Teeth.PNG" alt="Too close">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/tyltm07f2szh1r/source/Teeth.PNG" class="download" target="_blank"></a>
+                <div class="page-number">54 / 58</div>
+                <div class="caption">Too close</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/b6szvk6olqtzkr/source/SkeletonHornet.PNG" data-full_res="/media/b6szvk6olqtzkr/source/SkeletonHornet.PNG" data-low_res="/media/b6szvk6olqtzkr/slideshow_pager/SkeletonHornet.PNG" data-slide="55" rel="vault-items">
+              <div class="media js-media-slideshow-55">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/b6szvk6olqtzkr/slideshow/SkeletonHornet.PNG" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/b6szvk6olqtzkr/slideshow_pager/SkeletonHornet.PNG" alt="Busted XML file looks funny from behind the ship">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/b6szvk6olqtzkr/source/SkeletonHornet.PNG" class="download" target="_blank"></a>
+                <div class="page-number">55 / 58</div>
+                <div class="caption">Busted XML file looks funny from behind the ship</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/yuglrq5rz78k1r/source/RuggedHornet.PNG" data-full_res="/media/yuglrq5rz78k1r/source/RuggedHornet.PNG" data-low_res="/media/yuglrq5rz78k1r/slideshow_pager/RuggedHornet.PNG" data-slide="56" rel="vault-items">
+              <div class="media js-media-slideshow-56">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/yuglrq5rz78k1r/slideshow/RuggedHornet.PNG" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/yuglrq5rz78k1r/slideshow_pager/RuggedHornet.PNG" alt="You could fly as long as your ship had a body...Built Anvil tough.">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/yuglrq5rz78k1r/source/RuggedHornet.PNG" class="download" target="_blank"></a>
+                <div class="page-number">56 / 58</div>
+                <div class="caption">You could fly as long as your ship had a body...Built Anvil tough.</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/92me7td5zg8t7r/source/QuiteACrash5.PNG" data-full_res="/media/92me7td5zg8t7r/source/QuiteACrash5.PNG" data-low_res="/media/92me7td5zg8t7r/slideshow_pager/QuiteACrash5.PNG" data-slide="57" rel="vault-items">
+              <div class="media js-media-slideshow-57">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/92me7td5zg8t7r/slideshow/QuiteACrash5.PNG" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/92me7td5zg8t7r/slideshow_pager/QuiteACrash5.PNG" alt="Crash ragdoll fail">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/92me7td5zg8t7r/source/QuiteACrash5.PNG" class="download" target="_blank"></a>
+                <div class="page-number">57 / 58</div>
+                <div class="caption">Crash ragdoll fail</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/qft4ph6fmizojr/source/QuiteACrash4.PNG" data-full_res="/media/qft4ph6fmizojr/source/QuiteACrash4.PNG" data-low_res="/media/qft4ph6fmizojr/slideshow_pager/QuiteACrash4.PNG" data-slide="58" rel="vault-items">
+              <div class="media js-media-slideshow-58">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/qft4ph6fmizojr/slideshow/QuiteACrash4.PNG" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/qft4ph6fmizojr/slideshow_pager/QuiteACrash4.PNG" alt="Not really a bug just a dead pilot on an old map.">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/qft4ph6fmizojr/source/QuiteACrash4.PNG" class="download" target="_blank"></a>
+                <div class="page-number">58 / 58</div>
+                <div class="caption">Not really a bug just a dead pilot on an old map.</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                      </div>
+        </div>
+        <div class="details">
+          <div class="scrollable fancy">
+            <div class="viewport">
+              <div class="content pager">
+                                  <a class="">
+                    <img src="/media/h475dn3kexvner/slideshow_pager/UnhappyRibbons.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/n2krdoerj71cjr/slideshow_pager/Stretch.png" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/b3ky5nar2up5ur/slideshow_pager/SphericalProjectionGoneWild.png" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/o2s4hl18er41rr/slideshow_pager/DeadHornet.PNG" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/asazrnug16cwkr/slideshow_pager/Frankmiller.png" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/jprgykjrtkfdar/slideshow_pager/HDRDebug.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/ooj0qrvdbb3wdr/slideshow_pager/Hornet-Ramming.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/doux5fmph16n1r/slideshow_pager/Bodies.png" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/ixrfrriumtzair/slideshow_pager/Bob-Yoga.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/oeddyjmgydhvmr/slideshow_pager/300i_Galaxies_2.png" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/7apmksogv9fkbr/slideshow_pager/300i_Galaxies.png" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/vdgbazjmf7o0vr/slideshow_pager/Drunkbuggy.PNG" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/jjd77zjp6qs13r/slideshow_pager/WhenYouLookIntoTheCockpit.PNG" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/8tv9gvg0ba04pr/slideshow_pager/Stretchy.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/tqvp1n8dpy41ar/slideshow_pager/Stretch_neck_strong.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/2s9gr9nrlg8j2r/slideshow_pager/Mannequin_Hornet_-_Scythe.png" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/hlrqezcwrjlijr/slideshow_pager/Oh_hi.png" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/qpes1a5oxxbzar/slideshow_pager/OhFuckEye2.PNG" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/ge82pt8tlebk3r/slideshow_pager/ScreenShot0000.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/r9aimytv83l8yr/slideshow_pager/Ma_Cargos.JPG" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/3suvo7qna3q5vr/slideshow_pager/JebOnTheTerraformer.PNG" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/sy3oud9uq816cr/slideshow_pager/IMG_29042014_174741.png" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/7xh6cm8ethmunr/slideshow_pager/IMG_07042014_181346.png" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/zij458oyytsf1r/slideshow_pager/Hornet_300i.png" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/99m3cwe2rfr2pr/slideshow_pager/Hobbit_hole.JPG" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/xgwro89xxe4szr/slideshow_pager/Eye_See_You.JPG" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/wjpvqkzcpw15yr/slideshow_pager/Crazyeyes.png" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/0y7ih79uqwijfr/slideshow_pager/BlackEyeMan.PNG" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/w13odqdfx3gygr/slideshow_pager/Chromed.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/00u86dxjhh3v1r/slideshow_pager/AwkRock.PNG" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/5v9niqkhp18z5r/slideshow_pager/CrazyeyesWallpaper.png" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/2rcn3psah8281r/slideshow_pager/DadsGonnaBePissed.PNG" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/ff6swxd3lfxy7r/slideshow_pager/Crazyeyes.png" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/d02614v4yj6s7r/slideshow_pager/Chatter.png" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/zxp1nf1a4uzwvr/slideshow_pager/DarkJeb.PNG" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/esy5xlltpzjycr/slideshow_pager/DebrisShip3.PNG" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/m5a2z1maoxa6wr/slideshow_pager/Eyes.PNG" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/2n7gxydvqvl2nr/slideshow_pager/Face.PNG" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/gpcwd3hj7u22lr/slideshow_pager/Hornet_300i.png" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/qnsizf3m3bv1ur/slideshow_pager/HeadlessJeb.PNG" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/oxnwxb5azgkxnr/slideshow_pager/Grin.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/vmvb7o6usken6r/slideshow_pager/Fish-Tank.png" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/4v7wy84gawkugr/slideshow_pager/Maw.PNG" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/q3nhry7zngy2jr/slideshow_pager/QuiteACrash.PNG" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/5n6s96tvgxla1r/slideshow_pager/QuiteACrash2.PNG" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/w1b7h5oz2zculr/slideshow_pager/QuiteACrash3.PNG" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/dzt8qcqlczb31r/slideshow_pager/WhatIsMan.PNG" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/6t5ny45brlfgqr/slideshow_pager/Vents.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/f5nhfkkoq3nyvr/slideshow_pager/Turret.png" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/8qs67ue3v6z27r/slideshow_pager/TransformAndFreakOut2.PNG" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/4guljortpkwj0r/slideshow_pager/SkeletonHornetGrounded.PNG" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/q0vkt2q27fl6dr/slideshow_pager/Stretch.png" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/t9hrl0lht1r72r/slideshow_pager/Stretchy.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/tyltm07f2szh1r/slideshow_pager/Teeth.PNG" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/b6szvk6olqtzkr/slideshow_pager/SkeletonHornet.PNG" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/yuglrq5rz78k1r/slideshow_pager/RuggedHornet.PNG" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/92me7td5zg8t7r/slideshow_pager/QuiteACrash5.PNG" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/qft4ph6fmizojr/slideshow_pager/QuiteACrash4.PNG" width="88" height="50" />
+                  </a>
+                                <div class="cboth"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cboth"></div>
+      </div>
+    </div>
+    <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#slideshow").data("carousel", new RSI.FullCarousel({
+      holder: $("#slideshow .mask .carousel"),
+      pagerContainer: $("#slideshow .pager"),
+      prevButton: $("#slideshow .js-prev"),
+      nextButton: $("#slideshow .js-next"),
+      clickToFullScreen: true,
+      circular: true,
+      useKeys: true,
+      container: $("#slideshow"),
+      needToLoadImg: true
+    }));
+
+    $(window).bind("resize", function() {
+      if ($(window).width() < 1200) {
+        $("#slideshow").data("carousel").setToFitScreen();
+      }
+      else {
+        $("#slideshow").data("carousel").unsetToFitScreen();
+      }
+    });
+
+    if ($(window).width() < 1200) {
+      $("#slideshow").data("carousel").setToFitScreen();
+      $("#slideshow").data("carousel").onWindowResize();
+    }
+    else {
+      $("#slideshow").data("carousel").unsetToFitScreen();
+    }
+
+    $("#slideshow .download").bind("click", function(e) {
+      e.stopPropagation();
+      return true;
+    });
+  });
+</script>
+
+
+  <div class="wrapper"><div class="hr"></div><div class="content-block4"><div class="content"><div class="top"></div><h1>Arena Commander Build Update!</h1><div class="cboth"></div></div><div class="bottom"></div></div><div class="content-block1 rsi-markup">
+<div  class=' segment' ><div class="content"><p><span class="initial">G</span>reetings Citizens,</p>
+
+<p>The go/no-go meeting has happened and the word is GO! Arena Commander V0.8 is currently being uploaded to our server partners. If all goes according to plan, the module should be available to play later tonight! There&#8217;s no need to keep reloading your Star Citizen Launcher: we will post here as soon as the download is available.</p>
+
+<p>In the meantime, we&#8217;ve put together a quick gallery of what we call &#8220;body horror&#8221; screenshots collected by the team in Santa Monica over the past several months. These show off some of the more bizarre bugs we&#8217;ve run into during the game&#8217;s development. We expect you&#8217;ll find a lot more once you start helping us test Arena Commander&#8230; but hopefully these have all been eliminated! </p></div><div class="cboth"></div></div>
+<div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+
+  <div class="wrapper">
+    
+    <div class="end-transmission-container">
+      <div class="glow left"></div>
+      <div class="title-bar">
+        <h1>End Transmission</h1>
+      </div>
+      <div class="glow right"></div>
+    </div>
+  </div>
+  
+
+  
+    
+
+  <div class="two-line-separator"></div>
+  
+    
+<div class="wrapper force-one-column" id="comments">
+  <div class="holder">
+    <div class="title-bar">
+      <div class="count">
+        <div class="label">Comments</div>
+        <div class="value">0425.<span class="js-comment-decimal">0</span></div>
+        <div class="cboth"></div>
+      </div>
+      <div class="title">
+        <h1>Feedback</h1>
+      </div>
+      <div class="cboth"></div>
+    </div>
+
+    <div class="main-buttons-holder-container">
+      <div class="main-buttons-holder">
+        <a href="/connect?jumpto=/comm-link/transmission/13919-Arena-Commander-Build-Update" class="add-comment js-add-comment trans-02s js-modal-login">Add New Comment</a>
+        <div class="settings js-settings">
+          <h1>Settings</h1>
+          <label>View mode:</label>
+          <a href="#" class="js-comments-view to-one-column js-to-one-column trans-01s on">One column</a>
+          <a href="#" class="js-comments-view to-two-columns js-to-two-columns trans-01s ">Two columns</a>
+          <label>Sort by:</label>
+          <a href="#" class="js-comments-sort to-oldest js-to-oldest trans-01s on">Oldest first</a>
+          <a href="#" class="js-comments-sort to-newest js-to-newest trans-01s ">Newest first</a>
+          <a href="#" class="js-comments-sort to-appreciated js-to-appreciated trans-01s ">Most appreciated first</a>
+
+                  </div>
+        <a href="" class="view-settings js-view-settings"><div class="hover trans-02s"></div></a>
+        <div class="triangle"></div>
+      </div>
+    </div>
+
+    
+    <div class="comment-listing"></div>
+
+    <div class="comment-loader traj-loader">
+      <div class="fast-blink"></div>
+      <span>Loading Additional Feedback</span>
+    </div>
+
+    <div class="cboth"></div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    window.comments = new RSI.Comments({
+      atom_url:"/comm-link/transmission/13919-Arena-Commander-Build-Update",
+      comment_listing_el:$(".comment-listing"),
+      comment_submission_form_el:$(".comment-submission"),
+      api_object:RSI.Api.Comments,
+      lazyLoading: true,
+      comment_count: 425,
+      subject_id:13919,
+      append:false,
+      texts: {
+        "edit": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        },
+        "reply": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        }
+      },
+      "insertion_conf": {
+        "mode":"html"
+      },
+      "api_function_names": {
+        "delete":"erase",
+        "load":"listing",
+        "sort":"listing"
+      }
+    });
+  });
+</script>
+  
+</div>
+
+    </div>
+
+    
+  </div>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.11/moment-timezone-with-data.min.js"></script>
+
+<script type="text/plain" data-cookieconsent="statistics">
+  $.cookie('moment_timezone', moment.tz.guess(), { expires: 31, path: '/' });
+</script>
+
+
+
+
+               <script id="tpl_number_counter_digits" type="text/x-jsmart-tmpl">{if !$seperator}{$seperator=','}{/if}
+{if !$first_max}{$first_max=9}{/if}
+{for $digit = 0 to $length-1}
+  <div class="mask">
+    <div class="carousel">
+      {if $digit == 0}
+        {$max = $first_max}
+      {else}
+        {$max = 9}
+      {/if}
+      {for $i=0 to $max}
+        <div class="item {if $val_arr[$digit] == $i}on{/if}" rel="{$i}">{$i}</div>
+      {/for}
+    </div>
+  </div>
+  {if ($length - $digit) % 3 == 1 && $digit != $length-1}
+  <div class="seperator">{$seperator}</div>
+  {/if}
+{/for}</script>
+<script id="base_modal" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  <div class="top-border">
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+  </div>
+</div></script>
+<script id="base_modal_flat" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  </div>
+  
+</div></script>
+<script id="tpl_modals_slideshow" type="text/x-jsmart-tmpl"><img class="top-border" src="/rsi/static/images/modal_top.png">
+<a href="" class="close js-close"></a>
+<div class="mask">
+  <a class="js-prev prev control"></a>
+  <a class="js-next next control"></a>
+  <div class="slideshow-carousel carousel" rel="{$index}">
+    {foreach from=$images item="image"}
+      <div class="{if $index == $image@index}on{/if}">
+      {if $image.is_video}
+        <div class="video-holder">
+          <div id="slideshow_video_{$image@index}" data-source="{$image->source_url}">
+            <video width="100%" height="100%" preload="auto" {if $video}src="{$image->source_url}"{/if} controls></video>
+          </div>
+        </div>
+      {else}
+        <div class="media js-media-slideshow-{$image@iteration}">
+        {if $image.low_res}
+          <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source data-srcset="{$image.full_res}" media="(min-width: 300px)" />
+            <!--[if IE 9]></video><![endif]-->
+            <img data-srcset="{$image.low_res}" alt="{$image.title}" />
+          </picture>
+        {else}
+          <img data-src="{$image.source_url}" />
+        {/if}
+        </div>
+      {/if}
+        <div class="text">
+          {if !$image.is_video}
+          <a href="{$image.source_url}" class="download"></a>
+          {/if}
+          <div class="copyright">© 2012-{$year}<br />Cloud Imperium Games Corporation &<br />Roberts Space Industries Corp.</div>
+          <div class="page-number">{$image@iteration} / {count($images)}</div>
+          <div class="caption v-center">{if $image.title && $image.title != "undefined"}{$image.title}{/if}</div>
+          <div class="cboth"></div>
+        </div>
+      </div>
+    {/foreach}
+  </div>
+</div>
+<img class="bottom-border" src="/rsi/static/images/modal_bottom.png"></script>
+<script id="tpl_contact_us" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="contact" class="inner-content on">
+  <h2><span class="icon"></span>CONTACT</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+  <div class="error-message js-error-message"></div>
+  <div class="success-message js-success-message"></div>
+    <fieldset class="last">
+    <label for="contact_email">Email Address</label>
+    <input type="text" name="email" value="" class="trans-02s trans-color trans-box-shadow" id="contact_email" />
+  </fieldset>
+    <fieldset>
+    <label for="contact_subject">Subject</label>
+    <input type="text" name="subject" value="" class="trans-02s trans-color trans-box-shadow" id="contact_subject" />
+    <label>Contacting us for:</label>
+    <ul class="category-info">
+            <li id="tech_support_info">Questions about download, installation, networking, or in-game client problems</li>
+            <li id="subscription_info">Questions about monthly and yearly subscription plans</li>
+            <li id="account_billing_info">Issues related to your account, such as incorrect information or ability to access account, or Billing with regards to payments and payment methods</li>
+            <li id="melt_request_info">To reclaim a pledge over $1,000 for store credit (please note - this is a permanent action)</li>
+            <li id="merchandise_info">Questions about physical and/or shipped merchandise</li>
+            <li id="hacked_info">Issues related to compromised account or missing pledge.</li>
+            <li id="account_recovery_info">For issues with account authentication, lost passwords and related queries</li>
+            <li id="probation_info">Issues related to forums probation or ban</li>
+            <li id="refund_request_info">Refund requests and related inquiries</li>
+            <li id="customer_support_info">For general questions and queries regarding Star Citizen</li>
+          </ul>
+  </fieldset>
+  <fieldset>
+    <label for="contact_text">Fescription</label>
+    <textarea name="text" class="trans-02s trans-color trans-box-shadow" id="contact_text"></textarea>
+  </fieldset>
+  <div class="contact-submit-wrapper">
+    <div class="line"></div>
+    <button class="submit js-submit"><strong>submit your message</strong></button>
+  </div>
+</form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+<script id="tpl_error" type="text/x-jsmart-tmpl"><div class="modal-error js-modal-error">
+  <p class="modal-text js-modal-text"></p>
+  <a class="close js-close trans-03s .trans-opacity" href=""></a>
+</div></script>
+<script id="tpl_success" type="text/x-jsmart-tmpl"><div class="modal-success js-modal-success">
+  <p class="modal-text js-modal-text"></p>
+  <a class="close js-close trans-03s .trans-opacity" href=""></a>
+</div></script>
+<script id="tpl_progress" type="text/x-jsmart-tmpl"><div class="modal-progress js-modal-progress">
+  <div class="traj-loader">
+    <div class="fast-blink"></div>
+    <span class="modal-text js-modal-text"></span>
+  </div>
+</div></script>
+<script id="tpl_outbound" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="outbound" class="inner-content on">
+  <h2><span class="icon"></span>OUTBOUND LINK</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+      <div class="error-message js-error-message"> <span class=important>WARNING</span><br/><br/> This link will bring you outside of the RSI site and into the depths of the internet. Continue?<br/><br/><span class="url"></span> </div>
+      <div class="success-message js-success-message"><span class=important>STAND BY</span><br/><br/> Initiating hyperlink.<br/><br/></div>
+
+      <fieldset class="clearfix last">
+        <span class="submit-wrapper">
+          <span class="submit-hover trans-02s trans-opacity"></span>
+          <input type="submit" value="WARP" class="trans-02s trans-color trans-background" />
+        </span>
+      </fieldset>
+    </form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+
+<script id="tpl_l-notification-bar" type="text/x-jsmart-tmpl"><div class="l-notification-bar js-notification-bar">
+
+  <div class="l-notification-bar__watermark js-svg-inliner h-svg__logo-star-citizen"></div>
+
+  <div class="l-notification-bar__boxes">
+    {if !$viewedCookieNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='cookie'
+          title='COOKIES:'
+          message="Our website uses Google Analytics to analyze our traffic. <br/>To learn how you can control Google's use of your data and how you can opt out <a href='https://www.google.com/policies/privacy/partners/'>click here</a>."
+          linkText='See Details'
+          buttonText='Got it!'}
+      </div>
+    {/if}
+
+    {if !$viewedPrivacyNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='privacy'
+          title='PRIVACY POLICY:'
+          message='We adjusted the PP to reflect the decision of the European Court of Justice regarding Safe Harbor, the fact that RSI has moved and added some services providers.'
+          linkText='View Privacy Policy'
+          buttonText='Got it!'}
+      </div>
+    {/if}
+  </div>
+
+</div>
+</script>
+<script id="tpl_c-notification" type="text/x-jsmart-tmpl"><div class="c-notification js-bottom-notif-msg-{$type}">
+    <div class="c-notification__title">{$title}</div>
+    <div class="c-notification__message">
+      {$message}
+    </div>
+
+    {if $linkText}
+        <div class="c-notification__wrapper-link">
+            <a class="c-notification__link js-bottom-notif-link-{$type}">
+            {$linkText}
+            </a>
+        </div>
+    {/if}
+
+    <a class="c-notification__button js-bottom-notif-btn-{$type}">
+
+      <span class="c-notification__button-text">
+       {$buttonText}
+      </span>
+
+      {if $type neq 'announcement'}
+        <div class="c-iconed__icon c-iconed__icon--checkmark"></div>
+      {/if}
+    </a>
+</div>
+</script>
+
+<script id="tpl_confirm" type="text/x-jsmart-tmpl"><div class="modal-confirm js-modal-confirm clearfix">
+  <p class="modal-text js-modal-text"></p>
+  <a class="bt-close js-close trans-03s trans-opacity" href=""></a>
+  <a class="bt-confirm js-confirm trans-03s trans-opacity" href=""></a>
+	<div class="buttons">
+		<a class="shadow-button trans-02s trans-color js-close bt-close rm"     >
+  <span class="label js-label trans-02s">Cancel</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+		<a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">Confirm</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+	</div>
+</div>
+</script>
+<script id="tpl_alert" type="text/x-jsmart-tmpl"><div class="modal-alert js-modal-alert clearfix">
+  <p class="modal-text js-modal-text"></p>
+  <div class="buttons">
+    <a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">OK</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+  </div>
+</div></script>
+<script id="tpl_video" type="text/x-jsmart-tmpl">{extends file="base_modal"}
+{block name='modal_content'}
+<div id="ship-commercial" class="inner-content">
+  
+  <div class="hr"></div>
+  <div class="content-block4">
+   
+    <div class="bottom"></div>
+  </div>
+  {if $distant_source=="vimeo"}
+  <iframe id="commercial" src="//player.vimeo.com/video/{$video_id}?wmode=transparent" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+  {else}
+  <iframe id="commercial" frameborder="0" allowfullscreen="1" title="YouTube video player" width="100%" height="100%" src="https://www.youtube.com/embed/{$video_id}?autoplay=1"></iframe>
+  {/if}
+</div>
+{/block}
+</script>
+      
+  <script id="tpl_comment_report" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="comment-report" class="inner-content on">
+  <h2><span class="icon"></span>Report this comment</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+<input type="hidden" name="comment_id" value="">
+  <div class="error-message js-error-message"></div>
+  <div class="success-message js-success-message"></div>
+    <fieldset class="last">
+    <label for="report_email">Email Address</label>
+    <span class="corner-wrapper">
+      <input type="text" name="email" value="" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_email" />
+      <span class="corner corner-top-left"></span>
+      <span class="corner corner-top-right"></span>
+      <span class="corner corner-bottom-left"></span>
+      <span class="corner corner-bottom-right"></span>
+    </span>
+  </fieldset>
+    <fieldset>
+    <label>Report Type</label>
+    
+
+
+  
+    <a class="js-selectlist selectlist " rel="" href="">
+    <div class="arrow"></div>
+    <span>Please select the type best matching your report</span>
+              <ul class="body">
+              
+                                                              <li class="js-option option " rel="obscenity" >
+                                                                        Obscene Content
+                                                    </li>
+                                                                <li class="js-option option " rel="abuse" >
+                                                                        Abusive Conduct
+                                                    </li>
+                                                                <li class="js-option option " rel="other" >
+                                                                        Other
+                                                    </li>
+                                          
+            </ul>
+        <input type="hidden" name="category" class="js-category js-form-data" id="category"/>
+  </a>
+    </fieldset>
+  <fieldset>
+    <label for="report_text">Details</label>
+    <span class="corner-wrapper">
+      <textarea name="text" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_text" maxlength="2500"></textarea>
+      <span class="corner corner-top-left"></span>
+      <span class="corner corner-top-right"></span>
+      <span class="corner corner-bottom-left"></span>
+      <span class="corner corner-bottom-right"></span>
+    </span>
+  </fieldset>
+  <fieldset class="clearfix last">
+    <span class="submit-wrapper">
+      <span class="submit-hover trans-02s trans-opacity"></span>
+      <input type="submit" value="Submit" class="trans-02s trans-color trans-background" />
+    </span>
+  </fieldset>
+</form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+
+
+      
+        <footer class="c-platform-footer c-platform-footer--rsi">
+  <div class="l-platform-footer-container">
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--sc">
+        <li class="c-platform-footer-brand__item">
+
+          <span class="c-brand c-brand--sc js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--sc">
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Join the<br>Universe
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--sc">
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen" class="c-platform-footer-link">About the Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/howto/1" class="c-platform-footer-link">How to Play</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/universe" class="c-platform-footer-link">The Universe</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/media" class="c-platform-footer-link">Media</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/play-now"
+                class="c-platform-footer-link js-google-analytics-event-tracker"
+                data-event-category="FlyNow" data-event-label="footerClick">
+                Play Now
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__sc">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">
+              Social Links
+            </span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/RobertsSpaceIndustries/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/RobertsSpaceInd">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/robertsspaceind">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href=" https://www.youtube.com/channel/UCTeLqJq1mXUX5WWoNXLmOIA">
+                <span class="c-iconed__icon c-iconed__icon--youtube"></span>
+                Youtube
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.twitch.tv/starcitizen">
+                <span class="c-iconed__icon c-iconed__icon--twitch"></span>
+                Twitch
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--s42">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--s42 js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--s42">
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Start the<br>Adventure
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--s42">
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42" class="c-platform-footer-link">The Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#enlist" class="c-platform-footer-link">Enlist Today</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#roadmap" class="c-platform-footer-link">Status</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/pledge/Packages/Squadron-42-Standalone-Pledge" class="c-platform-footer-link">Pledge</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__s42">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">Social Links</span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/Squad42/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/squadron_42">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/squadron42">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column is-active">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--rsi">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--rsi js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--rsi">
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi--fullcolor"></span>
+            </span>
+            <span class="c-brand__label">
+              Follow the Development
+            </span>
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--rsi">
+            <li class="c-platform-footer-list__item">
+              <a href="/" class="c-platform-footer-link">Home</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/comm-link" class="c-platform-footer-link">Transmissions</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/community" class="c-platform-footer-link">Community</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/roadmap" class="c-platform-footer-link">Development</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--platform">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Platform
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--platform">
+                          <li class="c-platform-footer-list__item">
+                <a href="/pledge" class="c-platform-footer-link ">Pledge Store</a>
+              </li>
+            
+            <li class="c-platform-footer-list__item">
+              <a href="/download" class="c-platform-footer-link ">Download</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/spectrum/community/SC" class="c-platform-footer-link">Spectrum</a>
+            </li>
+
+                      </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--utility">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Utilities
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--utility">
+            <li class="c-platform-footer-list__item">
+              <a href="//support.robertsspaceindustries.com" class="c-platform-footer-link">Help</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/press" class="c-platform-footer-link">Press</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="https://cloudimperiumgames.com/join-us" class="c-platform-footer-link">Careers</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/tos" class="c-platform-footer-link">Terms of Services</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/privacy" class="c-platform-footer-link">Privacy Policy</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/eula" class="c-platform-footer-link">EULA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/dmca" class="c-platform-footer-link">DMCA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/legal" class="c-platform-footer-link">Legal</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/acknowledgements" class="c-platform-footer-link">Acknowledgements</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/responsible-disclosure" target="_blank" class="c-platform-footer-link">Responsible disclosure</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  
+</footer>
+
+<div class="c-platform-copyright c-platform-copyright--rsi">
+  <div class="l-platform-copyright-container">
+    <a href="https://cloudimperiumgames.com" class="c-platform-copyright__logo h-svg__logo-cig js-svg-inliner"></a>
+    <p class="c-platform-copyright__body">© 2012-2021 Cloud Imperium Rights LLC and Cloud Imperium Rights Ltd.</p>
+  </div>
+</div>
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHNFZPT"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<script type="text/javascript">
+  window.RSI.Footer = new RSI.Footer();
+</script>
+      
+    </div>
+
+    
+      <script type="text/javascript" src='/rsi/static/packages/platformbar/rsi.platformbar.build.05b39.js'></script>
+    
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"58013cabd7","applicationID":"375102748","transactionName":"Y1JaYktUWxZUV0QKV1oYe0NKQVoIGmZjKmtdQ111VltBF1pYXAZKDg1ZQlZYcwxbUA==","queueTime":0,"applicationTime":66,"atts":"TxVNFANOSEkXVRJZQ0lK","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>

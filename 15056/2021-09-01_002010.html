@@ -1,0 +1,2760 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    
+      <!-- Anti-flicker snippet (recommended)  -->
+      <style>.async-hide { opacity: 0 !important} </style>
+      <script type="text/javascript">(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+      h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+      (a[n]=a[n]||[]).hide=h;if (d) a[n].push({'userId' : d});setTimeout(function(){i();h.end=null},c);h.timeout=c;
+      })(window,document.documentElement,'async-hide','dataLayer',1500,
+      {'GTM-KHNFZPT':true},undefined,'');</script>
+
+            <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"58013cabd7",applicationID:"375102748"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+      <meta name="viewport" content="width=device-width">
+      <meta name="description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans.">
+      <meta property="og:site_name" content="
+Design Notes: Sharpening the Cutlass - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+" />
+      <meta property="og:image" content="https://robertsspaceindustries.com/rsi/static/images/RSI-logo-fb.jpg" />
+      <meta property="og:description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans." />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://robertsspaceindustries.com/comm-link/SCW/15056-IMPORT" />
+      <meta property="og:locale" content="us_EN" />
+
+            
+
+            
+      <link href="/rsi/static/css/cross-brand-less.css?v=6.37.0" media="all" rel="stylesheet">
+      <link href='/rsi/static/packages/platformbar/rsi.platformbar.build.8e4cb.css' media="all" rel="stylesheet">
+      <link href='/rsi/static/packages/enlist/rsi.enlist.build.f8d69.css' media="all" rel="stylesheet"/>
+      
+            <script type="text/javascript" src="/cache/en/rsi-external-js.js?v=6.37.0"></script>
+      <script type="text/javascript" src="/cache/en/rsi-templates-js.js?v=6.37.0"></script>
+
+            
+      <link rel="stylesheet" href="https://use.typekit.net/dhw3beb.css">
+      
+
+              <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="a687ee30-df65-45a0-9d22-90de6c1bb964" type="text/javascript"></script>
+      
+      
+    <!-- Google Tag Manager -->
+        <script type="text/plain" data-cookieconsent="statistics">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHNFZPT');</script>
+    <!-- End Google Tag Manager -->
+
+
+      <title>
+Design Notes: Sharpening the Cutlass - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+</title>
+
+            <script type="text/javascript" src='/rsi/static/packages/core/rsi.core.build.804b0.js'></script>
+      <script type="text/javascript" src='/rsi/static/packages/account/rsi.account.build.7a888.js'></script>
+      <script type="text/javascript" src='/rsi/static/packages/store/rsi.store.build.cd9a7.js'></script>
+
+      <script>
+        $(document).ready(function() {
+          window.Common = new RSI.Common({});
+          window.Main = new RSI.Main({
+            'is_mobile': 0,
+            'probation_cookie' : '',
+            'require_captcha': 0
+          });
+          window.Mark = new Turbulent.Mark({ 'name' : 'Rsi-XSRF', 'token' : '', 'ttl' : 1800 });
+
+          window.WscOverlay = new RSI.WscOverlay({});
+
+          var destinations = [];
+
+window.Main.destinations = destinations;          
+  window.PageStore = new RSI.Store({
+    'store_prefix' : '/pledge',
+    'bootstrapConfig': {"injection":{"attachmentClass":"RSIStoreApp","files":{"js":["bootstrap.js"],"css":["index.css"]}},"platform":{"api":"\/api"},"store":{"path":"\/pledge-store","manifest":"manifest.json"},"customizer":{"api":"\/pledge-store\/api\/customizer","ga_tracking_code":"UA-39586040-5"}}
+  });
+
+          
+          
+  var productsTracking = [];
+  var eCommerceData = {
+    'trackingAction': "",
+    'currency': "",
+    'trackingStep': "",
+    'trackingProducts': productsTracking
+  };
+  window.eCommerceTracking = new RSI.Store.eCommerceTracking(
+    eCommerceData
+  );
+
+        });
+
+        $(window).load(function() {
+          
+        });
+
+      </script>
+
+      
+      <script>
+        window.recaptcha_is_loaded = false;
+        window.on_recaptcha_load_callback = function() {
+          window.recaptcha_is_loaded = true;
+        };
+      </script>
+
+      <script src="https://www.google.com/recaptcha/api.js?onload=on_recaptcha_load_callback&render=6LerBOgUAAAAAKPg6vsAFPTN66Woz-jBClxdQU-o" async defer></script>
+      
+
+      <script type="text/javascript">
+
+        
+
+                                </script>
+
+      
+
+<style type="text/css">
+  /* CSS from ATOM */
+  .rsi-markup .segment .content p {
+  width: 100%;
+  max-width: 100%;
+}
+
+.content .questions h3{margin-top:50px;}
+
+.content .questions {width:80%; margin-left:10%;}
+
+h1.no-margin{
+
+font-size: 52px;
+margin-top: 0px!important;
+margin-bottom:-22px;
+}
+
+.rsi-markup .segment .content p .initial {
+margin-right: 0;
+font-size: 14px;
+}
+
+.rsi-markup .segment .content table tr td:first-child { border-right: 1px dashed #465F7A;}
+.rsi-markup .segment .content table tr td strong { color: white; }
+.rsi-markup .segment .content table tr td { padding: 6px; text-align: left; color: #999999;  }
+
+h2.no-margin{
+margin-top: 0px!important;
+margin-bottom:-12px;}
+
+h3.no-margin{margin-bottom:-22px;}
+
+.rsi-markup .segment .content .image .caption {width:auto;}
+
+
+
+#post-background { opacity: 0.3; }
+
+.rsi-markup .segment .content p .initial { display: inline; font-size: inherit; text-transform: inherit; float: none; line-height: inherit; height: auto; margin-right: auto; }
+
+.image1 {float: left; padding: 5px;
+}
+
+.mb-box img {
+    margin-left: auto;
+    opacity: 0.7;
+    width: 300px;
+    margin-right: auto;
+    display: block;
+}
+
+.mb-box { max-width: 800px; margin: auto; margin-top: 100px; margin-bottom: 75px;  }
+.mb-box p { font-size: 18px; font-family: "Electrolize"; text-align: center; color: white;}
+
+.mb-box h1 {
+margin: 0px;
+font-size: 32px;
+color: #00e7ff;
+text-transform: uppercase;
+text-shadow: 0 0 0 #00E0FF, 0 0 11px #00A0B6;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+height: 57px;
+line-height: 57px;
+text-align: center;
+}
+
+
+.mb-full img { width: 100%; }
+
+#post .title-section .title-container .subtitle { font-size: 18px; }
+
+.variant-block h2 { 
+font-family: "Electrolize";
+color: #fff;
+line-height: 40px;
+text-transform: uppercase;
+font-size: 18px;
+margin: 0px;
+margin-left: 0px;
+}
+
+#contentbody .variant-block p { font-size: 14px;  line-height: 18px; min-width: 0px; width: auto; }
+
+#contentbody .variant-block.variant-right p { float: left;  }
+#contentbody .variant-block.variant-right a.image { float: right; }
+
+#contentbody .variant-block.variant-right .thumbs { float: right; }
+#contentbody .variant-block.variant-left .thumbs { float: left; }
+
+#contentbody .variant-block.variant-left p { float: right;  }
+#contentbody .variant-block.variant-left a.image { float: left; }
+
+#contentbody .variant-block a.image { padding: 5px; border: 1px solid rgba(0, 162, 253, 0.25); border-radius: 0px; }
+
+#contentbody .variant-block a.image img { border-radius: 0px; border: 0;  }
+
+
+.variant-block .glow-box {
+background-color: #13d0ff;
+width: 11px;
+height: 5px;
+float: left;
+box-shadow: 0px 0px 20px #1397FF;
+margin-top: 17px;
+margin-right: 18px;
+}
+
+#contentbody .variant-block .thumbs a.image { float: left; }
+#contentbody .variant-block .thumbs a.image img { height: 115px;  }
+
+
+#contentbody .variant-block p a.ship-button .arrow.arrow1 {
+right: 21px;
+}
+#contentbody .variant-block p a.ship-button .arrow.arrow2 { right: 14px; }
+#contentbody .variant-block p a.ship-button .arrow.arrow3 { right: 7px; }
+
+.rsi-markup .segment .content p { width: inherit; max-width: inherit; }
+
+.rsi-markup .segment .content table tr td:first-child { border-right: 1px dashed #465F7A;}
+.rsi-markup .segment .content table tr td strong { color: white; }
+.rsi-markup .segment .content table tr td { padding: 6px; text-align: left; color: #999999;  }
+
+.rsi-markup .segment .content { margin-left:0; margin-right:0 }
+hr { background-color:#09daff; border-top:0px;}
+.corner, .parallax-block  .top-line-thin, .parallax-block .top-line { display:none }
+.content-block1 { border:0}
+
+.variant-block .image {margin-top:0px;}
+
+.poll h1 {color:white;}
+
+#poll-77.poll {border:none;}
+</style>
+
+<script type="text/javascript">
+  /* JS from ATOM */
+  
+</script>
+
+
+
+
+    
+
+  <style>
+    
+      background:url(/rsi/static/images/noisebg.gif) repeat center top #000b11;
+    
+  </style>
+
+    <link href="//fonts.googleapis.com/css?family=Electrolize|Orbitron:400,500,700|Quantico|Share+Tech+Mono&display=swap" rel="stylesheet" type="text/css">
+
+    <link href="/cache/en/rsi-css.css?v=6.37.0" media="all" rel="stylesheet">
+
+
+  </head>
+  <body id="" class="" >
+
+    
+      <div class="l-notification-bar l-notification-bar--rsi js-notification-bar" id="notification-bar-root">
+  <c-notification-bar v-bind:latestagreementsslugs=[] v-bind:loggedin="0" v-bind:onhomepage="0"></c-notification-bar>
+  <div class="l-notification-container l-notification-bar__boxes js-notification-bar-boxes">
+    <div class="l-notification__wrapper">
+      
+      <c-unsupported-browser v-cloak>
+        <div class="l-notification-bar__box js-notification-bar-box">
+          <div class="c-notification  c-notification--browser-support js-bottom-notif-msg-browser-support">
+  <div class="c-notification__inner">
+
+    <div class="c-notification__content">
+      <div class="c-notification__title">
+        IE11 is no longer supported
+      </div>
+      <div class="c-notification__message">
+        We do not support Internet Explorer 11 and below. Please use a different web browser.
+      </div>
+    </div>
+
+    <div class="c-notification__actions">
+      
+      
+          </div>
+
+  </div>
+</div>
+        </div>
+      </c-unsupported-browser>
+    </div>
+  </div>
+
+</div>
+    
+
+    <div id="bodyWrapper">
+      <header class='c-header-wrapper c-header-wrapper--rsi js-header-wrapper '  id='cross-brand-header'>
+  <div id="platform-bar" class="c-header__platform-bar"></div>
+
+      <div class='c-right-sidebar c-right-sidebar--signin' id="account-sidebar">
+      <div class="js-toggle-account__backdrop invisible"></div>
+
+      <a href="#" class='c-right-sidebar__back js-toggle-account'>Back
+        <span></span>
+        <span></span>
+      </a>
+
+      <div id="enlist-root" data-theme="rsi" data-enlisting="" data-ptu=""></div>
+      <script type="text/javascript" src='/rsi/static/packages/enlist/rsi.enlist.build.f8d69.js'></script>
+    </div>
+  
+  <div class="c-header-wrapper__backdrop js-toggle-games"></div>
+</header>
+
+<div id="platform-backdrop"></div>
+
+<script type='text/javascript'>
+  RSI.Platformbar = {
+    theme: "rsi",
+    loggedState: "logged-out",
+    tabs: [
+      {
+        type: 'brands',
+        name: "Games",
+        subItems: [
+          {
+            name: "sc",
+            href: "/star-citizen",
+            description: "Join the Universe"
+          },
+          {
+            name: "s42",
+            href: "/squadron42",
+            description: "Start the adventure"
+          },
+          {
+            name: "rsi",
+            href: "/",
+            description: "Follow the Development"
+          }
+        ]
+      },
+      {
+        type: 'apps',
+        name: "Apps",
+        subItems: [
+          [
+            {
+              name: "Spectrum",
+              href: "/spectrum/community/SC",
+              description: "Your communication platform"
+            },
+            {
+              name: "Launcher",
+              href: "/download",
+              description: "Download Star Citizen",
+                          }
+          ],
+          [
+            {
+              name: "Roadmap",
+              href: "/roadmap",
+              description: "Keep track of the development"
+            },
+            {
+              name: "Telemetry",
+              href: "/telemetry",
+              description: "Keep track of the player’s performance"
+            },
+            {
+              name: "Issue Council",
+                          href: "https://issue-council.robertsspaceindustries.com",
+                          description: "Help us make the game better",
+                          }
+          ],
+          [
+            {
+              name: "Starmap",
+              href: "/starmap",
+              description: "Your map to the universe"
+            },
+            {
+              name: "Galactapedia",
+              href: "/galactapedia",
+              description: "Your guide to the universe"
+            }
+          ]
+        ]
+      },
+          ],
+    navigation: {
+      store: {
+        name: "Pledge Store",
+        href: "/pledge",
+        isHidden: false      },
+      hub: {
+        name: "Learn How to Play",
+        href: "/playstarcitizen",
+        show: false      },
+      support: {
+        name: "Support",
+        href: "//support.robertsspaceindustries.com"
+      },
+      account: {
+        name: "Account",
+        href: "/account/settings",
+        isHidden: false      }
+    }
+  };
+
+  $(document).ready(function() {
+    window.header = new RSI.Header({});
+  });
+</script>
+
+
+      
+  
+<header class='c-brand-menu c-brand-menu----rsi' id='brand-menu'>
+  <span class="c-brand-menu__section">
+    
+      Roberts Space Industries <sup>&#174;</sup>
+    
+  </span>
+  <div class="c-brand-menu__backdrop"></div>
+  <nav class="c-brand-menu__container">
+    <div class="c-brand-menu__logo">
+      <a href="/"><span class="h-svg h-svg__logo-rsi--fullcolor-large js-svg-inliner"></span> </a>
+    </div>
+    <div class="c-brand-menu__items-container">
+      <ul class="c-brand-menu__items">
+                <li class="c-brand-menu__item  ">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/comm-link">
+            <span class="c-brand-menu__item-text">Comm-Link</span>
+                                  </a>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/community">
+            <span class="c-brand-menu__item-text">Community</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Community</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/spectrum" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Spectrum
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/orgs" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Organizations
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/leaderboards/top" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Leaderboards
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community_events" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Event
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Hub
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/fankit" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Fankit
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/development">
+            <span class="c-brand-menu__item-text">Development</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Development</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/roadmap" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Roadmap
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/devtracker" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Dev Tracker
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/telemetry" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Telemetry
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="https://issue-council.robertsspaceindustries.com" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Issue Council
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/patch-notes" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Patch Notes
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/ship-matrix" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Ship Matrix
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/funding-goals" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Funding
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+              </ul>
+    </div>
+
+    <div class="c-brand-menu__cta">
+      
+        <a href="/star-citizen/play-now" class="c-brand-cta-btn js-google-analytics-event-tracker"
+          data-event-category="FlyNow" data-event-label="navMenuClick">
+          <div></div>
+            <span class="c-brand-cta-btn__text">
+              <strong>Play now</strong>
+            </span>
+          <div></div>
+        </a>
+      
+    </div>
+  </nav>
+</header>
+
+
+
+      
+
+  
+  <div class="page-wrapper">
+    
+  <div id="post-background" style="background-image:url('/media/diitwyn2m124mr/source/2newcutlass.png');"></div>
+
+
+    <div id="contentbody" class="" style="">
+      
+
+<div id="post">
+  <div class="title-section">
+    
+      <div class="wrapper title-bar-container">
+        <div class="glow left"></div>
+        <div class="title-bar">
+          <div class="title with-subtitle">
+            <h1>Engineering</h1>
+            <h2>Development</h2>
+          </div>
+          <div class="details">
+            <div>
+              <h3>ID:</h3>
+              <p>15056</p>
+              <div class="cboth"></div>
+            </div>
+            <div>
+              <h3>Comments:</h3>
+              <p class="comment-count">363</p>
+              <div class="cboth"></div>
+            </div>
+            <div>
+              <h3>Date:</h3>
+              <p>November 13th 2015</p>
+              <div class="cboth"></div>
+            </div>
+            <div></div>
+          </div>
+          <div class="cboth"></div>
+        </div>
+        <div class="glow right"></div>
+      </div>
+    
+  <div class="title-container">
+    <div class="title ">Design Notes: Sharpening the Cutlass</div>
+    <div class="subtitle">Cutlass Development Update</div>  </div>
+
+  </div>
+
+  
+  <div class="lightbar toplightbar">
+    <div class="lightbarlights"></div>
+    <div class="footershadow"></div>
+  </div>
+
+
+  <div class="mb-full">
+  <img src="/media/nrbiceu44bkoqr/source/Drake_cutlass_flight_visual.jpg"/>
+</div>
+
+<div class="wrapper"><div class="hr"></div><div class="content-block4"><div class="content"><div class="top"></div><h1>The Shipyard: Sharpening the Cutlass</h1><div class="cboth"></div></div><div class="bottom"></div></div><div class="content-block1 rsi-markup">
+<div  class=' segment' ><div class="content"><p><div class="variant-block"></p>
+
+<p><h1 class="no-margin">Continuing Evolution</h1><br />
+<em>by Jared Huckaby</em></p>
+
+<br />
+
+
+<p><strong>&#8220;The only constant in game development is change.&#8221;</strong></p>
+
+<p><span class="initial">W</span>e all have ideas. Good ideas. Bad ideas. If you&#8217;re lucky, possibly even great ideas, but the best ideas rarely come without a fair share of time and effort and perhaps most importantly: trial and error. Game development is that process of not only bringing those ideas to reality, but of testing and refining those concepts in the crucible formed from combining hundreds and thousands of disparate designs into one.</p>
+
+<p>It&#8217;s here in the game development phase when you discover the true virtue of those intentions, and discover what works and what does not, and what can be made to work and sometimes more importantly, what should not be made to work. It is the thing you do your best to anticipate, and the place where you either discover the elation of a theory fully realized, or the struggle to iterate that initial plan into something better than it was before.</p>
+
+<p><strong><span class="caps">THE</span> <span class="caps">SHIPYARD</span></strong> is a new series of articles we&#8217;ll be publishing from time to time as things come together. Created with help from the developers in the trenches creating this game, we&#8217;ll explore the history of these ships, the current realities they&#8217;re faced with, and the prospects of their continuing evolution going forward. We&#8217;ve decided to start with the Cutlass because it&#8217;s had a storied development history, and it gave us a great chance to take a candid look at the trials and tribulations it&#8217;s faced in the last three years. This isn&#8217;t the answer to all Cutlass-related questions, but we feel it&#8217;s a great effort at pulling the curtain back on game development, and documenting a little of how this process actually works.</p>
+
+<p>We hope you enjoy it.</p></div><div class="cboth"></div></div>
+<div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+
+<div class="wrapper"><div class="hr"></div><div class="content-block4"><div class="content"><div class="top"></div><h1>How It All Began: Concepting the Cutlass</h1><div class="cboth"></div></div><div class="bottom"></div></div><div class="content-block2"><div class="content clearfix"><img src="/media/pmonvlo6cxv5mr/post_section_header/Render11_copy.jpg" /><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div><div class="content-block1 rsi-markup">
+
+<div  class=' segment' ><div class="content"><h2 class="no-margin"><span class="caps">LONG</span>, <span class="caps">LONG</span> <span class="caps">TIME</span> <span class="caps">AGO</span>: The Prehistory of the Cutlass</h2>
+
+<p><em>by Ben Lesnick</em></p>
+
+<a class="image  js-open-in-slideshow" data-id="gs8hsixr4ytqor" data-full_res="/media/gs8hsixr4ytqor/source/Render13_copy.jpg" data-low_res="/media/gs8hsixr4ytqor/slideshow_pager/Render13_copy.jpg" data-source_url="/media/gs8hsixr4ytqor/source/Render13_copy.jpg" rel="post"><img src="/media/gs8hsixr4ytqor/post/Render13_copy.jpg" alt="Original Concept Art: Drake Cutlass" /><span class="caption">Original Concept Art: Drake Cutlass</span></a>
+
+<p><span class="initial">T</span>he Drake Interplanetary Cutlass was born on October 3, 2012 at 5:44 AM Eastern, part of a designer&#8217;s guide to Star Citizen&#8217;s ship manufacturers that continues to inform many aspects of the project today. The primordial Cutlass was cited as an example of names that Drake Interplanetary, our pirate-focused company, might use.</p>
+
+<blockquote>
+Drake Interplanetary is ostensibly a legitimate company, but it&#8217;s an open secret that they manufacture cheap, well armed craft favored by pirates, to the point that they&#8217;re named in that vein: &#8220;Cutlass,&#8221; &#8220;Buccaneer,&#8221; &#8220;Privateer,&#8221; &#8220;Bandit,&#8221; &#8220;Marauder,&#8221; etc.
+</blockquote>
+
+<p>The intent here was to solve a very specific problem of immersion: while we knew that many players would want to engage in piracy, it was not believable that there would be a high-tech, public spacecraft manufacturnig company that simply produces hardware explicitly for criminals. Toyota, for instance, doesn&#8217;t manufacture a specific model of pickup truck for paramilitary terrorists&#8230; their existing trucks simply fall into the hands of such groups, which adopt them for their nefarious purposes. So, the idea of Drake Interplanetary was born: a sketchier company, for sure, but one that builds ships for a specific, legal purpose (note also that we would later build the Cutlass variants around the reference to it&#8217;s search and recsue role.)</p>
+
+<div class="clearfix"></div>
+
+<a class="image  js-open-in-slideshow" data-id="d2ll07ugo0vxir" data-full_res="/media/d2ll07ugo0vxir/source/CUTLASS-02-Martin.jpg" data-low_res="/media/d2ll07ugo0vxir/slideshow_pager/CUTLASS-02-Martin.jpg" data-source_url="/media/d2ll07ugo0vxir/source/CUTLASS-02-Martin.jpg" rel="post"><img src="/media/d2ll07ugo0vxir/post/CUTLASS-02-Martin.jpg" alt="Original Concept Art: Drake Cutlass" /><span class="caption">Original Concept Art: Drake Cutlass</span></a>
+
+<p>At this point, however, the Cutlass was simply a distant concept. We opted not to include a Drake ship with the initial lineup, thinking that selling something as being (in-world) &#8216;cheaper&#8217; than the others would be counter-intuitive as part of a campaign aimed at selling the thrill of owning your own spacecraft. Then&#8230; pirates happened! From day one, it became clear that a <span class="caps">LOT</span> of Star Citizen&#8217;s backers wanted to someday engage in a life of crime. Backers formed their own syndicates and cartels and clans, buoyed by the promise that Drake Interplanetary would someday be supplying them ships. Within a day of our initial wave of ship specifications being published, the theorycrafting as to which the best option for starter pirates began.</p>
+
+<p>With the campaign in full swing and with plans being made for the end of the Kickstarter, I made the following suggestion in an e-mail to Chris Roberts:</p>
+
+<blockquote>
+<strong><em>Pirate Pack</em></strong> &#8211; I&#8217;ve had this in my mind a while; basically, just a copy of the game with a pirate fighter (Drake Industries Cutlass,) which will be appealing to a particular subset of our audience.
+</blockquote>
+
+<div class="clearfix"></div>
+
+<p>Chris immediately replied that he loved the idea and that he wanted to see a pitch for the Cutlass&#8217; design and specifications that could be sent to concept artist Jim Martin in the hopes that we could show off a sketch during the last days of the Kickstarter.</p>
+
+<div class="clearfix"></div>
+
+<br />
+<br />
+
+
+<a class="image  js-open-in-slideshow" data-id="q7ijkmt2k5p51r" data-full_res="/media/q7ijkmt2k5p51r/source/PRIVATER.jpg" data-low_res="/media/q7ijkmt2k5p51r/slideshow_pager/PRIVATER.jpg" data-source_url="/media/q7ijkmt2k5p51r/source/PRIVATER.jpg" rel="post"><img src="/media/q7ijkmt2k5p51r/post/PRIVATER.jpg" alt="A Galaxy arrives at Perry Naval Station, courtesy Origin FX" /><span class="caption">A Galaxy arrives at Perry Naval Station, courtesy Origin FX</span></a>
+
+<h2><span class="caps">INSPIRATIONS</span>: Two Parts Privateer&#8230;</h2>
+
+<p>So: how did the Cutlass concept come about? As with many of our ships, we started by looking for two types of analogues: ships (and more importantly gameplay roles) from Chris Roberts&#8217; classic games and historical aircraft to lend verisimilitude to our growing universe.</p>
+
+<p>For the first part, we naturally looked to 1993&#8217;s Privateer where piracy was a semi-viable career option, although one that made life particularly difficult in most of inhabited space (other aspects of Star Citizen&#8217;s design were planned alongside, intending to give pirates more to do overall!) For those unfamiliar, Privateer had four player ships: a starter, a gunship, a transport and an elite bounty hunter fighter. In a great example of emergent gameplay, pirates of yore tended to forgo the statistically superior Centurion fighter and instead purchase the cheaper Galaxy light transport. Why? Because the Galaxy had the largest cargo hold and a pair of turrets that meant you could attach tractor beams without using a precious forward-facing missile/torpedo slot (turrets, which had no AI, were otherwise largely unnecessary in Privateer.) While a Centurion could best take out a lumbering transport, it&#8217;s small cargo hold meant that the profit made from stolen loot was limited. For the Cutlass we decided: why not codify this mechanic and offer pirates a fighting ship that trades some dogfighting ability for the larger cargo hold they&#8217;ll want in the &#8216;verse?</p>
+
+<div class="clearfix"></div>
+
+<a class="image  js-open-in-slideshow" data-id="uz0npk5je22unr" data-full_res="/media/uz0npk5je22unr/source/Capturedheinkel.png" data-low_res="/media/uz0npk5je22unr/slideshow_pager/Capturedheinkel.png" data-source_url="/media/uz0npk5je22unr/source/Capturedheinkel.png" rel="post"><img src="/media/uz0npk5je22unr/post/Capturedheinkel.png" alt="Captured He-162 undergoing tests" /><span class="caption">Captured He-162 undergoing tests</span></a>
+
+<p>For the historical reference, we fixated on the idea that Drake built &#8216;cheaper&#8217; ships intended to be available in large numbers to a larger group of captains. While not wanting to sell the Cutlass as &#8216;disposable,&#8217; we wanted to get across the idea that it was treated as something of a lower tier ship than the Freelancer, Hornet or Constellation. For that history, we looked to World War II and the Heinkel He 162 &#8220;Volksjäger.&#8221; Developed by Germany in the last days of the war, this &#8216;people&#8217;s fighter&#8217; was a fascinating mix of then-high technology jet engines with cheap, wooden construction that could theoretically continue in small shops as Germany&#8217;s major aircraft factories were targeted by the Allies&#8217; strategic bombing campaign. The Cutlass borrowed liberally from this idea, combining high tech role-specific gear (like the tractor beam and rotating engines) with a lower quality hull. To further reinforce this idea, marketing decided to price the Cutlass $15 below the Hornet or Freelancer. Later, I would get to integrate this backstory into the <a href="https://robertsspaceindustries.com/comm-link/spectrum-dispatch/13441-Drake-Interplanetary">Drake Interplanetary profile</a> in a Jump Point!</p>
+
+<div class="clearfix"></div>
+
+<a class="image  js-open-in-slideshow" data-id="nqz41yxidgqxfr" data-full_res="/media/nqz41yxidgqxfr/source/CUTLASS-03-Black-Martin.jpg" data-low_res="/media/nqz41yxidgqxfr/slideshow_pager/CUTLASS-03-Black-Martin.jpg" data-source_url="/media/nqz41yxidgqxfr/source/CUTLASS-03-Black-Martin.jpg" rel="post"><img src="/media/nqz41yxidgqxfr/post/CUTLASS-03-Black-Martin.jpg" alt="Original Concept Art: Drake Cutlass" /><span class="caption">Original Concept Art: Drake Cutlass</span></a>
+
+<p>The result of this thinking was published in a Comm-Link update as the Cutlass and the &#8216;Pirate Pack&#8217; went up for pledge. This is the same material provided to Chris and to Jim Martin upon which to base his concept artwork.</p>
+
+<p><blockquote><br />
+Drake Interplanetary claims that the Cutlass is a low-cost, easy-to-maintain solution for local in-system militia units. The larger-than-average cargo hold, <span class="caps">RIO</span> seat and dedicated tractor mount are, the company literature insists, for facilitating search and rescue operations. While it&#8217;s true that Cutlasses are used throughout known space for such missions, their prime task and immediate association is with high space piracy. Cutlasses, often operating in groups, menace distant transit lanes to prey on hapless merchants. A single Cutlass can ravage a mid-sized transport and a pack operating as a clan can easily take down larger prey. <span class="caps">STOL</span> adaptations allow these interceptors to operate off of modified transports or pocket destroyers; the most common warships that make up pirate caravans.</p>
+
+<div class="clearfix"></div>
+
+<p><strong>Designer note:</strong> the idea is that Drake Interplanetary builds ships which are ostensibly for legal purposes (local militias, etc.) but are &#8216;obviously&#8217; for pirates: so it has the appearance of a military fighter, but mated to an awkwardly larger hull for collecting loot; it should have visible forward-facing tractor beams and a seat for a second crewman even though there&#8217;s no turret (as you&#8217;ll need a second man to board an enemy ship.) It also has a cheaper build quality: if Anvil is building Jeeps and Origin is building <span class="caps">BMW</span>s, this is a Honda.<br />
+</blockquote></p>
+
+<br />
+
+
+<a class="image  js-open-in-slideshow" data-id="pmonvlo6cxv5mr" data-full_res="/media/pmonvlo6cxv5mr/source/Render11_copy.jpg" data-low_res="/media/pmonvlo6cxv5mr/slideshow_pager/Render11_copy.jpg" data-source_url="/media/pmonvlo6cxv5mr/source/Render11_copy.jpg" rel="post"><img src="/media/pmonvlo6cxv5mr/post/Render11_copy.jpg" alt="Original Concept Art: Drake Cutlass" /><span class="caption">Original Concept Art: Drake Cutlass</span></a>
+
+<p>To further appreciate the intent behind the Cutlass, it might be valuable to look at the original specifications compared to the other ships in the same tier, the Freelancer and the Hornet. Note that these specifications are long out-of-date&#8230; but they speak well to the intended role of each ship.</p>
+
+<table>
+		<tr>
+			<td></td>
+			<td><strong>Freelancer</strong></td>
+			<td><strong>Hornet</strong></td>
+			<td><strong>Cutlass</strong></td>
+		</tr>
+		<tr>
+			<td><strong>Crew (max)</strong></td>
+			<td>2</td>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td><strong>Mass</strong></td>
+			<td>55,000</td>
+			<td>22,000</td>
+			<td>35,000</td>
+		</tr>
+		<tr>
+			<td><strong>Upgrade Capacity</strong></td>
+			<td>10</td>
+			<td>6</td>
+			<td>5</td>
+		</tr>
+		<tr>
+			<td><strong>Cargo Capacity</strong></td>
+			<td>20</td>
+			<td>4</td>
+			<td>10</td>
+		</tr>
+		<tr>
+			<td><strong>Engine Modifiers</strong></td>
+			<td>3</td>
+			<td>2</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td><strong>Engine Class</strong></td>
+			<td>Anti-Matter</td>
+			<td>Fusion</td>
+			<td>Fusion</td>
+		</tr>
+		<tr>
+			<td><strong>Main Engine</strong></td>
+			<td>2x TR5</td>
+			<td>1x TR4</td>
+			<td>1x TR4</td>
+		</tr>
+		<tr>
+			<td><strong>Maneuvering Thrusters</strong></td>
+			<td>8x TR2</td>
+			<td>8x TR2</td>
+			<td>16x TR2</td>
+		</tr>
+		<tr>
+			<td><strong>Class 1 Weapons</strong></td>
+			<td>None</td>
+			<td>2</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td><strong>Class 2 Weapons</strong></td>
+			<td>4</td>
+			<td>2</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td><strong>Class 3 Weapons</strong></td>
+			<td>2</td>
+			<td>4</td>
+			<td>4</td>
+		</tr>
+		<tr>
+			<td><strong>Class 4 Weapons</strong></td>
+			<td>1</td>
+			<td>2</td>
+			<td>2</td>
+		</tr>
+</table>
+
+<div class="clearfix"></div>
+
+<a class="image  js-open-in-slideshow" data-id="x7q0rdgkkbnafr" data-full_res="/media/x7q0rdgkkbnafr/source/Render03_copy.jpg" data-low_res="/media/x7q0rdgkkbnafr/slideshow_pager/Render03_copy.jpg" data-source_url="/media/x7q0rdgkkbnafr/source/Render03_copy.jpg" rel="post"><img src="/media/x7q0rdgkkbnafr/post/Render03_copy.jpg" alt="Original Concept Art: Drake Cutlass" /><span class="caption">Original Concept Art: Drake Cutlass</span></a>
+
+<a class="image  js-open-in-slideshow" data-id="od1p3ch49hbl1r" data-full_res="/media/od1p3ch49hbl1r/source/Render08_copy.jpg" data-low_res="/media/od1p3ch49hbl1r/slideshow_pager/Render08_copy.jpg" data-source_url="/media/od1p3ch49hbl1r/source/Render08_copy.jpg" rel="post"><img src="/media/od1p3ch49hbl1r/post/Render08_copy.jpg" alt="Original Concept Art: Drake Cutlass" /><span class="caption">Original Concept Art: Drake Cutlass</span></a>
+
+<p>From these numbers, you can see the early attempt to balance the Cutlass as a sort of fighting transport midway between the Hornet and the Freelancer. Over twice the cargo of the former, half that of the latter… but with better weapon slots, more maneuvering thrusters and a lower mass to avoid being a lumbering transport.  With regards to the oft-debated maneuverability, the biggest inspiration for this idea was the initial concept art that came back from Jim Martin, which reminded me of the Vampire from Wing Commander Prophecy. We discussed quite a bit the idea that the Cutlass might be especially maneuverable, but unreliably so: engines on an axis that would offer, for instance, exceedingly great yaw but limited pitch or roll. The sort of ship that might require an expert pilot to truly handle well.</p>
+
+<p>With that, the Cutlass began the development process&#8230; with several stops along the way! As with any creative process, what is listed above was the starting point. Over the past two years, the team has experimented with everything from a maneuverable Cutlass that spins rapidly on the axis of the twin-boom engines to a Cutlass that&#8217;s a pure transport. Knowing that there were a significant number of Cutlass pilots, we wanted to give players access to the ship as quickly as possible despite the fact that multi-crew ships and any piracy-related mechanics were much further off. In fact, both of our first two major module releases had &#8216;partial Cutlasses&#8217; released for them: the large external concept model in the Hangar to tide captains over until their ships were modeled and then the &#8216;dogfight oriented&#8217; single-pilot Cutlass added to Arena Commander 1.0. Neither version expressed the true purpose of the ship as originally announced, but both were intended to tide players over until they could begin raiding shipping lanes in the finished universe. For more details on this process, we will turn this article over to our <span class="caps">RIO</span>, designer John Crewe, to walk you through where the flyable Cutlass has been and to talk about where it went and where it&#8217;s going!</p></div><div class="cboth"></div></div>
+<div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+<div class="wrapper"><div class="hr"></div><div class="content-block4"><div class="content"><div class="top"></div><h1>The Hard Part: Making it Fly</h1><div class="cboth"></div></div><div class="bottom"></div></div><div class="content-block2"><div class="content clearfix"><img src="/media/tnhm5snoj2isbr/post_section_header/4newcutlass.png" /><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div><div class="content-block1 rsi-markup">
+<div  class=' segment' ><div class="content"><h2 class="no-margin"><span class="caps">WHERE</span> WE <span class="caps">WERE</span>: The Cutlass Takes Flight!</h2>
+
+<p><em>by John Crewe</em></p>
+
+<p><span class="initial">T</span>he Cutlass Black became flight ready with the release of Arena Commander v1.0 back in December 2014, but the road to getting it flight ready was an admittedly rocky one. After the initial block out by the ship team in Austin at that time, the Cutlass was worked on by a variety of people, including internal staff and several different outsource companies. The ship pipeline at the time was both young and extremely complex, and in review the resulting work had not been completed in a way that made it easy to implement in game. The unfortunate truth was that the asset that you&#8217;d had sitting in your hangars for some time had some serious design flaws in relation to its thruster placements; chief of which being the lack of any that could believably provide lateral thrust for strafing and yaw rotation. The only thrusters that could achieve this were the gimballed central ones, and because they were only centrally located, they unfortunately just couldn&#8217;t provide sufficient rotation as needed.</p>
+
+<p>In addition to this, the Cutlass also required some new thruster setups that had never been created for any of the Star Citizen ships before, and as such this new ground was being tread right up unto the release. We had for the first time in our development main thrusters that could rotate and act as the thrusters that provided retro thrust. We also had those central thrusters which could not only pitch/yaw but also roll, and at certain angles would limit rotation in other axis! The final part of the thruster issues with the Cutlass is having child thrusters, which the main thrusters are supposed to have but have been absent since the flight ready release. Long story short: the original <span class="caps">IFCS</span> system was never written to account for thrusters with thrusters on them and the handling behavior would degrade completely, so we&#8217;d removed them until we had a chance to look at that system; work which will be included in the forthcoming model update.</p>
+
+<p>John Pritchett and myself spent many evenings in the build up to release trying to solve these issues and whilst they solved a lot, a few persist to this day, which required some non-ideal solutions at that time, like the incredibly fast rotating thrusters and the fairly slippery handling that results from non-optimal thrusters.</p>
+
+<p>The final bump in the road for the v1.0 release was the delivery for the damage states and LoD’s was massively behind schedule and came in very late, barely days before the v1.0 release date leaving very little time for implementation, evaluation and optimization. This is always an unfortunate occurrence in game development, but because we knew this was the beginning of things and not the end, we implemented the best interim solutions we could at that time.</p>
+
+<h3>Post Release Rework Begins</h3>
+
+<a class="image  js-open-in-slideshow" data-id="tm44hi4m1e18rr" data-full_res="/media/tm44hi4m1e18rr/source/Concept_dj_cockpit1.jpg" data-low_res="/media/tm44hi4m1e18rr/slideshow_pager/Concept_dj_cockpit1.jpg" data-source_url="/media/tm44hi4m1e18rr/source/Concept_dj_cockpit1.jpg" rel="post"><img src="/media/tm44hi4m1e18rr/post/Concept_dj_cockpit1.jpg" alt="Concept Art: Cutlass Rework Cockpit" /><span class="caption">Concept Art: Cutlass Rework Cockpit</span></a>
+
+<p>It is safe to say the Cutlass has suffered from a lot of issues, but we’re intent on making amends (read on to find out how!) It became clear after its flight ready release that a lot of work had to be done to get it to the standard required and as such Foundry 42 was tasked with investigating a review and revamp of it.</p>
+
+<p>The designers at Foundry 42 took a look at it and worked up a proposal to keep the unique exterior shape but allow as much interior modularization as possible. At that point the ship was split up into four sections. Here are some bullet point features we want to implement in each section:</p>
+
+<div class="clearfix"></div>
+
+<a class="image  js-open-in-slideshow" data-id="v9t0e8fqkyhorr" data-full_res="/media/v9t0e8fqkyhorr/source/Concept_dj_crewutility1.jpg" data-low_res="/media/v9t0e8fqkyhorr/slideshow_pager/Concept_dj_crewutility1.jpg" data-source_url="/media/v9t0e8fqkyhorr/source/Concept_dj_crewutility1.jpg" rel="post"><img src="/media/v9t0e8fqkyhorr/post/Concept_dj_crewutility1.jpg" alt="Concept Art: Cutlass Rework Crew Utility" /><span class="caption">Concept Art: Cutlass Rework Crew Utility</span></a>
+
+<h3>Cockpit/Storage</h3>
+
+<ul>
+	<li>Contains the cockpit and a small utility area comprising personal storage and weapons locker.</li>
+</ul>
+
+<ul>
+	<li>Separated from the next section via a bulkhead door.</li>
+</ul>
+
+<ul>
+	<li>The second seat was moved to a single display screen allowing engineering/remote control functionality to be given.</li>
+</ul>
+
+<ul>
+	<li>Really bring in the cramped feeling but using up lots of the dead space above the passageways which are wasted currently.</li>
+</ul>
+
+<ul>
+	<li>Consistent between all variants.</li>
+</ul>
+
+<div class="clearfix"></div>
+
+<a class="image  js-open-in-slideshow" data-id="a4j5lede0mjblr" data-full_res="/media/a4j5lede0mjblr/source/Concept_dj_crewutility3.jpg" data-low_res="/media/a4j5lede0mjblr/slideshow_pager/Concept_dj_crewutility3.jpg" data-source_url="/media/a4j5lede0mjblr/source/Concept_dj_crewutility3.jpg" rel="post"><img src="/media/a4j5lede0mjblr/post/Concept_dj_crewutility3.jpg" alt="Concept Art: Cutlass Rework Crew Utility" /><span class="caption">Concept Art: Cutlass Rework Crew Utility</span></a>
+
+<h3>Crew Living Quarters</h3>
+
+<ul>
+	<li>Contains a pair of escape pod beds on one side and a utility area on the other side.</li>
+</ul>
+
+<ul>
+	<li>Small additional weapons locker, shower/toilet and turret access.</li>
+</ul>
+
+<ul>
+	<li>Storage built into space between current interior and exterior hull, especially for smuggling.</li>
+</ul>
+
+<ul>
+	<li>Turret access is retained in this area although the entry hole will be made to the new standardized 2m, to match Docking Collars and as such if destroyed makes the perfect extra docking point for enemies.</li>
+</ul>
+
+<div class="clearfix"></div>
+
+<a class="image  js-open-in-slideshow" data-id="ab4futydkclzqr" data-full_res="/media/ab4futydkclzqr/source/Concept_dj_cargo1.jpg" data-low_res="/media/ab4futydkclzqr/slideshow_pager/Concept_dj_cargo1.jpg" data-source_url="/media/ab4futydkclzqr/source/Concept_dj_cargo1.jpg" rel="post"><img src="/media/ab4futydkclzqr/post/Concept_dj_cargo1.jpg" alt="Concept Art: Cutlass Rework Cargo Hold" /><span class="caption">Concept Art: Cutlass Rework Cargo Hold</span></a>
+
+<h3>Central Modular Room</h3>
+
+<ul>
+	<li>Provides the basis for all three existing variants whilst giving potential for more in future.</li>
+</ul>
+
+<ul>
+	<li>Default option for the Cutlass Black gains a cargo lift on which all cargo is stored.</li>
+</ul>
+
+<ul>
+	<li>Cutlass Blue comes equipped with a set of cells.</li>
+</ul>
+
+<ul>
+	<li>Red variant has a pod recovery system which can tractor escape pods in from outside through an airlock in the floor.</li>
+</ul>
+
+<ul>
+	<li>Other proposed variations included a drop ship version, similar to the Retaliator drop ship module.</li>
+</ul>
+
+<div class="clearfix"></div>
+
+<a class="image  js-open-in-slideshow" data-id="gurb9f2btrgs8r" data-full_res="/media/gurb9f2btrgs8r/source/Concept_dj_ramp.jpg" data-low_res="/media/gurb9f2btrgs8r/slideshow_pager/Concept_dj_ramp.jpg" data-source_url="/media/gurb9f2btrgs8r/source/Concept_dj_ramp.jpg" rel="post"><img src="/media/gurb9f2btrgs8r/post/Concept_dj_ramp.jpg" alt="Concept Art: Ramp" /><span class="caption">Concept Art: Ramp</span></a>
+
+<h3>Rear Ramp</h3>
+
+<ul>
+	<li>Similar to the current rear of the Cutlass but have the docking collar move to the ceiling rather than being on the floor of the cargo bay.</li>
+</ul>
+
+<ul>
+	<li>Sealed from modular room to allow it to open during flight without depressurizing the entire cargo bay.</li>
+</ul>
+
+<ul>
+	<li>The docking collar is also moving to the new standardized size of 2m wide which will allow 1SCU crates plenty of space to be transferred through and the ramp is wide enough to support larger items as well as being directly loaded onto the cargo lift.</li>
+</ul>
+
+<p>In addition to this, there was a small selection of exterior adjustments decided to aid the overall handling such as bringing the rear engines more in line with the front canard wings and adding better placed/integrated thrusters to the front of the ship as well.</p>
+
+<p>Once the initial design pass had been done it was passed over to the concept team who started doing paint overs using the existing white box designer geometry. Some of these concepts were released during the Cargo Design Doc and the rest are included throughout this post.</p>
+
+<p>Shortly before work was due to commence on the &#8220;Cutlass rework&#8221; the priorities on the ship schedule changed, and as such the Foundry 42 Ship Team (at the time, only a few people) were moved on to finishing other ships such as the Gladius, Gladiator, Retaliator and Idris, which you have all now seen at CitizenCon as well as a few others you are yet to see.</p>
+
+<div class="clearfix"></div>
+
+<a class="image  js-open-in-slideshow" data-id="neyslsoklpu4fr" data-full_res="/media/neyslsoklpu4fr/source/Concept_dj_amenities1.jpg" data-low_res="/media/neyslsoklpu4fr/slideshow_pager/Concept_dj_amenities1.jpg" data-source_url="/media/neyslsoklpu4fr/source/Concept_dj_amenities1.jpg" rel="post"><img src="/media/neyslsoklpu4fr/post/Concept_dj_amenities1.jpg" alt="Concept Art: Cutlass Rework Crew Amenities" /><span class="caption">Concept Art: Cutlass Rework Crew Amenities</span></a>
+
+<p>Because of this, the task of creating the revamped Cutlass was given to an outsource studio with guidance from the team. In an effort to avoid the same mistakes that were made with prior outsource partners, they were actually embedded within the F42 studio for a fortnight so we would have the proper oversight and be able to provide the most immediate feedback.</p>
+
+<div class="clearfix"></div>
+
+<p>Unfortunately, as happens in game development, the priorities changed again, as we realized that other needs at that time trumped the rework of an existing flyable ship, and as such around June the Cutlass Black rework was put on the back burner as other ships came through the pipeline. This is an unfortunate reality of development, as there are only a finite number of resources available, and getting more ships built allows other members of the team complete their work sooner, as opposed to slowing multiple departments as they wait on one team to rework the Cutlass.</p>
+
+<h2><span class="caps">WHERE</span> WE <span class="caps">ARE</span>: The Cutlass in Alpha 2.0</h2>
+
+<p>For Alpha 2.0 the Cutlass Black is receiving an interim update for a variety of reasons, primarily performance. It was by far the single most expensive ship in the game in terms of memory usage, as everyone will have experienced playing AC with the severe hangs whenever one spawns or dies. We managed to improve that somewhat over subsequent patches from the programming side by pre-caching it, but at the end of the day the raw assets just weren’t optimized enough to be suitable going forward.</p>
+
+<p>We decided a few months ago that rather than rushing to try and get the reworked Cutlass out for 2.0 we’d spend the time “upgrading” the old version to improve the experience for everyone when one is involved in combat. Not only have we totally redone the damage setup using the new damage shader system but we’ve also added in the basics of the new Multi Crew UI screens as seen in the Constellation and Retaliator. By doing this work the actual source .max file has shrunk from just under 2GB down to 550MB, the in game .cga assets have also been reduced from two assets totaling 405MB down to a single asset under 30MB. Not only is this better for the game but also massively better for us developers as it was taking nearly 40 minutes to commit the .max file to Perforce previously on our old office connection, now it’s under a minute.</p>
+
+<div class="clearfix"></div>
+
+<a class="image  js-open-in-slideshow" data-id="jbf8ui5e3g228r" data-full_res="/media/jbf8ui5e3g228r/source/1newcutlass.png" data-low_res="/media/jbf8ui5e3g228r/slideshow_pager/1newcutlass.png" data-source_url="/media/jbf8ui5e3g228r/source/1newcutlass.png" rel="post"><img src="/media/jbf8ui5e3g228r/post/1newcutlass.png" alt="" /></a>
+
+<a class="image  js-open-in-slideshow" data-id="diitwyn2m124mr" data-full_res="/media/diitwyn2m124mr/source/2newcutlass.png" data-low_res="/media/diitwyn2m124mr/slideshow_pager/2newcutlass.png" data-source_url="/media/diitwyn2m124mr/source/2newcutlass.png" rel="post"><img src="/media/diitwyn2m124mr/post/2newcutlass.png" alt="" /></a>
+
+<a class="image  js-open-in-slideshow" data-id="ajhh1oqfcxrk1r" data-full_res="/media/ajhh1oqfcxrk1r/source/3newcutlass.png" data-low_res="/media/ajhh1oqfcxrk1r/slideshow_pager/3newcutlass.png" data-source_url="/media/ajhh1oqfcxrk1r/source/3newcutlass.png" rel="post"><img src="/media/ajhh1oqfcxrk1r/post/3newcutlass.png" alt="" /></a>
+
+<a class="image  js-open-in-slideshow" data-id="tnhm5snoj2isbr" data-full_res="/media/tnhm5snoj2isbr/source/4newcutlass.png" data-low_res="/media/tnhm5snoj2isbr/slideshow_pager/4newcutlass.png" data-source_url="/media/tnhm5snoj2isbr/source/4newcutlass.png" rel="post"><img src="/media/tnhm5snoj2isbr/post/4newcutlass.png" alt="" /></a>
+
+<p>The result for players is that it allows the Cutlass to be managed just like those larger ships and gives us valuable feedback on the usability of those screens on a much smaller scale ship, both in terms of size and crew count. The Pilot has a revised cockpit display with new multi-function displays and the co-pilot seat has an all new single 16:9 display allowing oversight to many features whilst controlling specific engineering style tasks. In addition to the UI screens we’ve also done a quick usability pass on the ship, tightening up the interaction prompts for all the buttons and adjusting the button locations to be not quite so jammed in and making the external buttons a bit more visible. There should be no more cases of trying to open the cockpit door, whilst accidentally lowering the turret or ending up in the jump seat!</p>
+
+<p>On top of the multi-crew update the ship has also had a complete thruster balance pass to go with the new <span class="caps">IFCS</span> system which should help limit some of the more unexpected behavior you experience in AC today along with improved speeds and handling allow you to catch up with your prey easier.</p>
+
+<p>Lastly and most importantly, we are bringing back the cockpit fans which have been missing in action since v1.0. We expect this was the only aspect of the rework anyone was interested in, so let&#8217;s consider the Cutlass &#8220;finished.&#8221;</p>
+
+<p>Just seeing if anyone is actually reading this. We&#8217;re kidding, of course. But not about the fans. Those are really back. =)</p>
+
+<h2><span class="caps">WHERE</span> WE&#8217;RE <span class="caps">GOING</span>: Plans for the Cutlass Going Forward</h2>
+
+<p>With the split of ship manufacturers between studios, the Cutlass (being a Drake ship) has moved over to LA for them to implement the above design rework alongside their work on the Herald and Caterpillar. The current ship schedule is very full, with all the ships required for S42 taking priority and most being done at Foundry 42, as such the interim update to the Cutlass for 2.0 fills the need we have for it in the short term.</p>
+
+<p>As the concept and designs for the rework have been finished, this reduces the amount of time needed for the eventual Cutlass rework to be completed. It’s just a case of finding time in the schedule to complete that work, especially when it has to compete against other ships which are not flight ready in any form, yet.</p>
+
+<p>In addition to the rework the Cutlass will benefit from all the ongoing updates to ships such as the new component system rollout which will allow players to customize their ships much more than is currently possible, and we hope to have a more thorough design post on this exciting system soon. Other updates that will be coming online will be updated turrets and mounts to allow a variety of weapons, the first recently released was the S4 fixed mount allowing Cutlass users to wield the hefty Behring cannon. The plan has always been to allow players the choice of setting their ship up how they want, but in v1.0 the turret was slaved to the pilot simulating a remote control turret. For 2.0 it is now a dedicated manned turret which in future will allow it to be slaved to either seat, manned directly or controlled by AI.</p>
+
+<p>The Cutlass is designed to be operated by two people (<span class="caps">MAX</span> Crew is <strong><span class="caps">NOT</span></strong> the same as <span class="caps">REQUIRED</span> or <span class="caps">OPTIMAL</span> Crew,) with a pilot and another who can choose between sitting in the <span class="caps">RIO</span> seat and managing ship systems or taking direct control of the turret to provide offensive capabilities. That doesn’t mean you have to roll with just two people, you can always recruit a bunch of your buddies to ride in the back to take on any jobs you see fit although there are only two escape pods&#8230; </p>
+
+<h2><span class="caps">VARIANTS</span>: Talking about the Red and Blue</h2>
+
+<a class="image  js-open-in-slideshow" data-id="0mho3r39bvp85r" data-full_res="/media/0mho3r39bvp85r/source/6.png" data-low_res="/media/0mho3r39bvp85r/slideshow_pager/6.png" data-source_url="/media/0mho3r39bvp85r/source/6.png" rel="post"><img src="/media/0mho3r39bvp85r/post/6.png" alt="" /></a>
+
+<p>One of the most popular questions/complaints is about the variation in stats for the components in the Red and Blue versions and as always our answer is “All stats are subject to change” and the Red &amp; Blue are no exception.</p>
+
+<p>The current stats for the variants will be reviewed when the Black revamp takes place as that will dictate the base level for the variants, expect the Blue to still have some edges as you’d imagine from a Law Enforcement variant.</p>
+
+<p>The Red version will still maintain its search and rescue capabilities with an integral escape pod recovery mechanism in the central modular room along with medical pods and hospital equipment. The turret will also be swapped for the scanner array and of course its exterior paint job.</p>
+
+<div class="clearfix"></div>
+
+<a class="image  js-open-in-slideshow" data-id="8wmnpvoodv8fur" data-full_res="/media/8wmnpvoodv8fur/source/5.png" data-low_res="/media/8wmnpvoodv8fur/slideshow_pager/5.png" data-source_url="/media/8wmnpvoodv8fur/source/5.png" rel="post"><img src="/media/8wmnpvoodv8fur/post/5.png" alt="" /></a>
+
+<p>The Blue version still retains its additional missiles and prisoner cells although their arrangement is still to be decided. They currently sit around the edge of the hull but may move onto the central cargo lift to allow all of them to be lowered out of the ship together for easier prisoner loading/unloading.</p>
+
+<p>In regards to the exterior styling there will be a push towards unification of the base meshes between all three versions so that one exterior can be used across them all with only small “bolt on” pieces like you find in the Vanguard series to differentiate them, along with their recognizable paint jobs of course. This means the cockpit geometry will most likely be different than to what is currently there whilst we find the best compromise between them all, but rest assured: no more bars through the viewline!</p>
+
+<div class="clearfix"></div></div><div class="cboth"></div></div>
+<div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+<div class="wrapper"><div class="hr"></div><div class="content-block4"><div class="content"><div class="top"></div><h1>Questions from the Community</h1><div class="cboth"></div></div><div class="bottom"></div></div><div class="content-block1 rsi-markup">
+<div  class=' segment' ><div class="content"><p><blockquote></p>
+
+<h3>As demonstrated with CR comments in the <span class="caps">WIP</span> and the ship commercial it was lead to believe the Cutlass would be a nimble ship. However the current iterations have made the ship otherwise. Has <span class="caps">CIG</span> taken a new direction for this ship?</h3>
+
+<p><span class="initial">A</span>s we’ve covered in the post above the Cutlass has suffered at the hands of numerous setup and design issues which we’re dealing with. The direction is still the same, it is supposed to be nimble for its size and type especially considering the other roles it can do and with the <span class="caps">IFCS</span> changes coming with 2.0 it certainly performs significantly better than in 1.3.</p>
+
+<Br> 
+
+<h3>Why would a Police, Bounty hunter, <span class="caps">CSAR</span>, and Pirate use the slowest fighter in the game? Shouldn&#8217;t speed and combat capabilities be more important than raw cargo capacity for those roles?</h3>
+
+<p>See above, it no longer handles like a slippery superfreighter with the <span class="caps">IFCS</span> changes in 2.0 and will get better when the reworked Cutlass is released. The Cutlass can easily catch up with other ships and mix it up with them.</p>
+
+<Br>
+
+<h3>Currently the loading bay &amp; Docking collar are too small for <span class="caps">SCU</span> to pass through it, is this intentional or will it be fixed? Will the cutlass receive a way to load cargo pods and other bulky items?</h3>
+
+<p>The current docking collar on the Cutlass is 1.3./2.0 is 2.2m wide, larger than a regular 1SCU crate which is 1.25m * 1.25m * 1.25m. The rear ramp is also 1.8m wide and 2.8m tall, again more than enough to receive cargo in multiple sizes. The cargo lift for the rework of the Cutlass can accommodate larger items as well, but if you’re wanting to transport large/bulky amounts of cargo then the Cutlass is not the ship for this.</p>
+
+<br />
+
+
+<h3>Is the Cutlass still intended to be a 3 to 4 crew ship instead of the 1.5 crew ship she has been initially sold as? What sized crew is the Cutlass rework designed around?</h3>
+
+<p>The Cutlass in 2.0 and the reworked version, is designed around supporting two crew. One pilot and one for either providing additional multicrew support via the second seat or providing offensive power via the turret. Down the line you’ll be able to slave the turret to one of those seats or add an AI module to allow it to be independent of the seats just like any other turret in the game would be capable of. Just because we say two crew does not mean that is the absolutely minimum or maximum, one person is able to fly and fight with it at a basic level. Adding that AI module I just mentioned would allow it to be on a par weapon wise with what is currently in 1.3. You could also man all three seats or have a couple of guys on the jump seats in the rear to provide extra support during landing/boarding “operations”.</p>
+
+<Br>
+
+<h3>The Cutlass seems to be in the awkward position of having the speed and handling of a multi-crew ship, while retaining the armament and defenses of smaller fighters. What benefits does the Cutlass have over a smaller/faster single person ship, or a bigger/more armed and armored multi-crew ship?</h3>
+
+<p>As discussed the speed and maneuverability have been increased significantly in 2.0 which will not only help with offensive options but also for defensive needs and evasion of missiles. All the ships are due for updates in the future regarding their health as the new component system comes online along with piercability of the hull which will change how ships behave when being damaged. The Cutlass benefits from having a second player being able to dedicate themselves to managing the ships systems (shield/power management for example) or turret versus a lone player having to manage it all.</p>
+
+<p>It is not designed to go toe to toe with the regular multicrew ships like the Connie, Tali or Freelancer who dwarf the Cutlass not only in size but also weaponry and crew size. The Cutlass sits in a role that can bridge the single seater and low end multicrew ship roles and function in either camp or somewhere in the middle.<br />
+</blockquote></p></div><div class="cboth"></div></div>
+<div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+<div class="wrapper"><div class="hr"></div><div class="content-block4"><div class="content"><div class="top"></div><h1>Cutlass Resources</h1><div class="cboth"></div></div><div class="bottom"></div></div><div class="content-block1 rsi-markup">
+<div  class=' segment' ><div class="content"><p><span class="initial">F</span>or more information about the Drake Cutlass, consult the books in your local library&#8230; or check out some of these previous posts concerning our plans and objectives for the little pirate ship that could. </p>
+
+<ul>
+	<li><a href="https://robertsspaceindustries.com/comm-link/transmission/12790-4-Million-New-System-New-Ship-New-Goals">Original Announcement</a></li>
+	<li><a href="https://robertsspaceindustries.com/comm-link/spectrum-dispatch/13441-Drake-Interplanetary">Jump Point Porfolio: Drake Interplanetary</a></li>
+	<li><a href="https://robertsspaceindustries.com/comm-link/engineering/13454-WIP-Cutlass">Jump Point <span class="caps">WIP</span>: The Cutlass</a></li>
+	<li><a href="https://robertsspaceindustries.com/comm-link/engineering/14380-WIP-Cutlass-Variants">Jump Point <span class="caps">WIP</span>: Cutlass Variants</a></li>
+	<li><a href="https://robertsspaceindustries.com/comm-link/transmission/14200-Unshackled-The-Drake-Cutlass">Cutlass Commercial &amp; Variants</a></li>
+	<li><a href="https://robertsspaceindustries.com/media/ezl64b1eauar2r/source/Cutlass-Brochure-V6.pdf">Cutlass Brochure</a></li>
+	<li><a href="https://robertsspaceindustries.com/pledge/ships/drake-cutlass/Cutlass-Black">Cutlass Black Store Listing</a></li>
+	<li><a href="https://robertsspaceindustries.com/pledge/ships/drake-cutlass/Cutlass-Red">Cutlass Red Store Listing</a></li>
+	<li><a href="https://robertsspaceindustries.com/pledge/ships/drake-cutlass/Cutlass-Blue">Cutlass Blue Store Listing</a></li>
+</ul>
+
+<h2>Packages &amp; Add-On Ships</h2>
+
+
+
+<section class="store-embed">
+  <div class="product-item small trans-02s">
+    <a href="/pledge/Standalone-Ships/Cutlass-Black"><img src="https://media.robertsspaceindustries.com/w177zb9ky23fk/store_small.jpg" class="trans-02s" /></a>
+    <div class="info clearfix trans-02s">
+      <div class="title">
+        Cutlass Black<span> - Standalone Ship</span>
+      </div>
+      <div class="price ">            <strong class="final-price" data-value="10000" data-currency="USD">$100<span class='super'>.00 <span class='currency'>USD</span></span></strong></div>      <span class="state" style="color:#00ff00;">
+                              In stock
+                        </span>
+      <a class="more" href="/pledge/Standalone-Ships/Cutlass-Black">more info</a>
+                                      <a class="holosmallbtn add-cart add-cart ty-js-add-to-cart" href="/pledge/Standalone-Ships/Cutlass-Black"    data-sku='338' data-name='Cutlass Black' data-tracking-infos='{ "id":"SCP4-DAO-CUTLASS","name":"Cutlass Black","brand":"pledge","category":"Standalone Ship","price":"100","dimension1":"-1","stockLevel":"high"}'>
+  <span class="holosmallbtn-top abs-overlay trans-02s js-label">Add to cart</span>
+  <span class="holosmallbtn-bottom abs-overlay trans-02s"></span>
+</a>          </div>
+  </div>
+</section></div><div class="cboth"></div></div>
+<div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+<div class="wrapper">
+  <div class="hr"></div>
+  <div class="content-block4"><div class="content"><div class="top"></div><h1>Technical Overview</h1><div class="cboth"></div></div><div class="bottom"></div></div>
+  <div id="store-wrapper">
+    <section id="holo-viewer" class="wcontent">
+      <script type="text/javascript" src="/cache/en/rsi-3js.js?v=6.37.0"></script>
+<script type="text/javascript" src="/cache/en/rsi-ship-viewer.js?v=6.37.0"></script>
+<script type="text/javascript" src="/cache/en/rsi-ship-editor.js?v=6.37.0"></script>
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+     window.shiptech = new RSI.ShipSystemsView({
+       data: {"rowcount":1,"totalrows":1,"estimatedrows":false,"pagesize":0,"pagecount":null,"page":1,"offset":0,"startrow":0,"resultset":[{"id":"56","manufacturer_id":"5","offset_x":"0.00000","offset_y":"0.00000","offset_z":"0.00000","rotation_x":"0.00000","rotation_y":"0.00000","rotation_z":"0.00000","size":"medium","time_modified":"10 months ago","viewable":"1","name":"Cutlass Black","manufacturer":{"id":"5","code":"DRAK","description":"Ostensibly a legitimate company, it\u2019s an open secret that they manufacture cheap, well-armed craft favored by pirates, to the point that they\u2019re named in that vein: \u201cCutlass,\u201d \u201cBuccaneer,\u201d \u201cPrivateer,\u201d and \u201cMarauder,\u201d etc.","known_for":"the Cutlass and the Caterpillar","name":"Drake Interplanetary","media":[{"id":"312957","cover_data":null,"depot":"LOCAL_MEDIA","depot_status":"R","derived_data":{"sizes":{"heap_note":{"width":24,"height":24,"mode":"resize-crop","delete":"1--1"},"heap_thumb":{"width":61,"height":61,"mode":"resize-crop","delete":"1--1"},"heap_infobox":{"width":165,"height":165,"mode":"resize-crop","delete":"1--1"},"post_section_header":{"width":1118,"height":351,"mode":"resize-crop"},"channel_item_full":{"width":1119,"height":600,"mode":"resize-crop"},"home_transmissions_item_expanded":{"width":530,"height":280,"mode":"resize-crop"},"subscribers_vault_thumbnail":{"width":216,"height":133,"mode":"resize-crop"},"slideshow":{"width":648,"height":366,"mode":"resize-crop"},"slideshow_pager":{"width":88,"height":50,"mode":"resize-crop"},"vault_thumb":{"width":335,"height":null,"mode":"resize"},"post":{"width":500,"height":null,"mode":"resize"},"wallpaper_thumb":{"width":620,"height":400,"mode":"resize-crop"},"product_thumb_large":{"width":341,"height":204,"mode":"resize-crop"},"product_thumb_medium_and_small":{"width":180,"height":150,"mode":"resize-crop"},"component_description":{"width":415,"height":null,"mode":"resize"},"product_thumb_in_description":{"width":350,"height":350,"mode":"resize-crop"},"product_thumb_shipmod":{"width":248,"height":188,"mode":"resize-crop"},"press_latest_post":{"width":509,"height":211,"mode":"resize-crop"},"store_small":{"width":351,"height":210,"mode":"resize-crop"},"store_large":{"width":818,"height":288,"mode":"resize-crop"},"store_hub_small":{"width":600,"height":210,"mode":"resize-crop"},"store_hub_large":{"width":1200,"height":420,"mode":"resize-crop"},"store_slideshow_small":{"width":800,"height":300,"mode":"resize-crop"},"store_slideshow_large":{"width":1140,"height":390,"mode":"resize-crop"},"store_slideshow_small_zoom":{"width":710,"height":516,"mode":"resize-crop"},"store_slideshow_large_zoom":{"width":1420,"height":1032,"mode":"resize-crop"},"store_thumb_listing_small":{"width":186,"height":63,"mode":"resize-crop"},"store_thumb_sku_detail":{"width":318,"height":248,"mode":"resize-crop"},"avatar":{"width":76,"height":76,"mode":"resize-crop","delete":"1--1"},"banner":{"width":1140,"height":380,"mode":"resize-crop","delete":"1--1"},"cover":{"width":1140,"height":"","mode":"resize","delete":"1--1"},"logo":{"width":175,"height":175,"mode":"resize-crop","delete":"1--1"},"icon":{"width":45,"height":45,"mode":"resize-crop","delete":"1--1"},"background_blur":{"width":1366,"height":768,"mode":"resize-crop","delete":"1--1"}}},"distant_id":null,"distant_source":null,"publish_end":null,"publish_start":null,"purpose":"full","slug":"bdkpvl2bpxaqa","source_duration":null,"source_extension":"png","source_name":"Drake","status":"P","tag_string":"","time_modified":"2014-08-04 15:03:03","type":"I","source_url":"\/media\/bdkpvl2bpxaqar\/source\/Drake.png","source_stream":{"progressive":"\/media\/bdkpvl2bpxaqar\/source\/Drake.png"},"images":{"heap_note":"\/media\/bdkpvl2bpxaqar\/heap_note\/Drake.png","heap_thumb":"\/media\/bdkpvl2bpxaqar\/heap_thumb\/Drake.png","heap_infobox":"\/media\/bdkpvl2bpxaqar\/heap_infobox\/Drake.png","tavern_upload_emoji":"\/media\/bdkpvl2bpxaqar\/tavern_upload_emoji\/Drake.png","tavern_upload_mini":"\/media\/bdkpvl2bpxaqar\/tavern_upload_mini\/Drake.png","tavern_upload_square":"\/media\/bdkpvl2bpxaqar\/tavern_upload_square\/Drake.png","tavern_upload_small":"\/media\/bdkpvl2bpxaqar\/tavern_upload_small\/Drake.png","tavern_upload_medium":"\/media\/bdkpvl2bpxaqar\/tavern_upload_medium\/Drake.png","tavern_upload_large":"\/media\/bdkpvl2bpxaqar\/tavern_upload_large\/Drake.png","post_section_header":"\/media\/bdkpvl2bpxaqar\/post_section_header\/Drake.png","channel_item_full":"\/media\/bdkpvl2bpxaqar\/channel_item_full\/Drake.png","home_transmissions_item_expanded":"\/media\/bdkpvl2bpxaqar\/home_transmissions_item_expanded\/Drake.png","subscribers_vault_thumbnail":"\/media\/bdkpvl2bpxaqar\/subscribers_vault_thumbnail\/Drake.png","slideshow":"\/media\/bdkpvl2bpxaqar\/slideshow\/Drake.png","slideshow_pager":"\/media\/bdkpvl2bpxaqar\/slideshow_pager\/Drake.png","slideshow_wide":"\/media\/bdkpvl2bpxaqar\/slideshow_wide\/Drake.png","vault_thumb":"\/media\/bdkpvl2bpxaqar\/vault_thumb\/Drake.png","post":"\/media\/bdkpvl2bpxaqar\/post\/Drake.png","wallpaper_thumb":"\/media\/bdkpvl2bpxaqar\/wallpaper_thumb\/Drake.png","product_thumb_large":"\/media\/bdkpvl2bpxaqar\/product_thumb_large\/Drake.png","product_thumb_medium_and_small":"\/media\/bdkpvl2bpxaqar\/product_thumb_medium_and_small\/Drake.png","component_description":"\/media\/bdkpvl2bpxaqar\/component_description\/Drake.png","product_thumb_in_description":"\/media\/bdkpvl2bpxaqar\/product_thumb_in_description\/Drake.png","product_thumb_shipmod":"\/media\/bdkpvl2bpxaqar\/product_thumb_shipmod\/Drake.png","press_latest_post":"\/media\/bdkpvl2bpxaqar\/press_latest_post\/Drake.png","store_small":"\/media\/bdkpvl2bpxaqar\/store_small\/Drake.png","store_large":"\/media\/bdkpvl2bpxaqar\/store_large\/Drake.png","store_hub_small":"\/media\/bdkpvl2bpxaqar\/store_hub_small\/Drake.png","store_hub_large":"\/media\/bdkpvl2bpxaqar\/store_hub_large\/Drake.png","store_slideshow_small":"\/media\/bdkpvl2bpxaqar\/store_slideshow_small\/Drake.png","store_slideshow_large":"\/media\/bdkpvl2bpxaqar\/store_slideshow_large\/Drake.png","store_slideshow_small_zoom":"\/media\/bdkpvl2bpxaqar\/store_slideshow_small_zoom\/Drake.png","store_slideshow_large_zoom":"\/media\/bdkpvl2bpxaqar\/store_slideshow_large_zoom\/Drake.png","store_thumb_listing_small":"\/media\/bdkpvl2bpxaqar\/store_thumb_listing_small\/Drake.png","store_thumb_sku_detail":"\/media\/bdkpvl2bpxaqar\/store_thumb_sku_detail\/Drake.png","store_upgrade_half":"\/media\/bdkpvl2bpxaqar\/store_upgrade_half\/Drake.png","sku_widget_thumbnail":"\/media\/bdkpvl2bpxaqar\/sku_widget_thumbnail\/Drake.png","sku_widget_modal":"\/media\/bdkpvl2bpxaqar\/sku_widget_modal\/Drake.png","avatar":"\/media\/bdkpvl2bpxaqar\/avatar\/Drake.png","banner":"\/media\/bdkpvl2bpxaqar\/banner\/Drake.png","cover":"\/media\/bdkpvl2bpxaqar\/cover\/Drake.png","logo":"\/media\/bdkpvl2bpxaqar\/logo\/Drake.png","icon":"\/media\/bdkpvl2bpxaqar\/icon\/Drake.png","background_blur":"\/media\/bdkpvl2bpxaqar\/background_blur\/Drake.png","texture":"\/media\/bdkpvl2bpxaqar\/texture\/Drake.png","hub_large":"\/media\/bdkpvl2bpxaqar\/hub_large\/Drake.png","hub_medium":"\/media\/bdkpvl2bpxaqar\/hub_medium\/Drake.png","hub_small":"\/media\/bdkpvl2bpxaqar\/hub_small\/Drake.png","hub_tile":"\/media\/bdkpvl2bpxaqar\/hub_tile\/Drake.png","wallpaper_3840x2160":"\/media\/bdkpvl2bpxaqar\/wallpaper_3840x2160\/Drake.png","wallpaper_1920x1080":"\/media\/bdkpvl2bpxaqar\/wallpaper_1920x1080\/Drake.png","wallpaper_512x384":"\/media\/bdkpvl2bpxaqar\/wallpaper_512x384\/Drake.png","wsc_event_thumb":"\/media\/bdkpvl2bpxaqar\/wsc_event_thumb\/Drake.png","bug_council_thumbnail":"\/media\/bdkpvl2bpxaqar\/bug_council_thumbnail\/Drake.png"},"membership.id":"2677","membership.slot":"icon"}]},"propulsion":[{"id":"31478","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"fuel_intakes","ship_id":"56","size":"medium","quantity":"1","details":"","propulsion_id":"12","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","propulsion":{"id":"12","manufacturer_id":"80","size":"medium","type":"fuel_intakes","name":"Fuel Intake","manufacturer":{"id":"80","known_for":null,"name":"TBD"}}},{"id":"31479","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"fuel_tanks","ship_id":"56","size":"medium","quantity":"1","details":"","propulsion_id":"13","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","propulsion":{"id":"13","manufacturer_id":null,"size":"medium","type":"fuel_tanks","name":"Fuel Tank","manufacturer":null}},{"id":"31480","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"quantum_drives","ship_id":"56","size":"medium","quantity":"1","details":"","propulsion_id":"14","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","propulsion":{"id":"14","manufacturer_id":"80","size":"medium","type":"quantum_drives","name":"Quantum Drive","manufacturer":{"id":"80","known_for":null,"name":"TBD"}}},{"id":"31481","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"jump_modules","ship_id":"56","size":"medium","quantity":"1","details":"","propulsion_id":"15","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","propulsion":{"id":"15","manufacturer_id":"80","size":"medium","type":"jump_modules","name":"Jump Module","manufacturer":{"id":"80","known_for":null,"name":"TBD"}}},{"id":"31482","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"quantum_fuel_tanks","ship_id":"56","size":"medium","quantity":"1","details":"","propulsion_id":"16","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","propulsion":{"id":"16","manufacturer_id":null,"size":"medium","type":"quantum_fuel_tanks","name":"Quantum Fuel Tank","manufacturer":null}}],"thrusters":[{"id":"54025","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"main_thrusters","ship_id":"56","size":"","quantity":"1","details":"","thruster_id":"3","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"3","manufacturer_id":null,"size":null,"type":"main_thrusters","name":"Main Thruster","manufacturer":null}},{"id":"54026","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"main_thrusters","ship_id":"56","size":"","quantity":"1","details":"","thruster_id":"3","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"3","manufacturer_id":null,"size":null,"type":"main_thrusters","name":"Main Thruster","manufacturer":null}},{"id":"54027","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"main_thrusters","ship_id":"56","size":"","quantity":"1","details":"","thruster_id":"4","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"4","manufacturer_id":null,"size":null,"type":"main_thrusters","name":"Retro Thruster","manufacturer":null}},{"id":"54028","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"main_thrusters","ship_id":"56","size":"","quantity":"1","details":"","thruster_id":"4","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"4","manufacturer_id":null,"size":null,"type":"main_thrusters","name":"Retro Thruster","manufacturer":null}},{"id":"54029","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"maneuvering_thrusters","ship_id":"56","size":"","quantity":"1","details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"54030","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"maneuvering_thrusters","ship_id":"56","size":"","quantity":"1","details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"54031","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"maneuvering_thrusters","ship_id":"56","size":"","quantity":"1","details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"54032","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"maneuvering_thrusters","ship_id":"56","size":"","quantity":"1","details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"54033","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"maneuvering_thrusters","ship_id":"56","size":"","quantity":"1","details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"54034","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"maneuvering_thrusters","ship_id":"56","size":"","quantity":"1","details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"54035","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"maneuvering_thrusters","ship_id":"56","size":"","quantity":"1","details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"54036","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"maneuvering_thrusters","ship_id":"56","size":"","quantity":"1","details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"54037","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"maneuvering_thrusters","ship_id":"56","size":"","quantity":"1","details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"54038","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"maneuvering_thrusters","ship_id":"56","size":"","quantity":"1","details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"54039","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"maneuvering_thrusters","ship_id":"56","size":"","quantity":"1","details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"54040","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"maneuvering_thrusters","ship_id":"56","size":"","quantity":"1","details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"54041","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"maneuvering_thrusters","ship_id":"56","size":"","quantity":"1","details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"54042","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"maneuvering_thrusters","ship_id":"56","size":"","quantity":"1","details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"54043","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"maneuvering_thrusters","ship_id":"56","size":"","quantity":"1","details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"54044","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"maneuvering_thrusters","ship_id":"56","size":"","quantity":"1","details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"54045","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"maneuvering_thrusters","ship_id":"56","size":"","quantity":"1","details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"54046","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"maneuvering_thrusters","ship_id":"56","size":"","quantity":"1","details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"54047","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"maneuvering_thrusters","ship_id":"56","size":"","quantity":"1","details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"54048","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"maneuvering_thrusters","ship_id":"56","size":"","quantity":"1","details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"54049","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"maneuvering_thrusters","ship_id":"56","size":"","quantity":"1","details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"54050","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"maneuvering_thrusters","ship_id":"56","size":"","quantity":"1","details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"54051","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"maneuvering_thrusters","ship_id":"56","size":"","quantity":"1","details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"54052","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"maneuvering_thrusters","ship_id":"56","size":"","quantity":"1","details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"54053","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"maneuvering_thrusters","ship_id":"56","size":"","quantity":"1","details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"54054","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"maneuvering_thrusters","ship_id":"56","size":"","quantity":"1","details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}}],"weapons":[{"id":"27201","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"weapons","ship_id":"56","size":"3","quantity":"1","details":"","weapon_id":"6","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","weapon":{"id":"6","manufacturer_id":"8","size":"2","type":"weapons","name":"CF-227 Badger Laser Repeater","manufacturer":{"id":"8","known_for":null,"name":"Klaus &amp; Werner "}}},{"id":"27202","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"weapons","ship_id":"56","size":"3","quantity":"1","details":"","weapon_id":"6","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","weapon":{"id":"6","manufacturer_id":"8","size":"2","type":"weapons","name":"CF-227 Badger Laser Repeater","manufacturer":{"id":"8","known_for":null,"name":"Klaus &amp; Werner "}}},{"id":"27203","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"weapons","ship_id":"56","size":"3","quantity":"1","details":"","weapon_id":"6","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","weapon":{"id":"6","manufacturer_id":"8","size":"2","type":"weapons","name":"CF-227 Badger Laser Repeater","manufacturer":{"id":"8","known_for":null,"name":"Klaus &amp; Werner "}}},{"id":"27204","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"weapons","ship_id":"56","size":"3","quantity":"1","details":"","weapon_id":"6","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","weapon":{"id":"6","manufacturer_id":"8","size":"2","type":"weapons","name":"CF-227 Badger Laser Repeater","manufacturer":{"id":"8","known_for":null,"name":"Klaus &amp; Werner "}}},{"id":"27205","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"turrets","ship_id":"56","size":"3","quantity":"2","details":"Manned","weapon_id":"19","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","weapon":{"id":"19","manufacturer_id":"8","size":"3","type":"weapons","name":"CF-337 Panther Laser Repeater","manufacturer":{"id":"8","known_for":null,"name":"Klaus &amp; Werner "}}},{"id":"27206","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"missiles","ship_id":"56","size":"4","quantity":"4","details":"Behring MSD-442 \"Marsden\" Missile Rack","weapon_id":"48","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","weapon":{"id":"48","manufacturer_id":"62","size":"2","type":"missiles","name":"Tempest II","manufacturer":{"id":"62","known_for":null,"name":"Firestorm Kinetics"}}},{"id":"27207","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"missiles","ship_id":"56","size":"4","quantity":"4","details":"Behring MSD-442 \"Marsden\" Missile Rack","weapon_id":"48","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","weapon":{"id":"48","manufacturer_id":"62","size":"2","type":"missiles","name":"Tempest II","manufacturer":{"id":"62","known_for":null,"name":"Firestorm Kinetics"}}},{"id":"27208","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"missiles","ship_id":"56","size":"4","quantity":"4","details":"Behring MSD-442 \"Marsden\" Missile Rack","weapon_id":"48","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","weapon":{"id":"48","manufacturer_id":"62","size":"2","type":"missiles","name":"Tempest II","manufacturer":{"id":"62","known_for":null,"name":"Firestorm Kinetics"}}},{"id":"27209","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"missiles","ship_id":"56","size":"4","quantity":"4","details":"Behring MSD-442 \"Marsden\" Missile Rack","weapon_id":"48","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","weapon":{"id":"48","manufacturer_id":"62","size":"2","type":"missiles","name":"Tempest II","manufacturer":{"id":"62","known_for":null,"name":"Firestorm Kinetics"}}},{"id":"27210","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"missiles","ship_id":"56","size":"4","quantity":"4","details":"Behring MSD-442 \"Marsden\" Missile Rack","weapon_id":"48","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","weapon":{"id":"48","manufacturer_id":"62","size":"2","type":"missiles","name":"Tempest II","manufacturer":{"id":"62","known_for":null,"name":"Firestorm Kinetics"}}},{"id":"27211","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"missiles","ship_id":"56","size":"4","quantity":"4","details":"Behring MSD-442 \"Marsden\" Missile Rack","weapon_id":"48","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","weapon":{"id":"48","manufacturer_id":"62","size":"2","type":"missiles","name":"Tempest II","manufacturer":{"id":"62","known_for":null,"name":"Firestorm Kinetics"}}},{"id":"27212","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"utility_items","ship_id":"56","size":"1","quantity":"1","details":"","weapon_id":"127","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","weapon":{"id":"127","manufacturer_id":null,"size":"1","type":"utility_items","name":"Tractor Beam","manufacturer":null}}],"modular":[{"id":"24353","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"power_plants","ship_id":"56","size":"medium","quantity":"1","details":"","modular_id":"4","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","modular":{"id":"4","manufacturer_id":"34","size":"medium","type":"power_plants","name":"DayBreak","manufacturer":{"id":"34","known_for":null,"name":"Sakura Sun"}}},{"id":"24354","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"coolers","ship_id":"56","size":"medium","quantity":"1","details":"","modular_id":"80","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","modular":{"id":"80","manufacturer_id":"55","size":"medium","type":"coolers","name":"ColdSnap","manufacturer":{"id":"55","known_for":null,"name":"Lightning Power Ltd"}}},{"id":"24355","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"coolers","ship_id":"56","size":"medium","quantity":"1","details":"","modular_id":"80","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","modular":{"id":"80","manufacturer_id":"55","size":"medium","type":"coolers","name":"ColdSnap","manufacturer":{"id":"55","known_for":null,"name":"Lightning Power Ltd"}}},{"id":"24356","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"shield_generators","ship_id":"56","size":"medium","quantity":"1","details":"","modular_id":"81","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","modular":{"id":"81","manufacturer_id":"24","size":"medium","type":"shield_generators","name":"STOP","manufacturer":{"id":"24","known_for":null,"name":"Seal Corp."}}}],"avionics":[{"id":"11797","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"radar","ship_id":"56","size":"medium","quantity":"1","details":"","avionic_id":"3","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","avionic":{"id":"3","manufacturer_id":"80","size":"medium","type":"radar","name":"Radar","manufacturer":{"id":"80","known_for":null,"name":"TBD"}}},{"id":"11798","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"computers","ship_id":"56","size":"medium","quantity":"1","details":"","avionic_id":"14","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","avionic":{"id":"14","manufacturer_id":"80","size":"medium","type":"computers","name":"Computer","manufacturer":{"id":"80","known_for":null,"name":"TBD"}}}],"poi":[{"id":"26681","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"landing_gear","ship_id":"56","name":"Landing Gear","model_x":"-240.00000","model_y":"-375.00000","model_z":"960.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"1"},{"id":"26682","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"landing_gear","ship_id":"56","name":"Landing Gear","model_x":"240.00000","model_y":"-375.00000","model_z":"960.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"1"},{"id":"26683","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"landing_gear","ship_id":"56","name":"Landing Gear","model_x":"-470.00000","model_y":"-365.00000","model_z":"-810.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"1"},{"id":"26684","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"landing_gear","ship_id":"56","name":"Landing Gear","model_x":"470.00000","model_y":"-365.00000","model_z":"-810.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"1"},{"id":"26685","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"cockpit","ship_id":"56","name":"Cockpit","model_x":"-35.00000","model_y":"125.00000","model_z":"-1200.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"1"},{"id":"26686","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"general","ship_id":"56","name":"Second Seat","model_x":"-35.00000","model_y":"165.00000","model_z":"-960.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"1"},{"id":"26687","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"general","ship_id":"56","name":"Ladder","model_x":"-410.00000","model_y":"-20.00000","model_z":"-945.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"1"},{"id":"26688","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"general","ship_id":"56","name":"Hull Jig","model_x":"0.00000","model_y":"-200.00000","model_z":"-95.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"1"},{"id":"26689","time_created":"2020-11-17 18:56:05","time_modified":"2020-11-17 18:56:05","type":"general","ship_id":"56","name":"Cargo Hold","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"1"}],"time_modified.unfiltered":"2020-11-17 18:56:05"}]}.resultset[0],
+       model_3d: '/media/7w8rse7wgq0bir/source/DRAKE_CUTLASSBLACK.ctm'     });
+    
+     new RSI.Components.SVG({
+       target: '.c-specbox__background'
+     });
+    
+  });
+</script>
+
+
+<div class="holo-container explorer v-primary-font-family">
+  <div class="main-view">
+    <h2><span>Cutlass Black</span></h2>
+
+    <button class="fullscreen" title="Fullscreen"><span>Fullscreen</span></button>
+
+    <div class="c-manufacturer">
+    <label class="c-manufacturer__heading">Manufacturer:</label>
+          <div class="c-manufacturer__logo" style="background-image: url('/media/bdkpvl2bpxaqar/post/Drake.png');"/></div>
+
+    
+  </div>
+
+    <div class="c-tabs">
+
+      <div class="c-tabs__tab c-tabs__tab--centered v-primary-font-color" data-triggered="specifications">
+          <div class="l-sheet v-primary-font-color ">
+  <h3 class="l-sheet__header h-font-glow">Model</h3>
+
+  <div class="l-sheet__block">
+    <h4>Focus</h4>
+    <p>Medium Fighter / Medium Freight</p>
+
+    <h4>Description</h4>
+    <p>Drake Interplanetary claims that the Cutlass Black is a low-cost, easy-to-maintain solution for local in-system militia units. The larger-than-average cargo hold, RIO seat and dedicated tractor mount are, the company literature insists, for facilitating search and rescue operations.</p>
+  </div>
+
+</div>
+
+<div class="l-sheet l-sheet--narrow">
+  <h3 class="l-sheet__header h-font-glow">Measurement</h3>
+
+  <div class="l-sheet__block">
+    <h4>Length</h4>
+    <p>29.0m
+
+    <h4>Beam</h4>
+    <p>26.5m
+
+    <h4>Height</h4>
+    <p>10.0m
+
+    <h4>Size</h4>
+    <p>
+              Medium
+          </p>
+
+    <h4>Mass</h4>
+    <p>226,700kg
+  </div>
+</div>
+
+
+<div class="l-sheet l-sheet--narrow">
+  <h3 class="l-sheet__header h-font-glow">Structural</h3>
+
+  <div class="l-sheet__block">
+    <h4>Cargo Capacity</h4>
+    <p>46</p>
+
+    <h4>SCM Speed</h4>
+    <p>
+      220 m/s
+    </p>
+
+    <h4>Afterburner Speed</h4>
+    <p>
+       1,115 m/s
+    </p>
+
+    <h4>Min Crew</h4>
+    <p>2</p>
+
+    <h4>Max Crew</h4>
+    <p>2</p>
+  </div>
+</div>
+
+<div class="l-sheet l-sheet--narrow">
+  <h3 class="l-sheet__header h-font-glow">Maneuvering</h3>
+
+  <div class="l-sheet__block">
+    <h4>Pitch Max</h4>
+    <p>
+      85.0 deg/s
+    </p>
+
+    <h4>Yaw Max</h4>
+    <p>
+      90.0 deg/s
+    </p>
+
+    <h4>Roll Max</h4>
+    <p>
+      110.0 deg/s
+    </p>
+
+    <h4>X-Axis Acceleration</h4>
+    <p>
+      49.4 m/s/s
+    </p>
+
+    <h4>Y-Axis Acceleration</h4>
+    <p>
+      50.4 m/s/s
+    </p>
+
+    <h4>Z-Axis Acceleration</h4>
+    <p>
+      49.6 m/s/s
+    </p>
+  </div>
+</div>
+      </div>
+
+      <div class="c-tabs__tab c-tabs__tab--systems v-primary-font-color c-tabs__tab--active " data-triggered="systems">
+          <div class="l-sheet v-primary-fill">
+  <h3 class="l-sheet__header h-font-glow v-primary-font-glow">Avionics</h3>
+
+
+<div class="l-sheet__row">
+    <div class="l-sheet__cell l-sheet__cell--icon">
+        <div class="c-iconed">
+        <span class="c-iconed__icon c-iconed__icon--radar"></span>
+        </div>
+    </div>
+
+    <h4 class="l-sheet__cell l-sheet__cell--label">
+        Radar
+    </h4>
+
+    
+        </div>
+
+<div class="l-sheet__row">
+    <div class="l-sheet__cell l-sheet__cell--icon">
+        <div class="c-iconed">
+        <span class="c-iconed__icon c-iconed__icon--computers"></span>
+        </div>
+    </div>
+
+    <h4 class="l-sheet__cell l-sheet__cell--label">
+        Computers
+    </h4>
+
+    
+        </div>
+  <h3 class="l-sheet__header h-font-glow v-primary-font-glow">Systems</h3>
+
+
+<div class="l-sheet__row">
+    <div class="l-sheet__cell l-sheet__cell--icon">
+        <div class="c-iconed">
+        <span class="c-iconed__icon c-iconed__icon--power_plants"></span>
+        </div>
+    </div>
+
+    <h4 class="l-sheet__cell l-sheet__cell--label">
+        Power Plants
+    </h4>
+
+    
+        </div>
+
+<div class="l-sheet__row">
+    <div class="l-sheet__cell l-sheet__cell--icon">
+        <div class="c-iconed">
+        <span class="c-iconed__icon c-iconed__icon--coolers"></span>
+        </div>
+    </div>
+
+    <h4 class="l-sheet__cell l-sheet__cell--label">
+        Coolers
+    </h4>
+
+    
+        </div>
+
+<div class="l-sheet__row">
+    <div class="l-sheet__cell l-sheet__cell--icon">
+        <div class="c-iconed">
+        <span class="c-iconed__icon c-iconed__icon--shield_generators"></span>
+        </div>
+    </div>
+
+    <h4 class="l-sheet__cell l-sheet__cell--label">
+        Shield Generators
+    </h4>
+
+    
+        </div>
+</div>
+
+<div class="l-sheet v-primary-fill">
+  <h3 class="l-sheet__header h-font-glow v-primary-font-glow">Propulsion</h3>
+
+
+<div class="l-sheet__row">
+    <div class="l-sheet__cell l-sheet__cell--icon">
+        <div class="c-iconed">
+        <span class="c-iconed__icon c-iconed__icon--fuel_intakes"></span>
+        </div>
+    </div>
+
+    <h4 class="l-sheet__cell l-sheet__cell--label">
+        Fuel Intakes
+    </h4>
+
+    
+        </div>
+
+<div class="l-sheet__row">
+    <div class="l-sheet__cell l-sheet__cell--icon">
+        <div class="c-iconed">
+        <span class="c-iconed__icon c-iconed__icon--fuel_tanks"></span>
+        </div>
+    </div>
+
+    <h4 class="l-sheet__cell l-sheet__cell--label">
+        Fuel Tanks
+    </h4>
+
+    
+        </div>
+
+<div class="l-sheet__row">
+    <div class="l-sheet__cell l-sheet__cell--icon">
+        <div class="c-iconed">
+        <span class="c-iconed__icon c-iconed__icon--quantum_drives"></span>
+        </div>
+    </div>
+
+    <h4 class="l-sheet__cell l-sheet__cell--label">
+        Quantum Drives
+    </h4>
+
+    
+        </div>
+
+<div class="l-sheet__row">
+    <div class="l-sheet__cell l-sheet__cell--icon">
+        <div class="c-iconed">
+        <span class="c-iconed__icon c-iconed__icon--jump_modules"></span>
+        </div>
+    </div>
+
+    <h4 class="l-sheet__cell l-sheet__cell--label">
+        Jump Modules
+    </h4>
+
+    
+        </div>
+
+<div class="l-sheet__row">
+    <div class="l-sheet__cell l-sheet__cell--icon">
+        <div class="c-iconed">
+        <span class="c-iconed__icon c-iconed__icon--quantum_fuel_tanks"></span>
+        </div>
+    </div>
+
+    <h4 class="l-sheet__cell l-sheet__cell--label">
+        Quantum Fuel Tanks
+    </h4>
+
+    
+        </div>
+  <h3 class="l-sheet__header h-font-glow v-primary-font-glow">Thruster</h3>
+
+
+<div class="l-sheet__row">
+    <div class="l-sheet__cell l-sheet__cell--icon">
+        <div class="c-iconed">
+        <span class="c-iconed__icon c-iconed__icon--main_thrusters"></span>
+        </div>
+    </div>
+
+    <h4 class="l-sheet__cell l-sheet__cell--label">
+        Main Thrusters
+    </h4>
+
+    
+        </div>
+
+<div class="l-sheet__row">
+    <div class="l-sheet__cell l-sheet__cell--icon">
+        <div class="c-iconed">
+        <span class="c-iconed__icon c-iconed__icon--maneuvering_thrusters"></span>
+        </div>
+    </div>
+
+    <h4 class="l-sheet__cell l-sheet__cell--label">
+        Maneuvering Thrusters
+    </h4>
+
+    
+        </div>
+</div>
+
+<div class="l-sheet v-primary-fill">
+  <h3 class="l-sheet__header h-font-glow v-primary-font-glow">Weapons</h3>
+
+
+<div class="l-sheet__row">
+    <div class="l-sheet__cell l-sheet__cell--icon">
+        <div class="c-iconed">
+        <span class="c-iconed__icon c-iconed__icon--weapons"></span>
+        </div>
+    </div>
+
+    <h4 class="l-sheet__cell l-sheet__cell--label">
+        Weapons
+    </h4>
+
+    
+        </div>
+
+<div class="l-sheet__row">
+    <div class="l-sheet__cell l-sheet__cell--icon">
+        <div class="c-iconed">
+        <span class="c-iconed__icon c-iconed__icon--turrets"></span>
+        </div>
+    </div>
+
+    <h4 class="l-sheet__cell l-sheet__cell--label">
+        Turrets
+    </h4>
+
+    
+        </div>
+
+<div class="l-sheet__row">
+    <div class="l-sheet__cell l-sheet__cell--icon">
+        <div class="c-iconed">
+        <span class="c-iconed__icon c-iconed__icon--missiles"></span>
+        </div>
+    </div>
+
+    <h4 class="l-sheet__cell l-sheet__cell--label">
+        Missiles
+    </h4>
+
+    
+        </div>
+
+<div class="l-sheet__row">
+    <div class="l-sheet__cell l-sheet__cell--icon">
+        <div class="c-iconed">
+        <span class="c-iconed__icon c-iconed__icon--utility_items"></span>
+        </div>
+    </div>
+
+    <h4 class="l-sheet__cell l-sheet__cell--label">
+        Utility Items
+    </h4>
+
+    
+        </div>
+  <div class="l-sheet__row l-sheet__row--no-max-height">
+
+    <div class="c-legend">
+        <img src="/rsi/static/images/game/holo-viewer/legend.png" />
+    </div>
+  </div>
+</div>
+          <!-- holds the popup on the systems tab -->
+          <div class="component-details-container">
+            <div class="component-details">
+              <script type="text/template" id="c-popup-template">
+
+    <div class="c-popup v-primary-border v-primary-font-glow v-primary-font-color">
+        <div class="c-popup__close"></div>
+        <div class="c-popup__left c-popup__left--icon c-popup__left--border v-primary-border v-primary-fill">
+            <%=svg%>
+        </div>
+        <div class="c-popup__right c-popup__right--border v-primary-border">
+            <%=RSI.translate(component_class+"_type_"+type)%>
+        </div>
+
+        <% if (typeof details !== "undefined" && details) { %>
+            <div class="c-popup__left c-popup__left--border v-primary-border"><h4><%=RSI.translate(component_class+"_details_label_"+type,null,"Details")%></h4></div>
+            <div class="c-popup__right c-popup__right--border v-primary-border">
+                <%=(details)?details:"TBD"%>
+            </div>
+        <% } %>
+
+
+        <% if (typeof manufacturer !== "undefined" && manufacturer) { %>
+            <div class="c-popup__left"><h4><%=RSI.translate(component_class+"_manufacturer_label_"+type,null,"Manufacturer")%></h4></div>
+            <div class="c-popup__right"><%=manufacturer%>
+            </div>
+        <% } %>
+
+        <div class="c-popup__left"><h4><%=(slottype=="poi")?"Name":RSI.translate(component_class+"_model_label_"+type, false, "Model")%></h4></div>
+        <div class="c-popup__right">
+            <% if (typeof name !== "undefined" && name) { %>
+                <%=name%>
+            <% } else { %>
+                Available
+            <% } %>
+        </div>
+
+        <% if (component_size && component_size != "-" || size && size != "-") { %>
+        <div class="c-popup__left"><h4><%=RSI.translate(component_class+"_size_label_"+type,null,"Size")%></h4></div>
+        <div class="c-popup__right">
+            <% if (component_size && component_size != "-") { %>
+                <div>
+                    <span><%=component_size%></span>
+                    <em><%=RSI.translate(component_class+"_component_size_sublabel_"+type, false, "Installed")%></em>
+                </div>
+            <% } %>
+
+            <% if (size && size != "-") { %>
+                <div>
+                    <span><%=size%></span>
+
+                    <em><%=RSI.translate(component_class+"_size_sublabel_"+type, false, "Max")%> </em>
+                </div>
+            <% } %>
+        </div>
+        <% } %>
+
+        <% if (typeof mounts !== "undefined" && mounts || typeof quantity !== "undefined" && quantity) { %>
+        <div class="c-popup__left"><h4><%=RSI.translate(component_class+"_quantity_row_label_"+type,null,"Quantity")%></h4></div>
+        <div class="c-popup__right">
+            <% if (typeof quantity !== "undefined" && quantity) { %>
+                <div>
+                    <span><%=quantity%></span>
+                    <em><%=RSI.translate(component_class+"_mount_sublabel_"+type, false, "Per Mount")%> </em>
+                </div>
+            <% } %>
+
+            <% if (typeof mounts !== "undefined" && mounts) { %>
+                <div>
+                    <span><%=mounts%></span>
+                     <em><%=RSI.translate(component_class+"_mounts_sublabel_"+type, false, "Total Mounts")%></em>
+                </div>
+            <% } %>
+        </div>
+        <% } %>
+    </div>
+
+
+</script>            </div>
+          </div>
+      </div>
+
+
+      <div class="c-tabs__tab c-tabs__tab--holoviewer" data-triggered="viewer">
+        <div class="viewport">
+            <div class="-info-bar">
+    <div class="-info js-camera-location"></div>
+    <div class="-info js-marker-location"></div>
+  </div>
+
+  <!-- Animation de loading, images + progres bar -->
+  <div id="holo-load-container">
+    <div class="alveoles-prog-loader">
+      <div class="image-0"></div>
+      <div class="image-1"></div>
+      <div class="image-2"></div>
+      <div class="image-3"></div>
+    </div>
+    <div class="progress">
+        <div class="label_percent"></div>
+        <div class="label_message"></div>
+        <div><progress value="0" max="100"></progress></div>
+   </div>
+  </div>
+  <div class="js-webgl-error error">
+    <span></span>
+  Sorry! Your browser does not support WebGL or has WebGL deactivated. This viewer requires WebGL to operate.<br/><br/>
+  Please visit <a href="http://get.webgl.org/">WebGL.org</a> to get help for your current browser and graphics card.
+  </div>
+  <div class="js-ship-error error">
+    <span></span>
+    Sorry! This ship is not currently available in the Holo Viewer at this time.
+  </div>
+
+  <div class="info-sheet component-details">
+  </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="holo-controls l-holo-controls">
+
+
+  <ul class="holo-tabs c-control_tabs"><li class="c-control_tabs__tab" data-triggers="specifications"><button>Specifications</button></li><li class="c-control_tabs__tab c-control_tabs__tab--nomobile" data-triggers="viewer"><button >Holo viewer</button></li><li class="c-control_tabs__tab  c-control_tabs__tab--active active" data-triggers="systems"><button>Hardpoints</button></li></ul>
+
+
+  <div class="l-controls info viewer-mode" data-triggered="viewer">
+    <div class="l-controls__section control-mode"><h3>Cam view</h3><div class="actions"><button class="orbit js-toggle-orbit">Orbit</button><button class="free js-toggle-free">Free</button></div></div><div class="l-controls__section angle"><h3>View angle</h3><div class="actions"><button class="front js-view-front"><span>Front</span></button><button class="bottom js-view-bottom"><span>Bottom</span></button><button class="back js-view-back"><span>Back</span></button><button class="top js-view-top"><span>Top</span></button><button class="left js-view-left"><span>Left</span></button><button class="right js-view-right"><span>Right</span></button><button class="cockpit js-view-cockpit"><span>Cockpit</span></button></div></div><div class="l-controls__section l-controls__section--systems"><h3>Systems</h3><div class="c-actionlist c-actionlist--systems"><div class="c-actionlist__centered"><button class="c-actionlist__item js-toggle-system" data-type="avionic">Avionics</button><button class="c-actionlist__item js-toggle-system" data-type="modular">Systems</button><button class="c-actionlist__item js-toggle-system" data-type="propulsion">Propulsion</button><button class="c-actionlist__item js-toggle-system" data-type="thruster">Thruster</button><button class="c-actionlist__item js-toggle-system" data-type="weapon">Weapons</button><button class="c-actionlist__item js-toggle-system" data-type="poi">POI</button></div></div></div><div class="l-controls__section render"><h3>Render type</h3><div class="actions"><button class="x-ray js-toggle-xray">X-Ray</button><button class="wire js-toggle-wires">Wire</button></div></div>
+  </div>
+</div>
+</div>
+
+<script type="text/template" id="c-popup-template">
+
+    <div class="c-popup v-primary-border v-primary-font-glow v-primary-font-color">
+        <div class="c-popup__close"></div>
+        <div class="c-popup__left c-popup__left--icon c-popup__left--border v-primary-border v-primary-fill">
+            <%=svg%>
+        </div>
+        <div class="c-popup__right c-popup__right--border v-primary-border">
+            <%=RSI.translate(component_class+"_type_"+type)%>
+        </div>
+
+        <% if (typeof details !== "undefined" && details) { %>
+            <div class="c-popup__left c-popup__left--border v-primary-border"><h4><%=RSI.translate(component_class+"_details_label_"+type,null,"Details")%></h4></div>
+            <div class="c-popup__right c-popup__right--border v-primary-border">
+                <%=(details)?details:"TBD"%>
+            </div>
+        <% } %>
+
+
+        <% if (typeof manufacturer !== "undefined" && manufacturer) { %>
+            <div class="c-popup__left"><h4><%=RSI.translate(component_class+"_manufacturer_label_"+type,null,"Manufacturer")%></h4></div>
+            <div class="c-popup__right"><%=manufacturer%>
+            </div>
+        <% } %>
+
+        <div class="c-popup__left"><h4><%=(slottype=="poi")?"Name":RSI.translate(component_class+"_model_label_"+type, false, "Model")%></h4></div>
+        <div class="c-popup__right">
+            <% if (typeof name !== "undefined" && name) { %>
+                <%=name%>
+            <% } else { %>
+                Available
+            <% } %>
+        </div>
+
+        <% if (component_size && component_size != "-" || size && size != "-") { %>
+        <div class="c-popup__left"><h4><%=RSI.translate(component_class+"_size_label_"+type,null,"Size")%></h4></div>
+        <div class="c-popup__right">
+            <% if (component_size && component_size != "-") { %>
+                <div>
+                    <span><%=component_size%></span>
+                    <em><%=RSI.translate(component_class+"_component_size_sublabel_"+type, false, "Installed")%></em>
+                </div>
+            <% } %>
+
+            <% if (size && size != "-") { %>
+                <div>
+                    <span><%=size%></span>
+
+                    <em><%=RSI.translate(component_class+"_size_sublabel_"+type, false, "Max")%> </em>
+                </div>
+            <% } %>
+        </div>
+        <% } %>
+
+        <% if (typeof mounts !== "undefined" && mounts || typeof quantity !== "undefined" && quantity) { %>
+        <div class="c-popup__left"><h4><%=RSI.translate(component_class+"_quantity_row_label_"+type,null,"Quantity")%></h4></div>
+        <div class="c-popup__right">
+            <% if (typeof quantity !== "undefined" && quantity) { %>
+                <div>
+                    <span><%=quantity%></span>
+                    <em><%=RSI.translate(component_class+"_mount_sublabel_"+type, false, "Per Mount")%> </em>
+                </div>
+            <% } %>
+
+            <% if (typeof mounts !== "undefined" && mounts) { %>
+                <div>
+                    <span><%=mounts%></span>
+                     <em><%=RSI.translate(component_class+"_mounts_sublabel_"+type, false, "Total Mounts")%></em>
+                </div>
+            <% } %>
+        </div>
+        <% } %>
+    </div>
+
+
+</script>    </section>
+  </div>
+</div>
+
+
+<div class="wrapper"><div class="content-block1 rsi-markup"><div class="segment"><div class="content"><div class="embed-container youtube">
+  <iframe width="640" height="360" src="//www.youtube.com/embed/qE7TFnSl9y4?wmode=transparent" frameborder="0" allowfullscreen></iframe>
+</div>
+</div><div class="cboth"></div></div><div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+<div class="wrapper"><div class="hr"></div><div class="content-block4"><div class="content"><div class="top"></div><h1>The Wrap-Up</h1><div class="cboth"></div></div><div class="bottom"></div></div><div class="content-block1 rsi-markup">
+<div  class=' segment' ><div class="content"><h2 class="no-margin">Looking Ahead</h2>
+
+<p><em>by Ben Lesnick and Jared Huckaby</em></p>
+
+<p><span class="initial">t</span>l;dr &#8211; the Cutlass has had a complex development history, with multiple voices wanting different end goals. The Cutlass will become more maneuverable with Star Citizen Alpha 2.0, but it will not drop the focus on being a fighter <span class="caps">WITH</span> a cargo hold intended for piracy (or search and rescue, as a Drake salesman would say!)</p>
+
+<p>We hope that everyone has found at least some of the answers they are looking for. On a personal note, a huge thank you to Lead Technical Designer John Crewe in the UK for taking the time to indulge us in this crazy endeavor. We will consider a supplemental edition of The Shipyard in the future to clean up any issues that arise from this and the launch of Star Citizen Alpha 2.0. </p>
+
+<p>No one ship can be all things to all people, and it shouldn&#8217;t be even if it could. As with all these ships, the Cutlass may not be what everyone wants it to be and as such there may be other ships that are much more suited to your playstyle. One such option is a potential ship we&#8217;re calling the Drake Buccaneer, which would be a &#8216;pirate interceptor&#8217; intended more for tricky maneuvering than cargo capacity. It would likely feature light armor, a shorter range &#8216;sucker punch&#8217; style weapons loadout and a significantly more limited cargo bay. Buccaneers would need to operate alongside of Cutlasses or even as parasite fighters attached to a Caterpillar for more serious raiding missions. If we go ahead with the concept, it would be intended to fit the same price range as the Cutlass, allowing owners who prefer sheer maneuverability to switch designs with impunity. </p>
+
+<p>We&#8217;d like to know what you think, both about the Buccaneer and this style of post. Two polls are embedded below to help us decide what to do next! Cast your vote to let the Star Citizen team know what you&#8217;re thinking, and be sure to post your comments below.</p>
+
+<h3>Remember there is no such thing as a perfect ship, just the perfect ship for you.</h3>
+
+<p></div></p></div><div class="cboth"></div></div>
+<div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+<div class="wrapper"><div class="hr"></div><div class="content-block4"><div class="content"><div class="top"></div><h1>Shipyard Poll</h1><div class="cboth"></div></div><div class="bottom"></div></div><div class="content-block1 rsi-markup"> <div id="poll-77" class="poll content-block2  ">
+    <form id="poll-form">
+    <input type="hidden" name="poll_id" value="77" class="js-form-data"/>
+    
+            <div class="question" rel="0">
+    <div class="voted atom-special-block poll-holder">
+      <h1>What should THE SHIPYARD focus on next?</h1>
+      
+      <div class="options">
+                                                  <label class="radio option first ">
+                                    <div class="label trans-03s"><div class="glow-box trans-03s"></div><div class="value trans-03s">a</div><div class="text">Aurora</div></div>
+      
+                        <div class="bars trans-03s">
+              <div class="bar-item">
+                <div class="label">a</div>
+                <div class="bar-holder">
+                  <div class="bar" data-width="11.51284490961"></div>
+                </div>
+                <div class="value">12%</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+            
+            <div class="cboth"></div>
+          </label>
+                                                          <label class="radio option  ">
+                                    <div class="label trans-03s"><div class="glow-box trans-03s"></div><div class="value trans-03s">b</div><div class="text">Hornet</div></div>
+      
+                        <div class="bars trans-03s">
+              <div class="bar-item">
+                <div class="label">b</div>
+                <div class="bar-holder">
+                  <div class="bar" data-width="8.6040505640886"></div>
+                </div>
+                <div class="value">9%</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+            
+            <div class="cboth"></div>
+          </label>
+        <div class="cboth"></div>                                                  <label class="radio option first ">
+                                    <div class="label trans-03s"><div class="glow-box trans-03s"></div><div class="value trans-03s">c</div><div class="text">Freelancer</div></div>
+      
+                        <div class="bars trans-03s">
+              <div class="bar-item">
+                <div class="label">c</div>
+                <div class="bar-holder">
+                  <div class="bar" data-width="45.181459834172"></div>
+                </div>
+                <div class="value">45%</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+            
+            <div class="cboth"></div>
+          </label>
+                                                          <label class="radio option  ">
+                                    <div class="label trans-03s"><div class="glow-box trans-03s"></div><div class="value trans-03s">d</div><div class="text">Constellation</div></div>
+      
+                        <div class="bars trans-03s">
+              <div class="bar-item">
+                <div class="label">d</div>
+                <div class="bar-holder">
+                  <div class="bar" data-width="16.854696207693"></div>
+                </div>
+                <div class="value">17%</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+            
+            <div class="cboth"></div>
+          </label>
+        <div class="cboth"></div>                                                  <label class="radio option first ">
+                                    <div class="label trans-03s"><div class="glow-box trans-03s"></div><div class="value trans-03s">e</div><div class="text">Starfarer</div></div>
+      
+                        <div class="bars trans-03s">
+              <div class="bar-item">
+                <div class="label">e</div>
+                <div class="bar-holder">
+                  <div class="bar" data-width="17.846948484437"></div>
+                </div>
+                <div class="value">18%</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+            
+            <div class="cboth"></div>
+          </label>
+                      </div>
+      <div class="cboth"></div>
+      <div class="total">Total Votes: <span class="data">7357</span></div>
+      <div class="cboth"></div>
+    </div>
+    </div> <!-- question -->
+            <div class="question" rel="1">
+    <div class="voted atom-special-block poll-holder">
+      <h1>Would you be interested in trading your Cutlass for a Buccaneer?</h1>
+      
+      <div class="options">
+                                                  <label class="radio option first ">
+                                    <div class="label trans-03s"><div class="glow-box trans-03s"></div><div class="value trans-03s">a</div><div class="text">Yes, I want my ship to dance!</div></div>
+      
+                        <div class="bars trans-03s">
+              <div class="bar-item">
+                <div class="label">a</div>
+                <div class="bar-holder">
+                  <div class="bar" data-width="13.755606904988"></div>
+                </div>
+                <div class="value">14%</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+            
+            <div class="cboth"></div>
+          </label>
+                                                          <label class="radio option  ">
+                                    <div class="label trans-03s"><div class="glow-box trans-03s"></div><div class="value trans-03s">b</div><div class="text">No, I need room for loot.</div></div>
+      
+                        <div class="bars trans-03s">
+              <div class="bar-item">
+                <div class="label">b</div>
+                <div class="bar-holder">
+                  <div class="bar" data-width="26.043224140275"></div>
+                </div>
+                <div class="value">26%</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+            
+            <div class="cboth"></div>
+          </label>
+        <div class="cboth"></div>                                                  <label class="radio option first ">
+                                    <div class="label trans-03s"><div class="glow-box trans-03s"></div><div class="value trans-03s">c</div><div class="text">I don't have a Cutlass, but I'm interested in the Bucc</div></div>
+      
+                        <div class="bars trans-03s">
+              <div class="bar-item">
+                <div class="label">c</div>
+                <div class="bar-holder">
+                  <div class="bar" data-width="31.996737800734"></div>
+                </div>
+                <div class="value">32%</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+            
+            <div class="cboth"></div>
+          </label>
+                                                          <label class="radio option  ">
+                                    <div class="label trans-03s"><div class="glow-box trans-03s"></div><div class="value trans-03s">d</div><div class="text">No, Drake ships are for losers. MISC rules!</div></div>
+      
+                        <div class="bars trans-03s">
+              <div class="bar-item">
+                <div class="label">d</div>
+                <div class="bar-holder">
+                  <div class="bar" data-width="28.190838657061"></div>
+                </div>
+                <div class="value">28%</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+            
+            <div class="cboth"></div>
+          </label>
+        <div class="cboth"></div>              </div>
+      <div class="cboth"></div>
+      <div class="total">Total Votes: <span class="data">7356</span></div>
+      <div class="cboth"></div>
+    </div>
+    </div> <!-- question -->
+    
+    <div class="response-controls">
+      <div class="error-message js-error-message"></div>
+      <div class="success-message js-success-message"></div>
+       
+      <a class="holobtn submit js-modal-login" href="#">
+        <span class="holobtn-top abs-overlay trans-02s">Sign in to vote</span>
+        <span class="holobtn-bottom abs-overlay trans-02s"></span>
+      </a>
+          </div>
+    <div class="cboth"></div>
+    </form>
+  </div>
+
+	<script src='/rsi/static/packages/pages/rsi.page.poll.build.08654.js'></script>
+	<script src='/rsi/static/packages/pages/rsi.page.game-about.build.08654.js'></script>
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    new RSI.Poll({
+      'poll_selector': '#poll-77',
+      'form_selector': '#poll-77 form',
+      'poll_status': "O",
+      'canvote': 0,
+      'blind': false    });
+  });
+</script>
+<div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+
+  <div class="wrapper">
+    
+    <div class="end-transmission-container">
+      <div class="glow left"></div>
+      <div class="title-bar">
+        <h1>End Transmission</h1>
+      </div>
+      <div class="glow right"></div>
+    </div>
+  </div>
+  
+
+  
+    
+
+  <div class="two-line-separator"></div>
+  
+    
+<div class="wrapper force-one-column" id="comments">
+  <div class="holder">
+    <div class="title-bar">
+      <div class="count">
+        <div class="label">Comments</div>
+        <div class="value">0363.<span class="js-comment-decimal">0</span></div>
+        <div class="cboth"></div>
+      </div>
+      <div class="title">
+        <h1>Feedback</h1>
+      </div>
+      <div class="cboth"></div>
+    </div>
+
+    <div class="main-buttons-holder-container">
+      <div class="main-buttons-holder">
+        <a href="/connect?jumpto=/comm-link/engineering/15056-Design-Notes-Sharpening-The-Cutlass" class="add-comment js-add-comment trans-02s js-modal-login">Add New Comment</a>
+        <div class="settings js-settings">
+          <h1>Settings</h1>
+          <label>View mode:</label>
+          <a href="#" class="js-comments-view to-one-column js-to-one-column trans-01s on">One column</a>
+          <a href="#" class="js-comments-view to-two-columns js-to-two-columns trans-01s ">Two columns</a>
+          <label>Sort by:</label>
+          <a href="#" class="js-comments-sort to-oldest js-to-oldest trans-01s on">Oldest first</a>
+          <a href="#" class="js-comments-sort to-newest js-to-newest trans-01s ">Newest first</a>
+          <a href="#" class="js-comments-sort to-appreciated js-to-appreciated trans-01s ">Most appreciated first</a>
+
+                  </div>
+        <a href="" class="view-settings js-view-settings"><div class="hover trans-02s"></div></a>
+        <div class="triangle"></div>
+      </div>
+    </div>
+
+    
+    <div class="comment-listing"></div>
+
+    <div class="comment-loader traj-loader">
+      <div class="fast-blink"></div>
+      <span>Loading Additional Feedback</span>
+    </div>
+
+    <div class="cboth"></div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    window.comments = new RSI.Comments({
+      atom_url:"/comm-link/engineering/15056-Design-Notes-Sharpening-The-Cutlass",
+      comment_listing_el:$(".comment-listing"),
+      comment_submission_form_el:$(".comment-submission"),
+      api_object:RSI.Api.Comments,
+      lazyLoading: true,
+      comment_count: 363,
+      subject_id:15056,
+      append:false,
+      texts: {
+        "edit": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        },
+        "reply": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        }
+      },
+      "insertion_conf": {
+        "mode":"html"
+      },
+      "api_function_names": {
+        "delete":"erase",
+        "load":"listing",
+        "sort":"listing"
+      }
+    });
+  });
+</script>
+  
+</div>
+
+    </div>
+
+    
+  </div>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.11/moment-timezone-with-data.min.js"></script>
+
+<script type="text/plain" data-cookieconsent="statistics">
+  $.cookie('moment_timezone', moment.tz.guess(), { expires: 31, path: '/' });
+</script>
+
+
+
+
+               <script id="tpl_number_counter_digits" type="text/x-jsmart-tmpl">{if !$seperator}{$seperator=','}{/if}
+{if !$first_max}{$first_max=9}{/if}
+{for $digit = 0 to $length-1}
+  <div class="mask">
+    <div class="carousel">
+      {if $digit == 0}
+        {$max = $first_max}
+      {else}
+        {$max = 9}
+      {/if}
+      {for $i=0 to $max}
+        <div class="item {if $val_arr[$digit] == $i}on{/if}" rel="{$i}">{$i}</div>
+      {/for}
+    </div>
+  </div>
+  {if ($length - $digit) % 3 == 1 && $digit != $length-1}
+  <div class="seperator">{$seperator}</div>
+  {/if}
+{/for}</script>
+<script id="base_modal" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  <div class="top-border">
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+  </div>
+</div></script>
+<script id="base_modal_flat" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  </div>
+  
+</div></script>
+<script id="tpl_modals_slideshow" type="text/x-jsmart-tmpl"><img class="top-border" src="/rsi/static/images/modal_top.png">
+<a href="" class="close js-close"></a>
+<div class="mask">
+  <a class="js-prev prev control"></a>
+  <a class="js-next next control"></a>
+  <div class="slideshow-carousel carousel" rel="{$index}">
+    {foreach from=$images item="image"}
+      <div class="{if $index == $image@index}on{/if}">
+      {if $image.is_video}
+        <div class="video-holder">
+          <div id="slideshow_video_{$image@index}" data-source="{$image->source_url}">
+            <video width="100%" height="100%" preload="auto" {if $video}src="{$image->source_url}"{/if} controls></video>
+          </div>
+        </div>
+      {else}
+        <div class="media js-media-slideshow-{$image@iteration}">
+        {if $image.low_res}
+          <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source data-srcset="{$image.full_res}" media="(min-width: 300px)" />
+            <!--[if IE 9]></video><![endif]-->
+            <img data-srcset="{$image.low_res}" alt="{$image.title}" />
+          </picture>
+        {else}
+          <img data-src="{$image.source_url}" />
+        {/if}
+        </div>
+      {/if}
+        <div class="text">
+          {if !$image.is_video}
+          <a href="{$image.source_url}" class="download"></a>
+          {/if}
+          <div class="copyright">© 2012-{$year}<br />Cloud Imperium Games Corporation &<br />Roberts Space Industries Corp.</div>
+          <div class="page-number">{$image@iteration} / {count($images)}</div>
+          <div class="caption v-center">{if $image.title && $image.title != "undefined"}{$image.title}{/if}</div>
+          <div class="cboth"></div>
+        </div>
+      </div>
+    {/foreach}
+  </div>
+</div>
+<img class="bottom-border" src="/rsi/static/images/modal_bottom.png"></script>
+<script id="tpl_contact_us" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="contact" class="inner-content on">
+  <h2><span class="icon"></span>CONTACT</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+  <div class="error-message js-error-message"></div>
+  <div class="success-message js-success-message"></div>
+    <fieldset class="last">
+    <label for="contact_email">Email Address</label>
+    <input type="text" name="email" value="" class="trans-02s trans-color trans-box-shadow" id="contact_email" />
+  </fieldset>
+    <fieldset>
+    <label for="contact_subject">Subject</label>
+    <input type="text" name="subject" value="" class="trans-02s trans-color trans-box-shadow" id="contact_subject" />
+    <label>Contacting us for:</label>
+    <ul class="category-info">
+            <li id="tech_support_info">Questions about download, installation, networking, or in-game client problems</li>
+            <li id="subscription_info">Questions about monthly and yearly subscription plans</li>
+            <li id="account_billing_info">Issues related to your account, such as incorrect information or ability to access account, or Billing with regards to payments and payment methods</li>
+            <li id="melt_request_info">To reclaim a pledge over $1,000 for store credit (please note - this is a permanent action)</li>
+            <li id="merchandise_info">Questions about physical and/or shipped merchandise</li>
+            <li id="hacked_info">Issues related to compromised account or missing pledge.</li>
+            <li id="account_recovery_info">For issues with account authentication, lost passwords and related queries</li>
+            <li id="probation_info">Issues related to forums probation or ban</li>
+            <li id="refund_request_info">Refund requests and related inquiries</li>
+            <li id="customer_support_info">For general questions and queries regarding Star Citizen</li>
+          </ul>
+  </fieldset>
+  <fieldset>
+    <label for="contact_text">Fescription</label>
+    <textarea name="text" class="trans-02s trans-color trans-box-shadow" id="contact_text"></textarea>
+  </fieldset>
+  <div class="contact-submit-wrapper">
+    <div class="line"></div>
+    <button class="submit js-submit"><strong>submit your message</strong></button>
+  </div>
+</form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+<script id="tpl_error" type="text/x-jsmart-tmpl"><div class="modal-error js-modal-error">
+  <p class="modal-text js-modal-text"></p>
+  <a class="close js-close trans-03s .trans-opacity" href=""></a>
+</div></script>
+<script id="tpl_success" type="text/x-jsmart-tmpl"><div class="modal-success js-modal-success">
+  <p class="modal-text js-modal-text"></p>
+  <a class="close js-close trans-03s .trans-opacity" href=""></a>
+</div></script>
+<script id="tpl_progress" type="text/x-jsmart-tmpl"><div class="modal-progress js-modal-progress">
+  <div class="traj-loader">
+    <div class="fast-blink"></div>
+    <span class="modal-text js-modal-text"></span>
+  </div>
+</div></script>
+<script id="tpl_outbound" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="outbound" class="inner-content on">
+  <h2><span class="icon"></span>OUTBOUND LINK</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+      <div class="error-message js-error-message"> <span class=important>WARNING</span><br/><br/> This link will bring you outside of the RSI site and into the depths of the internet. Continue?<br/><br/><span class="url"></span> </div>
+      <div class="success-message js-success-message"><span class=important>STAND BY</span><br/><br/> Initiating hyperlink.<br/><br/></div>
+
+      <fieldset class="clearfix last">
+        <span class="submit-wrapper">
+          <span class="submit-hover trans-02s trans-opacity"></span>
+          <input type="submit" value="WARP" class="trans-02s trans-color trans-background" />
+        </span>
+      </fieldset>
+    </form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+
+<script id="tpl_l-notification-bar" type="text/x-jsmart-tmpl"><div class="l-notification-bar js-notification-bar">
+
+  <div class="l-notification-bar__watermark js-svg-inliner h-svg__logo-star-citizen"></div>
+
+  <div class="l-notification-bar__boxes">
+    {if !$viewedCookieNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='cookie'
+          title='COOKIES:'
+          message="Our website uses Google Analytics to analyze our traffic. <br/>To learn how you can control Google's use of your data and how you can opt out <a href='https://www.google.com/policies/privacy/partners/'>click here</a>."
+          linkText='See Details'
+          buttonText='Got it!'}
+      </div>
+    {/if}
+
+    {if !$viewedPrivacyNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='privacy'
+          title='PRIVACY POLICY:'
+          message='We adjusted the PP to reflect the decision of the European Court of Justice regarding Safe Harbor, the fact that RSI has moved and added some services providers.'
+          linkText='View Privacy Policy'
+          buttonText='Got it!'}
+      </div>
+    {/if}
+  </div>
+
+</div>
+</script>
+<script id="tpl_c-notification" type="text/x-jsmart-tmpl"><div class="c-notification js-bottom-notif-msg-{$type}">
+    <div class="c-notification__title">{$title}</div>
+    <div class="c-notification__message">
+      {$message}
+    </div>
+
+    {if $linkText}
+        <div class="c-notification__wrapper-link">
+            <a class="c-notification__link js-bottom-notif-link-{$type}">
+            {$linkText}
+            </a>
+        </div>
+    {/if}
+
+    <a class="c-notification__button js-bottom-notif-btn-{$type}">
+
+      <span class="c-notification__button-text">
+       {$buttonText}
+      </span>
+
+      {if $type neq 'announcement'}
+        <div class="c-iconed__icon c-iconed__icon--checkmark"></div>
+      {/if}
+    </a>
+</div>
+</script>
+
+<script id="tpl_confirm" type="text/x-jsmart-tmpl"><div class="modal-confirm js-modal-confirm clearfix">
+  <p class="modal-text js-modal-text"></p>
+  <a class="bt-close js-close trans-03s trans-opacity" href=""></a>
+  <a class="bt-confirm js-confirm trans-03s trans-opacity" href=""></a>
+	<div class="buttons">
+		<a class="shadow-button trans-02s trans-color js-close bt-close rm"     >
+  <span class="label js-label trans-02s">Cancel</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+		<a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">Confirm</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+	</div>
+</div>
+</script>
+<script id="tpl_alert" type="text/x-jsmart-tmpl"><div class="modal-alert js-modal-alert clearfix">
+  <p class="modal-text js-modal-text"></p>
+  <div class="buttons">
+    <a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">OK</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+  </div>
+</div></script>
+<script id="tpl_video" type="text/x-jsmart-tmpl">{extends file="base_modal"}
+{block name='modal_content'}
+<div id="ship-commercial" class="inner-content">
+  
+  <div class="hr"></div>
+  <div class="content-block4">
+   
+    <div class="bottom"></div>
+  </div>
+  {if $distant_source=="vimeo"}
+  <iframe id="commercial" src="//player.vimeo.com/video/{$video_id}?wmode=transparent" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+  {else}
+  <iframe id="commercial" frameborder="0" allowfullscreen="1" title="YouTube video player" width="100%" height="100%" src="https://www.youtube.com/embed/{$video_id}?autoplay=1"></iframe>
+  {/if}
+</div>
+{/block}
+</script>
+      
+  <script id="tpl_comment_report" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="comment-report" class="inner-content on">
+  <h2><span class="icon"></span>Report this comment</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+<input type="hidden" name="comment_id" value="">
+  <div class="error-message js-error-message"></div>
+  <div class="success-message js-success-message"></div>
+    <fieldset class="last">
+    <label for="report_email">Email Address</label>
+    <span class="corner-wrapper">
+      <input type="text" name="email" value="" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_email" />
+      <span class="corner corner-top-left"></span>
+      <span class="corner corner-top-right"></span>
+      <span class="corner corner-bottom-left"></span>
+      <span class="corner corner-bottom-right"></span>
+    </span>
+  </fieldset>
+    <fieldset>
+    <label>Report Type</label>
+    
+
+
+  
+    <a class="js-selectlist selectlist " rel="" href="">
+    <div class="arrow"></div>
+    <span>Please select the type best matching your report</span>
+              <ul class="body">
+              
+                                                              <li class="js-option option " rel="obscenity" >
+                                                                        Obscene Content
+                                                    </li>
+                                                                <li class="js-option option " rel="abuse" >
+                                                                        Abusive Conduct
+                                                    </li>
+                                                                <li class="js-option option " rel="other" >
+                                                                        Other
+                                                    </li>
+                                          
+            </ul>
+        <input type="hidden" name="category" class="js-category js-form-data" id="category"/>
+  </a>
+    </fieldset>
+  <fieldset>
+    <label for="report_text">Details</label>
+    <span class="corner-wrapper">
+      <textarea name="text" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_text" maxlength="2500"></textarea>
+      <span class="corner corner-top-left"></span>
+      <span class="corner corner-top-right"></span>
+      <span class="corner corner-bottom-left"></span>
+      <span class="corner corner-bottom-right"></span>
+    </span>
+  </fieldset>
+  <fieldset class="clearfix last">
+    <span class="submit-wrapper">
+      <span class="submit-hover trans-02s trans-opacity"></span>
+      <input type="submit" value="Submit" class="trans-02s trans-color trans-background" />
+    </span>
+  </fieldset>
+</form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+
+
+      
+        <footer class="c-platform-footer c-platform-footer--rsi">
+  <div class="l-platform-footer-container">
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--sc">
+        <li class="c-platform-footer-brand__item">
+
+          <span class="c-brand c-brand--sc js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--sc">
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Join the<br>Universe
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--sc">
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen" class="c-platform-footer-link">About the Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/howto/1" class="c-platform-footer-link">How to Play</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/universe" class="c-platform-footer-link">The Universe</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/media" class="c-platform-footer-link">Media</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/play-now"
+                class="c-platform-footer-link js-google-analytics-event-tracker"
+                data-event-category="FlyNow" data-event-label="footerClick">
+                Play Now
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__sc">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">
+              Social Links
+            </span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/RobertsSpaceIndustries/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/RobertsSpaceInd">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/robertsspaceind">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href=" https://www.youtube.com/channel/UCTeLqJq1mXUX5WWoNXLmOIA">
+                <span class="c-iconed__icon c-iconed__icon--youtube"></span>
+                Youtube
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.twitch.tv/starcitizen">
+                <span class="c-iconed__icon c-iconed__icon--twitch"></span>
+                Twitch
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--s42">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--s42 js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--s42">
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Start the<br>Adventure
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--s42">
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42" class="c-platform-footer-link">The Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#enlist" class="c-platform-footer-link">Enlist Today</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#roadmap" class="c-platform-footer-link">Status</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/pledge/Packages/Squadron-42-Standalone-Pledge" class="c-platform-footer-link">Pledge</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__s42">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">Social Links</span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/Squad42/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/squadron_42">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/squadron42">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column is-active">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--rsi">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--rsi js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--rsi">
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi--fullcolor"></span>
+            </span>
+            <span class="c-brand__label">
+              Follow the Development
+            </span>
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--rsi">
+            <li class="c-platform-footer-list__item">
+              <a href="/" class="c-platform-footer-link">Home</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/comm-link" class="c-platform-footer-link">Transmissions</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/community" class="c-platform-footer-link">Community</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/roadmap" class="c-platform-footer-link">Development</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--platform">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Platform
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--platform">
+                          <li class="c-platform-footer-list__item">
+                <a href="/pledge" class="c-platform-footer-link ">Pledge Store</a>
+              </li>
+            
+            <li class="c-platform-footer-list__item">
+              <a href="/download" class="c-platform-footer-link ">Download</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/spectrum/community/SC" class="c-platform-footer-link">Spectrum</a>
+            </li>
+
+                      </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--utility">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Utilities
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--utility">
+            <li class="c-platform-footer-list__item">
+              <a href="//support.robertsspaceindustries.com" class="c-platform-footer-link">Help</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/press" class="c-platform-footer-link">Press</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="https://cloudimperiumgames.com/join-us" class="c-platform-footer-link">Careers</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/tos" class="c-platform-footer-link">Terms of Services</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/privacy" class="c-platform-footer-link">Privacy Policy</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/eula" class="c-platform-footer-link">EULA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/dmca" class="c-platform-footer-link">DMCA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/legal" class="c-platform-footer-link">Legal</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/acknowledgements" class="c-platform-footer-link">Acknowledgements</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/responsible-disclosure" target="_blank" class="c-platform-footer-link">Responsible disclosure</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  
+</footer>
+
+<div class="c-platform-copyright c-platform-copyright--rsi">
+  <div class="l-platform-copyright-container">
+    <a href="https://cloudimperiumgames.com" class="c-platform-copyright__logo h-svg__logo-cig js-svg-inliner"></a>
+    <p class="c-platform-copyright__body">© 2012-2021 Cloud Imperium Rights LLC and Cloud Imperium Rights Ltd.</p>
+  </div>
+</div>
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHNFZPT"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<script type="text/javascript">
+  window.RSI.Footer = new RSI.Footer();
+</script>
+      
+    </div>
+
+    
+      <script type="text/javascript" src='/rsi/static/packages/platformbar/rsi.platformbar.build.8e4cb.js'></script>
+    
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"58013cabd7","applicationID":"375102748","transactionName":"Y1JaYktUWxZUV0QKV1oYe0NKQVoIGmZjKmtdQ111VltBF1pYXAZKDg1ZQlZYcwxbUA==","queueTime":0,"applicationTime":143,"atts":"TxVNFANOSEkXVRJZQ0lK","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>

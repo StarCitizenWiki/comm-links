@@ -1,0 +1,2164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    
+      <!-- Anti-flicker snippet (recommended)  -->
+      <style>.async-hide { opacity: 0 !important} </style>
+      <script type="text/javascript">(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+      h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+      (a[n]=a[n]||[]).hide=h;if (d) a[n].push({'userId' : d});setTimeout(function(){i();h.end=null},c);h.timeout=c;
+      })(window,document.documentElement,'async-hide','dataLayer',1500,
+      {'GTM-KHNFZPT':true},undefined,'');</script>
+
+            <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"58013cabd7",applicationID:"375102748"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+      <meta name="viewport" content="width=device-width">
+      <meta name="description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans.">
+      <meta property="og:site_name" content="
+Idris Corvette Revealed - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+" />
+      <meta property="og:image" content="https://robertsspaceindustries.com/media/ve56kk17io7cor/channel_item_full/IDRISuprearquarter-Copy.jpg" />
+      <meta property="og:description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans." />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://robertsspaceindustries.com/comm-link/SCW/13097-IMPORT" />
+      <meta property="og:locale" content="us_EN" />
+
+            
+
+            <link href="/rsi/static/css/cross-brand-less.css?v=6.10.6" media="all" rel="stylesheet">
+      <link href='/rsi/static/packages/platformbar/rsi.platformbar.build.5e6ab.css' media="all" rel="stylesheet">
+      <link href='/rsi/static/packages/enlist/rsi.enlist.build.5238f.css' media="all" rel="stylesheet"/>
+            <script type="text/javascript" src="/cache/en/rsi-external-js.js?v=6.10.6"></script>
+      <script type="text/javascript" src="/cache/en/rsi-templates-js.js?v=6.10.6"></script>
+
+            <link rel="stylesheet" href="https://use.typekit.net/dhw3beb.css">
+
+              <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="a687ee30-df65-45a0-9d22-90de6c1bb964" type="text/javascript"></script>
+      
+      
+    <!-- Google Tag Manager -->
+        <script type="text/plain" data-cookieconsent="statistics">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHNFZPT');</script>
+    <!-- End Google Tag Manager -->
+
+
+      <title>
+Idris Corvette Revealed - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+</title>
+
+            <script type="text/javascript" src='/rsi/static/packages/core/rsi.core.build.804b0.js'></script>
+      <script type="text/javascript" src='/rsi/static/packages/account/rsi.account.build.609b5.js'></script>
+      <script type="text/javascript" src='/rsi/static/packages/store/rsi.store.build.cd9a7.js'></script>
+
+      <script>
+        $(document).ready(function() {
+          window.Common = new RSI.Common({});
+          window.Main = new RSI.Main({
+            'is_mobile': 0,
+            'probation_cookie' : '',
+            'require_captcha': 0
+          });
+          window.Mark = new Turbulent.Mark({ 'name' : 'Rsi-XSRF', 'token' : '', 'ttl' : 1800 });
+
+          window.WscOverlay = new RSI.WscOverlay({});
+
+          var destinations = [];
+
+window.Main.destinations = destinations;          
+  window.PageStore = new RSI.Store({
+    'store_prefix' : '/pledge',
+    'bootstrapConfig': {"injection":{"attachmentClass":"RSIStoreApp","files":{"js":["bootstrap.js"],"css":["index.css"]}},"platform":{"api":"\/api"},"store":{"path":"\/pledge-store","manifest":"manifest.json"},"customizer":{"api":"\/pledge-store\/api\/customizer","ga_tracking_code":"UA-39586040-5"}}
+  });
+
+          
+          
+  var productsTracking = [];
+  var eCommerceData = {
+    'trackingAction': "",
+    'currency': "",
+    'trackingStep': "",
+    'trackingProducts': productsTracking
+  };
+  window.eCommerceTracking = new RSI.Store.eCommerceTracking(
+    eCommerceData
+  );
+
+        });
+
+        $(window).load(function() {
+          
+        });
+
+      </script>
+
+
+      <script>
+        window.recaptcha_is_loaded = false;
+        window.on_recaptcha_load_callback = function() {
+          window.recaptcha_is_loaded = true;
+        };
+      </script>
+
+      <script src="https://www.google.com/recaptcha/api.js?onload=on_recaptcha_load_callback&render=6LerBOgUAAAAAKPg6vsAFPTN66Woz-jBClxdQU-o" async defer></script>
+
+      <script type="text/javascript">
+
+        
+
+                                </script>
+
+      
+
+<style type="text/css">
+  /* CSS from ATOM */
+  
+</style>
+
+<script type="text/javascript">
+  /* JS from ATOM */
+  
+</script>
+
+
+    
+
+  <style>
+    
+      background:url(/rsi/static/images/noisebg.gif) repeat center top #000b11;
+    
+  </style>
+
+    <link href="//fonts.googleapis.com/css?family=Electrolize|Orbitron:400,500,700|Quantico|Share+Tech+Mono&display=swap" rel="stylesheet" type="text/css">
+
+    <link href="/cache/en/rsi-css.css?v=6.10.6" media="all" rel="stylesheet">
+
+
+  </head>
+  <body id="" class="" >
+
+    
+      <div class="l-notification-bar l-notification-bar--rsi js-notification-bar" id="notification-bar-root">
+  <c-notification-bar v-bind:latestagreementsslugs=[] v-bind:loggedin="0" v-bind:onhomepage="0"></c-notification-bar>
+  <div class="l-notification-container l-notification-bar__boxes js-notification-bar-boxes">
+    <div class="l-notification__wrapper">
+              <div class="l-notification-bar__box is-hidden js-notification-bar-box js-notification-bar-box--announcement">
+          <div class="c-notification c-notification--p c-notification--announcement js-bottom-notif-msg-announcement">
+  <div class="c-notification__inner">
+
+    <div class="c-notification__content">
+      <div class="c-notification__title">
+        PLAY STAR CITIZEN FOR FREE UNTIL JUNE 3!
+      </div>
+      <div class="c-notification__message">
+        Click 'More Info' for details.
+      </div>
+    </div>
+
+    <div class="c-notification__actions">
+              <div class="c-notification__wrapper-link">
+                      <a href="https://robertsspaceindustries.com/invictus2951#/About" class="c-notification__button js-bottom-notif-link-announcement">
+          
+            <span class="c-notification__button-text">
+              More info
+            </span>
+            <span class="c-iconed__icon c-iconed__icon--arrow"></span>
+          </a>
+        </div>
+      
+              <span class="c-notification__actions-label">or</span>
+      
+              <div class="c-notification__wrapper-link">
+          <a class="c-notification__button js-bottom-notif-btn-announcement">
+
+            <span class="c-notification__button-text">
+              Close
+            </span>
+
+                          <span class="c-iconed__icon c-iconed__icon--close"></span>
+                      </a>
+        </div>
+          </div>
+
+  </div>
+</div>
+        </div>
+      
+      <c-unsupported-browser v-cloak>
+        <div class="l-notification-bar__box js-notification-bar-box">
+          <div class="c-notification  c-notification--browser-support js-bottom-notif-msg-browser-support">
+  <div class="c-notification__inner">
+
+    <div class="c-notification__content">
+      <div class="c-notification__title">
+        IE11 is no longer supported
+      </div>
+      <div class="c-notification__message">
+        We do not support Internet Explorer 11 and below. Please use a different web browser.
+      </div>
+    </div>
+
+    <div class="c-notification__actions">
+      
+      
+          </div>
+
+  </div>
+</div>
+        </div>
+      </c-unsupported-browser>
+    </div>
+  </div>
+
+</div>
+    
+
+    <div id="bodyWrapper">
+      <header class='c-header-wrapper c-header-wrapper--rsi js-header-wrapper '  id='cross-brand-header'>
+  <div id="platform-bar" class="c-header__platform-bar"></div>
+
+      <div class='c-right-sidebar c-right-sidebar--signin' id="account-sidebar">
+      <div class="js-toggle-account__backdrop invisible"></div>
+
+      <a href="#" class='c-right-sidebar__back js-toggle-account'>Back
+        <span></span>
+        <span></span>
+      </a>
+
+      <div id="enlist-root" data-theme="rsi" data-enlisting="" data-ptu=""></div>
+      <script type="text/javascript" src='/rsi/static/packages/enlist/rsi.enlist.build.5238f.js'></script>
+    </div>
+  
+  <div class="c-header-wrapper__backdrop js-toggle-games"></div>
+</header>
+
+<div id="platform-backdrop"></div>
+
+<script type='text/javascript'>
+  RSI.Platformbar = {
+    theme: "rsi",
+    loggedState: "logged-out",
+    tabs: [
+      {
+        type: 'brands',
+        name: "Games",
+        subItems: [
+          {
+            name: "sc",
+            href: "/star-citizen",
+            description: "Join the Universe"
+          },
+          {
+            name: "s42",
+            href: "/squadron42",
+            description: "Start the adventure"
+          },
+          {
+            name: "rsi",
+            href: "/",
+            description: "Follow the Development"
+          }
+        ]
+      },
+      {
+        type: 'apps',
+        name: "Apps",
+        subItems: [
+          [
+            {
+              name: "Spectrum",
+              href: "/spectrum/community/SC",
+              description: "Your communication platform"
+            },
+            {
+              name: "Launcher",
+              href: "/download",
+              description: "Download Star Citizen",
+                          }
+          ],
+          [
+            {
+              name: "Roadmap",
+              href: "/roadmap",
+              description: "Keep track of the development"
+            },
+            {
+              name: "Telemetry",
+              href: "/telemetry",
+              description: "Keep track of the player’s performance"
+            },
+            {
+              name: "Issue Council",
+                          href: "https://issue-council.robertsspaceindustries.com",
+                          description: "Help us make the game better",
+                          }
+          ],
+          [
+            {
+              name: "Starmap",
+              href: "/starmap",
+              description: "Your map to the universe"
+            },
+            {
+              name: "Galactapedia",
+              href: "/galactapedia",
+              description: "Your guide to the universe"
+            }
+          ]
+        ]
+      },
+          ],
+    navigation: {
+      store: {
+        name: "Pledge Store",
+        href: "/pledge",
+        isHidden: false      },
+      hub: {
+        name: "Learn How to Play",
+        href: "/playstarcitizen",
+        show: false      },
+      support: {
+        name: "Support",
+        href: "//support.robertsspaceindustries.com"
+      },
+      account: {
+        name: "Account",
+        href: "/account/settings",
+        isHidden: false      }
+    }
+  };
+
+  $(document).ready(function() {
+    window.header = new RSI.Header({});
+  });
+</script>
+
+
+      
+  
+<header class='c-brand-menu c-brand-menu----rsi' id='brand-menu'>
+  <span class="c-brand-menu__section">
+    
+      Roberts Space Industries
+    
+  </span>
+  <div class="c-brand-menu__backdrop"></div>
+  <nav class="c-brand-menu__container">
+    <div class="c-brand-menu__logo">
+      <a href="/"><span class="h-svg h-svg__logo-rsi--fullcolor js-svg-inliner"></span> </a>
+    </div>
+    <div class="c-brand-menu__items-container">
+      <ul class="c-brand-menu__items">
+                <li class="c-brand-menu__item  ">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/comm-link">
+            <span class="c-brand-menu__item-text">Comm-Link</span>
+                                  </a>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/community">
+            <span class="c-brand-menu__item-text">Community</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Community</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/spectrum" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Spectrum
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/orgs" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Organizations
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/leaderboards/top" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Leaderboards
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community_events" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Event
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Hub
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/fankit" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Fankit
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/development">
+            <span class="c-brand-menu__item-text">Development</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Development</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/roadmap" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Roadmap
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/devtracker" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Dev Tracker
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/telemetry" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Telemetry
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="https://issue-council.robertsspaceindustries.com" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Issue Council
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/patch-notes" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Patch Notes
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/ship-matrix" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Ship Matrix
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/funding-goals" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Funding
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+              </ul>
+    </div>
+
+    <div class="c-brand-menu__cta">
+      
+        <a href="/star-citizen/play-now" class="c-brand-cta-btn js-google-analytics-event-tracker"
+          data-event-category="FlyNow" data-event-label="navMenuClick">
+          <div></div>
+            <span class="c-brand-cta-btn__text">
+              <strong>Play now</strong>
+            </span>
+          <div></div>
+        </a>
+      
+    </div>
+  </nav>
+</header>
+
+
+
+      
+
+  
+  <div class="page-wrapper">
+    
+  <div id="post-background" ></div>
+
+
+    <div id="contentbody" class="" style="">
+      
+
+<div id="post">
+  <div class="title-section">
+    
+      <div class="wrapper title-bar-container">
+        <div class="glow left"></div>
+        <div class="title-bar">
+          <div class="title with-subtitle">
+            <h1>Transmission</h1>
+            <h2>General</h2>
+          </div>
+          <div class="details">
+            <div>
+              <h3>ID:</h3>
+              <p>13097</p>
+              <div class="cboth"></div>
+            </div>
+            <div>
+              <h3>Comments:</h3>
+              <p class="comment-count">226</p>
+              <div class="cboth"></div>
+            </div>
+            <div>
+              <h3>Date:</h3>
+              <p>June 29th 2013</p>
+              <div class="cboth"></div>
+            </div>
+            <div></div>
+          </div>
+          <div class="cboth"></div>
+        </div>
+        <div class="glow right"></div>
+      </div>
+    
+  <div class="two-line-separator"></div>
+  <div class="small-title-container">
+    <div class="title">Idris Corvette Revealed</div>
+    <div class="subtitle"></div>
+  </div>
+
+  </div>
+
+  
+<div class="wrapper">
+  <div class="content-block2">
+    <div class="atom-special-block">
+      <div id="slideshow" class="atom-slideshow slideshow">
+        <div class="mask">
+          <a class="js-prev prev control"></a>
+          <a class="js-next next control"></a>
+          <div class="carousel">
+                        <div data-source_url="/media/ve56kk17io7cor/source/IDRISuprearquarter-Copy.jpg" data-full_res="/media/ve56kk17io7cor/source/IDRISuprearquarter-Copy.jpg" data-low_res="/media/ve56kk17io7cor/slideshow_pager/IDRISuprearquarter-Copy.jpg" data-slide="1" rel="vault-items">
+              <div class="media js-media-slideshow-1">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/ve56kk17io7cor/slideshow/IDRISuprearquarter-Copy.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/ve56kk17io7cor/slideshow_pager/IDRISuprearquarter-Copy.jpg" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/ve56kk17io7cor/source/IDRISuprearquarter-Copy.jpg" class="download" target="_blank"></a>
+                <div class="page-number">1 / 33</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/k0s52u7kvs8ffr/source/IDRISbridgeFORE-Copy.jpg" data-full_res="/media/k0s52u7kvs8ffr/source/IDRISbridgeFORE-Copy.jpg" data-low_res="/media/k0s52u7kvs8ffr/slideshow_pager/IDRISbridgeFORE-Copy.jpg" data-slide="2" rel="vault-items">
+              <div class="media js-media-slideshow-2">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/k0s52u7kvs8ffr/slideshow/IDRISbridgeFORE-Copy.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/k0s52u7kvs8ffr/slideshow_pager/IDRISbridgeFORE-Copy.jpg" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/k0s52u7kvs8ffr/source/IDRISbridgeFORE-Copy.jpg" class="download" target="_blank"></a>
+                <div class="page-number">2 / 33</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/ktmxv9dfjlxdvr/source/IDRISlandedupshot-Copy.jpg" data-full_res="/media/ktmxv9dfjlxdvr/source/IDRISlandedupshot-Copy.jpg" data-low_res="/media/ktmxv9dfjlxdvr/slideshow_pager/IDRISlandedupshot-Copy.jpg" data-slide="3" rel="vault-items">
+              <div class="media js-media-slideshow-3">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/ktmxv9dfjlxdvr/slideshow/IDRISlandedupshot-Copy.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/ktmxv9dfjlxdvr/slideshow_pager/IDRISlandedupshot-Copy.jpg" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/ktmxv9dfjlxdvr/source/IDRISlandedupshot-Copy.jpg" class="download" target="_blank"></a>
+                <div class="page-number">3 / 33</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/1ejqwym1sj4kur/source/TOPCARGOforeCLOSED.JPG" data-full_res="/media/1ejqwym1sj4kur/source/TOPCARGOforeCLOSED.JPG" data-low_res="/media/1ejqwym1sj4kur/slideshow_pager/TOPCARGOforeCLOSED.JPG" data-slide="4" rel="vault-items">
+              <div class="media js-media-slideshow-4">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/1ejqwym1sj4kur/slideshow/TOPCARGOforeCLOSED.JPG" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/1ejqwym1sj4kur/slideshow_pager/TOPCARGOforeCLOSED.JPG" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/1ejqwym1sj4kur/source/TOPCARGOforeCLOSED.JPG" class="download" target="_blank"></a>
+                <div class="page-number">4 / 33</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/bwv6wzuou3s67r/source/POWERPLANTROOMaftport.jpg" data-full_res="/media/bwv6wzuou3s67r/source/POWERPLANTROOMaftport.jpg" data-low_res="/media/bwv6wzuou3s67r/slideshow_pager/POWERPLANTROOMaftport.jpg" data-slide="5" rel="vault-items">
+              <div class="media js-media-slideshow-5">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/bwv6wzuou3s67r/slideshow/POWERPLANTROOMaftport.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/bwv6wzuou3s67r/slideshow_pager/POWERPLANTROOMaftport.jpg" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/bwv6wzuou3s67r/source/POWERPLANTROOMaftport.jpg" class="download" target="_blank"></a>
+                <div class="page-number">5 / 33</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/oloret9x9t44xr/source/POWERPLANTROOMaft2.jpg" data-full_res="/media/oloret9x9t44xr/source/POWERPLANTROOMaft2.jpg" data-low_res="/media/oloret9x9t44xr/slideshow_pager/POWERPLANTROOMaft2.jpg" data-slide="6" rel="vault-items">
+              <div class="media js-media-slideshow-6">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/oloret9x9t44xr/slideshow/POWERPLANTROOMaft2.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/oloret9x9t44xr/slideshow_pager/POWERPLANTROOMaft2.jpg" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/oloret9x9t44xr/source/POWERPLANTROOMaft2.jpg" class="download" target="_blank"></a>
+                <div class="page-number">6 / 33</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/6wp75s06wt87yr/source/POWERPLANTROOMaft.jpg" data-full_res="/media/6wp75s06wt87yr/source/POWERPLANTROOMaft.jpg" data-low_res="/media/6wp75s06wt87yr/slideshow_pager/POWERPLANTROOMaft.jpg" data-slide="7" rel="vault-items">
+              <div class="media js-media-slideshow-7">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/6wp75s06wt87yr/slideshow/POWERPLANTROOMaft.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/6wp75s06wt87yr/slideshow_pager/POWERPLANTROOMaft.jpg" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/6wp75s06wt87yr/source/POWERPLANTROOMaft.jpg" class="download" target="_blank"></a>
+                <div class="page-number">7 / 33</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/6xi1djm3t51rsr/source/PORTENGINEERINGfore.jpg" data-full_res="/media/6xi1djm3t51rsr/source/PORTENGINEERINGfore.jpg" data-low_res="/media/6xi1djm3t51rsr/slideshow_pager/PORTENGINEERINGfore.jpg" data-slide="8" rel="vault-items">
+              <div class="media js-media-slideshow-8">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/6xi1djm3t51rsr/slideshow/PORTENGINEERINGfore.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/6xi1djm3t51rsr/slideshow_pager/PORTENGINEERINGfore.jpg" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/6xi1djm3t51rsr/source/PORTENGINEERINGfore.jpg" class="download" target="_blank"></a>
+                <div class="page-number">8 / 33</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/hzndhxqavk2vfr/source/IDRISsideorthoSPACE-Copy.jpg" data-full_res="/media/hzndhxqavk2vfr/source/IDRISsideorthoSPACE-Copy.jpg" data-low_res="/media/hzndhxqavk2vfr/slideshow_pager/IDRISsideorthoSPACE-Copy.jpg" data-slide="9" rel="vault-items">
+              <div class="media js-media-slideshow-9">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/hzndhxqavk2vfr/slideshow/IDRISsideorthoSPACE-Copy.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/hzndhxqavk2vfr/slideshow_pager/IDRISsideorthoSPACE-Copy.jpg" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/hzndhxqavk2vfr/source/IDRISsideorthoSPACE-Copy.jpg" class="download" target="_blank"></a>
+                <div class="page-number">9 / 33</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/0vwwgxgil6k00r/source/IDRISsideorthoLANDED-Copy.jpg" data-full_res="/media/0vwwgxgil6k00r/source/IDRISsideorthoLANDED-Copy.jpg" data-low_res="/media/0vwwgxgil6k00r/slideshow_pager/IDRISsideorthoLANDED-Copy.jpg" data-slide="10" rel="vault-items">
+              <div class="media js-media-slideshow-10">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/0vwwgxgil6k00r/slideshow/IDRISsideorthoLANDED-Copy.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/0vwwgxgil6k00r/slideshow_pager/IDRISsideorthoLANDED-Copy.jpg" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/0vwwgxgil6k00r/source/IDRISsideorthoLANDED-Copy.jpg" class="download" target="_blank"></a>
+                <div class="page-number">10 / 33</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/cxqqkj40ggrfqr/source/IDRISsideorthoCIVILIAN-Copy.jpg" data-full_res="/media/cxqqkj40ggrfqr/source/IDRISsideorthoCIVILIAN-Copy.jpg" data-low_res="/media/cxqqkj40ggrfqr/slideshow_pager/IDRISsideorthoCIVILIAN-Copy.jpg" data-slide="11" rel="vault-items">
+              <div class="media js-media-slideshow-11">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/cxqqkj40ggrfqr/slideshow/IDRISsideorthoCIVILIAN-Copy.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/cxqqkj40ggrfqr/slideshow_pager/IDRISsideorthoCIVILIAN-Copy.jpg" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/cxqqkj40ggrfqr/source/IDRISsideorthoCIVILIAN-Copy.jpg" class="download" target="_blank"></a>
+                <div class="page-number">11 / 33</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/k33igkvwdtno8r/source/TOPCARGOforeOPEN.JPG" data-full_res="/media/k33igkvwdtno8r/source/TOPCARGOforeOPEN.JPG" data-low_res="/media/k33igkvwdtno8r/slideshow_pager/TOPCARGOforeOPEN.JPG" data-slide="12" rel="vault-items">
+              <div class="media js-media-slideshow-12">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/k33igkvwdtno8r/slideshow/TOPCARGOforeOPEN.JPG" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/k33igkvwdtno8r/slideshow_pager/TOPCARGOforeOPEN.JPG" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/k33igkvwdtno8r/source/TOPCARGOforeOPEN.JPG" class="download" target="_blank"></a>
+                <div class="page-number">12 / 33</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/nsy8e6huuje0jr/source/IDRIScargobay-Copy.JPG" data-full_res="/media/nsy8e6huuje0jr/source/IDRIScargobay-Copy.JPG" data-low_res="/media/nsy8e6huuje0jr/slideshow_pager/IDRIScargobay-Copy.JPG" data-slide="13" rel="vault-items">
+              <div class="media js-media-slideshow-13">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/nsy8e6huuje0jr/slideshow/IDRIScargobay-Copy.JPG" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/nsy8e6huuje0jr/slideshow_pager/IDRIScargobay-Copy.JPG" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/nsy8e6huuje0jr/source/IDRIScargobay-Copy.JPG" class="download" target="_blank"></a>
+                <div class="page-number">13 / 33</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/dd8oatels3u1cr/source/HANGARFORE2.JPG" data-full_res="/media/dd8oatels3u1cr/source/HANGARFORE2.JPG" data-low_res="/media/dd8oatels3u1cr/slideshow_pager/HANGARFORE2.JPG" data-slide="14" rel="vault-items">
+              <div class="media js-media-slideshow-14">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/dd8oatels3u1cr/slideshow/HANGARFORE2.JPG" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/dd8oatels3u1cr/slideshow_pager/HANGARFORE2.JPG" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/dd8oatels3u1cr/source/HANGARFORE2.JPG" class="download" target="_blank"></a>
+                <div class="page-number">14 / 33</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/vs8tbqogkhztmr/source/HANGARfore.JPG" data-full_res="/media/vs8tbqogkhztmr/source/HANGARfore.JPG" data-low_res="/media/vs8tbqogkhztmr/slideshow_pager/HANGARfore.JPG" data-slide="15" rel="vault-items">
+              <div class="media js-media-slideshow-15">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/vs8tbqogkhztmr/slideshow/HANGARfore.JPG" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/vs8tbqogkhztmr/slideshow_pager/HANGARfore.JPG" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/vs8tbqogkhztmr/source/HANGARfore.JPG" class="download" target="_blank"></a>
+                <div class="page-number">15 / 33</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/rxu2v6f1ek6ghr/source/HANGARaft.jpg" data-full_res="/media/rxu2v6f1ek6ghr/source/HANGARaft.jpg" data-low_res="/media/rxu2v6f1ek6ghr/slideshow_pager/HANGARaft.jpg" data-slide="16" rel="vault-items">
+              <div class="media js-media-slideshow-16">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/rxu2v6f1ek6ghr/slideshow/HANGARaft.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/rxu2v6f1ek6ghr/slideshow_pager/HANGARaft.jpg" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/rxu2v6f1ek6ghr/source/HANGARaft.jpg" class="download" target="_blank"></a>
+                <div class="page-number">16 / 33</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/z3nxzhul9w5b9r/source/FOREHABMODaft.jpg" data-full_res="/media/z3nxzhul9w5b9r/source/FOREHABMODaft.jpg" data-low_res="/media/z3nxzhul9w5b9r/slideshow_pager/FOREHABMODaft.jpg" data-slide="17" rel="vault-items">
+              <div class="media js-media-slideshow-17">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/z3nxzhul9w5b9r/slideshow/FOREHABMODaft.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/z3nxzhul9w5b9r/slideshow_pager/FOREHABMODaft.jpg" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/z3nxzhul9w5b9r/source/FOREHABMODaft.jpg" class="download" target="_blank"></a>
+                <div class="page-number">17 / 33</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/3mytr7ci9zbvhr/source/FORECARGODOORSopen.jpg" data-full_res="/media/3mytr7ci9zbvhr/source/FORECARGODOORSopen.jpg" data-low_res="/media/3mytr7ci9zbvhr/slideshow_pager/FORECARGODOORSopen.jpg" data-slide="18" rel="vault-items">
+              <div class="media js-media-slideshow-18">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/3mytr7ci9zbvhr/slideshow/FORECARGODOORSopen.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/3mytr7ci9zbvhr/slideshow_pager/FORECARGODOORSopen.jpg" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/3mytr7ci9zbvhr/source/FORECARGODOORSopen.jpg" class="download" target="_blank"></a>
+                <div class="page-number">18 / 33</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/iabrw0dzccucfr/source/FORECARGODOORSclosed.jpg" data-full_res="/media/iabrw0dzccucfr/source/FORECARGODOORSclosed.jpg" data-low_res="/media/iabrw0dzccucfr/slideshow_pager/FORECARGODOORSclosed.jpg" data-slide="19" rel="vault-items">
+              <div class="media js-media-slideshow-19">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/iabrw0dzccucfr/slideshow/FORECARGODOORSclosed.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/iabrw0dzccucfr/slideshow_pager/FORECARGODOORSclosed.jpg" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/iabrw0dzccucfr/source/FORECARGODOORSclosed.jpg" class="download" target="_blank"></a>
+                <div class="page-number">19 / 33</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/qrgorqaj8eyptr/source/EXTERIORlnded.jpg" data-full_res="/media/qrgorqaj8eyptr/source/EXTERIORlnded.jpg" data-low_res="/media/qrgorqaj8eyptr/slideshow_pager/EXTERIORlnded.jpg" data-slide="20" rel="vault-items">
+              <div class="media js-media-slideshow-20">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/qrgorqaj8eyptr/slideshow/EXTERIORlnded.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/qrgorqaj8eyptr/slideshow_pager/EXTERIORlnded.jpg" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/qrgorqaj8eyptr/source/EXTERIORlnded.jpg" class="download" target="_blank"></a>
+                <div class="page-number">20 / 33</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/dnyk7eumwnu3wr/source/EXTERIORexoatmospheric.jpg" data-full_res="/media/dnyk7eumwnu3wr/source/EXTERIORexoatmospheric.jpg" data-low_res="/media/dnyk7eumwnu3wr/slideshow_pager/EXTERIORexoatmospheric.jpg" data-slide="21" rel="vault-items">
+              <div class="media js-media-slideshow-21">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/dnyk7eumwnu3wr/slideshow/EXTERIORexoatmospheric.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/dnyk7eumwnu3wr/slideshow_pager/EXTERIORexoatmospheric.jpg" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/dnyk7eumwnu3wr/source/EXTERIORexoatmospheric.jpg" class="download" target="_blank"></a>
+                <div class="page-number">21 / 33</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/nszjazbdhiwhzr/source/EXTERIORafttop.JPG" data-full_res="/media/nszjazbdhiwhzr/source/EXTERIORafttop.JPG" data-low_res="/media/nszjazbdhiwhzr/slideshow_pager/EXTERIORafttop.JPG" data-slide="22" rel="vault-items">
+              <div class="media js-media-slideshow-22">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/nszjazbdhiwhzr/slideshow/EXTERIORafttop.JPG" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/nszjazbdhiwhzr/slideshow_pager/EXTERIORafttop.JPG" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/nszjazbdhiwhzr/source/EXTERIORafttop.JPG" class="download" target="_blank"></a>
+                <div class="page-number">22 / 33</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/e8vbo20ohlgobr/source/EXTERIORaftbottom.jpg" data-full_res="/media/e8vbo20ohlgobr/source/EXTERIORaftbottom.jpg" data-low_res="/media/e8vbo20ohlgobr/slideshow_pager/EXTERIORaftbottom.jpg" data-slide="23" rel="vault-items">
+              <div class="media js-media-slideshow-23">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/e8vbo20ohlgobr/slideshow/EXTERIORaftbottom.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/e8vbo20ohlgobr/slideshow_pager/EXTERIORaftbottom.jpg" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/e8vbo20ohlgobr/source/EXTERIORaftbottom.jpg" class="download" target="_blank"></a>
+                <div class="page-number">23 / 33</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/jj7owhmn02mrlr/source/EXCAPEPODDOORSexteriorOPEN.JPG" data-full_res="/media/jj7owhmn02mrlr/source/EXCAPEPODDOORSexteriorOPEN.JPG" data-low_res="/media/jj7owhmn02mrlr/slideshow_pager/EXCAPEPODDOORSexteriorOPEN.JPG" data-slide="24" rel="vault-items">
+              <div class="media js-media-slideshow-24">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/jj7owhmn02mrlr/slideshow/EXCAPEPODDOORSexteriorOPEN.JPG" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/jj7owhmn02mrlr/slideshow_pager/EXCAPEPODDOORSexteriorOPEN.JPG" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/jj7owhmn02mrlr/source/EXCAPEPODDOORSexteriorOPEN.JPG" class="download" target="_blank"></a>
+                <div class="page-number">24 / 33</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/6xo61pdlwntkxr/source/EXCAPEPODDOORSexteriorCLOSED.jpg" data-full_res="/media/6xo61pdlwntkxr/source/EXCAPEPODDOORSexteriorCLOSED.jpg" data-low_res="/media/6xo61pdlwntkxr/slideshow_pager/EXCAPEPODDOORSexteriorCLOSED.jpg" data-slide="25" rel="vault-items">
+              <div class="media js-media-slideshow-25">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/6xo61pdlwntkxr/slideshow/EXCAPEPODDOORSexteriorCLOSED.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/6xo61pdlwntkxr/slideshow_pager/EXCAPEPODDOORSexteriorCLOSED.jpg" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/6xo61pdlwntkxr/source/EXCAPEPODDOORSexteriorCLOSED.jpg" class="download" target="_blank"></a>
+                <div class="page-number">25 / 33</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/26g358gtq9kksr/source/BRIDGEfore.JPG" data-full_res="/media/26g358gtq9kksr/source/BRIDGEfore.JPG" data-low_res="/media/26g358gtq9kksr/slideshow_pager/BRIDGEfore.JPG" data-slide="26" rel="vault-items">
+              <div class="media js-media-slideshow-26">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/26g358gtq9kksr/slideshow/BRIDGEfore.JPG" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/26g358gtq9kksr/slideshow_pager/BRIDGEfore.JPG" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/26g358gtq9kksr/source/BRIDGEfore.JPG" class="download" target="_blank"></a>
+                <div class="page-number">26 / 33</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/r0nihbsl2kzw6r/source/BRIDGEaft2.JPG" data-full_res="/media/r0nihbsl2kzw6r/source/BRIDGEaft2.JPG" data-low_res="/media/r0nihbsl2kzw6r/slideshow_pager/BRIDGEaft2.JPG" data-slide="27" rel="vault-items">
+              <div class="media js-media-slideshow-27">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/r0nihbsl2kzw6r/slideshow/BRIDGEaft2.JPG" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/r0nihbsl2kzw6r/slideshow_pager/BRIDGEaft2.JPG" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/r0nihbsl2kzw6r/source/BRIDGEaft2.JPG" class="download" target="_blank"></a>
+                <div class="page-number">27 / 33</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/ysn3eh2nqxt0qr/source/BRIDGEaft.JPG" data-full_res="/media/ysn3eh2nqxt0qr/source/BRIDGEaft.JPG" data-low_res="/media/ysn3eh2nqxt0qr/slideshow_pager/BRIDGEaft.JPG" data-slide="28" rel="vault-items">
+              <div class="media js-media-slideshow-28">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/ysn3eh2nqxt0qr/slideshow/BRIDGEaft.JPG" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/ysn3eh2nqxt0qr/slideshow_pager/BRIDGEaft.JPG" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/ysn3eh2nqxt0qr/source/BRIDGEaft.JPG" class="download" target="_blank"></a>
+                <div class="page-number">28 / 33</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/b1vrzwbbzb3y0r/source/AFTMISSILEROOMaft2.jpg" data-full_res="/media/b1vrzwbbzb3y0r/source/AFTMISSILEROOMaft2.jpg" data-low_res="/media/b1vrzwbbzb3y0r/slideshow_pager/AFTMISSILEROOMaft2.jpg" data-slide="29" rel="vault-items">
+              <div class="media js-media-slideshow-29">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/b1vrzwbbzb3y0r/slideshow/AFTMISSILEROOMaft2.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/b1vrzwbbzb3y0r/slideshow_pager/AFTMISSILEROOMaft2.jpg" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/b1vrzwbbzb3y0r/source/AFTMISSILEROOMaft2.jpg" class="download" target="_blank"></a>
+                <div class="page-number">29 / 33</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/xvh3wqftukni7r/source/AFTMISSILEROOMaft.jpg" data-full_res="/media/xvh3wqftukni7r/source/AFTMISSILEROOMaft.jpg" data-low_res="/media/xvh3wqftukni7r/slideshow_pager/AFTMISSILEROOMaft.jpg" data-slide="30" rel="vault-items">
+              <div class="media js-media-slideshow-30">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/xvh3wqftukni7r/slideshow/AFTMISSILEROOMaft.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/xvh3wqftukni7r/slideshow_pager/AFTMISSILEROOMaft.jpg" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/xvh3wqftukni7r/source/AFTMISSILEROOMaft.jpg" class="download" target="_blank"></a>
+                <div class="page-number">30 / 33</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/sp0m8wqe1gjtar/source/AFTHABMODaft.jpg" data-full_res="/media/sp0m8wqe1gjtar/source/AFTHABMODaft.jpg" data-low_res="/media/sp0m8wqe1gjtar/slideshow_pager/AFTHABMODaft.jpg" data-slide="31" rel="vault-items">
+              <div class="media js-media-slideshow-31">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/sp0m8wqe1gjtar/slideshow/AFTHABMODaft.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/sp0m8wqe1gjtar/slideshow_pager/AFTHABMODaft.jpg" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/sp0m8wqe1gjtar/source/AFTHABMODaft.jpg" class="download" target="_blank"></a>
+                <div class="page-number">31 / 33</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/txm2ydk8qecwvr/source/AFTHABMODaft2.jpg" data-full_res="/media/txm2ydk8qecwvr/source/AFTHABMODaft2.jpg" data-low_res="/media/txm2ydk8qecwvr/slideshow_pager/AFTHABMODaft2.jpg" data-slide="32" rel="vault-items">
+              <div class="media js-media-slideshow-32">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/txm2ydk8qecwvr/slideshow/AFTHABMODaft2.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/txm2ydk8qecwvr/slideshow_pager/AFTHABMODaft2.jpg" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/txm2ydk8qecwvr/source/AFTHABMODaft2.jpg" class="download" target="_blank"></a>
+                <div class="page-number">32 / 33</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/vlra9sfe41p9ir/source/POREENGINEERINGfore2.jpg" data-full_res="/media/vlra9sfe41p9ir/source/POREENGINEERINGfore2.jpg" data-low_res="/media/vlra9sfe41p9ir/slideshow_pager/POREENGINEERINGfore2.jpg" data-slide="33" rel="vault-items">
+              <div class="media js-media-slideshow-33">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/vlra9sfe41p9ir/slideshow/POREENGINEERINGfore2.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/vlra9sfe41p9ir/slideshow_pager/POREENGINEERINGfore2.jpg" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/vlra9sfe41p9ir/source/POREENGINEERINGfore2.jpg" class="download" target="_blank"></a>
+                <div class="page-number">33 / 33</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                      </div>
+        </div>
+        <div class="details">
+          <div class="scrollable fancy">
+            <div class="viewport">
+              <div class="content pager">
+                                  <a class="">
+                    <img src="/media/ve56kk17io7cor/slideshow_pager/IDRISuprearquarter-Copy.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/k0s52u7kvs8ffr/slideshow_pager/IDRISbridgeFORE-Copy.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/ktmxv9dfjlxdvr/slideshow_pager/IDRISlandedupshot-Copy.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/1ejqwym1sj4kur/slideshow_pager/TOPCARGOforeCLOSED.JPG" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/bwv6wzuou3s67r/slideshow_pager/POWERPLANTROOMaftport.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/oloret9x9t44xr/slideshow_pager/POWERPLANTROOMaft2.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/6wp75s06wt87yr/slideshow_pager/POWERPLANTROOMaft.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/6xi1djm3t51rsr/slideshow_pager/PORTENGINEERINGfore.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/hzndhxqavk2vfr/slideshow_pager/IDRISsideorthoSPACE-Copy.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/0vwwgxgil6k00r/slideshow_pager/IDRISsideorthoLANDED-Copy.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/cxqqkj40ggrfqr/slideshow_pager/IDRISsideorthoCIVILIAN-Copy.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/k33igkvwdtno8r/slideshow_pager/TOPCARGOforeOPEN.JPG" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/nsy8e6huuje0jr/slideshow_pager/IDRIScargobay-Copy.JPG" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/dd8oatels3u1cr/slideshow_pager/HANGARFORE2.JPG" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/vs8tbqogkhztmr/slideshow_pager/HANGARfore.JPG" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/rxu2v6f1ek6ghr/slideshow_pager/HANGARaft.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/z3nxzhul9w5b9r/slideshow_pager/FOREHABMODaft.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/3mytr7ci9zbvhr/slideshow_pager/FORECARGODOORSopen.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/iabrw0dzccucfr/slideshow_pager/FORECARGODOORSclosed.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/qrgorqaj8eyptr/slideshow_pager/EXTERIORlnded.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/dnyk7eumwnu3wr/slideshow_pager/EXTERIORexoatmospheric.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/nszjazbdhiwhzr/slideshow_pager/EXTERIORafttop.JPG" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/e8vbo20ohlgobr/slideshow_pager/EXTERIORaftbottom.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/jj7owhmn02mrlr/slideshow_pager/EXCAPEPODDOORSexteriorOPEN.JPG" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/6xo61pdlwntkxr/slideshow_pager/EXCAPEPODDOORSexteriorCLOSED.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/26g358gtq9kksr/slideshow_pager/BRIDGEfore.JPG" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/r0nihbsl2kzw6r/slideshow_pager/BRIDGEaft2.JPG" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/ysn3eh2nqxt0qr/slideshow_pager/BRIDGEaft.JPG" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/b1vrzwbbzb3y0r/slideshow_pager/AFTMISSILEROOMaft2.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/xvh3wqftukni7r/slideshow_pager/AFTMISSILEROOMaft.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/sp0m8wqe1gjtar/slideshow_pager/AFTHABMODaft.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/txm2ydk8qecwvr/slideshow_pager/AFTHABMODaft2.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/vlra9sfe41p9ir/slideshow_pager/POREENGINEERINGfore2.jpg" width="88" height="50" />
+                  </a>
+                                <div class="cboth"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cboth"></div>
+      </div>
+    </div>
+    <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#slideshow").data("carousel", new RSI.FullCarousel({
+      holder: $("#slideshow .mask .carousel"),
+      pagerContainer: $("#slideshow .pager"),
+      prevButton: $("#slideshow .js-prev"),
+      nextButton: $("#slideshow .js-next"),
+      clickToFullScreen: true,
+      circular: true,
+      useKeys: true,
+      container: $("#slideshow"),
+      needToLoadImg: true
+    }));
+
+    $(window).bind("resize", function() {
+      if ($(window).width() < 1200) {
+        $("#slideshow").data("carousel").setToFitScreen();
+      }
+      else {
+        $("#slideshow").data("carousel").unsetToFitScreen();
+      }
+    });
+
+    if ($(window).width() < 1200) {
+      $("#slideshow").data("carousel").setToFitScreen();
+      $("#slideshow").data("carousel").onWindowResize();
+    }
+    else {
+      $("#slideshow").data("carousel").unsetToFitScreen();
+    }
+
+    $("#slideshow .download").bind("click", function(e) {
+      e.stopPropagation();
+      return true;
+    });
+  });
+</script>
+
+
+  <div class="wrapper"><div class="hr"></div><div class="content-block4"><div class="content"><div class="top"></div><h1>Idris Corvette Revealed</h1><div class="cboth"></div></div><div class="bottom"></div></div><div class="content-block1 rsi-markup">
+<div  class=' segment' ><div class="content"><a class="image  js-open-in-slideshow" data-id="vmh4tw3550jr4r" data-full_res="/media/vmh4tw3550jr4r/source/IDRISdownfrontquarter-Copy.jpg" data-low_res="/media/vmh4tw3550jr4r/slideshow_pager/IDRISdownfrontquarter-Copy.jpg" data-source_url="/media/vmh4tw3550jr4r/source/IDRISdownfrontquarter-Copy.jpg" rel="post"><img src="/media/vmh4tw3550jr4r/post/IDRISdownfrontquarter-Copy.jpg" alt="" /></a>
+
+<p><span class="initial">O</span>ne of the most anticipated ships in the Star Citizen universe is the Aegis Dynamics Idris-class corvette. The largest ship available for purchase during the campaign, only 100 Idrises were made available, to preserve game balance! The Idris is a small capital ship capable of storing smaller fighters and being run by a team of players working together. Today we’re proud to reveal the very first images of the Idris, designed by Hollywood artist Ryan Church, as well as the ship’s specifications!</p>
+
+<a class="image  js-open-in-slideshow" data-id="hn43y92uyu3r4r" data-full_res="/media/hn43y92uyu3r4r/source/IDRISlandedupshot-Copy.jpg" data-low_res="/media/hn43y92uyu3r4r/slideshow_pager/IDRISlandedupshot-Copy.jpg" data-source_url="/media/hn43y92uyu3r4r/source/IDRISlandedupshot-Copy.jpg" rel="post"><img src="/media/hn43y92uyu3r4r/post/IDRISlandedupshot-Copy.jpg" alt="" /></a>
+
+<p>As part of the livestream, we are making an additional 150 Idris corvettes available for sale starting now. This second set of corvettes is not the fully-equipped military assault model available during the earlier event, but a stripped down peacekeeper version aimed at having less of an impact on the initial game balance. </p>
+
+<p>Surplus sale! The United Empire of Earth’s Exploratory Services is retiring patrol-model 150 Idris-P corvettes which have seen hard service on the frontier. These ships will be available for public sale, with funds received going towards the ongoing SynthWorld project. Please note that all corvettes are the lighter model lacking the spinal mount turret emplacement. Buyers will be responsible for towing and equipping any craft purchased.</p></div><div class="cboth"></div></div>
+
+<div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+<div class="wrapper"><div class="hr"></div><div class="content-block4"><div class="content"><div class="top"></div><h1>Ship Specifications</h1><div class="cboth"></div></div><div class="bottom"></div></div><div class="content-block1 rsi-markup">
+<div  class=' segment' ><div class="content"><a class="image  js-open-in-slideshow" data-id="k0s52u7kvs8ffr" data-full_res="/media/k0s52u7kvs8ffr/source/IDRISbridgeFORE-Copy.jpg" data-low_res="/media/k0s52u7kvs8ffr/slideshow_pager/IDRISbridgeFORE-Copy.jpg" data-source_url="/media/k0s52u7kvs8ffr/source/IDRISbridgeFORE-Copy.jpg" rel="post"><img src="/media/k0s52u7kvs8ffr/post/IDRISbridgeFORE-Copy.jpg" alt="" /></a>
+
+<p><span class="initial">B</span>uilder: Aegis Dynamics<br />
+Crew (max): 10<br />
+Mass (empty): 138,000 kg<br />
+Length: 140 meters<br />
+Focus: Corvette</p>
+
+<p>The Idris-class corvette is the premiere entry-level capital ship for both the civilian market and the <span class="caps">UEE</span> military. Idris’ are used by long-range explorers who plan to be as many as two dozen jumps from a refueling station and as armored merchantmen by concerns needing to move goods through pirate territory. The high pricetag keeps the Idris out of range of anyone usually operating Freelancers or Starfarers, and actually makes them something of a target for higher caliber pirates, who presume that anyone who owns one has something worth protecting.</p>
+
+<a class="image  js-open-in-slideshow" data-id="ve56kk17io7cor" data-full_res="/media/ve56kk17io7cor/source/IDRISuprearquarter-Copy.jpg" data-low_res="/media/ve56kk17io7cor/slideshow_pager/IDRISuprearquarter-Copy.jpg" data-source_url="/media/ve56kk17io7cor/source/IDRISuprearquarter-Copy.jpg" rel="post"><img src="/media/ve56kk17io7cor/post/IDRISuprearquarter-Copy.jpg" alt="" /></a>
+
+<p>Anything but the stock Idris is ultimately a tough nut to crack for attackers, though: extremely customizable and dotted with turrets, they also ship with numerous empty missile hardpoints and room for an expansive fixed-forward armament. Make sure you can afford to properly outfit an Idris once you’ve purchased it … if you can, you will wind up with one of the best-equipped ships available on the open market.</p>
+
+<p>The <span class="caps">UEE</span> operates Idris-class ships extensively, in two variants. Because of the ship’s command systems, the crews are drawn from the ranks of the elite <span class="caps">UEE</span> fighter pilot core. Though it may not be as glamourous as a Hornet or a Gladiator, the Idris is a powerhouse of a ship.</p>
+
+<p>A mark two “peacekeeper” variant was developed for the <span class="caps">UEE</span> patrol services. The Idris-P strips the standard ship’s ship-to-ship gun and spinal mount in favor of additional cargo capacity and superior speed. Aftermarket kits, initially produced for the <span class="caps">UEE</span> government seeking an improved patrol/protection plan, are available to militarize the Peacekeeper versions.</p>
+
+<p>The Idris has room to dock two single-seat fighters: Aurora, 300i or Hornet-level.<br />
+Upgrade Capacity: 20<br />
+Cargo Capacity: 100 tonnes (Idris-P, 120 ton)<br />
+Engine-<br />
+Thrusters: 8 x TR4, 8 x TR3<br />
+Hardpoints (Idris)-<br />
+6 x Class 5: Behring M3C <span class="caps">ASA</span> Turrets<br />
+1 x Class 6: Behring M5C <span class="caps">STS</span> Turret<br />
+1 x Class 6: A&amp;R Plowshare Anti-Ship Missile Launcher (<span class="caps">ASML</span>)<br />
+1 x Class 8: Klaus &amp; Werner Zestroyer Spinal Mount Rail Gun <br />
+Hardpoints (Idris Peacekeeper)-<br />
+7 x Class 5: Behring M3C <span class="caps">ASA</span> Turrets<br />
+1 x Class 6: Behring M5C <span class="caps">STS</span> Turret</p></div><div class="cboth"></div></div>
+<div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+<div class="wrapper"><div class="hr"></div><div class="content-block4"><div class="content"><div class="top"></div><h1>Interview with Ryan Church</h1><div class="cboth"></div></div><div class="bottom"></div></div><div class="content-block1 rsi-markup">
+<div  class=' segment' ><div class="content"><a class="image  js-open-in-slideshow" data-id="dizvqls68z96dr" data-full_res="/media/dizvqls68z96dr/source/IDRIScargobay-Copy.JPG" data-low_res="/media/dizvqls68z96dr/slideshow_pager/IDRIScargobay-Copy.JPG" data-source_url="/media/dizvqls68z96dr/source/IDRIScargobay-Copy.JPG" rel="post"><img src="/media/dizvqls68z96dr/post/IDRIScargobay-Copy.JPG" alt="" /></a>
+
+<h2>How did you build the Idris? </h2>
+
+<p><span class="initial">T</span>he Idris was great fun to build and &#8216;engineer.&#8217; The requirements Chris laid down were a long list of often mutually exclusive design points, but I find that having to package a lot of tough elements in an aesthetically cool design can really make for a neat ship. That is to say that a design &#8216;earns&#8217; a coolness by being functional and thought out down to the spars and ribs, rather than just being a styling exercise. Chris knew the number of engines, rough weight class, armament fit, function and mission capability and I just worked from there. I always start extremely roughly and send Chris 8-12 rough ideas, each of which has their pluses and minuses.</p>
+
+<a class="image  js-open-in-slideshow" data-id="ep0nx2pecmkbdr" data-full_res="/media/ep0nx2pecmkbdr/source/POREENGINEERINGfore2.jpg" data-low_res="/media/ep0nx2pecmkbdr/slideshow_pager/POREENGINEERINGfore2.jpg" data-source_url="/media/ep0nx2pecmkbdr/source/POREENGINEERINGfore2.jpg" rel="post"><img src="/media/ep0nx2pecmkbdr/post/POREENGINEERINGfore2.jpg" alt="" /></a>
+
+<p>With this ship there was more time than usual spent at this early stage to get the right look — something that worked functionally, but also a design that looked a bit older, a bit more pugnacious and a bit more functional than some of the other ships. I love this approach; you can have your sleek, refined F-22 but then next to it you can have your F-15 or even F-4, with all of their comparatively brutish shapes and forms, tons of antennas and pylons sticking off — yet they both look cool in their own ways.</p>
+
+
+
+<p>Since this ship can land atmospherically and is pretty large, it was a special challenge to incorporate a plausible <span class="caps">VTOL</span>-to-orbit-and-beyond capability. I decided to arrange the pivoting engines in such a way that they functioned in <span class="caps">VTOL</span>, atmospheric, and exoatmospheric modes — it&#8217;s a similar concept to that used on the Avatar Valkyrie, but on a much larger scale and with better engine failure redundancy. Arranging the engines all around the center of gravity and providing functioning landing gear and a bridge with good visibility and weapons with good field of fire coverage were all challenges. For the Idris I also had to give special consideration to the interior packaging — enough room for the cargo and small ship operations, but also enough room for the crew to have some room to spread out and even some private spaces to eat, entertain or just get away from your crewmates for a bit.</p>
+
+<h2>What was your inspiration for the ship&#8217;s look?</h2>
+
+<p>Chris was pretty specific about wanting something that would subtly evoke naval ships but didn&#8217;t look too submarineish — something that had a very distinctive silhouette and looked more functional and utilitarian than the aesthetic of, say, the Constellation. It&#8217;s less about angular panels and it has more radii, a different surface development.</p>
+
+<a class="image  js-open-in-slideshow" data-id="6krk2bdwdv88kr" data-full_res="/media/6krk2bdwdv88kr/source/IDRISsideorthoSPACE-Copy.jpg" data-low_res="/media/6krk2bdwdv88kr/slideshow_pager/IDRISsideorthoSPACE-Copy.jpg" data-source_url="/media/6krk2bdwdv88kr/source/IDRISsideorthoSPACE-Copy.jpg" rel="post"><img src="/media/6krk2bdwdv88kr/post/IDRISsideorthoSPACE-Copy.jpg" alt="" /></a>
+
+<p>The Idris is built by Aegis rather than <span class="caps">RSI</span>. Did this impact your design?<br />
+Definitely, and this ties in directly with your previous question because we are really trying to make the manufacturers distinct. In the same way you can tell a Lockheed product from a Northrop product, or a current-day American aircraft carrier from a Russian aircraft carrier. We want to go much further than that; it makes the world seem larger and it&#8217;s more fun to do.</p>
+
+<h2>What can you tell us about your plans for the Idris&#8217; internal cabin?</h2>
+
+<p>With all the designs I do I think about the exterior shape first, but almost immediately put rough blocks in the model that represent rough guesses I have about where the internal elements are. I start with the engines and specific payload requirements and then find a good place for the bridge and weaponry, and the last thing to go in are the personal spaces like kitchen and bathrooms. These often get shifted around in the back and forth process with Chris, but it is best to settle on them early if possible. From the research I&#8217;ve found this is the way it&#8217;s done when building real ships and aircraft, so I try to emulate that approach for greatest realism.</p>
+
+<a class="image  js-open-in-slideshow" data-id="8s5i0yu04ccqmr" data-full_res="/media/8s5i0yu04ccqmr/source/BRIDGEfore.JPG" data-low_res="/media/8s5i0yu04ccqmr/slideshow_pager/BRIDGEfore.JPG" data-source_url="/media/8s5i0yu04ccqmr/source/BRIDGEfore.JPG" rel="post"><img src="/media/8s5i0yu04ccqmr/post/BRIDGEfore.JPG" alt="" /></a>
+
+<p>I also try and work hull thicknesses and doors into the equation early, as I realize the importance of figuring that out. I try to keep the forward and rear facing hull structure the thickest.  The beam positions can be a little lighter, as they would have less of a chance of sustaining ongoing fire and would more likely take a fleeting shot. One idea Chris had which was fun to play out is that he wanted to stay away from a lot of elevators in this ship and force the use of a lot of stairs to help sell the fact that the design is a bit older and less techy. Therefore the final design has a lot of doors and some retracting stairs, which then forces thought into airlocking those hull punctures. It was a very fun ship to work on. While building it I would kind of dolly and zoom around, pick angles that look cool and ask myself what would functionally be there and what could I put there to make this a fun place to spend time.</p>
+
+<h2>Can you give us a hint about your next ship design?</h2>
+
+<p>Hmm, yes, I just started working on the next design and I guess the hint I would give is more of an indication of where my head is right now — realizing that the aesthetic for the new ship will be different than that of any of the other ships I&#8217;ve done so far. </p></div><div class="cboth"></div></div>
+<div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+
+  <div class="wrapper">
+    
+    <div class="end-transmission-container">
+      <div class="glow left"></div>
+      <div class="title-bar">
+        <h1>End Transmission</h1>
+      </div>
+      <div class="glow right"></div>
+    </div>
+  </div>
+  
+
+  
+    
+
+  <div class="two-line-separator"></div>
+  
+    
+<div class="wrapper force-one-column" id="comments">
+  <div class="holder">
+    <div class="title-bar">
+      <div class="count">
+        <div class="label">Comments</div>
+        <div class="value">0226.<span class="js-comment-decimal">0</span></div>
+        <div class="cboth"></div>
+      </div>
+      <div class="title">
+        <h1>Feedback</h1>
+      </div>
+      <div class="cboth"></div>
+    </div>
+
+    <div class="main-buttons-holder-container">
+      <div class="main-buttons-holder">
+        <a href="/connect?jumpto=/comm-link/transmission/13097-Idris-Corvette-Revealed" class="add-comment js-add-comment trans-02s js-modal-login">Add New Comment</a>
+        <div class="settings js-settings">
+          <h1>Settings</h1>
+          <label>View mode:</label>
+          <a href="#" class="js-comments-view to-one-column js-to-one-column trans-01s on">One column</a>
+          <a href="#" class="js-comments-view to-two-columns js-to-two-columns trans-01s ">Two columns</a>
+          <label>Sort by:</label>
+          <a href="#" class="js-comments-sort to-oldest js-to-oldest trans-01s on">Oldest first</a>
+          <a href="#" class="js-comments-sort to-newest js-to-newest trans-01s ">Newest first</a>
+          <a href="#" class="js-comments-sort to-appreciated js-to-appreciated trans-01s ">Most appreciated first</a>
+
+                  </div>
+        <a href="" class="view-settings js-view-settings"><div class="hover trans-02s"></div></a>
+        <div class="triangle"></div>
+      </div>
+    </div>
+
+    
+    <div class="comment-listing"></div>
+
+    <div class="comment-loader traj-loader">
+      <div class="fast-blink"></div>
+      <span>Loading Additional Feedback</span>
+    </div>
+
+    <div class="cboth"></div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    window.comments = new RSI.Comments({
+      atom_url:"/comm-link/transmission/13097-Idris-Corvette-Revealed",
+      comment_listing_el:$(".comment-listing"),
+      comment_submission_form_el:$(".comment-submission"),
+      api_object:RSI.Api.Comments,
+      lazyLoading: true,
+      comment_count: 226,
+      subject_id:13097,
+      append:false,
+      texts: {
+        "edit": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        },
+        "reply": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        }
+      },
+      "insertion_conf": {
+        "mode":"html"
+      },
+      "api_function_names": {
+        "delete":"erase",
+        "load":"listing",
+        "sort":"listing"
+      }
+    });
+  });
+</script>
+  
+</div>
+
+    </div>
+
+    
+  </div>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.11/moment-timezone-with-data.min.js"></script>
+
+<script type="text/plain" data-cookieconsent="statistics">
+  $.cookie('moment_timezone', moment.tz.guess(), { expires: 31, path: '/' });
+</script>
+
+
+
+
+               <script id="tpl_number_counter_digits" type="text/x-jsmart-tmpl">{if !$seperator}{$seperator=','}{/if}
+{if !$first_max}{$first_max=9}{/if}
+{for $digit = 0 to $length-1}
+  <div class="mask">
+    <div class="carousel">
+      {if $digit == 0}
+        {$max = $first_max}
+      {else}
+        {$max = 9}
+      {/if}
+      {for $i=0 to $max}
+        <div class="item {if $val_arr[$digit] == $i}on{/if}" rel="{$i}">{$i}</div>
+      {/for}
+    </div>
+  </div>
+  {if ($length - $digit) % 3 == 1 && $digit != $length-1}
+  <div class="seperator">{$seperator}</div>
+  {/if}
+{/for}</script>
+<script id="base_modal" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  <div class="top-border">
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+  </div>
+</div></script>
+<script id="base_modal_flat" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  </div>
+  
+</div></script>
+<script id="tpl_modals_slideshow" type="text/x-jsmart-tmpl"><img class="top-border" src="/rsi/static/images/modal_top.png">
+<a href="" class="close js-close"></a>
+<div class="mask">
+  <a class="js-prev prev control"></a>
+  <a class="js-next next control"></a>
+  <div class="slideshow-carousel carousel" rel="{$index}">
+    {foreach from=$images item="image"}
+      <div class="{if $index == $image@index}on{/if}">
+      {if $image.is_video}
+        <div class="video-holder">
+          <div id="slideshow_video_{$image@index}" data-source="{$image->source_url}">
+            <video width="100%" height="100%" preload="auto" {if $video}src="{$image->source_url}"{/if} controls></video>
+          </div>
+        </div>
+      {else}
+        <div class="media js-media-slideshow-{$image@iteration}">
+        {if $image.low_res}
+          <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source data-srcset="{$image.full_res}" media="(min-width: 300px)" />
+            <!--[if IE 9]></video><![endif]-->
+            <img data-srcset="{$image.low_res}" alt="{$image.title}" />
+          </picture>
+        {else}
+          <img data-src="{$image.source_url}" />
+        {/if}
+        </div>
+      {/if}
+        <div class="text">
+          {if !$image.is_video}
+          <a href="{$image.source_url}" class="download"></a>
+          {/if}
+          <div class="copyright">© 2012-{$year}<br />Cloud Imperium Games Corporation &<br />Roberts Space Industries Corp.</div>
+          <div class="page-number">{$image@iteration} / {count($images)}</div>
+          <div class="caption v-center">{if $image.title && $image.title != "undefined"}{$image.title}{/if}</div>
+          <div class="cboth"></div>
+        </div>
+      </div>
+    {/foreach}
+  </div>
+</div>
+<img class="bottom-border" src="/rsi/static/images/modal_bottom.png"></script>
+<script id="tpl_contact_us" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="contact" class="inner-content on">
+  <h2><span class="icon"></span>CONTACT</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+  <div class="error-message js-error-message"></div>
+  <div class="success-message js-success-message"></div>
+    <fieldset class="last">
+    <label for="contact_email">Email Address</label>
+    <input type="text" name="email" value="" class="trans-02s trans-color trans-box-shadow" id="contact_email" />
+  </fieldset>
+    <fieldset>
+    <label for="contact_subject">Subject</label>
+    <input type="text" name="subject" value="" class="trans-02s trans-color trans-box-shadow" id="contact_subject" />
+    <label>Contacting us for:</label>
+    <ul class="category-info">
+            <li id="tech_support_info">Questions about download, installation, networking, or in-game client problems</li>
+            <li id="subscription_info">Questions about monthly and yearly subscription plans</li>
+            <li id="account_billing_info">Issues related to your account, such as incorrect information or ability to access account, or Billing with regards to payments and payment methods</li>
+            <li id="melt_request_info">To reclaim a pledge over $1,000 for store credit (please note - this is a permanent action)</li>
+            <li id="merchandise_info">Questions about physical and/or shipped merchandise</li>
+            <li id="hacked_info">Issues related to compromised account or missing pledge.</li>
+            <li id="account_recovery_info">For issues with account authentication, lost passwords and related queries</li>
+            <li id="probation_info">Issues related to forums probation or ban</li>
+            <li id="refund_request_info">Refund requests and related inquiries</li>
+            <li id="customer_support_info">For general questions and queries regarding Star Citizen</li>
+          </ul>
+  </fieldset>
+  <fieldset>
+    <label for="contact_text">Fescription</label>
+    <textarea name="text" class="trans-02s trans-color trans-box-shadow" id="contact_text"></textarea>
+  </fieldset>
+  <div class="contact-submit-wrapper">
+    <div class="line"></div>
+    <button class="submit js-submit"><strong>submit your message</strong></button>
+  </div>
+</form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+<script id="tpl_error" type="text/x-jsmart-tmpl"><div class="modal-error js-modal-error">
+  <p class="modal-text js-modal-text"></p>
+  <a class="close js-close trans-03s .trans-opacity" href=""></a>
+</div></script>
+<script id="tpl_success" type="text/x-jsmart-tmpl"><div class="modal-success js-modal-success">
+  <p class="modal-text js-modal-text"></p>
+  <a class="close js-close trans-03s .trans-opacity" href=""></a>
+</div></script>
+<script id="tpl_progress" type="text/x-jsmart-tmpl"><div class="modal-progress js-modal-progress">
+  <div class="traj-loader">
+    <div class="fast-blink"></div>
+    <span class="modal-text js-modal-text"></span>
+  </div>
+</div></script>
+<script id="tpl_outbound" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="outbound" class="inner-content on">
+  <h2><span class="icon"></span>OUTBOUND LINK</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+      <div class="error-message js-error-message"> <span class=important>WARNING</span><br/><br/> This link will bring you outside of the RSI site and into the depths of the internet. Continue?<br/><br/><span class="url"></span> </div>
+      <div class="success-message js-success-message"><span class=important>STAND BY</span><br/><br/> Initiating hyperlink.<br/><br/></div>
+
+      <fieldset class="clearfix last">
+        <span class="submit-wrapper">
+          <span class="submit-hover trans-02s trans-opacity"></span>
+          <input type="submit" value="WARP" class="trans-02s trans-color trans-background" />
+        </span>
+      </fieldset>
+    </form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+
+<script id="tpl_l-notification-bar" type="text/x-jsmart-tmpl"><div class="l-notification-bar js-notification-bar">
+
+  <div class="l-notification-bar__watermark js-svg-inliner h-svg__logo-star-citizen"></div>
+
+  <div class="l-notification-bar__boxes">
+    {if !$viewedCookieNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='cookie'
+          title='COOKIES:'
+          message="Our website uses Google Analytics to analyze our traffic. <br/>To learn how you can control Google's use of your data and how you can opt out <a href='https://www.google.com/policies/privacy/partners/'>click here</a>."
+          linkText='See Details'
+          buttonText='Got it!'}
+      </div>
+    {/if}
+
+    {if !$viewedPrivacyNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='privacy'
+          title='PRIVACY POLICY:'
+          message='We adjusted the PP to reflect the decision of the European Court of Justice regarding Safe Harbor, the fact that RSI has moved and added some services providers.'
+          linkText='View Privacy Policy'
+          buttonText='Got it!'}
+      </div>
+    {/if}
+  </div>
+
+</div>
+</script>
+<script id="tpl_c-notification" type="text/x-jsmart-tmpl"><div class="c-notification js-bottom-notif-msg-{$type}">
+    <div class="c-notification__title">{$title}</div>
+    <div class="c-notification__message">
+      {$message}
+    </div>
+
+    {if $linkText}
+        <div class="c-notification__wrapper-link">
+            <a class="c-notification__link js-bottom-notif-link-{$type}">
+            {$linkText}
+            </a>
+        </div>
+    {/if}
+
+    <a class="c-notification__button js-bottom-notif-btn-{$type}">
+
+      <span class="c-notification__button-text">
+       {$buttonText}
+      </span>
+
+      {if $type neq 'announcement'}
+        <div class="c-iconed__icon c-iconed__icon--checkmark"></div>
+      {/if}
+    </a>
+</div>
+</script>
+
+<script id="tpl_confirm" type="text/x-jsmart-tmpl"><div class="modal-confirm js-modal-confirm clearfix">
+  <p class="modal-text js-modal-text"></p>
+  <a class="bt-close js-close trans-03s trans-opacity" href=""></a>
+  <a class="bt-confirm js-confirm trans-03s trans-opacity" href=""></a>
+	<div class="buttons">
+		<a class="shadow-button trans-02s trans-color js-close bt-close rm"     >
+  <span class="label js-label trans-02s">Cancel</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+		<a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">Confirm</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+	</div>
+</div>
+</script>
+<script id="tpl_alert" type="text/x-jsmart-tmpl"><div class="modal-alert js-modal-alert clearfix">
+  <p class="modal-text js-modal-text"></p>
+  <div class="buttons">
+    <a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">OK</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+  </div>
+</div></script>
+<script id="tpl_video" type="text/x-jsmart-tmpl">{extends file="base_modal"}
+{block name='modal_content'}
+<div id="ship-commercial" class="inner-content">
+  
+  <div class="hr"></div>
+  <div class="content-block4">
+   
+    <div class="bottom"></div>
+  </div>
+  {if $distant_source=="vimeo"}
+  <iframe id="commercial" src="//player.vimeo.com/video/{$video_id}?wmode=transparent" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+  {else}
+  <iframe id="commercial" frameborder="0" allowfullscreen="1" title="YouTube video player" width="100%" height="100%" src="https://www.youtube.com/embed/{$video_id}?autoplay=1"></iframe>
+  {/if}
+</div>
+{/block}
+</script>
+      
+  <script id="tpl_comment_report" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="comment-report" class="inner-content on">
+  <h2><span class="icon"></span>Report this comment</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+<input type="hidden" name="comment_id" value="">
+  <div class="error-message js-error-message"></div>
+  <div class="success-message js-success-message"></div>
+    <fieldset class="last">
+    <label for="report_email">Email Address</label>
+    <span class="corner-wrapper">
+      <input type="text" name="email" value="" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_email" />
+      <span class="corner corner-top-left"></span>
+      <span class="corner corner-top-right"></span>
+      <span class="corner corner-bottom-left"></span>
+      <span class="corner corner-bottom-right"></span>
+    </span>
+  </fieldset>
+    <fieldset>
+    <label>Report Type</label>
+    
+
+
+  
+    <a class="js-selectlist selectlist " rel="" href="">
+    <div class="arrow"></div>
+    <span>Please select the type best matching your report</span>
+              <ul class="body">
+              
+                                                              <li class="js-option option " rel="obscenity" >
+                                                                        Obscene Content
+                                                    </li>
+                                                                <li class="js-option option " rel="abuse" >
+                                                                        Abusive Conduct
+                                                    </li>
+                                                                <li class="js-option option " rel="other" >
+                                                                        Other
+                                                    </li>
+                                          
+            </ul>
+        <input type="hidden" name="category" class="js-category js-form-data" id="category"/>
+  </a>
+    </fieldset>
+  <fieldset>
+    <label for="report_text">Details</label>
+    <span class="corner-wrapper">
+      <textarea name="text" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_text" maxlength="2500"></textarea>
+      <span class="corner corner-top-left"></span>
+      <span class="corner corner-top-right"></span>
+      <span class="corner corner-bottom-left"></span>
+      <span class="corner corner-bottom-right"></span>
+    </span>
+  </fieldset>
+  <fieldset class="clearfix last">
+    <span class="submit-wrapper">
+      <span class="submit-hover trans-02s trans-opacity"></span>
+      <input type="submit" value="Submit" class="trans-02s trans-color trans-background" />
+    </span>
+  </fieldset>
+</form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+
+
+      
+        <footer class="c-platform-footer c-platform-footer--rsi">
+  <div class="l-platform-footer-container">
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--sc">
+        <li class="c-platform-footer-brand__item">
+
+          <span class="c-brand c-brand--sc js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--sc">
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Join the<br>Universe
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--sc">
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen" class="c-platform-footer-link">About the Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/howto/1" class="c-platform-footer-link">How to Play</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/universe" class="c-platform-footer-link">The Universe</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/media" class="c-platform-footer-link">Media</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/play-now"
+                class="c-platform-footer-link js-google-analytics-event-tracker"
+                data-event-category="FlyNow" data-event-label="footerClick">
+                Play Now
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__sc">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">
+              Social Links
+            </span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/RobertsSpaceIndustries/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/RobertsSpaceInd">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/robertsspaceind">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href=" https://www.youtube.com/channel/UCTeLqJq1mXUX5WWoNXLmOIA">
+                <span class="c-iconed__icon c-iconed__icon--youtube"></span>
+                Youtube
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.twitch.tv/starcitizen">
+                <span class="c-iconed__icon c-iconed__icon--twitch"></span>
+                Twitch
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--s42">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--s42 js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--s42">
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Start the<br>Adventure
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--s42">
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42" class="c-platform-footer-link">The Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#enlist" class="c-platform-footer-link">Enlist Today</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#roadmap" class="c-platform-footer-link">Status</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/pledge/Packages/Squadron-42-Standalone-Pledge" class="c-platform-footer-link">Pledge</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__s42">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">Social Links</span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/Squad42/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/squadron_42">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/squadron42">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column is-active">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--rsi">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--rsi js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--rsi">
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi--fullcolor"></span>
+            </span>
+            <span class="c-brand__label">
+              Follow the Development
+            </span>
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--rsi">
+            <li class="c-platform-footer-list__item">
+              <a href="/" class="c-platform-footer-link">Home</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/comm-link" class="c-platform-footer-link">Transmissions</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/community" class="c-platform-footer-link">Community</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/roadmap" class="c-platform-footer-link">Development</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--platform">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Platform
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--platform">
+                          <li class="c-platform-footer-list__item">
+                <a href="/pledge" class="c-platform-footer-link ">Pledge Store</a>
+              </li>
+            
+            <li class="c-platform-footer-list__item">
+              <a href="/download" class="c-platform-footer-link ">Download</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/spectrum/community/SC" class="c-platform-footer-link">Spectrum</a>
+            </li>
+
+                      </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--utility">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Utilities
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--utility">
+            <li class="c-platform-footer-list__item">
+              <a href="//support.robertsspaceindustries.com" class="c-platform-footer-link">Help</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/press" class="c-platform-footer-link">Press</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="https://cloudimperiumgames.com/join-us" class="c-platform-footer-link">Careers</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/tos" class="c-platform-footer-link">Terms of Services</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/privacy" class="c-platform-footer-link">Privacy Policy</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/eula" class="c-platform-footer-link">EULA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/dmca" class="c-platform-footer-link">DMCA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/legal" class="c-platform-footer-link">Legal</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/acknowledgements" class="c-platform-footer-link">Acknowledgements</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/responsible-disclosure" target="_blank" class="c-platform-footer-link">Responsible disclosure</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  
+</footer>
+
+<div class="c-platform-copyright c-platform-copyright--rsi">
+  <div class="l-platform-copyright-container">
+    <a href="https://cloudimperiumgames.com" class="c-platform-copyright__logo h-svg__logo-cig js-svg-inliner"></a>
+    <p class="c-platform-copyright__body">© 2012-2021 Cloud Imperium Rights LLC and Cloud Imperium Rights Ltd.</p>
+  </div>
+</div>
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHNFZPT"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<script type="text/javascript">
+  window.RSI.Footer = new RSI.Footer();
+</script>
+      
+    </div>
+
+    
+      <script type="text/javascript" src='/rsi/static/packages/platformbar/rsi.platformbar.build.5e6ab.js'></script>
+    
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"58013cabd7","applicationID":"375102748","transactionName":"Y1JaYktUWxZUV0QKV1oYe0NKQVoIGmZjKmtdQ111VltBF1pYXAZKDg1ZQlZYcwxbUA==","queueTime":0,"applicationTime":47,"atts":"TxVNFANOSEkXVRJZQ0lK","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>

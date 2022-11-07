@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    
+      <!-- Anti-flicker snippet (recommended)  -->
+      <style>.async-hide { opacity: 0 !important} </style>
+      <script type="text/javascript">(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+      h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+      (a[n]=a[n]||[]).hide=h;if (d) a[n].push({'userId' : d});setTimeout(function(){i();h.end=null},c);h.timeout=c;
+      })(window,document.documentElement,'async-hide','dataLayer',1500,
+      {'GTM-KHNFZPT':true},undefined,'');</script>
+
+            <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+      
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <meta name="description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans.">
+      <meta name="csrf-token" content="8766ebc5f2d06567df69b675b8c302695eeffe79d84ee6bda2e6c7f489c0b164" />
+      <meta property="og:site_name" content="
+  Squadron 42 Monthly Report: September 2022  - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+" />
+      <meta property="og:image" content="https://robertsspaceindustries.com/media/quavjl950i4gjr/channel_item_full/Cloudimperiumgames_SQ42_EnvironmentArt.png" />
+      <meta property="og:description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans." />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://robertsspaceindustries.com/comm-link/SCW/18926-IMPORT" />
+      <meta property="og:locale" content="us_EN" />
+
+            
+  <link rel="preconnect" href="//fonts.googleapis.com">
+  <link rel="preconnect" href="//fonts.fstatic.com">
+  <link rel="preconnect" href="//cdnjs.cloudflare.com">
+  <link rel="preconnect" href="//media.robertsspaceindustries.com">
+  <link rel="preconnect" href="//www.google-analytics.com">
+
+  <link rel="preload" as="font" href="/rsi/static/fonts/univia-pro/univia-pro-400.woff2">
+  <link rel="preload" as="font" href="/rsi/static/fonts/univia-pro/univia-pro-700.woff2">
+  <link rel="preload" as="font" href="/rsi/static/fonts/univia-pro/univia-pro-800.woff2">
+
+
+            
+      <link href="/rsi/static/css/cross-brand-less.css?v=6.136.0" media="all" rel="stylesheet">
+      <link href='/rsi/static/packages/platformbar/rsi.platformbar.build.3f0de.css' media="all" rel="stylesheet">
+      <link href='/rsi/static/packages/enlist/rsi.enlist.build.e2048.css' media="all" rel="stylesheet"/>
+      
+            <script src='https://sentry.turbulent.ca/js-sdk-loader/2e12f629641e4f21a3c1f5da10e1b474.min.js' crossorigin="anonymous"></script>
+      <script type="text/javascript">
+        Sentry.onLoad(function() {
+          Sentry.init({
+            dsn: 'https://2e12f629641e4f21a3c1f5da10e1b474@sentry.turbulent.ca/53',
+            environment: 'prod',
+            release: 'rsi-website@6.136.0',
+            maxBreadcrumbs: 50,
+            debug: 1 ? true : false,
+            ignoreErrors: ['Sign In failed. Please confirm you are not a bot', 'MultiStepRequired']
+          });
+        });
+      </script>
+      <script type="text/javascript" src="/cache/en/rsi-external-js.js?v=6.136.0"></script>
+      <script type="text/javascript" src="/cache/en/rsi-templates-js.js?v=6.136.0"></script>
+
+            
+      <link rel="stylesheet" href="https://use.typekit.net/dhw3beb.css">
+      
+
+              <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="a687ee30-df65-45a0-9d22-90de6c1bb964" type="text/javascript"></script>
+      
+      
+    <!-- Google Tag Manager -->
+        <script type="text/plain" data-cookieconsent="statistics">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHNFZPT');</script>
+    <!-- End Google Tag Manager -->
+
+
+      <title>
+  Squadron 42 Monthly Report: September 2022  - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+</title>
+
+            <script type="text/javascript" src='/rsi/static/packages/core/rsi.core.build.b5517.js'></script>
+      <script type="text/javascript" src='/rsi/static/packages/account/rsi.account.build.925b9.js'></script>
+      <script type="text/javascript" src='/rsi/static/packages/store/rsi.store.build.ee20e.js'></script>
+
+      <script>
+        $(document).ready(function() {
+          window.Common = new RSI.Common({});
+          window.Main = new RSI.Main({
+            'is_mobile': 0,
+            'probation_cookie' : '',
+            'require_captcha': 0
+          });
+          window.Mark = new Turbulent.Mark({ 'name' : 'Rsi-XSRF', 'token' : '', 'ttl' : 1800 });
+
+          window.WscOverlay = new RSI.WscOverlay({});
+
+          var destinations = [];
+
+window.Main.destinations = destinations;          
+  window.PageStore = new RSI.Store({
+    'store_prefix' : '/pledge',
+    'bootstrapConfig': {"injection":{"attachmentClass":"RSIStoreApp","files":{"js":["bootstrap.js"],"css":["index.css"]}},"platform":{"api":"\/api"},"store":{"path":"\/pledge-store","manifest":"manifest.json"},"customizer":{"api":"\/pledge-store\/api\/customizer","ga_tracking_code":"UA-39586040-5"}}
+  });
+
+          
+          
+  var productsTracking = [];
+  var eCommerceData = {
+    'trackingAction': "",
+    'currency': "",
+    'trackingStep': "",
+    'trackingProducts': productsTracking
+  };
+  window.eCommerceTracking = new RSI.Store.eCommerceTracking(
+    eCommerceData
+  );
+
+        });
+
+        $(window).load(function() {
+          
+        });
+
+      </script>
+
+      
+      <script>
+        window.recaptcha_is_loaded = false;
+        window.on_recaptcha_load_callback = function() {
+          window.recaptcha_is_loaded = true;
+        };
+      </script>
+
+      <script src="https://www.google.com/recaptcha/api.js?onload=on_recaptcha_load_callback&render=6LerBOgUAAAAAKPg6vsAFPTN66Woz-jBClxdQU-o" async defer></script>
+      
+
+      <script type="text/javascript">
+
+        
+
+                                </script>
+
+      
+  <link rel="stylesheet" href='https://robertsspaceindustries.com/alexandria/shared-library-ts/latest/generic.default.base2.skin.css' media="all" />
+  
+  
+
+  
+
+  <style type="text/css">
+    /* CSS from ATOM */
+    
+  </style>
+  <script src="https://robertsspaceindustries.com/pledge-store/store.js"></script>
+  <script type="text/javascript">
+    /* JS from ATOM */
+    
+  </script>
+
+
+    
+
+  <style>
+    
+      background:url(/rsi/static/images/noisebg.gif) repeat center top #000b11;
+    
+  </style>
+
+    <link href="//fonts.googleapis.com/css?family=Electrolize|Orbitron:400,500,700|Quantico|Share+Tech+Mono&display=swap" rel="stylesheet" type="text/css">
+
+    <link href="/cache/en/rsi-css.css?v=6.136.0" media="all" rel="stylesheet">
+
+
+  </head>
+  <body id="alexandria-content" class="" >
+
+    
+      <div class="l-notification-bar l-notification-bar--rsi js-notification-bar" id="notification-bar-root">
+  <c-notification-bar v-bind:latestagreementsslugs=[] v-bind:loggedin="0" v-bind:onhomepage="0"></c-notification-bar>
+  <div class="l-notification-container l-notification-bar__boxes js-notification-bar-boxes">
+    <div class="l-notification__wrapper">
+              <div class="l-notification-bar__box is-hidden js-notification-bar-box js-notification-bar-box--announcement">
+          <div class="c-notification c-notification--p c-notification--announcement js-bottom-notif-msg-announcement">
+  <div class="c-notification__inner">
+
+    <div class="c-notification__content">
+      <div class="c-notification__title">
+        Join Star Citizen
+      </div>
+      <div class="c-notification__message">
+        Now is the time to take to the skies! IAE Discounted Starter Packs are available through December 8th. Grab yours now!
+      </div>
+    </div>
+
+    <div class="c-notification__actions">
+              <div class="c-notification__wrapper-link">
+                      <a href="https://robertsspaceindustries.com/star-citizen/play-now" class="c-notification__button js-bottom-notif-link-announcement">
+          
+            <span class="c-notification__button-text">
+              More info
+            </span>
+            <span class="c-iconed__icon c-iconed__icon--arrow"></span>
+          </a>
+        </div>
+      
+              <span class="c-notification__actions-label">or</span>
+      
+              <div class="c-notification__wrapper-link">
+          <a class="c-notification__button js-bottom-notif-btn-announcement">
+
+            <span class="c-notification__button-text">
+              Close
+            </span>
+
+                          <span class="c-iconed__icon c-iconed__icon--close"></span>
+                      </a>
+        </div>
+          </div>
+
+  </div>
+</div>
+        </div>
+      
+      <c-unsupported-browser v-cloak>
+        <div class="l-notification-bar__box js-notification-bar-box">
+          <div class="c-notification  c-notification--browser-support js-bottom-notif-msg-browser-support">
+  <div class="c-notification__inner">
+
+    <div class="c-notification__content">
+      <div class="c-notification__title">
+        IE11 is no longer supported
+      </div>
+      <div class="c-notification__message">
+        We do not support Internet Explorer 11 and below. Please use a different web browser.
+      </div>
+    </div>
+
+    <div class="c-notification__actions">
+      
+      
+          </div>
+
+  </div>
+</div>
+        </div>
+      </c-unsupported-browser>
+    </div>
+  </div>
+
+</div>
+    
+
+    <div id="bodyWrapper">
+      <header class='c-header-wrapper c-header-wrapper--rsi js-header-wrapper '  id='cross-brand-header'>
+  <div id="platform-bar" class="c-header__platform-bar "></div>
+
+      <div class='c-right-sidebar c-right-sidebar--signin' id="account-sidebar">
+      <div class="js-toggle-account__backdrop invisible"></div>
+
+      <a href="#" class='c-right-sidebar__back js-toggle-account'>Back
+        <span></span>
+        <span></span>
+      </a>
+
+      <div id="enlist-root" data-theme="rsi" data-enlisting="" data-ptu=""></div>
+      <script type="text/javascript" src='/rsi/static/packages/enlist/rsi.enlist.build.e2048.js'></script>
+    </div>
+  
+  <div class="c-header-wrapper__backdrop js-toggle-games"></div>
+</header>
+
+<div id="platform-backdrop"></div>
+
+<script type='text/javascript'>
+  RSI.Platformbar = {
+    theme: "rsi",
+    loggedState: "logged-out",
+    tabs: [
+      {
+        type: 'brands',
+        name: "Games",
+        subItems: [
+          {
+            name: "sc",
+            href: "/star-citizen",
+            description: "Join the Universe"
+          },
+          {
+            name: "s42",
+            href: "/squadron42",
+            description: "Start the adventure"
+          },
+          {
+            name: "rsi",
+            href: "/",
+            description: "Follow the Development"
+          }
+        ]
+      },
+      {
+        type: 'apps',
+        name: "Apps",
+        subItems: [
+          [
+            {
+              new: "New",
+              name: "Community Hub",
+              href: "/community-hub",
+              description: "Share your content with the community"
+            },
+            {
+              name: "Spectrum",
+              href: "/spectrum/community/SC",
+              description: "Your communication platform"
+            },
+            {
+              name: "Launcher",
+              href: "/download",
+              description: "Download Star Citizen",
+                          }
+          ],
+          [
+            {
+              name: "Roadmap",
+              href: "/roadmap",
+              description: "Keep track of the development"
+            },
+            {
+              name: "Telemetry",
+              href: "/telemetry",
+              description: "Keep track of the player’s performance"
+            },
+            {
+              name: "Issue Council",
+                          href: "https://issue-council.robertsspaceindustries.com",
+                          description: "Help us make the game better",
+                          }
+          ],
+          [
+            {
+              name: "Starmap",
+              href: "/starmap",
+              description: "Your map to the universe"
+            },
+            {
+              name: "Galactapedia",
+              href: "/galactapedia",
+              description: "Your guide to the universe"
+            }
+          ]
+        ]
+      },
+          ],
+    navigation: {
+      store: {
+        name: "Pledge Store",
+        href: "/pledge",
+        isHidden: false      },
+      hub: {
+        name: "Learn How to Play",
+        href: "/playstarcitizen",
+        show: false      },
+      support: {
+        name: "Support",
+        href: "//support.robertsspaceindustries.com"
+      },
+      account: {
+        name: "Account",
+        href: "/account/settings",
+        isHidden: false      }
+    }
+  };
+
+  $(document).ready(function() {
+    window.header = new RSI.Header({});
+  });
+</script>
+
+
+      
+  
+<header class='c-brand-menu c-brand-menu----rsi' id='brand-menu'>
+  <span class="c-brand-menu__section">
+    
+      Roberts Space Industries <sup>&#174;</sup>
+    
+  </span>
+  <div class="c-brand-menu__backdrop"></div>
+  <nav class="c-brand-menu__container">
+    <div class="c-brand-menu__logo">
+      <a href="/"><span class="h-svg h-svg__logo-rsi--fullcolor-large js-svg-inliner"></span> </a>
+    </div>
+    <div class="c-brand-menu__items-container">
+      <ul class="c-brand-menu__items">
+                <li class="c-brand-menu__item  ">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/comm-link">
+            <span class="c-brand-menu__item-text">Comm-Link</span>
+                                  </a>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/community-hub">
+            <span class="c-brand-menu__item-text">Community</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Community</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/spectrum" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Spectrum
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/orgs" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Organizations
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/leaderboards/top" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Leaderboards
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community_events" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Event
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community-hub" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Hub
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/fankit" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Fankit
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/development">
+            <span class="c-brand-menu__item-text">Development</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Development</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/roadmap" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Roadmap
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/devtracker" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Dev Tracker
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/telemetry" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Telemetry
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="https://issue-council.robertsspaceindustries.com" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Issue Council
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/patch-notes" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Patch Notes
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/ship-matrix" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Ship Matrix
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/funding-goals" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Funding
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+              </ul>
+    </div>
+
+    <div class="c-brand-menu__cta">
+      
+        <a href="/star-citizen/play-now" class="c-brand-cta-btn js-google-analytics-event-tracker"
+          data-event-category="FlyNow" data-event-label="navMenuClick">
+          <div></div>
+            <span class="c-brand-cta-btn__text">
+              <strong>Play now</strong>
+            </span>
+          <div></div>
+        </a>
+      
+    </div>
+  </nav>
+</header>
+
+
+
+      
+
+  
+  <div class="page-wrapper">
+    
+  <div id="post-background" ></div>
+
+
+    <div id="contentbody" class=" alexandria-content-body " style="">
+      
+  <div id="layout-system">
+          <div data-arrangement_key="arrangementB" class="turbo-anchor" id="4297478a-c599-4da4-8525-117cdf9eaa8c" data-plugin_key="plugin_trblt_banner" data-position="0"></div><g-banner sku-anchor-link="#sku" sku-anchor-text="Armorer" :overlay-opacity="undefined" :display-overlay="undefined" media-image-logo="https://robertsspaceindustries.com/rsi/static/packages/platformbar/rsi.png" arrangement="arrangementB" :background-image="{&quot;alt&quot;:&quot;&quot;,&quot;mobile&quot;:&quot;/i/c37ca4988b7b49b35fecc0e0feb12c5541c113b2/32FTXiZsHoAWVfMaZRk24XmsvQ8ncr7vhfKw3P5BSBHfm2qRNR9FjeTSgBxPDbsdQUS53zvkguvkPaje8HMH3WCk2KQZ1KN5pdZHqkUmsemc4SRwcs3bRM5gmfNiN6atuuy13udYkkS5668v/cloudimperiumgames_sq42_environmentart.webp&quot;,&quot;tablet&quot;:&quot;/i/c37ca4988b7b49b35fecc0e0feb12c5541c113b2/32FTXiZsHoAWVfMaZRk24XmsvQ8ncr7vhfKw3P5BSBHfm2qRNR9FjeTSgBxPDbsdQUS53zvkguvkPaje8HMH3WCk2KQZ1KN5pdZHqkUmsemc4SRwcs3bRM5gmfNiN6atuuy13udYkkS5668v/cloudimperiumgames_sq42_environmentart.webp&quot;,&quot;desktop&quot;:&quot;/i/c37ca4988b7b49b35fecc0e0feb12c5541c113b2/32FTXiZsHoAWVfMaZRk24XmsvQ8ncr7vhfKw3P5BSBHfm2qRNR9FjeTSgBxPDbsdQUS53zvkguvkPaje8HMH3WCk2KQZ1KN5pdZHqkUmsemc4SRwcs3bRM5gmfNiN6atuuy13udYkkS5668v/cloudimperiumgames_sq42_environmentart.webp&quot;,&quot;max&quot;:&quot;/i/c37ca4988b7b49b35fecc0e0feb12c5541c113b2/32FTXiZsHoAWVfMaZRk24XmsvQ8ncr7vhfKw3P5BSBHfm2qRNR9FjeTSgBxPDbsdQUS53zvkguvkPaje8HMH3WCk2KQZ1KN5pdZHqkUmsemc4SRwcs3bRM5gmfNiN6atuuy13udYkkS5668v/cloudimperiumgames_sq42_environmentart.webp&quot;}" media-image-background-alt="" media-image-background-mobile="/i/c37ca4988b7b49b35fecc0e0feb12c5541c113b2/32FTXiZsHoAWVfMaZRk24XmsvQ8ncr7vhfKw3P5BSBHfm2qRNR9FjeTSgBxPDbsdQUS53zvkguvkPaje8HMH3WCk2KQZ1KN5pdZHqkUmsemc4SRwcs3bRM5gmfNiN6atuuy13udYkkS5668v/cloudimperiumgames_sq42_environmentart.webp" media-image-background-desktop="/i/c37ca4988b7b49b35fecc0e0feb12c5541c113b2/32FTXiZsHoAWVfMaZRk24XmsvQ8ncr7vhfKw3P5BSBHfm2qRNR9FjeTSgBxPDbsdQUS53zvkguvkPaje8HMH3WCk2KQZ1KN5pdZHqkUmsemc4SRwcs3bRM5gmfNiN6atuuy13udYkkS5668v/cloudimperiumgames_sq42_environmentart.webp" block-id="4297478a-c599-4da4-8525-117cdf9eaa8c" v-cloak=""></g-banner><div data-arrangement_key="arrangementB" class="turbo-anchor" id="b150c311-ede4-4bdc-aa0d-1b88502199cc" data-plugin_key="plugin_trblt_introduction" data-position="1"></div><g-introduction :info="{&quot;title&quot;:&quot;Squadron 42 Monthly Report&quot;,&quot;subtitle&quot;:&quot;September 2022&quot;,&quot;contents&quot;:[&quot;<p>This is a cross-post of the report that was recently sent out via the monthly Squadron 42 newsletter. We’re publishing this a second time as a Comm-Link to make it easier for the community to reference back to.</p><p>&nbsp;</p><p>TO: SQUADRON 42 RECRUITS</p><p>SUBJ: DEVELOPMENT UPDATE 10:05:2022</p><p>REF: CIG UK, CIG DE, CIG LA, CIG TX,</p><p>FAO Squadron 42 Recruits.</p><p>Welcome to September’s Squadron 42 development report. Enclosed you will find details on the latest progress made across the campaign, including Vanduul executions, wildlines, and the StarMap.</p><p>Thank you for your continued support of Squadron 42.</p><p>Sincerely,</p><p>CIG COMMUNICATIONS</p>&quot;]}" arrangement="arrangementB" img-alt="" img-url="https://robertsspaceindustries.com/media/y1f0boj8fak5rr/source/STARCITIZEN_WHITE.png" v-cloak=""></g-introduction><div class="turbo-anchor" id="0738c0fb-5a24-469c-a23b-6c438fc05177" data-plugin_key="plugin_trblt_narrative" data-position="2"></div><g-narrative-group v-cloak=""><g-article :show-emphasis="false" body="<h3><strong>AI (Content)</strong></h3><p>Throughout September, AI Content team continued work on the vendor and patron behaviors that will allow AI characters to serve, carry, and consume food and drink. This complex set of behaviors is progressing well and will add impressive fidelity to several areas of the game. They also got the new medical behavior working in the Idris.</p><p>Alongside behaviors, progress was made on two important new usables. The first is used for opening crates, inspecting the contents, and lifting items in and out. The second is for a tactile chair that allows AI characters to get in and out by rotating it with their hands.</p><p>They also presented the first version of a simulated bed sheet that allows NPCs to sleep under a blanket.</p><p><i>“Everyone seems really pleased with the results so we hope to build on this foundation - many thanks to the Tech Animation team for all their support with this!”</i> AI Content</p><p>Progress was made on the quartermaster too, which involved new mo-cap, updating poses, polishing animations, and prototyping dynamic conversations.</p>" v-cloak=""></g-article><g-article :show-emphasis="false" body="<h3><strong>AI (Features)</strong></h3><p>Last month, the AI Feature team continued to develop the ‘traits’ that allow the specialization of NPC behaviors in specific levels and scenarios. This included implementing the Sentry trait, which forces characters to use defensive tactics and to never leave cover unless compromised. This will be particularly useful for NPCs equipped with sniper rifles and rocket launchers. The Reckless trait is the opposite, forcing a character to only adopt aggressive tactics and never use cover options. This will be utilized by close-combat “berserker” enemy types. There are also Aggressive and Cautious traits that adopt varying weights of cover use.</p><p>They also implemented usables that allow context-specific search animations to be played around certain level features. For example, vents, over railings, and around crates. This adds life to NPC investigation and gives them more opportunity to use the environment to search along with increasing the tension for hunted players.</p><p>AI Features also implemented several new features for combat with the Vanduul, including gameplay for when the player is in close combat and knocked down. Players will now have a limited window to move out of the way before a synchronized execution animation is played.</p><p><i>“This really sells the Vanduul as a serious threat, where split-second decision-making is important to win the fight against this powerful and aggressive foe. If the player successfully dodges the Vanduul attack, it gives a short breathing period during which the player can mount a counter-offensive.” </i>AI Features</p><p>Perception work continued too, with the team supporting the stealth gameplay loop by allowing the player to wear specific clothing to disguise themselves in different environments. The designers can configure which clothing works for each faction and location so that a successful disguise combines both player actions and the configuration of the NPCs in the environment. The perception meter for detecting the player as a foe is then influenced by this parameter, giving the player more time to sneak into areas, especially when at distance from the enemies.</p><p>To support the scaling of perception ranges and times, new wildlines were integrated to signal this new gameplay. For example, a suspicious enemy will challenge the player if their disguise or behavior isn’t convincing.</p><p>On the animation side, AI features progressed with Human female combat animations. They also continued blocking out specific Vanduul animations, including the execution animations mentioned above.</p>" v-cloak=""></g-article><g-article :show-emphasis="false" body="<h3><strong>AI (Tech)</strong></h3><p>Last month, AI Tech extended the functionality of navigation links, which involved finishing their work on ladder extenders. Now, NPCs are able to use and traverse ladders in a similar way to players.</p><p>They also extended navigation links for doors to allow NPCs to use the entire width of doors (useful for wider doors or gaps in general) and enabled collision avoidance while traversing.</p><p>They extended the way NPCs interact with closed doors too. The aim was to have the AI correctly understand which door panels should be interacted with during traversal. To achieve this, the routing functionality inside the usable system was improved to use entity links.</p><p>For locomotion, they worked on reducing foot sliding and leg-phase blending. This involved reducing foot sliding during stop animations by matching the leg phase, adding support for selecting the best animation option based on the leg phase, and extending the system to implement the use of sharp turns for walking.&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</p><p>On the internal Subsumption editor, the team addressed usability feedback from the designers, and bug fixing continued. They also began extending the tool to manage the editing of mastergraphs, which has never been possible in the external tool.</p><p>Work was also done to extend two different areas of AI perception functionality: The first not only allows NPCs inside ship cockpits to target on-foot enemies not visible to radar, but also allows NPCs on the ground to visually track large objects, such as vehicles, and engage in ground-to-flight combat.&nbsp;</p><p>The second is audio perception. Previously, NPCs could hear any sound if they were at the right distance from it. Now, the hearing component and audio map use the volume of the sound at its source and then calculate the strength of the audio received by the listener. This is used inside the perception component to influence the perception meter based on how strongly the sound is perceived. The new extension allows the designers to create multiple curves to describe the influence of the different audio semantics. For example, explosions have a different influence than footsteps. Each audio stimulus also has a different maximum value it can push the perception meter to.</p><p>Finally for AI Tech, the idle system was extended to allow the designers to set up different weights in the idle sets available to different usables. This allows them to better customize which idle set should be prevalent during the selection based on the environment they’re creating.</p>" v-cloak=""></g-article><g-article :show-emphasis="false" body="<h3><strong>AI (Vehicles)</strong></h3><p>Vehicle AI and Vehicle Features worked together on AI targeting things other than vehicles, such as turrets, components, and stations. This, combined with special behaviors for strafing runs, allows the AI to perform attack runs on stations.</p><p>They also worked on system AI for chapter one, which involves a large number of AI attacking capital ships in coordinated waves. This required various improvements and fixes, with the team improving the system that allows NPCs to pick splines to fly along during attack runs.</p>" v-cloak=""></g-article><g-article :show-emphasis="false" body="<h3><strong>Animation</strong></h3><p>Gameplay-wise, Animation worked on ladder locomotion for both players and AI, including dodging. They continued to work on EVA and zero-g, improving the feel and functionality. Gadgets were further developed too, including the deployable shield and Galson weapons.</p><p>For AI, progress was made on Vanduul-related gameplay, with the current focus on stealth gameplay sections and enemy executions of the player. Interactions with non-sliding chairs, crates (rummaging), vendors, vending machines, datapads, and other ‘life’ behavior sets progressed too. Development of the female spec-ops continued, with female combatants close to implementation.</p><p>For facial animation, the team continued to work on scene-specific animations with named-cast characters. Mo-cap and on-set facial services were also provided to the Narrative team as they continued to flesh out the combat and story needs of the campaign.</p>" v-cloak=""></g-article><g-article :show-emphasis="false" body="<h3><strong>Engine</strong></h3><p>In September, the Physics team refactored the ray world intersection (RWI) verification. Requests are now verified when queued. The RWI API now also supports the named parameter idiom to prevent further mishaps in its use. An option was also added to RWI that allows sphere tracing against distance fields. Moreover, changes were done in the level export code to enable the reliable attachment of roped to other entities on the client.</p><p>On the renderer, more progress was made on the Gen12 transition. Cube map back drops, light beams, geom caches, silhouette rendering, water volumes, water reflections, and water caustics were ported. Various editor tools now run with Gen12 as well, such as the character editor and Mannequin.</p><p>Last month’s support for transient graphics passes saw further adoption uptake, with lots more passes now using it. Furthermore, support for transient compute and copy/clear passes was added and work to support transient scene render passes is currently underway. Additionally, memory tracking for graphics passes was added. Gen12 now also supports texture anisotropy overrides as well as a global MIP bias. Material resource binding was refactored, and alpha blending support was added to the hologram shader. Lastly, various optimizations were done to avoid redundant clears on render targets and updates on pass resources.</p><p>The Gen12 port of volumetric cloud rendering was completed.</p><p>On the core engine, the team added support for sys calls in CigProfile and frame time is now included in peak detection cigTrace events. More work is being done to enable p4k files to be memory mappable, which will allow for faster engine startup. As an optimization, the team was able to remove entity-based network wakeups.</p>" v-cloak=""></g-article><g-article :show-emphasis="false" body="<h3><strong>Features (Gameplay)</strong></h3><p>The SQ42 Feature team continued with tasks for the armory, enabling weapons to be delivered to different locations. It now also has its own set of first-select animations when the player interacts with a weapon for the first time.</p><p>For the crane feature, the devs used inverse kinematics to link the player’s hands and joysticks so that they animate together. They also added additional functionality for the designers, such as snapping and locking.</p><p>Further progress was made on the new mobiGlas, with the team finishing the personal messages app and implementing the first part of the mission manager app to show mission briefings.</p>" v-cloak=""></g-article><g-article :show-emphasis="false" body="<h3><strong>Gameplay Story</strong></h3><p>Last month, Gameplay Story held a mo-cap shoot that captured a variety of data for several late-game scenes. Once processed, this data will allow the scenes to function well in-game.</p><p>A new scene was also created by reusing existing wildlines, which will allow the player to speak to a medic and be healed by them if required.</p><p>Finally for Gameplay Story, exploration was done on the mess hall scenes to make them function with AI animations so that all characters enter and leave smoothly.</p>" v-cloak=""></g-article><g-article :show-emphasis="false" body="<h3><strong>Graphics &amp; VFX Programming</strong></h3><p>In September, the Graphics team completed work on edge-highlight rendering code in support of the FPS scanning of occluded objects. This involved creating a new render-to-texture layer used exclusively for augmented reality rendering, which will be used for all AR/in-world UI rendering going forward. The shader used for AR rendering was also upgraded to support tesselation/smoothing, tri-planar texture mapping, and dynamic multiscale texturing.</p><p>At the request of the UI team, the Graphics team investigated the possibility of using D3D/Vulkan's anti-aliased line rendering for rendering wireframes on UI meshes. However, they decided to go with a shader-based approach using tessellation hardware instead due to performance issues in the drivers.</p><p>The team also began looking into improving and unifying all resource streaming systems, with the goal of simplifying the code while allowing more intelligent use of the available memory so that they can adapt to the different scenarios across the game. Work on the ultra-high resolution screenshot output was completed for the Marketing team too.</p>" v-cloak=""></g-article><g-article :show-emphasis="false" body="<h3><strong>Level Design</strong></h3><p>Last month, the Flight team progressed towards getting a large part of the game fully playable with functioning systems and mechanics, with a focus on a seamless experience. Following on from previous months’ reports, September saw them expand this work beyond the first third of the game.</p><p>The Social team focused on several chapters, including the ongoing scene work on the Idris and Stanton interstitials. This involved implementation, addressing feedback, and handshaking NPCs from scenes into behaviors. They also started shift assignments for the Idris’ 80-person crew, including the deck crew, bridge crew, engineers, and off-duty personnel.</p><p>They also kicked off tasks for some cross-discipline chapters involving FPS, flight, and social. Level Design made good progress on the social related content, with the majority of their assigned scenes being ready for implementation</p><p><i>“It’s always essential to see the scene playing out in situ so we can review and assess what additional work could be required.”</i> Level Design Team</p>" v-cloak=""></g-article><g-article :show-emphasis="false" body="<h3><strong>Narrative</strong></h3><p>September saw the Narrative team prepping for a performance capture session. The buildup to this shoot included working closely with the Design team to determine a streamlined version of the FPS wildline set. This will allow the various enemy combatants to have enough lines so they can be reactive but without adding so many as to cause undue stress to the amount of content that would need to be captured. This shoot also included the return of several established characters for additional pickups based on changes to their location and level flow.</p><p><i>“There were some additional fun bits that were captured but, unfortunately, they have to be kept under wraps!”</i> Narrative Team</p><p>Narrative also continued working with AI Content on the dynamic-conversation system for background characters and began figuring out how to best incorporate it into the game. As with the wildlines, part of the discussion is figuring out a way to keep the line-set to a manageable level while providing interesting conversations to make the characters in the locations feel alive.</p><p>Finally, they continued the ongoing syncs with the Flight and FPS Design teams to review the latest level developments, creating or adjusting scripts to fill in areas that feel too empty or require additional content to explain the gameplay.</p>" v-cloak=""></g-article><g-article :show-emphasis="false" body="<h3><strong>Tech Animation</strong></h3><p>September saw tech Animation progress with the face-scanning initiative mentioned in last month’s report, which aims to add more heads to the game’s gene pool. The initial scan session saw an extra 20 female heads scanned, which are currently being processed by the Art teams. Tech Animation will then rig and implement the assets into the engine.</p><p>Alongside this, the team explored and refined their methods for implementing geometry caches into the engine and Maya’s deformation technology.</p><p><i>“We have some exciting developments with some of our elements in-game that will take them to the next level of visual fidelity.”</i> Tech Animation</p><p>Tech Animation also assisted in the creation and implementation of new enemy types that are being worked on by other feature teams.</p>" v-cloak=""></g-article><g-article :show-emphasis="false" body="<h3><strong>UI</strong></h3><p>The UI team undertook a significant code push on the StarMap and radar to get many of the separate elements pulled together. As part of this, they added new tech to allow them to create and interact with holo-volumes, which will help to get the new version of the radar onto ships. They also fixed any unexpected glitches along the way and improved the visuals.</p><p>The Art team continued to concept various parts of the Squadron 42-specific UI. This involved finalizing the look and content of the new MFDs, designing gameplay screens for levels, and completing vehicle style guides.</p>" v-cloak=""></g-article><g-article :show-emphasis="false" body="<h3><strong>VFX</strong></h3><p>Alongside onboarding several new starters, the VFX team continued to support the Art, Design, and Cinematic teams with environmental effects and destruction sequences.</p><p>Finally, work began on a slight overhaul of the particle libraries to make them easier to maintain as the team spreads across the many varied locations.</p>" v-cloak=""></g-article><g-article :show-emphasis="true" body="<h3><strong>WE'LL SEE YOU NEXT MONTH...</strong></h3><p><strong>// END TRANSMISSION</strong></p>" v-cloak=""></g-article></g-narrative-group><style class="turbo-skin_schema_style_tag" data-skin-id="7" title="Stella Fortuna" id="skin_schema_style_tag">:root{--catalog__alert-warning: var(--color-alert-3);--catalog__alert-error: var(--color-alert-3);--catalog__background-primary: var(--color-secondary-3);--catalog__background-secondary: var(--color-secondary-2);--catalog__background-tertiary: var(--color-secondary-1);--catalog__carousel-control: var(--color-primary-4);--catalog__carousel-active: var(--color-accent-4);--catalog__item-name: var(--color-primary-4);--catalog__item-category: var(--color-primary-3);--catalog__item-excerpt: var(--color-primary-3);--catalog__item-manufacturer: var(--color-primary-4);--catalog__row-control-default: var(--color-primary-3);--catalog__row-control-hover: var(--color-primary-4);--catalog__row-control-disabled: var(--color-secondary-3);--catalog__row-gradient-left: var(--color-primary-1);--catalog__row-gradient-right: var(--color-primary-1);--catalog__subitem-list-title: var(--color-primary-3);--catalog__subitem-list-scrollbar: var(--color-accent-3);--catalog__subitem-list-scrollbar-background: var(--color-primary-1);--catalog__subitem-name: var(--color-accent-3);--catalog__subitem-active: var(--color-primary-3);--catalog__subitem-price: var(--color-primary-3);--catalog__subitem-link-default: var(--color-primary-3);--catalog__subitem-link-hover: var(--color-accent-4);--catalog__subitem-link-active: var(--color-primary-4);--catalog__subitem-link-disabled: var(--color-accent-1);--catalog__button-bg-default: var(--color-accent-3);--catalog__button-icon-default: var(--color-primary-1);--catalog__button-text-default: var(--color-primary-1);--catalog__button-bg-hover: var(--color-accent-4);--catalog__button-icon-hover: var(--color-primary-1);--catalog__button-text-hover: var(--color-primary-1);--catalog__button-bg-active: var(--color-secondary-4);--catalog__button-icon-active: var(--color-primary-1);--catalog__button-text-active: var(--color-primary-1);--catalog__button-bg-disabled: var(--color-accent-1);--catalog__button-icon-disabled: var(--color-accent-3);--catalog__button-text-disabled: var(--color-accent-3);--catalog__tag-bg-primary: var(--color-accent-3);--catalog__tag-text-primary: var(--color-primary-1);--catalog__tag-bg-secondary: var(--color-accent-2);--catalog__tag-text-secondary: var(--color-primary-1);--catalog__tag-border-tertiary: var(--color-primary-4);--catalog__tag-text-tertiary: var(--color-primary-4);--catalog__tag-bg-discount: var(--color-primary-1);--catalog__tag-text-discount: var(--color-primary-4);--catalog__tag-gradient: linear-gradient(180deg, rgba(var(--color-primary-1-rgb), 0.6) 0%, rgba(var(--color-primary-1-rgb), 0) 100%);--catalog__modal-bg: var(--color-secondary-1);--catalog__modal-title: var(--color-primary-4);--catalog__modal-text: var(--color-primary-3);--catalog__modal-icon-default: var(--color-accent-3);--catalog__modal-icon-hover: var(--color-primary-4);--catalog__modal-overlay: var(--color-primary-1);--catalog__row-title: var(--color-primary-3);--catalog__row-subtitle: var(--color-accent-3);--catalog__row-text: var(--color-primary-4);--catalog__row-link-default: var(--color-accent-4);--catalog__row-link-hover: var(--color-accent-3);--catalog__row-link-active: var(--color-primary-4);--catalog__item-reduced-price-text: var(--color-primary-3);--catalog__item-original-price-text: var(--color-accent-3);--catalog__item-original-price-strikethrough: var(--color-primary-3);--catalog__dropdown-bg: var(--color-primary-1);--catalog__dropdown-placeholder: var(--color-primary-4);--catalog__dropdown-icon: var(--color-accent-2);--catalog__dropdown-active: var(--color-accent-4);--catalog__dropdown-item: var(--color-accent-3);--catalog__dropdown-disabled: var(--color-secondary-3);--catalog__stock-in-stock: var(--color-alert-1);--catalog__stock-pre-order: var(--color-alert-2);--catalog__stock-limited: var(--color-alert-3);--catalog__stock-out-of-stock: var(--color-alert-4);--catalog__filter-bg: var(--color-secondary-1);--catalog__filter-footer: var(--color-secondary-2);--catalog__filter-text-counter-default: var(--color-primary-4);--catalog__filter-text-counter-disabled: var(--color-secondary-1);--mini-cart__navigation-counter-bg: var(--color-secondary-4);--mini-cart__navigation-counter-digit: var(--color-primary-1);--mini-cart__navigation-icon-default: var(--color-accent-4);--mini-cart__navigation-icon-hover: var(--color-primary-4);--mini-cart__navigation-icon-active: var(--color-primary-4);--navigation__mini-cart-bg-default: var(--color-secondary-3);--navigation__mini-cart-bg-hover: var(--color-accent-1);--navigation__mini-cart-bg-active: var(--color-secondary-3);--ship-list__bg-body: var(--color-primary-1);--ship-list__bg-primary: var(--color-secondary-2);--ship-list__bg-secondary: var(--color-secondary-1);--ship-list__gradient-bottom: linear-gradient(180deg, rgba(var(--color-secondary-2-rgb), 0) 0%, var(--color-secondary-2) 100%);--ship-list__gradient-right: linear-gradient(90deg, rgba(var(--color-secondary-2-rgb), 0) 0%, var(--color-secondary-2) 100%);--ship-list__price-separator: linear-gradient(180deg, rgba(var(--color-secondary-4-rgb), 0) 0%, var(--color-secondary-4) 23.44%, var(--color-secondary-4) 77.6%, rgba(var(--color-secondary-4-rgb), 0) 100%);--ship-list__price-bg: var(--color-secondary-2);--ship-list__price-border: var(--color-secondary-4);--ship-list__type-focus: var(--color-primary-4);--ship-list__breadcrumb-bg: var(--color-secondary-2);--ship-list__breadcrumb-text-default: var(--color-accent-3);--ship-list__breadcrumb-text-hover: var(--color-accent-2);--ship-list__breadcrumb-text-active: var(--color-primary-4);--global__gradient-bottom: linear-gradient(0deg, rgba(var(--color-primary-1-rgb), 0.8) 0%, rgba(var(--color-primary-1-rgb), 0) 100%);--global__gradient-left: linear-gradient(90deg, rgba(var(--color-primary-1-rgb), 0.8) 0%, rgba(var(--color-primary-1-rgb), 0) 100%);--global__gradient-right: linear-gradient(90deg, rgba(var(--color-primary-1-rgb), 0) 0%, rgba(var(--color-primary-1-rgb), 0.8) 100%);--svg-global__pattern: linear-gradient(90deg, var(--color-secondary-3) 0%, var(--color-secondary-3) calc(100% - 10px), var(--color-accent-3) calc(100% - 10px), var(--color-accent-3) 100%);--svg-hotspots-default: url("data:image/svg+xml,%3Csvg width='48' height='48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='24' cy='24' r='24' fill='%23000'/%3E%3Ccircle cx='24' cy='24' r='10' fill='%23DDFFCE'/%3E%3C/svg%3E ");;--svg-hotspots-hover: url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='24' cy='24' r='24' fill='%23425A2B'/%3E%3Ccircle cx='24' cy='24' r='10' fill='%239AAF86'/%3E%3C/svg%3E ");;--svg-hotspots-active: url("data:image/svg+xml,%3Csvg width='48' height='48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='24' cy='24' r='24' fill='%236E8D51'/%3E%3Ccircle cx='24' cy='24' r='10' fill='%23fff'/%3E%3C/svg%3E ");;--color-atom__button-regular-bg-default: var(--color-accent-3);--color-atom__button-regular-text-default: var(--color-primary-1);--color-atom__button-regular-bg-hover: var(--color-accent-4);--color-atom__button-regular-text-hover: var(--color-primary-1);--color-atom__button-regular-bg-active: var(--color-secondary-4);--color-atom__button-regular-text-active: var(--color-primary-1);--color-atom__button-modal-primary-bg-default: var(--color-secondary-4);--color-atom__button-modal-primary-text-default: var(--color-primary-1);--color-atom__button-modal-primary-bg-hover: var(--color-accent-4);--color-atom__button-modal-primary-text-hover: var(--color-primary-1);--color-atom__button-modal-primary-bg-active: var(--color-accent-3);--color-atom__button-modal-primary-text-active: var(--color-primary-1);--color-atom__button-modal-secondary-bg-default: var(--color-accent-3);--color-atom__button-modal-secondary-text-default: var(--color-primary-1);--color-atom__button-modal-secondary-bg-hover: var(--color-accent-3);--color-atom__button-modal-secondary-text-hover: var(--color-primary-1);--color-atom__button-modal-secondary-bg-active: var(--color-primary-2);--color-atom__button-modal-secondary-text-active: var(--color-primary-1);--color-atom__button-icon-bg-default: var(--color-accent-4);--color-atom__button-icon-default: var(--color-primary-1);--color-atom__button-icon-bg-hover: var(--color-accent-3);--color-atom__button-icon-hover: var(--color-primary-1);--color-atom__button-icon-bg-active: var(--color-secondary-4);--color-atom__button-icon-active: var(--color-primary-1);--color-atom__button-back-bg-default: var(--color-secondary-2);--color-atom__button-back-bg-hover: var(--color-accent-1);--color-atom__button-back-bg-active: var(--color-secondary-2);--color-atom__button-back-text-default: var(--color-accent-4);--color-atom__button-back-text-hover: var(--color-primary-4);--color-atom__button-back-text-active: var(--color-primary-4);--color-atom__carousel-control-bg: var(--color-secondary-2);--color-atom__carousel-control-text-default: var(--color-accent-4);--color-atom__carousel-control-text-counter: var(--color-accent-4);--color-atom__carousel-control-text-hover: var(--color-primary-4);--color-atom__carousel-control-text-active: var(--color-accent-3);--color-atom__carousel-control-text-disabled: var(--color-accent-1);--color-atom__popover-bg-default: var(--color-secondary-3);--color-atom__popover-text-default: var(--color-accent-4);--color-atom__popover-bg-hover: var(--color-accent-1);--color-atom__popover-text-hover: var(--color-accent-4);--color-atom__popover-bg-active: var(--color-accent-2);--color-atom__popover-text-active: var(--color-primary-4);--color-atom__popover-divider: var(--color-accent-2);--color-atom__popover-text-variant: var(--color-accent-3);--color-atom__select-bg-default: var(--color-accent-2);--color-atom__select-text-default: var(--color-primary-4);--color-atom__select-icon-default: var(--color-primary-4);--color-atom__select-bg-hover: var(--color-accent-1);--color-atom__select-text-hover: var(--color-primary-4);--color-atom__select-icon-hover: var(--color-primary-4);--color-atom__select-bg-active: var(--color-accent-1);--color-atom__select-text-active: var(--color-accent-4);--color-atom__select-icon-active: var(--color-accent-4);--color-atom__label-inactive: var(--color-secondary-4);--color-atom__label-hover: var(--color-accent-4);--color-atom__label-filled: var(--color-accent-3);--color-atom__label-focus: var(--color-primary-4);--color-atom__label-error: var(--color-alert-4);--color-atom__label-disabled: var(--color-secondary-2);--color-atom__unchecked-bg-enabled: var(--color-primary-1);--color-atom__unchecked-border-enabled: var(--color-secondary-4);--color-atom__unchecked-icon-enabled: var(N/A);--color-atom__unchecked-bg-hover: var(--color-primary-1);--color-atom__unchecked-border-hover: var(--color-accent-4);--color-atom__unchecked-icon-hover: var(N/A);--color-atom__unchecked-bg-pressed: var(--color-primary-1);--color-atom__unchecked-border-pressed: var(--color-accent-3);--color-atom__unchecked-icon-pressed: var(N/A);--color-atom__unchecked-bg-error: var(--color-primary-1);--color-atom__unchecked-border-error: var(--color-alert-4);--color-atom__unchecked-icon-error: var(N/A);--color-atom__unchecked-bg-disabled: var(--color-primary-1);--color-atom__unchecked-border-disabled: var(--color-secondary-2);--color-atom__unchecked-icon-disabled: var(N/A);--color-atom__checked-bg-enabled: var(--color-primary-1);--color-atom__checked-border-enabled: var(--color-secondary-4);--color-atom__checked-icon-enabled: var(--color-secondary-4);--color-atom__checked-bg-hover: var(--color-primary-1);--color-atom__checked-border-hover: var(--color-accent-4);--color-atom__checked-icon-hover: var(--color-accent-4);--color-atom__checked-bg-pressed: var(--color-primary-1);--color-atom__checked-border-pressed: var(--color-accent-3);--color-atom__checked-icon-pressed: var(--color-accent-3);--color-atom__checked-bg-error: var(--color-primary-1);--color-atom__checked-border-error: var(--color-alert-4);--color-atom__checked-icon-error: var(--color-alert-4);--color-atom__checked-bg-disabled: var(--color-primary-1);--color-atom__checked-border-disabled: var(--color-secondary-2);--color-atom__checked-icon-disabled: var(--color-secondary-2);--color-atom__indeterminated-bg-enabled: var(--color-primary-1);--color-atom__indeterminated-border-enabled: var(--color-secondary-4);--color-atom__indeterminated-icon-enabled: var(--color-secondary-4);--color-atom__indeterminated-bg-hover: var(--color-primary-1);--color-atom__indeterminated-border-hover: var(--color-accent-4);--color-atom__indeterminated-icon-hover: var(--color-accent-4);--color-atom__indeterminated-bg-pressed: var(--color-primary-1);--color-atom__indeterminated-border-pressed: var(--color-accent-3);--color-atom__indeterminated-icon-pressed: var(--color-accent-3);--color-atom__indeterminated-bg-error: var(--color-primary-1);--color-atom__indeterminated-border-error: var(--color-alert-4);--color-atom__indeterminated-icon-error: var(--color-alert-4);--color-atom__indeterminated-bg-disabled: var(--color-primary-1);--color-atom__indeterminated-border-disabled: var(--color-secondary-2);--color-atom__indeterminated-icon-disabled: var(--color-secondary-2);--color-atom__helper-text-inactive: var(--color-secondary-4);--color-atom__helper-text-hover: var(--color-accent-4);--color-atom__helper-text-filled: var(--color-accent-3);--color-atom__helper-text-focus: var(--color-primary-4);--color-atom__helper-text-error: var(--color-alert-4);--color-atom__helper-text-disabled: var(--color-secondary-2);--color-atom__input-bg-inactive: var(--color-primary-1);--color-atom__input-border-inactive: var(--color-secondary-4);--color-atom__input-icon-inactive: var(--color-secondary-4);--color-atom__input-bg-hover: var(--color-primary-1);--color-atom__input-border-hover: var(--color-accent-4);--color-atom__input-icon-hover: var(--color-accent-4);--color-atom__input-bg-filled: var(--color-primary-1);--color-atom__input-border-filled: var(--color-accent-3);--color-atom__input-icon-filled: var(--color-accent-3);--color-atom__input-bg-focus: var(--color-primary-1);--color-atom__input-border-focus: var(--color-primary-4);--color-atom__input-icon-focus: var(--color-primary-4);--color-atom__input-bg-error: var(--color-primary-1);--color-atom__input-border-error: var(--color-alert-4);--color-atom__input-icon-error: var(--color-alert-4);--color-atom__input-bg-disabled: var(--color-primary-1);--color-atom__input-border-disabled: var(--color-secondary-2);--color-atom__input-icon-disabled: var(--color-secondary-2);--color-banner__title: var(--color-primary-4);--color-banner__subtitle: var(--color-primary-4);--color-banner__text: var(--color-primary-4);--color-banner__link-default: var(--color-accent-4);--color-banner__link-hover: var(--color-accent-3);--color-banner__link-active: var(--color-primary-4);--color-countdown__title: var(--color-primary-4);--color-countdown__subtitle: var(--color-primary-4);--color-countdown__text: var(--color-primary-4);--color-countdown__modal-bg: var(--color-secondary-1);--color-disclaimer__bg: var(--color-primary-1);--color-disclaimer__title: var(--color-primary-3);--color-disclaimer__text: var(--color-primary-4);--color-disclaimer__link-default: var(--color-accent-4);--color-disclaimer__link-hover: var(--color-accent-3);--color-disclaimer__link-active: var(--color-primary-4);--color-explore-image__bg: var(--color-primary-1);--color-explore-image__container: var(--color-secondary-1);--color-explore-image__title: var(--color-primary-3);--color-explore-image__subtitle: var(--color-accent-3);--color-explore-image__text: var(--color-primary-4);--color-explore-image__link-default: var(--color-accent-4);--color-explore-image__link-hover: var(--color-accent-3);--color-explore-image__link-active: var(--color-primary-4);--color-explore-image__tab-bg: var(--color-secondary-2);--color-explore-image__select-label: var(--color-accent-3);--color-explore-image__tab-text-default: var(--color-accent-4);--color-explore-image__tab-text-hover: var(--color-primary-4);--color-explore-image__tab-text-active: var(--color-primary-4);--color-explore-image__tab-decoration-active: var(--color-accent-3);--color-explore-video__bg: var(--color-primary-1);--color-explore-video__container: var(--color-secondary-1);--color-explore-video__nav-text-default: var(--color-secondary-4);--color-explore-video__nav-text-hover: var(--color-accent-3);--color-explore-video__nav-text-active: var(--color-primary-4);--color-explore-video__title: var(--color-primary-3);--color-explore-video__subtitle: var(--color-accent-3);--color-explore-video__text: var(--color-primary-4);--color-explore-video__link-default: var(--color-accent-4);--color-explore-video__link-hover: var(--color-accent-3);--color-explore-video__link-active: var(--color-primary-4);--color-features__bg: var(--color-primary-1);--color-features__container: var(--color-secondary-1);--color-features__title: var(--color-primary-3);--color-features__subtitle: var(--color-accent-3);--color-features__text: var(--color-primary-4);--color-features__link-default: var(--color-accent-4);--color-features__link-hover: var(--color-secondary-3);--color-features__link-active: var(--color-primary-4);--color-global__overlay: var(--color-primary-1);--color-global__body: var(--color-primary-1);--color-header__bg: var(--color-primary-1);--color-header__title: var(--color-primary-3);--color-header__subtitle: var(--color-accent-3);--color-header__text: var(--color-primary-4);--color-header__link-default: var(--color-accent-4);--color-header__link-hover: var(--color-secondary-3);--color-header__link-active: var(--color-primary-4);--color-introduction__bg: var(--color-primary-1);--color-introduction__container: var(--color-secondary-1);--color-introduction__title: var(--color-primary-3);--color-introduction__subtitle: var(--color-accent-3);--color-introduction__text: var(--color-primary-4);--color-introduction__link-default: var(--color-accent-4);--color-introduction__link-hover: var(--color-secondary-3);--color-introduction__link-active: var(--color-primary-4);--color-narrative__bg: var(--color-primary-1);--color-narrative__container: var(--color-secondary-1);--color-narrative__title: var(--color-primary-3);--color-narrative__subtitle: var(--color-accent-3);--color-narrative__text: var(--color-primary-4);--color-narrative__link-default: var(--color-accent-4);--color-narrative__link-hover: var(--color-secondary-3);--color-narrative__link-active: var(--color-primary-4);--color-navigation__bg-primary: var(--color-secondary-1);--color-navigation__bg-secondary: var(--color-secondary-2);--color-navigation__page-title: var(--color-primary-4);--color-navigation__logo-bg: var(--color-accent-1);--color-navigation__item-default: var(--color-accent-3);--color-navigation__item-hover: var(--color-primary-4);--color-navigation__item-active: var(--color-accent-4);--color-navigation__item-default-multi: var(--color-primary-4);--color-navigation__item-hover-multi: var(--color-primary-2);--color-navigation__item-active-multi: var(--color-primary-4);--color-navigation__icon: var(--color-accent-4);--color-primary-1: #070806;--color-primary-2: #A4A9AC;--color-primary-3: #DFE1E1;--color-primary-4: #FFFFFF;--color-primary-1-rgb: 7, 8, 6;--color-primary-2-rgb: 164, 169, 172;--color-primary-3-rgb: 223, 225, 225;--color-primary-4-rgb: 255, 255, 255;--color-secondary-1: #191C15;--color-secondary-2: #243317;--color-secondary-3: #425A2B;--color-secondary-4: #6E8D51;--color-secondary-1-rgb: 25, 28, 21;--color-secondary-2-rgb: 36, 51, 23;--color-secondary-3-rgb: 66, 90, 43;--color-secondary-4-rgb: 110, 141, 81;--color-accent-1: #536443;--color-accent-2: #5D7645;--color-accent-3: #9AAF86;--color-accent-4: #FFFADB;--color-accent-1-rgb: 83, 100, 67;--color-accent-2-rgb: 93, 118, 69;--color-accent-3-rgb: 154, 175, 134;--color-accent-4-rgb: 255, 250, 219;--color-alert-1: #E9F4F1;--color-alert-2: #6FCF5F;--color-alert-3: #E59D23;--color-alert-4: #FF8771;--color-alert-1-rgb: 233, 244, 241;--color-alert-2-rgb: 111, 207, 95;--color-alert-3-rgb: 229, 157, 35;--color-alert-4-rgb: 255, 135, 113;--color-sales-banner__title: var(--color-primary-4);--color-sales-banner__text: var(--color-primary-4);--color-sales-banner__link-default: var(--color-accent-4);--color-sales-banner__link-hover: var(--color-accent-3);--color-sales-banner__link-active: var(--color-primary-4);--color-showroom__bg: var(--color-primary-1);--color-showroom__container: var(--color-secondary-2);--color-showroom__title: var(--color-primary-3);--color-showroom__collapse-bg: var(--color-secondary-1);--color-showroom__subtitle: var(--color-secondary-3);--color-showroom__text: var(--color-primary-4);--color-showroom__link-default: var(--color-accent-4);--color-showroom__link-hover: var(--color-secondary-3);--color-showroom__link-active: var(--color-primary-4);--color-showroom__specs-value: var(--color-accent-4);--color-showroom__specs-label: var(--color-secondary-3);--color-showroom__select-label: var(--color-primary-4);--color-slideshow__bg: var(--color-primary-1);--color-slideshow__container: var(--color-secondary-1);--color-slideshow__title: var(--color-primary-3);--color-slideshow__subtitle: var(--color-accent-3);--color-slideshow__text: var(--color-primary-4);--color-slideshow__link-default: var(--color-accent-4);--color-slideshow__link-hover: var(--color-secondary-3);--color-slideshow__link-active: var(--color-primary-4);--color-trailer__bg: var(--color-primary-1);--color-trailer__play-bg-default: var(--color-accent-4);--color-trailer__play-icon-default: var(--color-primary-1);--color-trailer__play-bg-hover: var(--color-secondary-3);--color-trailer__play-icon-hover: var(--color-primary-1);--color-trailer__play-bg-active: var(--color-primary-4);--color-trailer__play-icon-active: var(--color-primary-1);--color-upgrade__bg: var(--color-secondary-1);--color-upgrade__title: var(--color-primary-4);--color-upgrade__subtitle: var(--color-primary-4);--color-upgrade__logo-bg: var(--color-accent-1)}</style>
+      </div>
+
+  <script src='https://robertsspaceindustries.com/alexandria/shared-library-ts/latest/main.js' ></script>
+
+    
+    <div id="alexandria-comments">
+      <div class="two-line-separator"></div>
+      
+<div class="wrapper force-one-column" id="comments">
+  <div class="holder">
+    <div class="title-bar">
+      <div class="count">
+        <div class="label">Comments</div>
+        <div class="value">018.<span class="js-comment-decimal">0</span></div>
+        <div class="cboth"></div>
+      </div>
+      <div class="title">
+        <h1>Feedback</h1>
+      </div>
+      <div class="cboth"></div>
+    </div>
+
+    <div class="main-buttons-holder-container">
+      <div class="main-buttons-holder">
+        <a href="/connect?jumpto=/comm-link/transmission/18926-Squadron-42-Monthly-Report-September-2022" class="add-comment js-add-comment trans-02s js-modal-login">Add New Comment</a>
+        <div class="settings js-settings">
+          <h1>Settings</h1>
+          <label>View mode:</label>
+          <a href="#" class="js-comments-view to-one-column js-to-one-column trans-01s on">One column</a>
+          <a href="#" class="js-comments-view to-two-columns js-to-two-columns trans-01s ">Two columns</a>
+          <label>Sort by:</label>
+          <a href="#" class="js-comments-sort to-oldest js-to-oldest trans-01s on">Oldest first</a>
+          <a href="#" class="js-comments-sort to-newest js-to-newest trans-01s ">Newest first</a>
+          <a href="#" class="js-comments-sort to-appreciated js-to-appreciated trans-01s ">Most appreciated first</a>
+
+                  </div>
+        <a href="" class="view-settings js-view-settings"><div class="hover trans-02s"></div></a>
+        <div class="triangle"></div>
+      </div>
+    </div>
+
+    
+    <div class="comment-listing"></div>
+
+    <div class="comment-loader traj-loader">
+      <div class="fast-blink"></div>
+      <span>Loading Additional Feedback</span>
+    </div>
+
+    <div class="cboth"></div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    window.comments = new RSI.Comments({
+      atom_url:"/comm-link/transmission/18926-Squadron-42-Monthly-Report-September-2022",
+      comment_listing_el:$(".comment-listing"),
+      comment_submission_form_el:$(".comment-submission"),
+      api_object:RSI.Api.Comments,
+      lazyLoading: true,
+      comment_count: 18,
+      subject_id:18926,
+      append:false,
+      texts: {
+        "edit": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        },
+        "reply": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        }
+      },
+      "insertion_conf": {
+        "mode":"html"
+      },
+      "api_function_names": {
+        "delete":"erase",
+        "load":"listing",
+        "sort":"listing"
+      }
+    });
+  });
+</script>
+    </div>
+  
+  
+    </div>
+
+    
+  </div>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.11/moment-timezone-with-data.min.js"></script>
+
+<script type="text/plain" data-cookieconsent="statistics">
+  $.cookie('moment_timezone', moment.tz.guess(), { expires: 31, path: '/' });
+</script>
+
+
+
+
+               <script id="tpl_number_counter_digits" type="text/x-jsmart-tmpl">{if !$seperator}{$seperator=','}{/if}
+{if !$first_max}{$first_max=9}{/if}
+{for $digit = 0 to $length-1}
+  <div class="mask">
+    <div class="carousel">
+      {if $digit == 0}
+        {$max = $first_max}
+      {else}
+        {$max = 9}
+      {/if}
+      {for $i=0 to $max}
+        <div class="item {if $val_arr[$digit] == $i}on{/if}" rel="{$i}">{$i}</div>
+      {/for}
+    </div>
+  </div>
+  {if ($length - $digit) % 3 == 1 && $digit != $length-1}
+  <div class="seperator">{$seperator}</div>
+  {/if}
+{/for}</script>
+<script id="base_modal" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  <div class="top-border">
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+  </div>
+</div></script>
+<script id="base_modal_flat" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  </div>
+  
+</div></script>
+<script id="tpl_modals_slideshow" type="text/x-jsmart-tmpl"><img class="top-border" src="/rsi/static/images/modal_top.png">
+<a href="" class="close js-close"></a>
+<div class="mask">
+  <a class="js-prev prev control"></a>
+  <a class="js-next next control"></a>
+  <div class="slideshow-carousel carousel" rel="{$index}">
+    {foreach from=$images item="image"}
+      <div class="{if $index == $image@index}on{/if}">
+      {if $image.is_video}
+        <div class="video-holder">
+          <div id="slideshow_video_{$image@index}" data-source="{$image->source_url}">
+            <video width="100%" height="100%" preload="auto" {if $video}src="{$image->source_url}"{/if} controls></video>
+          </div>
+        </div>
+      {else}
+        <div class="media js-media-slideshow-{$image@iteration}">
+        {if $image.low_res}
+          <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source data-srcset="{$image.full_res}" media="(min-width: 300px)" />
+            <!--[if IE 9]></video><![endif]-->
+            <img data-srcset="{$image.low_res}" alt="{$image.title}" />
+          </picture>
+        {else}
+          <img data-src="{$image.source_url}" />
+        {/if}
+        </div>
+      {/if}
+        <div class="text">
+          {if !$image.is_video}
+          <a href="{$image.source_url}" class="download"></a>
+          {/if}
+          <div class="copyright">© 2012-{$year}<br />Cloud Imperium Games Corporation &<br />Roberts Space Industries Corp.</div>
+          <div class="page-number">{$image@iteration} / {count($images)}</div>
+          <div class="caption v-center">{if $image.title && $image.title != "undefined"}{$image.title}{/if}</div>
+          <div class="cboth"></div>
+        </div>
+      </div>
+    {/foreach}
+  </div>
+</div>
+<img class="bottom-border" src="/rsi/static/images/modal_bottom.png"></script>
+<script id="tpl_contact_us" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="contact" class="inner-content on">
+  <h2><span class="icon"></span>CONTACT</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+  <div class="error-message js-error-message"></div>
+  <div class="success-message js-success-message"></div>
+    <fieldset class="last">
+    <label for="contact_email">Email Address</label>
+    <input type="text" name="email" value="" class="trans-02s trans-color trans-box-shadow" id="contact_email" />
+  </fieldset>
+    <fieldset>
+    <label for="contact_subject">Subject</label>
+    <input type="text" name="subject" value="" class="trans-02s trans-color trans-box-shadow" id="contact_subject" />
+    <label>Contacting us for:</label>
+    <ul class="category-info">
+            <li id="tech_support_info">Questions about download, installation, networking, or in-game client problems</li>
+            <li id="subscription_info">Questions about monthly and yearly subscription plans</li>
+            <li id="account_billing_info">Issues related to your account, such as incorrect information or ability to access account, or Billing with regards to payments and payment methods</li>
+            <li id="melt_request_info">To reclaim a pledge over $1,000 for store credit (please note - this is a permanent action)</li>
+            <li id="merchandise_info">Questions about physical and/or shipped merchandise</li>
+            <li id="hacked_info">Issues related to compromised account or missing pledge.</li>
+            <li id="account_recovery_info">For issues with account authentication, lost passwords and related queries</li>
+            <li id="probation_info">Issues related to forums probation or ban</li>
+            <li id="refund_request_info">Refund requests and related inquiries</li>
+            <li id="customer_support_info">For general questions and queries regarding Star Citizen</li>
+          </ul>
+  </fieldset>
+  <fieldset>
+    <label for="contact_text">Description</label>
+    <textarea name="text" class="trans-02s trans-color trans-box-shadow" id="contact_text"></textarea>
+  </fieldset>
+  <div class="contact-submit-wrapper">
+    <div class="line"></div>
+    <button class="submit js-submit"><strong>submit your message</strong></button>
+  </div>
+</form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+<script id="tpl_error" type="text/x-jsmart-tmpl"><div class="modal-error js-modal-error">
+  <p class="modal-text js-modal-text"></p>
+  <a class="close js-close trans-03s .trans-opacity" href=""></a>
+</div></script>
+<script id="tpl_success" type="text/x-jsmart-tmpl"><div class="modal-success js-modal-success">
+  <p class="modal-text js-modal-text"></p>
+  <a class="close js-close trans-03s .trans-opacity" href=""></a>
+</div></script>
+<script id="tpl_progress" type="text/x-jsmart-tmpl"><div class="modal-progress js-modal-progress">
+  <div class="traj-loader">
+    <div class="fast-blink"></div>
+    <span class="modal-text js-modal-text"></span>
+  </div>
+</div></script>
+<script id="tpl_outbound" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="outbound" class="inner-content on">
+  <h2><span class="icon"></span>OUTBOUND LINK</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+      <div class="error-message js-error-message"> <span class=important>WARNING</span><br/><br/> This link will bring you outside of the RSI site and into the depths of the internet. Continue?<br/><br/><span class="url"></span> </div>
+      <div class="success-message js-success-message"><span class=important>STAND BY</span><br/><br/> Initiating hyperlink.<br/><br/></div>
+
+      <fieldset class="clearfix last">
+        <span class="submit-wrapper">
+          <span class="submit-hover trans-02s trans-opacity"></span>
+          <input type="submit" value="WARP" class="trans-02s trans-color trans-background" />
+        </span>
+      </fieldset>
+    </form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+
+<script id="tpl_l-notification-bar" type="text/x-jsmart-tmpl"><div class="l-notification-bar js-notification-bar">
+
+  <div class="l-notification-bar__watermark js-svg-inliner h-svg__logo-star-citizen"></div>
+
+  <div class="l-notification-bar__boxes">
+    {if !$viewedCookieNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='cookie'
+          title='COOKIES:'
+          message="Our website uses Google Analytics to analyze our traffic. <br/>To learn how you can control Google's use of your data and how you can opt out <a href='https://www.google.com/policies/privacy/partners/'>click here</a>."
+          linkText='See Details'
+          buttonText='Got it!'}
+      </div>
+    {/if}
+
+    {if !$viewedPrivacyNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='privacy'
+          title='PRIVACY POLICY:'
+          message='We adjusted the PP to reflect the decision of the European Court of Justice regarding Safe Harbor, the fact that RSI has moved and added some services providers.'
+          linkText='View Privacy Policy'
+          buttonText='Got it!'}
+      </div>
+    {/if}
+  </div>
+
+</div>
+</script>
+<script id="tpl_c-notification" type="text/x-jsmart-tmpl"><div class="c-notification js-bottom-notif-msg-{$type}">
+    <div class="c-notification__title">{$title}</div>
+    <div class="c-notification__message">
+      {$message}
+    </div>
+
+    {if $linkText}
+        <div class="c-notification__wrapper-link">
+            <a class="c-notification__link js-bottom-notif-link-{$type}">
+            {$linkText}
+            </a>
+        </div>
+    {/if}
+
+    <a class="c-notification__button js-bottom-notif-btn-{$type}">
+
+      <span class="c-notification__button-text">
+       {$buttonText}
+      </span>
+
+      {if $type neq 'announcement'}
+        <div class="c-iconed__icon c-iconed__icon--checkmark"></div>
+      {/if}
+    </a>
+</div>
+</script>
+
+<script id="tpl_confirm" type="text/x-jsmart-tmpl"><div class="modal-confirm js-modal-confirm clearfix">
+  <p class="modal-text js-modal-text"></p>
+  <a class="bt-close js-close trans-03s trans-opacity" href=""></a>
+  <a class="bt-confirm js-confirm trans-03s trans-opacity" href=""></a>
+	<div class="buttons">
+		<a class="shadow-button trans-02s trans-color js-close bt-close rm"     >
+  <span class="label js-label trans-02s">Cancel</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+		<a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">Confirm</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+	</div>
+</div>
+</script>
+<script id="tpl_alert" type="text/x-jsmart-tmpl"><div class="modal-alert js-modal-alert clearfix">
+  <p class="modal-text js-modal-text"></p>
+  <div class="buttons">
+    <a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">OK</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+  </div>
+</div></script>
+<script id="tpl_video" type="text/x-jsmart-tmpl">{extends file="base_modal"}
+{block name='modal_content'}
+<div id="ship-commercial" class="inner-content">
+
+  <div class="hr"></div>
+  <div class="content-block4">
+
+    <div class="bottom"></div>
+  </div>
+  {if $distant_source=="vimeo"}
+  <iframe id="commercial" src="/rsi/static/cookiebot-embed.html" data-cookieconsent="marketing" data-src="//player.vimeo.com/video/{$video_id}?wmode=transparent" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+  {else}
+  <iframe id="commercial" frameborder="0" allowfullscreen="1" title="YouTube video player" width="100%" height="100%" src="/rsi/static/cookiebot-embed.html" data-cookieconsent="marketing" data-src="https://www.youtube.com/embed/{$video_id}?autoplay=1"></iframe>
+  {/if}
+</div>
+{/block}
+</script>
+      
+  <script id="tpl_comment_report" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="comment-report" class="inner-content on">
+  <h2><span class="icon"></span>Report this comment</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+<input type="hidden" name="comment_id" value="">
+  <div class="error-message js-error-message"></div>
+  <div class="success-message js-success-message"></div>
+    <fieldset class="last">
+    <label for="report_email">Email Address</label>
+    <span class="corner-wrapper">
+      <input type="text" name="email" value="" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_email" />
+      <span class="corner corner-top-left"></span>
+      <span class="corner corner-top-right"></span>
+      <span class="corner corner-bottom-left"></span>
+      <span class="corner corner-bottom-right"></span>
+    </span>
+  </fieldset>
+    <fieldset>
+    <label>Report Type</label>
+    
+
+
+  
+    <a class="js-selectlist selectlist " rel="" href="">
+    <div class="arrow"></div>
+    <span>Please select the type best matching your report</span>
+              <ul class="body">
+              
+                                                              <li class="js-option option " rel="obscenity" >
+                                                                        Obscene Content
+                                                    </li>
+                                                                <li class="js-option option " rel="abuse" >
+                                                                        Abusive Conduct
+                                                    </li>
+                                                                <li class="js-option option " rel="other" >
+                                                                        Other
+                                                    </li>
+                                          
+            </ul>
+        <input type="hidden" name="category" class="js-category js-form-data" id="category"/>
+  </a>
+    </fieldset>
+  <fieldset>
+    <label for="report_text">Details</label>
+    <span class="corner-wrapper">
+      <textarea name="text" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_text" maxlength="2500"></textarea>
+      <span class="corner corner-top-left"></span>
+      <span class="corner corner-top-right"></span>
+      <span class="corner corner-bottom-left"></span>
+      <span class="corner corner-bottom-right"></span>
+    </span>
+  </fieldset>
+  <fieldset class="clearfix last">
+    <span class="submit-wrapper">
+      <span class="submit-hover trans-02s trans-opacity"></span>
+      <input type="submit" value="Submit" class="trans-02s trans-color trans-background" />
+    </span>
+  </fieldset>
+</form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+
+
+      
+        <footer class="c-platform-footer c-platform-footer--rsi">
+  <div class="l-platform-footer-container">
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--sc">
+        <li class="c-platform-footer-brand__item">
+
+          <span class="c-brand c-brand--sc js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--sc">
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Join the<br>Universe
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--sc">
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen" class="c-platform-footer-link">About the Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/howto/1" class="c-platform-footer-link">How to Play</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/universe" class="c-platform-footer-link">The Universe</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/media" class="c-platform-footer-link">Media</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/play-now"
+                class="c-platform-footer-link js-google-analytics-event-tracker"
+                data-event-category="FlyNow" data-event-label="footerClick">
+                Play Now
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__sc">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">
+              Social Links
+            </span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/RobertsSpaceIndustries/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/RobertsSpaceInd">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/robertsspaceind">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href=" https://www.youtube.com/channel/UCTeLqJq1mXUX5WWoNXLmOIA">
+                <span class="c-iconed__icon c-iconed__icon--youtube"></span>
+                Youtube
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.twitch.tv/starcitizen">
+                <span class="c-iconed__icon c-iconed__icon--twitch"></span>
+                Twitch
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--s42">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--s42 js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--s42">
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Start the<br>Adventure
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--s42">
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42" class="c-platform-footer-link">The Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#enlist" class="c-platform-footer-link">Enlist Today</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#roadmap" class="c-platform-footer-link">Status</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/pledge/Packages/Squadron-42-Standalone-Pledge" class="c-platform-footer-link">Pledge</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__s42">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">Social Links</span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/Squad42/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/squadron_42">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/squadron42">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column is-active">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--rsi">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--rsi js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--rsi">
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi--fullcolor"></span>
+            </span>
+            <span class="c-brand__label">
+              Follow the Development
+            </span>
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--rsi">
+            <li class="c-platform-footer-list__item">
+              <a href="/" class="c-platform-footer-link">Home</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/comm-link" class="c-platform-footer-link">Transmissions</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+                <a href="/community-hub" class="c-platform-footer-link">Community</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/roadmap" class="c-platform-footer-link">Development</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--platform">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Platform
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--platform">
+                          <li class="c-platform-footer-list__item">
+                <a href="/pledge" class="c-platform-footer-link ">Pledge Store</a>
+              </li>
+            
+            <li class="c-platform-footer-list__item">
+              <a href="/download" class="c-platform-footer-link ">Download</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/spectrum/community/SC" class="c-platform-footer-link">Spectrum</a>
+            </li>
+
+                      </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--utility">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Utilities
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--utility">
+            <li class="c-platform-footer-list__item">
+              <a href="//support.robertsspaceindustries.com" class="c-platform-footer-link">Help</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/press" class="c-platform-footer-link">Press</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="https://cloudimperiumgames.com/join-us" class="c-platform-footer-link">Careers</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/tos" class="c-platform-footer-link">Terms of Services</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/privacy" class="c-platform-footer-link">Privacy Policy</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/eula" class="c-platform-footer-link">EULA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/dmca" class="c-platform-footer-link">DMCA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/legal" class="c-platform-footer-link">Legal</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/acknowledgements" class="c-platform-footer-link">Acknowledgements</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/responsible-disclosure" target="_blank" class="c-platform-footer-link">Responsible disclosure</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/pledge/redeem-code" class="c-platform-footer-link">Redeem a code</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  
+</footer>
+
+<div class="c-platform-copyright c-platform-copyright--rsi">
+  <div class="l-platform-copyright-container">
+    <img src="/rsi/static/images/footer/logo-large-RSI.png" class="c-platform-copyright__logo c-platform-copyright__rsi-logo" />
+    <a href="https://cloudimperiumgames.com" class="c-platform-copyright__link">
+      <img src="/rsi/static/images/footer/logo-large-CIG.png" class="c-platform-copyright__logo c-platform-copyright__cig-logo" />
+    </a>
+    <p class="c-platform-copyright__body">© 2012-2022 Cloud Imperium Rights LLC and Cloud Imperium Rights Ltd.</p>
+  </div>
+</div>
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHNFZPT"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<script type="text/javascript">
+  window.RSI.Footer = new RSI.Footer();
+</script>
+      
+    </div>
+
+    
+      <script type="text/javascript" src='/rsi/static/packages/platformbar/rsi.platformbar.build.3f0de.js'></script>
+    
+  </body>
+</html>

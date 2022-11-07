@@ -1,0 +1,2123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    
+      <!-- Anti-flicker snippet (recommended)  -->
+      <style>.async-hide { opacity: 0 !important} </style>
+      <script type="text/javascript">(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+      h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+      (a[n]=a[n]||[]).hide=h;if (d) a[n].push({'userId' : d});setTimeout(function(){i();h.end=null},c);h.timeout=c;
+      })(window,document.documentElement,'async-hide','dataLayer',1500,
+      {'GTM-KHNFZPT':true},undefined,'');</script>
+
+            <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"58013cabd7",applicationID:"375102748"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+      <meta name="viewport" content="width=device-width">
+      <meta name="description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans.">
+      <meta property="og:site_name" content="
+Drifters (Part One) - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+" />
+      <meta property="og:image" content="https://robertsspaceindustries.com/media/wtilj01zds70xr/channel_item_full/Drifters-Title.jpg" />
+      <meta property="og:description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans." />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://robertsspaceindustries.com/comm-link/SCW/17794-IMPORT" />
+      <meta property="og:locale" content="us_EN" />
+
+            
+
+            
+      <link href="/rsi/static/css/cross-brand-less.css?v=6.37.0" media="all" rel="stylesheet">
+      <link href='/rsi/static/packages/platformbar/rsi.platformbar.build.8e4cb.css' media="all" rel="stylesheet">
+      <link href='/rsi/static/packages/enlist/rsi.enlist.build.f8d69.css' media="all" rel="stylesheet"/>
+      
+            <script type="text/javascript" src="/cache/en/rsi-external-js.js?v=6.37.0"></script>
+      <script type="text/javascript" src="/cache/en/rsi-templates-js.js?v=6.37.0"></script>
+
+            
+      <link rel="stylesheet" href="https://use.typekit.net/dhw3beb.css">
+      
+
+              <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="a687ee30-df65-45a0-9d22-90de6c1bb964" type="text/javascript"></script>
+      
+      
+    <!-- Google Tag Manager -->
+        <script type="text/plain" data-cookieconsent="statistics">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHNFZPT');</script>
+    <!-- End Google Tag Manager -->
+
+
+      <title>
+Drifters (Part One) - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+</title>
+
+            <script type="text/javascript" src='/rsi/static/packages/core/rsi.core.build.804b0.js'></script>
+      <script type="text/javascript" src='/rsi/static/packages/account/rsi.account.build.7a888.js'></script>
+      <script type="text/javascript" src='/rsi/static/packages/store/rsi.store.build.cd9a7.js'></script>
+
+      <script>
+        $(document).ready(function() {
+          window.Common = new RSI.Common({});
+          window.Main = new RSI.Main({
+            'is_mobile': 0,
+            'probation_cookie' : '',
+            'require_captcha': 0
+          });
+          window.Mark = new Turbulent.Mark({ 'name' : 'Rsi-XSRF', 'token' : '', 'ttl' : 1800 });
+
+          window.WscOverlay = new RSI.WscOverlay({});
+
+          var destinations = [];
+
+window.Main.destinations = destinations;          
+  window.PageStore = new RSI.Store({
+    'store_prefix' : '/pledge',
+    'bootstrapConfig': {"injection":{"attachmentClass":"RSIStoreApp","files":{"js":["bootstrap.js"],"css":["index.css"]}},"platform":{"api":"\/api"},"store":{"path":"\/pledge-store","manifest":"manifest.json"},"customizer":{"api":"\/pledge-store\/api\/customizer","ga_tracking_code":"UA-39586040-5"}}
+  });
+
+          
+          
+  var productsTracking = [];
+  var eCommerceData = {
+    'trackingAction': "",
+    'currency': "",
+    'trackingStep': "",
+    'trackingProducts': productsTracking
+  };
+  window.eCommerceTracking = new RSI.Store.eCommerceTracking(
+    eCommerceData
+  );
+
+        });
+
+        $(window).load(function() {
+          
+        });
+
+      </script>
+
+      
+      <script>
+        window.recaptcha_is_loaded = false;
+        window.on_recaptcha_load_callback = function() {
+          window.recaptcha_is_loaded = true;
+        };
+      </script>
+
+      <script src="https://www.google.com/recaptcha/api.js?onload=on_recaptcha_load_callback&render=6LerBOgUAAAAAKPg6vsAFPTN66Woz-jBClxdQU-o" async defer></script>
+      
+
+      <script type="text/javascript">
+
+        
+
+                                </script>
+
+      
+
+<style type="text/css">
+  /* CSS from ATOM */
+  hr {
+border-top: 2px solid #13d0ff;
+width: 300px;
+margin-left: 25%;
+}
+.rsi-markup .segment .content h5 { line-height:28px;max-width:774px;width:75%;min-width:300px}
+
+.parallax {
+height: 850px;
+background-position: 50% 50%;
+background-repeat: no-repeat;
+background-attachment: fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+
+.parallax-block { }
+.parallax-block .rsi-markup .segment .content { margin-left:0; margin-right:0 }
+.parallax-block hr { background-color:#09daff; border-top:0px;}
+.parallax-block .corner, .parallax-block  .top-line-thin, .parallax-block .top-line { display:none }
+.parallax-block .content-block1 { border:0}
+
+.parallax-segment { height:280px}
+
+.parallax-1 {
+background-image: url("/media/wtilj01zds70xr/source/Drifters-Title.jpg");
+}
+
+.mb-full img { width: 100%;
+ }
+ span.initial{font-size:inherit!important; 
+margin-right:0!important;}
+.italic  {  font-style:  italic;  }
+</style>
+
+<script type="text/javascript">
+  /* JS from ATOM */
+  
+</script>
+
+
+
+
+    
+
+  <style>
+    
+      background:url(/rsi/static/images/noisebg.gif) repeat center top #000b11;
+    
+  </style>
+
+    <link href="//fonts.googleapis.com/css?family=Electrolize|Orbitron:400,500,700|Quantico|Share+Tech+Mono&display=swap" rel="stylesheet" type="text/css">
+
+    <link href="/cache/en/rsi-css.css?v=6.37.0" media="all" rel="stylesheet">
+
+
+  </head>
+  <body id="" class="" >
+
+    
+      <div class="l-notification-bar l-notification-bar--rsi js-notification-bar" id="notification-bar-root">
+  <c-notification-bar v-bind:latestagreementsslugs=[] v-bind:loggedin="0" v-bind:onhomepage="0"></c-notification-bar>
+  <div class="l-notification-container l-notification-bar__boxes js-notification-bar-boxes">
+    <div class="l-notification__wrapper">
+      
+      <c-unsupported-browser v-cloak>
+        <div class="l-notification-bar__box js-notification-bar-box">
+          <div class="c-notification  c-notification--browser-support js-bottom-notif-msg-browser-support">
+  <div class="c-notification__inner">
+
+    <div class="c-notification__content">
+      <div class="c-notification__title">
+        IE11 is no longer supported
+      </div>
+      <div class="c-notification__message">
+        We do not support Internet Explorer 11 and below. Please use a different web browser.
+      </div>
+    </div>
+
+    <div class="c-notification__actions">
+      
+      
+          </div>
+
+  </div>
+</div>
+        </div>
+      </c-unsupported-browser>
+    </div>
+  </div>
+
+</div>
+    
+
+    <div id="bodyWrapper">
+      <header class='c-header-wrapper c-header-wrapper--rsi js-header-wrapper '  id='cross-brand-header'>
+  <div id="platform-bar" class="c-header__platform-bar"></div>
+
+      <div class='c-right-sidebar c-right-sidebar--signin' id="account-sidebar">
+      <div class="js-toggle-account__backdrop invisible"></div>
+
+      <a href="#" class='c-right-sidebar__back js-toggle-account'>Back
+        <span></span>
+        <span></span>
+      </a>
+
+      <div id="enlist-root" data-theme="rsi" data-enlisting="" data-ptu=""></div>
+      <script type="text/javascript" src='/rsi/static/packages/enlist/rsi.enlist.build.f8d69.js'></script>
+    </div>
+  
+  <div class="c-header-wrapper__backdrop js-toggle-games"></div>
+</header>
+
+<div id="platform-backdrop"></div>
+
+<script type='text/javascript'>
+  RSI.Platformbar = {
+    theme: "rsi",
+    loggedState: "logged-out",
+    tabs: [
+      {
+        type: 'brands',
+        name: "Games",
+        subItems: [
+          {
+            name: "sc",
+            href: "/star-citizen",
+            description: "Join the Universe"
+          },
+          {
+            name: "s42",
+            href: "/squadron42",
+            description: "Start the adventure"
+          },
+          {
+            name: "rsi",
+            href: "/",
+            description: "Follow the Development"
+          }
+        ]
+      },
+      {
+        type: 'apps',
+        name: "Apps",
+        subItems: [
+          [
+            {
+              name: "Spectrum",
+              href: "/spectrum/community/SC",
+              description: "Your communication platform"
+            },
+            {
+              name: "Launcher",
+              href: "/download",
+              description: "Download Star Citizen",
+                          }
+          ],
+          [
+            {
+              name: "Roadmap",
+              href: "/roadmap",
+              description: "Keep track of the development"
+            },
+            {
+              name: "Telemetry",
+              href: "/telemetry",
+              description: "Keep track of the player’s performance"
+            },
+            {
+              name: "Issue Council",
+                          href: "https://issue-council.robertsspaceindustries.com",
+                          description: "Help us make the game better",
+                          }
+          ],
+          [
+            {
+              name: "Starmap",
+              href: "/starmap",
+              description: "Your map to the universe"
+            },
+            {
+              name: "Galactapedia",
+              href: "/galactapedia",
+              description: "Your guide to the universe"
+            }
+          ]
+        ]
+      },
+          ],
+    navigation: {
+      store: {
+        name: "Pledge Store",
+        href: "/pledge",
+        isHidden: false      },
+      hub: {
+        name: "Learn How to Play",
+        href: "/playstarcitizen",
+        show: false      },
+      support: {
+        name: "Support",
+        href: "//support.robertsspaceindustries.com"
+      },
+      account: {
+        name: "Account",
+        href: "/account/settings",
+        isHidden: false      }
+    }
+  };
+
+  $(document).ready(function() {
+    window.header = new RSI.Header({});
+  });
+</script>
+
+
+      
+  
+<header class='c-brand-menu c-brand-menu----rsi' id='brand-menu'>
+  <span class="c-brand-menu__section">
+    
+      Roberts Space Industries <sup>&#174;</sup>
+    
+  </span>
+  <div class="c-brand-menu__backdrop"></div>
+  <nav class="c-brand-menu__container">
+    <div class="c-brand-menu__logo">
+      <a href="/"><span class="h-svg h-svg__logo-rsi--fullcolor-large js-svg-inliner"></span> </a>
+    </div>
+    <div class="c-brand-menu__items-container">
+      <ul class="c-brand-menu__items">
+                <li class="c-brand-menu__item  ">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/comm-link">
+            <span class="c-brand-menu__item-text">Comm-Link</span>
+                                  </a>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/community">
+            <span class="c-brand-menu__item-text">Community</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Community</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/spectrum" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Spectrum
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/orgs" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Organizations
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/leaderboards/top" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Leaderboards
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community_events" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Event
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Hub
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/fankit" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Fankit
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/development">
+            <span class="c-brand-menu__item-text">Development</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Development</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/roadmap" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Roadmap
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/devtracker" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Dev Tracker
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/telemetry" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Telemetry
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="https://issue-council.robertsspaceindustries.com" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Issue Council
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/patch-notes" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Patch Notes
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/ship-matrix" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Ship Matrix
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/funding-goals" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Funding
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+              </ul>
+    </div>
+
+    <div class="c-brand-menu__cta">
+      
+        <a href="/star-citizen/play-now" class="c-brand-cta-btn js-google-analytics-event-tracker"
+          data-event-category="FlyNow" data-event-label="navMenuClick">
+          <div></div>
+            <span class="c-brand-cta-btn__text">
+              <strong>Play now</strong>
+            </span>
+          <div></div>
+        </a>
+      
+    </div>
+  </nav>
+</header>
+
+
+
+      
+
+  
+  <div class="page-wrapper">
+    
+  <div id="post-background" ></div>
+
+
+    <div id="contentbody" class="" style="">
+      
+
+<div id="post">
+  <div class="title-section">
+    
+      <div class="wrapper title-bar-container">
+        <div class="glow left"></div>
+        <div class="title-bar">
+          <div class="title with-subtitle">
+            <h1>Serialized Fiction</h1>
+            <h2>Short Stories</h2>
+          </div>
+          <div class="details">
+            <div>
+              <h3>ID:</h3>
+              <p>17794</p>
+              <div class="cboth"></div>
+            </div>
+            <div>
+              <h3>Comments:</h3>
+              <p class="comment-count">36</p>
+              <div class="cboth"></div>
+            </div>
+            <div>
+              <h3>Date:</h3>
+              <p>September 23rd 2020</p>
+              <div class="cboth"></div>
+            </div>
+            <div></div>
+          </div>
+          <div class="cboth"></div>
+        </div>
+        <div class="glow right"></div>
+      </div>
+    
+  <div class="title-container">
+    <div class="title ">Drifters (Part One)</div>
+    <div class="subtitle">By: Dave Haddock</div>  </div>
+
+  </div>
+
+  
+  <div class="lightbar toplightbar">
+    <div class="lightbarlights"></div>
+    <div class="footershadow"></div>
+  </div>
+
+
+  <div class="parallax-block">
+
+<div class="mb-full parallax parallax-1"></div>
+
+<div class="wrapper"><div class="content-block1 rsi-markup">
+<div  class=' segment' ><div class="content"><h5>Writer’s Note: <span class="italic">Drifters: Part One</span> was published originally in Jump Point 5.1.</h5>
+
+<p><span class="italic">Helluva time for the a/c to cut out</span>, Reynolds thought as he stared through the scuffed cockpit glass and cued the comm. </p>
+
+<p>“You need to take a second and think real hard about what you’re doing here.” His fingers tapped anxiously on the flight stick, and he could already feel the sweat forming under his suit. </p>
+
+<p>About five minutes ago, an <span class="caps">EMP</span> tripped his Retaliator, the <span class="italic">Echo Calling</span>, out of quantum. Five ships — a Freelancer and a bunch of fighters that looked patched together with tape, glue and bad intentions — waited in an attack pattern. The ambush had surprised him. They’d scouted this route for weeks to try and avoid this possibility. What had surprised the ambushers was that the <span class="italic">Echo</span> still had guns and shields. Nickels had finally gotten around to installing that backup power plant, so although <span class="italic">Echo’s</span> engines were affected by the <span class="caps">EMP</span>, they were more than equipped to mix it up. That little fact gave their attackers pause. </p>
+
+<p>“Cap! Two more contacts, aft side, drifting thirty degrees down,” Nickels yelled from his terminal.</p>
+
+<p>“Power down your weapons, disengage your cargo, and drift,” said the attacker&#8217;s spokesman over the comms. From the appearance of the cockpit in the background, he looked to be flying the beat-up Freelancer. Probably their leader . . . or the one wearing the communal balls for the week. Reynolds didn’t recognize him, but whoever this was knew everything important about the <span class="italic">Echo</span>, in particular what they were transporting. </p>
+
+<p>“Listen to me,” Reynolds leaned into his camera. “Say you take us in a rush, you know who you’re stealing from. That kinda trouble? That doesn’t just go away.” </p>
+
+<p>Spokesman hesitated. It was just a flicker where the façade of toughness dropped. Just a flicker, but Reynolds survived noticing things like that. </p>
+
+<p>“Detach your cargo and leave.” The façade was back in full effect. </p>
+
+<p>“Not gonna happen.” Reynolds glanced at his screens. Maybe a minute ’til the engines were back online. He flipped to the <span class="italic">Echo’s</span> internal communication network. “How we looking, people?”</p></div><div class="cboth"></div></div>
+<div  class=' segment' ><div class="content"><p>In the top turret, O’Neil stared in horror at the circling ships. It took him a second to realize that Reynolds’ question included him. </p>
+
+<p>“Top turret up,” he managed to stammer out. Sweat rolled down his face and into his eyes. He instinctively tried to wipe it away, but his hand kept banging off the faceplate of his suit. He blinked hard as he listened to Reynolds argue with whoever was on the other side of the guns leveled at him. </p>
+
+<p>“Don’t be stupid, man. You ain’t gotta die here today,” the Freelancer captain said. </p>
+
+<p>“With what you’ve got?” Reynolds fired back. </p>
+
+<p>“Fly away. Just fly away . . .” O’Neil mumbled to himself. His hands started to tremble.</p></div><div class="cboth"></div></div>
+<div  class=' segment' ><div class="content"><p>“Bottom turret’s set, Cap, whenever you wanna light these bitches up,” Frears replied over the comm as he calmly cycled through the ships in his field of fire. </p>
+
+<p>“What I’ve got is five on one. You do the math,” the Freelancer captain replied. This guy wasn’t giving up. </p>
+
+<p>“What you’ve got is a glorified tug and a bunch of shit fighters.” </p>
+
+<p>Frears chuckled. Whoever these morons were, they were used to pushovers who’d drop their cargo at the first sign of trouble. <span class="italic">They picked the wrong crew this time.</span> </p>
+
+<p>That’s when he noticed a smudge on the back of his helmet, stowed down by his feet. He took his eyes off the idiots outside to have a closer look. A smudge of engine grease. Son of a bitch, he thought. Nickels must have tried it on. Ever since he’d shelled out the credits for the new <span class="caps">CDS</span> suit, the crew had been hovering like vultures.</p></div><div class="cboth"></div></div>
+<div  class=' segment' ><div class="content"><p>Back in the cockpit of the <span class="italic">Echo</span>, Reynolds received reports from the rest of the stations. Engines were cycling and should be up in thirty. This Freelancer captain obviously didn’t want a fight or he would’ve opened fire by now. Reynolds just needed enough time to get mobile. Once they were moving, they could weather anything thrown against them long enough to get out of there. </p>
+
+<p>“This is the last time I’m gonna ask. You know what we want.” The Freelancer captain managed to muster all the menace he could. </p>
+
+<p>“You’re repeating yourself,” Reynolds responded. His eyes were locked on his readout, watching the engine’s power meter climb, waiting for just enough power to start moving. </p>
+
+<p>“They’re heating up missiles!” Nickels shouted suddenly. </p>
+
+<p>One of the old, beat-up 300s had drawn a lock. Reynolds muttered. They were out of time. </p>
+
+<p>O’Neil’s turret was already swinging towards it. </p>
+
+<p>“Wait—” the Freelancer captain tried. </p>
+
+<p>That’s when it all popped off.</p></div><div class="cboth"></div></div>
+<div  class=' segment' ><div class="content"><p>Space lit up with the exchange of lasers and bullets. The first exchange was devastating. The <span class="italic">Echo</span> was mangled from the storm of incoming fire, but its shields and thick armor managed to weather the mortal strikes of the initial assault. With the Retaliator’s return fire, the 300 was the first to go, immediately sliced apart from O’Neil’s turret fire. </p>
+
+<p>The Freelancer launched a full spread of missiles. The <span class="italic">Echo’s</span> engines suddenly flared to life and the massive bomber dove and deployed countermeasures. The turrets focused fire on the Freelancer, chewing down the shields and punching a series of shots through the cockpit before it could react. </p>
+
+<p>The <span class="italic">Echo</span> tumbled and twisted, swarmed by fighters undeterred by the loss of their fearless leader. Laser fire sprayed from its turrets, beautifully pirouetting through space until a rocket punched through weakened the shields and annihilated the <span class="italic">Echo’s</span> cockpit. The Retaliator’s beautiful evasion turned into a death spiral and the fighters pounced for the kill. The last remaining turret killed the final fighter moments before an explosion ripped the <span class="italic">Echo</span> in half. </p>
+
+<p>Then, silence. The massive fragments of spaceship quietly drifted in place. Occasional secondary explosions from areas of the ships still pressurized went off, ejecting the final volumes of oxygen and flame into space. </p>
+
+<p>And with that, space was still again.</p></div><div class="cboth"></div></div>
+<div  class=' segment' ><div class="content"><p>A point of light, initially indistinguishable from a star, slowly grew, eventually drawing close enough to be recognizable as a ship. Critics had famously called the 2918 Constellation ‘the one misstep in <span class="caps">RSI</span>’s proud lineage’ and it was tough for many to argue. The hull plating on the nacelles was often sized incorrectly, creating odd gaps where the glow of the engine would seep out. This 2918 Connie was somehow still flying, although by the sight of it, it wasn’t for the universe’s lack of trying to kill it. </p>
+
+<p>The ship slowly drifted towards the sprawling battlefield. Retro thrusters gently pulsed to bring it to a halt. </p>
+
+<p>Magdalena “Mags” McCann moved from the nav station on the deck and stepped to the front of the observation window. Dressed in pajamas, a bathrobe and space boots (she hated cold feet), she swizzled her spoon around her bowl, hunting out some lingering RumblePops cereal hiding in the murky depths of sugary milk. Kennelworth’s “Where We Go” blasted over the bridge’s tinny speakers. </p>
+
+<p>Mags looked over the vast destruction, crunched the last RumblePop in her mouth, and grinned. </p>
+
+<p>“Sweet.”</p></div><div class="cboth"></div></div>
+<div  class=' segment' ><div class="content"><p>Inside the <span class="italic">Harlequin</span>, Kennelworth’s singular brand of gutbucket rock wasn’t restricted to the bridge; it was being pumped throughout the ship for everyone’s benefit. While the outside of the battered Connie looked rough, the inside was even worse. Random frayed wires dangled from exposed paneling, bonded together with gum and tape. A particularly gaping hole in the wall had a circle drawn around it with “Don’t Touch” written helpfully nearby. Inside the hole, something sparked sporadically. </p>
+
+<p>The music abruptly disappeared from the intercom. Mags cleared her throat. </p>
+
+<p>“Hey, everybody. Sorry to bug you . . .”</p>
+
+<p>Inside one of the sleeping berths, Honan Yao picked through a bag of discarded vials, looking for one that had a little bit of charge left. He plugged any potential candidates into his hypo to check the level, but nothing. </p>
+
+<p>“I know things have been a little rough since I took over.” Mags’ voice echoed from the tiny wall speaker. Yao was too focused on his search to care. His mind started to drift to alternative injection methods in case this ended up being a bust. None of the solutions were ideal, but desperate times . . . </p>
+
+<p>He finally tossed the bag aside. He contemplated going to engineering, but he’d have to get up. Then it hit him . . . </p>
+
+<p>Yao went into another compartment and pulled out his old medical field kit. </p>
+
+<p>Success. At least for one hit. His adrenaline started to surge as he quickly popped the small vial of ink-black liquid into the hypo. </p>
+
+<p>“The past few weeks, we’ve —” Yao shut off the speaker and settled back. When the WiDoW hit his system, it was like falling down a chasm of warm pillows. </p>
+
+<p>And he welcomed it because he could forget now.</p></div><div class="cboth"></div></div>
+<div  class=' segment' ><div class="content"><p>Like the rest of the ship, the cargo hold had seen better days. The vast open space was just that, vast and open. Only one container actually had any salvage in it but, even for salvage, it was just junk. </p>
+
+<p>Kel picked through it all the same. He methodically moved through each piece, studying every millimeter for structural integrity, potential for spare parts, and elemental composition. The Banu had been trained at one of the best Mining Soulis in the Protectorate. The Essosouli himself had even commented on Kel’s astute observational skills and claimed that Kel had the potential to ascend to Mastery level within the Guild. </p>
+
+<p>When the <span class="italic">Harlequin’s</span> previous captain had purchased him from the souli, he was a little disappointed to interrupt his advanced studies, but he wasn’t about to miss out on traveling with actual Humans. </p>
+
+<p>He extracted a busted lamp from the container and studied the frayed wires coming out of it. </p>
+
+<p>“&#8230;anyway, I’ve got something that might make it all better. Come on up to the bridge.” </p>
+
+<p>Kel’s eyes lit up. He gently laid the lamp down (would need to be completely rebuilt internally, but the structure was at least aesthetically appealing) and bounced up to the bridge.</p></div><div class="cboth"></div></div>
+<div  class=' segment' ><div class="content"><p>A battery slapped into a small holdout pistol. The handgrip hummed momentarily as the heater cycled the power and the ammo counter rose. Trin “Dropshot” Liska tucked the pistol in her waistband and walked over to her locker. A small, dense woman in her early thirties, every moment of struggle in her life was etched into every scowl on her face and into every tattoo on her body. So even at a glance, it was obvious she’d been through some shit. </p>
+
+<p>She pulled out the heavy ballistic cannon from the top shelf. The word ‘Diplomacy’ had been scratched into the barrel. She checked the breach then sifted through the magazines on the shelf until she found a fully loaded one, slammed it, and racked a round. </p>
+
+<p>Her brother, Ozzy, watched from his perch on the railing in the engine room. His leg bounced rapidly, the only outward sign of any emotion. Equally vacantly angry, he shared the same litany of scars and tattoos as his sister. They both shared pack tats of the Souther Titans, a ragtag gang that supposedly started as an offshoot of the Tooth &amp; Nails on Spider, but to many, it sounded like bull. Ozzy only had three bleeding scar tattoos (indicating three years of “robbin’ and ramblin’”), while Trin had eight.</p>
+
+<p>He did, unfortunately for him, have QuarterDeck-made tattoos that his sister did not. </p>
+
+<p>Mags’ voice barely overpowered the loud whine of the ship’s massive engine. </p>
+
+<p>“Yeah, so exciting times. I’ll see you guys up here.” </p>
+
+<p>Trin looked at her brother. He jumped off the rail as she tossed him another pistol and they made their way up.</p></div><div class="cboth"></div></div>
+<div  class=' segment' ><div class="content"><p>Mags studied the readout on the terminal, carefully tagging and prioritizing the debris fragments. Kel stood up at the front window, excitedly calling out what he was seeing. </p>
+
+<p>The door to the bridge hissed open. With a quick glance back, Mags saw Trin perch up on the wall. </p>
+
+<p>“Hey Trin, is Doc on his way up?” she asked while punching some tags. </p>
+
+<p>“There! There!” Kel exclaimed, pointing out some debris. “Energy cells. Very minimal wear. Fresh. Very fresh.” </p>
+
+<p>Trin glanced at the front window. The wrecked 300 was currently front and center outside. </p>
+
+<p>“What’s going on?” she finally asked. </p>
+
+<p>“We got ourselves a payday.” Mags could barely contain her excitement as she tagged some more fragments on her terminal. Trin glared at the back of her head. Ozzy moved over to the other side of the bridge, his pistol held loose at his side. </p>
+
+<p>“Yeah? Anything like the last one?” Trin replied. </p>
+
+<p>“Look, I apologized for that, okay?” </p>
+
+<p>“Apologies don’t pad my account.” </p>
+
+<p>“My fence swore he could move . . .” Mags spun the captain’s chair to face her as she spoke. Her sentence drifted off when she saw both Trin and Ozzy perched up. She looked back and forth between the two. Ozzy kept the pistol out of sight, but hiding his hand was just as obvious. </p>
+
+<p>“What’s going on, Trin?” </p>
+
+<p>“What’s it look like?” Trin fired back. </p>
+
+<p>“It looks like you’re in the same place you stood right before we tossed Malcolm out of the airlock.” </p>
+
+<p>“Great memory,” Trin said, chuckling. She scratched an itch on her lip with the hand holding Diplomacy. </p>
+
+<p>“Guys, seriously. I’ve only been in charge, for what, like two months?” Mags settled back in the chair and casually glanced at a screen. Internally, her mind scrambled for some kind of out. Last thing she wanted to do was escalate this situation unnecessarily; she’d seen Dropshot waste too many people. Kel, unfortunately, was too preoccupied gaping out the window to be much help. “You gotta give me a chance.” </p>
+
+<p>“Before Malcolm touched void, you said things’d be different.” Trin stepped forward as she spoke. “That’s what you told us. Lower profile, bigger score.” </p>
+
+<p>“Run silent and smart was what she said, sis.” Ozzy finally decided to chime in. </p>
+
+<p>“Thanks, Oz. You know how my memory goes when I’m upset.” She turned back to Mags. “Point is, shit ain’t changed.” There was a nasty, tense silence . . . except for: </p>
+
+<p>“XT-20 fuselage. No. Bad condition. Look at the scorch. Unusable.” Kel droned in the background before finally turning around. “I wouldn’t . . .” </p>
+
+<p>That’s when he finally realized what was up. Ozzy moved the pistol into sight, so the Banu didn’t get any ideas. Trin cleared her throat. </p>
+
+<p>“Anyway, here we are, still scraping away with nothing to show for it.”</p>
+
+<p>“Doc can’t even keep an honest high anymore,” Ozzy muttered. Trin shook her head, severely disappointed. </p>
+
+<p>“Okay. Fair enough.” Mags slowly rose, her hands up. “We can work out your issues and move forward.” </p>
+
+<p>Trin smiled. </p>
+
+<p>“Yeah . . .” She stepped forward, raising her gun. </p>
+
+<p>“Wait!” Kel shouted as he lurched forward, keeping his hands out as well. Trin stopped. Mags slowly opened her eyes and looked around, pleasantly surprised that the pair had actually listened to the Banu. Kel waited a few moments and carefully considered his words before speaking. Finally: </p>
+
+<p>“I know I only the ship slave —” </p>
+
+<p>Mags slumped. </p>
+
+<p>“You’re not our slave, Kel,” she said with a sigh. </p>
+
+<p>“Yes, yes,” Kel waved her off and continued. “Captain Mag much better than Old Captain. She want money like us. Old Captain like money too and we like money.” </p>
+
+<p>“Huh?” Ozzy mumbled as he glanced at Trin. </p>
+
+<p>“But Captain Mag listen to us. Old Captain never talk to us. Just yell.” Kel moved forward as he spoke, almost pleading with Trin. “Captain Mag help Trin Liska. Old Captain not go to hell world to get Ozzy Liska. Captain Mag did.” </p>
+
+<p>Mags gave a little nod in agreement. She almost missed all of Kel’s little speech, trying to figure out if she still had a pistol stashed on the bridge. (Back when Malcolm was running the show, she never felt safe being more than three steps away from a weapon.) </p>
+
+<p>“We need to trust Captain,” Kel said finally. He walked over to Mags. “We trust in her and good things will come.” </p>
+
+<p>Then he patted her on the forehead. Mags wriggled out of the way. Three weeks ago, while docked up on a transfer station, Kel had seen a father gently pat his daughter on the head before letting her run off to play and had been doing it ever since. </p>
+
+<p>It was sweet . . . but kinda annoying. </p>
+
+<p>The important thing was that it seemed to be working on Trin. She hadn’t shot Mags, so that was already a victory. Ozzy glanced at Trin, looking for the go-ahead to start shooting. Trin glanced out the front window at the fractured 300. </p>
+
+<p>“So that’s the big news? A fighter?” </p>
+
+<p>Mags made a big show of keeping her hands in view while she reached over to the flight stick. She gently angled the ship down, revealing the sea of wreckage: the Retaliator, the Freelancer, and the rest of the fighters. </p>
+
+<p>That sight gave Trin and Ozzy pause as they gaped at the vast destruction. They stared silently for a few moments, but didn’t lower their guns. </p>
+
+<p>“So . . .” Mags finally said. “Can we get to work?” </p></div><div class="cboth"></div></div>
+<div  class=' segment' ><div class="content"><p>The <span class="italic">Harlequin’s</span> hold was bursting with activity. The floor screeched open to reveal the cockpit of the Merlin embedded underneath. Trin ran some final system checks on the snub and topped off the fuel. Ozzy entered pulling on the final pieces of his flight suit as he approached the open cockpit. He popped his helmet on and slipped into the cockpit. </p>
+
+<p>“Let’s go, let’s go. We gotta start cutting before anyone else stumbles onto this,” Mags’ voice carried over the tinny intercom. </p>
+
+<p>Ozzy banged the cockpit laminate twice to signal he was set. The floor panels shrieked closed until the Merlin was out of sight. Trin cued the comm. </p>
+
+<p>“Bird’s flying.”</p>
+
+<p>She made her way over to the storage locker with the other <span class="caps">EVA</span> suits. Kel was already suited up and carefully triple-checking his tools. </p>
+
+<p>Trin pulled her suit out of the bin and slammed it onto the floor. She gave a quick once over for tears or punctures before she started pulling it on. </p>
+
+<p>“How are you looking, Kel?” </p>
+
+<p>“Fully prepared, Trin Liska.” Kel carefully and expertly replaced each tool in the field kit. “Tools are ready.” </p>
+
+<p>Trin sealed her suit and slung a shotgun. </p>
+
+<p>“Mine too.”</p></div><div class="cboth"></div></div>
+<div  class=' segment' ><div class="content"><p>Back on the bridge, Mags was still in the captain’s chair. Ever since the interrupted mutiny, she’d kept herself busy positioning the <span class="italic">Harlequin</span> for easy deployment and reclamation of salvage. She watched Ozzy’s ship quietly fly to the edge of the wreckage field and begin a wide sweep. </p>
+
+<p>Without warning, her stomach bottomed out. That moment of pause while looking at the distant Merlin was enough to let the gravity of the situation she’d narrowly avoided come crashing down. </p>
+
+<p>She doubled over in the chair and tried to catch her breath. This was far from the first time she’d had a gun in her face, but there was something about this time . . . there was a finality, like her luck had finally run out, that chilled her. </p>
+
+<p>Maybe she could run. Wait until Trin had stepped off, then just run. Ozzy was a great pilot, but he probably couldn’t take on the <span class="italic">Harlequin</span> and survive. Worst case, she could batter him enough to get away. That’d mean she’d probably have to leave Kel, which seemed unfair. Doc . . . she wasn’t sure how he’d react . . . </p>
+
+<p>“Hey,” a sleepy voice said. </p>
+
+<p>Mags pulled herself together and turned back to the panel as Yao shuffled onto the bridge and slumped into one of the seats. </p>
+
+<p>“Doc . . .” she brought up another scan window on her terminal and tried to look busy. “You missed an interesting discussion.” </p>
+
+<p>“When was that?” Yao asked with a yawn. </p>
+
+<p>“A couple hours ago,” Mags glanced at him, unsure if he was messing with her. He looked genuinely ignorant. “I called you, called everybody.” </p>
+
+<p>“Right . . .” he snapped his fingers and nodded. “That was today?” </p>
+
+<p>“Yeah . . .” </p>
+
+<p>“That’s cool,” Yao tapped his fingers on his terminal window, waking it from sleep. They danced across the screen, deftly selecting a series of folders and programs. An episode of <span class="italic">Lost Squad</span> started playing. “What’d you all talk about?” </p>
+
+<p>“Shooting me or throwing me out of an airlock. Maybe both, I don’t know.” </p>
+
+<p>“Oh yeah. Trin was pretty pissed.” </p>
+
+<p>“You knew?” </p>
+
+<p>“Sure.” </p>
+
+<p>“Thanks for the heads up, Doc.” </p>
+
+<p>“Come on, Mags. Trin’s not that good at hiding her emotions.” He settled back in his seat, perfectly content that the issue had been resolved. </p>
+
+<p>“I also found us a job,” she finally offered up. </p>
+
+<p>“Cool. Where?” He said lazily. He was too fixated on the spec show. </p>
+
+<p>“Here . . .” she looked at Yao. He hadn’t taken his eyes off the show. “We’re doing it.”</p>
+
+<p>Yao nodded and gave a thumbs up. </p>
+
+<p>The comm from the airlock chirped. </p>
+
+<p>“Exiting airlock now,” Trin said. Mags could hear Kel excitedly talking in the background. </p>
+
+<p>“Copy that. We got you.” </p>
+
+<p>Mags shut down the comm. Trin sounded back to normal, like the incident earlier had never happened. Mags knew that this job would have to pay out and she’d need to line up something quick right after. Otherwise, she’d be right back in the same situation. In the meantime, she guessed she should probably start stashing guns around the ship again. </p>
+
+<p>Yao started gently snoring.</p></div><div class="cboth"></div></div>
+<div  class=' segment' ><div class="content"><p>Trin and Kel stepped off into the void. Some people were weirded out by the moment when gravity disappeared. For them, gravity was security. A tether that kept you in place. The lack never bothered Trin. She was always amused hearing people yammer on about it. It was a conversation she’d end up having whenever she’d go planetside. It actually just occurred to her that she’d never had the conversation while on a station. Maybe once somebody got on solid ground, they started reflecting. She didn’t get it. </p>
+
+<p>Trin didn’t have that kind of fear. It wasn’t out of some innate toughness, it was an awareness that space was constantly trying to kill you. That was just something you either accepted or not. Trin had spent too much of her life trying to figure out who else was trying to kill her. Even in the best of her days running with the Titans, she had to deal with bounty hunters, Advocacy, not to mention her own crew, to even start worrying about space. That, she could always depend on. </p>
+
+<p>The massive hull of the Retaliator had worked itself into a pretty hefty spin. Boarding it, much less salvaging it, would be next to impossible unless they slowed it down. </p>
+
+<p>Trin adjusted her pack and started matching the rotation speed of the wreck. She pulsed the <span class="caps">EVA</span> thrusters to push herself closer and closer until she was able to get a hand on it. Trin pulled herself onto the hull and activated her mag boots to lock on. She dug one of her custom portable remote thrusters out of her case and activated the magnetic seal to attach it to the blasted metal. </p>
+
+<p>Kel was hard at work at the other end of the debris doing the same thing. When complete, he waved Trin down and gave an enthusiastic thumbs up. </p>
+
+<p>“You can just use comms, Kel.” </p>
+
+<p>“Apologize, Trin Liska.” He quickly replied and gave another enthusiastic thumbs up. </p>
+
+<p>Trin brought up her mobi and connected to the interface that controlled the remote thrusters. She’d built these back in her breaching days and although they had a limited amount of fuel, they had some power to them. They did have a tendency to explode though. </p>
+
+<p>She sustained the thrusters against the roll and eventually the Tali slowed down. When it finally stopped, Kel broke out his salvaging kit and cracked it open. </p>
+
+<p>“You all good here, Kel?” </p>
+
+<p>“Good, yes, okay.” </p>
+
+<p>“I’ll check the hold,” she said as she unslung her shotgun. </p>
+
+<p>“Good, okay.” </p>
+
+<p>Trin pulled her shotgun, racked a charge, then disappeared through a gaping hole in the side. </p>
+
+<p>Kel watched a piece of a turret slowly float past. A pair of hands still gripped the firing sticks. Kel stared curiously at them for a moment, then fired up the cutting torch and got to work.</p></div><div class="cboth"></div></div>
+<div  class=' segment' ><div class="content"><p>The halls of the Retaliator were a shattered maze of twisted metal. Trin gently floated through the passageways, sweeping the shotgun back and forth. Based on the destruction, there was no way anything could’ve survived in here, but she wasn’t taking any chances. </p>
+
+<p>She moved forward, meter by meter, checking corners and ready for anything. She drifted back to her days with the Titans. While they dabbled in all sorts of mischief, their prime focus was chopping ships. As the main breacher in the pack, it was her job to board disabled ships, kill any survivors, and then do enough repairs to get it flying. </p>
+
+<p>This one definitely wasn’t flying anywhere ever again. She passed some crew lockers and opened each one. Nothing but spare jumpsuits. </p>
+
+<p>“Of course . . .” she muttered to herself. </p>
+
+<p>Up ahead, the hallway bent to the left. There should be a bulkhead and then a door to the cargo section. Trin was hoping that whatever kicked off this fight was worth it. As she neared the bend, her flashlight picked up a form in the next compartment of the ship. </p>
+
+<p>She kept her weapon trained on it and set up a firing position behind the doorframe. Upon closer inspection, it was most likely Human. The <span class="caps">EVA</span> suit it had on was spotless, like one of those new <span class="caps">CDS</span> ones. She cued the comms on her suit. </p>
+
+<p>“Gen comms. Any survivors in Retaliator? Identify yourself.” </p>
+
+<p>The form just floated there. No movement. </p>
+
+<p>Trin grabbed a floating scrap of metal and flung it at the body. It tapped off the leg. </p>
+
+<p>Still nothing. </p>
+
+<p>She put a round in its back. The blast spun the body around, revealing the pale, frozen face of one of the gunners. Seemed he wasn’t able to get his helmet on before the vacuum got him. </p>
+
+<p>“Find somebody?” Mags chirped over the comms. </p>
+
+<p>“Nope,” Trin replied as she pumped another round into her shotgun and pushed forward. She swept the corpse off to the side to reveal a small entry panel leading to the cargo hold. Interestingly, the panel was wired into some kind of backup power. </p>
+
+<p>“Oh, hello.” Trin slung the shotgun and dug through a pouch for an interface cable. Once her mobiGlas and the door connected, she booted up the Knock² program to run a preset hacking protocol. After several seconds of digital negotiation, the panel turned green. The door expelled some trapped atmo as it started to slide open. </p>
+
+<p>Trin had her shotgun up and braced before the door opened. She kicked off the floor and floated into the Tali’s cargo hold. One sweep of the flashlight was all she needed to discover a very unpleasant truth. </p>
+
+<p>It was empty. </p>
+
+<p>“Because of course it is . . .” </p>
+
+<p>Trin safetied her shotgun and slung it before cueing her comm. “Tali’s clear.” Trin turned to exit when she caught a glimpse of something tumbling in the darkness. She pulled a flashlight to have a look. It was a lockbox, like one of those military footlockers she’d seen on those spec shows. </p>
+
+<p>She snared it and checked its locks, but couldn’t open them. A small access panel revealed another digital interface with a keypad. Trin reattached her mobi and kicked off another hack. As she waited, she examined the lockbox a little closer. Thing looked solid, like it could take an explosive solid. All very good signs about what could be inside. </p>
+
+<p>She glanced down at her mobiGlas. The hacking program was still trying to hack the password. Suddenly, her mobi went dead. </p>
+
+<p>“Son of a bitch.” </p></div><div class="cboth"></div></div>
+<div  class=' segment' ><div class="content"><p>Back aboard the <span class="italic">Harlequin</span>, everyone was gathered around the mysterious box. The hold was already full with choice parts of the various ships, expertly broken down and arranged by Kel. Trin was arranging her tools to do a thorough examination of the box while Mags paced in the background. From the look of determination on Trin’s face, clearly the box’s challenge had been accepted. </p>
+
+<p>“Admit it. It has to be something valuable,” Mags said nervously as she walked. “I’m not crazy, right?” </p>
+
+<p>“Very exciting, Captain Mags. Yes.” Kel said as he watched Trin attach a terminal to the lockbox’s control panel. </p>
+
+<p>“To be clear though, you didn’t see any clues as to what’s inside?” Mags’ nerves started to get the better of her. “I mean, we don’t think it’s like, chemical weapons, right? Or like a virus?” </p>
+
+<p>“Titanium weave case very good to protect, but not rated for biological containment. If a deadly virus, Humans would be dead by now,” Kel responded cheerfully. </p>
+
+<p>“Could you two shut up?” Trin snapped as she sifted through unfiltered code on her screen. </p>
+
+<p>“Sure, sorry,” Mags said and forced herself to sit down. </p>
+
+<p>“Yes, apologize.” Kel approached Trin and patted her on the forehead. Trin didn’t bother to swat his hand away. </p>
+
+<p>Twenty more minutes of waiting passed. Trin tried every trick in her vast and well-proven book. Each time, the lockbox didn’t budge. </p>
+
+<p>“Screw it. Kel, grab your drills.” </p>
+
+<p>The Banu raced off excitedly.</p></div><div class="cboth"></div></div>
+<div  class=' segment' ><div class="content"><p>Hours later, the lockbox was sitting on the table of the common area. Various tools had been used and discarded around it. The surface of the box had been carved up like some kind of mechanical autopsy in an attempt to bypass the lock without damaging whatever was inside. Yao had migrated back to his berth, occasionally watching the show. </p>
+
+<p>Mags entered from the hold wearing an <span class="caps">EVA</span> suit. Once inside, she pulled the helmet off and wiped the sweat off her face. Ozzy was still in the hold arranging the crates, also decked out in <span class="caps">EVA</span> gear. </p>
+
+<p>“Got another batch of scrap inside,” she said in between guzzles of water. She glanced at Yao. “Anything?” </p>
+
+<p>“Nope,” he murmured and sipped on his tea. </p>
+
+<p>Mags headed to the hold and started peeling off the <span class="caps">EVA</span> suit. </p>
+
+<p>“All right, Kel,” Trin mumbled as she sifted through the security panel’s programming. “Try reattaching that power cell.” </p>
+
+<p>Kel pulled a hardwired battery with a pair of exposed leads and surgically placed them alongside the existing power system. </p>
+
+<p>The lock clicked. Trin and Kel looked at each other. A grin spread across Trin’s face. </p>
+
+<p>“Was that what I thought it was?” Mags yelled from the other room. Heavy bootsteps clomped closer before she suddenly appeared in the doorway. </p>
+
+<p>Kel started cleaning his tools and returning them to their cases. Trin unlatched the case. She glanced at the faces around the room then flipped the lid open . . . </p>
+
+<p>It was a rock. Roughly the size of a Human head. Some iridescent flecks of violet in there, but just a rock. Ozzy quietly drifted into the room to see what the commotion was about. </p>
+
+<p>“What is that?” Yao murmured as he tried to peer from his bed.</p>
+
+<p>“Looks like a rock to me,” Ozzy replied and walked to his berth. </p>
+
+<p>“That’s what I thought.” Yao puffed his pillow and settled back. </p>
+
+<p>Trin didn’t say anything, simply stood and walked out of the room. </p>
+
+<p>“No, no, no!” Mags rushed forward and dropped down beside the case. “You don’t go through all that trouble for an ordinary rock.” </p>
+
+<p>Mags carefully picked it up and peered at it closer. In the light, the violet flecks danced a bit brighter. </p>
+
+<p>“Kel, you got your scanner?” </p>
+
+<p>The Banu passed her a hand scanner from his kit. She flipped the terminal on and began scanning it. After a moment, she gasped. </p>
+
+<p>Ozzy looked over. </p>
+
+<p>“What . . .” </p>
+
+<p>Mags bursts into a half smile, half laugh, like she couldn’t decide which to commit to, and turned the scanner to Kel. He immediately started clapping. </p>
+
+<p>“Speak!” Ozzy yelled. “What the hell is it?” </p>
+
+<p>Mags laid the rock back in the box and went to her mobiGlas. A Galactapedia entry appeared on everyone’s wrist. </p>
+
+<p>“It’s called eriesium. In its refined state, they think it can act as a power source, but Humans haven’t really been able to study it.” </p>
+
+<p>“What it worth?” Trin’s voice came from the doorway. </p>
+
+<p>“Very rare,” Kel chimed in. </p>
+
+<p>“Answer the question.” Trin didn’t break her gaze on Mags. </p>
+
+<p>“Last I heard, it was about 80,000.” Mags could barely form the words. </p>
+
+<p>“Not really impressed.” </p>
+
+<p>“An ounce.” Mags ran her fingers over the contours of the stone. “Eighty grand an ounce.” </p>
+
+<p>That got everyone’s attention. They looked at each other in silence until Trin finally blurted what was on everyone’s mind. </p>
+
+<p>“We’re rich.” </p></div><div class="cboth"></div></div>
+<div  class=' segment' ><div class="content"><p>Wardlow Reclamation was a dead-end junkyard in the ass end of nowhere. The ratty carpet in the waiting room had been eaten by whatever bugs had infested the place and there wasn’t a picture on the wall taken this century. Interestingly enough, it had won a customer service award in 2921 from some publication that was probably now long out of business. The award had been printed and displayed in a homemade frame near the front counter. </p>
+
+<p>Mags had been staring at it for ten minutes when an idea occurred to her. </p>
+
+<p>Trin sat across from her, equally bored. </p>
+
+<p>They’d touched down the <span class="italic">Harlequin</span> a few hours ago to offload the scrap from the ships. The owner and his crew were slowly picking through everything and putting together an appraisal. The eriesium had been transferred to the standard-issue lockbox Trin was using for a footrest. </p>
+
+<p>“Gotta admit, Mags,” Trin said with a stretch. “This is just the jolt we need to turn things around. Sell this off for some quick Creds and be on our way.” </p>
+
+<p>The plan had been to save the eriesium until the appraisal was done, so it wouldn’t throw off the estimate. However, Mags was now considering another option. </p>
+
+<p>“What if we didn’t?” </p>
+
+<p>Trin shut her eyes and groaned.</p>
+
+<p>“Now. I mean. We bide our time, find the right kind of buyer. Look where we are,” Mags pointed out the customer service award. “You think we’re gonna get a fraction of what it’s worth here? They can’t afford it and we’re cheating ourselves by off-loading it to the first shithole we come to.” </p>
+
+<p>“Don’t . . . don’t do this.” Trin rubbed her temples to alleviate the sudden migraine that was forming. “For like a day, I had forgotten about throwing you out of an airlock.” </p>
+
+<p>“Yeah, but imagine if you could throw me out of your own airlock,” Mags replied with a grin. “That’s the kind of money we’re talking about here.” </p>
+
+<p>A door behind the counter opened and the squat, sweaty owner stomped inside. He smacked at a keatfly buzzing near his head as he turned on the terminal at the counter. The system began to sync with his mobi. The owner was sifting through the list when he was seized by a fit of wet coughs. </p>
+
+<p>He fumbled an inhaler out of his pocket and took a hit. The coughing didn’t subside. He shook the inhaler and tried again. No luck. “Bevin,” he yelled out the open door in between coughs. </p>
+
+<p>“Bevin! Send someone to Kel-To. I need more medicine.” </p>
+
+<p>The fit finally ended. The owner spit something viscous onto the floor and looked at Mags and Trin. </p>
+
+<p>“Yeah, okay. Assessed your scrap. You got anything else?” </p>
+
+<p>Mags looked at Trin, who was glaring back. Trin finally relented and sank back in her seat. Mags jumped up and moved to the counter. </p>
+
+<p>“Check the list, payout’s at the bottom,” The owner turned the terminal to face her. “Hit Accept to accept.” </p>
+
+<p>“Yeah, sure. Looks good.” </p>
+
+<p>The owner looked at her. </p>
+
+<p>“Then hit Accept.” </p>
+
+<p>“Right, sorry.” She hit the button. The scrapyard owner sniffled and printed a transfer receipt. </p>
+
+<p>Trin grabbed the lockbox and started to head to the door. The owner noticed it for the first time. </p>
+
+<p>“What’s in there?” </p>
+
+<p>“Four broken teeth,” Trin replied without missing a beat. </p>
+
+<p>Mags and Trin stepped outside into the baking sun. The smell of oil and scorched metal filled the air. The <span class="italic">Harlequin</span> was waiting on one of the nearby pads. All the crates of scrap had been offloaded and stacked neatly for processing. Seeing his crewmates emerge from the office, Kel waved goodbye to the landing pad crew, who look a little befuddled. </p>
+
+<p>“I hate how happy you are about walking away from money,” Trin muttered. </p>
+
+<p>“Wrong, Trin. I’m happy because we’re walking towards real money.” </p>
+
+<p>“Do you even know how to sell this off?” </p>
+
+<p>“I do not, but we’ll figure it out.” Mags took the lockbox from Trin to carry it the rest of the way to the ship. Just as they hit the ramp . . . </p>
+
+<p>“Hey!” </p>
+
+<p>Mags and Trin turned back to see the group that Kel had just left. </p>
+
+<p>“What’s this shit about you owning a slave?” </p>
+
+<p>Mags and Trin exchange a weary glance. </p>
+
+<p>“He’s not a slave,” was all Mags could muster. The landing crew start to advance. “Dammit . . .” </p>
+
+<p>Mags slapped the button for the ramp. The ramp didn’t move. The landing crew broke into a sprint when they realized what she was trying to do.</p>
+
+<p>She hit it harder and the ramp suddenly began to rise into the ship. The first landing crewmen arrived a nanosecond too late. Muffled sounds of rocks being pelted at the hull emanated through the hold. Kel’s head appeared in the doorway. </p>
+
+<p>“Sell good?”</p></div><div class="cboth"></div></div>
+<div  class=' segment' ><div class="content"><p>The scrapyard owner finished balancing the figures for the day’s transactions. The sun was about to set. As dreadful as the day was for his sickness, the cold of the night was even worse. He felt the slight tickle at the back of his throat that would precipitate another coughing fit. </p>
+
+<p>“Bevin! Did someone get my damn medicine?” he yelled into the intercom. There was no response. </p>
+
+<p>The owner pushed himself out of his seat and shuffled outside. He shielded his eyes from the setting sun. </p>
+
+<p>“Bevin, do you think it would actually be possible for somebody to do something when I tell you to?” </p>
+
+<p>When the owner lowered his hand, he froze. His entire staff, fourteen people, were dead, executed with casual precision around the scrapyard. He saw Bevin among them. </p>
+
+<p>The owner stumbled back, raced inside the office and slammed the door. He turned and leaned heavily against the door. His heart pounded and brought on another coughing fit. </p>
+
+<p>He didn’t even notice the two people now in his waiting room. A man and a woman, wearing pristine, unmarked combat armor and holding silenced weapons. </p>
+
+<p>“Hi.” The man spoke first. The owner nearly hit the ceiling. He feebly put his hands up and started blubbering. </p>
+
+<p>“You recently acquired salvage of a Retaliator.” </p>
+
+<p>The owner didn’t speak words, just noises. The man put a bullet through his thigh. He dropped to the ground. </p>
+
+<p>“Yes! Yes!” The owner finally reclaimed the power of speech. </p>
+
+<p>“Who sold it to you?” the man asked as he crossed the room and placed the still hot barrel of the pistol to the owner’s temple. “And be specific.” </p>
+
+<p>“Came in earlier today. Some old beater of a ship. Two women. Human. Never seen ’em before.” The owner keyed something on his mobi. The woman studied the incoming data while the man kept his focus on the owner. “These two didn’t happen to have a lockbox with them, did they?” </p>
+
+<p>“Yeah, I mean, yes. They did,” the owner said in between coughs. “Wouldn’t sell it.” </p>
+
+<p>“These women give a name?” </p>
+
+<p>“Just the reg on the ship.” </p>
+
+<p>“Yeah, those are fake,” The woman said without looking up from her mobi. The man looked at the owner and sighed. </p>
+
+<p>“Wait —” </p>
+
+<p>Bang. The man stood and wiped blood spatter off the barrel. </p>
+
+<p>“We have anything solid to go on?” he asked finally. </p>
+
+<p>“Just this.” She held out her wrist. </p>
+
+<p>There was a security cam still of Mags and Trin sitting in the waiting room. The man looked at them closely. He punched in on one of Trin’s Souther Titan tattoos. </p>
+
+<p>“Let’s go.” </p>
+
+<h3>TO BE <span class="caps">CONTINUED</span>&#8230;</h3></div><div class="cboth"></div></div>
+<div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+</div>
+
+<script>
+(function( $ ){
+  var $window = $(window);
+  var windowHeight = $window.height();
+
+  $window.resize(function () {
+    windowHeight = $window.height();
+  });
+
+  $.fn.parallax = function(xpos, speedFactor, outerHeight) {
+    var $this = $(this);
+    var getHeight;
+    var firstTop;
+    var paddingTop = 0;
+    
+    //get the starting position of each element to have parallax applied to it    
+    $this.each(function(){
+        firstTop = $this.offset().top;
+    });
+
+    if (outerHeight) {
+      getHeight = function(jqo) {
+        return jqo.outerHeight(true);
+      };
+    } else {
+      getHeight = function(jqo) {
+        return jqo.height();
+      };
+    }
+      
+    // setup defaults if arguments aren't specified
+    if (arguments.length < 1 || xpos === null) xpos = "50%";
+    if (arguments.length < 2 || speedFactor === null) speedFactor = 0.1;
+    if (arguments.length < 3 || outerHeight === null) outerHeight = true;
+    
+    // function to be called whenever the window is scrolled or resized
+    function update(){
+      var pos = $window.scrollTop();        
+
+      $this.each(function(){
+        var $element = $(this);
+        var top = $element.offset().top;
+        var height = getHeight($element);
+
+        // Check if totally above or totally below viewport
+        if (top + height < pos || top > pos + windowHeight) {
+          return;
+        }
+
+        $this.css('backgroundPosition', xpos + " " + Math.round((firstTop - pos) * speedFactor) + "px");
+      });
+    }   
+
+    $window.bind('scroll', update).resize(update);
+    update();
+  };
+
+  $('.parallax-1').parallax("50%", 0.1, true);
+$('.parallax-2').parallax("50%", 0.1, true);
+$('.parallax-3').parallax("50%", 0.1, true);
+$('.parallax-4').parallax("50%", 0.1, true);
+$('.parallax-5').parallax("50%", 0.1, true);
+$('.parallax-6').parallax("50%", 0.1, true);
+$('.parallax-7').parallax("50%", 0.1, true);
+})(jQuery);
+</script>
+
+
+
+  <div class="wrapper">
+    
+    <div class="end-transmission-container">
+      <div class="glow left"></div>
+      <div class="title-bar">
+        <h1>End Transmission</h1>
+      </div>
+      <div class="glow right"></div>
+    </div>
+  </div>
+  
+
+  
+    <div class="two-line-separator"></div>
+  <div class="channel-banner">
+  <div class="header-container">
+                  <div>
+      <div class="header">
+        <div class="wrapper">
+                      <div class="image" style="background-image:url('/media/wtilj01zds70xr/post_section_header/Drifters-Title.jpg');"></div>
+                    <div class="texts">
+            <div class="title">
+              <div class="presented-by">Part of</div>
+              <div class="cboth"></div>
+              <h1>Drifters</h1>
+              <a  class="holobtn " href="/comm-link?series=Drifters"  >
+  <span class="holobtn-top abs-overlay trans-02s">More in this series </span>
+  <span class="holobtn-bottom abs-overlay trans-02s"></span>
+</a>
+              <div class="cboth"></div>
+            </div>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content-carousel">
+    <div class="carousel-mask">
+      <div class="left-shadow shadow"></div>
+      <a href="" class="prev js-prev"><div class="hover trans-03s trans-opacity"></div></a>
+      <div class="centerer">
+        <div class="carousel">
+                      <a href="/comm-link/serialized-fiction/17794-Drifters-Part-One" class="series-carousel-item content-block3 trans-05s  on">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/wtilj01zds70xr/home_transmissions_item_expanded/Drifters-Title.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Drifters (Part One)</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">1 year ago</span></div>
+    <div class="section">serialized-fiction</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/serialized-fiction/17836-Drifters-Part-Two" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/wtilj01zds70xr/home_transmissions_item_expanded/Drifters-Title.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Drifters (Part Two)</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">11 months ago</span></div>
+    <div class="section">serialized-fiction</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/serialized-fiction/17875-Drifters-Part-Three" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/wtilj01zds70xr/home_transmissions_item_expanded/Drifters-Title.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Drifters (Part Three)</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">10 months ago</span></div>
+    <div class="section">serialized-fiction</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/serialized-fiction/17923-Drifters-Part-Four" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/wtilj01zds70xr/home_transmissions_item_expanded/Drifters-Title.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Drifters (Part Four)</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">9 months ago</span></div>
+    <div class="section">serialized-fiction</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                  </div>
+      </div>
+      <a href="" class="next js-next"><div class="hover trans-03s trans-opacity"></div></a>
+      <div class="right-shadow shadow"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $(".channel-banner .content-carousel").each(function(index, element) {
+      $(element).data("carousel", new RSI.FullCarousel({
+        holder:$(element).find(".carousel"),
+        prevButton:$(element).find(".js-prev"),
+        nextButton:$(element).find(".js-next"),
+        circular:true,
+        displayItems:3 // healthy amount so that we never see empty
+      }));
+    });
+  });
+</script>
+    
+
+  <div class="two-line-separator"></div>
+  
+    
+<div class="wrapper force-one-column" id="comments">
+  <div class="holder">
+    <div class="title-bar">
+      <div class="count">
+        <div class="label">Comments</div>
+        <div class="value">036.<span class="js-comment-decimal">0</span></div>
+        <div class="cboth"></div>
+      </div>
+      <div class="title">
+        <h1>Feedback</h1>
+      </div>
+      <div class="cboth"></div>
+    </div>
+
+    <div class="main-buttons-holder-container">
+      <div class="main-buttons-holder">
+        <a href="/connect?jumpto=/comm-link/serialized-fiction/17794-Drifters-Part-One" class="add-comment js-add-comment trans-02s js-modal-login">Add New Comment</a>
+        <div class="settings js-settings">
+          <h1>Settings</h1>
+          <label>View mode:</label>
+          <a href="#" class="js-comments-view to-one-column js-to-one-column trans-01s on">One column</a>
+          <a href="#" class="js-comments-view to-two-columns js-to-two-columns trans-01s ">Two columns</a>
+          <label>Sort by:</label>
+          <a href="#" class="js-comments-sort to-oldest js-to-oldest trans-01s on">Oldest first</a>
+          <a href="#" class="js-comments-sort to-newest js-to-newest trans-01s ">Newest first</a>
+          <a href="#" class="js-comments-sort to-appreciated js-to-appreciated trans-01s ">Most appreciated first</a>
+
+                  </div>
+        <a href="" class="view-settings js-view-settings"><div class="hover trans-02s"></div></a>
+        <div class="triangle"></div>
+      </div>
+    </div>
+
+    
+    <div class="comment-listing"></div>
+
+    <div class="comment-loader traj-loader">
+      <div class="fast-blink"></div>
+      <span>Loading Additional Feedback</span>
+    </div>
+
+    <div class="cboth"></div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    window.comments = new RSI.Comments({
+      atom_url:"/comm-link/serialized-fiction/17794-Drifters-Part-One",
+      comment_listing_el:$(".comment-listing"),
+      comment_submission_form_el:$(".comment-submission"),
+      api_object:RSI.Api.Comments,
+      lazyLoading: true,
+      comment_count: 36,
+      subject_id:17794,
+      append:false,
+      texts: {
+        "edit": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        },
+        "reply": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        }
+      },
+      "insertion_conf": {
+        "mode":"html"
+      },
+      "api_function_names": {
+        "delete":"erase",
+        "load":"listing",
+        "sort":"listing"
+      }
+    });
+  });
+</script>
+  
+</div>
+
+    </div>
+
+    
+  </div>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.11/moment-timezone-with-data.min.js"></script>
+
+<script type="text/plain" data-cookieconsent="statistics">
+  $.cookie('moment_timezone', moment.tz.guess(), { expires: 31, path: '/' });
+</script>
+
+
+
+
+               <script id="tpl_number_counter_digits" type="text/x-jsmart-tmpl">{if !$seperator}{$seperator=','}{/if}
+{if !$first_max}{$first_max=9}{/if}
+{for $digit = 0 to $length-1}
+  <div class="mask">
+    <div class="carousel">
+      {if $digit == 0}
+        {$max = $first_max}
+      {else}
+        {$max = 9}
+      {/if}
+      {for $i=0 to $max}
+        <div class="item {if $val_arr[$digit] == $i}on{/if}" rel="{$i}">{$i}</div>
+      {/for}
+    </div>
+  </div>
+  {if ($length - $digit) % 3 == 1 && $digit != $length-1}
+  <div class="seperator">{$seperator}</div>
+  {/if}
+{/for}</script>
+<script id="base_modal" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  <div class="top-border">
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+  </div>
+</div></script>
+<script id="base_modal_flat" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  </div>
+  
+</div></script>
+<script id="tpl_modals_slideshow" type="text/x-jsmart-tmpl"><img class="top-border" src="/rsi/static/images/modal_top.png">
+<a href="" class="close js-close"></a>
+<div class="mask">
+  <a class="js-prev prev control"></a>
+  <a class="js-next next control"></a>
+  <div class="slideshow-carousel carousel" rel="{$index}">
+    {foreach from=$images item="image"}
+      <div class="{if $index == $image@index}on{/if}">
+      {if $image.is_video}
+        <div class="video-holder">
+          <div id="slideshow_video_{$image@index}" data-source="{$image->source_url}">
+            <video width="100%" height="100%" preload="auto" {if $video}src="{$image->source_url}"{/if} controls></video>
+          </div>
+        </div>
+      {else}
+        <div class="media js-media-slideshow-{$image@iteration}">
+        {if $image.low_res}
+          <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source data-srcset="{$image.full_res}" media="(min-width: 300px)" />
+            <!--[if IE 9]></video><![endif]-->
+            <img data-srcset="{$image.low_res}" alt="{$image.title}" />
+          </picture>
+        {else}
+          <img data-src="{$image.source_url}" />
+        {/if}
+        </div>
+      {/if}
+        <div class="text">
+          {if !$image.is_video}
+          <a href="{$image.source_url}" class="download"></a>
+          {/if}
+          <div class="copyright">© 2012-{$year}<br />Cloud Imperium Games Corporation &<br />Roberts Space Industries Corp.</div>
+          <div class="page-number">{$image@iteration} / {count($images)}</div>
+          <div class="caption v-center">{if $image.title && $image.title != "undefined"}{$image.title}{/if}</div>
+          <div class="cboth"></div>
+        </div>
+      </div>
+    {/foreach}
+  </div>
+</div>
+<img class="bottom-border" src="/rsi/static/images/modal_bottom.png"></script>
+<script id="tpl_contact_us" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="contact" class="inner-content on">
+  <h2><span class="icon"></span>CONTACT</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+  <div class="error-message js-error-message"></div>
+  <div class="success-message js-success-message"></div>
+    <fieldset class="last">
+    <label for="contact_email">Email Address</label>
+    <input type="text" name="email" value="" class="trans-02s trans-color trans-box-shadow" id="contact_email" />
+  </fieldset>
+    <fieldset>
+    <label for="contact_subject">Subject</label>
+    <input type="text" name="subject" value="" class="trans-02s trans-color trans-box-shadow" id="contact_subject" />
+    <label>Contacting us for:</label>
+    <ul class="category-info">
+            <li id="tech_support_info">Questions about download, installation, networking, or in-game client problems</li>
+            <li id="subscription_info">Questions about monthly and yearly subscription plans</li>
+            <li id="account_billing_info">Issues related to your account, such as incorrect information or ability to access account, or Billing with regards to payments and payment methods</li>
+            <li id="melt_request_info">To reclaim a pledge over $1,000 for store credit (please note - this is a permanent action)</li>
+            <li id="merchandise_info">Questions about physical and/or shipped merchandise</li>
+            <li id="hacked_info">Issues related to compromised account or missing pledge.</li>
+            <li id="account_recovery_info">For issues with account authentication, lost passwords and related queries</li>
+            <li id="probation_info">Issues related to forums probation or ban</li>
+            <li id="refund_request_info">Refund requests and related inquiries</li>
+            <li id="customer_support_info">For general questions and queries regarding Star Citizen</li>
+          </ul>
+  </fieldset>
+  <fieldset>
+    <label for="contact_text">Fescription</label>
+    <textarea name="text" class="trans-02s trans-color trans-box-shadow" id="contact_text"></textarea>
+  </fieldset>
+  <div class="contact-submit-wrapper">
+    <div class="line"></div>
+    <button class="submit js-submit"><strong>submit your message</strong></button>
+  </div>
+</form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+<script id="tpl_error" type="text/x-jsmart-tmpl"><div class="modal-error js-modal-error">
+  <p class="modal-text js-modal-text"></p>
+  <a class="close js-close trans-03s .trans-opacity" href=""></a>
+</div></script>
+<script id="tpl_success" type="text/x-jsmart-tmpl"><div class="modal-success js-modal-success">
+  <p class="modal-text js-modal-text"></p>
+  <a class="close js-close trans-03s .trans-opacity" href=""></a>
+</div></script>
+<script id="tpl_progress" type="text/x-jsmart-tmpl"><div class="modal-progress js-modal-progress">
+  <div class="traj-loader">
+    <div class="fast-blink"></div>
+    <span class="modal-text js-modal-text"></span>
+  </div>
+</div></script>
+<script id="tpl_outbound" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="outbound" class="inner-content on">
+  <h2><span class="icon"></span>OUTBOUND LINK</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+      <div class="error-message js-error-message"> <span class=important>WARNING</span><br/><br/> This link will bring you outside of the RSI site and into the depths of the internet. Continue?<br/><br/><span class="url"></span> </div>
+      <div class="success-message js-success-message"><span class=important>STAND BY</span><br/><br/> Initiating hyperlink.<br/><br/></div>
+
+      <fieldset class="clearfix last">
+        <span class="submit-wrapper">
+          <span class="submit-hover trans-02s trans-opacity"></span>
+          <input type="submit" value="WARP" class="trans-02s trans-color trans-background" />
+        </span>
+      </fieldset>
+    </form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+
+<script id="tpl_l-notification-bar" type="text/x-jsmart-tmpl"><div class="l-notification-bar js-notification-bar">
+
+  <div class="l-notification-bar__watermark js-svg-inliner h-svg__logo-star-citizen"></div>
+
+  <div class="l-notification-bar__boxes">
+    {if !$viewedCookieNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='cookie'
+          title='COOKIES:'
+          message="Our website uses Google Analytics to analyze our traffic. <br/>To learn how you can control Google's use of your data and how you can opt out <a href='https://www.google.com/policies/privacy/partners/'>click here</a>."
+          linkText='See Details'
+          buttonText='Got it!'}
+      </div>
+    {/if}
+
+    {if !$viewedPrivacyNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='privacy'
+          title='PRIVACY POLICY:'
+          message='We adjusted the PP to reflect the decision of the European Court of Justice regarding Safe Harbor, the fact that RSI has moved and added some services providers.'
+          linkText='View Privacy Policy'
+          buttonText='Got it!'}
+      </div>
+    {/if}
+  </div>
+
+</div>
+</script>
+<script id="tpl_c-notification" type="text/x-jsmart-tmpl"><div class="c-notification js-bottom-notif-msg-{$type}">
+    <div class="c-notification__title">{$title}</div>
+    <div class="c-notification__message">
+      {$message}
+    </div>
+
+    {if $linkText}
+        <div class="c-notification__wrapper-link">
+            <a class="c-notification__link js-bottom-notif-link-{$type}">
+            {$linkText}
+            </a>
+        </div>
+    {/if}
+
+    <a class="c-notification__button js-bottom-notif-btn-{$type}">
+
+      <span class="c-notification__button-text">
+       {$buttonText}
+      </span>
+
+      {if $type neq 'announcement'}
+        <div class="c-iconed__icon c-iconed__icon--checkmark"></div>
+      {/if}
+    </a>
+</div>
+</script>
+
+<script id="tpl_confirm" type="text/x-jsmart-tmpl"><div class="modal-confirm js-modal-confirm clearfix">
+  <p class="modal-text js-modal-text"></p>
+  <a class="bt-close js-close trans-03s trans-opacity" href=""></a>
+  <a class="bt-confirm js-confirm trans-03s trans-opacity" href=""></a>
+	<div class="buttons">
+		<a class="shadow-button trans-02s trans-color js-close bt-close rm"     >
+  <span class="label js-label trans-02s">Cancel</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+		<a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">Confirm</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+	</div>
+</div>
+</script>
+<script id="tpl_alert" type="text/x-jsmart-tmpl"><div class="modal-alert js-modal-alert clearfix">
+  <p class="modal-text js-modal-text"></p>
+  <div class="buttons">
+    <a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">OK</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+  </div>
+</div></script>
+<script id="tpl_video" type="text/x-jsmart-tmpl">{extends file="base_modal"}
+{block name='modal_content'}
+<div id="ship-commercial" class="inner-content">
+  
+  <div class="hr"></div>
+  <div class="content-block4">
+   
+    <div class="bottom"></div>
+  </div>
+  {if $distant_source=="vimeo"}
+  <iframe id="commercial" src="//player.vimeo.com/video/{$video_id}?wmode=transparent" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+  {else}
+  <iframe id="commercial" frameborder="0" allowfullscreen="1" title="YouTube video player" width="100%" height="100%" src="https://www.youtube.com/embed/{$video_id}?autoplay=1"></iframe>
+  {/if}
+</div>
+{/block}
+</script>
+      
+  <script id="tpl_comment_report" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="comment-report" class="inner-content on">
+  <h2><span class="icon"></span>Report this comment</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+<input type="hidden" name="comment_id" value="">
+  <div class="error-message js-error-message"></div>
+  <div class="success-message js-success-message"></div>
+    <fieldset class="last">
+    <label for="report_email">Email Address</label>
+    <span class="corner-wrapper">
+      <input type="text" name="email" value="" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_email" />
+      <span class="corner corner-top-left"></span>
+      <span class="corner corner-top-right"></span>
+      <span class="corner corner-bottom-left"></span>
+      <span class="corner corner-bottom-right"></span>
+    </span>
+  </fieldset>
+    <fieldset>
+    <label>Report Type</label>
+    
+
+
+  
+    <a class="js-selectlist selectlist " rel="" href="">
+    <div class="arrow"></div>
+    <span>Please select the type best matching your report</span>
+              <ul class="body">
+              
+                                                              <li class="js-option option " rel="obscenity" >
+                                                                        Obscene Content
+                                                    </li>
+                                                                <li class="js-option option " rel="abuse" >
+                                                                        Abusive Conduct
+                                                    </li>
+                                                                <li class="js-option option " rel="other" >
+                                                                        Other
+                                                    </li>
+                                          
+            </ul>
+        <input type="hidden" name="category" class="js-category js-form-data" id="category"/>
+  </a>
+    </fieldset>
+  <fieldset>
+    <label for="report_text">Details</label>
+    <span class="corner-wrapper">
+      <textarea name="text" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_text" maxlength="2500"></textarea>
+      <span class="corner corner-top-left"></span>
+      <span class="corner corner-top-right"></span>
+      <span class="corner corner-bottom-left"></span>
+      <span class="corner corner-bottom-right"></span>
+    </span>
+  </fieldset>
+  <fieldset class="clearfix last">
+    <span class="submit-wrapper">
+      <span class="submit-hover trans-02s trans-opacity"></span>
+      <input type="submit" value="Submit" class="trans-02s trans-color trans-background" />
+    </span>
+  </fieldset>
+</form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+
+
+      
+        <footer class="c-platform-footer c-platform-footer--rsi">
+  <div class="l-platform-footer-container">
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--sc">
+        <li class="c-platform-footer-brand__item">
+
+          <span class="c-brand c-brand--sc js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--sc">
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Join the<br>Universe
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--sc">
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen" class="c-platform-footer-link">About the Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/howto/1" class="c-platform-footer-link">How to Play</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/universe" class="c-platform-footer-link">The Universe</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/media" class="c-platform-footer-link">Media</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/play-now"
+                class="c-platform-footer-link js-google-analytics-event-tracker"
+                data-event-category="FlyNow" data-event-label="footerClick">
+                Play Now
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__sc">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">
+              Social Links
+            </span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/RobertsSpaceIndustries/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/RobertsSpaceInd">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/robertsspaceind">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href=" https://www.youtube.com/channel/UCTeLqJq1mXUX5WWoNXLmOIA">
+                <span class="c-iconed__icon c-iconed__icon--youtube"></span>
+                Youtube
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.twitch.tv/starcitizen">
+                <span class="c-iconed__icon c-iconed__icon--twitch"></span>
+                Twitch
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--s42">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--s42 js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--s42">
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Start the<br>Adventure
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--s42">
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42" class="c-platform-footer-link">The Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#enlist" class="c-platform-footer-link">Enlist Today</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#roadmap" class="c-platform-footer-link">Status</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/pledge/Packages/Squadron-42-Standalone-Pledge" class="c-platform-footer-link">Pledge</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__s42">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">Social Links</span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/Squad42/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/squadron_42">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/squadron42">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column is-active">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--rsi">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--rsi js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--rsi">
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi--fullcolor"></span>
+            </span>
+            <span class="c-brand__label">
+              Follow the Development
+            </span>
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--rsi">
+            <li class="c-platform-footer-list__item">
+              <a href="/" class="c-platform-footer-link">Home</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/comm-link" class="c-platform-footer-link">Transmissions</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/community" class="c-platform-footer-link">Community</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/roadmap" class="c-platform-footer-link">Development</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--platform">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Platform
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--platform">
+                          <li class="c-platform-footer-list__item">
+                <a href="/pledge" class="c-platform-footer-link ">Pledge Store</a>
+              </li>
+            
+            <li class="c-platform-footer-list__item">
+              <a href="/download" class="c-platform-footer-link ">Download</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/spectrum/community/SC" class="c-platform-footer-link">Spectrum</a>
+            </li>
+
+                      </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--utility">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Utilities
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--utility">
+            <li class="c-platform-footer-list__item">
+              <a href="//support.robertsspaceindustries.com" class="c-platform-footer-link">Help</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/press" class="c-platform-footer-link">Press</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="https://cloudimperiumgames.com/join-us" class="c-platform-footer-link">Careers</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/tos" class="c-platform-footer-link">Terms of Services</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/privacy" class="c-platform-footer-link">Privacy Policy</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/eula" class="c-platform-footer-link">EULA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/dmca" class="c-platform-footer-link">DMCA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/legal" class="c-platform-footer-link">Legal</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/acknowledgements" class="c-platform-footer-link">Acknowledgements</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/responsible-disclosure" target="_blank" class="c-platform-footer-link">Responsible disclosure</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  
+</footer>
+
+<div class="c-platform-copyright c-platform-copyright--rsi">
+  <div class="l-platform-copyright-container">
+    <a href="https://cloudimperiumgames.com" class="c-platform-copyright__logo h-svg__logo-cig js-svg-inliner"></a>
+    <p class="c-platform-copyright__body">© 2012-2021 Cloud Imperium Rights LLC and Cloud Imperium Rights Ltd.</p>
+  </div>
+</div>
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHNFZPT"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<script type="text/javascript">
+  window.RSI.Footer = new RSI.Footer();
+</script>
+      
+    </div>
+
+    
+      <script type="text/javascript" src='/rsi/static/packages/platformbar/rsi.platformbar.build.8e4cb.js'></script>
+    
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"58013cabd7","applicationID":"375102748","transactionName":"Y1JaYktUWxZUV0QKV1oYe0NKQVoIGmZjKmtdQ111VltBF1pYXAZKDg1ZQlZYcwxbUA==","queueTime":0,"applicationTime":91,"atts":"TxVNFANOSEkXVRJZQ0lK","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>

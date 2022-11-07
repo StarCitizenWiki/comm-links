@@ -1,0 +1,1778 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    
+      <!-- Anti-flicker snippet (recommended)  -->
+      <style>.async-hide { opacity: 0 !important} </style>
+      <script type="text/javascript">(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+      h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+      (a[n]=a[n]||[]).hide=h;if (d) a[n].push({'userId' : d});setTimeout(function(){i();h.end=null},c);h.timeout=c;
+      })(window,document.documentElement,'async-hide','dataLayer',1500,
+      {'GTM-KHNFZPT':true},undefined,'');</script>
+
+            <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"58013cabd7",applicationID:"375102748"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+      <meta name="viewport" content="width=device-width">
+      <meta name="description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans.">
+      <meta property="og:site_name" content="
+Engineering: Designing the UEE Logos - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+" />
+      <meta property="og:image" content="https://robertsspaceindustries.com/media/cj2v6lozuhtzqr/channel_item_full/Ueeadvocacy-Textured-Full.jpg" />
+      <meta property="og:description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans." />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://robertsspaceindustries.com/comm-link/SCW/12928-IMPORT" />
+      <meta property="og:locale" content="us_EN" />
+
+            
+
+            <link href="/rsi/static/css/cross-brand-less.css?v=6.10.6" media="all" rel="stylesheet">
+      <link href='/rsi/static/packages/platformbar/rsi.platformbar.build.5e6ab.css' media="all" rel="stylesheet">
+      <link href='/rsi/static/packages/enlist/rsi.enlist.build.5238f.css' media="all" rel="stylesheet"/>
+            <script type="text/javascript" src="/cache/en/rsi-external-js.js?v=6.10.6"></script>
+      <script type="text/javascript" src="/cache/en/rsi-templates-js.js?v=6.10.6"></script>
+
+            <link rel="stylesheet" href="https://use.typekit.net/dhw3beb.css">
+
+              <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="a687ee30-df65-45a0-9d22-90de6c1bb964" type="text/javascript"></script>
+      
+      
+    <!-- Google Tag Manager -->
+        <script type="text/plain" data-cookieconsent="statistics">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHNFZPT');</script>
+    <!-- End Google Tag Manager -->
+
+
+      <title>
+Engineering: Designing the UEE Logos - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+</title>
+
+            <script type="text/javascript" src='/rsi/static/packages/core/rsi.core.build.804b0.js'></script>
+      <script type="text/javascript" src='/rsi/static/packages/account/rsi.account.build.609b5.js'></script>
+      <script type="text/javascript" src='/rsi/static/packages/store/rsi.store.build.cd9a7.js'></script>
+
+      <script>
+        $(document).ready(function() {
+          window.Common = new RSI.Common({});
+          window.Main = new RSI.Main({
+            'is_mobile': 0,
+            'probation_cookie' : '',
+            'require_captcha': 0
+          });
+          window.Mark = new Turbulent.Mark({ 'name' : 'Rsi-XSRF', 'token' : '', 'ttl' : 1800 });
+
+          window.WscOverlay = new RSI.WscOverlay({});
+
+          var destinations = [];
+
+window.Main.destinations = destinations;          
+  window.PageStore = new RSI.Store({
+    'store_prefix' : '/pledge',
+    'bootstrapConfig': {"injection":{"attachmentClass":"RSIStoreApp","files":{"js":["bootstrap.js"],"css":["index.css"]}},"platform":{"api":"\/api"},"store":{"path":"\/pledge-store","manifest":"manifest.json"},"customizer":{"api":"\/pledge-store\/api\/customizer","ga_tracking_code":"UA-39586040-5"}}
+  });
+
+          
+          
+  var productsTracking = [];
+  var eCommerceData = {
+    'trackingAction': "",
+    'currency': "",
+    'trackingStep': "",
+    'trackingProducts': productsTracking
+  };
+  window.eCommerceTracking = new RSI.Store.eCommerceTracking(
+    eCommerceData
+  );
+
+        });
+
+        $(window).load(function() {
+          
+        });
+
+      </script>
+
+
+      <script>
+        window.recaptcha_is_loaded = false;
+        window.on_recaptcha_load_callback = function() {
+          window.recaptcha_is_loaded = true;
+        };
+      </script>
+
+      <script src="https://www.google.com/recaptcha/api.js?onload=on_recaptcha_load_callback&render=6LerBOgUAAAAAKPg6vsAFPTN66Woz-jBClxdQU-o" async defer></script>
+
+      <script type="text/javascript">
+
+        
+
+                                </script>
+
+      
+
+<style type="text/css">
+  /* CSS from ATOM */
+  
+</style>
+
+<script type="text/javascript">
+  /* JS from ATOM */
+  
+</script>
+
+
+    
+
+  <style>
+    
+      background:url(/rsi/static/images/noisebg.gif) repeat center top #000b11;
+    
+  </style>
+
+    <link href="//fonts.googleapis.com/css?family=Electrolize|Orbitron:400,500,700|Quantico|Share+Tech+Mono&display=swap" rel="stylesheet" type="text/css">
+
+    <link href="/cache/en/rsi-css.css?v=6.10.6" media="all" rel="stylesheet">
+
+
+  </head>
+  <body id="" class="" >
+
+    
+      <div class="l-notification-bar l-notification-bar--rsi js-notification-bar" id="notification-bar-root">
+  <c-notification-bar v-bind:latestagreementsslugs=[] v-bind:loggedin="0" v-bind:onhomepage="0"></c-notification-bar>
+  <div class="l-notification-container l-notification-bar__boxes js-notification-bar-boxes">
+    <div class="l-notification__wrapper">
+              <div class="l-notification-bar__box is-hidden js-notification-bar-box js-notification-bar-box--announcement">
+          <div class="c-notification c-notification--p c-notification--announcement js-bottom-notif-msg-announcement">
+  <div class="c-notification__inner">
+
+    <div class="c-notification__content">
+      <div class="c-notification__title">
+        PLAY STAR CITIZEN FOR FREE UNTIL JUNE 3!
+      </div>
+      <div class="c-notification__message">
+        Click 'More Info' for details.
+      </div>
+    </div>
+
+    <div class="c-notification__actions">
+              <div class="c-notification__wrapper-link">
+                      <a href="https://robertsspaceindustries.com/invictus2951#/About" class="c-notification__button js-bottom-notif-link-announcement">
+          
+            <span class="c-notification__button-text">
+              More info
+            </span>
+            <span class="c-iconed__icon c-iconed__icon--arrow"></span>
+          </a>
+        </div>
+      
+              <span class="c-notification__actions-label">or</span>
+      
+              <div class="c-notification__wrapper-link">
+          <a class="c-notification__button js-bottom-notif-btn-announcement">
+
+            <span class="c-notification__button-text">
+              Close
+            </span>
+
+                          <span class="c-iconed__icon c-iconed__icon--close"></span>
+                      </a>
+        </div>
+          </div>
+
+  </div>
+</div>
+        </div>
+      
+      <c-unsupported-browser v-cloak>
+        <div class="l-notification-bar__box js-notification-bar-box">
+          <div class="c-notification  c-notification--browser-support js-bottom-notif-msg-browser-support">
+  <div class="c-notification__inner">
+
+    <div class="c-notification__content">
+      <div class="c-notification__title">
+        IE11 is no longer supported
+      </div>
+      <div class="c-notification__message">
+        We do not support Internet Explorer 11 and below. Please use a different web browser.
+      </div>
+    </div>
+
+    <div class="c-notification__actions">
+      
+      
+          </div>
+
+  </div>
+</div>
+        </div>
+      </c-unsupported-browser>
+    </div>
+  </div>
+
+</div>
+    
+
+    <div id="bodyWrapper">
+      <header class='c-header-wrapper c-header-wrapper--rsi js-header-wrapper '  id='cross-brand-header'>
+  <div id="platform-bar" class="c-header__platform-bar"></div>
+
+      <div class='c-right-sidebar c-right-sidebar--signin' id="account-sidebar">
+      <div class="js-toggle-account__backdrop invisible"></div>
+
+      <a href="#" class='c-right-sidebar__back js-toggle-account'>Back
+        <span></span>
+        <span></span>
+      </a>
+
+      <div id="enlist-root" data-theme="rsi" data-enlisting="" data-ptu=""></div>
+      <script type="text/javascript" src='/rsi/static/packages/enlist/rsi.enlist.build.5238f.js'></script>
+    </div>
+  
+  <div class="c-header-wrapper__backdrop js-toggle-games"></div>
+</header>
+
+<div id="platform-backdrop"></div>
+
+<script type='text/javascript'>
+  RSI.Platformbar = {
+    theme: "rsi",
+    loggedState: "logged-out",
+    tabs: [
+      {
+        type: 'brands',
+        name: "Games",
+        subItems: [
+          {
+            name: "sc",
+            href: "/star-citizen",
+            description: "Join the Universe"
+          },
+          {
+            name: "s42",
+            href: "/squadron42",
+            description: "Start the adventure"
+          },
+          {
+            name: "rsi",
+            href: "/",
+            description: "Follow the Development"
+          }
+        ]
+      },
+      {
+        type: 'apps',
+        name: "Apps",
+        subItems: [
+          [
+            {
+              name: "Spectrum",
+              href: "/spectrum/community/SC",
+              description: "Your communication platform"
+            },
+            {
+              name: "Launcher",
+              href: "/download",
+              description: "Download Star Citizen",
+                          }
+          ],
+          [
+            {
+              name: "Roadmap",
+              href: "/roadmap",
+              description: "Keep track of the development"
+            },
+            {
+              name: "Telemetry",
+              href: "/telemetry",
+              description: "Keep track of the player’s performance"
+            },
+            {
+              name: "Issue Council",
+                          href: "https://issue-council.robertsspaceindustries.com",
+                          description: "Help us make the game better",
+                          }
+          ],
+          [
+            {
+              name: "Starmap",
+              href: "/starmap",
+              description: "Your map to the universe"
+            },
+            {
+              name: "Galactapedia",
+              href: "/galactapedia",
+              description: "Your guide to the universe"
+            }
+          ]
+        ]
+      },
+          ],
+    navigation: {
+      store: {
+        name: "Pledge Store",
+        href: "/pledge",
+        isHidden: false      },
+      hub: {
+        name: "Learn How to Play",
+        href: "/playstarcitizen",
+        show: false      },
+      support: {
+        name: "Support",
+        href: "//support.robertsspaceindustries.com"
+      },
+      account: {
+        name: "Account",
+        href: "/account/settings",
+        isHidden: false      }
+    }
+  };
+
+  $(document).ready(function() {
+    window.header = new RSI.Header({});
+  });
+</script>
+
+
+      
+  
+<header class='c-brand-menu c-brand-menu----rsi' id='brand-menu'>
+  <span class="c-brand-menu__section">
+    
+      Roberts Space Industries
+    
+  </span>
+  <div class="c-brand-menu__backdrop"></div>
+  <nav class="c-brand-menu__container">
+    <div class="c-brand-menu__logo">
+      <a href="/"><span class="h-svg h-svg__logo-rsi--fullcolor js-svg-inliner"></span> </a>
+    </div>
+    <div class="c-brand-menu__items-container">
+      <ul class="c-brand-menu__items">
+                <li class="c-brand-menu__item  ">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/comm-link">
+            <span class="c-brand-menu__item-text">Comm-Link</span>
+                                  </a>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/community">
+            <span class="c-brand-menu__item-text">Community</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Community</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/spectrum" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Spectrum
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/orgs" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Organizations
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/leaderboards/top" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Leaderboards
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community_events" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Event
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Hub
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/fankit" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Fankit
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/development">
+            <span class="c-brand-menu__item-text">Development</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Development</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/roadmap" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Roadmap
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/devtracker" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Dev Tracker
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/telemetry" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Telemetry
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="https://issue-council.robertsspaceindustries.com" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Issue Council
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/patch-notes" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Patch Notes
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/ship-matrix" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Ship Matrix
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/funding-goals" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Funding
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+              </ul>
+    </div>
+
+    <div class="c-brand-menu__cta">
+      
+        <a href="/star-citizen/play-now" class="c-brand-cta-btn js-google-analytics-event-tracker"
+          data-event-category="FlyNow" data-event-label="navMenuClick">
+          <div></div>
+            <span class="c-brand-cta-btn__text">
+              <strong>Play now</strong>
+            </span>
+          <div></div>
+        </a>
+      
+    </div>
+  </nav>
+</header>
+
+
+
+      
+
+  
+  <div class="page-wrapper">
+    
+  <div id="post-background" ></div>
+
+
+    <div id="contentbody" class="" style="">
+      
+
+<div id="post">
+  <div class="title-section">
+    
+      <div class="wrapper title-bar-container">
+        <div class="glow left"></div>
+        <div class="title-bar">
+          <div class="title with-subtitle">
+            <h1>Transmission</h1>
+            <h2>General</h2>
+          </div>
+          <div class="details">
+            <div>
+              <h3>ID:</h3>
+              <p>12928</p>
+              <div class="cboth"></div>
+            </div>
+            <div>
+              <h3>Comments:</h3>
+              <p class="comment-count">6</p>
+              <div class="cboth"></div>
+            </div>
+            <div>
+              <h3>Date:</h3>
+              <p>March 19th 2013</p>
+              <div class="cboth"></div>
+            </div>
+            <div></div>
+          </div>
+          <div class="cboth"></div>
+        </div>
+        <div class="glow right"></div>
+      </div>
+    
+  <div class="two-line-separator"></div>
+  <div class="small-title-container">
+    <div class="title">Engineering: Designing the UEE Logos</div>
+    <div class="subtitle"></div>
+  </div>
+
+  </div>
+
+  
+<div class="wrapper">
+  <div class="content-block2">
+    <div class="atom-special-block">
+      <div id="slideshow" class="atom-slideshow slideshow">
+        <div class="mask">
+          <a class="js-prev prev control"></a>
+          <a class="js-next next control"></a>
+          <div class="carousel">
+                        <div data-source_url="/media/t0fi0f9aho9y3r/source/Anvil-Full.jpg" data-full_res="/media/t0fi0f9aho9y3r/source/Anvil-Full.jpg" data-low_res="/media/t0fi0f9aho9y3r/slideshow_pager/Anvil-Full.jpg" data-slide="1" rel="vault-items">
+              <div class="media js-media-slideshow-1">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/t0fi0f9aho9y3r/slideshow/Anvil-Full.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/t0fi0f9aho9y3r/slideshow_pager/Anvil-Full.jpg" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/t0fi0f9aho9y3r/source/Anvil-Full.jpg" class="download" target="_blank"></a>
+                <div class="page-number">1 / 11</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/4v61c009f49r2r/source/CS_SC_JOKER_LOGO_01A.jpg" data-full_res="/media/4v61c009f49r2r/source/CS_SC_JOKER_LOGO_01A.jpg" data-low_res="/media/4v61c009f49r2r/slideshow_pager/CS_SC_JOKER_LOGO_01A.jpg" data-slide="2" rel="vault-items">
+              <div class="media js-media-slideshow-2">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/4v61c009f49r2r/slideshow/CS_SC_JOKER_LOGO_01A.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/4v61c009f49r2r/slideshow_pager/CS_SC_JOKER_LOGO_01A.jpg" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/4v61c009f49r2r/source/CS_SC_JOKER_LOGO_01A.jpg" class="download" target="_blank"></a>
+                <div class="page-number">2 / 11</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/gkok1lda4k8ucr/source/RSI-Logo-640x480.png" data-full_res="/media/gkok1lda4k8ucr/source/RSI-Logo-640x480.png" data-low_res="/media/gkok1lda4k8ucr/slideshow_pager/RSI-Logo-640x480.png" data-slide="3" rel="vault-items">
+              <div class="media js-media-slideshow-3">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/gkok1lda4k8ucr/slideshow/RSI-Logo-640x480.png" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/gkok1lda4k8ucr/slideshow_pager/RSI-Logo-640x480.png" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/gkok1lda4k8ucr/source/RSI-Logo-640x480.png" class="download" target="_blank"></a>
+                <div class="page-number">3 / 11</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/6uohvppg2nhb7r/source/Joker_progression.png" data-full_res="/media/6uohvppg2nhb7r/source/Joker_progression.png" data-low_res="/media/6uohvppg2nhb7r/slideshow_pager/Joker_progression.png" data-slide="4" rel="vault-items">
+              <div class="media js-media-slideshow-4">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/6uohvppg2nhb7r/slideshow/Joker_progression.png" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/6uohvppg2nhb7r/slideshow_pager/Joker_progression.png" alt="Here&#039;s a progression of the Joker logo from initial sketch concepts to an in-game application">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/6uohvppg2nhb7r/source/Joker_progression.png" class="download" target="_blank"></a>
+                <div class="page-number">4 / 11</div>
+                <div class="caption">Here's a progression of the Joker logo from initial sketch concepts to an in-game application</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/9mgid7hx04xaxr/source/CS_SC_UEE_ARMY_01A.jpg" data-full_res="/media/9mgid7hx04xaxr/source/CS_SC_UEE_ARMY_01A.jpg" data-low_res="/media/9mgid7hx04xaxr/slideshow_pager/CS_SC_UEE_ARMY_01A.jpg" data-slide="5" rel="vault-items">
+              <div class="media js-media-slideshow-5">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/9mgid7hx04xaxr/slideshow/CS_SC_UEE_ARMY_01A.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/9mgid7hx04xaxr/slideshow_pager/CS_SC_UEE_ARMY_01A.jpg" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/9mgid7hx04xaxr/source/CS_SC_UEE_ARMY_01A.jpg" class="download" target="_blank"></a>
+                <div class="page-number">5 / 11</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/zr9ixt8qujracr/source/CS_SC_UEE_MARINES_01A.jpg" data-full_res="/media/zr9ixt8qujracr/source/CS_SC_UEE_MARINES_01A.jpg" data-low_res="/media/zr9ixt8qujracr/slideshow_pager/CS_SC_UEE_MARINES_01A.jpg" data-slide="6" rel="vault-items">
+              <div class="media js-media-slideshow-6">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/zr9ixt8qujracr/slideshow/CS_SC_UEE_MARINES_01A.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/zr9ixt8qujracr/slideshow_pager/CS_SC_UEE_MARINES_01A.jpg" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/zr9ixt8qujracr/source/CS_SC_UEE_MARINES_01A.jpg" class="download" target="_blank"></a>
+                <div class="page-number">6 / 11</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/qtwz2pwkm0el9r/source/CS_SC_UEE_NAVY_01A.jpg" data-full_res="/media/qtwz2pwkm0el9r/source/CS_SC_UEE_NAVY_01A.jpg" data-low_res="/media/qtwz2pwkm0el9r/slideshow_pager/CS_SC_UEE_NAVY_01A.jpg" data-slide="7" rel="vault-items">
+              <div class="media js-media-slideshow-7">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/qtwz2pwkm0el9r/slideshow/CS_SC_UEE_NAVY_01A.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/qtwz2pwkm0el9r/slideshow_pager/CS_SC_UEE_NAVY_01A.jpg" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/qtwz2pwkm0el9r/source/CS_SC_UEE_NAVY_01A.jpg" class="download" target="_blank"></a>
+                <div class="page-number">7 / 11</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/fm1oyp041ysujr/source/CS_SC_UEE_ADVOCACY_01A.jpg" data-full_res="/media/fm1oyp041ysujr/source/CS_SC_UEE_ADVOCACY_01A.jpg" data-low_res="/media/fm1oyp041ysujr/slideshow_pager/CS_SC_UEE_ADVOCACY_01A.jpg" data-slide="8" rel="vault-items">
+              <div class="media js-media-slideshow-8">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/fm1oyp041ysujr/slideshow/CS_SC_UEE_ADVOCACY_01A.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/fm1oyp041ysujr/slideshow_pager/CS_SC_UEE_ADVOCACY_01A.jpg" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/fm1oyp041ysujr/source/CS_SC_UEE_ADVOCACY_01A.jpg" class="download" target="_blank"></a>
+                <div class="page-number">8 / 11</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/ew6fp2638a0rnr/source/CS_SC_UEE_SEAL_ROUND_01A.jpg" data-full_res="/media/ew6fp2638a0rnr/source/CS_SC_UEE_SEAL_ROUND_01A.jpg" data-low_res="/media/ew6fp2638a0rnr/slideshow_pager/CS_SC_UEE_SEAL_ROUND_01A.jpg" data-slide="9" rel="vault-items">
+              <div class="media js-media-slideshow-9">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/ew6fp2638a0rnr/slideshow/CS_SC_UEE_SEAL_ROUND_01A.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/ew6fp2638a0rnr/slideshow_pager/CS_SC_UEE_SEAL_ROUND_01A.jpg" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/ew6fp2638a0rnr/source/CS_SC_UEE_SEAL_ROUND_01A.jpg" class="download" target="_blank"></a>
+                <div class="page-number">9 / 11</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/b1avrtoeskxbar/source/UEE-Logos.jpg" data-full_res="/media/b1avrtoeskxbar/source/UEE-Logos.jpg" data-low_res="/media/b1avrtoeskxbar/slideshow_pager/UEE-Logos.jpg" data-slide="10" rel="vault-items">
+              <div class="media js-media-slideshow-10">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/b1avrtoeskxbar/slideshow/UEE-Logos.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/b1avrtoeskxbar/slideshow_pager/UEE-Logos.jpg" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/b1avrtoeskxbar/source/UEE-Logos.jpg" class="download" target="_blank"></a>
+                <div class="page-number">10 / 11</div>
+                <div class="caption"></div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                        <div data-source_url="/media/12uwczsoez2ehr/source/Ueeadvocacy-Textured.jpg" data-full_res="/media/12uwczsoez2ehr/source/Ueeadvocacy-Textured.jpg" data-low_res="/media/12uwczsoez2ehr/slideshow_pager/Ueeadvocacy-Textured.jpg" data-slide="11" rel="vault-items">
+              <div class="media js-media-slideshow-11">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source data-srcset="/media/12uwczsoez2ehr/slideshow/Ueeadvocacy-Textured.jpg" media="(min-width: 300px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img data-srcset="/media/12uwczsoez2ehr/slideshow_pager/Ueeadvocacy-Textured.jpg" alt="Clint has put together an example of how the Advocacy emblem you saw yesterday will be expanded upon">
+                </picture>
+              </div>
+              <div class="text">
+                <a href="/media/12uwczsoez2ehr/source/Ueeadvocacy-Textured.jpg" class="download" target="_blank"></a>
+                <div class="page-number">11 / 11</div>
+                <div class="caption">Clint has put together an example of how the Advocacy emblem you saw yesterday will be expanded upon</div>
+                <div class="cboth"></div>
+              </div>
+            </div>
+                      </div>
+        </div>
+        <div class="details">
+          <div class="scrollable fancy">
+            <div class="viewport">
+              <div class="content pager">
+                                  <a class="">
+                    <img src="/media/t0fi0f9aho9y3r/slideshow_pager/Anvil-Full.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/4v61c009f49r2r/slideshow_pager/CS_SC_JOKER_LOGO_01A.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/gkok1lda4k8ucr/slideshow_pager/RSI-Logo-640x480.png" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/6uohvppg2nhb7r/slideshow_pager/Joker_progression.png" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/9mgid7hx04xaxr/slideshow_pager/CS_SC_UEE_ARMY_01A.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/zr9ixt8qujracr/slideshow_pager/CS_SC_UEE_MARINES_01A.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/qtwz2pwkm0el9r/slideshow_pager/CS_SC_UEE_NAVY_01A.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/fm1oyp041ysujr/slideshow_pager/CS_SC_UEE_ADVOCACY_01A.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/ew6fp2638a0rnr/slideshow_pager/CS_SC_UEE_SEAL_ROUND_01A.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/b1avrtoeskxbar/slideshow_pager/UEE-Logos.jpg" width="88" height="50" />
+                  </a>
+                                  <a class="">
+                    <img src="/media/12uwczsoez2ehr/slideshow_pager/Ueeadvocacy-Textured.jpg" width="88" height="50" />
+                  </a>
+                                <div class="cboth"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cboth"></div>
+      </div>
+    </div>
+    <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#slideshow").data("carousel", new RSI.FullCarousel({
+      holder: $("#slideshow .mask .carousel"),
+      pagerContainer: $("#slideshow .pager"),
+      prevButton: $("#slideshow .js-prev"),
+      nextButton: $("#slideshow .js-next"),
+      clickToFullScreen: true,
+      circular: true,
+      useKeys: true,
+      container: $("#slideshow"),
+      needToLoadImg: true
+    }));
+
+    $(window).bind("resize", function() {
+      if ($(window).width() < 1200) {
+        $("#slideshow").data("carousel").setToFitScreen();
+      }
+      else {
+        $("#slideshow").data("carousel").unsetToFitScreen();
+      }
+    });
+
+    if ($(window).width() < 1200) {
+      $("#slideshow").data("carousel").setToFitScreen();
+      $("#slideshow").data("carousel").onWindowResize();
+    }
+    else {
+      $("#slideshow").data("carousel").unsetToFitScreen();
+    }
+
+    $("#slideshow .download").bind("click", function(e) {
+      e.stopPropagation();
+      return true;
+    });
+  });
+</script>
+
+
+  <div class="wrapper"><div class="hr"></div><div class="content-block4"><div class="content"><div class="top"></div><h1>Engineering: Designing the UEE Logos</h1><div class="cboth"></div></div><div class="bottom"></div></div><div class="content-block1 rsi-markup">
+<div  class=' segment' ><div class="content"><p><span class="initial">Y</span>esterday, we showed the first of five <span class="caps">UEE</span> ‘faction’ logos. The plan was to show one new logo each day, revealing information about the individual faction along with it. From your response, however, there was some confusion about just what you were seeing. As a result, we’ve decided to show all five logos at once… and in the process clarify what these images are and how they came to be.</p>
+
+<p>Clint Schultz, interviewed below, is a world class graphic designer who has worked on over two-dozen Hollywood productions including the Star Trek reboot, Mission Impossible 3, Indiana Jones and the Crystal Skull, Cowboys &amp; Aliens, The Curious Case of Benjamin Button and Zodiac. Clint has designed all of our logos to date: Roberts Space Industries, Star Citizen, Squadron 42, Anvil Aerospace, Joker Engineering and others.</p>
+
+<p>All of these logos began as simple vector graphic images like the one you saw yesterday. This is necessary because they will be adapted for many uses, from in-game appearances to official stamps, decals and signs. In this instance, the faction logos needed to be especially simple: they’ll appear as shoulder patches on characters’ uniforms and need to be clear, readable and graphic despite being very small on-screen. Once the base vector-graphic logo is approved, it will be textured and otherwise weathered as needed.</p>
+
+<p>The new <span class="caps">UEE</span> logos you’ve seen are the initial flat vector graphics&#8230; but in the coming months you&#8217;ll see them textured for use on uniforms and weathered to appear on starship hulls! We think that together they make for an ongoing and iconic style for the <span class="caps">UEE</span>&#8217;s military that can be carried throughout different graphic aspects of the game that have yet to be designed!</p>
+
+<a class="image  js-open-in-slideshow" data-id="y1pklnb472u9yr" data-full_res="/media/y1pklnb472u9yr/source/Clint_on_the_bridge-E1363727918984.jpg" data-low_res="/media/y1pklnb472u9yr/slideshow_pager/Clint_on_the_bridge-E1363727918984.jpg" data-source_url="/media/y1pklnb472u9yr/source/Clint_on_the_bridge-E1363727918984.jpg" rel="post"><img src="/media/y1pklnb472u9yr/post/Clint_on_the_bridge-E1363727918984.jpg" alt="" /></a>
+
+<h2><strong>Meet Clint Schultz</strong></h2>
+
+<p><h3>How did you become involved with Star Citizen?</h3><br />
+I met Ryan Church on JJ Abrams 2009 version of Star Trek. As you all know, Ryan is one of the most talented illustrators in the film business (and beyond). Ryan and I have continued to cross paths on more recent JJ films like Super 8 &amp; Into Darkness. Most recently we were working on Brad Bird&#8217;s next feature Tomorrowland together. It was during the pitch work for Tomorrowland that I got a call from Chris Roberts based on Ryan&#8217;s gracious recommendation. Chris and I met for coffee, and I was impressed with his vision. At this point in my career, it&#8217;s important to work with people I can help share a vision with. What started out as some part time logo work of the game has turned into a full time position.</p>
+
+<a class="image  js-open-in-slideshow" data-id="htn52j7h4r4tsr" data-full_res="/media/htn52j7h4r4tsr/source/Sc-Logo-200x240.png" data-low_res="/media/htn52j7h4r4tsr/slideshow_pager/Sc-Logo-200x240.png" data-source_url="/media/htn52j7h4r4tsr/source/Sc-Logo-200x240.png" rel="post"><img src="/media/htn52j7h4r4tsr/post/Sc-Logo-200x240.png" alt="" /></a>
+
+<h3>What have you been working on for the game?</h3>
+
+<p>I don&#8217;t know where to start? The first logo we did was for <span class="caps">RSI</span>, which really set the tone. From there we tackled the Star Citizen &amp; Squadron 42 logo, which I&#8217;m very happy with. Those two logos were the base for many of the marketing items we developed for the Kickstarter campaign (ID cards, campaign posters, collectors editions, t-shirts, etc). Since I&#8217;ve started full time, we developed a very cool Cloud Imperium logo for the company. We&#8217;ve also developed a number of logos that will appear in the game (Drake, Joker, Anvil, etc.)  I&#8217;ve also spent some time working on new ship blueprints, Jump Point compositions, and additional technical material. The most recent set of logo&#8217;s detail the various branches of the <span class="caps">UEE</span> (5 total). I really love the way the final 5 work both independently and as a group.</p>
+
+<p><h3>Can you tell us about the process of designing a logo?</h3><br />
+I&#8217;ll preface this by saying each logo is different, and each design experience is different. Working with Ron Howard is very different than working with Michael Mann, and so are the individual logos and applications. Both are great directors with different processes. In the end, it&#8217;s all about the final results, no matter how you get there.</p>
+
+<a class="image  js-open-in-slideshow" data-id="npqhej6zaznz4r" data-full_res="/media/npqhej6zaznz4r/source/SC_SHIRT_FINAL.jpg" data-low_res="/media/npqhej6zaznz4r/slideshow_pager/SC_SHIRT_FINAL.jpg" data-source_url="/media/npqhej6zaznz4r/source/SC_SHIRT_FINAL.jpg" rel="post"><img src="/media/npqhej6zaznz4r/post/SC_SHIRT_FINAL.jpg" alt="" /></a>
+
+<p>I&#8217;m a huge believer in research first. I need to see what has been done before, and then look a different direction. I start all my logo&#8217;s as black &amp; white, and depending on what a person / designer / director responds to, I take it to a certain point before getting feedback. I&#8217;m a big believer that if you can make a logo &#8220;sing&#8221; in B&amp;W, you are more than half way there. Adding color and effects is just going to make a good logo that much stronger. I try not to overwhelm anyone with too many choices, otherwise you always wind up in a frankenstein type surgery of logos. Once feedback begins, things can go a lot of different ways. People have different ideas and graphic tastes depending on the application. In then end it&#8217;s all somewhat subjective, but as long as Chris and I are in agreement, that what matters to me most. The most successful design relationships are usually the most direct, and I enjoy working with Chris in that regard.</p>
+
+<h3>What are you most excited about seeing in the finished game?</h3>
+
+<p>This is my first experience with a game of any kind, so I can&#8217;t wait to see how it comes together. When I was hired to do Star Trek 2009, I was completely freaked out. I was not a Trekie, and only had a vague pop culture idea of that futuristic world. In the end, that totally worked in my favor to bring a fresh graphic look to an old classic. It was one of the most satisfying films I&#8217;ve ever worked on once I saw the finished product. I just kept telling myself throughout the film process that it didn&#8217;t matter if I didn&#8217;t &#8220;get&#8221; it. I know it sounds simple, but my rule was to make it look cool. If I made it look cool, I knew it would tie into the new environment. Having said that, I&#8217;m not a big gamer so it can be intimidating. It&#8217;s my honor to add a layer of graphics to the final product that I hope will enrich the exciting environment Chris has envisioned. I hope to make it look cool for the creators and the players, and I can&#8217;t wait to experience all aspects of the game first hand.</p>
+
+<h3>What other projects have you worked on?</h3>
+
+<p>Mostly films. My credits are listed here: <a href="http://www.clintschultz.com">www.clintschultz.com</a></p>
+
+<a class="image  js-open-in-slideshow" data-id="0g59mfzaqj23vr" data-full_res="/media/0g59mfzaqj23vr/source/Clint_photo1.jpg" data-low_res="/media/0g59mfzaqj23vr/slideshow_pager/Clint_photo1.jpg" data-source_url="/media/0g59mfzaqj23vr/source/Clint_photo1.jpg" rel="post"><img src="/media/0g59mfzaqj23vr/post/Clint_photo1.jpg" alt="" /></a>
+
+<a class="image  js-open-in-slideshow" data-id="9jokaq0jbv06wr" data-full_res="/media/9jokaq0jbv06wr/source/Clint_photo2.jpg" data-low_res="/media/9jokaq0jbv06wr/slideshow_pager/Clint_photo2.jpg" data-source_url="/media/9jokaq0jbv06wr/source/Clint_photo2.jpg" rel="post"><img src="/media/9jokaq0jbv06wr/post/Clint_photo2.jpg" alt="Photos: INT Pantheon before / after Sony / Columbia Pictures" /><span class="caption">Photos: INT Pantheon before / after Sony / Columbia Pictures</span></a>
+
+<h3>Tell us what it is like to work on films.</h3>
+
+<p>When I tell people that I&#8217;m a graphic designer for film, they immediately think I work in post production / visual effects. I then tell them that I do everything that is printed and physically shot on film (props graphics, logos, vehicle skins, signs, wallpaper, etc..). The pace of production is so fast that it can get overwhelming despite the fact that graphics are my singular focus. I often joke that big corporations take months &amp; years to design corporate identity, while I&#8217;m lucky to get a day or a week in most instances. Sometimes graphics goes beyond just logos, signs or skins as in Angels &amp; Demons. Due to a strained relationship between writer Dan Brown and the Vatican, we obviously weren&#8217;t going to be allowed to film in Vatican City. Therefore, we had to re-create the Interior Pantheon, St. Peter&#8217;s Basilica, Sistine Chapel, Sala Regia, Chigi Chapel &amp; Vatican Grottoes on sound stages at Sony Studios. In addition, we also built exterior locations for St. Peter&#8217;s Square and Piazza Navona on the parking lot of the Hollywood Park race track and casino. What we did end up shooting in Rome was a very small amount of Int&#8217;s &amp; Ext&#8217;s. Building a faux Rome in Los Angles required miles of custom wallpaper. I would build the grout lines in Adobe Illustrator prior to incorporating the custom marble photos in Adobe Photoshop. From there, I would digitally age the images prior custom printing either on wallpaper or directly to a sub straight at Astek Wallcovering in Los Angeles. Our amazing paint crew had the final task of installing and adding and additional hand painted effects. The results were beyond my expectations, and I continue to use many of the effects I perfected on Angels &amp; Demons to this day. A few years ago I had an interview with a production designer who looked at my portfolio of finished images from Angels &amp; Demons. He says to me, &#8220;I don&#8217;t get it, what part of this is graphics?&#8221; To which I replied, &#8220;everything except the wood &amp; studs.&#8221; He closed my portfolio immediately, and offered me the job, I was blown away. Whether you love the film or not, everyone seems to be surprised that 90% of the film was shot in Hollywood.</p>
+
+<a class="image  js-open-in-slideshow" data-id="9mgid7hx04xaxr" data-full_res="/media/9mgid7hx04xaxr/source/CS_SC_UEE_ARMY_01A.jpg" data-low_res="/media/9mgid7hx04xaxr/slideshow_pager/CS_SC_UEE_ARMY_01A.jpg" data-source_url="/media/9mgid7hx04xaxr/source/CS_SC_UEE_ARMY_01A.jpg" rel="post"><img src="/media/9mgid7hx04xaxr/post/CS_SC_UEE_ARMY_01A.jpg" alt="" /></a>
+
+<h2><strong><span class="caps">UEE</span> Army</strong></h2>
+
+
+<p>If the Navy are the guardian angels and the Marines are the swords of righteousness, the <span class="caps">UEE</span> Army is the mortar that holds the civilization together. An ultra-mechanized ground force, the Army is responsible for land-based military operations and keeps a watchful eye over primitive species on developing worlds. While it doesn&#8217;t have the numbers of the Navy, the <span class="caps">UEE</span> Army is the oldest established branch of the military, founded in 2380 as part of the creation of the United Nations of Earth.</p>
+
+<p>The primary mission of the army is &#8220;to fight and win our Empire&#8217;s wars by providing prompt, sustained land dominance across the full range of military operations and spectrum of conflict in support of combatant commanders.&#8221;</p>
+
+<p>While the public has been enamored by mighty carriers and hotshot pilots of the Navy for the past few centuries, the <span class="caps">UEE</span> Army managed to briefly seize the public consciousness during the first Tevarin War where just as many battles took place across shattered landscapes than did in space. Specifically, the Battle of Idris IV which became the largest turning point in the War both strategically and to the public, thanks to the brilliant tactics of a young officer named Ivar Messer.</p>
+
+<a class="image  js-open-in-slideshow" data-id="zr9ixt8qujracr" data-full_res="/media/zr9ixt8qujracr/source/CS_SC_UEE_MARINES_01A.jpg" data-low_res="/media/zr9ixt8qujracr/slideshow_pager/CS_SC_UEE_MARINES_01A.jpg" data-source_url="/media/zr9ixt8qujracr/source/CS_SC_UEE_MARINES_01A.jpg" rel="post"><img src="/media/zr9ixt8qujracr/post/CS_SC_UEE_MARINES_01A.jpg" alt="" /></a>
+
+<h2><span class="caps">UEE</span> Marines</h2>
+
+
+<p>First responders. The Shock Troops. The howl of their drop-pods (nicknamed: Nails) screaming through atmo is a singularly unique and terrifying noise. There isn&#8217;t a combat zone hot enough to scare off a battle-hardened marine.</p>
+
+<p>The Marines were initially kept under the umbrella of the Army&#8217;s command structure, they weren&#8217;t officially separated and formed as their own division until the end of the First Tevarin War. The <span class="caps">UPE</span> felt that they needed a consolidated special operations force that commanded the best of both the Army and the Navy. Their focus and primary application became planetary invasion. Marine units are specialized to be weapons of warfare, nothing more. They don&#8217;t handle diplomatic escorts or pull guard duty, they dust things. When the Imperator doesn&#8217;t need them, the Marines sequester themselves to their planet-bases on Corin (Kilian System) and train for the next conflict that will require their services.</p>
+
+<p>Marine-Candidates are selected from the general pool of Army and Navy recruits. The criterion for selection is unknown and inconsistent at best. Some speculate that it is intentional to cement the fact that you don&#8217;t apply to be a Marine.</p>
+
+<a class="image  js-open-in-slideshow" data-id="qtwz2pwkm0el9r" data-full_res="/media/qtwz2pwkm0el9r/source/CS_SC_UEE_NAVY_01A.jpg" data-low_res="/media/qtwz2pwkm0el9r/slideshow_pager/CS_SC_UEE_NAVY_01A.jpg" data-source_url="/media/qtwz2pwkm0el9r/source/CS_SC_UEE_NAVY_01A.jpg" rel="post"><img src="/media/qtwz2pwkm0el9r/post/CS_SC_UEE_NAVY_01A.jpg" alt="" /></a>
+
+<h2><span class="caps">UEE</span> Navy</h2>
+
+
+<p>The largest branch and public face of the <span class="caps">UEE</span> military. The Navy is responsible for transportation of military resources, maintaining the borders and waging military strikes throughout the <span class="caps">UEE</span>. Service members of the Navy are deployed in nearly every system of the empire. In the early days of humanity&#8217;s expansion into space, the unified Navy primarily served as a police force, patrolling the systems for damaged or broken down ships. Upon the discovery of the Banu, the government realized that the Navy needed to be re-purposed as a military presence. The Navy&#8217;s fleet began to swell as it was the most obvious visual representation of humanity&#8217;s military strength.</p>
+
+<p>Fueled by the never-ending stream of stories and Vids of daring pilots, recruits flocked to the Navy&#8217;s stations to sign up. Even before the Draft of the First Tevarin War, the Navy&#8217;s enlistment numbers had barely dipped. During the Messer Era, the Navy, along with the rest of the <span class="caps">UEE</span> military, grew at an exponential rate. Helping in the Imperator&#8217;s mad dash for planets and systems.</p>
+
+<p>Structurally, the <span class="caps">UEE</span> Navy is formed around Squadrons which are assigned a carrier and a fluctuating number of support ships. An Admiral is in charge of the carrier and squadron with Wing Commanders running the multiple Wings that operate at any given time.</p>
+
+<p>Recruits train in the shadows of the massive shipyards at the academies and boot camps on MacArthur in the Kilian Systems.</p>
+
+<a class="image  js-open-in-slideshow" data-id="fm1oyp041ysujr" data-full_res="/media/fm1oyp041ysujr/source/CS_SC_UEE_ADVOCACY_01A.jpg" data-low_res="/media/fm1oyp041ysujr/slideshow_pager/CS_SC_UEE_ADVOCACY_01A.jpg" data-source_url="/media/fm1oyp041ysujr/source/CS_SC_UEE_ADVOCACY_01A.jpg" rel="post"><img src="/media/fm1oyp041ysujr/post/CS_SC_UEE_ADVOCACY_01A.jpg" alt="" /></a>
+
+<h2><span class="caps">UEE</span> Advocacy</h2>
+
+
+<p>Formed in 2523 when the United Nations of Earth transformed into the United Planets of Earth (<span class="caps">UPE</span>). The Advocacy was designed to be an inter-system police force under the High Advocate. During the fascist Messer Era, the Advocacy took on a darker role as the Imperator’s Secret Police, Intelligence, and Espionage agency. The extent of their actions are still unknown but Advocacy officials at the time were implicated in high-profile assassinations, the apprehension and torture of non-compliant elements in the populace, and propaganda mongers.</p>
+
+<p>When the Imperator fell, they were reconstituted to their original purpose. While most planets were expected to police themselves, the Advocacy handled crimes that crossed planets and systems, fugitives and even extra-jurisdictional extractions (pursuit into Banu or Xi’An territory). Advocacy Agents are generally feared among the criminal community. They are well-trained in pursuit and apprehension techniques, equal parts hotshot pilot and thorough investigator. Most Advocacy Agents operate alone but teams of them can be dispatched for high-profile targets or situations of implied violence. The real danger of the Advocacy Agent is what they represent. A criminal could kill a cop and could probably kill an Agent under good circumstances… but they will just send another and another until they ghost him.</p>
+
+<p>While the Advocacy does handle fugitives, they have been known to outsource to the Bounty Hunter Guild.</p>
+
+<a class="image  js-open-in-slideshow" data-id="ew6fp2638a0rnr" data-full_res="/media/ew6fp2638a0rnr/source/CS_SC_UEE_SEAL_ROUND_01A.jpg" data-low_res="/media/ew6fp2638a0rnr/slideshow_pager/CS_SC_UEE_SEAL_ROUND_01A.jpg" data-source_url="/media/ew6fp2638a0rnr/source/CS_SC_UEE_SEAL_ROUND_01A.jpg" rel="post"><img src="/media/ew6fp2638a0rnr/post/CS_SC_UEE_SEAL_ROUND_01A.jpg" alt="" /></a>
+
+<h2><span class="caps">UEE</span> Seal</h2>
+
+<p>Once humanity began to expand into the stars, the governments of Earth slowly began to realize that, politically, the individual governments of the various countries wouldn&#8217;t be able to maintain themselves in the bright future ahead. It wasn&#8217;t until the year 2380 that they governments of Earth decided to put aside their social and political differences and unify as a single governing entity named the United Nations of Earth (<span class="caps">UNE</span>).</p>
+
+<p>Over the next century, more and more people began to move off-world and start over in freshly terraformed worlds. By the 26th century, almost 70% of the human population lived on other planets in other systems. Those living off-world felt like they were being equally represented in the government and began to petition the <span class="caps">UNE</span> for reform. Finally, in 2523, the <span class="caps">UNE</span> responded by transforming itself into the United Planets of Earth. This new political structure introduced the Tribunal of the High-Secretary (responsible for maintaining the infrastructure), High-General (responsible for expansion and protection), and High-Advocate (responsible for law enforcement) at the top of the pyramid and a Senate composed of Delegates representing all of the human planets around the galaxy.</p>
+
+<p>2541: The <span class="caps">UPE</span> got its first real challenge when prospectors discovered the Tevarin, a warrior-race who ultimately sparked the first of two wars with the humans. During that time though, the War elevated the courageous actions of a ambitious young officer named Ivar Messer. Used as a poster-child for recruitment, Messer parlayed his newfound fame into a political career. His passion and ruthlessness quickly paved the way to the High-General position. During his time in office, Messer was critical of the Tribunal system, citing that the system was mired in endless debate when sometimes a direct course of action was preferable. He began to lobby for the creation of a First Citizen position, a single voice to hear the arguments but ultimately make the call. Of course, he was shocked and honored to be asked to ascend to the rank himself.</p>
+
+<p>At the dawn of the 27th century, the remaining Tevarin, driven to the outskirts of the galaxy, were organized under a new Tevarin Warlord named Corth&#8217;Thal who launched an attack against their old enemies. The Second Tevarin War cemented Messer&#8217;s power. He stripped the High-Secretary and High-Advocate of their powers and declared himself Imperator of the new United Empire of Earth.</p>
+
+<p>For nearly two centuries, the <span class="caps">UEE</span> expanded into the universe, snatching up worlds and terraforming them and an unsettling rate. All the while, Messer&#8217;s power and title transferred down through his children, each seemingly more cruel and greedy than the last. It was a time of military oppression and fascism. The Imperator even used the threat of war with the Xi&#8217;An and Vanduul to subjugate the populace. Resistance was growing however. Representatives from Terra repeatedly tried to speak out against the Imperator and lobbied to secede, most disappeared shortly after.</p>
+
+<p>It wasn&#8217;t until the infamous Massacre of Garron II that the resistance really sparked a public outcry. A small planet brimming with life, Garron II was sold to a terraforming outfit by Imperator Messer XI. The atmospheric processing wiped out every living thing on the planet. When vid-footage of the atrocity hit the Spectrum, the public had finally had enough. Riots broke out. Underground Resistance movements attempted to fan the flames of revolution, finding unlikely allies in the Xi&#8217;An Empire who helped smuggle insurrectionists around <span class="caps">UEE</span> space. On May 3, 2792, the Imperator was overthrown. Erin Toi claimed the rank and restored the Tribunal system. The Imperator was no longer a hereditary autocrat but an elected position with a ten year term limit.</p>
+
+<p>The new <span class="caps">UEE</span> tried desperately to amend for centuries of abuse. The Fair Chance Act, which prohibited terraforming on planets with an established chain of life, was quickly enacted to prevent events like Garron II from happening again. The <span class="caps">UEE</span> built the Ark as a repository (and attempt at reparations with the various alien civilizations we had antagonized) for galactic knowledge. And finally began construction on the Synthworld (Project Archangel) as a final alternative to having to terraform ever again.</p>
+
+<p>To the present, the government has been maintaining these same policies. The Synthworld has largely been an unstable failure despite repeated efforts to get the project back on track. The money has started to dry up, the military is spread too thin.</p>
+
+<p>The cracks are starting to show.</p>
+
+<a class="image  js-open-in-slideshow" data-id="b1avrtoeskxbar" data-full_res="/media/b1avrtoeskxbar/source/UEE-Logos.jpg" data-low_res="/media/b1avrtoeskxbar/slideshow_pager/UEE-Logos.jpg" data-source_url="/media/b1avrtoeskxbar/source/UEE-Logos.jpg" rel="post"><img src="/media/b1avrtoeskxbar/post/UEE-Logos.jpg" alt="" /></a></div><div class="cboth"></div></div>
+<div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+
+  <div class="wrapper">
+    
+    <div class="end-transmission-container">
+      <div class="glow left"></div>
+      <div class="title-bar">
+        <h1>End Transmission</h1>
+      </div>
+      <div class="glow right"></div>
+    </div>
+  </div>
+  
+
+  
+    
+
+  <div class="two-line-separator"></div>
+  
+    
+<div class="wrapper force-one-column" id="comments">
+  <div class="holder">
+    <div class="title-bar">
+      <div class="count">
+        <div class="label">Comments</div>
+        <div class="value">06.<span class="js-comment-decimal">0</span></div>
+        <div class="cboth"></div>
+      </div>
+      <div class="title">
+        <h1>Feedback</h1>
+      </div>
+      <div class="cboth"></div>
+    </div>
+
+    <div class="main-buttons-holder-container">
+      <div class="main-buttons-holder">
+        <a href="/connect?jumpto=/comm-link/transmission/12928-Engineering-Designing-The-UEE-Logos" class="add-comment js-add-comment trans-02s js-modal-login">Add New Comment</a>
+        <div class="settings js-settings">
+          <h1>Settings</h1>
+          <label>View mode:</label>
+          <a href="#" class="js-comments-view to-one-column js-to-one-column trans-01s on">One column</a>
+          <a href="#" class="js-comments-view to-two-columns js-to-two-columns trans-01s ">Two columns</a>
+          <label>Sort by:</label>
+          <a href="#" class="js-comments-sort to-oldest js-to-oldest trans-01s on">Oldest first</a>
+          <a href="#" class="js-comments-sort to-newest js-to-newest trans-01s ">Newest first</a>
+          <a href="#" class="js-comments-sort to-appreciated js-to-appreciated trans-01s ">Most appreciated first</a>
+
+                  </div>
+        <a href="" class="view-settings js-view-settings"><div class="hover trans-02s"></div></a>
+        <div class="triangle"></div>
+      </div>
+    </div>
+
+    
+    <div class="comment-listing"></div>
+
+    <div class="comment-loader traj-loader">
+      <div class="fast-blink"></div>
+      <span>Loading Additional Feedback</span>
+    </div>
+
+    <div class="cboth"></div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    window.comments = new RSI.Comments({
+      atom_url:"/comm-link/transmission/12928-Engineering-Designing-The-UEE-Logos",
+      comment_listing_el:$(".comment-listing"),
+      comment_submission_form_el:$(".comment-submission"),
+      api_object:RSI.Api.Comments,
+      lazyLoading: true,
+      comment_count: 6,
+      subject_id:12928,
+      append:false,
+      texts: {
+        "edit": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        },
+        "reply": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        }
+      },
+      "insertion_conf": {
+        "mode":"html"
+      },
+      "api_function_names": {
+        "delete":"erase",
+        "load":"listing",
+        "sort":"listing"
+      }
+    });
+  });
+</script>
+  
+</div>
+
+    </div>
+
+    
+  </div>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.11/moment-timezone-with-data.min.js"></script>
+
+<script type="text/plain" data-cookieconsent="statistics">
+  $.cookie('moment_timezone', moment.tz.guess(), { expires: 31, path: '/' });
+</script>
+
+
+
+
+               <script id="tpl_number_counter_digits" type="text/x-jsmart-tmpl">{if !$seperator}{$seperator=','}{/if}
+{if !$first_max}{$first_max=9}{/if}
+{for $digit = 0 to $length-1}
+  <div class="mask">
+    <div class="carousel">
+      {if $digit == 0}
+        {$max = $first_max}
+      {else}
+        {$max = 9}
+      {/if}
+      {for $i=0 to $max}
+        <div class="item {if $val_arr[$digit] == $i}on{/if}" rel="{$i}">{$i}</div>
+      {/for}
+    </div>
+  </div>
+  {if ($length - $digit) % 3 == 1 && $digit != $length-1}
+  <div class="seperator">{$seperator}</div>
+  {/if}
+{/for}</script>
+<script id="base_modal" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  <div class="top-border">
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+  </div>
+</div></script>
+<script id="base_modal_flat" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  </div>
+  
+</div></script>
+<script id="tpl_modals_slideshow" type="text/x-jsmart-tmpl"><img class="top-border" src="/rsi/static/images/modal_top.png">
+<a href="" class="close js-close"></a>
+<div class="mask">
+  <a class="js-prev prev control"></a>
+  <a class="js-next next control"></a>
+  <div class="slideshow-carousel carousel" rel="{$index}">
+    {foreach from=$images item="image"}
+      <div class="{if $index == $image@index}on{/if}">
+      {if $image.is_video}
+        <div class="video-holder">
+          <div id="slideshow_video_{$image@index}" data-source="{$image->source_url}">
+            <video width="100%" height="100%" preload="auto" {if $video}src="{$image->source_url}"{/if} controls></video>
+          </div>
+        </div>
+      {else}
+        <div class="media js-media-slideshow-{$image@iteration}">
+        {if $image.low_res}
+          <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source data-srcset="{$image.full_res}" media="(min-width: 300px)" />
+            <!--[if IE 9]></video><![endif]-->
+            <img data-srcset="{$image.low_res}" alt="{$image.title}" />
+          </picture>
+        {else}
+          <img data-src="{$image.source_url}" />
+        {/if}
+        </div>
+      {/if}
+        <div class="text">
+          {if !$image.is_video}
+          <a href="{$image.source_url}" class="download"></a>
+          {/if}
+          <div class="copyright">© 2012-{$year}<br />Cloud Imperium Games Corporation &<br />Roberts Space Industries Corp.</div>
+          <div class="page-number">{$image@iteration} / {count($images)}</div>
+          <div class="caption v-center">{if $image.title && $image.title != "undefined"}{$image.title}{/if}</div>
+          <div class="cboth"></div>
+        </div>
+      </div>
+    {/foreach}
+  </div>
+</div>
+<img class="bottom-border" src="/rsi/static/images/modal_bottom.png"></script>
+<script id="tpl_contact_us" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="contact" class="inner-content on">
+  <h2><span class="icon"></span>CONTACT</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+  <div class="error-message js-error-message"></div>
+  <div class="success-message js-success-message"></div>
+    <fieldset class="last">
+    <label for="contact_email">Email Address</label>
+    <input type="text" name="email" value="" class="trans-02s trans-color trans-box-shadow" id="contact_email" />
+  </fieldset>
+    <fieldset>
+    <label for="contact_subject">Subject</label>
+    <input type="text" name="subject" value="" class="trans-02s trans-color trans-box-shadow" id="contact_subject" />
+    <label>Contacting us for:</label>
+    <ul class="category-info">
+            <li id="tech_support_info">Questions about download, installation, networking, or in-game client problems</li>
+            <li id="subscription_info">Questions about monthly and yearly subscription plans</li>
+            <li id="account_billing_info">Issues related to your account, such as incorrect information or ability to access account, or Billing with regards to payments and payment methods</li>
+            <li id="melt_request_info">To reclaim a pledge over $1,000 for store credit (please note - this is a permanent action)</li>
+            <li id="merchandise_info">Questions about physical and/or shipped merchandise</li>
+            <li id="hacked_info">Issues related to compromised account or missing pledge.</li>
+            <li id="account_recovery_info">For issues with account authentication, lost passwords and related queries</li>
+            <li id="probation_info">Issues related to forums probation or ban</li>
+            <li id="refund_request_info">Refund requests and related inquiries</li>
+            <li id="customer_support_info">For general questions and queries regarding Star Citizen</li>
+          </ul>
+  </fieldset>
+  <fieldset>
+    <label for="contact_text">Fescription</label>
+    <textarea name="text" class="trans-02s trans-color trans-box-shadow" id="contact_text"></textarea>
+  </fieldset>
+  <div class="contact-submit-wrapper">
+    <div class="line"></div>
+    <button class="submit js-submit"><strong>submit your message</strong></button>
+  </div>
+</form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+<script id="tpl_error" type="text/x-jsmart-tmpl"><div class="modal-error js-modal-error">
+  <p class="modal-text js-modal-text"></p>
+  <a class="close js-close trans-03s .trans-opacity" href=""></a>
+</div></script>
+<script id="tpl_success" type="text/x-jsmart-tmpl"><div class="modal-success js-modal-success">
+  <p class="modal-text js-modal-text"></p>
+  <a class="close js-close trans-03s .trans-opacity" href=""></a>
+</div></script>
+<script id="tpl_progress" type="text/x-jsmart-tmpl"><div class="modal-progress js-modal-progress">
+  <div class="traj-loader">
+    <div class="fast-blink"></div>
+    <span class="modal-text js-modal-text"></span>
+  </div>
+</div></script>
+<script id="tpl_outbound" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="outbound" class="inner-content on">
+  <h2><span class="icon"></span>OUTBOUND LINK</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+      <div class="error-message js-error-message"> <span class=important>WARNING</span><br/><br/> This link will bring you outside of the RSI site and into the depths of the internet. Continue?<br/><br/><span class="url"></span> </div>
+      <div class="success-message js-success-message"><span class=important>STAND BY</span><br/><br/> Initiating hyperlink.<br/><br/></div>
+
+      <fieldset class="clearfix last">
+        <span class="submit-wrapper">
+          <span class="submit-hover trans-02s trans-opacity"></span>
+          <input type="submit" value="WARP" class="trans-02s trans-color trans-background" />
+        </span>
+      </fieldset>
+    </form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+
+<script id="tpl_l-notification-bar" type="text/x-jsmart-tmpl"><div class="l-notification-bar js-notification-bar">
+
+  <div class="l-notification-bar__watermark js-svg-inliner h-svg__logo-star-citizen"></div>
+
+  <div class="l-notification-bar__boxes">
+    {if !$viewedCookieNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='cookie'
+          title='COOKIES:'
+          message="Our website uses Google Analytics to analyze our traffic. <br/>To learn how you can control Google's use of your data and how you can opt out <a href='https://www.google.com/policies/privacy/partners/'>click here</a>."
+          linkText='See Details'
+          buttonText='Got it!'}
+      </div>
+    {/if}
+
+    {if !$viewedPrivacyNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='privacy'
+          title='PRIVACY POLICY:'
+          message='We adjusted the PP to reflect the decision of the European Court of Justice regarding Safe Harbor, the fact that RSI has moved and added some services providers.'
+          linkText='View Privacy Policy'
+          buttonText='Got it!'}
+      </div>
+    {/if}
+  </div>
+
+</div>
+</script>
+<script id="tpl_c-notification" type="text/x-jsmart-tmpl"><div class="c-notification js-bottom-notif-msg-{$type}">
+    <div class="c-notification__title">{$title}</div>
+    <div class="c-notification__message">
+      {$message}
+    </div>
+
+    {if $linkText}
+        <div class="c-notification__wrapper-link">
+            <a class="c-notification__link js-bottom-notif-link-{$type}">
+            {$linkText}
+            </a>
+        </div>
+    {/if}
+
+    <a class="c-notification__button js-bottom-notif-btn-{$type}">
+
+      <span class="c-notification__button-text">
+       {$buttonText}
+      </span>
+
+      {if $type neq 'announcement'}
+        <div class="c-iconed__icon c-iconed__icon--checkmark"></div>
+      {/if}
+    </a>
+</div>
+</script>
+
+<script id="tpl_confirm" type="text/x-jsmart-tmpl"><div class="modal-confirm js-modal-confirm clearfix">
+  <p class="modal-text js-modal-text"></p>
+  <a class="bt-close js-close trans-03s trans-opacity" href=""></a>
+  <a class="bt-confirm js-confirm trans-03s trans-opacity" href=""></a>
+	<div class="buttons">
+		<a class="shadow-button trans-02s trans-color js-close bt-close rm"     >
+  <span class="label js-label trans-02s">Cancel</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+		<a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">Confirm</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+	</div>
+</div>
+</script>
+<script id="tpl_alert" type="text/x-jsmart-tmpl"><div class="modal-alert js-modal-alert clearfix">
+  <p class="modal-text js-modal-text"></p>
+  <div class="buttons">
+    <a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">OK</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+  </div>
+</div></script>
+<script id="tpl_video" type="text/x-jsmart-tmpl">{extends file="base_modal"}
+{block name='modal_content'}
+<div id="ship-commercial" class="inner-content">
+  
+  <div class="hr"></div>
+  <div class="content-block4">
+   
+    <div class="bottom"></div>
+  </div>
+  {if $distant_source=="vimeo"}
+  <iframe id="commercial" src="//player.vimeo.com/video/{$video_id}?wmode=transparent" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+  {else}
+  <iframe id="commercial" frameborder="0" allowfullscreen="1" title="YouTube video player" width="100%" height="100%" src="https://www.youtube.com/embed/{$video_id}?autoplay=1"></iframe>
+  {/if}
+</div>
+{/block}
+</script>
+      
+  <script id="tpl_comment_report" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="comment-report" class="inner-content on">
+  <h2><span class="icon"></span>Report this comment</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+<input type="hidden" name="comment_id" value="">
+  <div class="error-message js-error-message"></div>
+  <div class="success-message js-success-message"></div>
+    <fieldset class="last">
+    <label for="report_email">Email Address</label>
+    <span class="corner-wrapper">
+      <input type="text" name="email" value="" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_email" />
+      <span class="corner corner-top-left"></span>
+      <span class="corner corner-top-right"></span>
+      <span class="corner corner-bottom-left"></span>
+      <span class="corner corner-bottom-right"></span>
+    </span>
+  </fieldset>
+    <fieldset>
+    <label>Report Type</label>
+    
+
+
+  
+    <a class="js-selectlist selectlist " rel="" href="">
+    <div class="arrow"></div>
+    <span>Please select the type best matching your report</span>
+              <ul class="body">
+              
+                                                              <li class="js-option option " rel="obscenity" >
+                                                                        Obscene Content
+                                                    </li>
+                                                                <li class="js-option option " rel="abuse" >
+                                                                        Abusive Conduct
+                                                    </li>
+                                                                <li class="js-option option " rel="other" >
+                                                                        Other
+                                                    </li>
+                                          
+            </ul>
+        <input type="hidden" name="category" class="js-category js-form-data" id="category"/>
+  </a>
+    </fieldset>
+  <fieldset>
+    <label for="report_text">Details</label>
+    <span class="corner-wrapper">
+      <textarea name="text" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_text" maxlength="2500"></textarea>
+      <span class="corner corner-top-left"></span>
+      <span class="corner corner-top-right"></span>
+      <span class="corner corner-bottom-left"></span>
+      <span class="corner corner-bottom-right"></span>
+    </span>
+  </fieldset>
+  <fieldset class="clearfix last">
+    <span class="submit-wrapper">
+      <span class="submit-hover trans-02s trans-opacity"></span>
+      <input type="submit" value="Submit" class="trans-02s trans-color trans-background" />
+    </span>
+  </fieldset>
+</form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+
+
+      
+        <footer class="c-platform-footer c-platform-footer--rsi">
+  <div class="l-platform-footer-container">
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--sc">
+        <li class="c-platform-footer-brand__item">
+
+          <span class="c-brand c-brand--sc js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--sc">
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Join the<br>Universe
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--sc">
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen" class="c-platform-footer-link">About the Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/howto/1" class="c-platform-footer-link">How to Play</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/universe" class="c-platform-footer-link">The Universe</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/media" class="c-platform-footer-link">Media</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/play-now"
+                class="c-platform-footer-link js-google-analytics-event-tracker"
+                data-event-category="FlyNow" data-event-label="footerClick">
+                Play Now
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__sc">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">
+              Social Links
+            </span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/RobertsSpaceIndustries/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/RobertsSpaceInd">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/robertsspaceind">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href=" https://www.youtube.com/channel/UCTeLqJq1mXUX5WWoNXLmOIA">
+                <span class="c-iconed__icon c-iconed__icon--youtube"></span>
+                Youtube
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.twitch.tv/starcitizen">
+                <span class="c-iconed__icon c-iconed__icon--twitch"></span>
+                Twitch
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--s42">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--s42 js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--s42">
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Start the<br>Adventure
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--s42">
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42" class="c-platform-footer-link">The Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#enlist" class="c-platform-footer-link">Enlist Today</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#roadmap" class="c-platform-footer-link">Status</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/pledge/Packages/Squadron-42-Standalone-Pledge" class="c-platform-footer-link">Pledge</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__s42">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">Social Links</span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/Squad42/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/squadron_42">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/squadron42">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column is-active">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--rsi">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--rsi js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--rsi">
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi--fullcolor"></span>
+            </span>
+            <span class="c-brand__label">
+              Follow the Development
+            </span>
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--rsi">
+            <li class="c-platform-footer-list__item">
+              <a href="/" class="c-platform-footer-link">Home</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/comm-link" class="c-platform-footer-link">Transmissions</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/community" class="c-platform-footer-link">Community</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/roadmap" class="c-platform-footer-link">Development</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--platform">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Platform
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--platform">
+                          <li class="c-platform-footer-list__item">
+                <a href="/pledge" class="c-platform-footer-link ">Pledge Store</a>
+              </li>
+            
+            <li class="c-platform-footer-list__item">
+              <a href="/download" class="c-platform-footer-link ">Download</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/spectrum/community/SC" class="c-platform-footer-link">Spectrum</a>
+            </li>
+
+                      </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--utility">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Utilities
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--utility">
+            <li class="c-platform-footer-list__item">
+              <a href="//support.robertsspaceindustries.com" class="c-platform-footer-link">Help</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/press" class="c-platform-footer-link">Press</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="https://cloudimperiumgames.com/join-us" class="c-platform-footer-link">Careers</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/tos" class="c-platform-footer-link">Terms of Services</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/privacy" class="c-platform-footer-link">Privacy Policy</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/eula" class="c-platform-footer-link">EULA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/dmca" class="c-platform-footer-link">DMCA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/legal" class="c-platform-footer-link">Legal</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/acknowledgements" class="c-platform-footer-link">Acknowledgements</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/responsible-disclosure" target="_blank" class="c-platform-footer-link">Responsible disclosure</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  
+</footer>
+
+<div class="c-platform-copyright c-platform-copyright--rsi">
+  <div class="l-platform-copyright-container">
+    <a href="https://cloudimperiumgames.com" class="c-platform-copyright__logo h-svg__logo-cig js-svg-inliner"></a>
+    <p class="c-platform-copyright__body">© 2012-2021 Cloud Imperium Rights LLC and Cloud Imperium Rights Ltd.</p>
+  </div>
+</div>
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHNFZPT"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<script type="text/javascript">
+  window.RSI.Footer = new RSI.Footer();
+</script>
+      
+    </div>
+
+    
+      <script type="text/javascript" src='/rsi/static/packages/platformbar/rsi.platformbar.build.5e6ab.js'></script>
+    
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"58013cabd7","applicationID":"375102748","transactionName":"Y1JaYktUWxZUV0QKV1oYe0NKQVoIGmZjKmtdQ111VltBF1pYXAZKDg1ZQlZYcwxbUA==","queueTime":0,"applicationTime":47,"atts":"TxVNFANOSEkXVRJZQ0lK","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>

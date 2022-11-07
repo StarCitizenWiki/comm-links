@@ -1,0 +1,3863 @@
+
+  <head>
+    
+            <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1130.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+      <meta name="viewport" content="width=device-width">
+      <meta name="description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans.">
+      <meta property="og:site_name" content="
+Q&amp;A: Tumbril Nova - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+">
+      <meta property="og:image" content="https://robertsspaceindustries.com/media/jk2dkvagw25zgr/channel_item_full/TumbrilNova_.jpg">
+      <meta property="og:description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans.">
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://robertsspaceindustries.com/comm-link/SCW/16344-IMPORT">
+      <meta property="og:locale" content="us_EN">
+
+            
+
+            <link href="/rsi/static/css/cross-brand-less.css?v=3.2.9.0" media="all" rel="stylesheet">
+      <link href="/cache/en/rsi-platformbar-css.css?v=3.2.9.0" media="all" rel="stylesheet">
+            <script type="text/javascript" src="/cache/en/rsi-js.js?v=3.2.9.0"></script>
+      
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KHNFZPT');</script>
+<!-- End Google Tag Manager -->
+
+
+      <script>
+        $(document).ready(function() {
+          window.Common = new RSI.Common({});
+          window.Main = new RSI.Main({
+            'is_mobile': 0,
+            'probation_cookie' : '',
+            'require_captcha': 0
+          });
+          window.Mark = new Turbulent.Mark({ 'name' : 'Rsi-XSRF', 'token' : '', 'ttl' : 1800 });
+
+          window.WscOverlay = new RSI.WscOverlay({});
+
+          var destinations = [];
+
+window.Main.destinations = destinations;          
+  window.PageStore = new RSI.Store({
+    'store_prefix' : '/pledge',
+    'customizerConfig' : {"endpoint":"https:\/\/robertsspaceindustries.com\/","verify":true,"customizer":{"path":"\/customizer","view":"","api":"\/api","methods":{"start":"\/start","game":"\/configuration\/:id\/game","details":"\/configuration\/:id\/details","report":"\/configuration\/:id\/report","export-port-label":"\/admin\/export\/port\/label"}},"ga_tracking_code":"UA-39586040-5"}
+  });
+
+          
+          
+  var productsTracking = [];
+  var eCommerceData = {
+    'trackingAction': "",
+    'currency': "",
+    'trackingStep': "",
+    'trackingProducts': productsTracking
+  };
+  window.eCommerceTracking = new RSI.Store.eCommerceTracking(
+    eCommerceData
+  );
+
+        });
+
+        $(window).load(function() {
+          
+        });
+
+      </script>
+
+
+      <script>
+        window.recaptcha_is_loaded = false;
+        window.on_recaptcha_load_callback = function() {
+          window.recaptcha_is_loaded = true;
+        };
+      </script>
+
+      <script src="https://www.google.com/recaptcha/api.js?onload=on_recaptcha_load_callback&amp;render=explicit" async defer></script>
+
+      <script type="text/javascript">
+
+        
+
+                                </script>
+
+
+      <title>
+Q&amp;A: Tumbril Nova - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+</title>
+
+      
+
+<style type="text/css">
+  /* CSS from ATOM */
+  /* THIS IS JARED'S TYPICAL CSS HE ADDS TO EVERY POST */
+
+.rsi-markup .segment .content p {
+  width: 100%;
+  max-width: 100%;
+}
+
+.content .questions h3{margin-top:50px;}
+
+.content .questions {width:80%; margin-left:10%;}
+
+h1.no-margin{
+
+font-size: 52px;
+margin-top: 0px!important;
+margin-bottom:-22px;
+}
+
+.rsi-markup .segment .content p .initial {
+margin-right: 0;
+font-size: 14px;
+}
+
+.rsi-markup .segment .content table tr td:first-child { border-right: 1px dashed #465F7A;}
+.rsi-markup .segment .content table tr td strong { color: white; }
+.rsi-markup .segment .content table tr td { padding: 6px; text-align: left; color: #999999;  }
+
+h2.no-margin{
+margin-top: 0px!important;
+margin-bottom:-12px;}
+
+h3.no-margin{margin-bottom:-22px;}
+
+
+.rsi-markup .segment .content .image .caption {width:auto;}
+
+
+#post-background { opacity: 0.3; }
+
+.rsi-markup .segment .content p .initial { display: inline; font-size: inherit; text-transform: inherit; float: none; line-height: inherit; height: auto; margin-right: auto; }
+
+.image1 {float: left; padding: 5px;
+}
+
+.mb-box img {
+    margin-left: auto;
+    opacity: 0.7;
+    width: 300px;
+    margin-right: auto;
+    display: block;
+}
+
+.mb-box { max-width: 800px; margin: auto; margin-top: 100px; margin-bottom: 75px;  }
+.mb-box p { font-size: 18px; font-family: "Electrolize"; text-align: center; color: white;}
+
+.mb-box h1 {
+margin: 0px;
+font-size: 32px;
+color: #00e7ff;
+text-transform: uppercase;
+text-shadow: 0 0 0 #00E0FF, 0 0 11px #00A0B6;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+height: 57px;
+line-height: 57px;
+text-align: center;
+}
+
+
+.mb-full img { width: 100%; }
+
+
+#post .title-section .title-container .subtitle { font-size: 18px; }
+
+.variant-block h2 { 
+font-family: "Electrolize";
+color: #fff;
+line-height: 40px;
+text-transform: uppercase;
+font-size: 18px;
+margin: 0px;
+margin-left: 0px;
+}
+
+#contentbody .variant-block p { font-size: 14px;  line-height: 18px; min-width: 0px; width: auto; }
+
+#contentbody .variant-block.variant-right p { float: left;  }
+#contentbody .variant-block.variant-right a.image { float: right; }
+
+#contentbody .variant-block.variant-right .thumbs { float: right; }
+#contentbody .variant-block.variant-left .thumbs { float: left; }
+
+#contentbody .variant-block.variant-left p { float: right;  }
+#contentbody .variant-block.variant-left a.image { float: left; }
+
+#contentbody .variant-block a.image { padding: 5px; border: 1px solid rgba(0, 162, 253, 0.25); border-radius: 0px; }
+
+#contentbody .variant-block a.image img { border-radius: 0px; border: 0;  }
+
+
+.variant-block .glow-box {
+background-color: #13d0ff;
+width: 11px;
+height: 5px;
+float: left;
+box-shadow: 0px 0px 20px #1397FF;
+margin-top: 17px;
+margin-right: 18px;
+}
+
+#contentbody .variant-block .thumbs a.image { float: left; }
+#contentbody .variant-block .thumbs a.image img { height: 115px;  }
+
+
+#contentbody .variant-block p a.ship-button .arrow.arrow1 {
+right: 21px;
+}
+#contentbody .variant-block p a.ship-button .arrow.arrow2 { right: 14px; }
+#contentbody .variant-block p a.ship-button .arrow.arrow3 { right: 7px; }
+
+.rsi-markup .segment .content p { width: inherit; max-width: inherit; }
+
+.rsi-markup .segment .content table tr td:first-child { border-right: 1px dashed #465F7A;}
+.rsi-markup .segment .content table tr td strong { color: white; }
+.rsi-markup .segment .content table tr td { padding: 6px; text-align: left; color: #999999;  }
+
+.rsi-markup .segment .content { margin-left:0; margin-right:0 }
+hr { background-color:#09daff; border-top:0px;}
+.corner, .parallax-block  .top-line-thin, .parallax-block .top-line { display:none }
+.content-block1 { border:0}
+
+.variant-block .image {margin-top:0px;}
+
+.poll h1 {color:white;}
+
+#poll-77.poll {border:none;}
+
+.js-video {float:right; border-radius:0px!important;}
+
+a.js-video::before{
+width:155px;
+height:141px;
+background: url('/rsi/static/images/sales/starfarer/play-video.png') center center;
+top:50%;
+left:50%;
+margin:-1775px 0 0 300px;
+content:'';
+display:block;
+position:absolute;
+}
+
+
+
+/* THIS IS THE CODE TO SQUARE OUT THE IMAGE BORDERS */
+/* a img {border-radius:0px!important;} */
+
+/* BELOW IS ALL THE STUFF FOR THE NO ARTICLE TAG HOTNESS */
+
+.mb-full img { width: 100%; }
+
+body #post .segment.description.huckaby1 { background-position: 80% top; }
+body #post .segment.description.huckaby2 { background-position: 14% 25px; }
+body #post .segment.description.huckaby3 { background-position: 45% 40px; }
+body #post .segment.description.huckaby4 { background-position: 20% -250px; }
+body #post .segment.description.huckaby5 { background-position: 73% Top; }
+body #post .segment.description.huckaby6 { background-position: 75% Top; }
+body #post .segment.description.huckaby7 { background-position: 128% Top; }
+
+body #post p.firstparagraph {max-width:40%;}
+body #post p.firstparagraph2 {max-width:30%;}
+body #post p.qanda {max-width:60%;}
+body #post p.rightparagraph {max-width:55%; margin-left: 680px; text-align: left;}
+body #post p.rightparagraph2 {max-width:55%; margin-left: 680px;}
+body #post p.rightparagraph3 {max-width:55%; margin-left: 680px;}
+
+body #post-background {
+  background-image: url('https://robertsspaceindustries.com/media/c2ae7q1c7cg63r/source/Shipdetail-Concept-Bg_bw.jpg');
+  opacity: 0.75;
+}
+body #post .title-section .title-container {
+  height: 0px;
+  margin-top: 0px;
+  padding: 0;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+body #post .title-section .title-container .title,
+body #post .title-section .title-container .subtitle {
+  width: 1120px;
+  text-align: left;
+}
+body #post .title-section .title-container .title {
+  margin-top: 0px;
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  font-size: 0px;
+  color: #b1d8f1;
+  text-transform: uppercase;
+}
+body #post .title-section .title-container .subtitle {
+  margin-top: -17px;
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  font-size: 26px;
+  color: #42edf8;
+  font-style: normal;
+}
+body #post .lightbar.toplightbar {
+  display: none;
+}
+body #post .segment .content {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1140px;
+}
+body #post .segment.slogan .content p,
+body #post .segment.intro .content p {
+  text-align: center;
+}
+body #post .segment.slogan .content {
+  max-width: 1000px;
+  margin-top: 0px;
+}
+body #post .segment.slogan .content p {
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  font-size: 50px;
+  color: #42edf8;
+  line-height: 26px;
+  text-shadow: 0 9px 8px rgba(66, 169, 248, 0.3);
+}
+body #post .segment.slogan2 .content p,
+body #post .segment.intro .content p {
+  text-align: left;
+}
+body #post .segment.slogan2 .content {
+  max-width: 1000px;
+  margin-top: 0px;
+}
+body #post .segment.slogan2 .content p {
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  font-size: 32px;
+  color: #42edf8;
+  line-height: 26px;
+  text-shadow: 0 9px 8px rgba(66, 169, 248, 0.3);
+}
+
+body #post .segment.intro .content {
+  max-width: 900px;
+}
+body #post .segment.intro .content p {
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  font-size: 18px;
+  color: #f2f2f2;
+
+}
+body #post .segment.description {
+  position: relative;
+  z-index: 100;
+  margin-bottom: 0;
+  padding-bottom: 1px;
+  background-color: rgba(75, 75, 75, 0.3);
+  background-repeat: no-repeat;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body #post .segment.description.huckaby1 .content {
+  padding-top: 25px;
+}
+body #post .segment.description.huckaby1 .content .cards {
+  margin-top: 0px;
+}
+body #post .segment.description.huckaby1 .content .cards a.card {
+  display: block;
+  position: relative;
+  float: left;
+  width: 32%;
+  margin-bottom: 30px;
+  padding-top: 285px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+body #post .segment.description .content * {
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  color: #a0c8e2;;
+
+}
+body #post .segment.description .content h6 {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  font-size: 30px;
+  color: #42edf8;
+  line-height: 30px;
+  max-width: 60%;
+  text-shadow: 0 3px 3px rgba(66, 169, 248, 0.3);
+}
+body #post .segment.description .content h6 strong {
+  font-weight: 700;
+}
+
+body #post .segment.description .content p {
+  font-size: 18px;
+}
+body #post .segment.description .content .thumbs:not(.little) {
+  margin-top: px;
+}
+body #post .segment.description .content .thumbs.little .image:nth-child(3) {
+  margin-right: 20px;
+  margin-left: 21px;
+}
+body #post .segment.description .content .thumbs .image {
+  display: block;
+  margin: 0 10px;
+  float: left;
+  width: auto;
+  border: 1px solid #0a5688;
+}
+
+body #post .ship-spec {
+  overflow: hidden;
+  background-color: rgba(4, 39, 65, 0.3);
+}
+body #post .ship-spec .wrapper .content-block4 {
+  display: none;
+}
+body #post .ship-spec .wrapper #store-wrapper {
+  margin: 0;
+  padding-bottom: 50px;
+}
+body #post .message {
+  position: absolute;
+  left: 50%;
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  font-size: 16px;
+  color: #2c799f;
+  text-transform: uppercase;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+
+body #post .segment.description.huckaby2 .content {
+  padding-top: 25px;
+}
+body #post .segment.description.huckaby2 .content .cards {
+  margin-top: 0px;
+}
+body #post .segment.description.huckaby2 .content .cards a.card {
+  display: block;
+  position: relative;
+  float: left;
+  width: 32%;
+  margin-bottom: 30px;
+  padding-top: 285px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+body #post .segment.description.huckaby2 .content .cards a.card:hover::after {
+  opacity: 1;
+}
+body #post .segment.description.huckaby2 .content .cards a.card:nth-child(3n+2) {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+body #post .segment.description.huckaby2 .content .cards a.card::before,
+body #post .segment.description.huckaby2 .content .cards a.card::after {
+  content: '';
+  display: block;
+  position: absolute;
+}
+body #post .segment.description.huckaby2 .content .cards a.card::before,
+body #post .segment.description.huckaby2 .content .cards a.card::after {
+  top: 15px;
+  height: 240px;
+  width: 100%;
+  background: transparent no-repeat center;
+}
+
+body #post .segment.description.huckaby2 .content .cards a.card::after {
+  opacity: 0;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  /*-webkit-backface-visibility: hidden;*/
+}
+body #post .segment.description.huckaby2 .content .cards a.card .label {
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  font-size: 16px;
+  color: #2c799f;
+}
+body #post .segment.description.huckaby2 .content .cards a.card .label::before,
+body #post .segment.description.huckaby2 .content .cards a.card .label::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background: #046fa3;
+}
+body #post .segment.description.huckaby2 .content .cards a.card .label::before {
+  top: 270px;
+  height: 1px;
+  width: 100%;
+}
+body #post .segment.description.huckaby2 .content .cards a.card .arrow {
+  position: absolute;
+  top: 263px;
+  left: 181px;
+}
+body #post .segment.description.huckaby2 .content .cards a.card .name {
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  font-size: 13px;
+  color: #2c799f;
+  text-shadow: 0 9px 8px rgba(66, 169, 248, 0.3);
+}
+body #post .segment.description.huckaby2 .content .cards a.card .name::before {
+  content: '-';
+  padding-right: 3px;
+}
+body #post .segment.description.huckaby2 .content .cards a.card .name::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 271px;
+  right: 0;
+  height: 1px;
+  width: 50px;
+  background: #046fa3;
+}
+
+
+
+body #post .segment.description.huckaby3 .content {
+  padding-top: 25px;
+}
+body #post .segment.description.huckaby3 .content .cards {
+  margin-top: 0px;
+}
+body #post .segment.description.huckaby3 .content .cards a.card {
+  display: block;
+  position: relative;
+  float: left;
+  width: 32%;
+  margin-bottom: 30px;
+  padding-top: 285px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+body #post .segment.description.huckaby3 .content .cards a.card:hover::after {
+  opacity: 1;
+}
+body #post .segment.description.huckaby3 .content .cards a.card:nth-child(3n+2) {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+body #post .segment.description.huckaby3 .content .cards a.card::before,
+body #post .segment.description.huckaby3 .content .cards a.card::after {
+  content: '';
+  display: block;
+  position: absolute;
+}
+body #post .segment.description.huckaby3 .content .cards a.card::before,
+body #post .segment.description.huckaby3 .content .cards a.card::after {
+  top: 15px;
+  height: 240px;
+  width: 100%;
+  background: transparent no-repeat center;
+}
+
+body #post .segment.description.huckaby3 .content .cards a.card::after {
+  opacity: 0;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  /*-webkit-backface-visibility: hidden;*/
+}
+body #post .segment.description.huckaby3 .content .cards a.card .label {
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  font-size: 16px;
+  color: #2c799f;
+}
+body #post .segment.description.huckaby3 .content .cards a.card .label::before,
+body #post .segment.description.huckaby3 .content .cards a.card .label::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background: #046fa3;
+}
+body #post .segment.description.huckaby3 .content .cards a.card .label::before {
+  top: 270px;
+  height: 1px;
+  width: 100%;
+}
+body #post .segment.description.huckaby3 .content .cards a.card .arrow {
+  position: absolute;
+  top: 263px;
+  left: 181px;
+}
+body #post .segment.description.huckaby3 .content .cards a.card .name {
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  font-size: 13px;
+  color: #2c799f;
+  text-shadow: 0 9px 8px rgba(66, 169, 248, 0.3);
+}
+body #post .segment.description.huckaby3 .content .cards a.card .name::before {
+  content: '-';
+  padding-right: 3px;
+}
+body #post .segment.description.huckaby3 .content .cards a.card .name::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 271px;
+  right: 0;
+  height: 1px;
+  width: 50px;
+  background: #046fa3;
+}
+
+
+
+body #post .segment.description.huckaby4 .content {
+  padding-top: 25px;
+}
+body #post .segment.description.huckaby4 .content .cards {
+  margin-top: 0px;
+}
+body #post .segment.description.huckaby4 .content .cards a.card {
+  display: block;
+  position: relative;
+  float: left;
+  width: 32%;
+  margin-bottom: 30px;
+  padding-top: 285px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+body #post .segment.description.huckaby4 .content .cards a.card:hover::after {
+  opacity: 1;
+}
+body #post .segment.description.huckaby4 .content .cards a.card:nth-child(3n+2) {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+body #post .segment.description.huckaby4 .content .cards a.card::before,
+body #post .segment.description.huckaby4 .content .cards a.card::after {
+  content: '';
+  display: block;
+  position: absolute;
+}
+body #post .segment.description.huckaby4 .content .cards a.card::before,
+body #post .segment.description.huckaby4 .content .cards a.card::after {
+  top: 15px;
+  height: 240px;
+  width: 100%;
+  background: transparent no-repeat center;
+}
+
+body #post .segment.description.huckaby4 .content .cards a.card::after {
+  opacity: 0;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  /*-webkit-backface-visibility: hidden;*/
+}
+body #post .segment.description.huckaby4 .content .cards a.card .label {
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  font-size: 16px;
+  color: #2c799f;
+}
+body #post .segment.description.huckaby4 .content .cards a.card .label::before,
+body #post .segment.description.huckaby4 .content .cards a.card .label::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background: #046fa3;
+}
+body #post .segment.description.huckaby4 .content .cards a.card .label::before {
+  top: 270px;
+  height: 1px;
+  width: 100%;
+}
+body #post .segment.description.huckaby4 .content .cards a.card .arrow {
+  position: absolute;
+  top: 263px;
+  left: 181px;
+}
+body #post .segment.description.huckaby4 .content .cards a.card .name {
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  font-size: 13px;
+  color: #2c799f;
+  text-shadow: 0 9px 8px rgba(66, 169, 248, 0.3);
+}
+body #post .segment.description.huckaby4 .content .cards a.card .name::before {
+  content: '-';
+  padding-right: 3px;
+}
+body #post .segment.description.huckaby4 .content .cards a.card .name::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 271px;
+  right: 0;
+  height: 1px;
+  width: 50px;
+  background: #046fa3;
+}
+body #post .segment.description.huckaby5 .content {
+  padding-top: 5px;
+}
+body #post .segment.description.huckaby5 .content .cards {
+  margin-top: 0px;
+}
+body #post .segment.description.huckaby5 .content .cards a.card {
+  display: block;
+  position: relative;
+  float: left;
+  width: 32%;
+  margin-bottom: 30px;
+  padding-top: 285px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+body #post .segment.description.huckaby5 .content .cards a.card:hover::after {
+  opacity: 1;
+}
+body #post .segment.description.huckaby5 .content .cards a.card:nth-child(3n+2) {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+body #post .segment.description.huckaby5 .content .cards a.card::before,
+body #post .segment.description.huckaby5 .content .cards a.card::after {
+  content: '';
+  display: block;
+  position: absolute;
+}
+body #post .segment.description.huckaby5 .content .cards a.card::before,
+body #post .segment.description.huckaby5 .content .cards a.card::after {
+  top: 15px;
+  height: 240px;
+  width: 100%;
+  background: transparent no-repeat center;
+}
+
+body #post .segment.description.huckaby5 .content .cards a.card::after {
+  opacity: 0;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  /*-webkit-backface-visibility: hidden;*/
+}
+body #post .segment.description.huckaby5 .content .cards a.card .label {
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  font-size: 16px;
+  color: #2c799f;
+}
+body #post .segment.description.huckaby5 .content .cards a.card .label::before,
+body #post .segment.description.huckaby5 .content .cards a.card .label::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background: #046fa3;
+}
+body #post .segment.description.huckaby5 .content .cards a.card .label::before {
+  top: 270px;
+  height: 1px;
+  width: 100%;
+}
+body #post .segment.description.huckaby5 .content .cards a.card .arrow {
+  position: absolute;
+  top: 263px;
+  left: 181px;
+}
+body #post .segment.description.huckaby5 .content .cards a.card .name {
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  font-size: 13px;
+  color: #2c799f;
+  text-shadow: 0 9px 8px rgba(66, 169, 248, 0.3);
+}
+body #post .segment.description.huckaby5 .content .cards a.card .name::before {
+  content: '-';
+  padding-right: 3px;
+}
+body #post .segment.description.huckaby5 .content .cards a.card .name::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 271px;
+  right: 0;
+  height: 1px;
+  width: 50px;
+  background: #046fa3;
+}
+
+
+body #post .segment.description.huckaby6 .content {
+  padding-top: 25px;
+}
+body #post .segment.description.huckaby6 .content .cards {
+  margin-top: 0px;
+}
+body #post .segment.description.huckaby6 .content .cards a.card {
+  display: block;
+  position: relative;
+  float: left;
+  width: 32%;
+  margin-bottom: 30px;
+  padding-top: 285px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+body #post .segment.description.huckaby6 .content .cards a.card:hover::after {
+  opacity: 1;
+}
+body #post .segment.description.huckaby6 .content .cards a.card:nth-child(3n+2) {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+body #post .segment.description.huckaby6 .content .cards a.card::before,
+body #post .segment.description.huckaby6 .content .cards a.card::after {
+  content: '';
+  display: block;
+  position: absolute;
+}
+body #post .segment.description.huckaby6 .content .cards a.card::before,
+body #post .segment.description.huckaby6 .content .cards a.card::after {
+  top: 15px;
+  height: 240px;
+  width: 100%;
+  background: transparent no-repeat center;
+}
+
+body #post .segment.description.huckaby6 .content .cards a.card::after {
+  opacity: 0;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  /*-webkit-backface-visibility: hidden;*/
+}
+body #post .segment.description.huckaby6 .content .cards a.card .label {
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  font-size: 16px;
+  color: #2c799f;
+}
+body #post .segment.description.huckaby6 .content .cards a.card .label::before,
+body #post .segment.description.huckaby6 .content .cards a.card .label::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background: #046fa3;
+}
+body #post .segment.description.huckaby6 .content .cards a.card .label::before {
+  top: 270px;
+  height: 1px;
+  width: 100%;
+}
+body #post .segment.description.huckaby6 .content .cards a.card .arrow {
+  position: absolute;
+  top: 263px;
+  left: 181px;
+}
+body #post .segment.description.huckaby6 .content .cards a.card .name {
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  font-size: 13px;
+  color: #2c799f;
+  text-shadow: 0 9px 8px rgba(66, 169, 248, 0.3);
+}
+body #post .segment.description.huckaby6 .content .cards a.card .name::before {
+  content: '-';
+  padding-right: 3px;
+}
+body #post .segment.description.huckaby6 .content .cards a.card .name::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 271px;
+  right: 0;
+  height: 1px;
+  width: 50px;
+  background: #046fa3;
+}
+
+
+body #post .segment.description.huckaby7 .content {
+  padding-top: 25px;
+}
+body #post .segment.description.huckaby7 .content .cards {
+  margin-top: 0px;
+}
+body #post .segment.description.huckaby7 .content .cards a.card {
+  display: block;
+  position: relative;
+  float: left;
+  width: 32%;
+  margin-bottom: 30px;
+  padding-top: 285px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+body #post .segment.description.huckaby7 .content .cards a.card:hover::after {
+  opacity: 1;
+}
+body #post .segment.description.huckaby7 .content .cards a.card:nth-child(3n+2) {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+body #post .segment.description.huckaby7 .content .cards a.card::before,
+body #post .segment.description.huckaby7 .content .cards a.card::after {
+  content: '';
+  display: block;
+  position: absolute;
+}
+body #post .segment.description.huckaby7 .content .cards a.card::before,
+body #post .segment.description.huckaby7 .content .cards a.card::after {
+  top: 15px;
+  height: 240px;
+  width: 100%;
+  background: transparent no-repeat center;
+}
+
+body #post .segment.description.huckaby7 .content .cards a.card::after {
+  opacity: 0;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  /*-webkit-backface-visibility: hidden;*/
+}
+body #post .segment.description.huckaby7 .content .cards a.card .label {
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  font-size: 16px;
+  color: #2c799f;
+}
+body #post .segment.description.huckaby7 .content .cards a.card .label::before,
+body #post .segment.description.huckaby7 .content .cards a.card .label::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background: #046fa3;
+}
+body #post .segment.description.huckaby7 .content .cards a.card .label::before {
+  top: 270px;
+  height: 1px;
+  width: 100%;
+}
+body #post .segment.description.huckaby7 .content .cards a.card .arrow {
+  position: absolute;
+  top: 263px;
+  left: 181px;
+}
+body #post .segment.description.huckaby7 .content .cards a.card .name {
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  font-size: 13px;
+  color: #2c799f;
+  text-shadow: 0 9px 8px rgba(66, 169, 248, 0.3);
+}
+body #post .segment.description.huckaby7 .content .cards a.card .name::before {
+  content: '-';
+  padding-right: 3px;
+}
+body #post .segment.description.huckaby7 .content .cards a.card .name::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 271px;
+  right: 0;
+  height: 1px;
+  width: 50px;
+  background: #046fa3;
+}
+
+/* THIS IS THE CODE YOU NEED IF YOU DON'T USE THE ARTICLE TAG */
+
+
+.segment .content .image {float:right; width:auto; border:1px solid #192632; border-radius:10px; background-color:#01070a; display:block; margin:20px 0px 30px 20px;}
+.segment .content .image img {border:1px solid #6599a8;border-radius:10px; margin:-1px;}
+.segment .content .image .caption {color:#65818a; font-style:italic; font-size:12px; text-align:center; padding:20px 40px; display:block; width:420px;}
+</style>
+
+<script type="text/javascript">
+  /* JS from ATOM */
+  
+</script>
+
+
+
+
+    
+
+  <style>
+    
+      background:url(/rsi/static/images/noisebg.gif) repeat center top #000b11;
+    
+  </style>
+
+    <link href="//fonts.googleapis.com/css?family=Electrolize%7COrbitron:400,500,700%7CShare+Tech+Mono" rel="stylesheet" type="text/css">
+
+    <link href="/cache/en/rsi-css.css?v=3.2.9.0" media="all" rel="stylesheet">
+  
+
+  </head>
+  <body id="" class="">
+
+    
+      <div class="l-notification-bar l-notification-bar--rsi js-notification-bar" id="notification-bar-root">
+  <c-notification-bar v-bind:latestagreementsslugs='["qwa3l7w316dgt","5uyoqclrxgfgf"]' v-bind:loggedin="0" v-bind:onhomepage="0"></c-notification-bar>
+  <div class="l-notification-bar__boxes js-notification-bar-boxes">
+      </div>
+
+</div>
+    
+
+    <div id="bodyWrapper">
+      <header class="c-header-wrapper c-header-wrapper--rsi js-header-wrapper " id="cross-brand-header">
+  <div id="platform-bar"></div>
+
+  <div class="c-right-sidebar c-right-sidebar--search" id="search-sidebar">
+  <div class="js-toggle-search__backdrop hidden"></div>
+  <a href="#" class="c-right-sidebar__back js-toggle-search">Back
+    <span></span>
+    <span></span>
+  </a>
+  <form class="c-right-sidebar__form">
+    <h1 class="c-right-sidebar__form-title">Search</h1>
+
+    <input class="c-right-sidebar__form-input" type="text" id="header-search-input" placeholder="Search for articles">
+
+    <input class="c-right-sidebar__form-submit c-right-sidebar__form-submit--search" type="submit" value="Go">
+  </form>
+</div>
+      <div class="c-right-sidebar c-right-sidebar--signin" id="account-sidebar">
+<div class="js-toggle-account__backdrop hidden"></div>
+  <a href="#" class="c-right-sidebar__back js-toggle-account">Back
+    <span></span>
+    <span></span>
+  </a>
+
+  <form method="post" class="c-right-sidebar__form c-right-sidebar__form--signin js-signin-form" id="signin-form">
+
+    <h1 class="c-right-sidebar__form-title">Sign into RSI</h1>
+
+    <div class="c-right-sidebar__form-error-message js-error-message"></div>
+
+    <input name="login_id" class="c-right-sidebar__form-input" type="text" id="signin_input_loginid" placeholder="Login">
+
+    <input name="password" class="c-right-sidebar__form-input c-right-sidebar__form-password" type="password" id="signin_input_password" placeholder="Password">
+
+    <div class="c-right-sidebar__form-captcha" id="signin-captcha"></div>
+
+    <div class="l-oneline l-oneline--fill">
+      <div class="l-checkbox">
+        <input class="c-right-sidebar__form-checkbox" id="sidebar-login-remember-me" name="remember" type="checkbox">
+        <label class="c-right-sidebar__form-label c-right-sidebar__form-checkbox-label" for="sidebar-login-remember-me">
+          Remember me
+        </label>
+      </div>
+
+      <input class="c-right-sidebar__form-submit c-right-sidebar__form-submit--login" type="submit" value="Sign In">
+      <span class="c-right-sidebar__form-success-message">
+        <span class="js-svg-inliner h-svg c-account__icon c-account__icon-success"></span>
+        Success
+      </span>
+    </div>
+    
+
+    <div class="l-oneline">
+      <a class="c-right-sidebar__form-icon-link js-show-recovery c-right-sidebar__form-icon-link--recovery" href="">
+        <span class="js-svg-inliner h-svg c-account__icon c-account__icon--smaller c-account__icon-lock"></span>
+        Account Recovery
+      </a>
+      <a class="c-right-sidebar__form-icon-link c-right-sidebar__form-icon-link--enlist" href="/enlist?jumpto=%2Fcomm-link%2FSCW%2F16344-IMPORT">
+        <span class="js-svg-inliner h-svg c-account__icon c-account__icon--smaller c-account__icon-go"></span>
+        Enlist Now
+      </a>
+    </div>
+  </form>
+
+  <form class="c-right-sidebar__form c-right-sidebar__form--recovery js-recovery-form is-hidden" id="recovery-form">
+
+    <h1 class="c-right-sidebar__form-title">Account Recovery</h1>
+
+    <div class="c-right-sidebar__form-error-message js-error-message"></div>
+
+    <label for="signin_recovery_email" class="c-right-sidebar__form-label">Enter the e-mail address associated with your RSI account. We will email you with the instructions on how to create a new password.</label>
+
+    <input name="email" class="c-right-sidebar__form-input" type="email" id="signin_recovery_email" placeholder="Your Email Address">
+
+    <input class="c-right-sidebar__form-submit c-right-sidebar__form-submit--recovery" type="submit" value="Submit">
+    <span class="c-right-sidebar__form-success-message">
+      <span class="js-svg-inliner h-svg c-account__icon c-account__icon-success"></span>
+      Success
+    </span>
+
+    <p class="slidedown-on-success">We've sent a recovery email to your email address. Click the link within to reset your password.</p>
+
+    <div class="l-oneline">
+      <a class="c-right-sidebar__form-icon-link c-right-sidebar__form-icon-link--signin js-show-signin" href="">
+        <span class="js-svg-inliner h-svg c-account__icon c-account__icon--smaller c-account__icon-power"></span>
+        Sign-In
+      </a>
+      <a class="c-right-sidebar__form-icon-link c-right-sidebar__form-icon-link--enlist" href="/enlist?jumpto=%2Fcomm-link%2FSCW%2F16344-IMPORT">
+        <span class="js-svg-inliner h-svg c-account__icon c-account__icon--smaller c-account__icon-go"></span>
+        Enlist Now
+      </a>
+    </div>
+    <a class="c-right-sidebar__form-icon-link c-right-sidebar__form-icon-link--support" href="//support.robertsspaceindustries.com">
+      <span class="js-svg-inliner h-svg c-account__icon c-account__icon--smaller c-account__icon-talk"></span>
+      Contact Customer Support
+    </a>
+  </form>
+
+
+  <form class="c-right-sidebar__form c-right-sidebar__form--two-step js-two-step-form is-hidden" id="two-step-form">
+
+    <h1 class="c-right-sidebar__form-title">Two-Step Authentication</h1>
+
+    <div class="c-right-sidebar__form-error-message js-error-message"></div>
+
+    <label for="two_step_input_code" class="c-right-sidebar__form-label js-twostep-label">Enter the code generated by your authenticator or one of your backup codes</label>
+    <input name="code" class="c-right-sidebar__form-input c-right-sidebar__form-input--code" type="text" id="code" placeholder="Authentication Code">
+
+    <label for="two_step_input_device" class="c-right-sidebar__form-label">Name of your Device</label>
+    <input name="device_name" class="c-right-sidebar__form-input c-right-sidebar__form-input--device" type="text" id="device_name" placeholder="My Device">
+    <input type="hidden" name="device_type" id="device_type" value="">
+
+    <label for="two_step_input_device" class="c-right-sidebar__form-label">Trust this device for</label>
+        
+
+
+  
+    <a class="js-selectlist selectlist " rel="" href="">
+    <div class="arrow"></div>
+    <span>Duration</span>
+              <ul class="body">
+              
+                                                              <li class="js-option option " rel="session">
+                                                                        This session only
+                                                    </li>
+                                                                <li class="js-option option " rel="day">
+                                                                        1 day
+                                                    </li>
+                                                                <li class="js-option option " rel="week">
+                                                                        1 week
+                                                    </li>
+                                                                <li class="js-option option " rel="month">
+                                                                        1 month
+                                                    </li>
+                                                                <li class="js-option option " rel="year">
+                                                                        1 year
+                                                    </li>
+                                          
+            </ul>
+        <input type="hidden" name="duration" class="js-duration js-form-data" id="duration">
+  </a>
+  
+    <input class="c-right-sidebar__form-submit c-right-sidebar__form-submit--twostep" type="submit" value="Authenticate">
+    <span class="c-right-sidebar__form-success-message">
+      <span class="js-svg-inliner h-svg c-account__icon c-account__icon-success"></span>
+      Success
+    </span>
+
+  </form>
+
+</div>
+
+<script>
+
+$(document).ready(function() {
+  this.signin = new RSI.Signin({
+    //success_url: $(e.currentTarget).data('success-url-signin'),
+    require_captcha: 0
+  });
+});
+</script>  
+  <div class="c-header-wrapper__backdrop js-toggle-games"></div>
+</header>
+
+<div id="platform-backdrop"></div>
+
+<script type="text/javascript">
+  RSI.Platformbar = {
+    theme: "rsi",
+    loggedState: "logged-out",
+    tabs: [
+      {
+        type: 'brands',
+        name: "Games",
+        subItems: [
+          {
+            name: "sc",
+            href: "/star-citizen",
+            description: "Join the Universe"
+          },
+          {
+            name: "s42",
+            href: "/squadron42",
+            description: "Start the adventure"
+          },
+          {
+            name: "rsi",
+            href: "/",
+            description: "Follow the Development"
+          }
+        ]
+      },
+      {
+        type: 'apps',
+        name: "Apps",
+        subItems: [
+          [
+            {
+              name: "Spectrum",
+              href: "/spectrum/community/SC",
+              description: "Your&nbsp;communication platform"
+            },
+            {
+              name: "Launcher",
+              href: "/download",
+              description: "Download Star&nbsp;Citizen",
+                          }
+          ],
+          [
+            {
+              name: "Roadmap",
+              href: "/roadmap",
+              description: "Keep track of the&nbsp;development"
+            },
+            {
+              name: "Telemetry",
+              href: "/telemetry",
+              description: "Keep&nbsp;track&nbsp;of&nbsp;the player&rsquo;s&nbsp;performance"
+            },
+            {
+              name: "Issue Council",
+              href: "/community/issue-council",
+              description: "Help&nbsp;us&nbsp;make the game better",
+                          }
+          ],
+          [
+            {
+              name: "Starmap",
+              href: "/starmap",
+              description: "Your map to&nbsp;the&nbsp;universe"
+            }
+          ]
+        ]
+      },
+              {
+          type: 'citizencon',
+          name: "Citizencon 2949",
+          href: "/citizencon"
+        }
+          ],
+    navigation: {
+      store: {
+        name: "Pledge Store",
+        href: "/pledge",
+        isHidden: false      },
+      support: {
+        name: "Support",
+        href: "//support.robertsspaceindustries.com"
+      },
+      account: {
+        name: "Account",
+        href: "/account/settings"
+      }
+    }
+  };
+
+  $(document).ready(function() {
+    window.header = new RSI.Header({});
+  });
+</script>
+
+
+      
+  
+<header class="c-brand-menu c-brand-menu----rsi" id="brand-menu">
+  <span class="c-brand-menu__section">
+    
+      Roberts Space Industries
+    
+  </span>
+  <div class="c-brand-menu__backdrop"></div>
+  <nav class="c-brand-menu__container">
+    <div class="c-brand-menu__logo">
+      <a href="/"><span class="h-svg h-svg__logo-rsi--fullcolor js-svg-inliner"></span> </a>
+    </div>
+    <div class="c-brand-menu__items-container">
+      <ul class="c-brand-menu__items">
+                <li class="c-brand-menu__item  ">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/comm-link">
+            <span class="c-brand-menu__item-text">Comm-Link</span>
+                                  </a>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/community">
+            <span class="c-brand-menu__item-text">Community</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Community</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/spectrum" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Spectrum
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/orgs" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Organizations
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/leaderboards/top" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Leaderboards
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community_events" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Event
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Hub
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/fankit" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Fankit
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/development">
+            <span class="c-brand-menu__item-text">Development</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Development</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/roadmap" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Roadmap
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/devtracker" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Dev Tracker
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/telemetry" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Telemetry
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/issue-council" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Issue Council
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/patch-notes" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Patch Notes
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/ship-matrix" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Ship Matrix
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/funding-goals" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Funding
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+              </ul>
+    </div>
+
+    <div class="c-brand-menu__cta">
+      
+          <a href="/star-citizen/fly-now" class="c-brand-cta-btn js-google-analytics-event-tracker" data-event-category="FlyNow" data-event-label="navMenuClick">
+            <div></div>
+              <span class="c-brand-cta-btn__text">
+                <strong>Fly now</strong>Alpha 3.7
+              </span>
+            <div></div>
+          </a>
+      
+    </div>
+  </nav>
+</header>
+
+
+
+      
+
+  
+  <div class="page-wrapper">
+    
+  <div id="post-background"></div>
+
+
+    <div id="contentbody" class="" style="">
+      
+
+<div id="post">
+  <div class="title-section">
+    
+      <div class="wrapper title-bar-container">
+        <div class="glow left"></div>
+        <div class="title-bar">
+          <div class="title with-subtitle">
+            <h1>Engineering</h1>
+            <h2>Development</h2>
+          </div>
+          <div class="details">
+            <div>
+              <h3>ID:</h3>
+              <p>16344</p>
+              <div class="cboth"></div>
+            </div>
+            <div>
+              <h3>Comments:</h3>
+              <p class="comment-count">83</p>
+              <div class="cboth"></div>
+            </div>
+            <div>
+              <h3>Date:</h3>
+              <p>December 22nd 2017</p>
+              <div class="cboth"></div>
+            </div>
+            <div></div>
+          </div>
+          <div class="cboth"></div>
+        </div>
+        <div class="glow right"></div>
+      </div>
+    
+  <div class="title-container">
+    <div class="title no-subtitle">Q&amp;A: Tumbril Nova</div>
+      </div>
+
+  </div>
+
+  
+  <div class="lightbar toplightbar">
+    <div class="lightbarlights"></div>
+    <div class="footershadow"></div>
+  </div>
+
+
+  <div class->
+</div>
+
+<br><br>
+
+<div style="background:url(https://robertsspaceindustries.com/media/dewm8ujnbki20r/source/Tumbril_logo.png) no-repeat center 10px; padding-top:150px;">
+</div><br>
+
+<div class="slogan segment"><div class="content"><p><span class="initial">Q</span>&amp;A: Tumbril Nova – Part 1</p></div><div class="cboth"></div></div>
+
+<div class="intro segment"><div class="content"><p>Greetings Citizens,</p>
+
+<p>Following the launch of the Nova, below are some questions and answers to provide more information on this important heavy battle tank from Tumbril. There is also a <a href="https://robertsspaceindustries.com/spectrum/community/SC/forum/1/thread/q-a-tumbril-nova-part-2">Spectrum thread</a> where you can post additional questions and vote for the ones you want to see in the second part of the Q&amp;A. <br>
+</p><hr>
+
+<div class="clearfix"></div>
+<br>
+</div><div class="cboth"></div></div>
+
+
+
+<div class="description huckaby1 segment"><div class="content"><a class="image  js-open-in-slideshow" data-id="jk2dkvagw25zgr" data-full_res="/media/jk2dkvagw25zgr/source/TumbrilNova_.jpg" data-low_res="/media/jk2dkvagw25zgr/slideshow_pager/TumbrilNova_.jpg" data-source_url="/media/jk2dkvagw25zgr/source/TumbrilNova_.jpg" rel="post"><img src="/media/jk2dkvagw25zgr/tavern_upload_small/TumbrilNova_.jpg" alt=""></a>
+
+<h6>What ships will the Nova fit in?</h6>
+
+<p></p><p class="qanda">The Nova is a serious war machine, bigger and more massive than all other ground vehicles introduced to date. One consideration, however, is height as the Nova requires ships with a high ceiling. The Idris, for instance, has ample clearance, but many cargo ships do not.</p>
+
+<br>
+<br>
+
+
+<h6>What size is the main gun?</h6>
+
+<p></p><p class="qanda">The Nova’s main gun is equivalent to a S4 Ballistic Cannon, and is integrated into the vehicle’s turret design. While the main gun is not modular, other weapon hardpoints on the tank are interchangeable with weapons of the appropriate size.</p>
+
+<br>
+<br>
+
+
+<h6>Why would I use a tank versus a ship?</h6>
+
+<p></p><p class="qanda">It entirely depends on the situation. Both have different strengths and weaknesses. Some areas might have particularly strong aerial defenses, are difficult to traverse by air, or have ground terrain that provides a lot of cover. In this case, the tank is the solution to blast through enemy defenses and open the way to friendly ships.  </p>
+
+<p></p><p class="qanda">Ships are a good recon method to help the tank find the best entry points or plan different attack maneuvers. Ships and tanks are complementary as they can be used together to accomplish objectives. In addition, the Nova is also suited to destroy ships. </p>
+
+<br>
+<br>
+
+
+<a class="image  js-open-in-slideshow" data-id="gq7lrvd7wbcbhr" data-full_res="/media/gq7lrvd7wbcbhr/source/Nova_Brochure6.jpg" data-low_res="/media/gq7lrvd7wbcbhr/slideshow_pager/Nova_Brochure6.jpg" data-source_url="/media/gq7lrvd7wbcbhr/source/Nova_Brochure6.jpg" rel="post"><img src="/media/gq7lrvd7wbcbhr/tavern_upload_small/Nova_Brochure6.jpg" alt=""></a>
+
+<h6>Can the Nova fire different ammo types like modern-day tanks? </h6>
+
+<p></p><p class="qanda">While the Nova tank has been configured for a specific kind of ammunition, the gun’s ammo box has been designed to accommodate different types of ammo if those are made available in future updates. </p>
+
+<br>
+<br>
+
+
+<h6>Can the Nova be loaded or dropped from a dropship?</h6>
+
+<p></p><p class="qanda">Yes. However, given its intimidating size, the Nova tank can’t fit in most currently available ships. Any present or future ships able to transport the Nova can also drop it from a reasonable height (to be determined in development). While it’s not advised, provided it lands upright, its tracks and hull are sturdy enough to survive this kind of maneuver.</p>
+
+<br>
+<br>
+
+
+<h6>What are the crew positions? </h6>
+
+<p></p><p class="qanda">The driver and support crew are at the front of the tank, while the gunner is in the middle of the tank, in a separate room.</p>
+
+<br>
+<br>
+
+
+<a class="image  js-open-in-slideshow" data-id="vmy96qyomf06gr" data-full_res="/media/vmy96qyomf06gr/source/Nova_Brochure10.jpg" data-low_res="/media/vmy96qyomf06gr/slideshow_pager/Nova_Brochure10.jpg" data-source_url="/media/vmy96qyomf06gr/source/Nova_Brochure10.jpg" rel="post"><img src="/media/vmy96qyomf06gr/tavern_upload_small/Nova_Brochure10.jpg" alt=""></a>
+
+<h6>Does it have a ‘deployable mode’? </h6>
+
+<p></p><p class="qanda">While we considered this in its early design stages, the Nova does not have any alternative modes, and instead stays focused in a single configuration.</p>
+
+<br>
+<br>
+
+
+<h6>What range does the main gun have?</h6>
+
+<p></p><p class="qanda">While we’re still determining the exact range, it should fall within the same range as other ballistic cannons.</p>
+
+<br>
+<br>
+
+
+<h6>Does the Nova hold any cargo?</h6>
+
+<p></p><p class="qanda">The Nova tank does not hold any cargo, but it can be used to clear the way for other ships and vehicles, allowing them to grab cargo. This tank exists to protect and destroy, but not to transport.</p>
+
+<br>
+<br>
+
+
+<h6>How rapidly does the main gun fire?</h6>
+
+<p></p><p class="qanda">While stats might change, its fire rate should be a bit slower than S4 ship ballistic cannons, around 30-50 rounds per minute. We also try to match the rate of fire with the Nova’s expected ammunition storage.</p>
+
+<br>
+<br>
+
+
+<a class="image  js-open-in-slideshow" data-id="kivmao0qtt7odr" data-full_res="/media/kivmao0qtt7odr/source/Nova_Brochure5.jpg" data-low_res="/media/kivmao0qtt7odr/slideshow_pager/Nova_Brochure5.jpg" data-source_url="/media/kivmao0qtt7odr/source/Nova_Brochure5.jpg" rel="post"><img src="/media/kivmao0qtt7odr/tavern_upload_small/Nova_Brochure5.jpg" alt=""></a>
+
+<h6>Does the Nova have countermeasures?</h6>
+
+<p></p><p class="qanda">The Nova tank indeed has countermeasures! Four launchers are set up on the turret to maximize coverage and protection from enemy missiles.</p>
+
+<br>
+<br>
+
+
+<h6>Considering we have Gravlev technology, why isn’t the Nova a hover tank?</h6>
+
+<p></p><p class="qanda">While Gravlev technology is indeed a thing, it is expensive to produce and maintain, and is more vulnerable to things like distortion damage. What the Nova loses in agility, it gains in defense.</p>
+
+<br>
+<br>
+
+
+<h6>Can I operate the tank by myself? In other words, can I slave the main gun or must there be a dedicated gunner?</h6>
+
+<p></p><p class="qanda">Yes, a solo player can operate the Nova without assistance. However, the main gun is designed to shoot directly forward when slaved. We recommend having a second player or <span class="caps">NPC</span> to man the Nova.</p>
+
+<br>
+<br>
+
+
+
+<a class="image  js-open-in-slideshow" data-id="66vq05a40480hr" data-full_res="/media/66vq05a40480hr/source/Nova_Brochure3.jpg" data-low_res="/media/66vq05a40480hr/slideshow_pager/Nova_Brochure3.jpg" data-source_url="/media/66vq05a40480hr/source/Nova_Brochure3.jpg" rel="post"><img src="/media/66vq05a40480hr/tavern_upload_small/Nova_Brochure3.jpg" alt=""></a>
+
+<h6>Does the Nova have a compact mode when in storage, or being transported?</h6>
+
+<p></p><p class="qanda">The Nova tank is already about as compact as it can be for a main battle tank of its capability, and as such, has no particular storage mode.</p>
+
+<br>
+<br>
+
+
+<h6>What is the  top speed of the Nova?</h6>
+
+<p></p><p class="qanda">Its top speed is currently planned to be around 20 m/s, which may seem high for such a massive vehicle, however, its acceleration is also relatively slow, so it would still take time to reach top speed.</p>
+
+<br>
+<br>
+
+
+<h6>Does the Nova have any weak points?</h6>
+
+<p></p><p class="qanda">Yes. While the Nova has a formidable defense, its rear entry point and the exposed parts of its tracks are  weak spots. Any operator should be cautious and avoid exposing these areas to last longer on the battlefield.    </p>
+
+
+<br>
+<br>
+<br>
+<br>
+</div><div class="cboth"></div></div>
+<br><br><br><br>
+<script src="/rsi/static/js/sales/starfarer/modernizr.custom.79639.js"></script>
+
+<script src="/rsi/static/js/sales/dragonfly/dragonfly.js"></script>
+
+<script>
+  &nbsp; &nbsp;$(function() {
+
+&nbsp; &nbsp; &nbsp;Page.init();
+&nbsp;window.Page = new RSI.Game.About();
+
+
+&nbsp; &nbsp; &nbsp;});
+&nbsp; &nbsp;</script>
+
+
+
+  <div class="wrapper">
+    
+    <div class="end-transmission-container">
+      <div class="glow left"></div>
+      <div class="title-bar">
+        <h1>End Transmission</h1>
+      </div>
+      <div class="glow right"></div>
+    </div>
+  </div>
+  
+
+  
+    <div class="two-line-separator"></div>
+  <div class="channel-banner">
+  <div class="header-container">
+                  <div>
+      <div class="header">
+        <div class="wrapper">
+                      <div class="image" style="background-image:url('/media/ojqr00g0fhnrgr/post_section_header/Squadron-Battle-V2.jpg');"></div>
+                    <div class="texts">
+            <div class="title">
+              <div class="presented-by">Part of</div>
+              <div class="cboth"></div>
+              <h1>Concept Ship Q&amp;A</h1>
+              <a class="holobtn " href="/comm-link?series=concept-qna">
+  <span class="holobtn-top abs-overlay trans-02s">More in this series </span>
+  <span class="holobtn-bottom abs-overlay trans-02s"></span>
+</a>
+              <div class="cboth"></div>
+            </div>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content-carousel">
+    <div class="carousel-mask">
+      <div class="left-shadow shadow"></div>
+      <a href="" class="prev js-prev"><div class="hover trans-03s trans-opacity"></div></a>
+      <div class="centerer">
+        <div class="carousel">
+                      <a href="/comm-link/engineering/14681-Q-A-MISC-Hull-A" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/tpw5r365mowmar/home_transmissions_item_expanded/Hull_A_Final.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: MISC Hull A</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-04-28 01:04:02</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/14684-Q-A-MISC-Hull-B" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/xg8d8kyo0bjsmr/home_transmissions_item_expanded/HullB_landedcompv3b.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: MISC Hull B</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-04-29 02:42:19</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/14686-Q-A-MISC-Hull-C" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/y5098i3qb57wbr/home_transmissions_item_expanded/Hull_C_alt_wGl_v003.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: MISC Hull C</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-04-30 00:30:58</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/14687-Q-A-MISC-Hull-D" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/n0aghfmgi3n9ir/home_transmissions_item_expanded/Hull_D_landed2_compv4.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: MISC Hull D</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-05-01 04:52:21</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/14688-Q-A-MISC-Hull-E" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/y5098i3qb57wbr/home_transmissions_item_expanded/Hull_C_alt_wGl_v003.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: MISC Hull E</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-05-02 02:11:13</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/14710-Q-A-MISC-Starfarer-Part-I" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/4pgpl7n71hijzr/home_transmissions_item_expanded/Gemini2338.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: MISC Starfarer - Part I</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-05-11 22:44:01</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/14715-Q-A-MISC-Starfarer-Part-II" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/k4f44vqnex0m1r/home_transmissions_item_expanded/SF-Chris-O-2.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: MISC Starfarer - Part II</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-05-13 23:46:28</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/14716-Q-A-MISC-Starfarer-Part-III" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/smyzfowhgjjjfr/home_transmissions_item_expanded/SF-Chris-O-1.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: MISC Starfarer - Part III</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-05-15 22:27:41</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/14742-Q-A-MISC-Reliant-Part-I" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/1b89jd16f9cwzr/home_transmissions_item_expanded/Reliant_LandingInsitu_Final_Hobbins.png');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: MISC Reliant - Part I</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-05-27 22:24:52</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/14743-Q-A-MISC-Reliant-Part-II" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/75kpa1wantyi9r/home_transmissions_item_expanded/Reliant_CargoHoldFunction_Final_Hobbins.png');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: MISC Reliant - Part II</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-05-29 18:00:26</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/14786-Q-A-Vanduul-Scythe" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/33lsbuiw7safar/home_transmissions_item_expanded/Scythe_Damage_Header.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Vanduul Scythe</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-06-19 20:26:38</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/14811-Q-A-Genesis-Starliner-Part-I" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/4n14l74gnlq0wr/home_transmissions_item_expanded/Starliner_rear.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Genesis Starliner - Part I</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-07-01 23:52:30</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/14812-Q-A-Genesis-Starliner-Part-II" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/v7mapkwuuxqrur/home_transmissions_item_expanded/Starliner_multi_overhead.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Genesis Starliner - Part II</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-07-03 23:21:44</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/14865-Q-A-P-52-Merlin" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/7151ta7fbmpqdr/home_transmissions_item_expanded/KRGR_Merlin_Shot1.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: P-52 Merlin</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-07-29 18:25:00</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/14902-Q-A-Retaliator-Modules" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/o9ytc9buygleyr/home_transmissions_item_expanded/RetaliatorModule_Living_Back.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Retaliator Modules</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-08-15 00:18:31</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/14934-Q-A-Vanguard-Variants-Part-I" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/o6c9f6ykw9kiwr/home_transmissions_item_expanded/Vanguard_variants_parked.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Vanguard Variants - Part I</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-09-02 23:07:27</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/14935-Q-A-Vanguard-Variants-Part-II" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/pgkagfzpcv2ifr/home_transmissions_item_expanded/Vanguard_ALL_EXT.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Vanguard Variants - Part II</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2015-09-04 23:57:06</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/14982-Q-A-MISC-Endeavor-Part-I" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/o90g25wngn6v7r/home_transmissions_item_expanded/CO_Beauty_Explorer.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: MISC Endeavor - Part I</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">4 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/14989-Q-A-MISC-Endeavor-Part-II" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/lxcc15p377yd1r/home_transmissions_item_expanded/Final2.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: MISC Endeavor - Part II</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">4 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/14994-Q-A-MISC-Endeavor-Part-III" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/mmcojs7rg7v0nr/home_transmissions_item_expanded/Final1.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: MISC Endeavor - Part III</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">4 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/15014-Q-A-Aegis-Sabre" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/87c41fp7q29azr/home_transmissions_item_expanded/Concept_citcon2015_6.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Aegis Sabre</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">4 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/15084-Q-A-Kruger-P-72-Archimedes" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/yvcp9gh8vfmrgr/home_transmissions_item_expanded/Archimedes_opera_final_01.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Kruger P-72 Archimedes</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">4 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/15087-Q-A-Aegis-Avenger-Variants" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/6rp1fza7oh9yjr/home_transmissions_item_expanded/Avenger_EMP_02.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Aegis Avenger Variants</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">4 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/15088-Q-A-Anvil-Crucible" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/vxj1ppzl3xmhdr/home_transmissions_item_expanded/AnvilcrucibleREARMAINTENANCE.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Anvil Crucible</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">4 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/15263-Q-A-Esperia-Vanduul-Blade-Part-I" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/rxll1yyds3w51r/home_transmissions_item_expanded/Vanduul3.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Esperia Vanduul Blade - Part I</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">4 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/15265-Q-A-Esperia-Vanduul-Blade-Part-II" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/rxll1yyds3w51r/home_transmissions_item_expanded/Vanduul3.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Esperia Vanduul Blade - Part II</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">4 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/15317-Q-A-MISC-Prospector-Part-I" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/qf2344qcdgzkir/home_transmissions_item_expanded/MISC-Mining-Vehicle-PIECE-2-V19.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: MISC Prospector - Part I</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">4 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/15319-Q-A-MISC-Prospector-Part-II" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/n20z3rcs41etur/home_transmissions_item_expanded/MISC-Mining-Vehicle-PIECE-1-V15.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: MISC Prospector - Part II</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">4 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/15358-Q-A-Drake-Buccaneer-Part-I" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/tljunnr7aoadsr/home_transmissions_item_expanded/Bucky-Pass03-Front-Shot.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Drake Buccaneer - Part I</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">4 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/15359-Q-A-Drake-Buccaneer-Part-II" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/hkryowl0h0uyxr/home_transmissions_item_expanded/Buc_final124_comp3flat.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Drake Buccaneer - Part II</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">4 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/15389-Q-A-Drake-Dragonfly-Part-I" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/ag4fp7v7aku12r/home_transmissions_item_expanded/Drake_Dragonfly_Exploration_Wreckage_01B.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Drake Dragonfly - Part I</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">4 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/15390-Q-A-Drake-Dragonfly-Part-II" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/9kio0rzcxf4qsr/home_transmissions_item_expanded/Dragonfly_Threequarter_Angle_Yellow_01.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Drake Dragonfly - Part II</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">4 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/15477-Q-A-Anvil-Terrapin-Part-I" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/21jd4k2pjxihwr/home_transmissions_item_expanded/Terrapin.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Anvil Terrapin - Part I</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">4 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/15478-Q-A-Anvil-Terrapin-Part-II" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/ijkzkcb5t1w8zr/home_transmissions_item_expanded/Anvil_Terrapin_Piece_03_Surveilance_v3.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Anvil Terrapin - Part II</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">4 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/15559-Q-A-RSI-Polaris-Part-I" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/rwzlh40fdukbor/home_transmissions_item_expanded/Polaris-Selling-3-Deploymentv3.jpg');"></div>
+    <div class="title trans-opacity trans-03s"> Q&amp;A: RSI Polaris - Part I</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">3 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/15564-Q-A-RSI-Polaris-Part-II" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/gd8kjrv7b9pmnr/home_transmissions_item_expanded/Polaris-Composition-2-Battle-Notrail-Paralax.jpg');"></div>
+    <div class="title trans-opacity trans-03s"> Q&amp;A: RSI Polaris - Part II</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">3 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/15613-Q-A-Esperia-Prowler-Part-I" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/3j9cau4jygwier/home_transmissions_item_expanded/Esperia_Prowler_SHOT_01b.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Esperia Prowler - Part I</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">3 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/15614-Q-A-Esperia-Prowler-Part-II" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/yqjj3pwpm1rdwr/home_transmissions_item_expanded/Esperia-Prowler-Landing-Pad-V08.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Esperia Prowler - Part II</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">3 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/15658-Q-A-MISC-Razor" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/m3y7l5xmy6a9cr/home_transmissions_item_expanded/Misc-Razer-Murray-Ringz-Paint-V5.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: MISC Razor</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">3 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/15765-Q-A-Anvil-Hurricane-Part-I" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/pk36c8iaoj51wr/home_transmissions_item_expanded/Overhead-Hangar-Copy.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Anvil Hurricane - Part I</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">3 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/15768-Q-A-Anvil-Hurricane-Part-II" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/onhimywly60jyr/home_transmissions_item_expanded/Turret-Interior-Shot-Copy.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Anvil Hurricane - Part II</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">3 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/15871-Q-A-Banu-Defender" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/fkrnkfsm072bur/home_transmissions_item_expanded/Interior_Open.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Banu Defender</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">3 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/15921-Q-A-Aegis-Eclipse" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/i5snc4g2gh51ur/home_transmissions_item_expanded/Aegis-Eclipse-L4-Piece-5-Atmospheric-Flight-011b.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Aegis Eclipse</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">3 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/15991-Q-A-Aopoa-Nox" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/wb6pt7jprul22r/home_transmissions_item_expanded/Nox_Hanger_1.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Aopoa Nox</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">3 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16093-Q-A-Origin-600i" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/id9k7r5kzes0wr/home_transmissions_item_expanded/Josh-Fix-01-1.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Origin 600i</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16155-Q-A-Origin-X1" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/145jf100ow81xr/home_transmissions_item_expanded/RoughBlockIn_004.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Origin X1</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16163-The-Shipyard-Careers-And-Roles" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/t56meua5137aar/home_transmissions_item_expanded/Resources1.jpg');"></div>
+    <div class="title trans-opacity trans-03s">The Shipyard: Careers and Roles</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16170-The-Shipyard-Ship-Mass" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/j5u3m8f6mvohfr/home_transmissions_item_expanded/Support2.jpg');"></div>
+    <div class="title trans-opacity trans-03s">The Shipyard: Ship Mass</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16172-The-Shipyard-Ship-Technical-Information" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/oddca9e9b7g65r/home_transmissions_item_expanded/Anvil_Terrapin_Piece_01_Hangar.jpg');"></div>
+    <div class="title trans-opacity trans-03s">The Shipyard: Ship Technical Information</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16179-The-Shipyard-Ship-Thrusters-And-You" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/p65z93se1d9j8r/home_transmissions_item_expanded/Gladius_Front.jpg');"></div>
+    <div class="title trans-opacity trans-03s">The Shipyard: Ship Thrusters and You</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16181-The-Shipyard-Weapon-Hardpoints" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/7t5g0mci5il9zr/home_transmissions_item_expanded/Hornet05.jpg');"></div>
+    <div class="title trans-opacity trans-03s">The Shipyard: Weapon Hardpoints</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16185-The-Shipyard-Turrets" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/lkj9x01i6jdmvr/home_transmissions_item_expanded/Turret-Battle-Copy.jpg');"></div>
+    <div class="title trans-opacity trans-03s">The Shipyard: Turrets</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16190-The-Shipyard-Ordnance-Hardpoints" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/s685xhw6lcf5mr/home_transmissions_item_expanded/HRST_all.jpg');"></div>
+    <div class="title trans-opacity trans-03s">The Shipyard: Ordnance Hardpoints</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16193-The-Shipyard-Other-Ship-Items" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/5gwalmm7tic6fr/home_transmissions_item_expanded/Sub-Item_Master_Sheet-Comp.jpg');"></div>
+    <div class="title trans-opacity trans-03s">The Shipyard: Other Ship Items</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16204-The-Shipyard-SCU-And-Cargo-Capacity" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/tblqxdwnnye8mr/home_transmissions_item_expanded/Grid.png');"></div>
+    <div class="title trans-opacity trans-03s">The Shipyard: SCU and Cargo Capacity</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16205-The-Shipyard-Variants-And-Modules" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/ugt59cfkhgl0fr/home_transmissions_item_expanded/ScreenShot0001.jpg');"></div>
+    <div class="title trans-opacity trans-03s">The Shipyard: Variants and Modules</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16230-Q-A-Consolidated-Outland-Pioneer" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/q2haw8lhsggfzr/home_transmissions_item_expanded/Alderin-Landed-Snow-Shot.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Consolidated Outland Pioneer</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16292-Q-A-UEE-Land-Claim-Licenses" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/6rtmjgx2rua6sr/home_transmissions_item_expanded/Land_Claim_Beacon_Estate_01_Situ_dh.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: UEE Land Claim Licenses</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16316-Q-A-Anvil-Hawk" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/n1buoghfu3bqwr/home_transmissions_item_expanded/Ah-Promo-Shot-01b.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Anvil Hawk</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16317-Q-A-Aegis-Hammerhead" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/sjzzdy79hoq0sr/home_transmissions_item_expanded/Aegis-Hammerhead-Piece-02-Full-Force-03-06.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Aegis Hammerhead</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16319-Q-A-UEE-Land-Claim-Licenses-Part-2" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/c8lbl1scimjy4r/home_transmissions_item_expanded/Land_Claim_Beacon_Estate_01_Situ_NOTEXT.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: UEE Land Claim Licenses Part 2</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16344-Q-A-Tumbril-Nova" class="series-carousel-item content-block3 trans-05s  on">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/jk2dkvagw25zgr/home_transmissions_item_expanded/TumbrilNova_.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Tumbril Nova</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16358-Q-A-Tumbril-Nova-Part-2" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/u3cjickwwnw0tr/home_transmissions_item_expanded/Nova_Brochure5-Squashed.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Tumbril Nova - Part 2</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16458-Q-A-Aegis-Vulcan" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/sty4dci9wigrzr/home_transmissions_item_expanded/AEGS_Vulcan_RepairLayeredWorkFile_001.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Aegis Vulcan</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16517-The-Shipyard-Fuel-Mechanics" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/ci67ohd53cy78r/home_transmissions_item_expanded/Air.jpg');"></div>
+    <div class="title trans-opacity trans-03s">The Shipyard: Fuel Mechanics</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16520-Q-A-Origin-100-Series-Part-I" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/lu27nm5j3jr5vr/home_transmissions_item_expanded/Origin_100_promo_cargo_al_WT_FINAL-Min.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Origin 100 Series Part I</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16537-Q-A-Origin-100-Series-Part-II" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/lu27nm5j3jr5vr/home_transmissions_item_expanded/Origin_100_promo_cargo_al_WT_FINAL-Min.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Origin 100 Series Part II</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16589-Q-A-Crusader-Hercules" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/p077b9nm14i11r/home_transmissions_item_expanded/CRUS_Starlifter_Promo_Military_Flares_MO01-Squashed.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Crusader Hercules</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2 years ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16647-Q-A-Drake-Vulture" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/9uozfy6rjflpqr/home_transmissions_item_expanded/DRAK_vulture_promo_Scouting_For_Spares_AA01_PJ02_Grade.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Drake Vulture</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">1 year ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16671-The-Shipyard-Medical-Gameplay" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/igz05do2rrv3jr/home_transmissions_item_expanded/RSI_Apollo_medevac_v01.jpg');"></div>
+    <div class="title trans-opacity trans-03s">The Shipyard: Medical Gameplay</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">1 year ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16705-Q-A-RSI-Apollo" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/9apyyb252ofujr/home_transmissions_item_expanded/RSI_Apollo_Promo_Recovery_Drone_AL01_PJ01.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: RSI Apollo</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">1 year ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16753-Q-A-Crusader-Mercury" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/dmnw0kgi8v8rjr/home_transmissions_item_expanded/CRUS_MERCURY_Action_Shot_SM03.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Crusader Mercury</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">1 year ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16813-Q-A-Drake-Kraken" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/nqp4erbk8vzbbr/home_transmissions_item_expanded/DRAK_Kraken_Promo_Action06_PJ02.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Drake Kraken</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">1 year ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16829-Q-A-Anvil-Valkyrie" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/graonjlrqgr1zr/home_transmissions_item_expanded/Valkyrie_Copper_Space.png');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Anvil - Valkyrie</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">1 year ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16872-Q-A-Aopoa-Santoky-i" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/dl05y92nvxb1fr/home_transmissions_item_expanded/Xian_med_fighter_env_landed_1_4k_AA01.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Aopoa San'tok.yāi</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">1 year ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16883-Q-A-Anvil-Arrow" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/bz4wkc71vwhkbr/home_transmissions_item_expanded/ANVILArrow_Canyons_112018.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Anvil Arrow</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">1 year ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/16987-Q-A-ARGO-SRV" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/4xrobapd3cjuar/home_transmissions_item_expanded/ARGO-SRV_PROMO_Shot03_Cutlass_PJ02b_CC2.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: ARGO SRV</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">9 months ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/17030-Q-A-Drake-Corsair" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/z1ra1cyo7fzb2r/home_transmissions_item_expanded/Corsair-Brochure-1.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Drake Corsair</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">8 months ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/17088-Q-A-Tumbril-Ranger" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('https://media.robertsspaceindustries.com/w0shv2sobeaiw/home_transmissions_item_expanded.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Tumbril Ranger</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">6 months ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/17177-Q-A-Anvil-Ballista" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/tc4yk492oel56r/home_transmissions_item_expanded/Ballista_QA_1.jpeg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: Anvil Ballista</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">3 months ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/17221-Q-A-AEGIS-Nautilus" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/4zt118d3g38frr/home_transmissions_item_expanded/NautilusQA3.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: AEGIS Nautilus</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">2 months ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                      <a href="/comm-link/engineering/17270-Q-A-RSI-Mantis" class="series-carousel-item content-block3 trans-05s  ">
+  <div class="selected-top trans-05s"><div class="arrow"></div></div>
+  <div class="type post"><div class="icon"></div><span>post</span></div>
+      <div class="image" style="background-image:url('/media/nntod771l6osrr/home_transmissions_item_expanded/RSI_Mantis_Interdiction_092019.jpg');"></div>
+    <div class="title trans-opacity trans-03s">Q&amp;A: RSI Mantis</div>
+  <div class="text">
+        <div class="time_ago">Posted:<span class="value">1 month ago</span></div>
+    <div class="section">engineering</div>
+  </div>
+  <div class="selected-bottom trans-05s"><div class="arrow"></div></div>
+  <div class="corner corner-top-left"></div>
+<div class="corner corner-top-right"></div>
+<div class="corner corner-bottom-left"></div>
+<div class="corner corner-bottom-right"></div>
+</a>
+                  </div>
+      </div>
+      <a href="" class="next js-next"><div class="hover trans-03s trans-opacity"></div></a>
+      <div class="right-shadow shadow"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $(".channel-banner .content-carousel").each(function(index, element) {
+      $(element).data("carousel", new RSI.FullCarousel({
+        holder:$(element).find(".carousel"),
+        prevButton:$(element).find(".js-prev"),
+        nextButton:$(element).find(".js-next"),
+        circular:true,
+        displayItems:3 // healthy amount so that we never see empty
+      }));
+    });
+  });
+</script>
+    
+
+  <div class="two-line-separator"></div>
+  
+    
+<div class="wrapper force-one-column" id="comments">
+  <div class="holder">
+    <div class="title-bar">
+      <div class="count">
+        <div class="label">Comments</div>
+        <div class="value">083.<span class="js-comment-decimal">0</span></div>
+        <div class="cboth"></div>
+      </div>
+      <div class="title">
+        <h1>Feedback</h1>
+      </div>
+      <div class="cboth"></div>
+    </div>
+
+    <div class="main-buttons-holder-container">
+      <div class="main-buttons-holder">
+        <a href="/connect?jumpto=/comm-link/engineering/16344-Q-A-Tumbril-Nova" class="add-comment js-add-comment trans-02s js-modal-login">Add New Comment</a>
+        <div class="settings js-settings">
+          <h1>Settings</h1>
+          <label>View mode:</label>
+          <a href="#" class="js-comments-view to-one-column js-to-one-column trans-01s on">One column</a>
+          <a href="#" class="js-comments-view to-two-columns js-to-two-columns trans-01s ">Two columns</a>
+          <label>Sort by:</label>
+          <a href="#" class="js-comments-sort to-oldest js-to-oldest trans-01s on">Oldest first</a>
+          <a href="#" class="js-comments-sort to-newest js-to-newest trans-01s ">Newest first</a>
+          <a href="#" class="js-comments-sort to-appreciated js-to-appreciated trans-01s ">Most appreciated first</a>
+
+                  </div>
+        <a href="" class="view-settings js-view-settings"><div class="hover trans-02s"></div></a>
+        <div class="triangle"></div>
+      </div>
+    </div>
+
+    
+    <div class="comment-listing"></div>
+
+    <div class="comment-loader traj-loader">
+      <div class="fast-blink"></div>
+      <span>Loading Additional Feedback</span>
+    </div>
+
+    <div class="cboth"></div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    window.comments = new RSI.Comments({
+      atom_url:"/comm-link/engineering/16344-Q-A-Tumbril-Nova",
+      comment_listing_el:$(".comment-listing"),
+      comment_submission_form_el:$(".comment-submission"),
+      api_object:RSI.Api.Comments,
+      lazyLoading: true,
+      comment_count: 83,
+      subject_id:16344,
+      append:false,
+      texts: {
+        "edit": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        },
+        "reply": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        }
+      },
+      "insertion_conf": {
+        "mode":"html"
+      },
+      "api_function_names": {
+        "delete":"erase",
+        "load":"listing",
+        "sort":"listing"
+      }
+    });
+  });
+</script>
+  
+</div>
+
+    </div>
+
+    
+  </div>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.11/moment-timezone-with-data.min.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+      $.cookie('moment_timezone', moment.tz.guess(), { expires: 31, path: '/' });
+  });
+</script>
+
+
+
+
+               <script id="tpl_number_counter_digits" type="text/x-jsmart-tmpl">{if !$seperator}{$seperator=','}{/if}
+{if !$first_max}{$first_max=9}{/if}
+{for $digit = 0 to $length-1}
+  <div class="mask">
+    <div class="carousel">
+      {if $digit == 0}
+        {$max = $first_max}
+      {else}
+        {$max = 9}
+      {/if}
+      {for $i=0 to $max}
+        <div class="item {if $val_arr[$digit] == $i}on{/if}" rel="{$i}">{$i}</script></div>
+      {/for}
+    
+  
+  {if ($length - $digit) % 3 == 1 &amp;&amp; $digit != $length-1}
+  <div class="seperator">{$seperator}</div>
+  {/if}
+{/for}
+<script id="base_modal" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  <div class="top-border">
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+  
+</script>
+<script id="base_modal_flat" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  
+  
+</script>
+<script id="tpl_modals_slideshow" type="text/x-jsmart-tmpl"><img class="top-border" src="/rsi/static/images/modal_top.png">
+<a href="" class="close js-close">
+<div class="mask">
+  <a class="js-prev prev control">
+  <a class="js-next next control">
+  <div class="slideshow-carousel carousel" rel="{$index}">
+    {foreach from=$images item="image"}
+      <div class="{if $index == $image@index}on{/if}">
+      {if $image.is_video}
+        <div class="video-holder">
+          <div id="slideshow_video_{$image@index}" data-source="{$image->source_url}">
+            <video width="100%" height="100%" preload="auto" {if $video}src="{$image->source_url}"{/if} controls>
+          
+        
+      {else}
+        <div class="media js-media-slideshow-{$image@iteration}">
+        {if $image.low_res}
+          <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source data-srcset="{$image.full_res}" media="(min-width: 300px)" />
+            <!--[if IE 9]><![endif]-->
+            <img data-srcset="{$image.low_res}" alt="{$image.title}" />
+          
+        {else}
+          <img data-src="{$image.source_url}" />
+        {/if}
+        
+      {/if}
+        <div class="text">
+          {if !$image.is_video}
+          <a href="{$image.source_url}" class="download">
+          {/if}
+          <div class="copyright">&copy; 2012-{$year}<br />Cloud Imperium Games Corporation &<br />Roberts Space Industries Corp.
+          <div class="page-number">{$image@iteration} / {count($images)}
+          <div class="caption v-center">{if $image.title && $image.title != "undefined"}{$image.title}{/if}
+          <div class="cboth">
+        
+      
+    {/foreach}
+  
+
+<img class="bottom-border" src="/rsi/static/images/modal_bottom.png"></script>
+<script id="tpl_contact_us" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    
+<div id="contact" class="inner-content on">
+  <h2><span class="icon">CONTACT
+  <div class="padder">
+    <div class="separator">
+    <form name="" action="" method="POST">
+  <div class="error-message js-error-message">
+  <div class="success-message js-success-message">
+    <fieldset class="last">
+    <label for="contact_email">Email Address
+    <input type="text" name="email" value="" class="trans-02s trans-color trans-box-shadow" id="contact_email" />
+  
+    <fieldset>
+    <label for="contact_subject">Subject
+    <input type="text" name="subject" value="" class="trans-02s trans-color trans-box-shadow" id="contact_subject" />
+    <label>Contacting us for:
+    <ul class="category-info">
+            <li id="tech_support_info">Questions about download, installation, networking, or in-game client problems
+            <li id="subscription_info">Questions about monthly and yearly subscription plans
+            <li id="account_billing_info">Issues related to your account, such as incorrect information or ability to access account, or Billing with regards to payments and payment methods
+            <li id="melt_request_info">To reclaim a pledge over $1,000 for store credit (please note - this is a permanent action)
+            <li id="merchandise_info">Questions about physical and/or shipped merchandise
+            <li id="hacked_info">Issues related to compromised account or missing pledge.
+            <li id="account_recovery_info">For issues with account authentication, lost passwords and related queries
+            <li id="probation_info">Issues related to forums probation or ban
+            <li id="refund_request_info">Refund requests and related inquiries
+            <li id="customer_support_info">For general questions and queries regarding Star Citizen
+          
+  
+  <fieldset>
+    <label for="contact_text">Fescription
+    <textarea name="text" class="trans-02s trans-color trans-box-shadow" id="contact_text">
+  
+  <div class="contact-submit-wrapper">
+    <div class="line">
+    <button class="submit js-submit"><strong>submit your message
+  
+
+    <div class="separator">
+  
+
+
+    
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  
+</script>
+<script id="tpl_concierge" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+<img src="/rsi/static/images/modal_yellow_line.png" />
+
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    
+
+<div id="contact" class="inner-content on">
+  <h2><span class="icon">CONCIERGE
+  <div class="padder">
+    <div class="separator">
+    <form name="" action="" method="POST" class="concierge-form">
+      <p class="head">We recommend that you check out the <a href="/faq">FAQs and other resources below if you are in need of information regarding RSI or Star Citizen. If your topic isn&rsquo;t covered, feel free to contact us!<br/><br/> - Gameplay : <a href="https://forums.robertsspaceindustries.com/categories/ask-a-developer">Ask A Dev<br/> - Suggestions: <a href="https://forums.robertsspaceindustries.com/categories/game-ideas">Game Ideas<br/> - Bug Reports (including PTU): <a href="https://forums.robertsspaceindustries.com/categories/test-pilot-headquarters">Test Pilot Headquarters<br/>
+      <div class="error-message js-error-message">
+      <div class="success-message js-success-message">
+
+      <fieldset class="concierge-form__field concierge-form__field--issue">
+        <label for="concierge_issue">Please choose your issue below
+        <select required id="concierge_issue" name="issue" class="trans-02s trans-color trans-box-shadow">
+          <option value="-">
+            -
+          
+                  
+      
+
+      <fieldset class="concierge-form__field concierge-form__field--problem concierge-form__field--secondary hidden">
+        <label for="concierge_problem">
+        <select required id="concierge_problem" name="problem" class="trans-02s trans-color trans-box-shadow">
+        
+      
+
+      <div class="issue-subfields">
+
+      <fieldset class="concierge-form__field concierge-form__field--secondary concierge-form__field--optional hidden">
+        <label for="concierge_attachment">Attachments <span>- Optional
+        <div class="concierge-form__attachment">
+            Add file here
+          <input class="concierge-upload-images-container" type="file" id="concierge_attachment" name="attachment" accept="image/*" multiple/>
+        
+      
+
+      <fieldset class="concierge-form__field concierge-form__field--secondary concierge-form__field--optional hidden">
+        <span class="h-text h-text--size-13 h-text--univia h-text--brown"><strong>Uploaded files 
+        <div class="concierge-form__file-preview">
+      
+
+      <fieldset class="concierge-form__field concierge-form__field--submit concierge-form__field--secondary last hidden">
+        <span class="submit-arrow">
+        <input type="submit" value="Send" class="trans-02s trans-color trans-background" />
+      
+
+    
+    <div class="separator">
+  
+
+
+
+    
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    
+<img src="/rsi/static/images/modal_yellow_line.png" />
+
+  
+</script>
+<script id="tpl_error" type="text/x-jsmart-tmpl"><div class="modal-error js-modal-error">
+  <p class="modal-text js-modal-text">
+  <a class="close js-close trans-03s .trans-opacity" href="">
+</script>
+<script id="tpl_success" type="text/x-jsmart-tmpl"><div class="modal-success js-modal-success">
+  <p class="modal-text js-modal-text">
+  <a class="close js-close trans-03s .trans-opacity" href="">
+</script>
+<script id="tpl_progress" type="text/x-jsmart-tmpl"><div class="modal-progress js-modal-progress">
+  <div class="traj-loader">
+    <div class="fast-blink">
+    <span class="modal-text js-modal-text">
+  
+</script>
+<script id="tpl_outbound" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    
+<div id="outbound" class="inner-content on">
+  <h2><span class="icon">OUTBOUND LINK
+  <div class="padder">
+    <div class="separator">
+    <form name="" action="" method="POST">
+      <div class="error-message js-error-message"> <span class=important>WARNING<br/><br/> This link will bring you outside of the RSI site and into the depths of the internet. Continue?<br/><br/><span class="url"> 
+      <div class="success-message js-success-message"><span class=important>STAND BY<br/><br/> Initiating hyperlink.<br/><br/>
+
+      <fieldset class="clearfix last">
+        <span class="submit-wrapper">
+          <span class="submit-hover trans-02s trans-opacity">
+          <input type="submit" value="WARP" class="trans-02s trans-color trans-background" />
+        
+      
+    
+    <div class="separator">
+  
+
+
+    
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  
+</script>
+
+<script id="tpl_l-notification-bar" type="text/x-jsmart-tmpl"><div class="l-notification-bar js-notification-bar">
+
+  <div class="l-notification-bar__watermark js-svg-inliner h-svg__logo-star-citizen">
+
+  <div class="l-notification-bar__boxes">
+    {if !$viewedCookieNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='cookie'
+          title='COOKIES:'
+          message="Our website uses Google Analytics to analyze our traffic. <br/>To learn how you can control Google's use of your data and how you can opt out <a href='https://www.google.com/policies/privacy/partners/'>click here."
+          linkText='See Details'
+          buttonText='Got it!'}
+      
+    {/if}
+
+    {if !$viewedPrivacyNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='privacy'
+          title='PRIVACY POLICY:'
+          message='We adjusted the PP to reflect the decision of the European Court of Justice regarding Safe Harbor, the fact that RSI has moved and added some services providers.'
+          linkText='View Privacy Policy'
+          buttonText='Got it!'}
+      
+    {/if}
+  
+
+
+</script>
+<script id="tpl_c-notification" type="text/x-jsmart-tmpl"><div class="c-notification js-bottom-notif-msg-{$type}">
+    <div class="c-notification__title">{$title}
+    <div class="c-notification__message">
+      {$message}
+    
+
+    {if $linkText}
+        <div class="c-notification__wrapper-link">
+            <a class="c-notification__link js-bottom-notif-link-{$type}">
+            {$linkText}
+            
+        
+    {/if}
+
+    <a class="c-notification__button js-bottom-notif-btn-{$type}">
+
+      <span class="c-notification__button-text">
+       {$buttonText}
+      
+
+      {if $type neq 'announcement'}
+        <div class="c-iconed__icon c-iconed__icon--checkmark">
+      {/if}
+    
+
+</script>
+
+<script id="tpl_confirm" type="text/x-jsmart-tmpl"><div class="modal-confirm js-modal-confirm clearfix">
+  <p class="modal-text js-modal-text">
+  <a class="bt-close js-close trans-03s trans-opacity" href="">
+  <a class="bt-confirm js-confirm trans-03s trans-opacity" href="">
+	<div class="buttons">
+		<a class="shadow-button trans-02s trans-color js-close bt-close rm"     >
+  <span class="label js-label trans-02s">Cancel
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s">
+  <span class="left-section">
+  <span class="right-section">
+
+		<a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">Confirm
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s">
+  <span class="left-section">
+  <span class="right-section">
+
+	
+
+</script>
+<script id="tpl_alert" type="text/x-jsmart-tmpl"><div class="modal-alert js-modal-alert clearfix">
+  <p class="modal-text js-modal-text">
+  <div class="buttons">
+    <a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">OK
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s">
+  <span class="left-section">
+  <span class="right-section">
+
+  
+</script>
+<script id="tpl_video" type="text/x-jsmart-tmpl">{extends file="base_modal"}
+{block name='modal_content'}
+<div id="ship-commercial" class="inner-content">
+  
+  <div class="hr">
+  <div class="content-block4">
+   
+    <div class="bottom">
+  
+  {if $distant_source=="vimeo"}
+  <iframe id="commercial" src="//player.vimeo.com/video/{$video_id}?wmode=transparent" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+  {else}
+  <iframe id="commercial" frameborder="0" allowfullscreen="1" title="YouTube video player" width="100%" height="100%" src="https://www.youtube.com/embed/{$video_id}?autoplay=1">
+  {/if}
+
+{/block}
+</script>
+      
+  <script id="tpl_comment_report" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    
+<div id="comment-report" class="inner-content on">
+  <h2><span class="icon">Report this comment
+  <div class="padder">
+    <div class="separator">
+    <form name="" action="" method="POST">
+<input type="hidden" name="comment_id" value="">
+  <div class="error-message js-error-message">
+  <div class="success-message js-success-message">
+    <fieldset class="last">
+    <label for="report_email">Email Address
+    <span class="corner-wrapper">
+      <input type="text" name="email" value="" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_email" />
+      <span class="corner corner-top-left">
+      <span class="corner corner-top-right">
+      <span class="corner corner-bottom-left">
+      <span class="corner corner-bottom-right">
+    
+  
+    <fieldset>
+    <label>Report Type
+    
+
+
+  
+    <a class="js-selectlist selectlist " rel="" href="">
+    <div class="arrow">
+    <span>Please select the type best matching your report
+              <ul class="body">
+              
+                                                              <li class="js-option option " rel="obscenity" >
+                                                                        Obscene Content
+                                                    
+                                                                <li class="js-option option " rel="abuse" >
+                                                                        Abusive Conduct
+                                                    
+                                                                <li class="js-option option " rel="other" >
+                                                                        Other
+                                                    
+                                          
+            
+        <input type="hidden" name="category" class="js-category js-form-data" id="category"/>
+  
+    
+  <fieldset>
+    <label for="report_text">Details
+    <span class="corner-wrapper">
+      <textarea name="text" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_text" maxlength="2500">
+      <span class="corner corner-top-left">
+      <span class="corner corner-top-right">
+      <span class="corner corner-bottom-left">
+      <span class="corner corner-bottom-right">
+    
+  
+  <fieldset class="clearfix last">
+    <span class="submit-wrapper">
+      <span class="submit-hover trans-02s trans-opacity">
+      <input type="submit" value="Submit" class="trans-02s trans-color trans-background" />
+    
+  
+
+    <div class="separator">
+  
+
+
+    
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  
+</script>
+
+
+      <footer class="c-platform-footer c-platform-footer--rsi">
+  <div class="l-platform-footer-container">
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--sc">
+        <li class="c-platform-footer-brand__item">
+
+          <span class="c-brand c-brand--sc js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--sc">
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Join the<br>Universe
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--sc">
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen" class="c-platform-footer-link">About the Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/howto/1" class="c-platform-footer-link">How to Play</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/universe" class="c-platform-footer-link">The Universe</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/media" class="c-platform-footer-link">Media</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/fly-now" class="c-platform-footer-link js-google-analytics-event-tracker" data-event-category="FlyNow" data-event-label="footerClick">
+                Fly Now
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__sc">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">
+              Social Links
+            </span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/RobertsSpaceIndustries/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/RobertsSpaceInd">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/robertsspaceind">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.youtube.com/channel/UCTeLqJq1mXUX5WWoNXLmOIA">
+                <span class="c-iconed__icon c-iconed__icon--youtube"></span>
+                Youtube
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.twitch.tv/starcitizen">
+                <span class="c-iconed__icon c-iconed__icon--twitch"></span>
+                Twitch
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--s42">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--s42 js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--s42">
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Start the<br>Adventure
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--s42">
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42" class="c-platform-footer-link">The Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#enlist" class="c-platform-footer-link">Enlist Today</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#roadmap" class="c-platform-footer-link">Status</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/pledge/Packages/Squadron-42-Standalone-Pledge" class="c-platform-footer-link">Pledge</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__s42">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">Social Links</span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/Squad42/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/squadron_42">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/squadron42">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column is-active">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--rsi">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--rsi js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--rsi">
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi--fullcolor"></span>
+            </span>
+            <span class="c-brand__label">
+              Follow the Development
+            </span>
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--rsi">
+            <li class="c-platform-footer-list__item">
+              <a href="/" class="c-platform-footer-link">Home</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/comm-link" class="c-platform-footer-link">Transmissions</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/community" class="c-platform-footer-link">Community</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/roadmap" class="c-platform-footer-link">Development</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--platform">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Platform
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--platform">
+                          <li class="c-platform-footer-list__item">
+                <a href="/pledge" class="c-platform-footer-link ">Pledge Store</a>
+              </li>
+            
+            <li class="c-platform-footer-list__item">
+              <a href="/download" class="c-platform-footer-link ">Download</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/spectrum/community/SC" class="c-platform-footer-link">Spectrum</a>
+            </li>
+
+                          <li class="c-platform-footer-list__item">
+                <a href="/citizencon" class="c-platform-footer-link">Citizencon</a>
+              </li>
+                      </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--utility">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Utilities
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--utility">
+            <li class="c-platform-footer-list__item">
+              <a href="//support.robertsspaceindustries.com" class="c-platform-footer-link">Help</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/press" class="c-platform-footer-link">Press</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="https://cloudimperiumgames.com/join-us" class="c-platform-footer-link">Careers</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/tos" class="c-platform-footer-link">Terms of Services</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/privacy" class="c-platform-footer-link">Privacy Policy</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/eula" class="c-platform-footer-link">EULA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/dmca" class="c-platform-footer-link">DMCA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/acknowledgements" class="c-platform-footer-link">Acknowledgements</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  
+</footer>
+
+<div class="c-platform-copyright c-platform-copyright--rsi">
+  <div class="l-platform-copyright-container">
+    <a href="https://cloudimperiumgames.com" class="c-platform-copyright__logo h-svg__logo-cig js-svg-inliner"></a>
+    <p class="c-platform-copyright__body">© 2012-2019 Cloud Imperium Rights LLC and Cloud Imperium Rights Ltd</p>
+  </div>
+</div>
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHNFZPT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<script type="text/javascript">
+  window.RSI.Footer = new RSI.Footer();
+</script>
+
+    
+
+    <script type="text/javascript" src="/cache/en/rsi-platformbar-js.js?v=3.2.9.0"></script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"58013cabd7","applicationID":"375102748","transactionName":"Y1JaYktUWxZUV0QKV1oYe0NKQVoIGmZjKmtdQ111VltBF1pYXAZKDg1ZQlZYcwxbUA==","queueTime":0,"applicationTime":83,"atts":"TxVNFANOSEkXVRJZQ0lK","errorBeacon":"bam.nr-data.net","agent":""}</script></body>

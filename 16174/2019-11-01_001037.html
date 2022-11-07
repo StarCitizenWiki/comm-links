@@ -1,0 +1,2871 @@
+
+  <head>
+    
+            <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1130.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+      <meta name="viewport" content="width=device-width">
+      <meta name="description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans.">
+      <meta property="og:site_name" content="
+CitizenCon 2947 Details - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+">
+      <meta property="og:image" content="https://robertsspaceindustries.com/media/0h8ulypa6sudpr/channel_item_full/Cc_logo.png">
+      <meta property="og:description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans.">
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://robertsspaceindustries.com/comm-link/SCW/16174-IMPORT">
+      <meta property="og:locale" content="us_EN">
+
+            
+
+            <link href="/rsi/static/css/cross-brand-less.css?v=3.2.9.0" media="all" rel="stylesheet">
+      <link href="/cache/en/rsi-platformbar-css.css?v=3.2.9.0" media="all" rel="stylesheet">
+            <script type="text/javascript" src="/cache/en/rsi-js.js?v=3.2.9.0"></script>
+      
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KHNFZPT');</script>
+<!-- End Google Tag Manager -->
+
+
+      <script>
+        $(document).ready(function() {
+          window.Common = new RSI.Common({});
+          window.Main = new RSI.Main({
+            'is_mobile': 0,
+            'probation_cookie' : '',
+            'require_captcha': 0
+          });
+          window.Mark = new Turbulent.Mark({ 'name' : 'Rsi-XSRF', 'token' : '', 'ttl' : 1800 });
+
+          window.WscOverlay = new RSI.WscOverlay({});
+
+          var destinations = [];
+
+window.Main.destinations = destinations;          
+  window.PageStore = new RSI.Store({
+    'store_prefix' : '/pledge',
+    'customizerConfig' : {"endpoint":"https:\/\/robertsspaceindustries.com\/","verify":true,"customizer":{"path":"\/customizer","view":"","api":"\/api","methods":{"start":"\/start","game":"\/configuration\/:id\/game","details":"\/configuration\/:id\/details","report":"\/configuration\/:id\/report","export-port-label":"\/admin\/export\/port\/label"}},"ga_tracking_code":"UA-39586040-5"}
+  });
+
+          
+          
+  var productsTracking = [];
+  var eCommerceData = {
+    'trackingAction': "",
+    'currency': "",
+    'trackingStep': "",
+    'trackingProducts': productsTracking
+  };
+  window.eCommerceTracking = new RSI.Store.eCommerceTracking(
+    eCommerceData
+  );
+
+        });
+
+        $(window).load(function() {
+          
+        });
+
+      </script>
+
+
+      <script>
+        window.recaptcha_is_loaded = false;
+        window.on_recaptcha_load_callback = function() {
+          window.recaptcha_is_loaded = true;
+        };
+      </script>
+
+      <script src="https://www.google.com/recaptcha/api.js?onload=on_recaptcha_load_callback&amp;render=explicit" async defer></script>
+
+      <script type="text/javascript">
+
+        
+
+                                </script>
+
+
+      <title>
+CitizenCon 2947 Details - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+</title>
+
+      
+
+<style type="text/css">
+  /* CSS from ATOM */
+  .align-right{
+ color: auto;
+ text-align: right;
+}
+
+.align-right h6{
+text-align: right !important;
+}
+
+@media (max-width: 1200px) {
+    body #post .segment.description{
+        padding:15px;
+    }
+}
+
+@media (max-width: 1000px){
+ #starfarer-advertise-magazine .f-right{
+  margin: 10px 0;
+ }
+}
+
+#jaredtable-table {
+	margin:0;
+	padding: 4px;
+	width: 578px;
+	font: 11px Arial, Helvetica, sans-serif;
+	color:#747474;
+	background-color:#011826;
+}
+
+
+#jaredtable-header {
+	margin:0;
+	padding: 14px 0 0 24px;
+	width: 554px;
+	height: 55px;
+	color:#FFF;
+	font-size:13px;
+	background: #09253e;	
+}
+
+.jaredtable-bold {
+	font: bold 22px Arial, Helvetica, sans-serif;
+	
+}
+
+#jaredtable-top {
+	margin:0;
+	padding: 0;
+	width: 578px;
+	height: 46px;
+	background: #09253e url(https://robertsspaceindustries.com/media/pqm85sh451j8jr/source/Top-Light-Blue.png) repeat-x left top;	
+}
+
+.jaredtable-top-cell {
+	float:left;
+	padding: 15px 0 0 0;
+	text-align:center;
+	width:105px;
+	height: 31px;
+	background: #465F7A; 
+	color:#465F7A;
+	font: 16px Arial, Helvetica, sans-serif;
+}
+
+#jaredtable-middle {
+	margin:0;
+	padding: 0;
+	width: 578px;
+	background: #f6f6f6 url(https://robertsspaceindustries.com/media/rk76xsup1z4ier/source/Center-Bcg.png) repeat-y right top;	
+}
+
+.jaredtable-left {
+	float:left;
+	margin:0;
+	padding: 10px 0 0 24px;
+	width: 129px;
+	text-align: left;
+	height: 25px;
+	border-right: 1px solid #ced9ec;
+	border-bottom: 1px solid #b3c1db;
+	color:#1f3d71;
+	font: 16px Arial, Helvetica, sans-serif;
+	background: #09253e url(https://robertsspaceindustries.com/media/6ymqa67hew03nr/source/Center-Clear.png) repeat-y left top;
+}
+
+
+
+.jaredtable-right {
+	float:left;
+	margin:0;
+	padding: 11px 0 0 0;
+	width: 105px;
+	text-align:center;
+	height: 24px;
+	font: 14px Arial, Helvetica, sans-serif;
+	background: #465F7A; 
+	border-left: 1px solid #ced9ec;
+	border-bottom: 1px solid #b3c1db;
+}
+
+#jaredtable-bottom {
+	clear:both;
+	margin:0;
+	padding: 0;
+	width: 578px;
+	height: 48px;
+	border-top: 2px solid #FFF;
+	background: #e4e3e3 url(https://robertsspaceindustries.com/media/ez00a9axpk7gyr/source/Bottom-Line.png) repeat-x left top;	
+}
+
+
+.jaredtable-bottom-cell {
+	float:left;
+	padding: 15px 0 0 0;
+	text-align:center;
+	width:105px;
+	height: 33px;
+	border-right: 1px solid #ced9ec;
+	color:#070707;
+	font: 13px Arial, Helvetica, sans-serif;
+}
+
+
+
+#jaredtable-footer {
+	float:left;
+	font-size: 12px;
+	color:#8a8a8a;
+	margin:0;
+	padding: 8px 0 8px 12px;
+	width: 566px;
+	background: #465F7A url(https://robertsspaceindustries.com/media/rk76xsup1z4ier/source/Center-Bcg.png) repeat-y right top;	
+}
+
+
+
+/* THIS IS JARED'S TYPICAL CSS HE ADDS TO EVERY POST */
+
+.rsi-markup .segment .content p {
+  width: 100%;
+  max-width: 100%;
+}
+
+.content .questions h3{margin-top:50px;}
+
+.content .questions {width:80%; margin-left:10%;}
+
+h1.no-margin{
+
+font-size: 52px;
+margin-top: 0px!important;
+margin-bottom:-22px;
+}
+
+.rsi-markup .segment .content p .initial {
+margin-right: 0;
+font-size: 14px;
+}
+
+.rsi-markup .segment .content table tr td:first-child { border-right: 1px dashed #465F7A;}
+.rsi-markup .segment .content table tr td strong { color: white; }
+.rsi-markup .segment .content table tr td { padding: 6px; text-align: left; color: #999999;  }
+
+h2.no-margin{
+margin-top: 0px!important;
+margin-bottom:-12px;}
+
+h3.no-margin{margin-bottom:-22px;}
+
+
+.rsi-markup .segment .content .image .caption {width:auto;}
+
+
+#post-background { opacity: 0.3; }
+
+.rsi-markup .segment .content p .initial { display: inline; font-size: inherit; text-transform: inherit; float: none; line-height: inherit; height: auto; margin-right: auto; }
+
+.image1 {float: left; padding: 5px;
+}
+
+.mb-box img {
+    margin-left: auto;
+    opacity: 0.7;
+    width: 300px;
+    margin-right: auto;
+    display: block;
+}
+
+.mb-box { max-width: 800px; margin: auto; margin-top: 100px; margin-bottom: 75px;  }
+.mb-box p { font-size: 18px; font-family: "Electrolize"; text-align: center; color: white;}
+
+.mb-box h1 {
+margin: 0px;
+font-size: 32px;
+color: #00e7ff;
+text-transform: uppercase;
+text-shadow: 0 0 0 #00E0FF, 0 0 11px #00A0B6;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+height: 57px;
+line-height: 57px;
+text-align: center;
+}
+
+
+.mb-full img { width: 100%; }
+
+
+#post .title-section .title-container .subtitle { font-size: 18px; }
+
+.variant-block h2 { 
+font-family: "Electrolize";
+color: #fff;
+line-height: 40px;
+text-transform: uppercase;
+font-size: 18px;
+margin: 0px;
+margin-left: 0px;
+}
+
+.variant-left a.image {
+float: left!important;
+margin-top:0px!important;
+margin-right:0px!important;
+}
+
+#contentbody .variant-block p { font-size: 14px;  line-height: 18px; min-width: 0px; width: auto; }
+
+#contentbody .variant-block.variant-right p { float: left;  }
+#contentbody .variant-block.variant-right a.image { float: right; }
+
+#contentbody .variant-block.variant-right .thumbs { float: right; }
+#contentbody .variant-block.variant-left .thumbs { float: left; }
+
+#contentbody .variant-block.variant-left p { float: right;  }
+#contentbody .variant-block.variant-left a.image { float: left; }
+
+#contentbody .variant-block a.image { padding: 5px; border: 1px solid rgba(0, 162, 253, 0.25); border-radius: 0px; }
+
+#contentbody .variant-block a.image img { border-radius: 0px; border: 0;  }
+
+
+.variant-block .glow-box {
+background-color: #13d0ff;
+width: 11px;
+height: 5px;
+float: left;
+box-shadow: 0px 0px 20px #1397FF;
+margin-top: 17px;
+margin-right: 18px;
+}
+
+#contentbody .variant-block .thumbs a.image { float: left; }
+#contentbody .variant-block .thumbs a.image img { height: 115px;  }
+
+
+#contentbody .variant-block p a.ship-button .arrow.arrow1 {
+right: 21px;
+}
+#contentbody .variant-block p a.ship-button .arrow.arrow2 { right: 14px; }
+#contentbody .variant-block p a.ship-button .arrow.arrow3 { right: 7px; }
+
+.rsi-markup .segment .content p { width: inherit; max-width: inherit; }
+
+.rsi-markup .segment .content table tr td:first-child { border-right: 1px dashed #465F7A;}
+.rsi-markup .segment .content table tr td strong { color: white; }
+.rsi-markup .segment .content table tr td { padding: 6px; text-align: left; color: #999999;  }
+
+.rsi-markup .segment .content { margin-left:0; margin-right:0 }
+hr { background-color:#09daff; border-top:0px;}
+.corner, .parallax-block  .top-line-thin, .parallax-block .top-line { display:none }
+.content-block1 { border:0}
+
+.variant-block .image {margin-top:0px;}
+
+.poll h1 {color:white;}
+
+#poll-77.poll {border:none;}
+
+.js-video {float:right; border-radius:0px!important;}
+
+a.js-video::before{
+width:155px;
+height:141px;
+background: url('/rsi/static/images/sales/starfarer/play-video.png') center center;
+top:50%;
+left:50%;
+margin:-80px 0 0 -78px;
+content:'';
+display:block;
+position:absolute;
+}
+
+
+
+/* THIS IS THE CODE TO SQUARE OUT THE IMAGE BORDERS */
+/* a img {border-radius:0px!important;} */
+
+/* BELOW IS ALL THE STUFF FOR THE NO ARTICLE TAG HOTNESS */
+
+.mb-full img { width: 100%; }
+
+body #post .segment.description.huckaby1 { background-position: 80% top; }
+body #post .segment.description.huckaby2 { background-position: 14% 25px; }
+body #post .segment.description.huckaby3 { background-position: 45% 40px; }
+body #post .segment.description.huckaby4 { background-position: 20% -250px; }
+body #post .segment.description.huckaby5 { background-position: 73% Top; }
+body #post .segment.description.huckaby6 { background-position: 75% Top; }
+body #post .segment.description.huckaby7 { background-position: 128% Top; }
+
+body #post p.firstparagraph {max-width:40%;}
+body #post p.firstparagraph2 {max-width:30%;}
+body #post p.qanda {max-width:60%;}
+body #post p.rightparagraph {max-width:540px; margin-left: auto; text-align: right;}
+
+body #post-background {
+  background-image: url('https://robertsspaceindustries.com/media/5u76jui64nspvr/source/Shipdetail-Concept-Bg.jpg');
+  opacity: 0.75;
+}
+body #post .title-section .title-container {
+  height: 0px;
+  margin-top: 0px;
+  padding: 0;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+body #post .title-section .title-container .title,
+body #post .title-section .title-container .subtitle {
+  width: 1120px;
+  text-align: left;
+}
+body #post .title-section .title-container .title {
+  margin-top: 0px;
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  font-size: 0px;
+  color: #b1d8f1;
+  text-transform: uppercase;
+}
+body #post .title-section .title-container .subtitle {
+  margin-top: -17px;
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  font-size: 26px;
+  color: #42edf8;
+  font-style: normal;
+}
+body #post .lightbar.toplightbar {
+  display: none;
+}
+body #post .segment .content {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1140px;
+}
+body #post .segment.slogan .content p,
+body #post .segment.intro .content p {
+  text-align: center;
+}
+body #post .segment.slogan .content {
+  max-width: 1000px;
+  margin-top: 0px;
+}
+body #post .segment.slogan .content p {
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  font-size: 50px;
+  color: #42edf8;
+  line-height: 26px;
+  text-shadow: 0 9px 8px rgba(66, 169, 248, 0.3);
+}
+body #post .segment.slogan2 .content p,
+body #post .segment.intro .content p {
+  text-align: center;
+}
+body #post .segment.slogan2 .content {
+  max-width: 1000px;
+  margin-top: 0px;
+}
+body #post .segment.slogan2 .content p {
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  font-size: 32px;
+  color: #a0c8e2;
+  line-height: 26px;
+  text-shadow: 0 9px 8px rgba(66, 169, 248, 0.3);
+}
+
+body #post .segment.intro .content {
+  max-width: 900px;
+}
+body #post .segment.intro .content p {
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  text-align: left;
+  font-size: 18px;
+  color: #f2f2f2;
+
+}
+body #post .segment.description {
+  position: relative;
+  z-index: 100;
+  margin-bottom: 0;
+  padding-bottom: 1px;
+  background-color: rgba(4, 39, 65, 0.3);
+  background-repeat: no-repeat;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body #post .segment.description.huckaby1 .content {
+  padding-top: 25px;
+}
+body #post .segment.description.huckaby1 .content .cards {
+  margin-top: 0px;
+}
+body #post .segment.description.huckaby1 .content .cards a.card {
+  display: block;
+  position: relative;
+  float: left;
+  width: 32%;
+  margin-bottom: 30px;
+  padding-top: 285px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+body #post .segment.description .content * {
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  color: #a0c8e2;;
+
+}
+body #post .segment.description .content h6 {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  font-size: 30px;
+  color: #42edf8;
+  line-height: 30px;
+  max-width: 100%;
+  text-shadow: 0 3px 3px rgba(66, 169, 248, 0.3);
+}
+body #post .segment.description .content h6 strong {
+  font-weight: 700;
+}
+
+body #post .segment.description .content h7 {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  font-size: 50px;
+  color: #42edf8;
+  line-height: 30px;
+  max-width: 60%;
+  text-shadow: 0 3px 3px rgba(66, 169, 248, 0.3);
+}
+body #post .segment.description .content h7 strong {
+  font-weight: 700;
+}
+
+body #post .segment.description .content h8 {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  font-size: 30px;
+  color: #42edf8;
+  line-height: 30px;
+  max-width: 100%;
+  text-shadow: 0 3px 3px rgba(66, 169, 248, 0.3);
+}
+body #post .segment.description .content h8 strong {
+  font-weight: 700;
+}
+
+body #post .segment.description .content p {
+  font-size: 18px;
+}
+body #post .segment.description .content .thumbs:not(.little) {
+  margin-top: px;
+}
+body #post .segment.description .content .thumbs.little .image:nth-child(3) {
+  margin-right: 20px;
+  margin-left: 21px;
+}
+body #post .segment.description .content .thumbs .image {
+  display: block;
+  margin: 0 10px;
+  float: left;
+  width: auto;
+  border: 1px solid #0a5688;
+}
+
+body #post .ship-spec {
+  overflow: hidden;
+  background-color: rgba(4, 39, 65, 0.3);
+}
+body #post .ship-spec .wrapper .content-block4 {
+  display: none;
+}
+body #post .ship-spec .wrapper #store-wrapper {
+  margin: 0;
+  padding-bottom: 50px;
+}
+body #post .message {
+  position: absolute;
+  left: 50%;
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  font-size: 16px;
+  color: #2c799f;
+  text-transform: uppercase;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+
+body #post .segment.description.huckaby2 .content {
+  padding-top: 25px;
+}
+body #post .segment.description.huckaby2 .content .cards {
+  margin-top: 0px;
+}
+body #post .segment.description.huckaby2 .content .cards a.card {
+  display: block;
+  position: relative;
+  float: left;
+  width: 32%;
+  margin-bottom: 30px;
+  padding-top: 285px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+body #post .segment.description.huckaby2 .content .cards a.card:hover::after {
+  opacity: 1;
+}
+body #post .segment.description.huckaby2 .content .cards a.card:nth-child(3n+2) {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+body #post .segment.description.huckaby2 .content .cards a.card::before,
+body #post .segment.description.huckaby2 .content .cards a.card::after {
+  content: '';
+  display: block;
+  position: absolute;
+}
+body #post .segment.description.huckaby2 .content .cards a.card::before,
+body #post .segment.description.huckaby2 .content .cards a.card::after {
+  top: 15px;
+  height: 240px;
+  width: 100%;
+  background: transparent no-repeat center;
+}
+
+body #post .segment.description.huckaby2 .content .cards a.card::after {
+  opacity: 0;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  /*-webkit-backface-visibility: hidden;*/
+}
+body #post .segment.description.huckaby2 .content .cards a.card .label {
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  color: #a0c8e2;
+  font-size: 16px;
+  color: #a0c8e2;
+}
+body #post .segment.description.huckaby2 .content .cards a.card .label::before,
+body #post .segment.description.huckaby2 .content .cards a.card .label::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background: #046fa3;
+}
+body #post .segment.description.huckaby2 .content .cards a.card .label::before {
+  top: 270px;
+  height: 1px;
+  width: 100%;
+}
+body #post .segment.description.huckaby2 .content .cards a.card .arrow {
+  position: absolute;
+  top: 263px;
+  left: 181px;
+}
+body #post .segment.description.huckaby2 .content .cards a.card .name {
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  font-size: 13px;
+  color: #a0c8e2;
+  text-shadow: 0 9px 8px rgba(66, 169, 248, 0.3);
+}
+body #post .segment.description.huckaby2 .content .cards a.card .name::before {
+  content: '-';
+  padding-right: 3px;
+}
+body #post .segment.description.huckaby2 .content .cards a.card .name::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 271px;
+  right: 0;
+  height: 1px;
+  width: 50px;
+  background: #046fa3;
+}
+
+
+
+body #post .segment.description.huckaby3 .content {
+  padding-top: 25px;
+}
+body #post .segment.description.huckaby3 .content .cards {
+  margin-top: 0px;
+}
+body #post .segment.description.huckaby3 .content .cards a.card {
+  display: block;
+  position: relative;
+  float: left;
+  width: 32%;
+  margin-bottom: 30px;
+  padding-top: 285px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+body #post .segment.description.huckaby3 .content .cards a.card:hover::after {
+  opacity: 1;
+}
+body #post .segment.description.huckaby3 .content .cards a.card:nth-child(3n+2) {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+body #post .segment.description.huckaby3 .content .cards a.card::before,
+body #post .segment.description.huckaby3 .content .cards a.card::after {
+  content: '';
+  display: block;
+  position: absolute;
+}
+body #post .segment.description.huckaby3 .content .cards a.card::before,
+body #post .segment.description.huckaby3 .content .cards a.card::after {
+  top: 15px;
+  height: 240px;
+  width: 100%;
+  background: transparent no-repeat center;
+}
+
+body #post .segment.description.huckaby3 .content .cards a.card::after {
+  opacity: 0;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  /*-webkit-backface-visibility: hidden;*/
+}
+body #post .segment.description.huckaby3 .content .cards a.card .label {
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  font-size: 16px;
+  color: #2c799f;
+}
+body #post .segment.description.huckaby3 .content .cards a.card .label::before,
+body #post .segment.description.huckaby3 .content .cards a.card .label::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background: #046fa3;
+}
+body #post .segment.description.huckaby3 .content .cards a.card .label::before {
+  top: 270px;
+  height: 1px;
+  width: 100%;
+}
+body #post .segment.description.huckaby3 .content .cards a.card .arrow {
+  position: absolute;
+  top: 263px;
+  left: 181px;
+}
+body #post .segment.description.huckaby3 .content .cards a.card .name {
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  font-size: 13px;
+  color: #2c799f;
+  text-shadow: 0 9px 8px rgba(66, 169, 248, 0.3);
+}
+body #post .segment.description.huckaby3 .content .cards a.card .name::before {
+  content: '-';
+  padding-right: 3px;
+}
+body #post .segment.description.huckaby3 .content .cards a.card .name::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 271px;
+  right: 0;
+  height: 1px;
+  width: 50px;
+  background: #046fa3;
+}
+
+
+
+body #post .segment.description.huckaby4 .content {
+  padding-top: 25px;
+}
+body #post .segment.description.huckaby4 .content .cards {
+  margin-top: 0px;
+}
+body #post .segment.description.huckaby4 .content .cards a.card {
+  display: block;
+  position: relative;
+  float: left;
+  width: 32%;
+  margin-bottom: 30px;
+  padding-top: 285px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+body #post .segment.description.huckaby4 .content .cards a.card:hover::after {
+  opacity: 1;
+}
+body #post .segment.description.huckaby4 .content .cards a.card:nth-child(3n+2) {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+body #post .segment.description.huckaby4 .content .cards a.card::before,
+body #post .segment.description.huckaby4 .content .cards a.card::after {
+  content: '';
+  display: block;
+  position: absolute;
+}
+body #post .segment.description.huckaby4 .content .cards a.card::before,
+body #post .segment.description.huckaby4 .content .cards a.card::after {
+  top: 15px;
+  height: 240px;
+  width: 100%;
+  background: transparent no-repeat center;
+}
+
+body #post .segment.description.huckaby4 .content .cards a.card::after {
+  opacity: 0;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  /*-webkit-backface-visibility: hidden;*/
+}
+body #post .segment.description.huckaby4 .content .cards a.card .label {
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  font-size: 16px;
+  color: #2c799f;
+}
+body #post .segment.description.huckaby4 .content .cards a.card .label::before,
+body #post .segment.description.huckaby4 .content .cards a.card .label::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background: #046fa3;
+}
+body #post .segment.description.huckaby4 .content .cards a.card .label::before {
+  top: 270px;
+  height: 1px;
+  width: 100%;
+}
+body #post .segment.description.huckaby4 .content .cards a.card .arrow {
+  position: absolute;
+  top: 263px;
+  left: 181px;
+}
+body #post .segment.description.huckaby4 .content .cards a.card .name {
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  font-size: 13px;
+  color: #2c799f;
+  text-shadow: 0 9px 8px rgba(66, 169, 248, 0.3);
+}
+body #post .segment.description.huckaby4 .content .cards a.card .name::before {
+  content: '-';
+  padding-right: 3px;
+}
+body #post .segment.description.huckaby4 .content .cards a.card .name::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 271px;
+  right: 0;
+  height: 1px;
+  width: 50px;
+  background: #046fa3;
+}
+body #post .segment.description.huckaby5 .content {
+  padding-top: 5px;
+}
+body #post .segment.description.huckaby5 .content .cards {
+  margin-top: 0px;
+}
+body #post .segment.description.huckaby5 .content .cards a.card {
+  display: block;
+  position: relative;
+  float: left;
+  width: 32%;
+  margin-bottom: 30px;
+  padding-top: 285px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+body #post .segment.description.huckaby5 .content .cards a.card:hover::after {
+  opacity: 1;
+}
+body #post .segment.description.huckaby5 .content .cards a.card:nth-child(3n+2) {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+body #post .segment.description.huckaby5 .content .cards a.card::before,
+body #post .segment.description.huckaby5 .content .cards a.card::after {
+  content: '';
+  display: block;
+  position: absolute;
+}
+body #post .segment.description.huckaby5 .content .cards a.card::before,
+body #post .segment.description.huckaby5 .content .cards a.card::after {
+  top: 15px;
+  height: 240px;
+  width: 100%;
+  background: transparent no-repeat center;
+}
+
+body #post .segment.description.huckaby5 .content .cards a.card::after {
+  opacity: 0;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  /*-webkit-backface-visibility: hidden;*/
+}
+body #post .segment.description.huckaby5 .content .cards a.card .label {
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  font-size: 16px;
+  color: #2c799f;
+}
+body #post .segment.description.huckaby5 .content .cards a.card .label::before,
+body #post .segment.description.huckaby5 .content .cards a.card .label::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background: #046fa3;
+}
+body #post .segment.description.huckaby5 .content .cards a.card .label::before {
+  top: 270px;
+  height: 1px;
+  width: 100%;
+}
+body #post .segment.description.huckaby5 .content .cards a.card .arrow {
+  position: absolute;
+  top: 263px;
+  left: 181px;
+}
+body #post .segment.description.huckaby5 .content .cards a.card .name {
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  font-size: 13px;
+  color: #2c799f;
+  text-shadow: 0 9px 8px rgba(66, 169, 248, 0.3);
+}
+body #post .segment.description.huckaby5 .content .cards a.card .name::before {
+  content: '-';
+  padding-right: 3px;
+}
+body #post .segment.description.huckaby5 .content .cards a.card .name::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 271px;
+  right: 0;
+  height: 1px;
+  width: 50px;
+  background: #046fa3;
+}
+
+
+body #post .segment.description.huckaby6 .content {
+  padding-top: 25px;
+}
+body #post .segment.description.huckaby6 .content .cards {
+  margin-top: 0px;
+}
+body #post .segment.description.huckaby6 .content .cards a.card {
+  display: block;
+  position: relative;
+  float: left;
+  width: 32%;
+  margin-bottom: 30px;
+  padding-top: 285px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+body #post .segment.description.huckaby6 .content .cards a.card:hover::after {
+  opacity: 1;
+}
+body #post .segment.description.huckaby6 .content .cards a.card:nth-child(3n+2) {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+body #post .segment.description.huckaby6 .content .cards a.card::before,
+body #post .segment.description.huckaby6 .content .cards a.card::after {
+  content: '';
+  display: block;
+  position: absolute;
+}
+body #post .segment.description.huckaby6 .content .cards a.card::before,
+body #post .segment.description.huckaby6 .content .cards a.card::after {
+  top: 15px;
+  height: 240px;
+  width: 100%;
+  background: transparent no-repeat center;
+}
+
+body #post .segment.description.huckaby6 .content .cards a.card::after {
+  opacity: 0;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  /*-webkit-backface-visibility: hidden;*/
+}
+body #post .segment.description.huckaby6 .content .cards a.card .label {
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  font-size: 16px;
+  color: #2c799f;
+}
+body #post .segment.description.huckaby6 .content .cards a.card .label::before,
+body #post .segment.description.huckaby6 .content .cards a.card .label::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background: #046fa3;
+}
+body #post .segment.description.huckaby6 .content .cards a.card .label::before {
+  top: 270px;
+  height: 1px;
+  width: 100%;
+}
+body #post .segment.description.huckaby6 .content .cards a.card .arrow {
+  position: absolute;
+  top: 263px;
+  left: 181px;
+}
+body #post .segment.description.huckaby6 .content .cards a.card .name {
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  font-size: 13px;
+  color: #2c799f;
+  text-shadow: 0 9px 8px rgba(66, 169, 248, 0.3);
+}
+body #post .segment.description.huckaby6 .content .cards a.card .name::before {
+  content: '-';
+  padding-right: 3px;
+}
+body #post .segment.description.huckaby6 .content .cards a.card .name::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 271px;
+  right: 0;
+  height: 1px;
+  width: 50px;
+  background: #046fa3;
+}
+
+
+body #post .segment.description.huckaby7 .content {
+  padding-top: 25px;
+}
+body #post .segment.description.huckaby7 .content .cards {
+  margin-top: 0px;
+}
+body #post .segment.description.huckaby7 .content .cards a.card {
+  display: block;
+  position: relative;
+  float: left;
+  width: 32%;
+  margin-bottom: 30px;
+  padding-top: 285px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+body #post .segment.description.huckaby7 .content .cards a.card:hover::after {
+  opacity: 1;
+}
+body #post .segment.description.huckaby7 .content .cards a.card:nth-child(3n+2) {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+body #post .segment.description.huckaby7 .content .cards a.card::before,
+body #post .segment.description.huckaby7 .content .cards a.card::after {
+  content: '';
+  display: block;
+  position: absolute;
+}
+body #post .segment.description.huckaby7 .content .cards a.card::before,
+body #post .segment.description.huckaby7 .content .cards a.card::after {
+  top: 15px;
+  height: 240px;
+  width: 100%;
+  background: transparent no-repeat center;
+}
+
+body #post .segment.description.huckaby7 .content .cards a.card::after {
+  opacity: 0;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  /*-webkit-backface-visibility: hidden;*/
+}
+body #post .segment.description.huckaby7 .content .cards a.card .label {
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  font-size: 16px;
+  color: #2c799f;
+}
+body #post .segment.description.huckaby7 .content .cards a.card .label::before,
+body #post .segment.description.huckaby7 .content .cards a.card .label::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background: #046fa3;
+}
+body #post .segment.description.huckaby7 .content .cards a.card .label::before {
+  top: 270px;
+  height: 1px;
+  width: 100%;
+}
+body #post .segment.description.huckaby7 .content .cards a.card .arrow {
+  position: absolute;
+  top: 263px;
+  left: 181px;
+}
+body #post .segment.description.huckaby7 .content .cards a.card .name {
+  font-family: Electrolize, sans-serif, Arial, Verdana;
+  font-size: 13px;
+  color: #2c799f;
+  text-shadow: 0 9px 8px rgba(66, 169, 248, 0.3);
+}
+body #post .segment.description.huckaby7 .content .cards a.card .name::before {
+  content: '-';
+  padding-right: 3px;
+}
+body #post .segment.description.huckaby7 .content .cards a.card .name::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 271px;
+  right: 0;
+  height: 1px;
+  width: 50px;
+  background: #046fa3;
+}
+
+/* THIS IS THE CODE YOU NEED IF YOU DON'T USE THE ARTICLE TAG */
+
+
+.segment .content .image {float:right; width:auto; border:1px solid #192632; border-radius:10px; background-color:#01070a; display:block; margin:20px 0px 30px 20px;}
+.segment .content .image img {border:1px solid #6599a8;border-radius:10px; margin:-1px;}
+.segment .content .image .caption {color:#65818a; font-style:italic; font-size:12px; text-align:center; padding:20px 40px; display:block; width:420px;}
+</style>
+
+<script type="text/javascript">
+  /* JS from ATOM */
+  
+</script>
+
+
+
+
+    
+
+  <style>
+    
+      background:url(/rsi/static/images/noisebg.gif) repeat center top #000b11;
+    
+  </style>
+
+    <link href="//fonts.googleapis.com/css?family=Electrolize%7COrbitron:400,500,700%7CShare+Tech+Mono" rel="stylesheet" type="text/css">
+
+    <link href="/cache/en/rsi-css.css?v=3.2.9.0" media="all" rel="stylesheet">
+  
+
+  </head>
+  <body id="" class="">
+
+    
+      <div class="l-notification-bar l-notification-bar--rsi js-notification-bar" id="notification-bar-root">
+  <c-notification-bar v-bind:latestagreementsslugs='["qwa3l7w316dgt","5uyoqclrxgfgf"]' v-bind:loggedin="0" v-bind:onhomepage="0"></c-notification-bar>
+  <div class="l-notification-bar__boxes js-notification-bar-boxes">
+      </div>
+
+</div>
+    
+
+    <div id="bodyWrapper">
+      <header class="c-header-wrapper c-header-wrapper--rsi js-header-wrapper " id="cross-brand-header">
+  <div id="platform-bar"></div>
+
+  <div class="c-right-sidebar c-right-sidebar--search" id="search-sidebar">
+  <div class="js-toggle-search__backdrop hidden"></div>
+  <a href="#" class="c-right-sidebar__back js-toggle-search">Back
+    <span></span>
+    <span></span>
+  </a>
+  <form class="c-right-sidebar__form">
+    <h1 class="c-right-sidebar__form-title">Search</h1>
+
+    <input class="c-right-sidebar__form-input" type="text" id="header-search-input" placeholder="Search for articles">
+
+    <input class="c-right-sidebar__form-submit c-right-sidebar__form-submit--search" type="submit" value="Go">
+  </form>
+</div>
+      <div class="c-right-sidebar c-right-sidebar--signin" id="account-sidebar">
+<div class="js-toggle-account__backdrop hidden"></div>
+  <a href="#" class="c-right-sidebar__back js-toggle-account">Back
+    <span></span>
+    <span></span>
+  </a>
+
+  <form method="post" class="c-right-sidebar__form c-right-sidebar__form--signin js-signin-form" id="signin-form">
+
+    <h1 class="c-right-sidebar__form-title">Sign into RSI</h1>
+
+    <div class="c-right-sidebar__form-error-message js-error-message"></div>
+
+    <input name="login_id" class="c-right-sidebar__form-input" type="text" id="signin_input_loginid" placeholder="Login">
+
+    <input name="password" class="c-right-sidebar__form-input c-right-sidebar__form-password" type="password" id="signin_input_password" placeholder="Password">
+
+    <div class="c-right-sidebar__form-captcha" id="signin-captcha"></div>
+
+    <div class="l-oneline l-oneline--fill">
+      <div class="l-checkbox">
+        <input class="c-right-sidebar__form-checkbox" id="sidebar-login-remember-me" name="remember" type="checkbox">
+        <label class="c-right-sidebar__form-label c-right-sidebar__form-checkbox-label" for="sidebar-login-remember-me">
+          Remember me
+        </label>
+      </div>
+
+      <input class="c-right-sidebar__form-submit c-right-sidebar__form-submit--login" type="submit" value="Sign In">
+      <span class="c-right-sidebar__form-success-message">
+        <span class="js-svg-inliner h-svg c-account__icon c-account__icon-success"></span>
+        Success
+      </span>
+    </div>
+    
+
+    <div class="l-oneline">
+      <a class="c-right-sidebar__form-icon-link js-show-recovery c-right-sidebar__form-icon-link--recovery" href="">
+        <span class="js-svg-inliner h-svg c-account__icon c-account__icon--smaller c-account__icon-lock"></span>
+        Account Recovery
+      </a>
+      <a class="c-right-sidebar__form-icon-link c-right-sidebar__form-icon-link--enlist" href="/enlist?jumpto=%2Fcomm-link%2FSCW%2F16174-IMPORT">
+        <span class="js-svg-inliner h-svg c-account__icon c-account__icon--smaller c-account__icon-go"></span>
+        Enlist Now
+      </a>
+    </div>
+  </form>
+
+  <form class="c-right-sidebar__form c-right-sidebar__form--recovery js-recovery-form is-hidden" id="recovery-form">
+
+    <h1 class="c-right-sidebar__form-title">Account Recovery</h1>
+
+    <div class="c-right-sidebar__form-error-message js-error-message"></div>
+
+    <label for="signin_recovery_email" class="c-right-sidebar__form-label">Enter the e-mail address associated with your RSI account. We will email you with the instructions on how to create a new password.</label>
+
+    <input name="email" class="c-right-sidebar__form-input" type="email" id="signin_recovery_email" placeholder="Your Email Address">
+
+    <input class="c-right-sidebar__form-submit c-right-sidebar__form-submit--recovery" type="submit" value="Submit">
+    <span class="c-right-sidebar__form-success-message">
+      <span class="js-svg-inliner h-svg c-account__icon c-account__icon-success"></span>
+      Success
+    </span>
+
+    <p class="slidedown-on-success">We've sent a recovery email to your email address. Click the link within to reset your password.</p>
+
+    <div class="l-oneline">
+      <a class="c-right-sidebar__form-icon-link c-right-sidebar__form-icon-link--signin js-show-signin" href="">
+        <span class="js-svg-inliner h-svg c-account__icon c-account__icon--smaller c-account__icon-power"></span>
+        Sign-In
+      </a>
+      <a class="c-right-sidebar__form-icon-link c-right-sidebar__form-icon-link--enlist" href="/enlist?jumpto=%2Fcomm-link%2FSCW%2F16174-IMPORT">
+        <span class="js-svg-inliner h-svg c-account__icon c-account__icon--smaller c-account__icon-go"></span>
+        Enlist Now
+      </a>
+    </div>
+    <a class="c-right-sidebar__form-icon-link c-right-sidebar__form-icon-link--support" href="//support.robertsspaceindustries.com">
+      <span class="js-svg-inliner h-svg c-account__icon c-account__icon--smaller c-account__icon-talk"></span>
+      Contact Customer Support
+    </a>
+  </form>
+
+
+  <form class="c-right-sidebar__form c-right-sidebar__form--two-step js-two-step-form is-hidden" id="two-step-form">
+
+    <h1 class="c-right-sidebar__form-title">Two-Step Authentication</h1>
+
+    <div class="c-right-sidebar__form-error-message js-error-message"></div>
+
+    <label for="two_step_input_code" class="c-right-sidebar__form-label js-twostep-label">Enter the code generated by your authenticator or one of your backup codes</label>
+    <input name="code" class="c-right-sidebar__form-input c-right-sidebar__form-input--code" type="text" id="code" placeholder="Authentication Code">
+
+    <label for="two_step_input_device" class="c-right-sidebar__form-label">Name of your Device</label>
+    <input name="device_name" class="c-right-sidebar__form-input c-right-sidebar__form-input--device" type="text" id="device_name" placeholder="My Device">
+    <input type="hidden" name="device_type" id="device_type" value="">
+
+    <label for="two_step_input_device" class="c-right-sidebar__form-label">Trust this device for</label>
+        
+
+
+  
+    <a class="js-selectlist selectlist " rel="" href="">
+    <div class="arrow"></div>
+    <span>Duration</span>
+              <ul class="body">
+              
+                                                              <li class="js-option option " rel="session">
+                                                                        This session only
+                                                    </li>
+                                                                <li class="js-option option " rel="day">
+                                                                        1 day
+                                                    </li>
+                                                                <li class="js-option option " rel="week">
+                                                                        1 week
+                                                    </li>
+                                                                <li class="js-option option " rel="month">
+                                                                        1 month
+                                                    </li>
+                                                                <li class="js-option option " rel="year">
+                                                                        1 year
+                                                    </li>
+                                          
+            </ul>
+        <input type="hidden" name="duration" class="js-duration js-form-data" id="duration">
+  </a>
+  
+    <input class="c-right-sidebar__form-submit c-right-sidebar__form-submit--twostep" type="submit" value="Authenticate">
+    <span class="c-right-sidebar__form-success-message">
+      <span class="js-svg-inliner h-svg c-account__icon c-account__icon-success"></span>
+      Success
+    </span>
+
+  </form>
+
+</div>
+
+<script>
+
+$(document).ready(function() {
+  this.signin = new RSI.Signin({
+    //success_url: $(e.currentTarget).data('success-url-signin'),
+    require_captcha: 0
+  });
+});
+</script>  
+  <div class="c-header-wrapper__backdrop js-toggle-games"></div>
+</header>
+
+<div id="platform-backdrop"></div>
+
+<script type="text/javascript">
+  RSI.Platformbar = {
+    theme: "rsi",
+    loggedState: "logged-out",
+    tabs: [
+      {
+        type: 'brands',
+        name: "Games",
+        subItems: [
+          {
+            name: "sc",
+            href: "/star-citizen",
+            description: "Join the Universe"
+          },
+          {
+            name: "s42",
+            href: "/squadron42",
+            description: "Start the adventure"
+          },
+          {
+            name: "rsi",
+            href: "/",
+            description: "Follow the Development"
+          }
+        ]
+      },
+      {
+        type: 'apps',
+        name: "Apps",
+        subItems: [
+          [
+            {
+              name: "Spectrum",
+              href: "/spectrum/community/SC",
+              description: "Your&nbsp;communication platform"
+            },
+            {
+              name: "Launcher",
+              href: "/download",
+              description: "Download Star&nbsp;Citizen",
+                          }
+          ],
+          [
+            {
+              name: "Roadmap",
+              href: "/roadmap",
+              description: "Keep track of the&nbsp;development"
+            },
+            {
+              name: "Telemetry",
+              href: "/telemetry",
+              description: "Keep&nbsp;track&nbsp;of&nbsp;the player&rsquo;s&nbsp;performance"
+            },
+            {
+              name: "Issue Council",
+              href: "/community/issue-council",
+              description: "Help&nbsp;us&nbsp;make the game better",
+                          }
+          ],
+          [
+            {
+              name: "Starmap",
+              href: "/starmap",
+              description: "Your map to&nbsp;the&nbsp;universe"
+            }
+          ]
+        ]
+      },
+              {
+          type: 'citizencon',
+          name: "Citizencon 2949",
+          href: "/citizencon"
+        }
+          ],
+    navigation: {
+      store: {
+        name: "Pledge Store",
+        href: "/pledge",
+        isHidden: false      },
+      support: {
+        name: "Support",
+        href: "//support.robertsspaceindustries.com"
+      },
+      account: {
+        name: "Account",
+        href: "/account/settings"
+      }
+    }
+  };
+
+  $(document).ready(function() {
+    window.header = new RSI.Header({});
+  });
+</script>
+
+
+      
+  
+<header class="c-brand-menu c-brand-menu----rsi" id="brand-menu">
+  <span class="c-brand-menu__section">
+    
+      Roberts Space Industries
+    
+  </span>
+  <div class="c-brand-menu__backdrop"></div>
+  <nav class="c-brand-menu__container">
+    <div class="c-brand-menu__logo">
+      <a href="/"><span class="h-svg h-svg__logo-rsi--fullcolor js-svg-inliner"></span> </a>
+    </div>
+    <div class="c-brand-menu__items-container">
+      <ul class="c-brand-menu__items">
+                <li class="c-brand-menu__item  ">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/comm-link">
+            <span class="c-brand-menu__item-text">Comm-Link</span>
+                                  </a>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/community">
+            <span class="c-brand-menu__item-text">Community</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Community</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/spectrum" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Spectrum
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/orgs" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Organizations
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/leaderboards/top" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Leaderboards
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community_events" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Event
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Hub
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/fankit" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Fankit
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/development">
+            <span class="c-brand-menu__item-text">Development</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Development</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/roadmap" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Roadmap
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/devtracker" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Dev Tracker
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/telemetry" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Telemetry
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/issue-council" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Issue Council
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/patch-notes" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Patch Notes
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/ship-matrix" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Ship Matrix
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/funding-goals" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Funding
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+              </ul>
+    </div>
+
+    <div class="c-brand-menu__cta">
+      
+          <a href="/star-citizen/fly-now" class="c-brand-cta-btn js-google-analytics-event-tracker" data-event-category="FlyNow" data-event-label="navMenuClick">
+            <div></div>
+              <span class="c-brand-cta-btn__text">
+                <strong>Fly now</strong>Alpha 3.7
+              </span>
+            <div></div>
+          </a>
+      
+    </div>
+  </nav>
+</header>
+
+
+
+      
+
+  
+  <div class="page-wrapper">
+    
+  <div id="post-background"></div>
+
+
+    <div id="contentbody" class="" style="">
+      
+
+<div id="post">
+  <div class="title-section">
+    
+      <div class="wrapper title-bar-container">
+        <div class="glow left"></div>
+        <div class="title-bar">
+          <div class="title with-subtitle">
+            <h1>CitizenCon 2947</h1>
+            <h2>Frankfurt - October 27th, 2017</h2>
+          </div>
+          <div class="details">
+            <div>
+              <h3>ID:</h3>
+              <p>16174</p>
+              <div class="cboth"></div>
+            </div>
+            <div>
+              <h3>Comments:</h3>
+              <p class="comment-count">131</p>
+              <div class="cboth"></div>
+            </div>
+            <div>
+              <h3>Date:</h3>
+              <p>October 26th 2017</p>
+              <div class="cboth"></div>
+            </div>
+            <div></div>
+          </div>
+          <div class="cboth"></div>
+        </div>
+        <div class="glow right"></div>
+      </div>
+    
+  <div class="title-container">
+    <div class="title no-subtitle">CitizenCon 2947 Details</div>
+      </div>
+
+  </div>
+
+  
+  <div class="lightbar toplightbar">
+    <div class="lightbarlights"></div>
+    <div class="footershadow"></div>
+  </div>
+
+
+  <div class->
+</div>
+
+<br><br>
+
+<div class="description huckaby1 segment"><div class="content"><div style="background:url(https://robertsspaceindustries.com/media/0h8ulypa6sudpr/tavern_upload_small/Cc_logo.png) no-repeat center 10px; padding-top:260px;">
+</div>
+
+<div style="color:aqua" align="center"><h7>CitizenCon 2947 Details</h7></div>
+
+<div align="center"><h1>A Guide to the Week’s Activities</h1></div></div><div class="cboth"></div></div>
+
+<div class="description huckaby2 segment"><div class="content"><a class="image  js-open-in-slideshow" data-id="9qwobfoztgfvqr" data-full_res="/media/9qwobfoztgfvqr/source/CS_SC_CITIZEN_CON_VECTOR_FINAL_150819_vsmall.jpg" data-low_res="/media/9qwobfoztgfvqr/slideshow_pager/CS_SC_CITIZEN_CON_VECTOR_FINAL_150819_vsmall.jpg" data-source_url="/media/9qwobfoztgfvqr/source/CS_SC_CITIZEN_CON_VECTOR_FINAL_150819_vsmall.jpg" rel="post"><img src="/media/9qwobfoztgfvqr/vault_thumb/CS_SC_CITIZEN_CON_VECTOR_FINAL_150819_vsmall.jpg" alt=""></a>
+
+<br>
+<br>
+<br>
+<br>
+
+
+<p><span style="color:AliceBlue">Greetings Citizens!</span></p>
+
+<p><span style="color:AliceBlue">CitizenCon 2947 is almost here. On October 27th Star Citizen celebrates the fifth anniversary with you, the people that make all this possible. In addition to the annual presentation by Chris Roberts, we’re pushing the boundaries of what a CitizenCON can be in new and exciting ways.  </span></p>
+
+<p><span style="color:AliceBlue">We’re expanding the scope and format of our on-stage presentations to deliver you more information and content; packing additional rooms with interactive demos to showcase new and upcoming technology while letting those in attendance get their hands on it, filling a room with dozens of PCs so attendees can play Alpha 3.0, and broadcasting all afternoon on <a href="http://twitch.tv/starcitizen" title="twitch.tv/starcitizen">Twitch</a> so we can bring everything CitizenCon has to offer to those of you who can’t attend in person.  </span></p>
+
+<p><span class="initial">W</span>e also recommend you follow along through the week on social media channels for a variety of updates, <span class="caps">BTS</span> images, and more.</p>
+
+<p><span style="color:AliceBlue">Let’s see what CitizenCon 2947 has to offer.  <strong>All times are local Frankfurt time, October 27th.</strong></span></p></div><div class="cboth"></div></div>
+
+<div class="description huckaby1 segment"><div class="content"><a class="image  js-open-in-slideshow" data-id="vnto1dvmua5z6r" data-full_res="/media/vnto1dvmua5z6r/source/Capitol_Innenraum.jpg" data-low_res="/media/vnto1dvmua5z6r/slideshow_pager/Capitol_Innenraum.jpg" data-source_url="/media/vnto1dvmua5z6r/source/Capitol_Innenraum.jpg" rel="post"><img src="/media/vnto1dvmua5z6r/tavern_upload_square/Capitol_Innenraum.jpg" alt=""></a>
+
+<a class="image  js-open-in-slideshow" data-id="3csguouao57v0r" data-full_res="/media/3csguouao57v0r/source/SOH_Capitol_Eingang1_Bucher_042023.jpg" data-low_res="/media/3csguouao57v0r/slideshow_pager/SOH_Capitol_Eingang1_Bucher_042023.jpg" data-source_url="/media/3csguouao57v0r/source/SOH_Capitol_Eingang1_Bucher_042023.jpg" rel="post"><img src="/media/3csguouao57v0r/tavern_upload_square/SOH_Capitol_Eingang1_Bucher_042023.jpg" alt=""></a>
+
+<div><span align="left"><h6>14:00 – Attendees Arrive</h6></span></div>
+
+<p></p><p class="qanda">Guests are welcomed into the majestic Capitol Theatre. Built in the early 20th century, this historical landmark provides the perfect backdrop for CitizenCon 2947: Exploring New Worlds.  </p>
+
+<br>
+
+
+<p></p><div class="variant-left">
+
+<br>
+
+
+<a class="image  js-open-in-slideshow" data-id="9qrtmcts90z19r" data-full_res="/media/9qrtmcts90z19r/source/Preshow1.jpg" data-low_res="/media/9qrtmcts90z19r/slideshow_pager/Preshow1.jpg" data-source_url="/media/9qrtmcts90z19r/source/Preshow1.jpg" rel="post"><img src="/media/9qrtmcts90z19r/tavern_upload_square/Preshow1.jpg" alt=""></a>
+
+<a class="image  js-open-in-slideshow" data-id="qmu2dgxefqft3r" data-full_res="/media/qmu2dgxefqft3r/source/Preshow2.jpg" data-low_res="/media/qmu2dgxefqft3r/slideshow_pager/Preshow2.jpg" data-source_url="/media/qmu2dgxefqft3r/source/Preshow2.jpg" rel="post"><img src="/media/qmu2dgxefqft3r/tavern_upload_square/Preshow2.jpg" alt=""></a>
+
+<p></p></div>
+
+<div><span align="right"><h6>14:30 – Broadcasting Empire Wide</h6></span></div>
+
+<p></p><p class="rightparagraph">Unable to attend the festivities live? <a href="http://twitch.tv/starcitizen" title="twitch.tv/starcitizen">Complete coverage</a> of the event will be broadcast with a show covering all the Capitol Theatre’s activities, interviews with <span class="caps">UEE</span> dignitaries, and bringing live presentations to those of you watching from across the Empire.</p>
+
+<br>
+
+
+<a class="image  js-open-in-slideshow" data-id="6v0bbh5egzd6dr" data-full_res="/media/6v0bbh5egzd6dr/source/Chris4.jpg" data-low_res="/media/6v0bbh5egzd6dr/slideshow_pager/Chris4.jpg" data-source_url="/media/6v0bbh5egzd6dr/source/Chris4.jpg" rel="post"><img src="/media/6v0bbh5egzd6dr/tavern_upload_square/Chris4.jpg" alt=""></a>
+
+<a class="image  js-open-in-slideshow" data-id="hhrz3ektgbi06r" data-full_res="/media/hhrz3ektgbi06r/source/Chris1.jpg" data-low_res="/media/hhrz3ektgbi06r/slideshow_pager/Chris1.jpg" data-source_url="/media/hhrz3ektgbi06r/source/Chris1.jpg" rel="post"><img src="/media/hhrz3ektgbi06r/tavern_upload_square/Chris1.jpg" alt=""></a>
+
+<div><span align="left"><h6>15:00 – Aegis Dynamics Presents: CitizenCon Opening Address</h6></span></div>
+
+<p></p><p class="qanda">To mark the official start of this year’s conference, we will hear from noted luminaries on what it means to be a citizen in today’s Empire, and how expanding and protecting Humanity’s new frontier is changing us for the better.</p>
+
+<br>
+<br>
+
+
+<p></p><div class="variant-left">
+
+<a class="image  js-open-in-slideshow" data-id="lb7dtt3ikcr6mr" data-full_res="/media/lb7dtt3ikcr6mr/source/Townhall.jpg" data-low_res="/media/lb7dtt3ikcr6mr/slideshow_pager/Townhall.jpg" data-source_url="/media/lb7dtt3ikcr6mr/source/Townhall.jpg" rel="post"><img src="/media/lb7dtt3ikcr6mr/tavern_upload_square/Townhall.jpg" alt=""></a>
+
+<a class="image  js-open-in-slideshow" data-id="a8ryh78mht9t4r" data-full_res="/media/a8ryh78mht9t4r/source/Sdcc.jpg" data-low_res="/media/a8ryh78mht9t4r/slideshow_pager/Sdcc.jpg" data-source_url="/media/a8ryh78mht9t4r/source/Sdcc.jpg" rel="post"><img src="/media/a8ryh78mht9t4r/tavern_upload_square/Sdcc.jpg" alt=""></a>
+
+<p></p></div>
+
+<div><span align="right"><h6>15:30 to 20:30 – Five Presentations</h6></span></div>
+
+<p></p><p class="rightparagraph">Featuring many of the greatest minds from across the <span class="caps">UEE</span>, experience panels on the most recent ground-breaking research and technological trends in the fields of kinesiology, xeno-linguistics, privatized colonization and more with a special address by Innovator of the Year Silas Koerner and an inspiring look at the spacecraft being hailed as a “game changer.”</p>
+
+<a class="image  js-open-in-slideshow" data-id="atp56jy36x095r" data-full_res="/media/atp56jy36x095r/source/Chris3.jpg" data-low_res="/media/atp56jy36x095r/slideshow_pager/Chris3.jpg" data-source_url="/media/atp56jy36x095r/source/Chris3.jpg" rel="post"><img src="/media/atp56jy36x095r/tavern_upload_square/Chris3.jpg" alt=""></a>
+
+<a class="image  js-open-in-slideshow" data-id="4p4tvas7ee05ar" data-full_res="/media/4p4tvas7ee05ar/source/Chris2.jpg" data-low_res="/media/4p4tvas7ee05ar/slideshow_pager/Chris2.jpg" data-source_url="/media/4p4tvas7ee05ar/source/Chris2.jpg" rel="post"><img src="/media/4p4tvas7ee05ar/tavern_upload_square/Chris2.jpg" alt=""></a>
+
+<div><span align="left"><h6>21:00 – Electronic Access Presents: CitizenCon Keynote Address</h6></span></div>
+
+<p></p><p class="qanda">Whether it’s visiting a city you’ve never traveled to before, charting a star system newly discovered, or even battling on virtual planets in a sim, Exploring New Worlds can mean many different things to many different citizens. Our keynote address will strive to get at the heart of why exploring our universe is so important, and how each of us can be a part of it.</p>
+
+<br>
+</div><div class="cboth"></div></div>
+
+<div class="description huckaby1 segment"><div class="content"><br>
+<br>
+<br>
+<br>
+
+
+<div style="color:aqua" align="center"><h7>Tell Us More About Those Presentations</h7></div>
+
+<hr>
+
+<br>
+
+
+<p><span style="color:AliceBlue">Coverage of the day kicks off shortly after the doors open, leading into the Opening Address on the main stage at 3pm with Chris Roberts, then throughout the day we’ll be broadcasting all five presentations live on Twitch with replays available on YouTube shortly thereafter.</span></p>
+
+<p><span style="color:AliceBlue">The five presentations include:  </span></p>
+
+<br>
+
+
+<div style="color:aqua"><h6>15:30 – Empire on the Move<h6></h6></h6></div>
+
+<p><span style="color:AliceBlue"><strong><span class="caps">PANELISTS</span>: Ivo Herzeg, Jason Cole and Steve Bender</strong></span></p>
+
+<p>A panel of noted kinesiologists and biomechanical engineers discuss how technological advances and increasing geo-diversity have changed and evolved the way our bodies move and function over the centuries.</p>
+
+<br>
+
+
+<div style="color:aqua"><h6>16:30 – Beyond the Cutting Edge<h6></h6></h6></div>
+
+<p><span style="color:AliceBlue"><strong><span class="caps">PANELISTS</span>: Alistair Brown and Sean Tracy</strong></span></p>
+
+<p>By analyzing the most recent ground-breaking research and technological trends, several of the brightest minds in tech try to answer the question, “Where are we going next?” And more importantly, “How do we get there?” </p>
+
+<br>
+
+
+<div style="color:aqua"><h6>17:30 – Everyday Close Encounters<h6></h6></h6></div>
+
+<p><span style="color:AliceBlue"><strong><span class="caps">PANELISTS</span>: Britton Watkin, Dave Haddock and Josh Herman</strong></span></p>
+
+<p>Xeno-experts who have studied and lived on Xi’an worlds provide an unparalleled view into the complex culture and language that makes our neighbors to the east so compelling, as well as a look at how our relationship will continue to develop into the next decade.  </p>
+
+<br>
+
+
+<div style="color:aqua"><h6>18:30 – The Corporate Colonies of Stanton<h6></h6></h6></div>
+
+<p><span style="color:AliceBlue"><strong><span class="caps">PANELISTS</span>: Ian Leyland, Pascal Muller and Michel Kooper</strong></span></p>
+
+<p>Though only discovered a few decades ago, the Stanton system has quickly become a central hub of commerce and urban development. Learn how it’s unique geography combined with privatized colonization to create one of the most diverse socio-economic systems of the modern era. </p>
+
+<br>
+
+
+<div style="color:aqua"><h6>19:30 – Pioneering the Future<h6></h6></h6></div>
+
+<p><span style="color:AliceBlue"><strong><span class="caps">PANELISTS</span>: Paul Jones, Todd Papy and John Crewe</strong></span></p>
+
+<p>Innovator of the Year Silas Koerner graces the CitizenCon stage along with Consolidated Outland engineers and designers to offer an inspiring look at the spacecraft being hailed as a “game changer” for Humanity’s expansion throughout the stars.  </p>
+
+<br>
+</div><div class="cboth"></div></div>
+
+<div class="description huckaby1 segment"><div class="content"><br>
+<br>
+<br>
+<br>
+
+
+<div style="color:aqua" align="center"><h7>Additional Activities for Attendees</h7></div>
+
+<hr>
+
+<br>
+
+
+<p><span style="color:AliceBlue">For those in attendance, this year’s CitizenCon offers some extra features to partake in. Whether you’re getting a behind the scenes look at the technology behind Star Citizen, exploring the moons of Crusader on our network of terminals or catching up with devs and other Con attendees at the bar, there’s something for everybody.</span></p>
+
+<br>
+
+
+<div align="center">Caution: Due to the continuing limitations of physics and reality, we strongly suggest that attendees only try to be in one place at a time with any certainty.</div>
+
+<br>
+<br>
+
+
+<div style="color:aqua"><h6>Tech Gallery Sponsored by Aegis Dynamics<h6></h6></h6></div>
+
+<p>Beginning at 15:00, journey to the cutting edge of technological innovation in CitizenCon’s new Tech Gallery. Scientists, Designers, Artists and Engineers offer up close and exclusive looks at the latest advancements in disciplines ranging from geohacking to outpost design to weapon manufacture.</p>
+
+<p></p><div align="center"><h1>Scheduled Demonstrations</h1>
+
+<p><span style="color:AliceBlue">15:30 to 20:00</span><br>
+Face-Over-IP w/ Kit Challis and Yogi Klatt</p>
+
+<p><span style="color:AliceBlue">15:30 to 16:30</span><br>
+Creating Planets w/ Pascal Mueller and Michael Kooper<br>
+Building Solar Systems w/ Sascha Hoba<br>
+Designing a Location w/ Andreas Johansson, Tobias Johansson and Friedrich Bode</p>
+
+<p><span style="color:AliceBlue">16:30 to 17:30</span><br>
+Creating Planets w/ Pascal Mueller and Michael Kooper<br>
+Customizing a Weapon w/ David Sibbe and Tobias Wanke<br>
+The World of Particles w/ Caleb Essex</p>
+
+<p><span style="color:AliceBlue">17:30 to 18:30</span><br>
+Balancing Ships w/ John Crewe<br>
+Building Solar Systems w/ Sascha Hoba<br>
+Designing a Location w/ Andreas Johansson, Tobias Johansson and Friedrich Bode</p>
+
+<p><span style="color:AliceBlue">18:30 to 19:30</span><br>
+Bringing AI to Life w/ Francesco Roccucci<br>
+Customizing a Weapon w/ David Sibbe and Tobias Wanke<br>
+The World of Particles w/ Caleb Essex</p>
+
+<p></p></div><br>
+<br>
+
+
+<div style="color:aqua"><h6>The <span class="caps">UEE</span> Diplomatic Corps Bar<h6></h6></h6></div>
+
+<p>Sponsored by the <span class="caps">UEE</span> Diplomatic Corps, the Frontier Bar is the perfect place to network for your next exploration mission, simply connect with friends, or catch up with.</p>
+
+<br>
+
+
+<div style="color:aqua"><h6>Universum Sponsored by Electronic Access<h6></h6></h6></div>
+
+<p>Beginning at 15:30 Electronic Access invites conference-goers to stop by one of their high-end terminals to be the first to experience their exciting new planetary technology.</p>
+
+<br>
+</div><div class="cboth"></div></div>
+
+<div class="description huckaby1 segment"><div class="content"><br>
+<br>
+<br>
+<br>
+
+
+<div style="color:aqua" align="center"><h7>Beyond CitizenCon</h7></div>
+
+<hr>
+
+<br>
+
+
+<p><span style="color:AliceBlue">With Citizens attending from the farthest reaches of the Empire, the <span class="caps">UEE</span> Diplomatic Corps have ensured there are focal points for meeting up with each other on both the day before and after to ensure a better sense of camaraderie and in celebration of everything being a Citizen entails. </span></p>
+
+<a class="image  js-open-in-slideshow" data-id="66zlqzln60p5vr" data-full_res="/media/66zlqzln60p5vr/source/Champions-Bar.jpg" data-low_res="/media/66zlqzln60p5vr/slideshow_pager/Champions-Bar.jpg" data-source_url="/media/66zlqzln60p5vr/source/Champions-Bar.jpg" rel="post"><img src="/media/66zlqzln60p5vr/tavern_upload_small/Champions-Bar.jpg" alt=""></a>
+
+<br>
+<br>
+
+
+<div style="color:aqua"><h6>Thursday, October 26th<h6></h6></h6></div>
+
+<p>From 18:00 to 20:00 several members from the <span class="caps">UEE</span> Diplomatic Corps will be available at Champions Bar in the Marriott Hotel Frankfurt.  You can enjoin with your fellow Citizens there and discuss the logistics of covering everything happening the next day.  </p>
+
+<p><span style="color:AliceBlue">Location: Hamburger Allee 2, 60486 Frankfurt</span></p>
+
+
+<br>
+<br>
+
+
+<br>
+
+
+<a class="image  js-open-in-slideshow" data-id="nnh7tn7rkcf7xr" data-full_res="/media/nnh7tn7rkcf7xr/source/Apfelwein-Wagner.jpg" data-low_res="/media/nnh7tn7rkcf7xr/slideshow_pager/Apfelwein-Wagner.jpg" data-source_url="/media/nnh7tn7rkcf7xr/source/Apfelwein-Wagner.jpg" rel="post"><img src="/media/nnh7tn7rkcf7xr/tavern_upload_small/Apfelwein-Wagner.jpg" alt=""></a>
+
+<br>
+<br>
+
+
+<div style="color:aqua"><h6>Saturday, October 28th <h6></h6></h6></div>
+
+<p>After the previous evening’s celebrations, we’ll be enjoying a quiet drink at the Apfelwein Wagner in the afternoon from 15:00 to 17:00.  Come join us there and chat about your favorite experiences of CitizenCon 2947.</p>
+
+<p><span style="color:AliceBlue">Location: Schweizer Straße 71, 60594 Frankfurt</span></p>
+
+<br>
+<br>
+<br>
+</div><div class="cboth"></div></div>
+
+
+<script src="/rsi/static/js/sales/starfarer/modernizr.custom.79639.js"></script>
+
+<script src="/rsi/static/js/sales/dragonfly/dragonfly.js"></script>
+
+<script>
+  &nbsp; &nbsp;$(function() {
+
+&nbsp; &nbsp; &nbsp;Page.init();
+&nbsp;window.Page = new RSI.Game.About();
+
+
+&nbsp; &nbsp; &nbsp;});
+&nbsp; &nbsp;</script>
+
+
+
+  <div class="wrapper">
+    
+    <div class="end-transmission-container">
+      <div class="glow left"></div>
+      <div class="title-bar">
+        <h1>End Transmission</h1>
+      </div>
+      <div class="glow right"></div>
+    </div>
+  </div>
+  
+
+  
+    
+
+  <div class="two-line-separator"></div>
+  
+    
+<div class="wrapper force-one-column" id="comments">
+  <div class="holder">
+    <div class="title-bar">
+      <div class="count">
+        <div class="label">Comments</div>
+        <div class="value">0131.<span class="js-comment-decimal">0</span></div>
+        <div class="cboth"></div>
+      </div>
+      <div class="title">
+        <h1>Feedback</h1>
+      </div>
+      <div class="cboth"></div>
+    </div>
+
+    <div class="main-buttons-holder-container">
+      <div class="main-buttons-holder">
+        <a href="/connect?jumpto=/comm-link/citcon-featured-content/16174-CitizenCon-2947-Details" class="add-comment js-add-comment trans-02s js-modal-login">Add New Comment</a>
+        <div class="settings js-settings">
+          <h1>Settings</h1>
+          <label>View mode:</label>
+          <a href="#" class="js-comments-view to-one-column js-to-one-column trans-01s on">One column</a>
+          <a href="#" class="js-comments-view to-two-columns js-to-two-columns trans-01s ">Two columns</a>
+          <label>Sort by:</label>
+          <a href="#" class="js-comments-sort to-oldest js-to-oldest trans-01s on">Oldest first</a>
+          <a href="#" class="js-comments-sort to-newest js-to-newest trans-01s ">Newest first</a>
+          <a href="#" class="js-comments-sort to-appreciated js-to-appreciated trans-01s ">Most appreciated first</a>
+
+                  </div>
+        <a href="" class="view-settings js-view-settings"><div class="hover trans-02s"></div></a>
+        <div class="triangle"></div>
+      </div>
+    </div>
+
+    
+    <div class="comment-listing"></div>
+
+    <div class="comment-loader traj-loader">
+      <div class="fast-blink"></div>
+      <span>Loading Additional Feedback</span>
+    </div>
+
+    <div class="cboth"></div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    window.comments = new RSI.Comments({
+      atom_url:"/comm-link/citcon-featured-content/16174-CitizenCon-2947-Details",
+      comment_listing_el:$(".comment-listing"),
+      comment_submission_form_el:$(".comment-submission"),
+      api_object:RSI.Api.Comments,
+      lazyLoading: true,
+      comment_count: 131,
+      subject_id:16174,
+      append:false,
+      texts: {
+        "edit": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        },
+        "reply": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        }
+      },
+      "insertion_conf": {
+        "mode":"html"
+      },
+      "api_function_names": {
+        "delete":"erase",
+        "load":"listing",
+        "sort":"listing"
+      }
+    });
+  });
+</script>
+  
+</div>
+
+    </div>
+
+    
+  </div>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.11/moment-timezone-with-data.min.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+      $.cookie('moment_timezone', moment.tz.guess(), { expires: 31, path: '/' });
+  });
+</script>
+
+
+
+
+               <script id="tpl_number_counter_digits" type="text/x-jsmart-tmpl">{if !$seperator}{$seperator=','}{/if}
+{if !$first_max}{$first_max=9}{/if}
+{for $digit = 0 to $length-1}
+  <div class="mask">
+    <div class="carousel">
+      {if $digit == 0}
+        {$max = $first_max}
+      {else}
+        {$max = 9}
+      {/if}
+      {for $i=0 to $max}
+        <div class="item {if $val_arr[$digit] == $i}on{/if}" rel="{$i}">{$i}</script></div>
+      {/for}
+    
+  
+  {if ($length - $digit) % 3 == 1 &amp;&amp; $digit != $length-1}
+  <div class="seperator">{$seperator}</div>
+  {/if}
+{/for}
+<script id="base_modal" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  <div class="top-border">
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+  
+</script>
+<script id="base_modal_flat" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  
+  
+</script>
+<script id="tpl_modals_slideshow" type="text/x-jsmart-tmpl"><img class="top-border" src="/rsi/static/images/modal_top.png">
+<a href="" class="close js-close">
+<div class="mask">
+  <a class="js-prev prev control">
+  <a class="js-next next control">
+  <div class="slideshow-carousel carousel" rel="{$index}">
+    {foreach from=$images item="image"}
+      <div class="{if $index == $image@index}on{/if}">
+      {if $image.is_video}
+        <div class="video-holder">
+          <div id="slideshow_video_{$image@index}" data-source="{$image->source_url}">
+            <video width="100%" height="100%" preload="auto" {if $video}src="{$image->source_url}"{/if} controls>
+          
+        
+      {else}
+        <div class="media js-media-slideshow-{$image@iteration}">
+        {if $image.low_res}
+          <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source data-srcset="{$image.full_res}" media="(min-width: 300px)" />
+            <!--[if IE 9]><![endif]-->
+            <img data-srcset="{$image.low_res}" alt="{$image.title}" />
+          
+        {else}
+          <img data-src="{$image.source_url}" />
+        {/if}
+        
+      {/if}
+        <div class="text">
+          {if !$image.is_video}
+          <a href="{$image.source_url}" class="download">
+          {/if}
+          <div class="copyright">&copy; 2012-{$year}<br />Cloud Imperium Games Corporation &<br />Roberts Space Industries Corp.
+          <div class="page-number">{$image@iteration} / {count($images)}
+          <div class="caption v-center">{if $image.title && $image.title != "undefined"}{$image.title}{/if}
+          <div class="cboth">
+        
+      
+    {/foreach}
+  
+
+<img class="bottom-border" src="/rsi/static/images/modal_bottom.png"></script>
+<script id="tpl_contact_us" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    
+<div id="contact" class="inner-content on">
+  <h2><span class="icon">CONTACT
+  <div class="padder">
+    <div class="separator">
+    <form name="" action="" method="POST">
+  <div class="error-message js-error-message">
+  <div class="success-message js-success-message">
+    <fieldset class="last">
+    <label for="contact_email">Email Address
+    <input type="text" name="email" value="" class="trans-02s trans-color trans-box-shadow" id="contact_email" />
+  
+    <fieldset>
+    <label for="contact_subject">Subject
+    <input type="text" name="subject" value="" class="trans-02s trans-color trans-box-shadow" id="contact_subject" />
+    <label>Contacting us for:
+    <ul class="category-info">
+            <li id="tech_support_info">Questions about download, installation, networking, or in-game client problems
+            <li id="subscription_info">Questions about monthly and yearly subscription plans
+            <li id="account_billing_info">Issues related to your account, such as incorrect information or ability to access account, or Billing with regards to payments and payment methods
+            <li id="melt_request_info">To reclaim a pledge over $1,000 for store credit (please note - this is a permanent action)
+            <li id="merchandise_info">Questions about physical and/or shipped merchandise
+            <li id="hacked_info">Issues related to compromised account or missing pledge.
+            <li id="account_recovery_info">For issues with account authentication, lost passwords and related queries
+            <li id="probation_info">Issues related to forums probation or ban
+            <li id="refund_request_info">Refund requests and related inquiries
+            <li id="customer_support_info">For general questions and queries regarding Star Citizen
+          
+  
+  <fieldset>
+    <label for="contact_text">Fescription
+    <textarea name="text" class="trans-02s trans-color trans-box-shadow" id="contact_text">
+  
+  <div class="contact-submit-wrapper">
+    <div class="line">
+    <button class="submit js-submit"><strong>submit your message
+  
+
+    <div class="separator">
+  
+
+
+    
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  
+</script>
+<script id="tpl_concierge" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+<img src="/rsi/static/images/modal_yellow_line.png" />
+
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    
+
+<div id="contact" class="inner-content on">
+  <h2><span class="icon">CONCIERGE
+  <div class="padder">
+    <div class="separator">
+    <form name="" action="" method="POST" class="concierge-form">
+      <p class="head">We recommend that you check out the <a href="/faq">FAQs and other resources below if you are in need of information regarding RSI or Star Citizen. If your topic isn&rsquo;t covered, feel free to contact us!<br/><br/> - Gameplay : <a href="https://forums.robertsspaceindustries.com/categories/ask-a-developer">Ask A Dev<br/> - Suggestions: <a href="https://forums.robertsspaceindustries.com/categories/game-ideas">Game Ideas<br/> - Bug Reports (including PTU): <a href="https://forums.robertsspaceindustries.com/categories/test-pilot-headquarters">Test Pilot Headquarters<br/>
+      <div class="error-message js-error-message">
+      <div class="success-message js-success-message">
+
+      <fieldset class="concierge-form__field concierge-form__field--issue">
+        <label for="concierge_issue">Please choose your issue below
+        <select required id="concierge_issue" name="issue" class="trans-02s trans-color trans-box-shadow">
+          <option value="-">
+            -
+          
+                  
+      
+
+      <fieldset class="concierge-form__field concierge-form__field--problem concierge-form__field--secondary hidden">
+        <label for="concierge_problem">
+        <select required id="concierge_problem" name="problem" class="trans-02s trans-color trans-box-shadow">
+        
+      
+
+      <div class="issue-subfields">
+
+      <fieldset class="concierge-form__field concierge-form__field--secondary concierge-form__field--optional hidden">
+        <label for="concierge_attachment">Attachments <span>- Optional
+        <div class="concierge-form__attachment">
+            Add file here
+          <input class="concierge-upload-images-container" type="file" id="concierge_attachment" name="attachment" accept="image/*" multiple/>
+        
+      
+
+      <fieldset class="concierge-form__field concierge-form__field--secondary concierge-form__field--optional hidden">
+        <span class="h-text h-text--size-13 h-text--univia h-text--brown"><strong>Uploaded files 
+        <div class="concierge-form__file-preview">
+      
+
+      <fieldset class="concierge-form__field concierge-form__field--submit concierge-form__field--secondary last hidden">
+        <span class="submit-arrow">
+        <input type="submit" value="Send" class="trans-02s trans-color trans-background" />
+      
+
+    
+    <div class="separator">
+  
+
+
+
+    
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    
+<img src="/rsi/static/images/modal_yellow_line.png" />
+
+  
+</script>
+<script id="tpl_error" type="text/x-jsmart-tmpl"><div class="modal-error js-modal-error">
+  <p class="modal-text js-modal-text">
+  <a class="close js-close trans-03s .trans-opacity" href="">
+</script>
+<script id="tpl_success" type="text/x-jsmart-tmpl"><div class="modal-success js-modal-success">
+  <p class="modal-text js-modal-text">
+  <a class="close js-close trans-03s .trans-opacity" href="">
+</script>
+<script id="tpl_progress" type="text/x-jsmart-tmpl"><div class="modal-progress js-modal-progress">
+  <div class="traj-loader">
+    <div class="fast-blink">
+    <span class="modal-text js-modal-text">
+  
+</script>
+<script id="tpl_outbound" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    
+<div id="outbound" class="inner-content on">
+  <h2><span class="icon">OUTBOUND LINK
+  <div class="padder">
+    <div class="separator">
+    <form name="" action="" method="POST">
+      <div class="error-message js-error-message"> <span class=important>WARNING<br/><br/> This link will bring you outside of the RSI site and into the depths of the internet. Continue?<br/><br/><span class="url"> 
+      <div class="success-message js-success-message"><span class=important>STAND BY<br/><br/> Initiating hyperlink.<br/><br/>
+
+      <fieldset class="clearfix last">
+        <span class="submit-wrapper">
+          <span class="submit-hover trans-02s trans-opacity">
+          <input type="submit" value="WARP" class="trans-02s trans-color trans-background" />
+        
+      
+    
+    <div class="separator">
+  
+
+
+    
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  
+</script>
+
+<script id="tpl_l-notification-bar" type="text/x-jsmart-tmpl"><div class="l-notification-bar js-notification-bar">
+
+  <div class="l-notification-bar__watermark js-svg-inliner h-svg__logo-star-citizen">
+
+  <div class="l-notification-bar__boxes">
+    {if !$viewedCookieNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='cookie'
+          title='COOKIES:'
+          message="Our website uses Google Analytics to analyze our traffic. <br/>To learn how you can control Google's use of your data and how you can opt out <a href='https://www.google.com/policies/privacy/partners/'>click here."
+          linkText='See Details'
+          buttonText='Got it!'}
+      
+    {/if}
+
+    {if !$viewedPrivacyNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='privacy'
+          title='PRIVACY POLICY:'
+          message='We adjusted the PP to reflect the decision of the European Court of Justice regarding Safe Harbor, the fact that RSI has moved and added some services providers.'
+          linkText='View Privacy Policy'
+          buttonText='Got it!'}
+      
+    {/if}
+  
+
+
+</script>
+<script id="tpl_c-notification" type="text/x-jsmart-tmpl"><div class="c-notification js-bottom-notif-msg-{$type}">
+    <div class="c-notification__title">{$title}
+    <div class="c-notification__message">
+      {$message}
+    
+
+    {if $linkText}
+        <div class="c-notification__wrapper-link">
+            <a class="c-notification__link js-bottom-notif-link-{$type}">
+            {$linkText}
+            
+        
+    {/if}
+
+    <a class="c-notification__button js-bottom-notif-btn-{$type}">
+
+      <span class="c-notification__button-text">
+       {$buttonText}
+      
+
+      {if $type neq 'announcement'}
+        <div class="c-iconed__icon c-iconed__icon--checkmark">
+      {/if}
+    
+
+</script>
+
+<script id="tpl_confirm" type="text/x-jsmart-tmpl"><div class="modal-confirm js-modal-confirm clearfix">
+  <p class="modal-text js-modal-text">
+  <a class="bt-close js-close trans-03s trans-opacity" href="">
+  <a class="bt-confirm js-confirm trans-03s trans-opacity" href="">
+	<div class="buttons">
+		<a class="shadow-button trans-02s trans-color js-close bt-close rm"     >
+  <span class="label js-label trans-02s">Cancel
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s">
+  <span class="left-section">
+  <span class="right-section">
+
+		<a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">Confirm
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s">
+  <span class="left-section">
+  <span class="right-section">
+
+	
+
+</script>
+<script id="tpl_alert" type="text/x-jsmart-tmpl"><div class="modal-alert js-modal-alert clearfix">
+  <p class="modal-text js-modal-text">
+  <div class="buttons">
+    <a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">OK
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s">
+  <span class="left-section">
+  <span class="right-section">
+
+  
+</script>
+<script id="tpl_video" type="text/x-jsmart-tmpl">{extends file="base_modal"}
+{block name='modal_content'}
+<div id="ship-commercial" class="inner-content">
+  
+  <div class="hr">
+  <div class="content-block4">
+   
+    <div class="bottom">
+  
+  {if $distant_source=="vimeo"}
+  <iframe id="commercial" src="//player.vimeo.com/video/{$video_id}?wmode=transparent" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+  {else}
+  <iframe id="commercial" frameborder="0" allowfullscreen="1" title="YouTube video player" width="100%" height="100%" src="https://www.youtube.com/embed/{$video_id}?autoplay=1">
+  {/if}
+
+{/block}
+</script>
+      
+  <script id="tpl_comment_report" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    
+<div id="comment-report" class="inner-content on">
+  <h2><span class="icon">Report this comment
+  <div class="padder">
+    <div class="separator">
+    <form name="" action="" method="POST">
+<input type="hidden" name="comment_id" value="">
+  <div class="error-message js-error-message">
+  <div class="success-message js-success-message">
+    <fieldset class="last">
+    <label for="report_email">Email Address
+    <span class="corner-wrapper">
+      <input type="text" name="email" value="" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_email" />
+      <span class="corner corner-top-left">
+      <span class="corner corner-top-right">
+      <span class="corner corner-bottom-left">
+      <span class="corner corner-bottom-right">
+    
+  
+    <fieldset>
+    <label>Report Type
+    
+
+
+  
+    <a class="js-selectlist selectlist " rel="" href="">
+    <div class="arrow">
+    <span>Please select the type best matching your report
+              <ul class="body">
+              
+                                                              <li class="js-option option " rel="obscenity" >
+                                                                        Obscene Content
+                                                    
+                                                                <li class="js-option option " rel="abuse" >
+                                                                        Abusive Conduct
+                                                    
+                                                                <li class="js-option option " rel="other" >
+                                                                        Other
+                                                    
+                                          
+            
+        <input type="hidden" name="category" class="js-category js-form-data" id="category"/>
+  
+    
+  <fieldset>
+    <label for="report_text">Details
+    <span class="corner-wrapper">
+      <textarea name="text" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_text" maxlength="2500">
+      <span class="corner corner-top-left">
+      <span class="corner corner-top-right">
+      <span class="corner corner-bottom-left">
+      <span class="corner corner-bottom-right">
+    
+  
+  <fieldset class="clearfix last">
+    <span class="submit-wrapper">
+      <span class="submit-hover trans-02s trans-opacity">
+      <input type="submit" value="Submit" class="trans-02s trans-color trans-background" />
+    
+  
+
+    <div class="separator">
+  
+
+
+    
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  
+</script>
+
+
+      <footer class="c-platform-footer c-platform-footer--rsi">
+  <div class="l-platform-footer-container">
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--sc">
+        <li class="c-platform-footer-brand__item">
+
+          <span class="c-brand c-brand--sc js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--sc">
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Join the<br>Universe
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--sc">
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen" class="c-platform-footer-link">About the Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/howto/1" class="c-platform-footer-link">How to Play</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/universe" class="c-platform-footer-link">The Universe</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/media" class="c-platform-footer-link">Media</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/fly-now" class="c-platform-footer-link js-google-analytics-event-tracker" data-event-category="FlyNow" data-event-label="footerClick">
+                Fly Now
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__sc">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">
+              Social Links
+            </span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/RobertsSpaceIndustries/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/RobertsSpaceInd">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/robertsspaceind">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.youtube.com/channel/UCTeLqJq1mXUX5WWoNXLmOIA">
+                <span class="c-iconed__icon c-iconed__icon--youtube"></span>
+                Youtube
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.twitch.tv/starcitizen">
+                <span class="c-iconed__icon c-iconed__icon--twitch"></span>
+                Twitch
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--s42">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--s42 js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--s42">
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Start the<br>Adventure
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--s42">
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42" class="c-platform-footer-link">The Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#enlist" class="c-platform-footer-link">Enlist Today</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#roadmap" class="c-platform-footer-link">Status</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/pledge/Packages/Squadron-42-Standalone-Pledge" class="c-platform-footer-link">Pledge</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__s42">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">Social Links</span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/Squad42/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/squadron_42">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/squadron42">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column is-active">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--rsi">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--rsi js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--rsi">
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi--fullcolor"></span>
+            </span>
+            <span class="c-brand__label">
+              Follow the Development
+            </span>
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--rsi">
+            <li class="c-platform-footer-list__item">
+              <a href="/" class="c-platform-footer-link">Home</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/comm-link" class="c-platform-footer-link">Transmissions</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/community" class="c-platform-footer-link">Community</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/roadmap" class="c-platform-footer-link">Development</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--platform">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Platform
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--platform">
+                          <li class="c-platform-footer-list__item">
+                <a href="/pledge" class="c-platform-footer-link ">Pledge Store</a>
+              </li>
+            
+            <li class="c-platform-footer-list__item">
+              <a href="/download" class="c-platform-footer-link ">Download</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/spectrum/community/SC" class="c-platform-footer-link">Spectrum</a>
+            </li>
+
+                          <li class="c-platform-footer-list__item">
+                <a href="/citizencon" class="c-platform-footer-link">Citizencon</a>
+              </li>
+                      </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--utility">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Utilities
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--utility">
+            <li class="c-platform-footer-list__item">
+              <a href="//support.robertsspaceindustries.com" class="c-platform-footer-link">Help</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/press" class="c-platform-footer-link">Press</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="https://cloudimperiumgames.com/join-us" class="c-platform-footer-link">Careers</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/tos" class="c-platform-footer-link">Terms of Services</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/privacy" class="c-platform-footer-link">Privacy Policy</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/eula" class="c-platform-footer-link">EULA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/dmca" class="c-platform-footer-link">DMCA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/acknowledgements" class="c-platform-footer-link">Acknowledgements</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  
+</footer>
+
+<div class="c-platform-copyright c-platform-copyright--rsi">
+  <div class="l-platform-copyright-container">
+    <a href="https://cloudimperiumgames.com" class="c-platform-copyright__logo h-svg__logo-cig js-svg-inliner"></a>
+    <p class="c-platform-copyright__body">© 2012-2019 Cloud Imperium Rights LLC and Cloud Imperium Rights Ltd</p>
+  </div>
+</div>
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHNFZPT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<script type="text/javascript">
+  window.RSI.Footer = new RSI.Footer();
+</script>
+
+    
+
+    <script type="text/javascript" src="/cache/en/rsi-platformbar-js.js?v=3.2.9.0"></script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"58013cabd7","applicationID":"375102748","transactionName":"Y1JaYktUWxZUV0QKV1oYe0NKQVoIGmZjKmtdQ111VltBF1pYXAZKDg1ZQlZYcwxbUA==","queueTime":0,"applicationTime":54,"atts":"TxVNFANOSEkXVRJZQ0lK","errorBeacon":"bam.nr-data.net","agent":""}</script></body>

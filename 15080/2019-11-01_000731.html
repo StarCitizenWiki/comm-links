@@ -1,0 +1,2277 @@
+
+  <head>
+    
+            <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1130.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+      <meta name="viewport" content="width=device-width">
+      <meta name="description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans.">
+      <meta property="og:site_name" content="
+AnniVERSEary Sale: Weapons Free! - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+">
+      <meta property="og:image" content="https://robertsspaceindustries.com/media/txracgb7pr9d3r/channel_item_full/AnvilcrucibleIDRISFORMATION.jpg">
+      <meta property="og:description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans.">
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://robertsspaceindustries.com/comm-link/SCW/15080-IMPORT">
+      <meta property="og:locale" content="us_EN">
+
+            
+
+            <link href="/rsi/static/css/cross-brand-less.css?v=3.2.9.0" media="all" rel="stylesheet">
+      <link href="/cache/en/rsi-platformbar-css.css?v=3.2.9.0" media="all" rel="stylesheet">
+            <script type="text/javascript" src="/cache/en/rsi-js.js?v=3.2.9.0"></script>
+      
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KHNFZPT');</script>
+<!-- End Google Tag Manager -->
+
+
+      <script>
+        $(document).ready(function() {
+          window.Common = new RSI.Common({});
+          window.Main = new RSI.Main({
+            'is_mobile': 0,
+            'probation_cookie' : '',
+            'require_captcha': 0
+          });
+          window.Mark = new Turbulent.Mark({ 'name' : 'Rsi-XSRF', 'token' : '', 'ttl' : 1800 });
+
+          window.WscOverlay = new RSI.WscOverlay({});
+
+          var destinations = [];
+
+window.Main.destinations = destinations;          
+  window.PageStore = new RSI.Store({
+    'store_prefix' : '/pledge',
+    'customizerConfig' : {"endpoint":"https:\/\/robertsspaceindustries.com\/","verify":true,"customizer":{"path":"\/customizer","view":"","api":"\/api","methods":{"start":"\/start","game":"\/configuration\/:id\/game","details":"\/configuration\/:id\/details","report":"\/configuration\/:id\/report","export-port-label":"\/admin\/export\/port\/label"}},"ga_tracking_code":"UA-39586040-5"}
+  });
+
+          
+          
+  var productsTracking = [];
+  var eCommerceData = {
+    'trackingAction': "",
+    'currency': "",
+    'trackingStep': "",
+    'trackingProducts': productsTracking
+  };
+  window.eCommerceTracking = new RSI.Store.eCommerceTracking(
+    eCommerceData
+  );
+
+        });
+
+        $(window).load(function() {
+          
+        });
+
+      </script>
+
+
+      <script>
+        window.recaptcha_is_loaded = false;
+        window.on_recaptcha_load_callback = function() {
+          window.recaptcha_is_loaded = true;
+        };
+      </script>
+
+      <script src="https://www.google.com/recaptcha/api.js?onload=on_recaptcha_load_callback&amp;render=explicit" async defer></script>
+
+      <script type="text/javascript">
+
+        
+
+                                </script>
+
+
+      <title>
+AnniVERSEary Sale: Weapons Free! - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+</title>
+
+      
+
+<style type="text/css">
+  /* CSS from ATOM */
+  
+</style>
+
+<script type="text/javascript">
+  /* JS from ATOM */
+  
+</script>
+
+
+
+
+    
+
+  <style>
+    
+      background:url(/rsi/static/images/noisebg.gif) repeat center top #000b11;
+    
+  </style>
+
+    <link href="//fonts.googleapis.com/css?family=Electrolize%7COrbitron:400,500,700%7CShare+Tech+Mono" rel="stylesheet" type="text/css">
+
+    <link href="/cache/en/rsi-css.css?v=3.2.9.0" media="all" rel="stylesheet">
+  
+
+  </head>
+  <body id="" class="">
+
+    
+      <div class="l-notification-bar l-notification-bar--rsi js-notification-bar" id="notification-bar-root">
+  <c-notification-bar v-bind:latestagreementsslugs='["qwa3l7w316dgt","5uyoqclrxgfgf"]' v-bind:loggedin="1" v-bind:onhomepage="0"></c-notification-bar>
+  <div class="l-notification-bar__boxes js-notification-bar-boxes">
+      </div>
+
+</div>
+    
+
+    <div id="bodyWrapper">
+      <header class="c-header-wrapper c-header-wrapper--rsi js-header-wrapper is-connected" id="cross-brand-header">
+  <div id="platform-bar"></div>
+
+  <div class="c-right-sidebar c-right-sidebar--search" id="search-sidebar">
+  <div class="js-toggle-search__backdrop hidden"></div>
+  <a href="#" class="c-right-sidebar__back js-toggle-search">Back
+    <span></span>
+    <span></span>
+  </a>
+  <form class="c-right-sidebar__form">
+    <h1 class="c-right-sidebar__form-title">Search</h1>
+
+    <input class="c-right-sidebar__form-input" type="text" id="header-search-input" placeholder="Search for articles">
+
+    <input class="c-right-sidebar__form-submit c-right-sidebar__form-submit--search" type="submit" value="Go">
+  </form>
+</div>
+      
+<div class="c-right-sidebar c-right-sidebar--account" id="account-sidebar">
+  <div class="js-toggle-account__backdrop hidden"></div>
+  <a href="#" class="c-right-sidebar__back js-toggle-account">Back
+    <span></span>
+    <span></span>
+  </a>
+
+  <div class="c-account-sidebar__profile">
+    <div class="c-account-sidebar__profile-metas">
+
+      <a class="c-account-sidebar__profile-metas-avatar" href="https://robertsspaceindustries.com/citizens/star-citizen-wiki" style="background-image:url('/media/6zg0fizwcelhpr/avatar/Wiki_logo_stern_abgen0wumg.png');"></a>
+
+      <span class="c-account-sidebar__profile-metas-badge c-account-sidebar__profile-metas-badge--icon" data-tip="">
+        <img src="https://robertsspaceindustries.com/media/ls27iyxog62nnr/heap_note/Subscriber.png" alt="Subscriber" title="Subscriber">
+      </span>
+
+      <a href="/orgs/WIKI" class="c-account-sidebar__profile-metas-badge c-account-sidebar__profile-metas-badge--org" data-tip="star-citizen.wiki">
+        <img src="/media/h68aa8sq3cv44r/heap_note/WIKI-Thumbnail.png" alt="star-citizen.wiki" title="star-citizen.wiki">
+      </a>
+
+    </div>
+
+    <div class="c-account-sidebar__profile-info">
+
+      <a href="https://robertsspaceindustries.com/citizens/star-citizen-wiki" class="c-account-sidebar__profile-info-displayname">Star Citizen Wiki</a>
+
+      <span class="c-account-sidebar__profile-info-handle">star-citizen-wiki</span>
+
+      <a href="" class="c-account-sidebar__profile-info-signout js-sign-out">Sign Out</a>
+
+      <div class="c-account-sidebar__profile-info-credits">
+        <span class="c-account-sidebar__profile-info-credits-label">STORE</span>
+        <span class="c-account-sidebar__profile-info-credits-amount c-account-sidebar__profile-info-credits-amount--pledge">$0.00 USD</span>
+
+        <span class="c-account-sidebar__profile-info-credits-label">UEC</span>
+        <span class="c-account-sidebar__profile-info-credits-amount c-account-sidebar__profile-info-credits-amount--uec">¤6,500 UEC</span>
+
+        <span class="c-account-sidebar__profile-info-credits-label">REC</span>
+        <span class="c-account-sidebar__profile-info-credits-amount c-account-sidebar__profile-info-credits-amount--rec">¤260,000 REC</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="c-account-sidebar__links">
+    <a href="/account/settings" class="c-account-sidebar__links-link">Settings</a>
+    <a href="/account/pledges" class="c-account-sidebar__links-link">My Hangar</a>
+              <a href="/subscribers/vault" class="c-account-sidebar__links-link">Subscribers</a>
+          </div>
+
+  <div class="c-account-sidebar-tabs">
+    <div class="c-account-sidebar-tabs__list">
+      <a class="c-account-sidebar-tabs__tab">Contacts</a>
+    </div>
+
+    <div class="c-account-sidebar-tabs__content c-account-sidebar-tabs__content--contacts">
+      <div class="c-account-sidebar-contacts" id="sidebar-contacts-list">
+        <form class="c-right-sidebar__form c-account-sidebar-contacts__search js-contacts-search">
+
+          <input type="text" class="c-right-sidebar__form-input c-account-sidebar-contacts__search-input js-contacts-search-input" placeholder="Search">
+          <a class="c-account-sidebar-contacts__search-submit js-submit-contacts-search">
+            <span></span>
+            <span></span>
+          </a>
+
+          <div class="l-oneline l-oneline--fill">
+            <div class="l-checkbox">
+              <input class="c-right-sidebar__form-checkbox js-only-contacts" id="sidebar-only-contacts" name="only-contacts" type="checkbox">
+              <label class="c-right-sidebar__form-label c-right-sidebar__form-checkbox-label" for="sidebar-only-contacts">
+                Only in your contact list
+              </label>
+            </div>
+
+            <div class="c-account-sidebar-contacts__search-amount js-search-amount">-</div>
+          </div>
+        </form>
+
+        <div class="c-account-sidebar-contacts__results">
+          <div class="c-account-sidebar-contacts__results-title-wrapper">
+            <span class="c-account-sidebar-contacts__results-title c-account-sidebar-contacts__results-title--contacts">My Contacts</span>
+            <span class="c-account-sidebar-contacts__results-title c-account-sidebar-contacts__results-title--results">Results</span>
+                      </div>
+
+          <div class="c-account-sidebar-contacts__results-list js-contacts-list" data-public-profile-url="https://robertsspaceindustries.com/citizens/">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/template" id="contact-item-tpl">
+  <div class="c-account-sidebar-contacts__results-list-item js-contact <% if(following) { %>is-following<% } %>">
+
+    <a class="c-account-sidebar-contacts__results-list-item-avatar " href="https://robertsspaceindustries.com/citizens/<%= nickname %>" title="" style="background-image:url('<%= avatar %>');">
+    
+
+    <div class="c-account-sidebar-contacts__results-list-item-info">
+      <a class="c-account-sidebar-contacts__results-list-item-displayname" href="https://robertsspaceindustries.com/citizens/<%= nickname %>" title=""><%= displayname %>
+
+      <span class="c-account-sidebar-contacts__results-list-item-handle js-nickname"><%= nickname %>
+
+      <div class="c-account-sidebar-contacts__results-list-item-actions">
+        <a class="c-account-sidebar-contacts__results-list-item-action c-account-sidebar-contacts__results-list-item-action--dossier" href="https://robertsspaceindustries.com/citizens/<%= nickname %>" title="">
+          <span class="js-svg-inliner h-svg c-account__icon c-account__icon--smaller c-account__icon-star-citizen">
+          Citizen Dossier
+        
+        <a class="c-account-sidebar-contacts__results-list-item-action c-account-sidebar-contacts__results-list-item-action--follow js-contact-follow js-follow" title="">
+          <span class="js-svg-inliner h-svg c-account__icon c-account__icon--smaller c-account__icon-profile">
+          Follow
+        
+        <a class="c-account-sidebar-contacts__results-list-item-action c-account-sidebar-contacts__results-list-item-action--unfollow js-contact-follow js-unfollow" title="">
+          <span class="js-svg-inliner h-svg c-account__icon c-account__icon--smaller c-account__icon-trash">
+          Unfollow
+        
+      </script></header></div>
+    
+
+
+    <div class="error js-error"></div>
+
+  
+
+
+<script>
+  $(document).ready(function() {
+    this.accountSidebar = new RSI.AccountSidebar({
+    });
+  });
+</script>  
+  <div class="c-header-wrapper__backdrop js-toggle-games"></div>
+
+
+<div id="platform-backdrop"></div>
+
+<script type="text/javascript">
+  RSI.Platformbar = {
+    theme: "rsi",
+    loggedState: "logged-in",
+    tabs: [
+      {
+        type: 'brands',
+        name: "Games",
+        subItems: [
+          {
+            name: "sc",
+            href: "/star-citizen",
+            description: "Join the Universe"
+          },
+          {
+            name: "s42",
+            href: "/squadron42",
+            description: "Start the adventure"
+          },
+          {
+            name: "rsi",
+            href: "/",
+            description: "Follow the Development"
+          }
+        ]
+      },
+      {
+        type: 'apps',
+        name: "Apps",
+        subItems: [
+          [
+            {
+              name: "Spectrum",
+              href: "/spectrum/community/SC",
+              description: "Your&nbsp;communication platform"
+            },
+            {
+              name: "Launcher",
+              href: "/download",
+              description: "Download Star&nbsp;Citizen",
+                          }
+          ],
+          [
+            {
+              name: "Roadmap",
+              href: "/roadmap",
+              description: "Keep track of the&nbsp;development"
+            },
+            {
+              name: "Telemetry",
+              href: "/telemetry",
+              description: "Keep&nbsp;track&nbsp;of&nbsp;the player&rsquo;s&nbsp;performance"
+            },
+            {
+              name: "Issue Council",
+              href: "/community/issue-council",
+              description: "Help&nbsp;us&nbsp;make the game better",
+                          }
+          ],
+          [
+            {
+              name: "Starmap",
+              href: "/starmap",
+              description: "Your map to&nbsp;the&nbsp;universe"
+            }
+          ]
+        ]
+      },
+              {
+          type: 'citizencon',
+          name: "Citizencon 2949",
+          href: "/citizencon"
+        }
+          ],
+    navigation: {
+      store: {
+        name: "Pledge Store",
+        href: "/pledge",
+        isHidden: false      },
+      support: {
+        name: "Support",
+        href: "//support.robertsspaceindustries.com"
+      },
+      account: {
+        name: "Account",
+        href: "/account/settings"
+      }
+    }
+  };
+
+  $(document).ready(function() {
+    window.header = new RSI.Header({});
+  });
+</script>
+
+
+      
+  
+<header class="c-brand-menu c-brand-menu----rsi" id="brand-menu">
+  <span class="c-brand-menu__section">
+    
+      Roberts Space Industries
+    
+  </span>
+  <div class="c-brand-menu__backdrop"></div>
+  <nav class="c-brand-menu__container">
+    <div class="c-brand-menu__logo">
+      <a href="/"><span class="h-svg h-svg__logo-rsi--fullcolor js-svg-inliner"></span> </a>
+    </div>
+    <div class="c-brand-menu__items-container">
+      <ul class="c-brand-menu__items">
+                <li class="c-brand-menu__item  ">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/comm-link">
+            <span class="c-brand-menu__item-text">Comm-Link</span>
+                                  </a>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/community">
+            <span class="c-brand-menu__item-text">Community</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Community</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/spectrum" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Spectrum
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/orgs" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Organizations
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/leaderboards/top" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Leaderboards
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community_events" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Event
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Hub
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/fankit" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Fankit
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/development">
+            <span class="c-brand-menu__item-text">Development</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Development</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/roadmap" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Roadmap
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/devtracker" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Dev Tracker
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/telemetry" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Telemetry
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/issue-council" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Issue Council
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/patch-notes" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Patch Notes
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/ship-matrix" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Ship Matrix
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/funding-goals" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Funding
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+              </ul>
+    </div>
+
+    <div class="c-brand-menu__cta">
+      
+          <a href="/star-citizen/fly-now" class="c-brand-cta-btn js-google-analytics-event-tracker" data-event-category="FlyNow" data-event-label="navMenuClick">
+            <div></div>
+              <span class="c-brand-cta-btn__text">
+                <strong>Fly now</strong>Alpha 3.7
+              </span>
+            <div></div>
+          </a>
+      
+    </div>
+  </nav>
+</header>
+
+
+
+      
+
+  
+  <div class="page-wrapper">
+    
+  <div id="post-background"></div>
+
+
+    <div id="contentbody" class="" style="">
+      
+
+<div id="post">
+  <div class="title-section">
+    
+      <div class="wrapper title-bar-container">
+        <div class="glow left"></div>
+        <div class="title-bar">
+          <div class="title with-subtitle">
+            <h1>Transmission</h1>
+            <h2>General</h2>
+          </div>
+          <div class="details">
+            <div>
+              <h3>ID:</h3>
+              <p>15080</p>
+              <div class="cboth"></div>
+            </div>
+            <div>
+              <h3>Comments:</h3>
+              <p class="comment-count">162</p>
+              <div class="cboth"></div>
+            </div>
+            <div>
+              <h3>Date:</h3>
+              <p>November 27th 2015</p>
+              <div class="cboth"></div>
+            </div>
+            <div></div>
+          </div>
+          <div class="cboth"></div>
+        </div>
+        <div class="glow right"></div>
+      </div>
+    
+  <div class="title-container">
+    <div class="title no-subtitle">AnniVERSEary Sale: Weapons Free!</div>
+      </div>
+
+  </div>
+
+  
+  <div class="lightbar toplightbar">
+    <div class="lightbarlights"></div>
+    <div class="footershadow"></div>
+  </div>
+
+
+  <div class="wrapper"><div class="hr"></div><div class="content-block4"><div class="content"><div class="top"></div><h1>Weapons Free!</h1><div class="cboth"></div></div><div class="bottom"></div></div><div class="content-block2"><div class="content clearfix"><img src="/media/txracgb7pr9d3r/post_section_header/AnvilcrucibleIDRISFORMATION.jpg"><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div><div class="content-block1 rsi-markup">
+<div class=" segment"><div class="content"><h1>Greeting Citizens,</h1>
+
+<a class="image  js-open-in-slideshow" data-id="yvcp9gh8vfmrgr" data-full_res="/media/yvcp9gh8vfmrgr/source/Archimedes_opera_final_01.jpg" data-low_res="/media/yvcp9gh8vfmrgr/slideshow_pager/Archimedes_opera_final_01.jpg" data-source_url="/media/yvcp9gh8vfmrgr/source/Archimedes_opera_final_01.jpg" rel="post"><img src="/media/yvcp9gh8vfmrgr/post/Archimedes_opera_final_01.jpg" alt="An evening at the opera."><span class="caption">An evening at the opera.</span></a>
+
+<p><span class="initial">W</span>e’re celebrating Star Citizen’s birthday with a huge ship sale! For the past week, we’ve brought back a selection of fan favorite limited edition ships to the pledge store so that anyone interested can pick up what they might have missed. Today, we’re kicking off the final three days of the sale by unlocking the entire fleet! Everything available the past week is now ready for purchase or <span class="caps">CCU</span> upgrade, so you can start your adventure with the ship of your dreams. For anyone who wants it all, a variety of master packs are also available!</p>
+
+<p>A variety of new ships will be available all week; they are listed below.</p>
+
+<p><em>Remember: we are offering these pledge ships to help fund Star Citizen’s development. The funding generated by sales such as this go directly to the game’s ongoing production. Concept ships will be available for in-game credits in the final universe, and they are not required to start the game.</em></p>
+
+<h1>Explorers</h1>
+
+<h2>Endeavor</h2>
+
+<p><em>Musashi Industrial &amp; Starflight Concern is proud to present the Endeavor-class research vessel, a fully modular space platform designed to be adapted for a variety of scientific and medical tasks. Initially developed as a floating laboratory, the <span class="caps">MISC</span> Endeavor can be outfitted for everything from spatial telescopy to use as mobile hospital.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="clearfix"></div>
+
+
+
+
+
+
+<div class="clearfix"></div>
+
+<h2>Carrack</h2>
+
+<p><em>The Anvil Carrack features reinforced fuel tanks for long-duration flight, an advanced jump drive, and a dedicated computer core for jump charting operations. Originally a military exclusive, the Carrack is now available for civilian use. On-board accommodations include crew medical and repair facilities, and a mapping-oriented sensor suite.</em></p>
+
+
+
+<div class="clearfix"></div>
+
+<h2>315p</h2>
+
+<p><em>Exploration is man’s highest calling. Prepare to chart distant horizons with man’s most sophisticated piece of technology, the <span class="caps">ORIGIN</span> 315p. Featuring a more robust power plant and a custom scanning package, exclusively designed by Chimera Communications.</em></p>
+
+
+<section class="store-embed">
+  <div class="product-item large trans-02s" data-tpl="docroot/rsi/templates/content/ui/sku.tpl">
+    <a href="/pledge/Standalone-Ships/Origin-315p-Explorer"><img src="https://media.robertsspaceindustries.com/zd6vxsvdq0gxp/store_small.jpg" class="trans-02s"></a>
+    <div class="info clearfix trans-02s">
+      <div class="title">
+        Origin 315p Explorer<span> - Standalone Ship</span>
+      </div>
+      <div class="price ">            <strong class="final-price" data-value="7039" data-currency="EUR">€70<span class="super">.39 <span class="currency">EUR</span></span></strong>            <div class="taxes js-taxes">
+  <div class="taxes-details trans-02s">
+    <div class="arrow"></div>
+    Tax Included: <br>
+
+    <ul>
+        <li>VAT 19%</li>
+        </ul>
+  </div>
+</div>
+</div>      <span class="state" style="color:#00ff00;">
+                              In stock
+                        </span>
+      <a class="more" href="/pledge/Standalone-Ships/Origin-315p-Explorer">more info</a>
+                                      <a class="holosmallbtn add-cart add-cart ty-js-add-to-cart" href="/pledge/Standalone-Ships/Origin-315p-Explorer" data-sku="174" data-name="Origin 315p Explorer" data-tracking-infos='{ "id":"SCP3-DAO-315P","name":"Origin 315p Explorer","brand":"pledge","category":"Standalone Ship","price":"59.15","dimension1":"-1"}'>
+  <span class="holosmallbtn-top abs-overlay trans-02s js-label">Add to cart</span>
+  <span class="holosmallbtn-bottom abs-overlay trans-02s"></span>
+</a>          </div>
+  </div>
+</section>
+
+
+
+<div class="clearfix"></div>
+
+
+<h1>Pirates</h1>
+
+<h2>Cutlass Black</h2>
+
+<p><em>Drake Interplanetary claims that the Cutlass Black is a low-cost, easy-to-maintain solution for local in-system militia units. The larger-than-average cargo hold, <span class="caps">RIO</span> seat and dedicated tractor mount are, the company literature insists, for facilitating search and rescue operations.</em></p>
+
+
+<section class="store-embed">
+  <div class="product-item large trans-02s" data-tpl="docroot/rsi/templates/content/ui/sku.tpl">
+    <a href="/pledge/Standalone-Ships/Cutlass-Black"><img src="/media/7tcxllnna6a9hr/store_small/Drake_cutlass_storefront_visual.jpg" class="trans-02s"></a>
+    <div class="info clearfix trans-02s">
+      <div class="title">
+        Cutlass Black<span> - Standalone Ship</span>
+      </div>
+      <div class="price ">            <strong class="final-price" data-value="10829" data-currency="EUR">€108<span class="super">.29 <span class="currency">EUR</span></span></strong>            <div class="taxes js-taxes">
+  <div class="taxes-details trans-02s">
+    <div class="arrow"></div>
+    Tax Included: <br>
+
+    <ul>
+        <li>VAT 19%</li>
+        </ul>
+  </div>
+</div>
+</div>      <span class="state" style="color:#00ff00;">
+                              In stock
+                        </span>
+      <a class="more" href="/pledge/Standalone-Ships/Cutlass-Black">more info</a>
+                                      <a class="holosmallbtn add-cart add-cart ty-js-add-to-cart" href="/pledge/Standalone-Ships/Cutlass-Black" data-sku="338" data-name="Cutlass Black" data-tracking-infos='{ "id":"SCP4-DAO-CUTLASS","name":"Cutlass Black","brand":"pledge","category":"Standalone Ship","price":"91","dimension1":"-1"}'>
+  <span class="holosmallbtn-top abs-overlay trans-02s js-label">Add to cart</span>
+  <span class="holosmallbtn-bottom abs-overlay trans-02s"></span>
+</a>          </div>
+  </div>
+</section>
+
+
+
+<div class="clearfix"></div>
+
+<h2>Cutlass Red</h2>
+
+<p><em>The Cutlass Red converts the standard cargo hold to a well-equiped medical facility including an Autodoc. This starbound ambulance features the Nav-E7 Echo Transponder, a long range scanner, and a Secure Plus Docking Collar, making it ideal for search and rescue. This model also features a unique Red Crossbones skin.</em></p>
+
+
+<section class="store-embed">
+  <div class="product-item large trans-02s" data-tpl="docroot/rsi/templates/content/ui/sku.tpl">
+    <a href="/pledge/Standalone-Ships/Cutlass-Red"><img src="/media/g2zojhaz125u1r/store_small/Cutlass-Red-Base.jpg" class="trans-02s"></a>
+    <div class="info clearfix trans-02s">
+      <div class="title">
+        Cutlass Red<span> - Standalone Ship</span>
+      </div>
+      <div class="price ">            <strong class="final-price" data-value="12995" data-currency="EUR">€129<span class="super">.95 <span class="currency">EUR</span></span></strong>            <div class="taxes js-taxes">
+  <div class="taxes-details trans-02s">
+    <div class="arrow"></div>
+    Tax Included: <br>
+
+    <ul>
+        <li>VAT 19%</li>
+        </ul>
+  </div>
+</div>
+</div>      <span class="state" style="color:#00ff00;">
+                              In stock
+                        </span>
+      <a class="more" href="/pledge/Standalone-Ships/Cutlass-Red">more info</a>
+                                      <a class="holosmallbtn add-cart add-cart ty-js-add-to-cart" href="/pledge/Standalone-Ships/Cutlass-Red" data-sku="523" data-name="Cutlass Red" data-tracking-infos='{ "id":"SCP5-DAO-CUTLASS-RED","name":"Cutlass Red","brand":"pledge","category":"Standalone Ship","price":"109.2","dimension1":"-1"}'>
+  <span class="holosmallbtn-top abs-overlay trans-02s js-label">Add to cart</span>
+  <span class="holosmallbtn-bottom abs-overlay trans-02s"></span>
+</a>          </div>
+  </div>
+</section>
+
+
+
+<div class="clearfix"></div>
+
+<h2>Cutlass Blue</h2>
+
+<p><em>Sleek, mean, and royal. The Cutlass Blue adds missiles, a more aggressive engine, and Durasteel holding cells in the cargo bay to the standard model. The Cutlass Blue is the outworld militia standard ship of choice for patrols.</em></p>
+
+
+
+<div class="clearfix"></div>
+
+<h2>Caterpillar</h2>
+
+<p><em>Drake maintains that the Caterpillar, a sprawling, modular spacecraft which appears at least somewhat like its namesake, is for legitimate commerce and extended search and rescue missions… but at the end of the day, the Caterpillar is truly the evil twin of the Freelancer.</em></p>
+
+
+
+<div class="clearfix"></div>
+
+<h2>Herald</h2>
+
+<p><em>The Drake Herald is a small, armored ship designed to safely get information from Point A to Point B. Featuring a powerful central engine (for high speed transit and generating the power needed for effective data encryption/containment), advanced encryption software and an armored computer core, theHerald is unique among personal spacecraft in that it is designed to be easily ‘cleaned’ when in danger of capture.</em></p>
+
+
+
+<div class="clearfix"></div>
+
+<h1>Military</h1>
+
+<h2>Gladiator</h2>
+
+<p><em>The civilian model of the Gladiator appeals to those that want explore the ‘Verse with a bit of added security. Supporting a maximum of two the Gladiator is perfectly equipped to explore and fight with or without a wingman. The Civilian model allows pilots to choose between an extra cargo hold or a bomb bay.</em></p>
+
+
+
+<div class="clearfix"></div>
+
+<h2>Gladius </h2>
+
+<p><em>The Gladius is an older design which has been updated over the years to keep up with modern technology. In military circles, the Gladius is beloved for its performance and its simplicity. A fast, light fighter with a laser-focus on dogfighting, the Gladius is an ideal interceptor or escort ship.</em></p>
+
+
+<section class="store-embed">
+  <div class="product-item large trans-02s" data-tpl="docroot/rsi/templates/content/ui/sku.tpl">
+    <a href="/pledge/Standalone-Ships/Aegis-Gladius"><img src="/media/b623f9bkn0c3ur/store_small/Gladius_Front_Perspective.jpg" class="trans-02s"></a>
+    <div class="info clearfix trans-02s">
+      <div class="title">
+        Aegis Gladius<span> - Standalone Ship</span>
+      </div>
+      <div class="price ">            <strong class="final-price" data-value="9746" data-currency="EUR">€97<span class="super">.46 <span class="currency">EUR</span></span></strong>            <div class="taxes js-taxes">
+  <div class="taxes-details trans-02s">
+    <div class="arrow"></div>
+    Tax Included: <br>
+
+    <ul>
+        <li>VAT 19%</li>
+        </ul>
+  </div>
+</div>
+</div>      <span class="state" style="color:#00ff00;">
+                              In stock
+                        </span>
+      <a class="more" href="/pledge/Standalone-Ships/Aegis-Gladius">more info</a>
+                                      <a class="holosmallbtn add-cart add-cart ty-js-add-to-cart" href="/pledge/Standalone-Ships/Aegis-Gladius" data-sku="535" data-name="Aegis Gladius" data-tracking-infos='{ "id":"SCP5-DAO-GLADIUS","name":"Aegis Gladius","brand":"pledge","category":"Standalone Ship","price":"81.9","dimension1":"-1"}'>
+  <span class="holosmallbtn-top abs-overlay trans-02s js-label">Add to cart</span>
+  <span class="holosmallbtn-bottom abs-overlay trans-02s"></span>
+</a>          </div>
+  </div>
+</section>
+
+
+
+<div class="clearfix"></div>
+
+<h2>Sabre</h2>
+
+<p><em>Part of Aegis Dynamics’ Phase Two of new ship models, the Sabre was designed as a space superiority fighter for those situations where you need to leave a lighter footprint. Designed to be a rapid responder, the Sabre is more than capable of establishing battlefield dominance for any number of combat scenarios.</em></p>
+
+
+
+<div class="clearfix"></div>
+
+<h2>Hornet</h2>
+
+<p><em>To the enemy, it is a weapon never to be underestimated. To allies, it’s a savior. The F7C Hornet is the same dependable and resilient multi-purpose fighter that has become the face of the <span class="caps">UEE</span> Navy. The F7C is the foundation to build on and meet whatever requirements you have in mind.</em></p>
+
+
+<section class="store-embed">
+  <div class="product-item large trans-02s" data-tpl="docroot/rsi/templates/content/ui/sku.tpl">
+    <a href="/pledge/Standalone-Ships/Anvil-Hornet"><img src="/media/iytvmyd6cwgr9r/store_small/Anvilhornet.jpg" class="trans-02s"></a>
+    <div class="info clearfix trans-02s">
+      <div class="title">
+        Anvil Hornet<span> - Standalone Ship</span>
+      </div>
+      <div class="price ">            <strong class="final-price" data-value="11912" data-currency="EUR">€119<span class="super">.12 <span class="currency">EUR</span></span></strong>            <div class="taxes js-taxes">
+  <div class="taxes-details trans-02s">
+    <div class="arrow"></div>
+    Tax Included: <br>
+
+    <ul>
+        <li>VAT 19%</li>
+        </ul>
+  </div>
+</div>
+</div>      <span class="state" style="color:#00ff00;">
+                              In stock
+                        </span>
+      <a class="more" href="/pledge/Standalone-Ships/Anvil-Hornet">more info</a>
+                                      <a class="holosmallbtn add-cart add-cart ty-js-add-to-cart" href="/pledge/Standalone-Ships/Anvil-Hornet" data-sku="88" data-name="Anvil Hornet" data-tracking-infos='{ "id":"SCP3-DAO-HORNET","name":"Anvil Hornet","brand":"pledge","category":"Standalone Ship","price":"100.1","dimension1":"-1"}'>
+  <span class="holosmallbtn-top abs-overlay trans-02s js-label">Add to cart</span>
+  <span class="holosmallbtn-bottom abs-overlay trans-02s"></span>
+</a>          </div>
+  </div>
+</section>
+
+
+
+<div class="clearfix"></div>
+
+<h2>Hornet Ghost</h2>
+
+<p><em>Through a combination of low-emission drives, low-draw weapons, and Void Armor technology capable of diffusing scans, the F7C-S Ghost is built for the pilot who wants to keep a low profile. The Ghost is capable of slipping past the most ardent of observers to accomplish whatever goal you need to accomplish. Don’t worry, we won’t ask.</em></p>
+
+
+<section class="store-embed">
+  <div class="product-item large trans-02s" data-tpl="docroot/rsi/templates/content/ui/sku.tpl">
+    <a href="/pledge/Standalone-Ships/F7C-S-Hornet-Ghost"><img src="/media/zdhz8wpdc3zrlr/store_small/WBG_HornetGhost_TF.jpg" class="trans-02s"></a>
+    <div class="info clearfix trans-02s">
+      <div class="title">
+        F7C-S Hornet Ghost<span> - Standalone Ship</span>
+      </div>
+      <div class="price ">            <strong class="final-price" data-value="13536" data-currency="EUR">€135<span class="super">.36 <span class="currency">EUR</span></span></strong>            <div class="taxes js-taxes">
+  <div class="taxes-details trans-02s">
+    <div class="arrow"></div>
+    Tax Included: <br>
+
+    <ul>
+        <li>VAT 19%</li>
+        </ul>
+  </div>
+</div>
+</div>      <span class="state" style="color:#00ff00;">
+                              In stock
+                        </span>
+      <a class="more" href="/pledge/Standalone-Ships/F7C-S-Hornet-Ghost">more info</a>
+                                      <a class="holosmallbtn add-cart add-cart ty-js-add-to-cart" href="/pledge/Standalone-Ships/F7C-S-Hornet-Ghost" data-sku="209" data-name="F7C-S Hornet Ghost" data-tracking-infos='{ "id":"SCP3-DAO-HORNET-GHOST","name":"F7C-S Hornet Ghost","brand":"pledge","category":"Standalone Ship","price":"113.75","dimension1":"-1"}'>
+  <span class="holosmallbtn-top abs-overlay trans-02s js-label">Add to cart</span>
+  <span class="holosmallbtn-bottom abs-overlay trans-02s"></span>
+</a>          </div>
+  </div>
+</section>
+
+
+
+<div class="clearfix"></div>
+
+<h2>Hornet Tracker</h2>
+
+<p><em>If the Ghost is made to hide, the Tracker is made to seek. The F7C-R Tracker boasts an advanced radar suite making it ideal for deep-space explorers who require depth and accuracy in their scan packages. Local militia and larger merc units will also repurpose Trackers to act as mobile C&amp;C ships for their squadrons.</em></p>
+
+
+<section class="store-embed">
+  <div class="product-item large trans-02s" data-tpl="docroot/rsi/templates/content/ui/sku.tpl">
+    <a href="/pledge/Standalone-Ships/F7C-R-Hornet-Tracker"><img src="/media/873qo7t26y0qmr/store_small/Hornet_F7R_Tracker.jpg" class="trans-02s"></a>
+    <div class="info clearfix trans-02s">
+      <div class="title">
+        F7C-R Hornet Tracker<span> - Standalone Ship</span>
+      </div>
+      <div class="price ">            <strong class="final-price" data-value="15161" data-currency="EUR">€151<span class="super">.61 <span class="currency">EUR</span></span></strong>            <div class="taxes js-taxes">
+  <div class="taxes-details trans-02s">
+    <div class="arrow"></div>
+    Tax Included: <br>
+
+    <ul>
+        <li>VAT 19%</li>
+        </ul>
+  </div>
+</div>
+</div>      <span class="state" style="color:#00ff00;">
+                              In stock
+                        </span>
+      <a class="more" href="/pledge/Standalone-Ships/F7C-R-Hornet-Tracker">more info</a>
+                                      <a class="holosmallbtn add-cart add-cart ty-js-add-to-cart" href="/pledge/Standalone-Ships/F7C-R-Hornet-Tracker" data-sku="210" data-name="F7C-R Hornet Tracker" data-tracking-infos='{ "id":"SCP3-DAO-HORNET-TRACKER","name":"F7C-R Hornet Tracker","brand":"pledge","category":"Standalone Ship","price":"127.4","dimension1":"-1"}'>
+  <span class="holosmallbtn-top abs-overlay trans-02s js-label">Add to cart</span>
+  <span class="holosmallbtn-bottom abs-overlay trans-02s"></span>
+</a>          </div>
+  </div>
+</section>
+
+
+
+<div class="clearfix"></div>
+
+<h2>Super Hornet</h2>
+
+<p><em>The closest to the Military load-out as is legally possible for a Civilian model, the F7C-M Super Hornet reattaches the ball turret and offers near milspec parts under the hood. Proving that two heads are better than one, a second seat has been added to split the logistic and combat duty, making the Super Hornet a truly terrifying mark to engage.</em></p>
+
+
+
+<div class="clearfix"></div>
+
+<h2>Retaliator and Modules</h2>
+
+<p><em>The Retaliator is the United Earth Empire’s premiere, if aging, jump-capable heavy bomber. Massive formations of these spacecraft running long-range strike missions is not an uncommon site around the fringes of the empire. With a distinctive elongated silhouette that is dotted with turrets and carrying a massive bomb load, the Retaliator is an effective symbol of Imperial might. As such, they are the frequent centerpiece of Space Force recruiting posters. Retaliators are ground-based, with all but the largest carriers unable to operate them effectively. Heavily modified Retaliators are becoming commonplace on the civilian market as the design ages and earlier production runs are sold off en-mass. Outfitted to carry cargo instead of antimatter bombs and with the waste turret positions typically swapped for makeshift living quarters, they make a good medium freighter or a basic explorer. Some have even been converted into long-hop passenger spacecraft!</em></p>
+
+
+
+
+<div class="clearfix"></div>
+
+
+
+
+
+
+
+
+
+<div class="clearfix"></div>
+
+<h2>Starfarer Gemini</h2>
+
+<p><em>The United Empire of Earth military uses an adapted ‘rough and tumble’ variant of the Starfarer for their front line operations. The G2M Gemini, more commonly the Starfarer Gemini or ‘Star G,’ trades some cargo capacity and maneuverability in exchange for reinforced armor, increased shielding, more powerful engines and stronger versions of the three manned turrets. The Gemini also includes an optional missile pod, which can be swapped for the fuel intake unit on the ship’s nose (see below for details.) Missile pods can be mounted to either Starfarer variant.</em></p>
+
+
+
+<div class="clearfix"></div>
+
+<h1>Racers</h1>
+
+<h2>M50</h2>
+
+<p><em>If you want to get from point A to point B as quickly as possible and with as much style as possible then <span class="caps">ORIGIN</span>’s M50 is for you. Featuring supercharged engines that counter a tiny weapons loadout, the M50 is a ship for going <span class="caps">FAST</span>.</em></p>
+
+
+
+<div class="clearfix"></div>
+
+<h2>350R</h2>
+
+<p><em>The combination of a Gangleri BP 707 Standard powerplant with a 300i fuselage re-engineered to accommodate twin Hammer Propulsion HM 4.3 thrusters makes the 350r the fastest personal craft you’ll ever call your own.</em></p>
+
+
+
+<div class="clearfix"></div>
+
+<h2>Mustang Alpha</h2>
+
+<p><em>Inspired by Consolidated Outland <span class="caps">CEO</span> Silas Koerner’s cutting edge vision, the Mustang Alpha is a sleek, stylish spacecraft that uses ultralight alloys to push power ratios to the limits, albeit sometimes unsafely. And now, with the optional Cargo Carrier, you can have the Alpha’s advantages without sacrificing carrying capacity.</em></p>
+
+
+<section class="store-embed">
+  <div class="product-item large trans-02s" data-tpl="docroot/rsi/templates/content/ui/sku.tpl">
+    <a href="/pledge/Standalone-Ships/Mustang-Alpha"><img src="/media/ssh2spko70pz6r/store_small/Alpha-Front.jpg" class="trans-02s"></a>
+    <div class="info clearfix trans-02s">
+      <div class="title">
+        Mustang Alpha<span> - Standalone Ship</span>
+      </div>
+      <div class="price ">            <strong class="final-price" data-value="3249" data-currency="EUR">€32<span class="super">.49 <span class="currency">EUR</span></span></strong>            <div class="taxes js-taxes">
+  <div class="taxes-details trans-02s">
+    <div class="arrow"></div>
+    Tax Included: <br>
+
+    <ul>
+        <li>VAT 19%</li>
+        </ul>
+  </div>
+</div>
+</div>      <span class="state" style="color:#00ff00;">
+                              In stock
+                        </span>
+      <a class="more" href="/pledge/Standalone-Ships/Mustang-Alpha">more info</a>
+                                      <a class="holosmallbtn add-cart add-cart ty-js-add-to-cart" href="/pledge/Standalone-Ships/Mustang-Alpha" data-sku="616" data-name="Mustang Alpha" data-tracking-infos='{ "id":"SCP5-DAO-MUSTANG-ALPHA","name":"Mustang Alpha","brand":"pledge","category":"Standalone Ship","price":"27.3","dimension1":"-1"}'>
+  <span class="holosmallbtn-top abs-overlay trans-02s js-label">Add to cart</span>
+  <span class="holosmallbtn-bottom abs-overlay trans-02s"></span>
+</a>          </div>
+  </div>
+</section>
+
+
+
+<div class="clearfix"></div>
+
+<h2>Mustang Beta</h2>
+
+<p><em>The Mustang Beta, with its unprecedented range, is made for long duration flights. The factory standard Tarsus Leaper Jump Engine enables the Beta to travel to the galaxy’s farthest systems with ease, while the ship’s unique Com4T living quarters will make the journey feel like you never left home.</em></p>
+
+
+<section class="store-embed">
+  <div class="product-item large trans-02s" data-tpl="docroot/rsi/templates/content/ui/sku.tpl">
+    <a href="/pledge/Standalone-Ships/Mustang-Beta"><img src="/media/ltw03c5rli6uwr/store_small/Beta-Front.jpg" class="trans-02s"></a>
+    <div class="info clearfix trans-02s">
+      <div class="title">
+        Mustang Beta<span> - Standalone Ship</span>
+      </div>
+      <div class="price ">            <strong class="final-price" data-value="4332" data-currency="EUR">€43<span class="super">.32 <span class="currency">EUR</span></span></strong>            <div class="taxes js-taxes">
+  <div class="taxes-details trans-02s">
+    <div class="arrow"></div>
+    Tax Included: <br>
+
+    <ul>
+        <li>VAT 19%</li>
+        </ul>
+  </div>
+</div>
+</div>      <span class="state" style="color:#00ff00;">
+                              In stock
+                        </span>
+      <a class="more" href="/pledge/Standalone-Ships/Mustang-Beta">more info</a>
+                                      <a class="holosmallbtn add-cart add-cart ty-js-add-to-cart" href="/pledge/Standalone-Ships/Mustang-Beta" data-sku="617" data-name="Mustang Beta" data-tracking-infos='{ "id":"SCP5-DAO-MUSTANG-BETA","name":"Mustang Beta","brand":"pledge","category":"Standalone Ship","price":"36.4","dimension1":"-1"}'>
+  <span class="holosmallbtn-top abs-overlay trans-02s js-label">Add to cart</span>
+  <span class="holosmallbtn-bottom abs-overlay trans-02s"></span>
+</a>          </div>
+  </div>
+</section>
+
+
+
+<div class="clearfix"></div>
+
+<h2>Mustang Gamma</h2>
+
+<p><em>Consolidated Outland’s design and engineering teams have managed to tweak and refine the Mustang into an admirable racer. The end result, the Mustang Gamma, has smooth acceleration, and power on demand thanks to an innovative package featuring three powerful Magma Jet engines for maximum thrust.</em></p>
+
+
+<section class="store-embed">
+  <div class="product-item large trans-02s" data-tpl="docroot/rsi/templates/content/ui/sku.tpl">
+    <a href="/pledge/Standalone-Ships/Mustang-Gamma"><img src="/media/yu4cuzh90oz54r/store_small/Gamma-Front.jpg" class="trans-02s"></a>
+    <div class="info clearfix trans-02s">
+      <div class="title">
+        Mustang Gamma<span> - Standalone Ship</span>
+      </div>
+      <div class="price ">            <strong class="final-price" data-value="5956" data-currency="EUR">€59<span class="super">.56 <span class="currency">EUR</span></span></strong>            <div class="taxes js-taxes">
+  <div class="taxes-details trans-02s">
+    <div class="arrow"></div>
+    Tax Included: <br>
+
+    <ul>
+        <li>VAT 19%</li>
+        </ul>
+  </div>
+</div>
+</div>      <span class="state" style="color:#00ff00;">
+                              In stock
+                        </span>
+      <a class="more" href="/pledge/Standalone-Ships/Mustang-Gamma">more info</a>
+                                      <a class="holosmallbtn add-cart add-cart ty-js-add-to-cart" href="/pledge/Standalone-Ships/Mustang-Gamma" data-sku="618" data-name="Mustang Gamma" data-tracking-infos='{ "id":"SCP5-DAO-MUSTANG-GAMMA","name":"Mustang Gamma","brand":"pledge","category":"Standalone Ship","price":"50.05","dimension1":"-1"}'>
+  <span class="holosmallbtn-top abs-overlay trans-02s js-label">Add to cart</span>
+  <span class="holosmallbtn-bottom abs-overlay trans-02s"></span>
+</a>          </div>
+  </div>
+</section>
+
+
+
+<div class="clearfix"></div>
+
+<h2>Mustang Delta</h2>
+
+<p><em>While it may not be able to go toe to toe with some of the military specific ships, by reinforcing the Mustang’s already strong hull construction with Consolidated Outland’s own line of Cavalry Class Mass Reduction Armor, the Delta has a reduced cross-sectional signature that evens the playing field.</em></p>
+
+
+
+<div class="clearfix"></div>
+
+<h1>Alien ships</h1>
+
+<h2>Khartu-al</h2>
+
+<p><em>The Xi’An Aopoa corporation manufactures an export model of the Qhire Khartu, the Khartu-al, for sale to human civilians as a dedicated scout/explorer. The export model features the same Xi’an maneuvering rig, but control surfaces modified for human use and a more limited armament.</em></p>
+
+
+
+<div class="clearfix"></div>
+
+<h2>Merchantman</h2>
+
+<p><em>Banu traders are renowned for their merchant prowess, traveling the spacelanes and trading with everyone from humans to the Vanduul! Their sturdy, dedicated trading ships are prized beyond all other transports, sometimes passing from generation to generation of Banu.</em></p>
+
+
+
+<div class="clearfix"></div>
+
+<h2>Reliant</h2>
+
+<p><em>Following on the success of the Freelancer “Built for Life” campaign, <span class="caps">MISC</span> has begun development of a smaller, introductory-class spacecraft that can be operated by a single pilot. Although roughly designed to compete with the <span class="caps">RSI</span> Aurora and the Consolidated Outlands Mustang, the Reliant is a very different animal. From the broad, sleek wings to the multiple flight modes and the second, fully-articulated crew seat, the Reliant is a small ship with a great deal of potential!</em></p>
+
+
+
+<div class="clearfix"></div>
+
+
+<h1>Worker Ships</h1>
+
+<h2>Reclaimer</h2>
+
+<p><em>The Aegis Reclaimer is an industrial salvage ship. Equipped with a reinforced cargo bay, a long-range jump drive and launch pods for unmanned drones, the Reclaimer is an ideal ship for taking advantage of deep space wrecks. Tractor beams, floodlights, scanner options and docking ports round out the tools on this capable, utilitarian spacecraft.</em></p>
+
+
+
+<div class="clearfix"></div>
+
+<h2>Starliner</h2>
+
+<p><em>The Genesis is yet another landmark in Crusader Industries’ proud history of transport designs. This ship utilizes award-winning manufacturing techniques and the highest quality parts to create one thing; a next-generation passenger ship at a price that won’t break your budget. Crusader Industries’ proprietary NeoG engine technology offers some of the most efficient flight for a ship of its size.</em></p>
+
+
+
+<div class="clearfix"></div>
+
+<h2>Orion</h2>
+
+<p><em>Roberts Space Industries’ goal has always been to make the stars available to individual Citizens. Now, with the <span class="caps">RSI</span> Orion mining platform, <span class="caps">RSI</span> is letting individuals take over a process formerly controlled by mega-corporations. The Orion’s features include high-grade turret-mounted tractor beam arrays, plenty of mineral storage and a cabin designed by the team that brought you the Aurora and Constellation!</em></p>
+
+
+
+<div class="clearfix"></div>
+
+<h2>Aurora LX</h2>
+
+<p><em>Be proud of your roots with the brand-new Aurora Deluxe, built for the discerning pilot who never forgets where he or she came from. The LX features patent leather interior to guarantee comfort for those long stretches in the deep black.</em></p>
+
+
+
+<div class="clearfix"></div>
+
+<h2>Starfarer</h2>
+
+<p><em>The Starfarer differs from traditional bulk freighters in one key way: it is a dedicated fuel platform. The Starfarer is designed not only to load, store and protect fuel stasis units, it is designed to take in spaceborne hydrogen and then refine it for use without landing. The Starfarer can be used to ferry traditional bulk cargo pods (see diagram) but in such cases the fuel refining equipment would be useless. This equipment is modular and can be swapped out for another mission package for dry operations!</em></p>
+
+
+
+<div class="clearfix"></div>
+
+
+<h1>Cargo ships</h1>
+
+<h2>Freelancer <span class="caps">MIS</span></h2>
+
+<p><em>The Freelancer <span class="caps">MIS</span> is a limited edition militarized variant of the classic mercantile ship developed by the <span class="caps">UEE</span>. These were produced in very small quantity due to some early payload incidents. This version sacrifices the majority of the cargo capacity to make way for missiles.</em></p>
+
+
+
+<div class="clearfix"></div>
+
+<h2>Constellation Phoenix</h2>
+
+<p><em>A dedicated luxury spacecraft for the discerning star captain. The Constellation Phoenix can be operated as an organization command ship and features a luxurious redesigned interior. Standard amenities include a hidden sensor-dampened area to secure your most precious cargo, the renowned Lynx rover for landing zone exploration, and an elite Kruger P-72 Archimedes Fighter, making this ship one of the most desired in all of <span class="caps">UEE</span> space.</em></p>
+
+<p><em>To that point, the Constellation Phoenix has proven so popular that <span class="caps">RSI</span> produces only a select number every sales season, a tactic that has done well to preserve it’s high demand and resale value year after year. For 2945, Roberts Space Industries is proud to release another 5000 hulls, matching it’s generous rollout from the year before. This year however, in order to maintain a finite and limited stock, Cross-Chassis Upgrade to the Phoenix will not be enabled.  This ship will remain on sale throughout the weekend, ending either when time runs out, or the limited stock is exhausted.</em></p>
+
+
+
+<div class="clearfix"></div>
+
+<h2>Hull A</h2>
+
+<p><em>The smallest, most affordable Hull. The Hull A is great for those just striking out in the galaxy on their own. The Hull A is most similar to the Aurora and Mustang, but lacks the ‘jack of all trades’ nature. Where the others trade cargo capacity for firepower or speed, the Hull A is 100% on-mission transport! Additionally, Hull A (and B) are often used as station-to-orbit ferries.</em></p>
+
+
+
+<div class="clearfix"></div>
+
+<h2>Hull B</h2>
+
+<p><em>The Hull B is a more rugged option most often compared to <span class="caps">MISC</span>’s own Freelancer. But where the Freelancer is equipped for long range exploration and other roles, the Hull B is a pure cargo transport. Hull B are often used as corporate support ships, and it is not uncommon to spot several in different liveries during a single flight.</em></p>
+
+
+
+<div class="clearfix"></div>
+
+<h2>Hull C</h2>
+
+<p><em>Often called the most common ship in the galaxy, the Hull C is the most-produced of the range and is considered by many to be the most versatile. Intended to hit the ‘sweet spot’ between the smaller single-person transports and the massive superfreighters that make up the rest of the range, the Hull C offers the expansive modularity of the larger ships while still retaining a modicum of the maneuverability allowed the low end of the range.</em></p>
+
+
+
+<div class="clearfix"></div>
+
+<h2>Hull D</h2>
+
+<p><em>The Hull D kicks off the larger end of the spectrum with a massive ship build around a rugged frame. The Hull D is affordable enough to be operated by mid-sized organizations and companies. Hull D are often used as flagships for mercantile operations, but their bulk means that they should be operated with escort fighters while not in safe space. The <span class="caps">UEE</span> military uses modified Hull D as part of their supply chain, arming and refueling the soldiers on the front line.</em></p>
+
+
+
+<div class="clearfix"></div>
+
+<h2>Hull E</h2>
+
+<p><em>The largest specialized freighter available on the market today, the Hull E is generally owned by major corporations and operated with a high degree of planning. The lack of maneuverability inherent in such a large ship means that anyone planning to operate them should be careful about equipping turrets and providing escort. Their potential load (and modularity) is unparalleled, however: no other ship allows as much room to store goods or to modify towards another role!</em></p>
+
+
+
+<div class="clearfix"></div>
+
+<h2>Master Packs</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="clearfix"></div>
+
+<h1>New Ships</h1>
+
+<h2>Crucible</h2>
+
+<p><em>A so-called “flying toolbox,” the Crucible is Anvil Aerospace’s first dedicated repair ship. Featuring a rotating control bridge and a detachable pressurized workspace,  the Crucible is a versatile mobile garage equipped with repair arms, a drone operation center and all the equipment needed to overhaul a damaged craft back into fighting shape.</em></p>
+
+<p>The Crucible, our penultimate Wave Four concept ship, is now available! Designed by the legendary Ryan Church, this repair ship is just the thing for keeping your fleet up and running. When closed, the detachable workshop allows crews to repair single seat fighters internally. When open, the Crucible can use its remote arms to attach and repair larger craft! You can learn more about the Crucible here, and Star Citizen’s overall repair mechanic here.</p>
+
+
+
+<div class="clearfix"></div>
+
+<h2>Avenger Variants</h2>
+
+<p>Star Citizen Alpha 2.0 will see the addition of flyable variants for the Aegis Dynamics Avenger! The base Avenger available today is now the Stalker, designed with the needs of bounty hunters in mind. A basic Titan cargo ship and an advanced e-warfare Warlock are also available… and all three will be available for combat in Star Citizen’s next patch! </p>
+
+<p>The Titan and Stalker are permanent additions to the pledge store, the Warlock will be on sale through the end of the anniversary sale (Sunday, November 29th.) Please note that these variants will be available as separate modules in the future. The initial release of Star Citizen Alpha 2.0 does not allow changing modules, so we are offering them as distinct, playable ships first. We would encourage you to <span class="caps">CCU</span> to the Avenger you’re most interested in trying rather than picking up all three!</p>
+
+<h3>Avenger Titan</h3>
+
+<p><em>Lacking the Prisoner Cells of the Stalker or the <span class="caps">EMP</span> Generator of the Warlock, the Titan’s hold is free to carry cargo. Couple that available space with the Avenger’s tried and true combat abilities and you’ve got a light cargo hauler that’s more than capable of handling itself in a fight.</em></p>
+
+
+
+<div class="clearfix"></div>
+
+<h3>Avenger Stalker</h3>
+
+<p><em>Initially designed as Aegis’ frontline carrier ship for the military, the Avenger Stalker took a different path, ultimately having a long and storied career as the standard patrol craft of the <span class="caps">UEE</span> Advocacy. Utilizing its cargo hold for prisoner transport, the Avenger features a sturdy, reliable hull and the capacity for larger-than-expected engine mounts.</em></p>
+
+
+<section class="store-embed">
+  <div class="product-item large trans-02s" data-tpl="docroot/rsi/templates/content/ui/sku.tpl">
+    <a href="/pledge/Standalone-Ships/Aegis-Dynamics-Avenger"><img src="/media/3dx8jqsd79dmpr/store_small/Avenger_storefront_visualjpg.jpg" class="trans-02s"></a>
+    <div class="info clearfix trans-02s">
+      <div class="title">
+        Aegis Dynamics Avenger<span> - Standalone Ship</span>
+      </div>
+      <div class="price ">            <strong class="final-price" data-value="6497" data-currency="EUR">€64<span class="super">.97 <span class="currency">EUR</span></span></strong>            <div class="taxes js-taxes">
+  <div class="taxes-details trans-02s">
+    <div class="arrow"></div>
+    Tax Included: <br>
+
+    <ul>
+        <li>VAT 19%</li>
+        </ul>
+  </div>
+</div>
+</div>      <span class="state" style="color:#00ff00;">
+                              In stock
+                        </span>
+      <a class="more" href="/pledge/Standalone-Ships/Aegis-Dynamics-Avenger">more info</a>
+                                      <a class="holosmallbtn add-cart add-cart ty-js-add-to-cart" href="/pledge/Standalone-Ships/Aegis-Dynamics-Avenger" data-sku="199" data-name="Aegis Dynamics Avenger" data-tracking-infos='{ "id":"SCP3-DAO-AVENGER","name":"Aegis Dynamics Avenger","brand":"pledge","category":"Standalone Ship","price":"54.6","dimension1":"-1"}'>
+  <span class="holosmallbtn-top abs-overlay trans-02s js-label">Add to cart</span>
+  <span class="holosmallbtn-bottom abs-overlay trans-02s"></span>
+</a>          </div>
+  </div>
+</section>
+
+
+
+<div class="clearfix"></div>
+
+<h3>Avenger Warlock</h3>
+
+<p><em>The Avenger Warlock was built towards a single design philosophy: stop ships, don’t destroy them. Probably the closest to a non-lethal fighter, the Warlock is outfitted with a Behring <span class="caps">REP</span>-8 <span class="caps">EMP</span> Generator, capable of emitting a powerful electromagnetic wave to disable any electronics unfortunate enough to be within the blast radius.</em></p>
+
+
+
+<div class="clearfix"></div>
+
+<h2>P-72 Archimedes</h2>
+
+<p><em>If you’re looking for something a little more agile, blaze among the stars with Kruger Intergalactic’s P-72 Archimedes. Whether for added security, exploring a system or simply the joy of flying, the Archimedes is the perfect companion snub craft. Featuring an extra intake and a lighter hull than its sister ship, the Archimedes delivers exceptional handling and boost capabilities in a sleek package you’ll want along for the ride.</em></p>
+
+<p>The Archimedes is here! Concepted by Gurmukh Bhasin, the Archimedes is the speedy, luxury alternative to the P-52 Merlin. Initially included with the Constellation Phoenix, the P-72 is interchangeable with Kruger’s other snub fighter and can be attached to any snub-capable Constellation. The Archimedes is available this week as a concept sale.</p>
+
+
+
+<div class="clearfix"></div>
+
+<h2>Vanguard</h2>
+
+<p><em>The A3G Vanguard is the United Empire of Earth’s dedicated deep space fighter. Initially developed as a bomber-destroyer, the Vanguard is a hard-charging bulldog of a ship which features extensive forward-mounted weaponry designed to tear through the shields and armor of other spacecraft. Four high-caliber forward laser cannons and a massive central Gatling gun give the Vanguard an unprecedented amount of sheer striking power. So-named because their multiple-jump range allows them to form the forefront of any military expedition, Vanguard have seen extensive service against the Vanduul.</em></p>
+
+<p>We’re proud to announce that the Aegis Vanguard will be available as hangar-ready in Star Citizen Alpha 2.0! Going forward, we intend to make ships hangar ready earlier in the process than previously allowed, starting during their advanced greybox phase. The Vanguard will be the first of these ships! In its honor, we’re making all three variants and their <span class="caps">BUK</span> options available again this week.</p>
+
+
+
+
+
+
+
+
+<div class="clearfix"></div>
+
+<h1>Bring a Friend!</h1>
+
+<p>We don’t just want existing players to enjoy the anniversary, we want to introduce Star Citizen to new players! As a result, we’re offering a limited number of discounted $30 packages each day, first come first serve (1,000 per day.) These packages offer the full Star Citizen experience, including an Aurora starter ship and a copy of the Squadron 42 single player adventure. You won’t find a better deal anywhere in the ‘Verse, so pick up a copy for a friend today!</p>
+
+
+
+<div class="clearfix"></div>
+
+<h1>Physical Merchandise</h1>
+
+<p>Star Citizen physical merchandise is also on sale! For the next week, Constellation models are now $80, Arena Commander t-shirts are on deep discount and all other in-stock merchandise is 20% off. </p></div><div class="cboth"></div></div>
+<div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+
+  <div class="wrapper">
+    
+    <div class="end-transmission-container">
+      <div class="glow left"></div>
+      <div class="title-bar">
+        <h1>End Transmission</h1>
+      </div>
+      <div class="glow right"></div>
+    </div>
+  </div>
+  
+
+  
+    
+
+  <div class="two-line-separator"></div>
+  
+    
+<div class="wrapper force-one-column" id="comments">
+  <div class="holder">
+    <div class="title-bar">
+      <div class="count">
+        <div class="label">Comments</div>
+        <div class="value">0162.<span class="js-comment-decimal">0</span></div>
+        <div class="cboth"></div>
+      </div>
+      <div class="title">
+        <h1>Feedback</h1>
+      </div>
+      <div class="cboth"></div>
+    </div>
+
+    <div class="main-buttons-holder-container">
+      <div class="main-buttons-holder">
+        <a href="/comm-link/transmission/15080-AnniVERSEary-Sale-Weapons-Free" class="add-comment js-add-comment trans-02s ">Add New Comment</a>
+        <div class="settings js-settings">
+          <h1>Settings</h1>
+          <label>View mode:</label>
+          <a href="#" class="js-comments-view to-one-column js-to-one-column trans-01s on">One column</a>
+          <a href="#" class="js-comments-view to-two-columns js-to-two-columns trans-01s ">Two columns</a>
+          <label>Sort by:</label>
+          <a href="#" class="js-comments-sort to-oldest js-to-oldest trans-01s on">Oldest first</a>
+          <a href="#" class="js-comments-sort to-newest js-to-newest trans-01s ">Newest first</a>
+          <a href="#" class="js-comments-sort to-appreciated js-to-appreciated trans-01s ">Most appreciated first</a>
+
+                    <label class="checkbox show-appreciation js-show-appreciation on">
+            <input type="checkbox">
+            <span>Enable appreciation</span>
+          </label>
+                  </div>
+        <a href="" class="view-settings js-view-settings"><div class="hover trans-02s"></div></a>
+        <div class="triangle"></div>
+      </div>
+    </div>
+
+          <form class="reaction-form js-comment-form comment-submission">
+        <input type="hidden" class="js-form-data js-id id" name="id" value="15080">
+  <textarea class="js-form-data body js-body js-focus-me" name="body"></textarea>
+  <div class="cboth"></div>
+  <a class="shadow-button trans-02s trans-color submit js-submit">
+  <span class="label js-label trans-02s">Submit</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+    <div class="success-message js-success-message">Your comment has been posted successfully.</div>
+  <div class="error-message js-error-message"></div>
+  <div class="cboth"></div>
+</form>    
+    <div class="comment-listing"></div>
+
+    <div class="comment-loader traj-loader">
+      <div class="fast-blink"></div>
+      <span>Loading Additional Feedback</span>
+    </div>
+
+    <div class="cboth"></div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    window.comments = new RSI.Comments({
+      atom_url:"/comm-link/transmission/15080-AnniVERSEary-Sale-Weapons-Free",
+      comment_listing_el:$(".comment-listing"),
+      comment_submission_form_el:$(".comment-submission"),
+      api_object:RSI.Api.Comments,
+      lazyLoading: true,
+      comment_count: 162,
+      subject_id:15080,
+      append:false,
+      texts: {
+        "edit": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        },
+        "reply": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        }
+      },
+      "insertion_conf": {
+        "mode":"html"
+      },
+      "api_function_names": {
+        "delete":"erase",
+        "load":"listing",
+        "sort":"listing"
+      }
+    });
+  });
+</script>
+  
+</div>
+
+    </div>
+
+    
+  </div>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.11/moment-timezone-with-data.min.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+      $.cookie('moment_timezone', moment.tz.guess(), { expires: 31, path: '/' });
+  });
+</script>
+
+
+
+
+               <script id="tpl_number_counter_digits" type="text/x-jsmart-tmpl">{if !$seperator}{$seperator=','}{/if}
+{if !$first_max}{$first_max=9}{/if}
+{for $digit = 0 to $length-1}
+  <div class="mask">
+    <div class="carousel">
+      {if $digit == 0}
+        {$max = $first_max}
+      {else}
+        {$max = 9}
+      {/if}
+      {for $i=0 to $max}
+        <div class="item {if $val_arr[$digit] == $i}on{/if}" rel="{$i}">{$i}
+      {/for}
+    
+  
+  {if ($length - $digit) % 3 == 1 && $digit != $length-1}
+  <div class="seperator">{$seperator}
+  {/if}
+{/for}</script>
+<script id="base_modal" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  <div class="top-border">
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+  
+</script>
+<script id="base_modal_flat" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  
+  
+</script>
+<script id="tpl_modals_slideshow" type="text/x-jsmart-tmpl"><img class="top-border" src="/rsi/static/images/modal_top.png">
+<a href="" class="close js-close">
+<div class="mask">
+  <a class="js-prev prev control">
+  <a class="js-next next control">
+  <div class="slideshow-carousel carousel" rel="{$index}">
+    {foreach from=$images item="image"}
+      <div class="{if $index == $image@index}on{/if}">
+      {if $image.is_video}
+        <div class="video-holder">
+          <div id="slideshow_video_{$image@index}" data-source="{$image->source_url}">
+            <video width="100%" height="100%" preload="auto" {if $video}src="{$image->source_url}"{/if} controls>
+          
+        
+      {else}
+        <div class="media js-media-slideshow-{$image@iteration}">
+        {if $image.low_res}
+          <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source data-srcset="{$image.full_res}" media="(min-width: 300px)" />
+            <!--[if IE 9]><![endif]-->
+            <img data-srcset="{$image.low_res}" alt="{$image.title}" />
+          
+        {else}
+          <img data-src="{$image.source_url}" />
+        {/if}
+        
+      {/if}
+        <div class="text">
+          {if !$image.is_video}
+          <a href="{$image.source_url}" class="download">
+          {/if}
+          <div class="copyright">&copy; 2012-{$year}<br />Cloud Imperium Games Corporation &<br />Roberts Space Industries Corp.
+          <div class="page-number">{$image@iteration} / {count($images)}
+          <div class="caption v-center">{if $image.title && $image.title != "undefined"}{$image.title}{/if}
+          <div class="cboth">
+        
+      
+    {/foreach}
+  
+
+<img class="bottom-border" src="/rsi/static/images/modal_bottom.png"></script>
+<script id="tpl_contact_us" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    
+<div id="contact" class="inner-content on">
+  <h2><span class="icon">CONTACT
+  <div class="padder">
+    <div class="separator">
+    <form name="" action="" method="POST">
+  <div class="error-message js-error-message">
+  <div class="success-message js-success-message">
+    <fieldset>
+    <label for="contact_subject">Subject
+    <input type="text" name="subject" value="" class="trans-02s trans-color trans-box-shadow" id="contact_subject" />
+    <label>Contacting us for:
+    <ul class="category-info">
+            <li id="tech_support_info">Questions about download, installation, networking, or in-game client problems
+            <li id="subscription_info">Questions about monthly and yearly subscription plans
+            <li id="account_billing_info">Issues related to your account, such as incorrect information or ability to access account, or Billing with regards to payments and payment methods
+            <li id="melt_request_info">To reclaim a pledge over $1,000 for store credit (please note - this is a permanent action)
+            <li id="merchandise_info">Questions about physical and/or shipped merchandise
+            <li id="hacked_info">Issues related to compromised account or missing pledge.
+            <li id="account_recovery_info">For issues with account authentication, lost passwords and related queries
+            <li id="probation_info">Issues related to forums probation or ban
+            <li id="refund_request_info">Refund requests and related inquiries
+            <li id="customer_support_info">For general questions and queries regarding Star Citizen
+          
+  
+  <fieldset>
+    <label for="contact_text">Fescription
+    <textarea name="text" class="trans-02s trans-color trans-box-shadow" id="contact_text">
+  
+  <div class="contact-submit-wrapper">
+    <div class="line">
+    <button class="submit js-submit"><strong>submit your message
+  
+
+    <div class="separator">
+  
+
+
+    
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  
+</script>
+<script id="tpl_concierge" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+<img src="/rsi/static/images/modal_yellow_line.png" />
+
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    
+
+<div id="contact" class="inner-content on">
+  <h2><span class="icon">CONCIERGE
+  <div class="padder">
+    <div class="separator">
+    <form name="" action="" method="POST" class="concierge-form">
+      <p class="head">We recommend that you check out the <a href="/faq">FAQs and other resources below if you are in need of information regarding RSI or Star Citizen. If your topic isn&rsquo;t covered, feel free to contact us!<br/><br/> - Gameplay : <a href="https://forums.robertsspaceindustries.com/categories/ask-a-developer">Ask A Dev<br/> - Suggestions: <a href="https://forums.robertsspaceindustries.com/categories/game-ideas">Game Ideas<br/> - Bug Reports (including PTU): <a href="https://forums.robertsspaceindustries.com/categories/test-pilot-headquarters">Test Pilot Headquarters<br/>
+      <div class="error-message js-error-message">
+      <div class="success-message js-success-message">
+
+      <fieldset class="concierge-form__field concierge-form__field--issue">
+        <label for="concierge_issue">Please choose your issue below
+        <select required id="concierge_issue" name="issue" class="trans-02s trans-color trans-box-shadow">
+          <option value="-">
+            -
+          
+                  
+      
+
+      <fieldset class="concierge-form__field concierge-form__field--problem concierge-form__field--secondary hidden">
+        <label for="concierge_problem">
+        <select required id="concierge_problem" name="problem" class="trans-02s trans-color trans-box-shadow">
+        
+      
+
+      <div class="issue-subfields">
+
+      <fieldset class="concierge-form__field concierge-form__field--secondary concierge-form__field--optional hidden">
+        <label for="concierge_attachment">Attachments <span>- Optional
+        <div class="concierge-form__attachment">
+            Add file here
+          <input class="concierge-upload-images-container" type="file" id="concierge_attachment" name="attachment" accept="image/*" multiple/>
+        
+      
+
+      <fieldset class="concierge-form__field concierge-form__field--secondary concierge-form__field--optional hidden">
+        <span class="h-text h-text--size-13 h-text--univia h-text--brown"><strong>Uploaded files 
+        <div class="concierge-form__file-preview">
+      
+
+      <fieldset class="concierge-form__field concierge-form__field--submit concierge-form__field--secondary last hidden">
+        <span class="submit-arrow">
+        <input type="submit" value="Send" class="trans-02s trans-color trans-background" />
+      
+
+    
+    <div class="separator">
+  
+
+
+
+    
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    
+<img src="/rsi/static/images/modal_yellow_line.png" />
+
+  
+</script>
+<script id="tpl_error" type="text/x-jsmart-tmpl"><div class="modal-error js-modal-error">
+  <p class="modal-text js-modal-text">
+  <a class="close js-close trans-03s .trans-opacity" href="">
+</script>
+<script id="tpl_success" type="text/x-jsmart-tmpl"><div class="modal-success js-modal-success">
+  <p class="modal-text js-modal-text">
+  <a class="close js-close trans-03s .trans-opacity" href="">
+</script>
+<script id="tpl_progress" type="text/x-jsmart-tmpl"><div class="modal-progress js-modal-progress">
+  <div class="traj-loader">
+    <div class="fast-blink">
+    <span class="modal-text js-modal-text">
+  
+</script>
+<script id="tpl_outbound" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    
+<div id="outbound" class="inner-content on">
+  <h2><span class="icon">OUTBOUND LINK
+  <div class="padder">
+    <div class="separator">
+    <form name="" action="" method="POST">
+      <div class="error-message js-error-message"> <span class=important>WARNING<br/><br/> This link will bring you outside of the RSI site and into the depths of the internet. Continue?<br/><br/><span class="url"> 
+      <div class="success-message js-success-message"><span class=important>STAND BY<br/><br/> Initiating hyperlink.<br/><br/>
+
+      <fieldset class="clearfix last">
+        <span class="submit-wrapper">
+          <span class="submit-hover trans-02s trans-opacity">
+          <input type="submit" value="WARP" class="trans-02s trans-color trans-background" />
+        
+      
+    
+    <div class="separator">
+  
+
+
+    
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  
+</script>
+
+<script id="tpl_l-notification-bar" type="text/x-jsmart-tmpl"><div class="l-notification-bar js-notification-bar">
+
+  <div class="l-notification-bar__watermark js-svg-inliner h-svg__logo-star-citizen">
+
+  <div class="l-notification-bar__boxes">
+    {if !$viewedCookieNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='cookie'
+          title='COOKIES:'
+          message="Our website uses Google Analytics to analyze our traffic. <br/>To learn how you can control Google's use of your data and how you can opt out <a href='https://www.google.com/policies/privacy/partners/'>click here."
+          linkText='See Details'
+          buttonText='Got it!'}
+      
+    {/if}
+
+    {if !$viewedPrivacyNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='privacy'
+          title='PRIVACY POLICY:'
+          message='We adjusted the PP to reflect the decision of the European Court of Justice regarding Safe Harbor, the fact that RSI has moved and added some services providers.'
+          linkText='View Privacy Policy'
+          buttonText='Got it!'}
+      
+    {/if}
+  
+
+
+</script>
+<script id="tpl_c-notification" type="text/x-jsmart-tmpl"><div class="c-notification js-bottom-notif-msg-{$type}">
+    <div class="c-notification__title">{$title}
+    <div class="c-notification__message">
+      {$message}
+    
+
+    {if $linkText}
+        <div class="c-notification__wrapper-link">
+            <a class="c-notification__link js-bottom-notif-link-{$type}">
+            {$linkText}
+            
+        
+    {/if}
+
+    <a class="c-notification__button js-bottom-notif-btn-{$type}">
+
+      <span class="c-notification__button-text">
+       {$buttonText}
+      
+
+      {if $type neq 'announcement'}
+        <div class="c-iconed__icon c-iconed__icon--checkmark">
+      {/if}
+    
+
+</script>
+
+<script id="tpl_confirm" type="text/x-jsmart-tmpl"><div class="modal-confirm js-modal-confirm clearfix">
+  <p class="modal-text js-modal-text">
+  <a class="bt-close js-close trans-03s trans-opacity" href="">
+  <a class="bt-confirm js-confirm trans-03s trans-opacity" href="">
+	<div class="buttons">
+		<a class="shadow-button trans-02s trans-color js-close bt-close rm"     >
+  <span class="label js-label trans-02s">Cancel
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s">
+  <span class="left-section">
+  <span class="right-section">
+
+		<a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">Confirm
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s">
+  <span class="left-section">
+  <span class="right-section">
+
+	
+
+</script>
+<script id="tpl_alert" type="text/x-jsmart-tmpl"><div class="modal-alert js-modal-alert clearfix">
+  <p class="modal-text js-modal-text">
+  <div class="buttons">
+    <a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">OK
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s">
+  <span class="left-section">
+  <span class="right-section">
+
+  
+</script>
+<script id="tpl_video" type="text/x-jsmart-tmpl">{extends file="base_modal"}
+{block name='modal_content'}
+<div id="ship-commercial" class="inner-content">
+  
+  <div class="hr">
+  <div class="content-block4">
+   
+    <div class="bottom">
+  
+  {if $distant_source=="vimeo"}
+  <iframe id="commercial" src="//player.vimeo.com/video/{$video_id}?wmode=transparent" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+  {else}
+  <iframe id="commercial" frameborder="0" allowfullscreen="1" title="YouTube video player" width="100%" height="100%" src="https://www.youtube.com/embed/{$video_id}?autoplay=1">
+  {/if}
+
+{/block}
+</script>
+      
+  <script id="tpl_comment_report" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href="">
+    
+<div id="comment-report" class="inner-content on">
+  <h2><span class="icon">Report this comment
+  <div class="padder">
+    <div class="separator">
+    <form name="" action="" method="POST">
+<input type="hidden" name="comment_id" value="">
+  <div class="error-message js-error-message">
+  <div class="success-message js-success-message">
+    <fieldset>
+    <label>Report Type
+    
+
+
+  
+    <a class="js-selectlist selectlist " rel="" href="">
+    <div class="arrow">
+    <span>Please select the type best matching your report
+              <ul class="body">
+              
+                                                              <li class="js-option option " rel="obscenity" >
+                                                                        Obscene Content
+                                                    
+                                                                <li class="js-option option " rel="abuse" >
+                                                                        Abusive Conduct
+                                                    
+                                                                <li class="js-option option " rel="other" >
+                                                                        Other
+                                                    
+                                          
+            
+        <input type="hidden" name="category" class="js-category js-form-data" id="category"/>
+  
+    
+  <fieldset>
+    <label for="report_text">Details
+    <span class="corner-wrapper">
+      <textarea name="text" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_text" maxlength="2500">
+      <span class="corner corner-top-left">
+      <span class="corner corner-top-right">
+      <span class="corner corner-bottom-left">
+      <span class="corner corner-bottom-right">
+    
+  
+  <fieldset class="clearfix last">
+    <span class="submit-wrapper">
+      <span class="submit-hover trans-02s trans-opacity">
+      <input type="submit" value="Submit" class="trans-02s trans-color trans-background" />
+    
+  
+
+    <div class="separator">
+  
+
+
+    
+  
+  <div class="bottom-border">
+    <div class="h-border">
+    <div class="l-corner">
+    <div class="r-corner">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  
+</script>
+
+
+      <footer class="c-platform-footer c-platform-footer--rsi">
+  <div class="l-platform-footer-container">
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--sc">
+        <li class="c-platform-footer-brand__item">
+
+          <span class="c-brand c-brand--sc js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--sc">
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Join the<br>Universe
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--sc">
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen" class="c-platform-footer-link">About the Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/howto/1" class="c-platform-footer-link">How to Play</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/universe" class="c-platform-footer-link">The Universe</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/media" class="c-platform-footer-link">Media</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/fly-now" class="c-platform-footer-link js-google-analytics-event-tracker" data-event-category="FlyNow" data-event-label="footerClick">
+                Fly Now
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__sc">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">
+              Social Links
+            </span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/RobertsSpaceIndustries/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/RobertsSpaceInd">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/robertsspaceind">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.youtube.com/channel/UCTeLqJq1mXUX5WWoNXLmOIA">
+                <span class="c-iconed__icon c-iconed__icon--youtube"></span>
+                Youtube
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.twitch.tv/starcitizen">
+                <span class="c-iconed__icon c-iconed__icon--twitch"></span>
+                Twitch
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--s42">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--s42 js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--s42">
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Start the<br>Adventure
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--s42">
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42" class="c-platform-footer-link">The Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#enlist" class="c-platform-footer-link">Enlist Today</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#roadmap" class="c-platform-footer-link">Status</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/pledge/Packages/Squadron-42-Standalone-Pledge" class="c-platform-footer-link">Pledge</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__s42">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">Social Links</span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/Squad42/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/squadron_42">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/squadron42">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column is-active">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--rsi">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--rsi js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--rsi">
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi--fullcolor"></span>
+            </span>
+            <span class="c-brand__label">
+              Follow the Development
+            </span>
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--rsi">
+            <li class="c-platform-footer-list__item">
+              <a href="/" class="c-platform-footer-link">Home</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/comm-link" class="c-platform-footer-link">Transmissions</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/community" class="c-platform-footer-link">Community</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/roadmap" class="c-platform-footer-link">Development</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--platform">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Platform
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--platform">
+                          <li class="c-platform-footer-list__item">
+                <a href="/pledge" class="c-platform-footer-link ">Pledge Store</a>
+              </li>
+            
+            <li class="c-platform-footer-list__item">
+              <a href="/download" class="c-platform-footer-link ">Download</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/spectrum/community/SC" class="c-platform-footer-link">Spectrum</a>
+            </li>
+
+                          <li class="c-platform-footer-list__item">
+                <a href="/citizencon" class="c-platform-footer-link">Citizencon</a>
+              </li>
+                      </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--utility">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Utilities
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewbox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--utility">
+            <li class="c-platform-footer-list__item">
+              <a href="//support.robertsspaceindustries.com" class="c-platform-footer-link">Help</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/press" class="c-platform-footer-link">Press</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="https://cloudimperiumgames.com/join-us" class="c-platform-footer-link">Careers</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/tos" class="c-platform-footer-link">Terms of Services</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/privacy" class="c-platform-footer-link">Privacy Policy</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/eula" class="c-platform-footer-link">EULA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/dmca" class="c-platform-footer-link">DMCA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/acknowledgements" class="c-platform-footer-link">Acknowledgements</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  
+</footer>
+
+<div class="c-platform-copyright c-platform-copyright--rsi">
+  <div class="l-platform-copyright-container">
+    <a href="https://cloudimperiumgames.com" class="c-platform-copyright__logo h-svg__logo-cig js-svg-inliner"></a>
+    <p class="c-platform-copyright__body">© 2012-2019 Cloud Imperium Rights LLC and Cloud Imperium Rights Ltd</p>
+  </div>
+</div>
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHNFZPT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<script type="text/javascript">
+  window.RSI.Footer = new RSI.Footer();
+</script>
+
+    
+
+    <script type="text/javascript" src="/cache/en/rsi-platformbar-js.js?v=3.2.9.0"></script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"58013cabd7","applicationID":"375102748","transactionName":"Y1JaYktUWxZUV0QKV1oYe0NKQVoIGmZjKmtdQ111VltBF1pYXAZKDg1ZQlZYcwxbUA==","queueTime":0,"applicationTime":697,"atts":"TxVNFANOSEkXVRJZQ0lK","errorBeacon":"bam.nr-data.net","agent":""}</script></body>

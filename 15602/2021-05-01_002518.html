@@ -1,0 +1,2768 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    
+        <!-- Anti-flicker snippet (recommended)  -->
+        <style>.async-hide { opacity: 0 !important} </style>
+        <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+        h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+        (a[n]=a[n]||[]).hide=h;if (d) a[n].push({'userId' : d});setTimeout(function(){i();h.end=null},c);h.timeout=c;
+        })(window,document.documentElement,'async-hide','dataLayer',1500,
+        {'GTM-KHNFZPT':true},undefined,'');</script>
+            <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"58013cabd7",applicationID:"375102748"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(7),c=e(8),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(9);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e){return!(!e||!e.protocol||"file:"===e.protocol)}t.exports=r},{}],4:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(6),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],5:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],6:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],7:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],8:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],9:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?u(e,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){e&&a&&e(n,r,i);for(var c=t(i),f=v(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[h[n]];return p&&p.push([b,n,r,c]),c}}function o(e,t){y[e]=v(e).concat(t)}function m(e,t){var n=y[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return y[e]||[]}function g(e){return p[e]=p[e]||i(n)}function w(e,t){s(e,function(e,n){t=t||"feature",h[n]=t,t in d||(d[t]=[])})}var y={},h={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:w,abort:c,aborted:!1};return b}function o(e){return u(e,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=e("gos"),s=e(7),d={},p={},l=t.exports=i();t.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=x.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+x.offset],null,"api"),c("timing",["load",n]);var r=l.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+x.offset],null,"api")}var a=e(2),c=e("handle"),f=e(7),u=e("ee"),s=e(5),d=e(3),p=window,l=p.document,m="addEventListener",v="attachEvent",g=p.XMLHttpRequest,w=g&&g.prototype;if(d(p.location)){NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:g,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1208.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:b,userAgent:s};e(1),e(4),l[m]?(l[m]("DOMContentLoaded",o,!1),p[m]("load",r,!1)):(l[v]("onreadystatechange",i),p[v]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0}},{}],"wrap-function":[function(e,t,n){function r(e,t){function n(t,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],e)}c(n+"start",[o,a,f],s,u);try{return p=t.apply(a,o)}catch(m){throw c(n+"err",[o,a,m],s,u),m}finally{c(n+"end",[o,a,p],s,u)}}return a(t)?t:(n||(n=""),nrWrapper[p]=t,o(t,nrWrapper,e),nrWrapper)}function r(e,t,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<t.length;u++)f=t[u],c=e[f],a(c)||(e[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!m||t){var c=m;m=!0;try{e.emit(n,r,o,t,a)}catch(f){i([f,n,r,o],e)}m=c}}return e||(e=s),n.inPlace=r,n.flag=p,n}function i(e,t){t||(t=s);try{t.emit("internal-error",e)}catch(n){}}function o(e,t,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(e);return r.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(o){i([o],n)}for(var a in e)l.call(e,a)&&(t[a]=e[a]);return t}function a(e){return!(e&&e instanceof Function&&e.apply&&!e[p])}function c(e,t){var n=t(e);return n[p]=e,o(e,n,s),n}function f(e,t,n){var r=e[t];e[t]=c(r,n)}function u(){for(var e=arguments.length,t=new Array(e),n=0;n<e;++n)t[n]=arguments[n];return t}var s=e("ee"),d=e(8),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;t.exports=r,t.exports.wrapFunction=c,t.exports.wrapInPlace=f,t.exports.argsToArray=u},{}]},{},["loader"]);</script>
+      <meta name="viewport" content="width=device-width">
+      <meta name="description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans.">
+      <meta property="og:site_name" content="
+Intergalactic Aerospace Expo, Day Two: RSI - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+" />
+      <meta property="og:image" content="https://robertsspaceindustries.com/media/dpbza61w4lloqr/channel_item_full/Phoenix.jpg" />
+      <meta property="og:description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans." />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://robertsspaceindustries.com/comm-link/SCW/15602-IMPORT" />
+      <meta property="og:locale" content="us_EN" />
+
+            
+
+            <link href="/rsi/static/css/cross-brand-less.css?v=6.0.1" media="all" rel="stylesheet">
+      <link href='/rsi/static/packages/platformbar/rsi.platformbar.build.05b39.css' media="all" rel="stylesheet">
+      <link href='/rsi/static/packages/enlist/rsi.enlist.build.0ff8b.css' media="all" rel="stylesheet"/>
+            <script type="text/javascript" src="/cache/en/rsi-external-js.js?v=6.0.1"></script>
+      <script type="text/javascript" src="/cache/en/rsi-templates-js.js?v=6.0.1"></script>
+
+            <link rel="stylesheet" href="https://use.typekit.net/dhw3beb.css">
+
+              <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="a687ee30-df65-45a0-9d22-90de6c1bb964" type="text/javascript"></script>
+      
+      
+    <!-- Google Tag Manager -->
+    <script data-cookieconsent="ignore">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHNFZPT');</script>
+    <!-- End Google Tag Manager -->
+
+
+      <title>
+Intergalactic Aerospace Expo, Day Two: RSI - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+</title>
+
+            <script type="text/javascript" src='/rsi/static/packages/core/rsi.core.build.804b0.js'></script>
+      <script type="text/javascript" src='/rsi/static/packages/account/rsi.account.build.609b5.js'></script>
+      <script type="text/javascript" src='/rsi/static/packages/store/rsi.store.build.cd9a7.js'></script>
+
+      <script>
+        $(document).ready(function() {
+          window.Common = new RSI.Common({});
+          window.Main = new RSI.Main({
+            'is_mobile': 0,
+            'probation_cookie' : '',
+            'require_captcha': 0
+          });
+          window.Mark = new Turbulent.Mark({ 'name' : 'Rsi-XSRF', 'token' : '', 'ttl' : 1800 });
+
+          window.WscOverlay = new RSI.WscOverlay({});
+
+          var destinations = [];
+
+window.Main.destinations = destinations;          
+  window.PageStore = new RSI.Store({
+    'store_prefix' : '/pledge',
+    'bootstrapConfig': {"injection":{"attachmentClass":"RSIStoreApp","files":{"js":["bootstrap.js"],"css":["index.css"]}},"platform":{"api":"\/api"},"store":{"path":"\/pledge-store","manifest":"manifest.json"},"customizer":{"api":"\/pledge-store\/api\/customizer","ga_tracking_code":"UA-39586040-5"}}
+  });
+
+          
+          
+  var productsTracking = [];
+  var eCommerceData = {
+    'trackingAction': "",
+    'currency': "",
+    'trackingStep': "",
+    'trackingProducts': productsTracking
+  };
+  window.eCommerceTracking = new RSI.Store.eCommerceTracking(
+    eCommerceData
+  );
+
+        });
+
+        $(window).load(function() {
+          
+        });
+
+      </script>
+
+
+      <script>
+        window.recaptcha_is_loaded = false;
+        window.on_recaptcha_load_callback = function() {
+          window.recaptcha_is_loaded = true;
+        };
+      </script>
+
+      <script src="https://www.google.com/recaptcha/api.js?onload=on_recaptcha_load_callback&render=6LerBOgUAAAAAKPg6vsAFPTN66Woz-jBClxdQU-o" async defer></script>
+
+      <script type="text/javascript">
+
+        
+
+                                </script>
+
+      
+
+<style type="text/css">
+  /* CSS from ATOM */
+  #post-background { opacity: 0.3; }
+
+.rsi-markup .segment .content p .initial { display: inline; font-size: inherit; text-transform: inherit; float: none; line-height: inherit; height: auto; margin-right: auto; }
+
+.image1 {float: left; padding: 5px;
+}
+
+.mb-box img {
+    margin-left: auto;
+    opacity: 0.7;
+    width: 300px;
+    margin-right: auto;
+    display: block;
+}
+
+.quote {
+display:block;
+text-align: left;
+margin-bottom: 30px;
+margin-top: -135px!important;
+max-width: 75%;
+margin-top: 30px;
+}
+
+
+.mb-box { max-width: 800px; margin: auto; margin-top: 100px; margin-bottom: 75px;  }
+.mb-box p { font-size: 18px; font-family: "Electrolize"; text-align: center; color: white;}
+
+.mb-box h1 {
+margin: 0px;
+font-size: 32px;
+color: #00e7ff;
+text-transform: uppercase;
+text-shadow: 0 0 0 #00E0FF, 0 0 11px #00A0B6;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+height: 57px;
+line-height: 57px;
+text-align: center;
+}
+
+
+.mb-full img { width: 100%;
+ }
+
+#post .title-section .title-container .subtitle { font-size: 18px; }
+
+
+.variant-block logo {}
+.variant-block { }
+.variant-block h2 { 
+font-family: "Electrolize";
+color: #fff;
+line-height: 40px;
+text-transform: uppercase;
+font-size: 18px;
+margin: 0px;
+margin-left: 0px;
+margin-top:5px!important;
+}
+
+#contentbody .variant-block p { font-size: 14px;  line-height: 18px;  min-width: 0px; width: auto; margin-top:25px; }
+#contentbody .variant-block.variant-right p { float: left; padding-left: 30px;  }
+#contentbody .variant-block.variant-right a.image { float: right; }
+
+#contentbody .variant-block.variant-right .thumbs { float: right; }
+#contentbody .variant-block.variant-left .thumbs { float: left; }
+
+#contentbody .variant-block.variant-left p { float: right;  }
+#contentbody .variant-block.variant-left a.image { float: left; }
+
+#contentbody .variant-block a.image { padding: 5px; border: 1px solid rgba(0, 162, 253, 0.25); border-radius: 0px; }
+
+#contentbody .variant-block a.image img { border-radius: 0px; border: 0;  }
+
+#contentbody .variant-block.variant-full p { max-width:initial!important;  }
+
+.variant-block .glow-box {
+background-color: #13d0ff;
+width: 11px;
+height: 5px;
+float: left;
+box-shadow: 0px 0px 20px #1397FF;
+margin-top: 17px;
+margin-right: 18px;
+}
+
+#contentbody .variant-block .thumbs a.image { float:left;}
+#contentbody .variant-block .thumbs a.image img { }
+
+.img-left {
+float: left;
+margin-right: 20px;
+}
+
+#contentbody .variant-block p a.ship-button {
+font-family: "Electrolize";
+text-transform: uppercase;
+font-size: 18px;
+color: #2c799f;
+line-height: 22px;
+position: relative;
+width: 250px;
+display: block;
+text-decoration: none;
+margin-top: 20px;
+border: 0;
+}
+
+
+#contentbody .variant-block p a.broc-button span {
+font-family: "Electrolize";
+text-transform: uppercase;
+font-size: 14px;
+color: #999999;
+line-height: 22px;
+position: relative;
+width: 250px;
+display: block;
+text-decoration: none;
+margin-top: 20px;
+border: 0;
+}
+
+
+
+#contentbody .variant-block p a.ship-button span {
+font-family: "Electrolize";
+font-size: 18px;
+max-width: auto;
+display: block;
+float: left;
+}
+
+#contentbody .variant-block p a.ship-button .arrow {
+background: url('/rsi/static/images/store/viewall-arrows.png') no-repeat center center;
+width: 10px;
+height: 20px;
+display: block;
+position: absolute;
+float: left;
+}
+
+
+
+
+#contentbody .variant-block p a.ship-button .arrow.arrow1 {
+right: 21px;
+}
+#contentbody .variant-block p a.ship-button .arrow.arrow2 { right: 14px; }
+#contentbody .variant-block p a.ship-button .arrow.arrow3 { right: 7px; }
+
+.rsi-markup .segment .content p { width: inherit; max-width: inherit; }
+
+.rsi-markup .segment .content table tr td:first-child { border-right: 1px dashed #465F7A;}
+.rsi-markup .segment .content table tr td strong { color: white; }
+.rsi-markup .segment .content table tr td { padding: 6px; text-align: left; color: #999999;  }
+
+
+
+.parallax {
+height: 850px;
+background-position: 50% 50%;
+background-repeat: no-repeat;
+background-attachment: fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+
+.parallax-block { }
+.parallax-block .rsi-markup .segment .content { margin-left:0; margin-right:0 }
+.parallax-block hr { background-color:#09daff; border-top:0px;}
+.parallax-block .corner, .parallax-block  .top-line-thin, .parallax-block .top-line { display:none }
+.parallax-block .content-block1 { border:0}
+
+.parallax-segment { height:280px}
+
+.parallax-1 {
+background-image: url("/media/dpbza61w4lloqr/source/Phoenix.jpg");
+}
+
+.parallax-3 {
+background-image: url("/media/vp2iul8kfn5nqr/cover/Anvil_Terrapin_Piece_01_Hangar.jpg");
+}
+
+.rsi-markup .segment .content .embed-container {margin:0;}
+
+.notice { 
+  padding: 50px;
+  color: black;
+  border-radius: 8px;
+  background: url('https://robertsspaceindustries.com/rsi/static/images/profile/profile_middle_bg.jpg') repeat-y;
+  background-color:rgba(0, 0, 0, 1.0);
+  background-position-x: -80px;
+}
+.notice img.logo { width: 250px; }
+.notice img.small-logo { width: 100px; 
+    margin-left: auto;
+    margin-right: auto;
+    width: 6em; }
+
+.notice h2 { color: black!important; margin: 20px 0 0 0!important; }
+.notice p, .notice p strong { color:black!important; font-size: 18px!important; font-family:Electrolize!important;}
+
+@-webkit-keyframes page3 {
+    0%   {opacity: 0; top: 150px; right:2%;}
+    100% {opacity:1; top: 170px; right:2%;}
+}
+
+@-moz-keyframes page3 {
+    0%   {opacity: 0; top: 150px; right:2%;}
+    100% {opacity:1; top: 170px; right:2%;}
+}
+
+@keyframes page3 {
+    0%   {opacity: 0; top: 150px; right:2%;}
+    100% {opacity:1; top: 170px; right:2%;}
+}
+
+@-webkit-keyframes page4 {
+    0%   {opacity: 0; top: 150px; right:2%;}
+    100% {opacity:1; top: 170px; right:2%;}
+}
+
+@-moz-keyframes page4 {
+    0%   {opacity: 0; top: 150px; right:2%;}
+    100% {opacity:1; top: 170px; right:2%;}
+}
+
+@keyframes page4 {
+    0%   {opacity: 0; top: 150px; right:2%;}
+    100% {opacity:1; top: 170px; right:2%;}
+}
+
+@-webkit-keyframes page5 {
+    0%   {opacity: 0; bottom:10%; left:52%;}
+    100% {opacity:1; bottom:5%; left:52%;}
+}
+
+@-moz-keyframes page5  {
+    0%   {opacity: 0; bottom:10%; left:52%;}
+    100% {opacity:1; bottom:5%; left:52%;}
+}
+
+@keyframes page5 {
+    0%   {opacity: 0; bottom:10%; left:52%;}
+    100% {opacity:1; bottom:5%; left:52%;}
+}
+
+@-webkit-keyframes page6 {
+    0%   {opacity: 0; top: 100px; right:2%;}
+    100% {opacity:1; top: 120px; right:2%;}
+}
+
+@-moz-keyframes page6 {
+    0%   {opacity: 0; top: 100px; right:2%;}
+    100% {opacity:1; top: 120px; right:2%;}
+}
+
+@keyframes page6 {
+    0%   {opacity: 0; top: 100px; right:2%;}
+    100% {opacity:1; top: 120px; right:2%;}
+}
+
+@-webkit-keyframes page10 {
+    0%   {opacity: 0; bottom:10%; left:52%;}
+    100% {opacity:1; bottom:5%; left:52%;}
+}
+
+@-moz-keyframes page10 {
+    0%   {opacity: 0; bottom:10%; left:52%;}
+    100% {opacity:1; bottom:5%; left:52%;}
+}
+
+@keyframes page10 {
+    0%   {opacity: 0; bottom:10%; left:52%;}
+    100% {opacity:1; bottom:5%; left:52%;}
+}
+
+@-webkit-keyframes page13 {
+    0%   {opacity: 0; bottom:10%; left:52%;}
+    100% {opacity:1; bottom:5%; left:52%;}
+}
+
+@-moz-keyframes page13 {
+    0%   {opacity: 0; bottom:10%; left:52%;}
+    100% {opacity:1; bottom:5%; left:52%;}
+}
+
+@keyframes page13 {
+    0%   {opacity: 0; bottom:10%; left:52%;}
+    100% {opacity:1; bottom:5%; left:52%;}
+}
+
+@-webkit-keyframes page14 {
+    0%   {opacity: 0; bottom:10%; right:2%;}
+    100% {opacity:1; bottom:5%; right:2%;}
+}
+
+@-moz-keyframes page14 {
+    0%   {opacity: 0; bottom:10%; right:2%;}
+    100% {opacity:1; bottom:5%; right:2%;}
+}
+
+@keyframes page14 {
+    0%   {opacity: 0; bottom:10%; right:2%;}
+    100% {opacity:1; bottom:5%; right:2%;}
+}
+
+@-webkit-keyframes page15 {
+    0%   {opacity: 0; top: 100px; right:2%;}
+    100% {opacity:1; top: 120px;  right:2%;}
+}
+
+@-moz-keyframes page15 {
+    0%   {opacity: 0; top: 100px;  right:2%;}
+    100% {opacity:1; top: 120px;  right:2%;}
+}
+
+@keyframes page15 {
+    0%   {opacity: 0; top: 100px;  right:2%;}
+    100% {opacity:1; top: 120px;  right:2%;}
+}
+
+@-webkit-keyframes page23 {
+    0%   {opacity: 0; bottom:10%; left:52%;}
+    100% {opacity:1; bottom:5%; left:52%;}
+}
+
+@-moz-keyframes page23 {
+    0%   {opacity: 0; bottom:10%; left:52%;}
+    100% {opacity:1; bottom:5%; left:52%;}
+}
+
+@keyframes page23 {
+    0%   {opacity: 0; bottom:10%; left:52%;}
+    100% {opacity:1; bottom:5%; left:52%;}
+}
+
+#prowler-advertise-magazine h1 {background:url('/media/p9g1o0kwss2jcr/source/ESPERIA_Lines.png')!important; padding: 65px 0px 50px 0px; background-repeat:no-repeat!important;}
+
+@media (min-aspect-ratio: 16/9) { 
+
+.bb-bookblock{max-height:none!important;}
+ }
+
+.bio p {
+font-style:italic!important;
+padding-left: 50px!important;
+font-size: 16px!important;
+font-weight: 100!important;
+}
+</style>
+
+<script type="text/javascript">
+  /* JS from ATOM */
+  
+</script>
+
+
+
+
+    
+
+  <style>
+    
+      background:url(/rsi/static/images/noisebg.gif) repeat center top #000b11;
+    
+  </style>
+
+    <link href="//fonts.googleapis.com/css?family=Electrolize|Orbitron:400,500,700|Quantico|Share+Tech+Mono&display=swap" rel="stylesheet" type="text/css">
+
+    <link href="/cache/en/rsi-css.css?v=6.0.1" media="all" rel="stylesheet">
+
+
+  </head>
+  <body id="" class="" >
+
+    
+      <div class="l-notification-bar l-notification-bar--rsi js-notification-bar" id="notification-bar-root">
+  <c-notification-bar v-bind:latestagreementsslugs=[] v-bind:loggedin="0" v-bind:onhomepage="0"></c-notification-bar>
+  <div class="l-notification-container l-notification-bar__boxes js-notification-bar-boxes">
+    <div class="l-notification__wrapper">
+      
+      <c-unsupported-browser v-cloak>
+        <div class="l-notification-bar__box js-notification-bar-box">
+          <div class="c-notification  c-notification--browser-support js-bottom-notif-msg-browser-support">
+  <div class="c-notification__inner">
+
+    <div class="c-notification__content">
+      <div class="c-notification__title">
+        IE11 is no longer supported
+      </div>
+      <div class="c-notification__message">
+        We do not support Internet Explorer 11 and below. Please use a different web browser.
+      </div>
+    </div>
+
+    <div class="c-notification__actions">
+      
+      
+          </div>
+
+  </div>
+</div>
+        </div>
+      </c-unsupported-browser>
+    </div>
+  </div>
+
+</div>
+    
+
+    <div id="bodyWrapper">
+      <header class='c-header-wrapper c-header-wrapper--rsi js-header-wrapper '  id='cross-brand-header'>
+  <div id="platform-bar" class="c-header__platform-bar"></div>
+
+      <div class='c-right-sidebar c-right-sidebar--signin' id="account-sidebar">
+      <div class="js-toggle-account__backdrop invisible"></div>
+
+      <a href="#" class='c-right-sidebar__back js-toggle-account'>Back
+        <span></span>
+        <span></span>
+      </a>
+
+      <div id="enlist-root" data-theme="rsi" data-enlisting="" data-ptu=""></div>
+      <script type="text/javascript" src='/rsi/static/packages/enlist/rsi.enlist.build.0ff8b.js'></script>
+    </div>
+  
+  <div class="c-header-wrapper__backdrop js-toggle-games"></div>
+</header>
+
+<div id="platform-backdrop"></div>
+
+<script type='text/javascript'>
+  RSI.Platformbar = {
+    theme: "rsi",
+    loggedState: "logged-out",
+    tabs: [
+      {
+        type: 'brands',
+        name: "Games",
+        subItems: [
+          {
+            name: "sc",
+            href: "/star-citizen",
+            description: "Join the Universe"
+          },
+          {
+            name: "s42",
+            href: "/squadron42",
+            description: "Start the adventure"
+          },
+          {
+            name: "rsi",
+            href: "/",
+            description: "Follow the Development"
+          }
+        ]
+      },
+      {
+        type: 'apps',
+        name: "Apps",
+        subItems: [
+          [
+            {
+              name: "Spectrum",
+              href: "/spectrum/community/SC",
+              description: "Your communication platform"
+            },
+            {
+              name: "Launcher",
+              href: "/download",
+              description: "Download Star Citizen",
+                          }
+          ],
+          [
+            {
+              name: "Roadmap",
+              href: "/roadmap",
+              description: "Keep track of the development"
+            },
+            {
+              name: "Telemetry",
+              href: "/telemetry",
+              description: "Keep track of the player’s performance"
+            },
+            {
+              name: "Issue Council",
+                          href: "https://issue-council.robertsspaceindustries.com",
+                          description: "Help us make the game better",
+                          }
+          ],
+          [
+            {
+              name: "Starmap",
+              href: "/starmap",
+              description: "Your map to the universe"
+            },
+            {
+              name: "Galactapedia",
+              href: "/galactapedia",
+              description: "Your guide to the universe"
+            }
+          ]
+        ]
+      },
+          ],
+    navigation: {
+      store: {
+        name: "Pledge Store",
+        href: "/pledge",
+        isHidden: false      },
+      hub: {
+        name: "Learn How to Play",
+        href: "/playstarcitizen",
+        show: false      },
+      support: {
+        name: "Support",
+        href: "//support.robertsspaceindustries.com"
+      },
+      account: {
+        name: "Account",
+        href: "/account/settings",
+        isHidden: false      }
+    }
+  };
+
+  $(document).ready(function() {
+    window.header = new RSI.Header({});
+  });
+</script>
+
+
+      
+  
+<header class='c-brand-menu c-brand-menu----rsi' id='brand-menu'>
+  <span class="c-brand-menu__section">
+    
+      Roberts Space Industries
+    
+  </span>
+  <div class="c-brand-menu__backdrop"></div>
+  <nav class="c-brand-menu__container">
+    <div class="c-brand-menu__logo">
+      <a href="/"><span class="h-svg h-svg__logo-rsi--fullcolor js-svg-inliner"></span> </a>
+    </div>
+    <div class="c-brand-menu__items-container">
+      <ul class="c-brand-menu__items">
+                <li class="c-brand-menu__item  ">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/comm-link">
+            <span class="c-brand-menu__item-text">Comm-Link</span>
+                                  </a>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/community">
+            <span class="c-brand-menu__item-text">Community</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Community</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/spectrum" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Spectrum
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/orgs" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Organizations
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/leaderboards/top" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Leaderboards
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community_events" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Event
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Hub
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/fankit" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Fankit
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/development">
+            <span class="c-brand-menu__item-text">Development</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Development</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/roadmap" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Roadmap
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/devtracker" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Dev Tracker
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/telemetry" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Telemetry
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="https://issue-council.robertsspaceindustries.com" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Issue Council
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/patch-notes" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Patch Notes
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/ship-matrix" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Ship Matrix
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/funding-goals" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Funding
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+              </ul>
+    </div>
+
+    <div class="c-brand-menu__cta">
+      
+        <a href="/star-citizen/play-now" class="c-brand-cta-btn js-google-analytics-event-tracker"
+          data-event-category="FlyNow" data-event-label="navMenuClick">
+          <div></div>
+            <span class="c-brand-cta-btn__text">
+              <strong>Play now</strong>
+            </span>
+          <div></div>
+        </a>
+      
+    </div>
+  </nav>
+</header>
+
+
+
+      
+
+  
+  <div class="page-wrapper">
+    
+  <div id="post-background" ></div>
+
+
+    <div id="contentbody" class="" style="">
+      
+
+<div id="post">
+  <div class="title-section">
+    
+      <div class="wrapper title-bar-container">
+        <div class="glow left"></div>
+        <div class="title-bar">
+          <div class="title with-subtitle">
+            <h1>Transmission</h1>
+            <h2>General</h2>
+          </div>
+          <div class="details">
+            <div>
+              <h3>ID:</h3>
+              <p>15602</p>
+              <div class="cboth"></div>
+            </div>
+            <div>
+              <h3>Comments:</h3>
+              <p class="comment-count">132</p>
+              <div class="cboth"></div>
+            </div>
+            <div>
+              <h3>Date:</h3>
+              <p>November 19th 2016</p>
+              <div class="cboth"></div>
+            </div>
+            <div></div>
+          </div>
+          <div class="cboth"></div>
+        </div>
+        <div class="glow right"></div>
+      </div>
+    
+  <div class="title-container">
+    <div class="title no-subtitle">Intergalactic Aerospace Expo, Day Two: RSI</div>
+      </div>
+
+  </div>
+
+  
+  <div class="lightbar toplightbar">
+    <div class="lightbarlights"></div>
+    <div class="footershadow"></div>
+  </div>
+
+
+  <div class="parallax-block">
+
+<div class="mb-full parallax parallax-1"></div>
+
+<div class="wrapper"><div class="content-block1 rsi-markup"><div class="segment"><div class="content"><div class="embed-container youtube">
+  <iframe width="640" height="360" src="//www.youtube.com/embed/3FSFjR0p4Z8?wmode=transparent" frameborder="0" allowfullscreen></iframe>
+</div>
+</div><div class="cboth"></div></div><div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+<div class="wrapper"><div class="content-block1 rsi-markup">
+<div  class=' segment' ><div class="content"><p><div class="variant-block"></p>
+
+<h1><div class="glow-box"></div>A Word from Roberts Space Industries</h1><hr/>
+
+<a class="image  js-open-in-slideshow" data-id="g56e8zto6s4lhr" data-full_res="/media/g56e8zto6s4lhr/source/RSI-Logo.JPG" data-low_res="/media/g56e8zto6s4lhr/slideshow_pager/RSI-Logo.JPG" data-source_url="/media/g56e8zto6s4lhr/source/RSI-Logo.JPG" rel="post"><img src="/media/g56e8zto6s4lhr/post/RSI-Logo.JPG" alt="" /></a>
+
+<p><span class="initial">I</span>t’s hard to think that it’s been over 800 years since <span class="caps">RSI</span> revealed the Zeus and forever altered Human history by making space travel available to the masses. A lot has changed since those early days, but <span class="caps">RSI</span>’s commitment to producing excellent and reliable spacecraft has not.</p>
+
+<p>From our award-winning Aurora to the iconic Constellation, <span class="caps">RSI</span> has a spaceship to fit your needs. Yet, we don’t let our extensive experience keep us from innovating. Constant upgrades and improvements have kept <span class="caps">RSI</span> ships on the cutting edge for centuries. To put it simply, we know what it takes to make a great ship because nobody’s done it as long as us.</p>
+
+<p><span class="caps">RSI</span> is thrilled to be a part of the Intergalactic Aerospace Expo to not only celebrate our proud history of “Delivering the Stars” but to show you all we have planned for the years to come.</p>
+
+<div class="clearfix"></div>
+
+<a class="image  js-open-in-slideshow" data-id="7yyotp9oydkv0r" data-full_res="/media/7yyotp9oydkv0r/source/Frontal_whiteroom-1.png" data-low_res="/media/7yyotp9oydkv0r/slideshow_pager/Frontal_whiteroom-1.png" data-source_url="/media/7yyotp9oydkv0r/source/Frontal_whiteroom-1.png" rel="post"><img src="/media/7yyotp9oydkv0r/vault_thumb/Frontal_whiteroom-1.png" alt="" /></a>
+
+<h3>Where are they now?</h3>
+
+<p>The Constellation Aquila is undergoing her final space trials with plans to launch for Star Citizen Alpha 3.0. The <span class="caps">RSI</span> Orion mining platform is still in the concept stage, but will enter production as we roll out larger mining mechanics. The current set of Aurora starters will receive a polish pass to bring them to the current standard for flight ready ships and the remaining two Constellation models, the Taurus transport and the Phoenix luxury ship, are scheduled to have their flight passes in the coming months.</p>
+
+<div class="clearfix"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="clearfix"></div>
+
+<h3><span class="caps">RSI</span> Intro Pack</h3>
+
+<p>This introductory collection of ships from Roberts Space Industries features an Aurora CL and Constellation Aquila. Everything you need to get around this system and the next.</p>
+
+
+
+<div class="clearfix"></div>
+
+<h3><span class="caps">RSI</span> Mega Pack</h3>
+
+<p>Featuring a full range of ships from Roberts Space Industries, this select package offers something for everyone from luxurious rides to hardworking hulls.</p>
+
+
+
+<div class="clearfix"></div>
+
+<h3>The Gladius Valiant</h3>
+
+<p>Created as part of the ‘Masters of Flight’ series in conjunction with the flight-sim Arena Commander, the Valiant pays tribute to famed defense pilot Condi Hillard for being the first Human on record to defeat a Vanduul in combat. This Gladius comes equipped with a specialized dogfighting focused loadout and a custom special edition livery honoring her iconic ship.</p>
+
+
+
+
+<div class="clearfix"></div>
+
+<h3>Meet the Pilot</h3>
+
+<p><div class="bio"></p>
+
+<p>Condi Hillard never expected to be on the frontlines of an interspecies conflict when she bought an old Aegis Gladius from a scrapyard in 2677. Looking for a vessel she could leverage into a job, Hillard had fixed up and outfitted the old hull herself and found work in the Orion system as a security contractor for Orion Defense Protection. For the next 4 years, she was assigned to a distant outpost and things were relatively quiet for Hillard as she mostly dealt with scrubbers, roundhats, or pilots who had too much to drink. That changed the day Vanduul attacked Armitage.</p>
+
+<p>This being the first time Humanity had ever encountered the Vanduul, no one was sure at that point if the attack on Armitage was going to be an isolated incident or the start of something greater. Most settlements in the system decided to wait and see as the <span class="caps">UEE</span> dispatched resources to study the new threat. It was two weeks later when a Vanduul raiding party attacked Hillard’s outpost.</p>
+
+<p>Luckily, Hillard had increased her patrolling so she was ready when the clutch of Scythe appeared on her scans. Utilizing the mobility of her Gladius, Hillard was able to lead her team to destroy the Vanduul ships before they could strike the heart of the outpost. Only 15 lives were lost in the raid, and Hillard and her compatriots became the first pilots to successfully defeat a Vanduul force. It was in large part thanks to her success that the Navy decided to dispatch Squadron 36 to the system where the Gladius unit would eventually develop their highly effective ‘carry and leap’ technique. In recognition of Condi Hillard’s bravery and resourcefulness, a limited edition Gladius with a special tactical loadout has been issued that will proudly bear her name.</p>
+
+<p></div></p></div><div class="cboth"></div></div>
+<div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+<div class="wrapper"><div class="hr"></div><div class="content-block4"><div class="content"><div class="top"></div><h1>Capital Ships</h1><div class="cboth"></div></div><div class="bottom"></div></div><div class="content-block1 rsi-markup"><div class="segment"><div class="content"><div class="embed-container youtube">
+  <iframe width="640" height="360" src="//www.youtube.com/embed/iGWggc7KjJE?wmode=transparent" frameborder="0" allowfullscreen></iframe>
+</div>
+</div><div class="cboth"></div></div><div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+<div class="wrapper"><div class="content-block1 rsi-markup">
+<div  class=' segment' ><div class="content"><h3>Capital Ships</h3>
+
+<p><span class="initial">A</span>s announced during the anniversary livestream, a limited number of Idris-P and Javelin class capital ships will be available over the weekend. <span class="caps">UEE</span> War Bond editions will be available in four allotments to allow Citizens around the world an opportunity. Each allotment will include 200 Idris-P frigates and 50 Javelin destroyers. War Bond times are 3pm Pacific on Friday, 9pm Pacific on Friday, 3am Pacific on Saturday and 9am Pacific on Sunday. A final allotment which may be purchased with store credit will be available at 9am Pacific on Sunday.</p>
+
+
+
+
+<div class="clearfix"></div></div><div class="cboth"></div></div>
+<div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+<div class="wrapper"><div class="hr"></div><div class="content-block4"><div class="content"><div class="top"></div><h1>Big Guns of the UEE</h1><div class="cboth"></div></div><div class="bottom"></div></div><div class="content-block1 rsi-markup"><div class="segment"><div class="content"><div class="embed-container youtube">
+  <iframe width="640" height="360" src="//www.youtube.com/embed/Rp43tiIpi4Y?wmode=transparent" frameborder="0" allowfullscreen></iframe>
+</div>
+</div><div class="cboth"></div></div><div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+<div class="wrapper"><div class="content-block1 rsi-markup">
+<div  class=' segment' ><div class="content"><h1><div class="glow-box"></div><span class="caps">SALE</span> <span class="caps">SCHEDULE</span></h1><hr/>
+
+<h3>Day Three &#8211; <span class="caps">SUNDAY</span>, <span class="caps">NOVEMBER</span> 20th – <span class="caps">DRAKE</span> <span class="caps">INTERPLANETARY</span> &amp; <span class="caps">GLADIUS</span> <span class="caps">VALIANT</span></h3>
+
+
+<h3>Day Four &#8211; <span class="caps">MONDAY</span>, <span class="caps">NOVEMBER</span> 21st &#8211; <span class="caps">MISC</span> &amp; <span class="caps">HORNET</span> <span class="caps">WILDFIRE</span></h3>
+
+
+<h3>Day Five &#8211; <span class="caps">TUESDAY</span>, <span class="caps">NOVEMBER</span> 22nd &#8211; <span class="caps">ANVIL</span> <span class="caps">AEROSPACE</span> &amp; <span class="caps">HORNET</span> <span class="caps">WILDFIRE</span></h3>
+
+
+<h3>Day Six &#8211; <span class="caps">WEDNESDAY</span>, <span class="caps">NOVEMBER</span> 23rd &#8211; <span class="caps">ORIGIN</span> <span class="caps">JUMPWORKS</span> &amp; <span class="caps">AVENGER</span> <span class="caps">TITAN</span> <span class="caps">RENEGADE</span></h3>
+
+
+<h3>Day Seven &#8211; <span class="caps">THURSDAY</span>, <span class="caps">NOVEMBER</span> 24th &#8211; <span class="caps">EXOTIC</span> <span class="caps">MANUFACTURERS</span> &amp; <span class="caps">AVENGER</span> <span class="caps">TITAN</span> <span class="caps">RENEGADE</span></h3>
+
+
+<h3>Day Eight &#8211; <span class="caps">FRIDAY</span>, <span class="caps">NOVEMBER</span> 25th &#8211; <span class="caps">AEGIS</span> <span class="caps">DYNAMICS</span> &amp; <span class="caps">SABRE</span> <span class="caps">COMET</span></h3>
+
+
+<h3>Day Nine &#8211; <span class="caps">SATURDAY</span>, <span class="caps">NOVEMBER</span> 26TH &#8211; <span class="caps">GRAND</span> <span class="caps">FINALE</span></h3>
+
+
+<p></div></p></div><div class="cboth"></div></div>
+<div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+<div style="background:url(https://robertsspaceindustries.com/media/uzmq5wict2gztr/source/ESPERIA_thin.png) no-repeat center 10px; padding-top:208px;">
+</div>
+
+<div class="wrapper"><div class="hr"></div><div class="content-block4"><div class="content"><div class="top"></div><h1>The Esperia Prowler</h1><div class="cboth"></div></div><div class="bottom"></div></div><div class="content-block1 rsi-markup"><div class="segment"><div class="content"><div class="embed-container youtube">
+  <iframe width="640" height="360" src="//www.youtube.com/embed/5gurYlfsB-M?wmode=transparent" frameborder="0" allowfullscreen></iframe>
+</div>
+</div><div class="cboth"></div></div><div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+<div class="wrapper"><div class="content-block1 rsi-markup">
+<div  class=' segment' ><div class="content"><p><div class="variant-block"></p>
+
+<h2><div class="glow-box"></div><span class="caps">THE</span> <span class="caps">ESPERIA</span> <span class="caps">PROWLER</span></h2><hr/>
+
+<a class="image  js-open-in-slideshow" data-id="7bfkjju9od5btr" data-full_res="/media/7bfkjju9od5btr/source/Esperia_Prowler_SHOT_Sarah.jpg" data-low_res="/media/7bfkjju9od5btr/slideshow_pager/Esperia_Prowler_SHOT_Sarah.jpg" data-source_url="/media/7bfkjju9od5btr/source/Esperia_Prowler_SHOT_Sarah.jpg" rel="post"><img src="/media/7bfkjju9od5btr/post/Esperia_Prowler_SHOT_Sarah.jpg" alt="" /></a>
+
+<p><span class="initial">S</span>traight from annals of history comes one of the most legendary ships of the First Tevarin War, beautifully and meticulously recreated by the dedicated craftsman and astroengineers at Esperia. Designated “Prowler” by the <span class="caps">UPE</span> Navy pilots who first encountered it in battle, this Tevarin armored personnel carrier developed a fearsome reputation for infiltrating enemy stations and ships and delivering teams of Naulle, elite Tevarin boarders, to wreak havoc on unsuspecting Humans.</p>
+
+<p>Now, centuries later, Esperia is making this unique ship once again available to collectors and military enthusiasts alike, preserving the feel and design of the Tevarin original while updating it to modern standards of efficiency and safety. And like all of Esperia’s ships, these are more than mere showpieces, these works of art were made to fly.</p>
+
+<p></div></p>
+
+<div class="clearfix"></div>
+
+<p><div class="variant-block"></p>
+
+<h2><div class="glow-box"></div>Behind Enemy Lines</h2><hr/>
+
+<p><div class="img-left"></p>
+
+<a class="image  js-open-in-slideshow" data-id="pilvxc5kwkzd7r" data-full_res="/media/pilvxc5kwkzd7r/source/Esperia_Prowler_SHOT_02b.jpg" data-low_res="/media/pilvxc5kwkzd7r/slideshow_pager/Esperia_Prowler_SHOT_02b.jpg" data-source_url="/media/pilvxc5kwkzd7r/source/Esperia_Prowler_SHOT_02b.jpg" rel="post"><img src="/media/pilvxc5kwkzd7r/hub_tile/Esperia_Prowler_SHOT_02b.jpg" alt="" /></a>
+
+<p></div></p>
+
+<p>There is a reason that the Prowler made its mark on history. At the time, the ship was one of the most advanced and cutting edge pieces of combat technology to grace a battlefield, and Esperia’s Prowler continues that tradition today. An ideal vessel for infiltration, boarding, troop deployment, extraction, fleet security and stealth missions, the Prowler’s distinctive hull can not only hold 16 persons, but it can rapidly deploy them thanks to its series of airshield portals. While common today, airshields were first developed by the Tevarin and changed the face of war thanks to the ease in which their troops could move in and out of the Prowler.</p>
+
+<p>Overall, the Tevarin’s expertise in shields far outpaced Humanities own as exemplified by the Phalanx Shield that comes standard with the Prowler. A point defense shield that provides a very strong but limited protective face, the Phalanx Shield was one of the reasons that the Prowler became such a significant defensive force when flown in a squad with shields deployed and its wide variety of defensive countermeasures at the ready.</p>
+
+<p>In addition, the Prowler’s Grav-Lev plates give additional flight control when traversing along uneven surfaces. This comes quite in handy when trying to position the Prowler alongside a large capital ship or inside a planetary fortification. As does the remote turret positioned along the upper spine for full 360 offense.</p>
+
+<p>From silently infiltrating an unsuspecting enemy hangar to charging in to get forces where they’re most needed, the Esperia Prowler is a piece of history ready to make a whole bunch more.  </p>
+
+<div class="clearfix"></div>
+
+<p><a class="ship-button" href="/pledge/ships/prowler/Esperia-Prowler" class="viewall trans-02s"><span>Visit the Prowler</span><span class="arrow arrow1"></span> <span class="arrow arrow2"></span><span class="arrow arrow3"></span></a></p>
+
+<br />
+
+
+<p></div></p></div><div class="cboth"></div></div>
+<div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+<div id="prowler-advertise-magazine">
+      <div class="wrapper">
+        <img src="https://robertsspaceindustries.com/media/fsy1qq7w4s5m8r/slideshow/00.png"/>
+        <div class="f-right">
+          <h1>REDISCOVER THE ESPERIA PROWLER</h1>
+          <p>Learn more about the Prowler with this Esperia catalog.</p>
+          <a class="js-magazine-open prowler-magazine">Read the brochure<span></span></a> <br><br><p>or</p> <a href="/media/dy3ea8fjrv3imr/source/Prowler-Manual-1980x1020v2.pdf" target="_blank">Download<span></span></a>
+        </div>
+        <span class="clear"></span>
+      </div>
+    </div>
+<div id="prowler-magazine" class="js-magazine"> 
+      <div class="js-magazine-close magazine-close"></div>
+<div class="fake">      
+<div id="bb-bookblock" class="bb-bookblock">
+
+        <div class="bb-item show" id="item1">
+          <div class="img img1">
+            
+          </div>
+        </div>
+        
+        <div class="bb-item" id="item3">
+          <div class="img img3">
+            
+          </div>
+        </div>
+        
+        <div class="bb-item" id="item4">
+          <div class="img img4">
+          
+          </div>
+        </div>
+        
+        <div class="bb-item" id="item5">
+          <div class="img img5">
+        
+          </div>
+        </div>
+        
+        <div class="bb-item" id="item6">
+          <div class="img img6">
+            
+          </div>
+        </div>
+        
+        <div class="bb-item" id="item7">
+          <div class="img img7">
+          
+          </div>
+        </div>
+        
+        <div class="bb-item" id="item8">
+          <div class="img img8">
+            
+          </div>
+        </div>
+        
+        <div class="bb-item" id="item9">
+          <div class="img img9">
+
+          </div>
+        </div>
+        
+        <div class="bb-item" id="item10">
+          <div class="img img10">
+            
+          </div>
+        </div>
+        
+        <div class="bb-item" id="item11">
+          <div class="img img11">
+
+          </div>
+        </div>
+        
+        <div class="bb-item" id="item12">
+          <div class="img img12">
+            
+          </div>
+        </div>
+        
+        <div class="bb-item" id="item13">
+          <div class="img img13">
+            
+          </div>
+        </div>
+        
+        <div class="bb-item" id="item14">
+          <div class="img img14">
+            
+          </div>
+        </div>
+        
+        <div class="bb-item" id="item15">
+          <div class="img img15">
+            
+          </div>
+        </div>
+        
+        <div class="bb-item" id="item16">
+          <div class="img img16">
+           
+          </div>
+        </div>
+        
+        <div class="bb-item" id="item17">
+          <div class="img img17">
+            
+          </div>
+        </div>
+        <div class="bb-item" id="item18">
+          <div class="img img18">
+            
+          </div>
+        </div>
+
+
+<div class="bb-item" id="item19">
+          <div class="img img19">
+            
+          </div>
+        </div>
+
+<div class="bb-item" id="item20">
+          <div class="img img20">
+           
+          </div>
+        </div>
+
+<div class="bb-item" id="item21">
+          <div class="img img21">
+           
+          </div>
+        </div>
+
+<div class="bb-item" id="item22">
+          <div class="img img22">
+           
+          </div>
+        </div>
+
+<div class="bb-item" id="item23">
+    <div class="img img23">
+
+    </div>
+  </div>
+
+      </div>
+      </div>
+      <span class="bb-nav" id="bb-nav-prev"></span>
+      <span class="bb-nav" id="bb-nav-next"></span>  
+    </div>
+    <script src="/rsi/static/js/sales/starfarer/modernizr.custom.79639.js"></script>
+
+<script src="/rsi/static/js/sales/sales.bookblock.js"></script>
+    <script>
+      $(function() {
+
+      Page.init();
+  window.Page = new RSI.Game.About();
+
+
+      });
+    </script>
+
+<br>
+
+<div class="wrapper">
+  <div class="hr"></div>
+  <div class="content-block4"><div class="content"><div class="top"></div><h1>Technical Overview</h1><div class="cboth"></div></div><div class="bottom"></div></div>
+  <div id="store-wrapper">
+    <section id="holo-viewer" class="wcontent">
+      <script type="text/javascript" src="/cache/en/rsi-3js.js?v=6.0.1"></script>
+<script type="text/javascript" src="/cache/en/rsi-ship-viewer.js?v=6.0.1"></script>
+<script type="text/javascript" src="/cache/en/rsi-ship-editor.js?v=6.0.1"></script>
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+     window.shiptech = new RSI.ShipSystemsView({
+       data: {"rowcount":1,"totalrows":1,"estimatedrows":false,"pagesize":0,"pagecount":null,"page":1,"offset":0,"startrow":0,"resultset":[{"id":"117","manufacturer_id":"69","offset_x":"0.00000","offset_y":"0.00000","offset_z":"0.00000","rotation_x":"0.00000","rotation_y":"0.00000","rotation_z":"0.00000","size":"medium","time_modified":"6 months ago","viewable":"1","name":"Prowler","manufacturer":{"id":"69","code":"ESPR","description":"Esperia is a human company specialized in creating Vanduul ship reproductions for war-time simulations. ","known_for":null,"name":"Esperia","media":[{"id":"1007602","cover_data":null,"depot":"LOCAL_MEDIA","depot_status":"R","derived_data":{"sizes":{"heap_note":{"width":24,"height":24,"mode":"resize-crop","delete":"1--1"},"heap_thumb":{"width":61,"height":61,"mode":"resize-crop","delete":"1--1"},"heap_infobox":{"width":165,"height":165,"mode":"resize-crop","delete":"1--1"},"bug_council_thumbnail":{"width":224,"height":140,"mode":"resize-crop","delete":"1--1"},"tavern_upload_mini":{"width":150,"height":100,"mode":"resize-crop"},"tavern_upload_square":{"width":250,"height":250,"mode":"resize"},"tavern_upload_small":{"width":400,"height":224,"mode":"resize"},"tavern_upload_medium":{"width":400,"height":400,"mode":"resize"},"tavern_upload_large":{"width":1680,"height":1050,"mode":"resize"},"post_section_header":{"width":1118,"height":351,"mode":"resize-crop"},"channel_item_full":{"width":1119,"height":600,"mode":"resize-crop"},"home_transmissions_item_expanded":{"width":530,"height":280,"mode":"resize-crop"},"subscribers_vault_thumbnail":{"width":216,"height":133,"mode":"resize-crop"},"slideshow":{"width":648,"height":366,"mode":"resize-crop"},"slideshow_pager":{"width":88,"height":50,"mode":"resize-crop"},"slideshow_wide":{"width":1200,"height":800,"mode":"resize"},"vault_thumb":{"width":335,"height":null,"mode":"resize"},"post":{"width":500,"height":null,"mode":"resize"},"wallpaper_thumb":{"width":620,"height":400,"mode":"resize-crop"},"product_thumb_large":{"width":341,"height":204,"mode":"resize-crop"},"product_thumb_medium_and_small":{"width":180,"height":150,"mode":"resize-crop"},"component_description":{"width":415,"height":null,"mode":"resize"},"product_thumb_in_description":{"width":350,"height":350,"mode":"resize-crop"},"product_thumb_shipmod":{"width":248,"height":188,"mode":"resize-crop"},"press_latest_post":{"width":509,"height":211,"mode":"resize-crop"},"store_small":{"width":351,"height":210,"mode":"resize-crop"},"store_large":{"width":818,"height":288,"mode":"resize-crop"},"store_hub_small":{"width":600,"height":210,"mode":"resize-crop"},"store_hub_large":{"width":1200,"height":420,"mode":"resize-crop"},"store_slideshow_small":{"width":800,"height":300,"mode":"resize-crop"},"store_slideshow_large":{"width":1140,"height":390,"mode":"resize-crop"},"store_slideshow_small_zoom":{"width":710,"height":516,"mode":"resize-crop"},"store_slideshow_large_zoom":{"width":1420,"height":1032,"mode":"resize-crop"},"store_thumb_listing_small":{"width":186,"height":63,"mode":"resize-crop"},"store_thumb_sku_detail":{"width":318,"height":248,"mode":"resize-crop"},"store_upgrade_half":{"width":400,"height":300,"mode":"resize-crop"},"avatar":{"width":76,"height":76,"mode":"resize-crop","delete":"1--1"},"banner":{"width":1140,"height":380,"mode":"resize-crop","delete":"1--1"},"cover":{"width":1140,"height":"","mode":"resize","delete":"1--1"},"logo":{"width":175,"height":175,"mode":"resize-crop","delete":"1--1"},"icon":{"width":45,"height":45,"mode":"resize-crop","delete":"1--1"},"background_blur":{"width":1366,"height":768,"mode":"resize-crop","delete":"1--1"},"texture":{"width":512,"height":512,"mode":"resize-crop"},"hub_large":{"width":1020,"height":"\\>","mode":"resize"},"hub_medium":{"width":360,"height":210,"mode":"resize-crop","delete":"1--1"},"hub_small":{"width":150,"height":90,"mode":"resize-crop","delete":"1--1"},"hub_tile":{"width":360,"height":355,"mode":"resize-crop","delete":"1--1"}}},"distant_id":null,"distant_source":null,"publish_end":null,"publish_start":null,"purpose":"full","slug":"11ovo1idsoe8d","source_duration":null,"source_extension":"png","source_name":"Esperia3","status":"P","tag_string":"","time_modified":"2017-06-23 19:32:21","type":"I","source_url":"\/media\/11ovo1idsoe8dr\/source\/Esperia3.png","source_stream":{"progressive":"\/media\/11ovo1idsoe8dr\/source\/Esperia3.png"},"images":{"heap_note":"\/media\/11ovo1idsoe8dr\/heap_note\/Esperia3.png","heap_thumb":"\/media\/11ovo1idsoe8dr\/heap_thumb\/Esperia3.png","heap_infobox":"\/media\/11ovo1idsoe8dr\/heap_infobox\/Esperia3.png","tavern_upload_emoji":"\/media\/11ovo1idsoe8dr\/tavern_upload_emoji\/Esperia3.png","tavern_upload_mini":"\/media\/11ovo1idsoe8dr\/tavern_upload_mini\/Esperia3.png","tavern_upload_square":"\/media\/11ovo1idsoe8dr\/tavern_upload_square\/Esperia3.png","tavern_upload_small":"\/media\/11ovo1idsoe8dr\/tavern_upload_small\/Esperia3.png","tavern_upload_medium":"\/media\/11ovo1idsoe8dr\/tavern_upload_medium\/Esperia3.png","tavern_upload_large":"\/media\/11ovo1idsoe8dr\/tavern_upload_large\/Esperia3.png","post_section_header":"\/media\/11ovo1idsoe8dr\/post_section_header\/Esperia3.png","channel_item_full":"\/media\/11ovo1idsoe8dr\/channel_item_full\/Esperia3.png","home_transmissions_item_expanded":"\/media\/11ovo1idsoe8dr\/home_transmissions_item_expanded\/Esperia3.png","subscribers_vault_thumbnail":"\/media\/11ovo1idsoe8dr\/subscribers_vault_thumbnail\/Esperia3.png","slideshow":"\/media\/11ovo1idsoe8dr\/slideshow\/Esperia3.png","slideshow_pager":"\/media\/11ovo1idsoe8dr\/slideshow_pager\/Esperia3.png","slideshow_wide":"\/media\/11ovo1idsoe8dr\/slideshow_wide\/Esperia3.png","vault_thumb":"\/media\/11ovo1idsoe8dr\/vault_thumb\/Esperia3.png","post":"\/media\/11ovo1idsoe8dr\/post\/Esperia3.png","wallpaper_thumb":"\/media\/11ovo1idsoe8dr\/wallpaper_thumb\/Esperia3.png","product_thumb_large":"\/media\/11ovo1idsoe8dr\/product_thumb_large\/Esperia3.png","product_thumb_medium_and_small":"\/media\/11ovo1idsoe8dr\/product_thumb_medium_and_small\/Esperia3.png","component_description":"\/media\/11ovo1idsoe8dr\/component_description\/Esperia3.png","product_thumb_in_description":"\/media\/11ovo1idsoe8dr\/product_thumb_in_description\/Esperia3.png","product_thumb_shipmod":"\/media\/11ovo1idsoe8dr\/product_thumb_shipmod\/Esperia3.png","press_latest_post":"\/media\/11ovo1idsoe8dr\/press_latest_post\/Esperia3.png","store_small":"\/media\/11ovo1idsoe8dr\/store_small\/Esperia3.png","store_large":"\/media\/11ovo1idsoe8dr\/store_large\/Esperia3.png","store_hub_small":"\/media\/11ovo1idsoe8dr\/store_hub_small\/Esperia3.png","store_hub_large":"\/media\/11ovo1idsoe8dr\/store_hub_large\/Esperia3.png","store_slideshow_small":"\/media\/11ovo1idsoe8dr\/store_slideshow_small\/Esperia3.png","store_slideshow_large":"\/media\/11ovo1idsoe8dr\/store_slideshow_large\/Esperia3.png","store_slideshow_small_zoom":"\/media\/11ovo1idsoe8dr\/store_slideshow_small_zoom\/Esperia3.png","store_slideshow_large_zoom":"\/media\/11ovo1idsoe8dr\/store_slideshow_large_zoom\/Esperia3.png","store_thumb_listing_small":"\/media\/11ovo1idsoe8dr\/store_thumb_listing_small\/Esperia3.png","store_thumb_sku_detail":"\/media\/11ovo1idsoe8dr\/store_thumb_sku_detail\/Esperia3.png","store_upgrade_half":"\/media\/11ovo1idsoe8dr\/store_upgrade_half\/Esperia3.png","sku_widget_thumbnail":"\/media\/11ovo1idsoe8dr\/sku_widget_thumbnail\/Esperia3.png","sku_widget_modal":"\/media\/11ovo1idsoe8dr\/sku_widget_modal\/Esperia3.png","avatar":"\/media\/11ovo1idsoe8dr\/avatar\/Esperia3.png","banner":"\/media\/11ovo1idsoe8dr\/banner\/Esperia3.png","cover":"\/media\/11ovo1idsoe8dr\/cover\/Esperia3.png","logo":"\/media\/11ovo1idsoe8dr\/logo\/Esperia3.png","icon":"\/media\/11ovo1idsoe8dr\/icon\/Esperia3.png","background_blur":"\/media\/11ovo1idsoe8dr\/background_blur\/Esperia3.png","texture":"\/media\/11ovo1idsoe8dr\/texture\/Esperia3.png","hub_large":"\/media\/11ovo1idsoe8dr\/hub_large\/Esperia3.png","hub_medium":"\/media\/11ovo1idsoe8dr\/hub_medium\/Esperia3.png","hub_small":"\/media\/11ovo1idsoe8dr\/hub_small\/Esperia3.png","hub_tile":"\/media\/11ovo1idsoe8dr\/hub_tile\/Esperia3.png","wallpaper_3840x2160":"\/media\/11ovo1idsoe8dr\/wallpaper_3840x2160\/Esperia3.png","wallpaper_1920x1080":"\/media\/11ovo1idsoe8dr\/wallpaper_1920x1080\/Esperia3.png","wallpaper_512x384":"\/media\/11ovo1idsoe8dr\/wallpaper_512x384\/Esperia3.png","wsc_event_thumb":"\/media\/11ovo1idsoe8dr\/wsc_event_thumb\/Esperia3.png","bug_council_thumbnail":"\/media\/11ovo1idsoe8dr\/bug_council_thumbnail\/Esperia3.png"},"membership.id":"5463871","membership.slot":"icon"}]},"propulsion":[{"id":"31462","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"fuel_intakes","ship_id":"117","size":"medium","quantity":"1","details":"","propulsion_id":"4","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","propulsion":{"id":"4","manufacturer_id":"80","size":"small","type":"fuel_intakes","name":"Fuel Intake","manufacturer":{"id":"80","known_for":null,"name":"TBD"}}},{"id":"31463","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"fuel_intakes","ship_id":"117","size":"medium","quantity":"1","details":"","propulsion_id":"4","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","propulsion":{"id":"4","manufacturer_id":"80","size":"small","type":"fuel_intakes","name":"Fuel Intake","manufacturer":{"id":"80","known_for":null,"name":"TBD"}}},{"id":"31464","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"fuel_tanks","ship_id":"117","size":"medium","quantity":"1","details":"","propulsion_id":"5","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","propulsion":{"id":"5","manufacturer_id":null,"size":"small","type":"fuel_tanks","name":"Fuel Tank","manufacturer":null}},{"id":"31465","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"fuel_tanks","ship_id":"117","size":"medium","quantity":"1","details":"","propulsion_id":"5","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","propulsion":{"id":"5","manufacturer_id":null,"size":"small","type":"fuel_tanks","name":"Fuel Tank","manufacturer":null}},{"id":"31466","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"quantum_drives","ship_id":"117","size":"medium","quantity":"1","details":"","propulsion_id":"6","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","propulsion":{"id":"6","manufacturer_id":"80","size":"small","type":"quantum_drives","name":"Quantum Drive","manufacturer":{"id":"80","known_for":null,"name":"TBD"}}},{"id":"31467","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"jump_modules","ship_id":"117","size":"medium","quantity":"1","details":"","propulsion_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","propulsion":{"id":"7","manufacturer_id":"80","size":"small","type":"jump_modules","name":"Jump Module","manufacturer":{"id":"80","known_for":null,"name":"TBD"}}},{"id":"31468","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"quantum_fuel_tanks","ship_id":"117","size":"medium","quantity":"1","details":"","propulsion_id":"8","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","propulsion":{"id":"8","manufacturer_id":null,"size":"small","type":"quantum_fuel_tanks","name":"Quantum Fuel Tank","manufacturer":null}}],"thrusters":[{"id":"53985","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"main_thrusters","ship_id":"117","size":"","quantity":null,"details":"","thruster_id":"6","model_x":"1110.00000","model_y":"505.00000","model_z":"-660.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"1","thruster":{"id":"6","manufacturer_id":null,"size":null,"type":"main_thrusters","name":"VTOL Thruster","manufacturer":null}},{"id":"53986","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"main_thrusters","ship_id":"117","size":"","quantity":null,"details":"","thruster_id":"6","model_x":"-1110.00000","model_y":"505.00000","model_z":"-660.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"1","thruster":{"id":"6","manufacturer_id":null,"size":null,"type":"main_thrusters","name":"VTOL Thruster","manufacturer":null}},{"id":"53987","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"main_thrusters","ship_id":"117","size":"","quantity":null,"details":"","thruster_id":"4","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"4","manufacturer_id":null,"size":null,"type":"main_thrusters","name":"Retro Thruster","manufacturer":null}},{"id":"53988","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"main_thrusters","ship_id":"117","size":"","quantity":null,"details":"","thruster_id":"4","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"4","manufacturer_id":null,"size":null,"type":"main_thrusters","name":"Retro Thruster","manufacturer":null}},{"id":"53989","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"maneuvering_thrusters","ship_id":"117","size":"","quantity":null,"details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"53990","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"maneuvering_thrusters","ship_id":"117","size":"","quantity":null,"details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"53991","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"maneuvering_thrusters","ship_id":"117","size":"","quantity":null,"details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"53992","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"maneuvering_thrusters","ship_id":"117","size":"","quantity":null,"details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"53993","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"maneuvering_thrusters","ship_id":"117","size":"","quantity":null,"details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"53994","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"maneuvering_thrusters","ship_id":"117","size":"","quantity":null,"details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"53995","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"maneuvering_thrusters","ship_id":"117","size":"","quantity":null,"details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"53996","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"maneuvering_thrusters","ship_id":"117","size":"","quantity":null,"details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"53997","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"maneuvering_thrusters","ship_id":"117","size":"","quantity":null,"details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"53998","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"maneuvering_thrusters","ship_id":"117","size":"","quantity":null,"details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"53999","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"maneuvering_thrusters","ship_id":"117","size":"","quantity":null,"details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"54000","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"maneuvering_thrusters","ship_id":"117","size":"","quantity":null,"details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"54001","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"maneuvering_thrusters","ship_id":"117","size":"","quantity":null,"details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"54002","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"maneuvering_thrusters","ship_id":"117","size":"","quantity":null,"details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"54003","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"maneuvering_thrusters","ship_id":"117","size":"","quantity":null,"details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"54004","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"maneuvering_thrusters","ship_id":"117","size":"","quantity":null,"details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"54005","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"maneuvering_thrusters","ship_id":"117","size":"","quantity":null,"details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}},{"id":"54006","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"maneuvering_thrusters","ship_id":"117","size":"","quantity":null,"details":"","thruster_id":"7","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","thruster":{"id":"7","manufacturer_id":null,"size":null,"type":"maneuvering_thrusters","name":"Fixed Maneuvering Thruster","manufacturer":null}}],"weapons":[{"id":"27190","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"weapons","ship_id":"117","size":"5","quantity":"1","details":"","weapon_id":"212","model_x":"333.00000","model_y":"40.00000","model_z":"-760.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"1","weapon":{"id":"212","manufacturer_id":"69","size":"4","type":"weapons","name":"Deadbolt IV","manufacturer":{"id":"69","known_for":null,"name":"Esperia"}}},{"id":"27191","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"weapons","ship_id":"117","size":"5","quantity":"1","details":"","weapon_id":"212","model_x":"-333.00000","model_y":"40.00000","model_z":"-760.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"1","weapon":{"id":"212","manufacturer_id":"69","size":"4","type":"weapons","name":"Deadbolt IV","manufacturer":{"id":"69","known_for":null,"name":"Esperia"}}},{"id":"27192","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"turrets","ship_id":"117","size":"3","quantity":"2","details":"Remote","weapon_id":"211","model_x":"0.00000","model_y":"337.98450","model_z":"-286.76660","cam_x":null,"cam_y":null,"cam_z":null,"visible":"1","weapon":{"id":"211","manufacturer_id":"69","size":"3","type":"weapons","name":"Lightstrike III","manufacturer":{"id":"69","known_for":null,"name":"Esperia"}}}],"modular":[{"id":"24342","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"power_plants","ship_id":"117","size":"medium","quantity":"1","details":"","modular_id":"16","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","modular":{"id":"16","manufacturer_id":"44","size":"medium","type":"power_plants","name":"Cirrus","manufacturer":{"id":"44","known_for":null,"name":"Tyler Design"}}},{"id":"24343","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"coolers","ship_id":"117","size":"medium","quantity":"1","details":"","modular_id":"17","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","modular":{"id":"17","manufacturer_id":"44","size":"medium","type":"coolers","name":"HeatSink","manufacturer":{"id":"44","known_for":null,"name":"Tyler Design"}}},{"id":"24344","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"coolers","ship_id":"117","size":"medium","quantity":"1","details":"","modular_id":"17","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","modular":{"id":"17","manufacturer_id":"44","size":"medium","type":"coolers","name":"HeatSink","manufacturer":{"id":"44","known_for":null,"name":"Tyler Design"}}},{"id":"24345","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"shield_generators","ship_id":"117","size":"medium","quantity":"1","details":"","modular_id":"45","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","modular":{"id":"45","manufacturer_id":"80","size":"medium","type":"shield_generators","name":"Shield Generator","manufacturer":{"id":"80","known_for":null,"name":"TBD"}}},{"id":"24346","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"shield_generators","ship_id":"117","size":"medium","quantity":"1","details":"","modular_id":"45","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","modular":{"id":"45","manufacturer_id":"80","size":"medium","type":"shield_generators","name":"Shield Generator","manufacturer":{"id":"80","known_for":null,"name":"TBD"}}}],"avionics":[{"id":"11792","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"radar","ship_id":"117","size":"medium","quantity":"1","details":"","avionic_id":"1","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","avionic":{"id":"1","manufacturer_id":"80","size":"small","type":"radar","name":"Radar","manufacturer":{"id":"80","known_for":null,"name":"TBD"}}},{"id":"11793","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"radar","ship_id":"117","size":"medium","quantity":"1","details":"","avionic_id":"3","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","avionic":{"id":"3","manufacturer_id":"80","size":"medium","type":"radar","name":"Radar","manufacturer":{"id":"80","known_for":null,"name":"TBD"}}},{"id":"11794","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"computers","ship_id":"117","size":"medium","quantity":"1","details":"","avionic_id":"13","model_x":"0.00000","model_y":"0.00000","model_z":"0.00000","cam_x":null,"cam_y":null,"cam_z":null,"visible":"0","avionic":{"id":"13","manufacturer_id":"80","size":"small","type":"computers","name":"Computer","manufacturer":{"id":"80","known_for":null,"name":"TBD"}}}],"poi":[{"id":"26677","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"cockpit","ship_id":"117","name":"Cockpit","model_x":"-23.92020","model_y":"-122.33800","model_z":"-1478.46510","cam_x":null,"cam_y":null,"cam_z":null,"visible":"1"},{"id":"26678","time_created":"2020-11-03 23:56:47","time_modified":"2020-11-03 23:56:47","type":"general","ship_id":"117","name":"Troop Area","model_x":"-18.33670","model_y":"-151.91450","model_z":"-46.07920","cam_x":null,"cam_y":null,"cam_z":null,"visible":"1"}],"time_modified.unfiltered":"2020-11-03 23:56:47"}]}.resultset[0],
+       model_3d: 'https://media.robertsspaceindustries.com/fdxvamrt7opj4/source.ctm'     });
+    
+     new RSI.Components.SVG({
+       target: '.c-specbox__background'
+     });
+    
+  });
+</script>
+
+
+<div class="holo-container explorer v-primary-font-family">
+  <div class="main-view">
+    <h2><span>Prowler</span></h2>
+
+    <button class="fullscreen" title="Fullscreen"><span>Fullscreen</span></button>
+
+    <div class="c-manufacturer">
+    <label class="c-manufacturer__heading">Manufacturer:</label>
+          <div class="c-manufacturer__logo" style="background-image: url('/media/11ovo1idsoe8dr/post/Esperia3.png');"/></div>
+
+    
+  </div>
+
+    <div class="c-tabs">
+
+      <div class="c-tabs__tab c-tabs__tab--centered v-primary-font-color" data-triggered="specifications">
+          <div class="l-sheet v-primary-font-color ">
+  <h3 class="l-sheet__header h-font-glow">Model</h3>
+
+  <div class="l-sheet__block">
+    <h4>Focus</h4>
+    <p>Dropship</p>
+
+    <h4>Description</h4>
+    <p>Named after the UPE military designation, the Prowler is a modernized version of the infamous Tevarin armored personnel carrier. Esperia’s astroengineers were given unmitigated access to study original versions of the ship recently discovered in the Kabal system to help meticulously reconstruct the vehicle. Now, the Prowler is the perfect fusion of two cultures: the elegance and effectiveness of the Tevarin war machine combined with the reliability of modern Human technology.   
+</p>
+  </div>
+
+</div>
+
+<div class="l-sheet l-sheet--narrow">
+  <h3 class="l-sheet__header h-font-glow">Measurement</h3>
+
+  <div class="l-sheet__block">
+    <h4>Length</h4>
+    <p>34.0m
+
+    <h4>Beam</h4>
+    <p>32.0m
+
+    <h4>Height</h4>
+    <p>15.0m
+
+    <h4>Size</h4>
+    <p>
+              Medium
+          </p>
+
+    <h4>Mass</h4>
+    <p>171,700kg
+  </div>
+</div>
+
+
+<div class="l-sheet l-sheet--narrow">
+  <h3 class="l-sheet__header h-font-glow">Structural</h3>
+
+  <div class="l-sheet__block">
+    <h4>Cargo Capacity</h4>
+    <p>0</p>
+
+    <h4>SCM Speed</h4>
+    <p>
+      178 m/s
+    </p>
+
+    <h4>Afterburner Speed</h4>
+    <p>
+       1,116 m/s
+    </p>
+
+    <h4>Min Crew</h4>
+    <p>2</p>
+
+    <h4>Max Crew</h4>
+    <p>2</p>
+  </div>
+</div>
+
+<div class="l-sheet l-sheet--narrow">
+  <h3 class="l-sheet__header h-font-glow">Maneuvering</h3>
+
+  <div class="l-sheet__block">
+    <h4>Pitch Max</h4>
+    <p>
+      - deg/s
+    </p>
+
+    <h4>Yaw Max</h4>
+    <p>
+      - deg/s
+    </p>
+
+    <h4>Roll Max</h4>
+    <p>
+      - deg/s
+    </p>
+
+    <h4>X-Axis Acceleration</h4>
+    <p>
+      - m/s/s
+    </p>
+
+    <h4>Y-Axis Acceleration</h4>
+    <p>
+      - m/s/s
+    </p>
+
+    <h4>Z-Axis Acceleration</h4>
+    <p>
+      - m/s/s
+    </p>
+  </div>
+</div>
+      </div>
+
+      <div class="c-tabs__tab c-tabs__tab--systems v-primary-font-color c-tabs__tab--active " data-triggered="systems">
+          <div class="l-sheet v-primary-fill">
+  <h3 class="l-sheet__header h-font-glow v-primary-font-glow">Avionics</h3>
+
+
+<div class="l-sheet__row">
+    <div class="l-sheet__cell l-sheet__cell--icon">
+        <div class="c-iconed">
+        <span class="c-iconed__icon c-iconed__icon--radar"></span>
+        </div>
+    </div>
+
+    <h4 class="l-sheet__cell l-sheet__cell--label">
+        Radar
+    </h4>
+
+    
+        </div>
+
+<div class="l-sheet__row">
+    <div class="l-sheet__cell l-sheet__cell--icon">
+        <div class="c-iconed">
+        <span class="c-iconed__icon c-iconed__icon--computers"></span>
+        </div>
+    </div>
+
+    <h4 class="l-sheet__cell l-sheet__cell--label">
+        Computers
+    </h4>
+
+    
+        </div>
+  <h3 class="l-sheet__header h-font-glow v-primary-font-glow">Systems</h3>
+
+
+<div class="l-sheet__row">
+    <div class="l-sheet__cell l-sheet__cell--icon">
+        <div class="c-iconed">
+        <span class="c-iconed__icon c-iconed__icon--power_plants"></span>
+        </div>
+    </div>
+
+    <h4 class="l-sheet__cell l-sheet__cell--label">
+        Power Plants
+    </h4>
+
+    
+        </div>
+
+<div class="l-sheet__row">
+    <div class="l-sheet__cell l-sheet__cell--icon">
+        <div class="c-iconed">
+        <span class="c-iconed__icon c-iconed__icon--coolers"></span>
+        </div>
+    </div>
+
+    <h4 class="l-sheet__cell l-sheet__cell--label">
+        Coolers
+    </h4>
+
+    
+        </div>
+
+<div class="l-sheet__row">
+    <div class="l-sheet__cell l-sheet__cell--icon">
+        <div class="c-iconed">
+        <span class="c-iconed__icon c-iconed__icon--shield_generators"></span>
+        </div>
+    </div>
+
+    <h4 class="l-sheet__cell l-sheet__cell--label">
+        Shield Generators
+    </h4>
+
+    
+        </div>
+</div>
+
+<div class="l-sheet v-primary-fill">
+  <h3 class="l-sheet__header h-font-glow v-primary-font-glow">Propulsion</h3>
+
+
+<div class="l-sheet__row">
+    <div class="l-sheet__cell l-sheet__cell--icon">
+        <div class="c-iconed">
+        <span class="c-iconed__icon c-iconed__icon--fuel_intakes"></span>
+        </div>
+    </div>
+
+    <h4 class="l-sheet__cell l-sheet__cell--label">
+        Fuel Intakes
+    </h4>
+
+    
+        </div>
+
+<div class="l-sheet__row">
+    <div class="l-sheet__cell l-sheet__cell--icon">
+        <div class="c-iconed">
+        <span class="c-iconed__icon c-iconed__icon--fuel_tanks"></span>
+        </div>
+    </div>
+
+    <h4 class="l-sheet__cell l-sheet__cell--label">
+        Fuel Tanks
+    </h4>
+
+    
+        </div>
+
+<div class="l-sheet__row">
+    <div class="l-sheet__cell l-sheet__cell--icon">
+        <div class="c-iconed">
+        <span class="c-iconed__icon c-iconed__icon--quantum_drives"></span>
+        </div>
+    </div>
+
+    <h4 class="l-sheet__cell l-sheet__cell--label">
+        Quantum Drives
+    </h4>
+
+    
+        </div>
+
+<div class="l-sheet__row">
+    <div class="l-sheet__cell l-sheet__cell--icon">
+        <div class="c-iconed">
+        <span class="c-iconed__icon c-iconed__icon--jump_modules"></span>
+        </div>
+    </div>
+
+    <h4 class="l-sheet__cell l-sheet__cell--label">
+        Jump Modules
+    </h4>
+
+    
+        </div>
+
+<div class="l-sheet__row">
+    <div class="l-sheet__cell l-sheet__cell--icon">
+        <div class="c-iconed">
+        <span class="c-iconed__icon c-iconed__icon--quantum_fuel_tanks"></span>
+        </div>
+    </div>
+
+    <h4 class="l-sheet__cell l-sheet__cell--label">
+        Quantum Fuel Tanks
+    </h4>
+
+    
+        </div>
+  <h3 class="l-sheet__header h-font-glow v-primary-font-glow">Thruster</h3>
+
+
+<div class="l-sheet__row">
+    <div class="l-sheet__cell l-sheet__cell--icon">
+        <div class="c-iconed">
+        <span class="c-iconed__icon c-iconed__icon--main_thrusters"></span>
+        </div>
+    </div>
+
+    <h4 class="l-sheet__cell l-sheet__cell--label">
+        Main Thrusters
+    </h4>
+
+    
+        </div>
+
+<div class="l-sheet__row">
+    <div class="l-sheet__cell l-sheet__cell--icon">
+        <div class="c-iconed">
+        <span class="c-iconed__icon c-iconed__icon--maneuvering_thrusters"></span>
+        </div>
+    </div>
+
+    <h4 class="l-sheet__cell l-sheet__cell--label">
+        Maneuvering Thrusters
+    </h4>
+
+    
+        </div>
+</div>
+
+<div class="l-sheet v-primary-fill">
+  <h3 class="l-sheet__header h-font-glow v-primary-font-glow">Weapons</h3>
+
+
+<div class="l-sheet__row">
+    <div class="l-sheet__cell l-sheet__cell--icon">
+        <div class="c-iconed">
+        <span class="c-iconed__icon c-iconed__icon--weapons"></span>
+        </div>
+    </div>
+
+    <h4 class="l-sheet__cell l-sheet__cell--label">
+        Weapons
+    </h4>
+
+    
+        </div>
+
+<div class="l-sheet__row">
+    <div class="l-sheet__cell l-sheet__cell--icon">
+        <div class="c-iconed">
+        <span class="c-iconed__icon c-iconed__icon--turrets"></span>
+        </div>
+    </div>
+
+    <h4 class="l-sheet__cell l-sheet__cell--label">
+        Turrets
+    </h4>
+
+    
+        </div>
+
+<div class="l-sheet__row">
+    <div class="l-sheet__cell l-sheet__cell--icon">
+        <div class="c-iconed">
+        <span class="c-iconed__icon c-iconed__icon--missiles"></span>
+        </div>
+    </div>
+
+    <h4 class="l-sheet__cell l-sheet__cell--label">
+        Missiles
+    </h4>
+
+    
+        </div>
+
+<div class="l-sheet__row">
+    <div class="l-sheet__cell l-sheet__cell--icon">
+        <div class="c-iconed">
+        <span class="c-iconed__icon c-iconed__icon--utility_items"></span>
+        </div>
+    </div>
+
+    <h4 class="l-sheet__cell l-sheet__cell--label">
+        Utility Items
+    </h4>
+
+    
+        </div>
+  <div class="l-sheet__row l-sheet__row--no-max-height">
+
+    <div class="c-legend">
+        <img src="/rsi/static/images/game/holo-viewer/legend.png" />
+    </div>
+  </div>
+</div>
+          <!-- holds the popup on the systems tab -->
+          <div class="component-details-container">
+            <div class="component-details">
+              <script type="text/template" id="c-popup-template">
+
+    <div class="c-popup v-primary-border v-primary-font-glow v-primary-font-color">
+        <div class="c-popup__close"></div>
+        <div class="c-popup__left c-popup__left--icon c-popup__left--border v-primary-border v-primary-fill">
+            <%=svg%>
+        </div>
+        <div class="c-popup__right c-popup__right--border v-primary-border">
+            <%=RSI.translate(component_class+"_type_"+type)%>
+        </div>
+
+        <% if (typeof details !== "undefined" && details) { %>
+            <div class="c-popup__left c-popup__left--border v-primary-border"><h4><%=RSI.translate(component_class+"_details_label_"+type,null,"Details")%></h4></div>
+            <div class="c-popup__right c-popup__right--border v-primary-border">
+                <%=(details)?details:"TBD"%>
+            </div>
+        <% } %>
+
+
+        <% if (typeof manufacturer !== "undefined" && manufacturer) { %>
+            <div class="c-popup__left"><h4><%=RSI.translate(component_class+"_manufacturer_label_"+type,null,"Manufacturer")%></h4></div>
+            <div class="c-popup__right"><%=manufacturer%>
+            </div>
+        <% } %>
+
+        <div class="c-popup__left"><h4><%=(slottype=="poi")?"Name":RSI.translate(component_class+"_model_label_"+type, false, "Model")%></h4></div>
+        <div class="c-popup__right">
+            <% if (typeof name !== "undefined" && name) { %>
+                <%=name%>
+            <% } else { %>
+                Available
+            <% } %>
+        </div>
+
+        <% if (component_size && component_size != "-" || size && size != "-") { %>
+        <div class="c-popup__left"><h4><%=RSI.translate(component_class+"_size_label_"+type,null,"Size")%></h4></div>
+        <div class="c-popup__right">
+            <% if (component_size && component_size != "-") { %>
+                <div>
+                    <span><%=component_size%></span>
+                    <em><%=RSI.translate(component_class+"_component_size_sublabel_"+type, false, "Installed")%></em>
+                </div>
+            <% } %>
+
+            <% if (size && size != "-") { %>
+                <div>
+                    <span><%=size%></span>
+
+                    <em><%=RSI.translate(component_class+"_size_sublabel_"+type, false, "Max")%> </em>
+                </div>
+            <% } %>
+        </div>
+        <% } %>
+
+        <% if (typeof mounts !== "undefined" && mounts || typeof quantity !== "undefined" && quantity) { %>
+        <div class="c-popup__left"><h4><%=RSI.translate(component_class+"_quantity_row_label_"+type,null,"Quantity")%></h4></div>
+        <div class="c-popup__right">
+            <% if (typeof quantity !== "undefined" && quantity) { %>
+                <div>
+                    <span><%=quantity%></span>
+                    <em><%=RSI.translate(component_class+"_mount_sublabel_"+type, false, "Per Mount")%> </em>
+                </div>
+            <% } %>
+
+            <% if (typeof mounts !== "undefined" && mounts) { %>
+                <div>
+                    <span><%=mounts%></span>
+                     <em><%=RSI.translate(component_class+"_mounts_sublabel_"+type, false, "Total Mounts")%></em>
+                </div>
+            <% } %>
+        </div>
+        <% } %>
+    </div>
+
+
+</script>            </div>
+          </div>
+      </div>
+
+
+      <div class="c-tabs__tab c-tabs__tab--holoviewer" data-triggered="viewer">
+        <div class="viewport">
+            <div class="-info-bar">
+    <div class="-info js-camera-location"></div>
+    <div class="-info js-marker-location"></div>
+  </div>
+
+  <!-- Animation de loading, images + progres bar -->
+  <div id="holo-load-container">
+    <div class="alveoles-prog-loader">
+      <div class="image-0"></div>
+      <div class="image-1"></div>
+      <div class="image-2"></div>
+      <div class="image-3"></div>
+    </div>
+    <div class="progress">
+        <div class="label_percent"></div>
+        <div class="label_message"></div>
+        <div><progress value="0" max="100"></progress></div>
+   </div>
+  </div>
+  <div class="js-webgl-error error">
+    <span></span>
+  Sorry! Your browser does not support WebGL or has WebGL deactivated. This viewer requires WebGL to operate.<br/><br/>
+  Please visit <a href="http://get.webgl.org/">WebGL.org</a> to get help for your current browser and graphics card.
+  </div>
+  <div class="js-ship-error error">
+    <span></span>
+    Sorry! This ship is not currently available in the Holo Viewer at this time.
+  </div>
+
+  <div class="info-sheet component-details">
+  </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="holo-controls l-holo-controls">
+
+
+  <ul class="holo-tabs c-control_tabs"><li class="c-control_tabs__tab" data-triggers="specifications"><button>Specifications</button></li><li class="c-control_tabs__tab c-control_tabs__tab--nomobile" data-triggers="viewer"><button >Holo viewer</button></li><li class="c-control_tabs__tab  c-control_tabs__tab--active active" data-triggers="systems"><button>Hardpoints</button></li></ul>
+
+
+  <div class="l-controls info viewer-mode" data-triggered="viewer">
+    <div class="l-controls__section control-mode"><h3>Cam view</h3><div class="actions"><button class="orbit js-toggle-orbit">Orbit</button><button class="free js-toggle-free">Free</button></div></div><div class="l-controls__section angle"><h3>View angle</h3><div class="actions"><button class="front js-view-front"><span>Front</span></button><button class="bottom js-view-bottom"><span>Bottom</span></button><button class="back js-view-back"><span>Back</span></button><button class="top js-view-top"><span>Top</span></button><button class="left js-view-left"><span>Left</span></button><button class="right js-view-right"><span>Right</span></button><button class="cockpit js-view-cockpit"><span>Cockpit</span></button></div></div><div class="l-controls__section l-controls__section--systems"><h3>Systems</h3><div class="c-actionlist c-actionlist--systems"><div class="c-actionlist__centered"><button class="c-actionlist__item js-toggle-system" data-type="avionic">Avionics</button><button class="c-actionlist__item js-toggle-system" data-type="modular">Systems</button><button class="c-actionlist__item js-toggle-system" data-type="propulsion">Propulsion</button><button class="c-actionlist__item js-toggle-system" data-type="thruster">Thruster</button><button class="c-actionlist__item js-toggle-system" data-type="weapon">Weapons</button><button class="c-actionlist__item js-toggle-system" data-type="poi">POI</button></div></div></div><div class="l-controls__section render"><h3>Render type</h3><div class="actions"><button class="x-ray js-toggle-xray">X-Ray</button><button class="wire js-toggle-wires">Wire</button></div></div>
+  </div>
+</div>
+</div>
+
+<script type="text/template" id="c-popup-template">
+
+    <div class="c-popup v-primary-border v-primary-font-glow v-primary-font-color">
+        <div class="c-popup__close"></div>
+        <div class="c-popup__left c-popup__left--icon c-popup__left--border v-primary-border v-primary-fill">
+            <%=svg%>
+        </div>
+        <div class="c-popup__right c-popup__right--border v-primary-border">
+            <%=RSI.translate(component_class+"_type_"+type)%>
+        </div>
+
+        <% if (typeof details !== "undefined" && details) { %>
+            <div class="c-popup__left c-popup__left--border v-primary-border"><h4><%=RSI.translate(component_class+"_details_label_"+type,null,"Details")%></h4></div>
+            <div class="c-popup__right c-popup__right--border v-primary-border">
+                <%=(details)?details:"TBD"%>
+            </div>
+        <% } %>
+
+
+        <% if (typeof manufacturer !== "undefined" && manufacturer) { %>
+            <div class="c-popup__left"><h4><%=RSI.translate(component_class+"_manufacturer_label_"+type,null,"Manufacturer")%></h4></div>
+            <div class="c-popup__right"><%=manufacturer%>
+            </div>
+        <% } %>
+
+        <div class="c-popup__left"><h4><%=(slottype=="poi")?"Name":RSI.translate(component_class+"_model_label_"+type, false, "Model")%></h4></div>
+        <div class="c-popup__right">
+            <% if (typeof name !== "undefined" && name) { %>
+                <%=name%>
+            <% } else { %>
+                Available
+            <% } %>
+        </div>
+
+        <% if (component_size && component_size != "-" || size && size != "-") { %>
+        <div class="c-popup__left"><h4><%=RSI.translate(component_class+"_size_label_"+type,null,"Size")%></h4></div>
+        <div class="c-popup__right">
+            <% if (component_size && component_size != "-") { %>
+                <div>
+                    <span><%=component_size%></span>
+                    <em><%=RSI.translate(component_class+"_component_size_sublabel_"+type, false, "Installed")%></em>
+                </div>
+            <% } %>
+
+            <% if (size && size != "-") { %>
+                <div>
+                    <span><%=size%></span>
+
+                    <em><%=RSI.translate(component_class+"_size_sublabel_"+type, false, "Max")%> </em>
+                </div>
+            <% } %>
+        </div>
+        <% } %>
+
+        <% if (typeof mounts !== "undefined" && mounts || typeof quantity !== "undefined" && quantity) { %>
+        <div class="c-popup__left"><h4><%=RSI.translate(component_class+"_quantity_row_label_"+type,null,"Quantity")%></h4></div>
+        <div class="c-popup__right">
+            <% if (typeof quantity !== "undefined" && quantity) { %>
+                <div>
+                    <span><%=quantity%></span>
+                    <em><%=RSI.translate(component_class+"_mount_sublabel_"+type, false, "Per Mount")%> </em>
+                </div>
+            <% } %>
+
+            <% if (typeof mounts !== "undefined" && mounts) { %>
+                <div>
+                    <span><%=mounts%></span>
+                     <em><%=RSI.translate(component_class+"_mounts_sublabel_"+type, false, "Total Mounts")%></em>
+                </div>
+            <% } %>
+        </div>
+        <% } %>
+    </div>
+
+
+</script>    </section>
+  </div>
+</div>
+
+
+<div class="wrapper"><div class="hr"></div><div class="content-block4"><div class="content"><div class="top"></div><h1>Concept sale</h1><div class="cboth"></div></div><div class="bottom"></div></div><div class="content-block1 rsi-markup">
+<div  class=' segment' ><div class="content"><p><div class="variant-block"> </p>
+
+<h2>About the Sale</h2>
+
+<p><span class="initial">T</span>he Prowler is being offered for the first time as a limited concept sale. This means that the ship design meets our specifications, but it is not yet ready to display in your Hangar, fight in Arena Commander or fly in the Alpha. The sale includes Lifetime Insurance on the ship hull and a pair of decorative items for your Hangar. A future patch will add a Prowler poster and then once the in-game model is finished you will also be given an in-game Prowler mini ship model! In the future, the ship price will increase and the offer will not include Life Time Insurance or these extras.</p>
+
+<br />
+
+
+<div class="clearfix"></div>
+
+
+
+
+<div class="clearfix"></div>
+
+<br />
+
+
+<h2>Merchandise Sale</h2>
+
+
+
+
+
+
+
+
+
+
+<div class="clearfix"></div>
+
+<h2>Disclaimer</h2>
+
+<p><i>Remember: We these pledge ships to help fund Star Citizen’s development. The funding generated by sales such as this is what allows us to include deeper, non-combat oriented features in the Star Citizen world. Concept ships will be available for in-game credits in the final universe, and they are not required to start the game.</p>
+
+<p>Additionally, please note that the Prowler will be entering the ship pipeline now, it will ultimately be released after other concept ships have been completed. All decorative ‘flare’ items will also be available to acquire in the finished game world. The goal is to make additional ships available that give players a different experience rather than a particular advantage when the persistent universe launches.<br />
+</i></p>
+
+<p></div></p></div><div class="cboth"></div></div>
+<div class="top-line-thin"></div><div class="top-line"></div><div class="corner corner-top-left"></div><div class="corner corner-top-right"></div><div class="corner corner-bottom-left"></div><div class="corner corner-bottom-right"></div></div></div>
+
+</div>
+
+<script>
+(function( $ ){
+  var $window = $(window);
+  var windowHeight = $window.height();
+
+  $window.resize(function () {
+    windowHeight = $window.height();
+  });
+
+  $.fn.parallax = function(xpos, speedFactor, outerHeight) {
+    var $this = $(this);
+    var getHeight;
+    var firstTop;
+    var paddingTop = 0;
+    
+    //get the starting position of each element to have parallax applied to it    
+    $this.each(function(){
+        firstTop = $this.offset().top;
+    });
+
+    if (outerHeight) {
+      getHeight = function(jqo) {
+        return jqo.outerHeight(true);
+      };
+    } else {
+      getHeight = function(jqo) {
+        return jqo.height();
+      };
+    }
+      
+    // setup defaults if arguments aren't specified
+    if (arguments.length < 1 || xpos === null) xpos = "50%";
+    if (arguments.length < 2 || speedFactor === null) speedFactor = 0.1;
+    if (arguments.length < 3 || outerHeight === null) outerHeight = true;
+    
+    // function to be called whenever the window is scrolled or resized
+    function update(){
+      var pos = $window.scrollTop();        
+
+      $this.each(function(){
+        var $element = $(this);
+        var top = $element.offset().top;
+        var height = getHeight($element);
+
+        // Check if totally above or totally below viewport
+        if (top + height < pos || top > pos + windowHeight) {
+          return;
+        }
+
+        $this.css('backgroundPosition', xpos + " " + Math.round((firstTop - pos) * speedFactor) + "px");
+      });
+    }   
+
+    $window.bind('scroll', update).resize(update);
+    update();
+  };
+
+  $('.parallax-1').parallax("50%", 0.1, true);
+  $('.parallax-2').parallax("50%", 0.1, true);
+  $('.parallax-3').parallax("50%", 0.1, true);
+  $('.parallax-4').parallax("50%", 0.1, true);
+  $('.parallax-5').parallax("50%", 0.1, true);
+  $('.parallax-6').parallax("50%", 0.1, true);
+  $('.parallax-7').parallax("50%", 0.1, true);
+})(jQuery);
+</script>
+
+
+  <div class="wrapper">
+    
+    <div class="end-transmission-container">
+      <div class="glow left"></div>
+      <div class="title-bar">
+        <h1>End Transmission</h1>
+      </div>
+      <div class="glow right"></div>
+    </div>
+  </div>
+  
+
+  
+    
+
+  <div class="two-line-separator"></div>
+  
+    
+<div class="wrapper force-one-column" id="comments">
+  <div class="holder">
+    <div class="title-bar">
+      <div class="count">
+        <div class="label">Comments</div>
+        <div class="value">0132.<span class="js-comment-decimal">0</span></div>
+        <div class="cboth"></div>
+      </div>
+      <div class="title">
+        <h1>Feedback</h1>
+      </div>
+      <div class="cboth"></div>
+    </div>
+
+    <div class="main-buttons-holder-container">
+      <div class="main-buttons-holder">
+        <a href="/connect?jumpto=/comm-link/transmission/15602-Intergalactic-Aerospace-Expo-Day-Two-RSI" class="add-comment js-add-comment trans-02s js-modal-login">Add New Comment</a>
+        <div class="settings js-settings">
+          <h1>Settings</h1>
+          <label>View mode:</label>
+          <a href="#" class="js-comments-view to-one-column js-to-one-column trans-01s on">One column</a>
+          <a href="#" class="js-comments-view to-two-columns js-to-two-columns trans-01s ">Two columns</a>
+          <label>Sort by:</label>
+          <a href="#" class="js-comments-sort to-oldest js-to-oldest trans-01s on">Oldest first</a>
+          <a href="#" class="js-comments-sort to-newest js-to-newest trans-01s ">Newest first</a>
+          <a href="#" class="js-comments-sort to-appreciated js-to-appreciated trans-01s ">Most appreciated first</a>
+
+                  </div>
+        <a href="" class="view-settings js-view-settings"><div class="hover trans-02s"></div></a>
+        <div class="triangle"></div>
+      </div>
+    </div>
+
+    
+    <div class="comment-listing"></div>
+
+    <div class="comment-loader traj-loader">
+      <div class="fast-blink"></div>
+      <span>Loading Additional Feedback</span>
+    </div>
+
+    <div class="cboth"></div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    window.comments = new RSI.Comments({
+      atom_url:"/comm-link/transmission/15602-Intergalactic-Aerospace-Expo-Day-Two-RSI",
+      comment_listing_el:$(".comment-listing"),
+      comment_submission_form_el:$(".comment-submission"),
+      api_object:RSI.Api.Comments,
+      lazyLoading: true,
+      comment_count: 132,
+      subject_id:15602,
+      append:false,
+      texts: {
+        "edit": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        },
+        "reply": {
+          "cancel": "Cancel",
+          "submit": "Save Changes"
+        }
+      },
+      "insertion_conf": {
+        "mode":"html"
+      },
+      "api_function_names": {
+        "delete":"erase",
+        "load":"listing",
+        "sort":"listing"
+      }
+    });
+  });
+</script>
+  
+</div>
+
+    </div>
+
+    
+  </div>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.11/moment-timezone-with-data.min.js"></script>
+
+<script type="text/plain" data-cookieconsent="statistics">
+  $.cookie('moment_timezone', moment.tz.guess(), { expires: 31, path: '/' });
+</script>
+
+
+
+
+               <script id="tpl_number_counter_digits" type="text/x-jsmart-tmpl">{if !$seperator}{$seperator=','}{/if}
+{if !$first_max}{$first_max=9}{/if}
+{for $digit = 0 to $length-1}
+  <div class="mask">
+    <div class="carousel">
+      {if $digit == 0}
+        {$max = $first_max}
+      {else}
+        {$max = 9}
+      {/if}
+      {for $i=0 to $max}
+        <div class="item {if $val_arr[$digit] == $i}on{/if}" rel="{$i}">{$i}</div>
+      {/for}
+    </div>
+  </div>
+  {if ($length - $digit) % 3 == 1 && $digit != $length-1}
+  <div class="seperator">{$seperator}</div>
+  {/if}
+{/for}</script>
+<script id="base_modal" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  <div class="top-border">
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+  </div>
+</div></script>
+<script id="base_modal_flat" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  </div>
+  
+</div></script>
+<script id="tpl_modals_slideshow" type="text/x-jsmart-tmpl"><img class="top-border" src="/rsi/static/images/modal_top.png">
+<a href="" class="close js-close"></a>
+<div class="mask">
+  <a class="js-prev prev control"></a>
+  <a class="js-next next control"></a>
+  <div class="slideshow-carousel carousel" rel="{$index}">
+    {foreach from=$images item="image"}
+      <div class="{if $index == $image@index}on{/if}">
+      {if $image.is_video}
+        <div class="video-holder">
+          <div id="slideshow_video_{$image@index}" data-source="{$image->source_url}">
+            <video width="100%" height="100%" preload="auto" {if $video}src="{$image->source_url}"{/if} controls></video>
+          </div>
+        </div>
+      {else}
+        <div class="media js-media-slideshow-{$image@iteration}">
+        {if $image.low_res}
+          <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source data-srcset="{$image.full_res}" media="(min-width: 300px)" />
+            <!--[if IE 9]></video><![endif]-->
+            <img data-srcset="{$image.low_res}" alt="{$image.title}" />
+          </picture>
+        {else}
+          <img data-src="{$image.source_url}" />
+        {/if}
+        </div>
+      {/if}
+        <div class="text">
+          {if !$image.is_video}
+          <a href="{$image.source_url}" class="download"></a>
+          {/if}
+          <div class="copyright">© 2012-{$year}<br />Cloud Imperium Games Corporation &<br />Roberts Space Industries Corp.</div>
+          <div class="page-number">{$image@iteration} / {count($images)}</div>
+          <div class="caption v-center">{if $image.title && $image.title != "undefined"}{$image.title}{/if}</div>
+          <div class="cboth"></div>
+        </div>
+      </div>
+    {/foreach}
+  </div>
+</div>
+<img class="bottom-border" src="/rsi/static/images/modal_bottom.png"></script>
+<script id="tpl_contact_us" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="contact" class="inner-content on">
+  <h2><span class="icon"></span>CONTACT</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+  <div class="error-message js-error-message"></div>
+  <div class="success-message js-success-message"></div>
+    <fieldset class="last">
+    <label for="contact_email">Email Address</label>
+    <input type="text" name="email" value="" class="trans-02s trans-color trans-box-shadow" id="contact_email" />
+  </fieldset>
+    <fieldset>
+    <label for="contact_subject">Subject</label>
+    <input type="text" name="subject" value="" class="trans-02s trans-color trans-box-shadow" id="contact_subject" />
+    <label>Contacting us for:</label>
+    <ul class="category-info">
+            <li id="tech_support_info">Questions about download, installation, networking, or in-game client problems</li>
+            <li id="subscription_info">Questions about monthly and yearly subscription plans</li>
+            <li id="account_billing_info">Issues related to your account, such as incorrect information or ability to access account, or Billing with regards to payments and payment methods</li>
+            <li id="melt_request_info">To reclaim a pledge over $1,000 for store credit (please note - this is a permanent action)</li>
+            <li id="merchandise_info">Questions about physical and/or shipped merchandise</li>
+            <li id="hacked_info">Issues related to compromised account or missing pledge.</li>
+            <li id="account_recovery_info">For issues with account authentication, lost passwords and related queries</li>
+            <li id="probation_info">Issues related to forums probation or ban</li>
+            <li id="refund_request_info">Refund requests and related inquiries</li>
+            <li id="customer_support_info">For general questions and queries regarding Star Citizen</li>
+          </ul>
+  </fieldset>
+  <fieldset>
+    <label for="contact_text">Fescription</label>
+    <textarea name="text" class="trans-02s trans-color trans-box-shadow" id="contact_text"></textarea>
+  </fieldset>
+  <div class="contact-submit-wrapper">
+    <div class="line"></div>
+    <button class="submit js-submit"><strong>submit your message</strong></button>
+  </div>
+</form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+<script id="tpl_error" type="text/x-jsmart-tmpl"><div class="modal-error js-modal-error">
+  <p class="modal-text js-modal-text"></p>
+  <a class="close js-close trans-03s .trans-opacity" href=""></a>
+</div></script>
+<script id="tpl_success" type="text/x-jsmart-tmpl"><div class="modal-success js-modal-success">
+  <p class="modal-text js-modal-text"></p>
+  <a class="close js-close trans-03s .trans-opacity" href=""></a>
+</div></script>
+<script id="tpl_progress" type="text/x-jsmart-tmpl"><div class="modal-progress js-modal-progress">
+  <div class="traj-loader">
+    <div class="fast-blink"></div>
+    <span class="modal-text js-modal-text"></span>
+  </div>
+</div></script>
+<script id="tpl_outbound" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="outbound" class="inner-content on">
+  <h2><span class="icon"></span>OUTBOUND LINK</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+      <div class="error-message js-error-message"> <span class=important>WARNING</span><br/><br/> This link will bring you outside of the RSI site and into the depths of the internet. Continue?<br/><br/><span class="url"></span> </div>
+      <div class="success-message js-success-message"><span class=important>STAND BY</span><br/><br/> Initiating hyperlink.<br/><br/></div>
+
+      <fieldset class="clearfix last">
+        <span class="submit-wrapper">
+          <span class="submit-hover trans-02s trans-opacity"></span>
+          <input type="submit" value="WARP" class="trans-02s trans-color trans-background" />
+        </span>
+      </fieldset>
+    </form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+
+<script id="tpl_l-notification-bar" type="text/x-jsmart-tmpl"><div class="l-notification-bar js-notification-bar">
+
+  <div class="l-notification-bar__watermark js-svg-inliner h-svg__logo-star-citizen"></div>
+
+  <div class="l-notification-bar__boxes">
+    {if !$viewedCookieNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='cookie'
+          title='COOKIES:'
+          message="Our website uses Google Analytics to analyze our traffic. <br/>To learn how you can control Google's use of your data and how you can opt out <a href='https://www.google.com/policies/privacy/partners/'>click here</a>."
+          linkText='See Details'
+          buttonText='Got it!'}
+      </div>
+    {/if}
+
+    {if !$viewedPrivacyNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='privacy'
+          title='PRIVACY POLICY:'
+          message='We adjusted the PP to reflect the decision of the European Court of Justice regarding Safe Harbor, the fact that RSI has moved and added some services providers.'
+          linkText='View Privacy Policy'
+          buttonText='Got it!'}
+      </div>
+    {/if}
+  </div>
+
+</div>
+</script>
+<script id="tpl_c-notification" type="text/x-jsmart-tmpl"><div class="c-notification js-bottom-notif-msg-{$type}">
+    <div class="c-notification__title">{$title}</div>
+    <div class="c-notification__message">
+      {$message}
+    </div>
+
+    {if $linkText}
+        <div class="c-notification__wrapper-link">
+            <a class="c-notification__link js-bottom-notif-link-{$type}">
+            {$linkText}
+            </a>
+        </div>
+    {/if}
+
+    <a class="c-notification__button js-bottom-notif-btn-{$type}">
+
+      <span class="c-notification__button-text">
+       {$buttonText}
+      </span>
+
+      {if $type neq 'announcement'}
+        <div class="c-iconed__icon c-iconed__icon--checkmark"></div>
+      {/if}
+    </a>
+</div>
+</script>
+
+<script id="tpl_confirm" type="text/x-jsmart-tmpl"><div class="modal-confirm js-modal-confirm clearfix">
+  <p class="modal-text js-modal-text"></p>
+  <a class="bt-close js-close trans-03s trans-opacity" href=""></a>
+  <a class="bt-confirm js-confirm trans-03s trans-opacity" href=""></a>
+	<div class="buttons">
+		<a class="shadow-button trans-02s trans-color js-close bt-close rm"     >
+  <span class="label js-label trans-02s">Cancel</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+		<a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">Confirm</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+	</div>
+</div>
+</script>
+<script id="tpl_alert" type="text/x-jsmart-tmpl"><div class="modal-alert js-modal-alert clearfix">
+  <p class="modal-text js-modal-text"></p>
+  <div class="buttons">
+    <a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">OK</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+  </div>
+</div></script>
+<script id="tpl_video" type="text/x-jsmart-tmpl">{extends file="base_modal"}
+{block name='modal_content'}
+<div id="ship-commercial" class="inner-content">
+  
+  <div class="hr"></div>
+  <div class="content-block4">
+   
+    <div class="bottom"></div>
+  </div>
+  {if $distant_source=="vimeo"}
+  <iframe id="commercial" src="//player.vimeo.com/video/{$video_id}?wmode=transparent" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+  {else}
+  <iframe id="commercial" frameborder="0" allowfullscreen="1" title="YouTube video player" width="100%" height="100%" src="https://www.youtube.com/embed/{$video_id}?autoplay=1"></iframe>
+  {/if}
+</div>
+{/block}
+</script>
+      
+  <script id="tpl_comment_report" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="comment-report" class="inner-content on">
+  <h2><span class="icon"></span>Report this comment</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+<input type="hidden" name="comment_id" value="">
+  <div class="error-message js-error-message"></div>
+  <div class="success-message js-success-message"></div>
+    <fieldset class="last">
+    <label for="report_email">Email Address</label>
+    <span class="corner-wrapper">
+      <input type="text" name="email" value="" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_email" />
+      <span class="corner corner-top-left"></span>
+      <span class="corner corner-top-right"></span>
+      <span class="corner corner-bottom-left"></span>
+      <span class="corner corner-bottom-right"></span>
+    </span>
+  </fieldset>
+    <fieldset>
+    <label>Report Type</label>
+    
+
+
+  
+    <a class="js-selectlist selectlist " rel="" href="">
+    <div class="arrow"></div>
+    <span>Please select the type best matching your report</span>
+              <ul class="body">
+              
+                                                              <li class="js-option option " rel="obscenity" >
+                                                                        Obscene Content
+                                                    </li>
+                                                                <li class="js-option option " rel="abuse" >
+                                                                        Abusive Conduct
+                                                    </li>
+                                                                <li class="js-option option " rel="other" >
+                                                                        Other
+                                                    </li>
+                                          
+            </ul>
+        <input type="hidden" name="category" class="js-category js-form-data" id="category"/>
+  </a>
+    </fieldset>
+  <fieldset>
+    <label for="report_text">Details</label>
+    <span class="corner-wrapper">
+      <textarea name="text" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_text" maxlength="2500"></textarea>
+      <span class="corner corner-top-left"></span>
+      <span class="corner corner-top-right"></span>
+      <span class="corner corner-bottom-left"></span>
+      <span class="corner corner-bottom-right"></span>
+    </span>
+  </fieldset>
+  <fieldset class="clearfix last">
+    <span class="submit-wrapper">
+      <span class="submit-hover trans-02s trans-opacity"></span>
+      <input type="submit" value="Submit" class="trans-02s trans-color trans-background" />
+    </span>
+  </fieldset>
+</form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+
+
+      
+        <footer class="c-platform-footer c-platform-footer--rsi">
+  <div class="l-platform-footer-container">
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--sc">
+        <li class="c-platform-footer-brand__item">
+
+          <span class="c-brand c-brand--sc js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--sc">
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Join the<br>Universe
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--sc">
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen" class="c-platform-footer-link">About the Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/howto/1" class="c-platform-footer-link">How to Play</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/universe" class="c-platform-footer-link">The Universe</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/media" class="c-platform-footer-link">Media</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/play-now"
+                class="c-platform-footer-link js-google-analytics-event-tracker"
+                data-event-category="FlyNow" data-event-label="footerClick">
+                Play Now
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__sc">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">
+              Social Links
+            </span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/RobertsSpaceIndustries/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/RobertsSpaceInd">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/robertsspaceind">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href=" https://www.youtube.com/channel/UCTeLqJq1mXUX5WWoNXLmOIA">
+                <span class="c-iconed__icon c-iconed__icon--youtube"></span>
+                Youtube
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.twitch.tv/starcitizen">
+                <span class="c-iconed__icon c-iconed__icon--twitch"></span>
+                Twitch
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--s42">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--s42 js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--s42">
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Start the<br>Adventure
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--s42">
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42" class="c-platform-footer-link">The Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#enlist" class="c-platform-footer-link">Enlist Today</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#roadmap" class="c-platform-footer-link">Status</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/pledge/Packages/Squadron-42-Standalone-Pledge" class="c-platform-footer-link">Pledge</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__s42">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">Social Links</span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/Squad42/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/squadron_42">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/squadron42">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column is-active">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--rsi">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--rsi js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--rsi">
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi--fullcolor"></span>
+            </span>
+            <span class="c-brand__label">
+              Follow the Development
+            </span>
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--rsi">
+            <li class="c-platform-footer-list__item">
+              <a href="/" class="c-platform-footer-link">Home</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/comm-link" class="c-platform-footer-link">Transmissions</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/community" class="c-platform-footer-link">Community</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/roadmap" class="c-platform-footer-link">Development</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--platform">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Platform
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--platform">
+                          <li class="c-platform-footer-list__item">
+                <a href="/pledge" class="c-platform-footer-link ">Pledge Store</a>
+              </li>
+            
+            <li class="c-platform-footer-list__item">
+              <a href="/download" class="c-platform-footer-link ">Download</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/spectrum/community/SC" class="c-platform-footer-link">Spectrum</a>
+            </li>
+
+                      </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--utility">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Utilities
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--utility">
+            <li class="c-platform-footer-list__item">
+              <a href="//support.robertsspaceindustries.com" class="c-platform-footer-link">Help</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/press" class="c-platform-footer-link">Press</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="https://cloudimperiumgames.com/join-us" class="c-platform-footer-link">Careers</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/tos" class="c-platform-footer-link">Terms of Services</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/privacy" class="c-platform-footer-link">Privacy Policy</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/eula" class="c-platform-footer-link">EULA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/dmca" class="c-platform-footer-link">DMCA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/legal" class="c-platform-footer-link">Legal</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/acknowledgements" class="c-platform-footer-link">Acknowledgements</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/responsible-disclosure" target="_blank" class="c-platform-footer-link">Responsible disclosure</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  
+</footer>
+
+<div class="c-platform-copyright c-platform-copyright--rsi">
+  <div class="l-platform-copyright-container">
+    <a href="https://cloudimperiumgames.com" class="c-platform-copyright__logo h-svg__logo-cig js-svg-inliner"></a>
+    <p class="c-platform-copyright__body">© 2012-2021 Cloud Imperium Rights LLC and Cloud Imperium Rights Ltd.</p>
+  </div>
+</div>
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHNFZPT"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<script type="text/javascript">
+  window.RSI.Footer = new RSI.Footer();
+</script>
+      
+    </div>
+
+    
+      <script type="text/javascript" src='/rsi/static/packages/platformbar/rsi.platformbar.build.05b39.js'></script>
+    
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"58013cabd7","applicationID":"375102748","transactionName":"Y1JaYktUWxZUV0QKV1oYe0NKQVoIGmZjKmtdQ111VltBF1pYXAZKDg1ZQlZYcwxbUA==","queueTime":0,"applicationTime":171,"atts":"TxVNFANOSEkXVRJZQ0lK","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>

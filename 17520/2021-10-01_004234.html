@@ -1,0 +1,1691 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    
+      <!-- Anti-flicker snippet (recommended)  -->
+      <style>.async-hide { opacity: 0 !important} </style>
+      <script type="text/javascript">(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+      h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+      (a[n]=a[n]||[]).hide=h;if (d) a[n].push({'userId' : d});setTimeout(function(){i();h.end=null},c);h.timeout=c;
+      })(window,document.documentElement,'async-hide','dataLayer',1500,
+      {'GTM-KHNFZPT':true},undefined,'');</script>
+
+            <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"58013cabd7",applicationID:"375102748"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+      
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <meta name="description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans.">
+      <meta property="og:site_name" content="
+  Esperia Tevarin Prowler - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+" />
+      <meta property="og:image" content="https://robertsspaceindustries.comhttps://media.robertsspaceindustries.com/gkt910mrcbefc/channel_item_full.jpg" />
+      <meta property="og:description" content="Roberts Space Industries is the official go-to website for all news  about Star Citizen and Squadron 42. It also hosts the online store for game items and merch, as well as all the community tools used by our fans." />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://robertsspaceindustries.com/comm-link/SCW/17520-IMPORT" />
+      <meta property="og:locale" content="us_EN" />
+
+            
+  <link rel="preconnect" href="//fonts.googleapis.com">
+  <link rel="preconnect" href="//fonts.fstatic.com">
+  <link rel="preconnect" href="//cdnjs.cloudflare.com">
+  <link rel="preconnect" href="//media.robertsspaceindustries.com">
+  <link rel="preconnect" href="//www.google-analytics.com">
+
+  <link rel="preload" as="font" href="/rsi/static/fonts/univia-pro/univia-pro-400.woff2" crossorigin>
+  <link rel="preload" as="font" href="/rsi/static/fonts/univia-pro/univia-pro-700.woff2" crossorigin>
+  <link rel="preload" as="font" href="/rsi/static/fonts/univia-pro/univia-pro-800.woff2" crossorigin>
+
+  <script src="/rsi/layouts/utils/css-var-polyfill.js"></script>
+
+
+            
+      <link href="/rsi/static/css/cross-brand-less.css?v=6.45.0" media="all" rel="stylesheet">
+      <link href='/rsi/static/packages/platformbar/rsi.platformbar.build.8e4cb.css' media="all" rel="stylesheet">
+      <link href='/rsi/static/packages/enlist/rsi.enlist.build.eebd2.css' media="all" rel="stylesheet"/>
+      
+            <script type="text/javascript" src="/cache/en/rsi-external-js.js?v=6.45.0"></script>
+      <script type="text/javascript" src="/cache/en/rsi-templates-js.js?v=6.45.0"></script>
+
+            
+      <link rel="stylesheet" href="https://use.typekit.net/dhw3beb.css">
+      
+
+              <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="a687ee30-df65-45a0-9d22-90de6c1bb964" type="text/javascript"></script>
+      
+      
+    <!-- Google Tag Manager -->
+        <script type="text/plain" data-cookieconsent="statistics">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KHNFZPT');</script>
+    <!-- End Google Tag Manager -->
+
+
+      <title>
+  Esperia Tevarin Prowler - Roberts Space Industries | Follow the development of Star Citizen and Squadron 42
+</title>
+
+            <script type="text/javascript" src='/rsi/static/packages/core/rsi.core.build.804b0.js'></script>
+      <script type="text/javascript" src='/rsi/static/packages/account/rsi.account.build.7a888.js'></script>
+      <script type="text/javascript" src='/rsi/static/packages/store/rsi.store.build.cd9a7.js'></script>
+
+      <script>
+        $(document).ready(function() {
+          window.Common = new RSI.Common({});
+          window.Main = new RSI.Main({
+            'is_mobile': 0,
+            'probation_cookie' : '',
+            'require_captcha': 0
+          });
+          window.Mark = new Turbulent.Mark({ 'name' : 'Rsi-XSRF', 'token' : '', 'ttl' : 1800 });
+
+          window.WscOverlay = new RSI.WscOverlay({});
+
+          var destinations = [];
+
+window.Main.destinations = destinations;          
+  window.PageStore = new RSI.Store({
+    'store_prefix' : '/pledge',
+    'bootstrapConfig': {"injection":{"attachmentClass":"RSIStoreApp","files":{"js":["bootstrap.js"],"css":["index.css"]}},"platform":{"api":"\/api"},"store":{"path":"\/pledge-store","manifest":"manifest.json"},"customizer":{"api":"\/pledge-store\/api\/customizer","ga_tracking_code":"UA-39586040-5"}}
+  });
+
+          
+          
+  var productsTracking = [];
+  var eCommerceData = {
+    'trackingAction': "",
+    'currency': "",
+    'trackingStep': "",
+    'trackingProducts': productsTracking
+  };
+  window.eCommerceTracking = new RSI.Store.eCommerceTracking(
+    eCommerceData
+  );
+
+        });
+
+        $(window).load(function() {
+          
+        });
+
+      </script>
+
+      
+      <script>
+        window.recaptcha_is_loaded = false;
+        window.on_recaptcha_load_callback = function() {
+          window.recaptcha_is_loaded = true;
+        };
+      </script>
+
+      <script src="https://www.google.com/recaptcha/api.js?onload=on_recaptcha_load_callback&render=6LerBOgUAAAAAKPg6vsAFPTN66Woz-jBClxdQU-o" async defer></script>
+      
+
+      <script type="text/javascript">
+
+        
+
+                                </script>
+
+      
+  <link href="//fonts.googleapis.com/css?family=Electrolize|Orbitron:400,500,700|Share+Tech+Mono" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://use.typekit.net/suo1yxw.css">
+  <link href="/rsi/static/css/rsi-layouts-common-less.css?v=6.45.0" media="all" rel="stylesheet">
+
+  
+
+  <script type="text/javascript" src="/layoutscache/esperia-prowler/en/bundle.js?v=15424"></script><link rel="stylesheet" href="/layoutscache/esperia-prowler/en/bundle.css?v=15424" media="all" />
+
+  <style type="text/css">
+  #loader {
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    pointer-events: none;
+    -webkit-user-select: none;
+      -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    margin: 0;
+  }
+  .loader-svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    fill: none;
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
+    will-change: opacity;
+  }
+  .lion-head {
+    stroke: rgba(255,255,255,0);
+    stroke-width: 1;
+    fill: transparent;
+  }
+  .letter {
+    stroke: rgba(255,255,255,0);
+    stroke-width: 1;
+    fill: transparent;
+  }
+</style>
+
+<script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js" preload></script>
+<script type="text/javascript">
+  window.addEventListener('load', function () {
+    var animay = anime.timeline({
+      easing: 'cubicBezier(.39,.01,.2,.98)',
+      autoplay: false,
+    });
+
+    animay
+      .add({
+        targets: '.lion-head',
+        duration: 800,
+        fill: ['rgba(0,0,0,0)', '#1A1A1A'],
+      })
+      .add({
+        targets: '.deco',
+        duration: 400,
+        fill: ['rgba(0,0,0,0)', '#C93030'],
+        delay: (el, i) => i * 100,
+      }, '-=200')
+      .add({
+        targets: '.letter',
+        duration: 400,
+        fill: '#fff',
+        delay: (el, i) => i * 60,
+        complete: () => {
+          window.loaderAnimDone = true;
+          anime({
+            targets: '.lion-head',
+            opacity: [1, 0.6],
+            easing: 'easeInOutSine',
+            direction: 'alternate',
+            loop: true,
+            duration: 600,
+          });
+        }
+      }, '-=250');
+
+    document.querySelector('.loader-svg').style.opacity = '1';
+    setTimeout(function() {
+      animay.play();
+    }, 200);
+  });
+</script>
+
+
+<div id="loader">
+  <svg
+    class="loader-svg"
+    width="70px"
+    height="97px"
+    viewBox="0 0 70 97"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    stroke="none"
+    stroke-width="1"
+    fill="none"
+    fill-rule="evenodd"
+  >
+    <path class="lion-head" d="M43.058011,33.3644674 C46.0730334,36.1805966 49.0860939,38.9984585 52.1139671,41.8007755 C52.1943843,41.8755134 52.4337786,41.7804572 52.6386256,41.7607362 C51.8177092,40.2637987 51.0455719,38.8551743 50.2663948,37.434501 C50.7906678,36.8654115 51.2479108,36.3693951 51.8836228,35.6788994 C48.8368071,34.7151679 46.0340971,33.8289701 43.2316716,32.9427674 L43.058011,33.3644674 Z M34.2220053,18.6959292 C31.985568,16.9721229 29.7899579,15.1904218 27.4782372,13.5723861 C26.5393152,12.9151173 25.3771717,12.49727 24.2554753,12.1959055 C23.0986076,11.8849662 22.392672,12.3669366 22.2307636,13.545642 C22.0731599,14.6937004 21.9881587,15.9089907 22.1907907,17.0374387 C22.7211435,19.9899112 23.408394,22.9147269 24.071496,25.8419469 C24.2721684,26.7269893 24.5984282,27.5840739 24.8668509,28.4537768 C25.0322885,27.935694 25.0252902,27.4681856 25.0160158,27.0007171 C24.9554997,23.9978422 24.8716393,20.9945269 24.8532348,17.9911979 C24.849145,17.3801223 25.0914854,16.7675634 25.2870269,15.8370875 C26.2964963,16.4925552 27.1119336,16.8734453 27.7396217,17.4552047 C30.362903,19.8869895 32.9305874,22.3783431 35.5172684,24.8492662 C35.9094061,25.2236961 36.2942798,25.6058961 36.901082,26.1976455 C37.163458,22.8282045 37.3995311,19.7952274 37.6353247,16.7625384 L37.3397286,16.686189 C36.7535855,17.6738892 36.1677269,18.6615844 35.5025106,19.7825793 C34.9914896,19.347106 34.6209469,19.0034356 34.2220053,18.6959292 Z M51.2061304,24.7408095 L58.637237,35.4587302 C58.4393173,37.2181375 58.3143435,38.1991918 58.2623153,38.401893 C61.4867625,42.5405369 64.755464,46.7364354 68,50.9010532 C67.1873256,53.2624926 65.3609561,55.7721728 63.4251565,57.1124269 C62.4168446,55.4769521 63.2271074,53.6310245 62.708006,51.8482815 C62.2861925,51.6982791 61.7684444,51.5140063 61.260723,51.3335209 C59.8981896,54.0530448 61.2742165,56.2785099 62.4780019,58.5984218 C58.7362042,61.0516173 55.0460311,63.2497126 50.3573264,63.3114118 L50.3177825,61.0393385 C48.6282567,61.8295232 47.1035912,62.5426576 45.5871123,63.2519688 C45.49811,63.0927433 45.4069089,62.9870565 45.4271705,62.9575457 C46.8398141,60.9097178 46.9016393,58.5263221 47.0798352,56.1904263 C47.2445638,54.0291371 44.9516413,51.3818145 42.6178438,51.0461873 C39.4309793,50.587639 36.9346793,52.0506498 34.7159014,54.1049469 C34.4431035,54.3574084 34.3488303,54.8600919 34.2815979,55.264926 C33.6858949,58.8428801 34.8930942,61.7186809 37.7096459,63.9888465 C39.7694308,64.1147038 41.5352668,63.0324708 43.6552448,62.610667 C43.2855236,63.5569303 43.0005452,64.2868603 42.6313782,65.2322646 C44.8176511,65.5127282 46.9229228,65.7830039 49.2093129,66.0764344 C48.9179341,66.4713221 48.7781649,66.698243 48.602541,66.8926725 C46.3590953,69.3773841 44.1020662,71.8501615 41.8649831,74.3407062 C39.5031103,76.9704411 36.8421648,79.1932623 33.4849933,80.4610229 C32.6732635,80.7673607 30.8914501,80.9969848 30.847595,80.8972629 C31.2110563,80.6378359 31.5983442,80.4240881 31.9385528,80.1192551 C34.2886088,78.0135629 35.3913878,75.7960654 34.0355889,72.8523817 C33.2731025,71.1970347 32.1833478,69.6895177 31.2159316,68.130888 C31.0759786,67.9057501 30.8188761,67.719179 30.5742767,67.5969288 C28.5571938,66.5888454 27.183497,64.9224018 25.9323053,63.1326599 C24.161315,60.5993356 22.7362768,57.9124758 22.2670426,54.8089064 C22.2403259,54.6310403 22.1579744,54.4615079 22.0731982,54.2017188 C20.7182438,54.6913711 20.3134613,55.7978994 20.2390658,56.9521441 C20.1651606,58.1018511 20.3798624,59.2697174 20.4732663,60.4994349 C19.5166031,60.2781207 18.958453,59.5711595 18.4016648,58.9097487 C16.6999139,56.8881343 16.3655019,54.4997861 16.7273925,51.9916821 C17.0257959,49.9237303 17.8164282,48.0127574 18.9387671,46.0781442 C20.1124513,46.1289312 21.3109122,46.1806999 22.5096575,46.2324636 C22.5653801,46.1474165 22.6210978,46.0620864 22.6771001,45.9767513 C20.7262908,44.1817065 18.7760505,42.3866518 16.6878558,40.4649324 C9.45885573,41.0806271 3.15065054,43.4377813 -1.0509876,50.2602795 L-1.4348724,28.2034256 C-0.21290407,28.3467804 0.953370635,28.4296841 2.09944867,28.6275845 C6.4397017,29.3770351 10.4741321,30.9015055 14.1191241,33.4003253 C14.3737438,33.5750509 14.7493833,33.5738533 15.0689566,33.6543121 C15.1274455,33.5646874 15.1859295,33.4747797 15.2446979,33.3848671 C14.5784065,32.6781006 13.9623655,31.9152558 13.2377307,31.2737675 C9.412202,27.885873 5.04061002,25.4011884 0.254646809,23.6192597 C-0.318248177,23.4059469 -0.896327119,23.205463 -1.54411198,22.9733632 L-2,-3.22057702 C10.4645992,-3.44528462 19.6446346,-3.59923953 25.5401061,-3.68244175 C26.166335,-3.691423 26.9051188,-3.57782401 27.4086421,-3.24610598 C32.0670365,-0.176525188 36.4038465,3.30205937 40.6228421,7.27156751 C40.5337678,5.66925469 39.8548967,4.43591596 39.1417653,3.24535435 C38.3931648,1.99540292 37.5933891,0.764746872 36.7010863,-0.386162196 C35.8160585,-1.52785733 34.8000533,-1.85573456 33.6977163,-3.08873686 C37.9426955,-3.81815055 40.1858923,-4.10967399 40.4273066,-3.96330716 C42.7958811,-2.52884659 42.7833683,-3.2477898 46.0922962,-0.550564211 C49.4880537,2.21743937 54.8225441,7.02298829 53.9609321,14.4783867 C53.5729286,17.8357223 52.6546614,21.2565298 51.2061304,24.7408095 Z M12.4496839,87.9628453 L10.3272801,88 C10.3909074,87.388022 10.4278352,86.8444481 10.5061294,86.3066607 C10.9800334,83.0560858 10.3170392,79.9878953 8.6496072,77.2237548 C7.36841103,75.0999499 6.01453846,72.9046684 4.23995769,71.2115574 C-2.77213502,64.5208263 -1.81964211,50.2765096 10.248418,45.4019588 C12.2204272,44.6051306 14.259582,44.0525482 16.6514394,43.8487607 C16.298089,44.2639819 16.126619,44.5172172 15.9063968,44.7163904 C12.4089063,47.8800597 11.3488991,51.7772353 12.6214788,56.2348165 C13.9089252,60.7453545 16.6505939,64.1417495 20.9234916,66.2700788 C22.1418577,66.8768815 23.34881,67.5637096 24.4221972,68.3924292 C27.4580141,70.7354682 28.4933609,74.0060457 27.3803765,77.6881667 C27.0305511,78.8455346 26.4356298,79.9338782 25.9014458,81.0290844 C25.7668061,81.3054527 25.4341296,81.4859305 25.0650736,81.6364736 C25.5065828,80.0565762 25.4858901,78.5569528 24.998291,77.0635216 C23.5652406,72.6735725 18.6406929,71.1539277 15.061231,73.9736871 C13.7150725,75.0341367 13.285901,76.4889844 13.1774197,78.0721101 C13.0006094,80.6511384 12.9018666,83.2353106 12.7427301,85.8160109 C12.6998479,86.5080175 12.5575357,87.1938387 12.4496839,87.9628453 Z M-1.10254773,87.4729131 L-1.37303128,71.9317508 C4.77999941,75.2772018 7.93084384,78.4936169 7.92900974,87.4710779 L-1.10254773,87.4729131 Z"></path>
+    <path class="deco deco__top" d="M68,0 L58.4270483,15 C58.7060939,10.9343258 58.1618238,7.75024631 56.7942378,5.4477614 C55.4266518,3.14527648 53.8285726,1.32935601 52,0 L68,0 Z"></path>
+    <polygon class="deco deco__mid" points="70 45 56 25.33741 70 3"></polygon>
+    <polygon class="deco deco__bot" points="34 86 71 58 71 86"></polygon>
+    <g class="letters" transform="translate(2.000000, 90.000000)" fill="#FFFFFF">
+      <path class="letter letter__e1" d="M1.20380372,3.98202054 L1.20380372,5.74939886 L8.92966989,5.74939886 L8.92966989,6.84932313 C6.50964963,6.84932313 4.13021089,6.88532065 1.75278863,6.83257428 C0.711784186,6.80957586 0.0813841569,6.10662426 0.0350052663,5.04894708 C-0.0101133283,4.01326838 -0.0143983345,2.97184008 0.038534095,1.93691134 C0.0952474123,0.838236979 0.771522214,0.154534051 1.88537177,0.134535428 C4.2209522,0.0922883364 6.55804499,0.122036288 8.95210316,0.122036288 C8.97529261,0.47176221 8.99369293,0.748993124 9.0204112,1.15296531 L1.24388113,1.15296531 L1.24388113,2.91734384 L8.92790548,2.91734384 C8.96218553,3.31356656 8.98587909,3.58404794 9.02015914,3.98202054 L1.20380372,3.98202054 Z"></path>
+      <path class="letter letter__s" d="M11.3740391,1.19216261 L11.3740391,2.89529535 C11.8882398,2.9192937 12.3341325,2.95579119 12.7802773,2.95779105 C14.3695105,2.96604048 15.9597519,2.92679319 17.5477248,2.97403993 C18.8942249,3.0137872 19.57176,3.75673605 19.533195,5.01364951 C19.4968985,6.18381895 18.8042398,6.83977379 17.484962,6.85427279 C15.2285282,6.87927107 12.9713381,6.86127231 10.6324809,6.86127231 L10.6324809,5.79334583 L18.3722104,5.79334583 L18.3722104,4.02671746 C17.2941532,4.02671746 16.3015441,4.02746741 15.3089351,4.02671746 C14.2215517,4.02571753 13.132404,4.06271498 12.0472892,4.01046858 C10.9127708,3.95597233 10.2889243,3.27351931 10.2566607,2.1770948 C10.2218765,0.994176243 10.8326159,0.172732798 11.9666302,0.144484743 C14.3415319,0.0852388217 16.7192062,0.126485982 19.1810683,0.126485982 C19.1987124,0.483711388 19.2120716,0.751442955 19.2337487,1.19216261 L11.3740391,1.19216261 Z"></path>
+      <path class="letter letter__p" d="M28.5996127,1.20193694 C26.2819285,1.21693591 24.0960712,1.09694417 21.9021481,1.26568255 L21.9021481,3.59152242 L28.5996127,3.59152242 L28.5996127,1.20193694 Z M21.7476358,6.80730102 C21.4232356,6.82679968 21.1825191,6.84129868 20.8437515,6.86154729 L20.8437515,0.203005714 C21.0569936,0.176007572 21.2878798,0.122261273 21.5190181,0.121511324 C23.5231407,0.114511806 25.5277674,0.102762615 27.5321421,0.122511256 C29.1165861,0.138010189 29.7459779,0.823213014 29.7490102,2.46285013 C29.7515232,4.09373784 29.1259123,4.75294246 27.5039115,4.76844139 C25.6742138,4.78569021 23.8442641,4.77219113 21.8938301,4.77219113 C21.8429142,5.47764257 21.799812,6.0798511 21.7476358,6.80730102 L21.7476358,6.80730102 Z"></path>
+      <path class="letter letter__e2" d="M32.2416664,1.18851286 L32.2416664,2.88864581 L39.8720021,2.88864581 C39.9254387,3.29336795 39.9642558,3.58659776 40.0199608,4.00856871 L32.278467,4.00856871 C32.2492281,4.61527694 32.2252825,5.11499253 32.1935231,5.77394717 L39.9614831,5.77394717 L39.9614831,6.84962311 C37.5328928,6.84962311 35.1552185,6.88562063 32.7793086,6.83212431 C31.7816583,6.80987584 31.1749519,6.14042193 31.1278168,5.13399123 C31.077405,4.05706537 31.0766488,2.97438991 31.1265565,1.89746405 C31.1757081,0.835787148 31.8091328,0.160333652 32.8634964,0.138585149 C35.1973124,0.0903384706 37.5326408,0.123336199 39.9365293,0.123336199 C39.960979,0.480811587 39.9791273,0.752792862 40.0086182,1.18851286 L32.2416664,1.18851286 Z"></path>
+      <path class="letter letter__r" d="M49.4126944,3.6470936 L49.4126944,1.20551169 C47.1633182,1.18426316 44.9560359,1.16126474 42.7568195,1.21101131 L42.7568195,3.6470936 L49.4126944,3.6470936 Z M41.6323835,0.119336474 C44.0713082,0.119336474 46.3713483,0.0800891763 48.6691198,0.132585562 C50.2896083,0.169832998 51.1002307,1.72272608 50.4720992,3.47435549 C50.3765688,3.74058716 50.1925656,3.97557098 50.1771899,4.00206916 C50.3790894,5.02449876 50.5416675,5.84744211 50.7264269,6.78362765 L49.5150305,6.78362765 L49.5150305,4.80876362 C47.2585966,4.73626861 45.0692105,4.78476527 42.7860584,4.77651584 C42.7396795,5.16598902 42.6890156,5.47871749 42.6691029,5.79369581 C42.6507026,6.08217594 42.66507,6.37265595 42.66507,6.75362972 C42.332856,6.78987722 42.0291246,6.82312493 41.6323835,6.86637195 L41.6323835,0.119336474 Z" ></path>
+      <path class="letter letter__i" d="M53.1547147,6.78357765 L52.14673,6.78357765 L52.14673,0.210280213 C52.4860017,0.187531779 52.7869604,0.167533156 53.1547147,0.143034843 L53.1547147,6.78357765 Z"></path>
+      <path class="letter letter__a" d="M62.1195526,4.12728553 C61.2527211,2.89087066 60.5663639,1.91193806 59.7811995,0.791515196 C58.9627634,1.98643293 58.1546616,2.88912078 57.594334,4.12728553 L62.1195526,4.12728553 Z M65.4210239,6.8061011 L64.0878828,6.8061011 C63.7135749,6.32188444 63.3352341,5.83216816 62.9311832,5.30920416 L56.6228979,5.30920416 C56.2632095,5.77842186 55.8881454,6.26788816 55.4727518,6.80985085 C55.132724,6.82734964 54.7672382,6.84584837 54.357642,6.86684692 C54.3684805,6.69660864 54.3334443,6.55611831 54.3886453,6.47837367 C55.737414,4.58250419 57.0708071,2.67488553 58.4616697,0.80976394 C59.2813662,-0.289410384 60.2870823,-0.266661951 61.1254312,0.860260463 C62.5377188,2.75862976 63.8995946,4.6942465 65.4210239,6.8061011 L65.4210239,6.8061011 Z"></path>
+    </g>
+  </svg>
+</div>
+  <style type="text/css">
+    /* CSS from ATOM */
+    .c-disclaimer {
+    padding-left: 0;
+}
+
+.c-disclaimer .l-container {
+    max-width: 1440px;
+    display: inherit; 
+}
+
+.c-ship-upgrade-banner .l-container {
+    padding: 0 20px;
+}
+
+.c-skus-banner__suptitle {
+margin-top: 90px;
+font-family: bc-alphapipe,sans-serif;
+font-weight: normal;
+    }
+.c-skus-banner__title{
+margin-top: 60px;
+}
+
+.c-features__title{
+font-weight: 300;
+}
+.text_specs_size{
+font-weight: 600;
+}
+.g-slideshow__wrapper {
+    overflow: visible;
+}
+.c-banner .c-background__layer--back img { max-width: 100%; }
+
+@media screen and (max-width: 500px){
+    .c-skus-banner {
+        padding-bottom: 450px;
+    }
+
+    .c-skus-banner__paragraph {
+        padding-top: 170px;
+    }
+}
+  </style>
+
+  <script type="text/javascript">
+    /* JS from ATOM */
+    
+  </script>
+
+    <style type="text/css">
+    /* CSS from Layouts  */
+    
+  </style>
+
+
+    
+  </head>
+  <body id="Esperia Prowler" class="" >
+
+    
+      <div class="l-notification-bar l-notification-bar--rsi js-notification-bar" id="notification-bar-root">
+  <c-notification-bar v-bind:latestagreementsslugs=[] v-bind:loggedin="0" v-bind:onhomepage="0"></c-notification-bar>
+  <div class="l-notification-container l-notification-bar__boxes js-notification-bar-boxes">
+    <div class="l-notification__wrapper">
+      
+      <c-unsupported-browser v-cloak>
+        <div class="l-notification-bar__box js-notification-bar-box">
+          <div class="c-notification  c-notification--browser-support js-bottom-notif-msg-browser-support">
+  <div class="c-notification__inner">
+
+    <div class="c-notification__content">
+      <div class="c-notification__title">
+        IE11 is no longer supported
+      </div>
+      <div class="c-notification__message">
+        We do not support Internet Explorer 11 and below. Please use a different web browser.
+      </div>
+    </div>
+
+    <div class="c-notification__actions">
+      
+      
+          </div>
+
+  </div>
+</div>
+        </div>
+      </c-unsupported-browser>
+    </div>
+  </div>
+
+</div>
+    
+
+    <div id="bodyWrapper">
+      <header class='c-header-wrapper c-header-wrapper--rsi js-header-wrapper '  id='cross-brand-header'>
+  <div id="platform-bar" class="c-header__platform-bar"></div>
+
+      <div class='c-right-sidebar c-right-sidebar--signin' id="account-sidebar">
+      <div class="js-toggle-account__backdrop invisible"></div>
+
+      <a href="#" class='c-right-sidebar__back js-toggle-account'>Back
+        <span></span>
+        <span></span>
+      </a>
+
+      <div id="enlist-root" data-theme="rsi" data-enlisting="" data-ptu=""></div>
+      <script type="text/javascript" src='/rsi/static/packages/enlist/rsi.enlist.build.eebd2.js'></script>
+    </div>
+  
+  <div class="c-header-wrapper__backdrop js-toggle-games"></div>
+</header>
+
+<div id="platform-backdrop"></div>
+
+<script type='text/javascript'>
+  RSI.Platformbar = {
+    theme: "rsi",
+    loggedState: "logged-out",
+    tabs: [
+      {
+        type: 'brands',
+        name: "Games",
+        subItems: [
+          {
+            name: "sc",
+            href: "/star-citizen",
+            description: "Join the Universe"
+          },
+          {
+            name: "s42",
+            href: "/squadron42",
+            description: "Start the adventure"
+          },
+          {
+            name: "rsi",
+            href: "/",
+            description: "Follow the Development"
+          }
+        ]
+      },
+      {
+        type: 'apps',
+        name: "Apps",
+        subItems: [
+          [
+            {
+              name: "Spectrum",
+              href: "/spectrum/community/SC",
+              description: "Your communication platform"
+            },
+            {
+              name: "Launcher",
+              href: "/download",
+              description: "Download Star Citizen",
+                          }
+          ],
+          [
+            {
+              name: "Roadmap",
+              href: "/roadmap",
+              description: "Keep track of the development"
+            },
+            {
+              name: "Telemetry",
+              href: "/telemetry",
+              description: "Keep track of the player’s performance"
+            },
+            {
+              name: "Issue Council",
+                          href: "https://issue-council.robertsspaceindustries.com",
+                          description: "Help us make the game better",
+                          }
+          ],
+          [
+            {
+              name: "Starmap",
+              href: "/starmap",
+              description: "Your map to the universe"
+            },
+            {
+              name: "Galactapedia",
+              href: "/galactapedia",
+              description: "Your guide to the universe"
+            }
+          ]
+        ]
+      },
+          ],
+    navigation: {
+      store: {
+        name: "Pledge Store",
+        href: "/pledge",
+        isHidden: false      },
+      hub: {
+        name: "Learn How to Play",
+        href: "/playstarcitizen",
+        show: false      },
+      support: {
+        name: "Support",
+        href: "//support.robertsspaceindustries.com"
+      },
+      account: {
+        name: "Account",
+        href: "/account/settings",
+        isHidden: false      }
+    }
+  };
+
+  $(document).ready(function() {
+    window.header = new RSI.Header({});
+  });
+</script>
+
+
+      
+  
+<header class='c-brand-menu c-brand-menu----rsi' id='brand-menu'>
+  <span class="c-brand-menu__section">
+    
+      Roberts Space Industries <sup>&#174;</sup>
+    
+  </span>
+  <div class="c-brand-menu__backdrop"></div>
+  <nav class="c-brand-menu__container">
+    <div class="c-brand-menu__logo">
+      <a href="/"><span class="h-svg h-svg__logo-rsi--fullcolor-large js-svg-inliner"></span> </a>
+    </div>
+    <div class="c-brand-menu__items-container">
+      <ul class="c-brand-menu__items">
+                <li class="c-brand-menu__item  ">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/comm-link">
+            <span class="c-brand-menu__item-text">Comm-Link</span>
+                                  </a>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/community">
+            <span class="c-brand-menu__item-text">Community</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Community</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/spectrum" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Spectrum
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/orgs" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Organizations
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/leaderboards/top" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Leaderboards
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community_events" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Event
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Hub
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/fankit" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Fankit
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+                <li class="c-brand-menu__item  has-submenu js-open-brand-submenu">
+          <a class="c-menu-link c-menu-link----rsi c-brand-menu__link" href="/development">
+            <span class="c-brand-menu__item-text">Development</span>
+                                  </a>
+                      <div class="c-brand-submenu">
+              
+                <a href="#" class="c-brand-submenu-back js-brand-submenu-close">
+                  <span class="c-brand-submenu-back-text">Back /</span>
+                  <span class="c-brand-submenu-back-section">Development</span>
+                </a>
+                <div class="c-brand-submenu__left"></div>
+                <div class="c-brand-submenu__wrapper">
+                  <ul class="c-brand-submenu__items">
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/roadmap" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Roadmap
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/community/devtracker" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Dev Tracker
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/telemetry" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Telemetry
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="https://issue-council.robertsspaceindustries.com" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Issue Council
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/patch-notes" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Patch Notes
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/ship-matrix" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Ship Matrix
+                      </a>
+                    </li>
+                                      <li class="c-brand-submenu__item ">
+                      <a href="/funding-goals" class="c-brand-submenu__link c-menu-link c-menu-link--small c-menu-link----rsi">
+                        Funding
+                      </a>
+                    </li>
+                                    </ul>
+                </div>
+                <div class="c-brand-submenu__right"></div>
+              
+            </div>
+                  </li>
+              </ul>
+    </div>
+
+    <div class="c-brand-menu__cta">
+      
+        <a href="/star-citizen/play-now" class="c-brand-cta-btn js-google-analytics-event-tracker"
+          data-event-category="FlyNow" data-event-label="navMenuClick">
+          <div></div>
+            <span class="c-brand-cta-btn__text">
+              <strong>Play now</strong>
+            </span>
+          <div></div>
+        </a>
+      
+    </div>
+  </nav>
+</header>
+
+
+
+      
+
+  
+  <div class="page-wrapper">
+    
+  <div id="post-background" ></div>
+
+
+    <div id="contentbody" class="" style="">
+      
+    <div id="layout-system" class="initial"><!--Banner--><c-banner v-cloak>
+  <template slot="title">
+    <span>Tevarin</span>
+    Prowler
+  </template>
+  <template slot="subtitle">
+    Stealth Dropship
+  </template>
+  <template slot="logo">
+    <img src="https://media.robertsspaceindustries.com/jehef0p1sni2k/source.svg" />
+  </template>
+  <template slot="banner-bg">
+    <picture>
+      <source
+        media="(max-width: 760px)"
+        srcset="/rsi/layouts/types/esperia-prowler/assets/svg/banner-header-deco-mobile.svg"
+      />
+      <img src="/rsi/layouts/types/esperia-prowler/assets/svg/banner-header-deco.svg" />
+    </picture>
+  </template>
+
+
+  <template slot="content-title">
+    Recreated by Esperia
+  </template>
+  <template slot="content-para">
+    <p>Legends Reborn.</p>
+    <p>The Prowler is a near-perfect recreation of the infamous dropship that battled UEE forces throughout the Tevarin Wars. Elegant, advanced, and effective, it embodies the unique Tevarin approach to warfare and organic vehicle design.</p>
+    <p>Long believed to be lost in time, intact Tevarin vehicles were recently uncovered in a network of collapsed facilites within the Kabal System. Due to its exemplary work on previous alien recreations, Esperia was granted exclusive access to catalog, preserve, and reverse-engineer the discovered relics. The Prowler is the first of these continuing efforts and the first Tevarin-derived ship ever offered on the Human market.</p>
+  </template>
+
+
+  <template slot="background-tree-1">
+    <img src="/rsi/layouts/types/esperia-prowler/assets/images/banner/back-1.png" />
+  </template>
+  <template slot="background-tree-2">
+    <img src="/rsi/layouts/types/esperia-prowler/assets/images/banner/back-2.png" />
+  </template>
+
+  <template slot="background-ship-1">
+    <img src="/rsi/layouts/types/esperia-prowler/assets/images/banner/ship-1.png" />
+  </template>
+  <template slot="background-ship-2">
+    <img src="/rsi/layouts/types/esperia-prowler/assets/images/banner/ship-2.png" />
+  </template>
+  <!-- Ship 3 - Main One -->
+  <template slot="background-ship-3">
+    <img src="/rsi/layouts/types/esperia-prowler/assets/images/banner/ship-3.png" />
+    <img src="/rsi/layouts/types/esperia-prowler/assets/images/banner/ship-3a.png" />
+  </template>
+  <template slot="background-soldiers">
+    <img src="/rsi/layouts/types/esperia-prowler/assets/images/banner/front-3.png" />
+    <img src="/rsi/layouts/types/esperia-prowler/assets/images/banner/soldiers-1.png" />
+    <img src="/rsi/layouts/types/esperia-prowler/assets/images/banner/soldiers-2.png" />
+    <img src="/rsi/layouts/types/esperia-prowler/assets/images/banner/soldiers-3.png" />
+    <img src="/rsi/layouts/types/esperia-prowler/assets/images/banner/soldiers-4.png" />
+  </template>
+  <template slot="background-front">
+    <img src="/rsi/layouts/types/esperia-prowler/assets/images/banner/front-1.png" />
+    <img src="/rsi/layouts/types/esperia-prowler/assets/images/banner/front-2.png" />
+  </template>
+</c-banner><!--/Banner--><!--Trailer--><c-trailer v-cloak
+  media-image-desktop="https://media.robertsspaceindustries.com/gkt910mrcbefc/source.jpg"
+  media-image-mobile="https://media.robertsspaceindustries.com/gkt910mrcbefc/source.jpg"
+  media-image-alt="trailer image"
+>
+  <template slot="video-iframe">
+    <iframe
+      id="trailerVideo"
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/Op0YkiMm8TQ?enablejsapi=1"
+      frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+      allow-presentation
+      >
+    </iframe>
+  </template>
+
+</c-trailer><!--/Trailer--><!--lore--><c-lore v-cloak
+  media-image-desktop="https://media.robertsspaceindustries.com/5ij2asqfgw4x2/source.jpg"
+  media-image-mobile="https://media.robertsspaceindustries.com/5ij2asqfgw4x2/source.jpg"
+  media-image-alt="Prowler ship landing"
+  number-pages="1"
+>
+  <template slot='title'>
+    Commitment<br>to History<br>
+  </template>
+
+  <template slot="text">
+    <p class="c-lore__paragraph">
+      In 2941, the mysterious Kabal System was discovered by a stellar surveyor working for the UEE’s Imperial Cartography Center. Teams were dispatched to uncover all they could, with a focus on Kabal III, a planet potentially capable of supporting Human colonization.
+          </p>
+
+    <p class="c-lore__paragraph">
+      There, all they found in the abandoned cities were scraps of destroyed artifacts and the footprints left by a species on the run.
+      <br><br>
+      However, in the remains of a hulking facility, several intact vehicles lay dormant. 
+    </p>
+
+    <p class="c-lore__paragraph">
+      Esperia’s expertise was sought to decipher the puzzles within this trove of rarely seen technology. Following extensive research and development, the Prowler became the first Tevarin ship offered on the Human market.
+    </p>
+
+
+  </template>
+
+  <!-- Icons for the arrows -->
+  <template slot="bt-icon-left">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 35">
+      <path d="M20.815 8.672l14.153 13.99v12.314L0 0h90l-8.164 8.672h-61.02z" fill="#52BFCD" fill-rule="evenodd" />
+    </svg>
+  </template>
+  
+  <template slot="bt-icon-right">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 35">
+      <path d="M20.815 8.672l14.153 13.99v12.314L0 0h90l-8.164 8.672h-61.02z" fill="#52BFCD" fill-rule="evenodd" />
+    </svg>
+  </template>
+
+</c-lore><!--/lore--><!--Features--><c-features v-cloak>
+
+  <template slot="title">
+    Features
+  </template>
+
+  <c-feature
+    media-image="https://media.robertsspaceindustries.com/gem58vnceo30q/source.jpg"
+    media-image-alt="personnel stations and seats"
+  >
+    <template slot="title">
+      Jump Stations & Seats
+    </template>
+
+    <template slot="paragraph">
+      <p>
+        Sixteen jump stations provide ample space for infantry to be safely dispatched to combat zones. In the cockpit, the seats are one of the few areas significantly modified for Human use and offer high comfort during long flights and turbulent landings.
+      </p><br><br>
+    <p style="font-size:15pt !important">
+        Pilot Seat - <span class="text_specs_size">x1</span><br>
+        Co-Pilot Seat - <span class="text_specs_size">x1</span><br>
+        Jump Station - <span class="text_specs_size">x16</span><br>
+        Weapon Rack - <span class="text_specs_size">x16</span></p>
+    </template>
+  </c-feature>
+
+  <c-feature 
+    media-image="https://media.robertsspaceindustries.com/6j2e78yr0h6mb/source.jpg"
+    media-image-alt="Low signature and agility"
+    >
+    <template slot="title">
+      Low Signature & Agility
+    </template>
+  
+    <template slot="paragraph">
+      <p>
+       The Prowler’s low energy signature reduces its chances of being flagged on enemy radar and scanners, making operations safer for both infantry and crew. During descent and landing, exceptional low-altitude maneuverability and support for future grav-lev integration enable pilots to position the ship with exacting precision.
+      </p>
+      <br><br>
+      <p style="font-size:15pt !important">
+        178 m/s <span class="text_specs_size">SCM</span><br>
+        1116 m/s <span class="text_specs_size">AFB</span>
+      </p>
+    </template>
+  </c-feature>
+
+  <c-feature 
+    media-image="https://media.robertsspaceindustries.com/igco5tic5yrbz/source.jpg"
+    media-image-alt="Defense"
+    >
+    <template slot="title">
+      Defense
+    </template>
+  
+    <template slot="paragraph">
+      <p>
+        Despite the Prowler's low energy signature, its period-correct shields deliver performance inline with modern UEE standards. On the ground, the ship's quills emerge to provide an extra level of physical protection, particularly against ballistic and small-arms fire. Angled to cover each bank of drop doors, they offer additional security for deployment, regrouping, and extraction.
+      </p><br><br>
+      <p style="font-size:15pt !important">
+        S2 Tevarin Shield Generator - <span class="text_specs_size">x2</span><br>
+      </p>
+    </template>
+  </c-feature>
+
+    <c-feature media-image="https://media.robertsspaceindustries.com/ubpz4hayka287/source.jpg"
+      media-image-alt="feature image three">
+      <template slot="title">
+        Weapons
+      </template>
+    
+      <template slot="paragraph">
+        <p>
+          The launch of the Prowler marks the premiere of authentic Tevarin-designed weapons on the Human market. The ballistic cannons deliver offensive power comparable to UEE size-four guns, while spine-mounted remote laser cannons prove extensive coverage of the ship's surroundings safely from inside the hull.
+        </p><br><br>
+        <p style="font-size:15pt !important">
+          S4 Esperia Deadbolt IV Ballistic Cannon - <span class="text_specs_size">x2</span><br>
+         S3 Esperia Lightstrike III Laser Cannon - <span class="text_specs_size">x2</span><br>
+        </p>
+      </template>
+    </c-feature>
+
+    <c-feature media-image="https://media.robertsspaceindustries.com/00fam1rbe1bsa/source.jpg"
+      media-image-alt="Deployment">
+      <template slot="title">
+        Deployment
+      </template>
+    
+      <template slot="paragraph">
+        <p>
+          Eight drop doors (four per-side) and a large rear ramp ensure rapid infantry deployment in the most hostile locations, while unique landing gear ensures stability on any terrain. Air shields envelop the doors to ensure safe deployment in the most hostile locations, be it in-atmosphere or deep space.
+        </p><br><br>
+        <p style="font-size:15pt !important">
+          Side Door - <span class="text_specs_size">x8</span><br>
+          Ramp - <span class="text_specs_size">x1</span><br>
+          Side Ladder - <span class="text_specs_size">x1</span>
+        </p>
+      </template>
+    </c-feature>
+</c-features><!--/Features--><!--Slideshow--><g-slideshow
+  v-cloak
+  :images="[
+    'https://media.robertsspaceindustries.com/w54h90wjwr1g9/source.jpg',
+    'https://media.robertsspaceindustries.com/7fu2d3o1gmb4c/source.jpg',
+    'https://media.robertsspaceindustries.com/gkt910mrcbefc/source.jpg',
+    'https://media.robertsspaceindustries.com/8az3jje8a2ih9/source.jpg',
+    'https://media.robertsspaceindustries.com/2qumwwpm1hsmy/source.jpg',
+  ]"
+  :options="{
+    arrows: true,
+    counter: true,
+    fullWidth: false,
+  }"
+>
+  <template slot="bt-icon-left">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 35">
+      <path d="M20.815 8.672l14.153 13.99v12.314L0 0h90l-8.164 8.672h-61.02z" fill="#52BFCD" fill-rule="evenodd"/>
+    </svg>
+  </template>
+  <template slot="bt-icon-right">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 35">
+      <path d="M20.815 8.672l14.153 13.99v12.314L0 0h90l-8.164 8.672h-61.02z" fill="#52BFCD" fill-rule="evenodd"/>
+    </svg>
+  </template>
+</g-slideshow><!--/Slideshow--><!--SKUs Banner--><c-skus-banner v-cloak
+  bg-img-url="https://media.robertsspaceindustries.com/3aaeguoxktizf/source.png"
+  bg-img-alt="cool"
+  bg-filter-opacity="0"
+  side-image-url="https://media.robertsspaceindustries.com/yijior3mr2ra5/source.png"
+  :side-image-mobile-styles="{
+    height: '130%',
+    right: '0'
+  }"
+>
+  <template slot="suptitle">
+    Fly the New
+  </template>
+  <template slot="title">
+    <span>Tevarin Prowler</span>
+  </template>
+  <template slot="signature">
+    <img src="https://media.robertsspaceindustries.com/jehef0p1sni2k/source.svg" />
+  </template>
+  
+    <template slot="paragraph">
+    <p>
+      Experience a ship once thought lost to the mists of time with the Esperia Prowler; a meticulous recreation of the alien dropship prevalent throughout both Tevarin Wars.
+To celebrate the ship's release, the CC’s Conversions Aves helmet is included with all Warbond Prowler pledges at no additional cost. (Also available separately.)
+    </p>
+  </template>
+
+</c-skus-banner><!--/SKUs Banner--><!--SKUs--><c-skus v-cloak
+>
+  <template slot="list">
+    <!-- [ ] legacy sku plugin interpreted by HEAP. The corresponds to a specific ship/SKU -->
+    <li class="c-skus__item"></li>
+    <li class="c-skus__item"></li>
+    <li class="c-skus__item"></li>
+  </template>
+</c-skus><!--/SKUs--><!--Ship Upgrade--><c-ship-upgrade
+  link-url="/pledge?openshipupgrade=1&toshipid=117&toskuid=13386"
+  link-title="Get to the upgrade tool"
+  img-url="https://media.robertsspaceindustries.com/q4oxkdohwj7n7/source.jpg"
+  img-alt="Esperia Prowler Artwork"
+>
+  <template slot="text-link">
+    Upgrade your ship to the <b>Esperia Prowler</b>
+  </template>
+  <template slot="text-para">
+    Experience history firsthand by upgrading to the infamous Esperia Prowler. Each Warbond upgrade includes the CC’s Conversions Aves helmet.
+  </template>
+</c-ship-upgrade>
+
+<!--/Ship Upgrade--><!--Disclaimer--><c-disclaimer>
+  <template slot="title">
+    Disclaimer
+  </template>
+  <template slot="content">
+    <p>
+      We offer pledge ships to help fund Star Citizen’s development. The funding received from events such as this allows us to include deeper features in the Star Citizen world. These ships will be available for in-game credits and/or will be otherwise earnable through play in the final universe. They are not required to start or succeed at the game.
+    </p>
+  </template>
+</c-disclaimer><!--/Disclaimer--></div><!--/layout-system-->
+  <script type="text/javascript">
+    /* JS from Layouts */
+    
+  </script>
+
+  
+
+  
+
+  
+      
+
+    </div>
+
+    
+  </div>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.11/moment-timezone-with-data.min.js"></script>
+
+<script type="text/plain" data-cookieconsent="statistics">
+  $.cookie('moment_timezone', moment.tz.guess(), { expires: 31, path: '/' });
+</script>
+
+
+
+
+               <script id="tpl_number_counter_digits" type="text/x-jsmart-tmpl">{if !$seperator}{$seperator=','}{/if}
+{if !$first_max}{$first_max=9}{/if}
+{for $digit = 0 to $length-1}
+  <div class="mask">
+    <div class="carousel">
+      {if $digit == 0}
+        {$max = $first_max}
+      {else}
+        {$max = 9}
+      {/if}
+      {for $i=0 to $max}
+        <div class="item {if $val_arr[$digit] == $i}on{/if}" rel="{$i}">{$i}</div>
+      {/for}
+    </div>
+  </div>
+  {if ($length - $digit) % 3 == 1 && $digit != $length-1}
+  <div class="seperator">{$seperator}</div>
+  {/if}
+{/for}</script>
+<script id="base_modal" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  <div class="top-border">
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    {block name="modal_lines"}
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    {/block}
+  </div>
+</div></script>
+<script id="base_modal_flat" type="text/x-jsmart-tmpl"><div class="modal-wrapper {block name="modal_wrapper_class"}{/block}">
+  
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    {block name="modal_content"}{/block}
+    {block name="modal_footer"}{/block}
+  </div>
+  
+</div></script>
+<script id="tpl_modals_slideshow" type="text/x-jsmart-tmpl"><img class="top-border" src="/rsi/static/images/modal_top.png">
+<a href="" class="close js-close"></a>
+<div class="mask">
+  <a class="js-prev prev control"></a>
+  <a class="js-next next control"></a>
+  <div class="slideshow-carousel carousel" rel="{$index}">
+    {foreach from=$images item="image"}
+      <div class="{if $index == $image@index}on{/if}">
+      {if $image.is_video}
+        <div class="video-holder">
+          <div id="slideshow_video_{$image@index}" data-source="{$image->source_url}">
+            <video width="100%" height="100%" preload="auto" {if $video}src="{$image->source_url}"{/if} controls></video>
+          </div>
+        </div>
+      {else}
+        <div class="media js-media-slideshow-{$image@iteration}">
+        {if $image.low_res}
+          <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source data-srcset="{$image.full_res}" media="(min-width: 300px)" />
+            <!--[if IE 9]></video><![endif]-->
+            <img data-srcset="{$image.low_res}" alt="{$image.title}" />
+          </picture>
+        {else}
+          <img data-src="{$image.source_url}" />
+        {/if}
+        </div>
+      {/if}
+        <div class="text">
+          {if !$image.is_video}
+          <a href="{$image.source_url}" class="download"></a>
+          {/if}
+          <div class="copyright">© 2012-{$year}<br />Cloud Imperium Games Corporation &<br />Roberts Space Industries Corp.</div>
+          <div class="page-number">{$image@iteration} / {count($images)}</div>
+          <div class="caption v-center">{if $image.title && $image.title != "undefined"}{$image.title}{/if}</div>
+          <div class="cboth"></div>
+        </div>
+      </div>
+    {/foreach}
+  </div>
+</div>
+<img class="bottom-border" src="/rsi/static/images/modal_bottom.png"></script>
+<script id="tpl_contact_us" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="contact" class="inner-content on">
+  <h2><span class="icon"></span>CONTACT</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+  <div class="error-message js-error-message"></div>
+  <div class="success-message js-success-message"></div>
+    <fieldset class="last">
+    <label for="contact_email">Email Address</label>
+    <input type="text" name="email" value="" class="trans-02s trans-color trans-box-shadow" id="contact_email" />
+  </fieldset>
+    <fieldset>
+    <label for="contact_subject">Subject</label>
+    <input type="text" name="subject" value="" class="trans-02s trans-color trans-box-shadow" id="contact_subject" />
+    <label>Contacting us for:</label>
+    <ul class="category-info">
+            <li id="tech_support_info">Questions about download, installation, networking, or in-game client problems</li>
+            <li id="subscription_info">Questions about monthly and yearly subscription plans</li>
+            <li id="account_billing_info">Issues related to your account, such as incorrect information or ability to access account, or Billing with regards to payments and payment methods</li>
+            <li id="melt_request_info">To reclaim a pledge over $1,000 for store credit (please note - this is a permanent action)</li>
+            <li id="merchandise_info">Questions about physical and/or shipped merchandise</li>
+            <li id="hacked_info">Issues related to compromised account or missing pledge.</li>
+            <li id="account_recovery_info">For issues with account authentication, lost passwords and related queries</li>
+            <li id="probation_info">Issues related to forums probation or ban</li>
+            <li id="refund_request_info">Refund requests and related inquiries</li>
+            <li id="customer_support_info">For general questions and queries regarding Star Citizen</li>
+          </ul>
+  </fieldset>
+  <fieldset>
+    <label for="contact_text">Fescription</label>
+    <textarea name="text" class="trans-02s trans-color trans-box-shadow" id="contact_text"></textarea>
+  </fieldset>
+  <div class="contact-submit-wrapper">
+    <div class="line"></div>
+    <button class="submit js-submit"><strong>submit your message</strong></button>
+  </div>
+</form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+<script id="tpl_error" type="text/x-jsmart-tmpl"><div class="modal-error js-modal-error">
+  <p class="modal-text js-modal-text"></p>
+  <a class="close js-close trans-03s .trans-opacity" href=""></a>
+</div></script>
+<script id="tpl_success" type="text/x-jsmart-tmpl"><div class="modal-success js-modal-success">
+  <p class="modal-text js-modal-text"></p>
+  <a class="close js-close trans-03s .trans-opacity" href=""></a>
+</div></script>
+<script id="tpl_progress" type="text/x-jsmart-tmpl"><div class="modal-progress js-modal-progress">
+  <div class="traj-loader">
+    <div class="fast-blink"></div>
+    <span class="modal-text js-modal-text"></span>
+  </div>
+</div></script>
+<script id="tpl_outbound" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="outbound" class="inner-content on">
+  <h2><span class="icon"></span>OUTBOUND LINK</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+      <div class="error-message js-error-message"> <span class=important>WARNING</span><br/><br/> This link will bring you outside of the RSI site and into the depths of the internet. Continue?<br/><br/><span class="url"></span> </div>
+      <div class="success-message js-success-message"><span class=important>STAND BY</span><br/><br/> Initiating hyperlink.<br/><br/></div>
+
+      <fieldset class="clearfix last">
+        <span class="submit-wrapper">
+          <span class="submit-hover trans-02s trans-opacity"></span>
+          <input type="submit" value="WARP" class="trans-02s trans-color trans-background" />
+        </span>
+      </fieldset>
+    </form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+
+<script id="tpl_l-notification-bar" type="text/x-jsmart-tmpl"><div class="l-notification-bar js-notification-bar">
+
+  <div class="l-notification-bar__watermark js-svg-inliner h-svg__logo-star-citizen"></div>
+
+  <div class="l-notification-bar__boxes">
+    {if !$viewedCookieNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='cookie'
+          title='COOKIES:'
+          message="Our website uses Google Analytics to analyze our traffic. <br/>To learn how you can control Google's use of your data and how you can opt out <a href='https://www.google.com/policies/privacy/partners/'>click here</a>."
+          linkText='See Details'
+          buttonText='Got it!'}
+      </div>
+    {/if}
+
+    {if !$viewedPrivacyNotif}
+      <div class="l-notification-bar__box">
+        {include file='tpl_c-notification'
+          type='privacy'
+          title='PRIVACY POLICY:'
+          message='We adjusted the PP to reflect the decision of the European Court of Justice regarding Safe Harbor, the fact that RSI has moved and added some services providers.'
+          linkText='View Privacy Policy'
+          buttonText='Got it!'}
+      </div>
+    {/if}
+  </div>
+
+</div>
+</script>
+<script id="tpl_c-notification" type="text/x-jsmart-tmpl"><div class="c-notification js-bottom-notif-msg-{$type}">
+    <div class="c-notification__title">{$title}</div>
+    <div class="c-notification__message">
+      {$message}
+    </div>
+
+    {if $linkText}
+        <div class="c-notification__wrapper-link">
+            <a class="c-notification__link js-bottom-notif-link-{$type}">
+            {$linkText}
+            </a>
+        </div>
+    {/if}
+
+    <a class="c-notification__button js-bottom-notif-btn-{$type}">
+
+      <span class="c-notification__button-text">
+       {$buttonText}
+      </span>
+
+      {if $type neq 'announcement'}
+        <div class="c-iconed__icon c-iconed__icon--checkmark"></div>
+      {/if}
+    </a>
+</div>
+</script>
+
+<script id="tpl_confirm" type="text/x-jsmart-tmpl"><div class="modal-confirm js-modal-confirm clearfix">
+  <p class="modal-text js-modal-text"></p>
+  <a class="bt-close js-close trans-03s trans-opacity" href=""></a>
+  <a class="bt-confirm js-confirm trans-03s trans-opacity" href=""></a>
+	<div class="buttons">
+		<a class="shadow-button trans-02s trans-color js-close bt-close rm"     >
+  <span class="label js-label trans-02s">Cancel</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+		<a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">Confirm</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+	</div>
+</div>
+</script>
+<script id="tpl_alert" type="text/x-jsmart-tmpl"><div class="modal-alert js-modal-alert clearfix">
+  <p class="modal-text js-modal-text"></p>
+  <div class="buttons">
+    <a class="shadow-button trans-02s trans-color js-confirm bt-confirm green"     >
+  <span class="label js-label trans-02s">OK</span>
+  <span class="icon trans-02s"><span class="effect trans-opacity trans-03s"></span></span>
+  <span class="left-section"></span>
+  <span class="right-section"></span>
+</a>
+  </div>
+</div></script>
+<script id="tpl_video" type="text/x-jsmart-tmpl">{extends file="base_modal"}
+{block name='modal_content'}
+<div id="ship-commercial" class="inner-content">
+  
+  <div class="hr"></div>
+  <div class="content-block4">
+   
+    <div class="bottom"></div>
+  </div>
+  {if $distant_source=="vimeo"}
+  <iframe id="commercial" src="//player.vimeo.com/video/{$video_id}?wmode=transparent" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+  {else}
+  <iframe id="commercial" frameborder="0" allowfullscreen="1" title="YouTube video player" width="100%" height="100%" src="https://www.youtube.com/embed/{$video_id}?autoplay=1"></iframe>
+  {/if}
+</div>
+{/block}
+</script>
+      
+  <script id="tpl_comment_report" type="text/x-jsmart-tmpl"><div class="modal-wrapper ">
+  <div class="top-border">
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+  </div>
+  <div class="modal-inner">
+    <a class="close js-close trans-03s .trans-opacity" href=""></a>
+    
+<div id="comment-report" class="inner-content on">
+  <h2><span class="icon"></span>Report this comment</h2>
+  <div class="padder">
+    <div class="separator"></div>
+    <form name="" action="" method="POST">
+<input type="hidden" name="comment_id" value="">
+  <div class="error-message js-error-message"></div>
+  <div class="success-message js-success-message"></div>
+    <fieldset class="last">
+    <label for="report_email">Email Address</label>
+    <span class="corner-wrapper">
+      <input type="text" name="email" value="" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_email" />
+      <span class="corner corner-top-left"></span>
+      <span class="corner corner-top-right"></span>
+      <span class="corner corner-bottom-left"></span>
+      <span class="corner corner-bottom-right"></span>
+    </span>
+  </fieldset>
+    <fieldset>
+    <label>Report Type</label>
+    
+
+
+  
+    <a class="js-selectlist selectlist " rel="" href="">
+    <div class="arrow"></div>
+    <span>Please select the type best matching your report</span>
+              <ul class="body">
+              
+                                                              <li class="js-option option " rel="obscenity" >
+                                                                        Obscene Content
+                                                    </li>
+                                                                <li class="js-option option " rel="abuse" >
+                                                                        Abusive Conduct
+                                                    </li>
+                                                                <li class="js-option option " rel="other" >
+                                                                        Other
+                                                    </li>
+                                          
+            </ul>
+        <input type="hidden" name="category" class="js-category js-form-data" id="category"/>
+  </a>
+    </fieldset>
+  <fieldset>
+    <label for="report_text">Details</label>
+    <span class="corner-wrapper">
+      <textarea name="text" class="trans-02s trans-color trans-box-shadow js-form-data" id="report_text" maxlength="2500"></textarea>
+      <span class="corner corner-top-left"></span>
+      <span class="corner corner-top-right"></span>
+      <span class="corner corner-bottom-left"></span>
+      <span class="corner corner-bottom-right"></span>
+    </span>
+  </fieldset>
+  <fieldset class="clearfix last">
+    <span class="submit-wrapper">
+      <span class="submit-hover trans-02s trans-opacity"></span>
+      <input type="submit" value="Submit" class="trans-02s trans-color trans-background" />
+    </span>
+  </fieldset>
+</form>
+    <div class="separator"></div>
+  </div>
+</div>
+
+    
+  </div>
+  <div class="bottom-border">
+    <div class="h-border"></div>
+    <div class="l-corner"></div>
+    <div class="r-corner"></div>
+    
+    <img src="/rsi/static/images/modal_blue_line.png" />
+    
+  </div>
+</div></script>
+
+
+      
+        <footer class="c-platform-footer c-platform-footer--rsi">
+  <div class="l-platform-footer-container">
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--sc">
+        <li class="c-platform-footer-brand__item">
+
+          <span class="c-brand c-brand--sc js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--sc">
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-star-citizen--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Join the<br>Universe
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--sc">
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen" class="c-platform-footer-link">About the Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/howto/1" class="c-platform-footer-link">How to Play</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/universe" class="c-platform-footer-link">The Universe</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/media" class="c-platform-footer-link">Media</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/star-citizen/play-now"
+                class="c-platform-footer-link js-google-analytics-event-tracker"
+                data-event-category="FlyNow" data-event-label="footerClick">
+                Play Now
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__sc">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">
+              Social Links
+            </span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/RobertsSpaceIndustries/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/RobertsSpaceInd">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/robertsspaceind">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href=" https://www.youtube.com/channel/UCTeLqJq1mXUX5WWoNXLmOIA">
+                <span class="c-iconed__icon c-iconed__icon--youtube"></span>
+                Youtube
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.twitch.tv/starcitizen">
+                <span class="c-iconed__icon c-iconed__icon--twitch"></span>
+                Twitch
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column ">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--s42">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--s42 js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--s42">
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-squadron42--fullcolor"></span>
+            </span>
+
+            <span class="c-brand__label">
+              Start the<br>Adventure
+            </span>
+
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--s42">
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42" class="c-platform-footer-link">The Game</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#enlist" class="c-platform-footer-link">Enlist Today</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/squadron42#roadmap" class="c-platform-footer-link">Status</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/pledge/Packages/Squadron-42-Standalone-Pledge" class="c-platform-footer-link">Pledge</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="c-platform-footer-social">
+        <li class="c-platform-footer-social__item">
+          <a class="c-arrow-link js-toggle-arrow" href="#social-links__s42">
+            <span class="c-arrow-link__text c-arrow-link__text--underline">Social Links</span>
+            <span class="c-arrow-link__arrow js-svg-inliner"></span>
+          </a>
+
+          <ul id="social-links__sc" class="l-social-links">
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.facebook.com/Squad42/">
+                <span class="c-iconed__icon c-iconed__icon--facebook"></span>
+                Facebook
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://twitter.com/squadron_42">
+                <span class="c-iconed__icon c-iconed__icon--twitter"></span>
+                Twitter
+              </a>
+            </li>
+
+            <li class="c-social-links__item">
+              <a class="c-platform-footer-link c-platform-footer-link--icon" href="https://www.instagram.com/squadron42">
+                <span class="c-iconed__icon c-iconed__icon--instagram"></span>
+                Instagram
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column is-active">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--rsi">
+        <li class="c-platform-footer-brand__item">
+          <span class="c-brand c-brand--rsi js-footer-open-sub-menu">
+            <span class="c-brand__logo c-brand__logo--rsi">
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi"></span>
+              <span class="js-svg-inliner h-svg h-svg__logo-rsi--fullcolor"></span>
+            </span>
+            <span class="c-brand__label">
+              Follow the Development
+            </span>
+            <span class="c-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </span>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--rsi">
+            <li class="c-platform-footer-list__item">
+              <a href="/" class="c-platform-footer-link">Home</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/comm-link" class="c-platform-footer-link">Transmissions</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/community" class="c-platform-footer-link">Community</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/roadmap" class="c-platform-footer-link">Development</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--platform">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Platform
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--platform">
+                          <li class="c-platform-footer-list__item">
+                <a href="/pledge" class="c-platform-footer-link ">Pledge Store</a>
+              </li>
+            
+            <li class="c-platform-footer-list__item">
+              <a href="/download" class="c-platform-footer-link ">Download</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/spectrum/community/SC" class="c-platform-footer-link">Spectrum</a>
+            </li>
+
+                      </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-platform-footer__column l-column l-column--smaller">
+      <ul class="c-platform-footer-brand c-platform-footer-brand--utility">
+        <li class="c-platform-footer-brand__item">
+          <h2 class="c-platform-footer-brand__title js-footer-open-sub-menu">
+            Utilities
+
+            <span class="c-platform-footer-brand__arrow">
+              <svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   <path transform="translate(-8.000000, -5.000000)" d="M15.3610114,5.87946602 L8.86459388,12.5876406 C8.62203758,12.8388577 8.50002884,13.1692873 8.50002884,13.499717 C8.49783707,13.8331643 8.6205764,14.1628395 8.86459388,14.4140566 L15.3610114,21.1229856 C15.8468546,21.6246653 16.6424685,21.6269285 17.1312341,21.1222312 C17.6236526,20.6130074 17.6214608,19.7982494 17.1334258,19.2943064 L11.5232155,13.5012258 L17.1334258,7.7088996 C17.6185384,7.20721987 17.6214608,6.38567218 17.1312341,5.88022042 C16.8857554,5.62674014 16.5657564,5.5 16.246488,5.5 C15.9257585,5.5 15.6057595,5.62749455 15.3610114,5.87946602 Z" id="path-1"></path> </svg>
+            </span>
+          </h2>
+
+          <ul class="c-platform-footer-list c-platform-footer-list--utility">
+            <li class="c-platform-footer-list__item">
+              <a href="//support.robertsspaceindustries.com" class="c-platform-footer-link">Help</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/press" class="c-platform-footer-link">Press</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="https://cloudimperiumgames.com/join-us" class="c-platform-footer-link">Careers</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/tos" class="c-platform-footer-link">Terms of Services</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/privacy" class="c-platform-footer-link">Privacy Policy</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/eula" class="c-platform-footer-link">EULA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/dmca" class="c-platform-footer-link">DMCA</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/legal" class="c-platform-footer-link">Legal</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/acknowledgements" class="c-platform-footer-link">Acknowledgements</a>
+            </li>
+
+            <li class="c-platform-footer-list__item">
+              <a href="/responsible-disclosure" target="_blank" class="c-platform-footer-link">Responsible disclosure</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  
+</footer>
+
+<div class="c-platform-copyright c-platform-copyright--rsi">
+  <div class="l-platform-copyright-container">
+    <a href="https://cloudimperiumgames.com" class="c-platform-copyright__logo h-svg__logo-cig js-svg-inliner"></a>
+    <p class="c-platform-copyright__body">© 2012-2021 Cloud Imperium Rights LLC and Cloud Imperium Rights Ltd.</p>
+  </div>
+</div>
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHNFZPT"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<script type="text/javascript">
+  window.RSI.Footer = new RSI.Footer();
+</script>
+      
+    </div>
+
+    
+      <script type="text/javascript" src='/rsi/static/packages/platformbar/rsi.platformbar.build.8e4cb.js'></script>
+    
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"58013cabd7","applicationID":"375102748","transactionName":"Y1JaYktUWxZUV0QKV1oYe0NKQVoIGmZjKmtdQ111VltBF1pYXAZKDg1ZQlZYcwxbUA==","queueTime":0,"applicationTime":72,"atts":"TxVNFANOSEkXVRJZQ0lK","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>
